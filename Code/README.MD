@@ -1,8 +1,14 @@
-## Environment
-- environment.yml
 
+## Installation
+To install the necessary dependencies, run:
 
-## Directory Structure (in framework)
+```bash
+conda env create -f environment.yml
+```
+
+## Directory Structure
+
+```plaintext
 framework/
 │
 ├── F2GNN/                # AUTOML source code directory
@@ -27,11 +33,18 @@ framework/
 │
 ├── llm_api.py           # Call LLM
 └── retrive.py           # Retriever
+```
 
+## Usage
 
-## Running Example
+To run the project, navigate to the `framework` directory and execute:
+
+```bash
 cd framework
 python main.py
+```
+
+
 
 
 
