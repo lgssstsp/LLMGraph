@@ -1,0 +1,7 @@
+{
+    "name": "AntiSymmetricConv",
+    "description": "The anti-symmetric graph convolutional operator from the \"Anti-Symmetric DGN: a stable architecture for Deep Graph Networks\" paper.",
+    "link": "../generated/torch_geometric.nn.conv.AntiSymmetricConv.html#torch_geometric.nn.conv.AntiSymmetricConv",
+    "paper_link": "https://openreview.net/forum?id=J3Y7cgZOOS",
+    "paper_name": "\"Anti-Symmetric DGN: a stable architecture for Deep Graph Networks\""
+}

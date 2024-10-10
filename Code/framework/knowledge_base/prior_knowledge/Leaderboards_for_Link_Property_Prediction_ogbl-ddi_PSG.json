@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 5,
+    "Method": "PSG",
+    "External Data": "No",
+    "Test Accuracy": "0.9284 ± 0.0047",
+    "Validation Accuracy": "0.8306 ± 0.0134",
+    "Contact": "mailto:jingsonglv@zhejianglab.com",
+    "Paper Link": "https://arxiv.org/pdf/2208.05781.pdf",
+    "Code Link": "https://github.com/jingsonglv/PSG",
+    "Parameters": "3,499,009",
+    "Hardware": "Tesla V100(32G GPU)",
+    "Date": "Aug 12, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/PSG.pdf",
+    "Paper Summary": "The paper presents the Path-aware Siamese Graph Neural Network (PSG) designed for link prediction tasks within graph neural networks (GNNs). The model architecture consists of several key components:\n\n1. **Model Architecture**: PSG is a combinatorial model that leverages a Siamese network structure to produce hidden feature embeddings for associated node pairs. The link prediction function is represented as a combination of two associated nodes.\n\n2. **Edge Featuring**: PSG incorporates edge features derived from Shortest Path Distances (SPDs) through a novel relay path sampling technique. This method captures additional structural information by aggregating multiple relay paths, generating a relay path-aware edge feature vector. Each edge feature tensor is of dimension \\(N \\times N \\times k\\), where \\(k\\) refers to the number of sampled relay paths.\n\n3. **Node Encoder**: The model uses a shared Siamese GNN for encoding node features and path-aware edge features from the neighborhood. The node encoder incorporates neighborhood sampling and aggregation techniques similar to GraphSAGE, greatly improving the model's capacity to learn representations robustly.\n\n4. **Link Predictor**: An MLP (Multi-Layer Perceptron) is employed as the link predictor, sharing the structure and weights across the prediction of associated nodes. In this block, feature intersection is applied to enhance predictive capabilities.\n\n5. **Pairwise Objective Loss Function**: The model optimizes a pairwise loss function, which seeks to maximize the difference between the predicted scores of positive and negative samples. This encourages better ranking of true links over false ones, using a squared loss function with L2 regularization.\n\n6. **Contrastive Learning Framework**: To enhance the learning outcomes, PSG integrates a self-supervised contrastive learning approach. This allows the model to differentiate between the behavior and content representations of nodes by employing a clustering method (K-means) to generate content labels, alongside the traditional labels for a multi-task learning setup.\n\nOverall, the PSG model integrates various advanced neural network techniques such as Siamese networks, edge feature derivation using path-aware mechanisms, and self-supervised learning into a single unified framework tailored for effective link prediction in graph datasets."
+}

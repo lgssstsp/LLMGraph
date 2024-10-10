@@ -1,0 +1,7 @@
+{
+    "name": "ToDense",
+    "description": "Converts a sparse adjacency matrix to a dense adjacency matrix with shape [num_nodes, num_nodes, *] (functional name: to_dense).",
+    "link": "../generated/torch_geometric.transforms.ToDense.html#torch_geometric.transforms.ToDense",
+    "paper_link": null,
+    "paper_name": null
+}

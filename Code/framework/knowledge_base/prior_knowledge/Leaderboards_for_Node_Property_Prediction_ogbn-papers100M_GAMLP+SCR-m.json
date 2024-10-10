@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-papers100M",
+    "Dataset Link": "../nodeprop/#ogbn-papers100M",
+    "Rank": 6,
+    "Method": "GAMLP+SCR-m",
+    "External Data": "No",
+    "Test Accuracy": "0.6816 ± 0.0012",
+    "Validation Accuracy": "0.7186 ± 0.0008",
+    "Contact": "mailto:yufei.he@bit.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2112.04319",
+    "Code Link": "https://github.com/THUDM/SCR",
+    "Parameters": "67,560,875",
+    "Hardware": "GeForce RTX 3090 24GB (GPU)",
+    "Date": "Jun 13, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-papers100M/GAMLP+SCR-m.pdf",
+    "Paper Summary": "The paper introduces the SCR (Consistency Regularization) framework aimed at enhancing the performance of Graph Neural Networks (GNNs) in semi-supervised settings through two key strategies.\n\n### Model Design Aspects\n\n1. **SCR Framework Overview**:\n   SCR is designed to improve generalization in GNNs by employing consistency regularization techniques. The framework emphasizes the creation of high-confidence predictions for unlabeled nodes while minimizing the discrepancy among different model predictions.\n\n2. **Prediction Generation**:\n   - **Noisy Predictions**: SCR utilizes a dropout strategy to generate multiple noisy predictions for the same input. During training, the GNN model is evaluated several times (denoted as \\( S \\)) under different dropout conditions, providing a series of outputs that vary due to the model's stochastic nature.\n   - **Pseudo Labeling**: Each unlabelled node receives a pseudo label based on the average of its noisy predictions in SCR, while in SCR-m, a teacher model estimates these labels. The teacher model's parameters are updated through an Exponential Moving Average (EMA) of the student model's parameters.\n\n3. **Loss Function**:\n   The training loss is comprised of two components:\n   - **Supervised Loss**: A standard cross-entropy loss calculated over labeled nodes.\n   - **Unsupervised Consistency Loss**: This term measures the distance between the predictions of unlabeled nodes and their computed pseudo labels. This encourages the model to make consistent predictions across variations.\n\n4. **Confidence-based Masking**:\n   To improve the reliability of pseudo labels, the SCR framework employs a confidence-based masking technique. It filters out nodes with predictions that don’t meet a pre-defined confidence threshold, ensuring that only confident predictions are utilized in the consistency loss.\n\n5. **SCR and SCR-m Variants**:\n   - **SCR**: Directly averages predictions from multiple runs. The model aims to minimize discrepancies across these noisy outputs.\n   - **SCR-m**: Enhances the pseudo labeling process by utilizing a teacher-student approach, where the teacher generates labels based on a more stable set of model parameters. \n\n6. **Hyperparameter Considerations**:\n   Key hyperparameters include the weight of the consistency regularizer (\\( \\lambda \\)), the number of views (\\( S \\)), and the confidence threshold (\\( η \\)). These parameters influence how predictions are averaged and which nodes contribute to the consistency loss.\n\nBy integrating these components, the SCR framework offers a flexible and efficient methodology for training GNNs, capable of scaling to large graphs while maintaining high performance through enhanced regularization strategies."
+}

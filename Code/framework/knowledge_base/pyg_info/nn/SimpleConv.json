@@ -1,0 +1,7 @@
+{
+    "name": "SimpleConv",
+    "description": "A simple message passing operator that performs (non-trainable) propagation.",
+    "link": "../generated/torch_geometric.nn.conv.SimpleConv.html#torch_geometric.nn.conv.SimpleConv",
+    "paper_link": null,
+    "paper_name": null
+}

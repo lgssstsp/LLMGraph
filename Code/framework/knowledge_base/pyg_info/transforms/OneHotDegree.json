@@ -1,0 +1,7 @@
+{
+    "name": "OneHotDegree",
+    "description": "Adds the node degree as one hot encodings to the node features (functional name: one_hot_degree).",
+    "link": "../generated/torch_geometric.transforms.OneHotDegree.html#torch_geometric.transforms.OneHotDegree",
+    "paper_link": null,
+    "paper_name": null
+}

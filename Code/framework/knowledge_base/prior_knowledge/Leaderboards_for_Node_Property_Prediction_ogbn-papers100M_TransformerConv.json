@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-papers100M",
+    "Dataset Link": "../nodeprop/#ogbn-papers100M",
+    "Rank": 11,
+    "Method": "TransformerConv",
+    "External Data": "No",
+    "Test Accuracy": "0.6736 ± 0.0010",
+    "Validation Accuracy": "0.7172 ± 0.0005",
+    "Contact": "mailto:xiaonans@nvidia.com",
+    "Paper Link": "https://arxiv.org/abs/2009.03509",
+    "Code Link": "https://github.com/nvidia-china-sae/WholeGraph",
+    "Parameters": "883,378",
+    "Hardware": "NVIDIA DGX-2 (16*32GB GPUs)",
+    "Date": "Mar 4, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-papers100M/TransformerConv.pdf",
+    "Paper Summary": "The paper presents a novel model called the **Unified Message Passing Model (UniMP)** designed for semi-supervised classification tasks in graph-based learning. The key aspects of the model design include the following:\n\n### Model Architecture\n1. **Graph Transformer**:\n   - The core of UniMP is a Graph Transformer, which integrates **feature** and **label** propagation. This model leverages both node features and partial observed labels as inputs.\n   - The architecture uses multi-head attention to enable effective information aggregation from neighboring nodes, allowing the combination of the features and labels.\n\n2. **Feature and Label Propagation**:\n   - UniMP combines feature and label propagation into a single framework. The node feature embeddings and label embeddings are transformed into a unified representation, allowing them to interact and influence each other during the propagation process.\n   - During each propagation layer, the model propagates information from both features and labels, enhancing the learning capability of the model with a shared message-passing framework.\n\n3. **Masked Label Prediction**:\n   - To prevent overfitting from label leakage, the model introduces a **masked label prediction strategy**. This involves randomly masking a portion of the input label information during training, simulating the transduction of label information from labeled to unlabeled instances.\n   - The approach resembles masked language modeling methods seen in BERT, where the objective is to predict the masked labels using the remaining available information. This helps the model learn more robust representations without the direct leakage of training labels into predictions.\n\n### Training Process\n- The training utilizes a combination of masked labels and the neighborhood structure of the graph, ensuring that the model learns effectively from its surroundings while reducing the risk of overfitting to specific label inputs.\n\nOverall, UniMP's design is directed toward effectively leveraging both features and labels in a unified manner, using attention mechanisms for information propagation while employing strategies to mitigate label leakage, thereby enhancing the efficacy of semi-supervised learning in graph-based scenarios."
+}

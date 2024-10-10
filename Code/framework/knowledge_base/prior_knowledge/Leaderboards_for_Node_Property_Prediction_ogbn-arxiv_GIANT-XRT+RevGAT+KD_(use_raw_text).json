@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-arxiv",
+    "Dataset Link": "../nodeprop/#ogbn-arxiv",
+    "Rank": 12,
+    "Method": "GIANT-XRT+RevGAT+KD (use raw text)",
+    "External Data": "Yes",
+    "Test Accuracy": "0.7615 ± 0.0010",
+    "Validation Accuracy": "0.7716 ± 0.0009",
+    "Contact": "mailto:ichien3@illinois.edu",
+    "Paper Link": "https://arxiv.org/pdf/2111.00064.pdf",
+    "Code Link": "https://github.com/elichienxD/deep_gcns_torch",
+    "Parameters": "1,304,912",
+    "Hardware": "Tesla T4 (16GB GPU)",
+    "Date": "Nov 8, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-arxiv/GIANT-XRT+RevGAT+KD_(use_raw_text).pdf",
+    "Paper Summary": "The paper introduces the **Graph Information Aided Node feature extraction (GIANT)** framework designed to enhance feature extraction for Graph Neural Networks (GNNs) through self-supervised learning (SSL). The key innovation lies in addressing the limitations of graph-agnostic methods for numerical node feature extraction.\n\n### Key Components of GIANT:\n\n1. **Neighborhood Prediction**:\n   - This is a novel SSL task introduced to leverage raw node attributes effectively while integrating graph structure information. The task entails predicting the neighborhood of a node, enhancing context awareness in feature extraction.\n\n2. **Connection to eXtreme Multi-label Classification (XMC)**:\n   - The neighborhood prediction task is formulated as an XMC problem. Each node's neighborhood can be encoded as binary multi-labels, indicating whether a node is a neighbor. This allows for more efficient representation and classification of node features.\n\n3. **Integration of XR-Transformers**:\n   - GIANT employs the XR-Transformer architecture, specifically optimized for handling XMC problems. This model is adept at clustering large label spaces, making it suitable for hierarchical label organizations that reflect neighborhood structures.\n\n### Model Design Aspects:\n\n- **Feature Extraction**:\n  - GIANT transforms raw node attributes (like text, images, etc.) into numerical features using the encoder (BERT) fine-tuned with neighborhood prediction as the training goal.\n\n- **Self-supervised Learning (SSL) Mechanism**:\n  - Instead of relying solely on supervised labels, GIANT fine-tunes the encoder by utilizing both the raw features of the nodes and the structural information from the graphs. This creates a synergy that improves feature quality.\n\n- **Hierarchical Clustering**:\n  - The hierarchical label structure defined by the neighborhood relationships allows the XR-Transformer to train on multi-resolution objectives. This capability addresses the scale of labels effectively, enhancing the learning process.\n\n- **Adaptive Model Training**:\n  - GIANT incorporates recursive and semantic hierarchical clusterings for labels, addressing how features from different neighborhoods should interact. By integrating graph structure, GIANT overcomes the shortcomings of traditional link prediction, particularly in heterophilic graphs.\n\nThe GIANT framework aims to provide a stronger foundation for GNNs by leveraging contextual information effectively, enhancing the overall learning efficiency and performance on downstream tasks."
+}

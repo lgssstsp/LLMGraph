@@ -1,0 +1,7 @@
+{
+    "name": "RemoveIsolatedNodes",
+    "description": "Removes isolated nodes from the graph (functional name: remove_isolated_nodes).",
+    "link": "../generated/torch_geometric.transforms.RemoveIsolatedNodes.html#torch_geometric.transforms.RemoveIsolatedNodes",
+    "paper_link": null,
+    "paper_name": null
+}

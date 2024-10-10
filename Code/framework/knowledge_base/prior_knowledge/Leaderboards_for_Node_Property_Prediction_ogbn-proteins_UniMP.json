@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 12,
+    "Method": "UniMP",
+    "External Data": "No",
+    "Test Accuracy": "0.8642 ± 0.0008",
+    "Validation Accuracy": "0.9175 ± 0.0006",
+    "Contact": "mailto:shiyunsheng01@baidu.com",
+    "Paper Link": "https://arxiv.org/pdf/2009.03509.pdf",
+    "Code Link": "https://github.com/PaddlePaddle/PGL/tree/main/ogb_examples/nodeproppred/unimp",
+    "Parameters": "1,909,104",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Sep 8, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/UniMP.pdf",
+    "Paper Summary": "The paper proposes a novel Unified Message Passing Model (UniMP) aimed at improving semi-supervised node classification by integrating two core methodologies: Graph Neural Networks (GNNs) and Label Propagation Algorithms (LPAs). This approach seeks to enhance information propagation for both labeled and unlabeled nodes during training and inference.\n\n### Key Model Design Aspects:\n\n1. **Unified Approach**: \n   - UniMP combines feature propagation (via GNNs) and label propagation (using LPAs) within a single framework. This unified architecture allows the model to collectively leverage both node features and labels for effective predictions.\n\n2. **Graph Transformer Architecture**:\n   - At the core of UniMP is a Graph Transformer, which utilizes multi-head attention mechanisms to jointly process feature and label embeddings. This transformer architecture allows for rich interactions between node features and labels.\n\n3. **Feature and Label Embeddings**:\n   - The model takes node features and partially observed labels as input, transforming the input label matrix into dense vectors compatible with the node feature space. This approach facilitates the simultaneous propagation of labels and features during message passing.\n\n4. **Masked Label Prediction Strategy**:\n   - A crucial innovation of UniMP is the introduction of a masked label prediction strategy to mitigate overfitting associated with self-loop label information. During training, a percentage of label information is randomly masked, prompting the model to learn robust representations by predicting these masked labels. This strategy helps prevent label leakage during inference, ensuring better generalization.\n\n5. **Attention Mechanism**:\n   - The model employs multi-head attention to calculate relationships between nodes, allowing for a refined aggregation of information from neighbors in the graph. This mechanism enhances the model's ability to capture dependencies and interactions within the graph, combining labels and features effectively.\n\n6. **Gated Residual Connections**:\n   - To prevent over-smoothing, UniMP utilizes gated residual connections between layers. This enhances the flow of information through the network while maintaining the integrity of the features, enabling the model to learn deeper representations without degradation.\n\n7. **Input Representation**:\n   - The model accepts a combination of node features, the adjacency matrix, and label embeddings, allowing for a flexible representation that reflects the structure and labeling of the graph.\n\nBy integrating these components, the UniMP model innovatively synchronizes feature and label propagation, allowing for improved performance in semi-supervised classification tasks."
+}

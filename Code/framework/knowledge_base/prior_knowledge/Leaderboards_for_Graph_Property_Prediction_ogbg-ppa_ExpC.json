@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-ppa",
+    "Dataset Link": "../graphprop/#ogbg-ppa",
+    "Rank": 3,
+    "Method": "ExpC",
+    "External Data": "No",
+    "Test Accuracy": "0.7976 ± 0.0072",
+    "Validation Accuracy": "0.7518 ± 0.0080",
+    "Contact": "mailto:yangmq@mail.dlut.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2012.07219",
+    "Code Link": "https://github.com/qslim/epcb-gnns",
+    "Parameters": "1,369,397",
+    "Hardware": "NVIDIA Tesla V100 (32GB GPU)",
+    "Date": "Dec 14, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-ppa/ExpC.pdf",
+    "Paper Summary": "The article presents advancements in Graph Neural Networks (GNNs) to overcome the expressive bottlenecks associated with existing neighborhood aggregation methods. Key aspects of the model design focus on two novel GNN layers, **ExpandingConv** and **CombConv**.\n\n### Key Model Design Aspects:\n\n1. **Aggregator Reformulation**:\n   - The paper reformulates aggregators as the multiplication of a hidden feature matrix and an aggregation coefficient matrix. This allows for a richer representation of the relationships among neighbors.\n\n2. **Distinguishing Strength of Aggregators**:\n   - Aggregators are evaluated based on their distinguishing strength, formalized as a partial order. The choice of aggregator can potentially limit expressiveness. The authors propose using nonlinear units preceding the aggregation to enhance the distinguishing capabilities of these functions.\n\n3. **ExpandingConv Layer**:\n   - **Architecture**: Involves a three-stage process:\n     1. Aggregation coefficient generation, where the aggregation coefficients are learned based on local structures.\n     2. Neighborhood aggregation, where hidden features of neighbors are combined using learned coefficients.\n     3. Feature extraction, employing neural networks for task-relevant information extraction.\n   - An implementation example uses a tanh activation and multi-layer perceptrons (MLPs) to derive feature representations.\n\n4. **CombConv Layer**:\n   - This layer utilizes element-wise products in conjunction with aggregation, allowing for independent weighted aggregators for each hidden feature dimension.\n   - CombConv is designed to maintain a balance between effective aggregation and parameter efficiency.\n\n5. **Nonlinear Processing**:\n   - Both layers employ nonlinear activation functions before the aggregation step as a strategy for improving the expressiveness of aggregators.\n   - Nonlinear transformations bolster the ability to learn distinct representations from neighborhood features, breaking the limitations associated with basic equivalently structured GNNs.\n\n6. **Re-SUM Mechanism**:\n   - This mechanism introduces a dimension-wise sampling strategy, which aids in the preservation of rank within aggregators. It allows the model to effectively handle diverse neighbor sets without explicit sampling ratios.\n\nBy focusing on these model design aspects, the authors propose a theoretical framework that enhances the expressiveness of aggregators within GNNs. The combination of enhanced aggregation methods and systematic nonlinear processing forms the core of their innovative approach."
+}

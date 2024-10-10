@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-biokg",
+    "Dataset Link": "../linkprop/#ogbl-biokg",
+    "Rank": 5,
+    "Method": "ComplEx-RP (1000dim)",
+    "External Data": "No",
+    "Test Accuracy": "0.8492 ± 0.0002",
+    "Validation Accuracy": "0.8497 ± 0.0002",
+    "Contact": "mailto:yihong.chen@cs.ucl.ac.uk",
+    "Paper Link": "https://openreview.net/pdf?id=Qa3uS3H7-Le",
+    "Code Link": "https://github.com/facebookresearch/ssl-relation-prediction",
+    "Parameters": "187,750,000",
+    "Hardware": "Tesla V100 (16GB)",
+    "Date": "Nov 23, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-biokg/ComplEx-RP_(1000dim).pdf",
+    "Paper Summary": "The paper presents a novel self-supervised training objective to enhance multi-relational graph representation learning within Knowledge Base Completion (KBC). This method specifically integrates relation prediction as an auxiliary task within the commonly employed 1vsAll objective framework.\n\n### Key Design Aspects of the Proposed Model:\n\n1. **Training Objective**:\n   - **Incorporating Relation Prediction**: The model not only trains to predict the subject and object of a triple but adds a term to predict the relation type as well. The modified training objective can be formalized as:\n     \\[\n     \\argmax \\left[ \\log P(s | p, o) + \\log P(o | s, p) + \\lambda \\log P(p | s, o) \\right]\n     \\]\n   - The added term for relation prediction (\\(\\log P(p | s, o)\\)) allows the model to learn to differentiate among various predicates better, thus enriching its representation capabilities.\n\n2. **Self-Supervised Learning**: \n   - The proposed objective operates in a self-supervised manner, similar to how masked language models are trained. This approach leverages existing data (the triples in knowledge graphs) to generate additional training signals from the relationships among subjects, predicates, and objects.\n\n3. **Minimal Computational Overhead**:\n   - The inclusion of relation prediction adds negligible computational burden, allowing easy integration into existing KBC implementations without significant performance trade-offs.\n\n4. **Parameterization**:\n   - The training objective relies on a hyper-parameter \\(\\lambda\\) that adjusts the contribution of the relation prediction term. Default settings typically set \\(\\lambda = 1\\), but it can be tuned for specific datasets or models.\n\n5. **Model Flexibility**: \n   - Although examples focus on models like ComplEx and TuckER, the framework is designed to be applicable across a range of neural link prediction architectures, indicating its versatility and adaptability in KBC tasks.\n\n### Summary of the Proposed Design:\nThe new methodology emphasizes relation prediction as a crucial auxiliary training task to bolster the model's ability to learn effective multi-relational representations in a self-supervised setting. This approach not only enhances the quality of entity and relation representations but also preserves efficiency, making it a valuable addition to standard KBC practices."
+}

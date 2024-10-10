@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 11,
+    "Method": "InterHT",
+    "External Data": "No",
+    "Test Accuracy": "0.6779 ± 0.0018",
+    "Validation Accuracy": "0.6893 ± 0.0015",
+    "Contact": "mailto:destin.bxwang@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2202.04897",
+    "Code Link": "https://github.com/destwang/InterHT",
+    "Parameters": "19,215,402",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Feb 10, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/InterHT.pdf",
+    "Paper Summary": "The paper presents two novel distance-based methods for knowledge graph embeddings, named InterHT and InterHT+. These models enhance the representation of entities by allowing interactions between head and tail entities, which is a departure from traditional methods that treat these entities separately.\n\n### Model Design Aspects\n\n1. **InterHT:**\n   - The core idea is to improve the entity representation by integrating the information from both head and tail entities.\n   - For the **head entity** representation, the method involves element-wise multiplication of the head entity's original representation with an auxiliary tail entity vector. This interaction is mathematically formulated as:\n     \\[\n     ||h \\circ t - t \\circ h + r||\n     \\]\n   - The final representation for the tail entity is generated similarly, allowing both entities to inform each other's representations.\n\n2. **InterHT+:**\n   - This model builds upon the InterHT framework by incorporating relation embeddings into the interaction process.\n   - The tail entity representation integrates both the head and relation information, defined as:\n     \\[\n     ||h \\circ (t + e) - t \\circ (h + e) + r||\n     \\]\n   - Here, \\( e \\) represents the relation context, allowing the model to leverage richer relational data for refining entity representations.\n\n3. **Entity Representation Method:**\n   - The paper introduces a new entity representation method called **DigPiece** that utilizes a directed coarse-to-fine neighborhood structure to generate subgraphs for each entity. \n   - Each subgraph includes four types of nodes: anchors, in-directed neighbors, out-directed neighbors, and a center, which collectively capture the local structure around the target node.\n   - The node representations are treated as tokens that are processed through a transformer to produce final embeddings, which enhance the original representations by averaging node contributions.\n\n4. **Loss Function:**\n   - The employed loss function is based on self-adversarial negative sampling. It aims to optimize the embedding representations such that the distance between correctly predicted (head, relation, tail) triplets is minimized while maximizing the distance with negative samples.\n\nOverall, the design of InterHT and InterHT+ emphasizes enhanced interactions between head and tail entities and introduces more sophisticated entity representation techniques, resulting in improved capacity for modeling complex relationships in knowledge graphs."
+}

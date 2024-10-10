@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molpcba",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 3,
+    "Method": "Graphormer (pre-trained on PCQM4M)",
+    "External Data": "Yes",
+    "Test Accuracy": "0.3140 ± 0.0032",
+    "Validation Accuracy": "0.3227 ± 0.0024",
+    "Contact": "mailto:shuz@microsoft.com",
+    "Paper Link": "https://arxiv.org/abs/2106.05234",
+    "Code Link": "https://github.com/microsoft/Graphormer",
+    "Parameters": "119,529,664",
+    "Hardware": "NVIDIA Tesla V100 (16GB GPU)",
+    "Date": "Aug 2, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molpcba/Graphormer_(pre-trained_on_PCQM4M).pdf",
+    "Paper Summary": "The paper introduces **Graphormer**, a novel architecture that applies the standard Transformer model to graph representation learning by effectively encoding structural information. Here’s a summary of the main design aspects and methodologies discussed:\n\n### 1. Structural Encodings in Graphormer\nThe key to enhancing Transformer’s performance on graph data lies in incorporating structural information through three primary encoding methods:\n\n**1.1 Centrality Encoding:**\n- This method captures the importance of each node in the graph based on its degree centrality. \n- Each node is assigned two learnable embedding vectors reflecting its in-degree and out-degree. These vectors are added to the node’s features during input preparation, allowing the self-attention mechanism to consider both semantic similarities and node significance.\n\n**1.2 Spatial Encoding:**\n- Unlike traditional sequential data, graphs do not have a canonical positioning; thus, Graphormer uses a novel spatial encoding that quantifies the spatial relationships among nodes.\n- For each node pair, the distance of the shortest path between them is computed. This distance is then translated into a learnable scalar, serving as a bias term in the self-attention module, facilitating more accurate spatial dependency modeling.\n\n**1.3 Edge Encoding:**\n- A unique edge encoding method is proposed to consider edge features in attention computations, which are typically neglected in classic GNNs.\n- For each ordered node pair, the average of dot products of edge features along the shortest path connecting them is computed and incorporated into the attention mechanism. This allows the model to leverage edge information effectively during the attention calculation.\n\n### 2. Graphormer Architecture\n- The Graphormer architecture consists of several layers structured similarly to standard Transformers but includes modifications to accommodate graph data via the aforementioned encodings.\n- Layer normalization is applied before multi-head self-attention (MHA) and feed-forward networks (FFN) for more effective optimization.\n\n### 3. Special Node for Graph-Level Representation\n- A special [VNode] is added to the graph architecture. This node connects to all other nodes, facilitating the aggregation of information across the graph, akin to a readout function.\n\n### 4. Representational Power of Graphormer\n- The mathematical formulation illustrates that Graphormer can represent popular GNN functions, thus expanding its expressiveness.\n- With the spatial and centrality encodings, it can reproduce traditional message-passing mechanisms found in GNNs while capturing global context through self-attention.\n\nThrough these design components, Graphormer integrates the benefits of Transformers into graph representation tasks, achieving remarkable performance by harnessing rich, structural information inherent in graphs."
+}

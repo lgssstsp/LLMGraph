@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 4,
+    "Method": "RevGNN-Wide",
+    "External Data": "No",
+    "Test Accuracy": "0.8824 ± 0.0015",
+    "Validation Accuracy": "0.9450 ± 0.0008",
+    "Contact": "mailto:guohao.li@kaust.edu.sa",
+    "Paper Link": "https://arxiv.org/abs/2106.07476",
+    "Code Link": "https://github.com/lightaime/deep_gcns_torch/tree/master/examples/ogb_eff/ogbn_proteins",
+    "Parameters": "68,471,608",
+    "Hardware": "NVIDIA RTX 6000 (48G)",
+    "Date": "Jun 16, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/RevGNN-Wide.pdf",
+    "Paper Summary": "The paper \"Training Graph Neural Networks with 1000 Layers\" discusses several innovative methods aimed at addressing the memory complexity challenges when training deep Graph Neural Networks (GNNs). The authors introduce novel model designs that enable training extremely deep GNNs efficiently. Here are the key methods discussed:\n\n1. **Reversible Connections**: The paper proposes the use of reversible connections to reduce the memory footprint of GNNs. This approach allows for the training of GNNs with significantly more layers without the proportional increase in memory consumption associated with traditional architectures. The memory complexity is shifted from O(LND) to O(ND), where L is the number of layers and N is the number of nodes. By implementing this method, activations from each layer do not need to be saved for backpropagation, thereby conserving memory.\n\n2. **Grouped Reversible GNNs**: This method divides the input feature matrix into groups and processes these groups simultaneously. The use of grouped convolutions helps to minimize the number of parameters while maintaining a high performance. As the group size increases, there is a substantial reduction in the number of parameters—by approximately 30%—while also enabling larger GNN architectures.\n\n3. **Weight Tying**: The authors investigate weight-tied GNN architectures which share weights across layers. This technique not only decreases the number of model parameters but also maintains a constant parameter count regardless of the number of layers. The design involves using the same parameters across multiple layers, significantly reducing memory consumption.\n\n4. **Deep Equilibrium GNNs (DEQ-GNNs)**: This design posits that deep networks can converge to a fixed point for any given input. The forward pass is implemented using implicit differentiation, allowing for a memory architecture that operates with only O(ND) complexity. This model can leverage the computational efficiencies of fixed-point iterations alongside depth, enabling deeper architectures while controlling memory usage.\n\n5. **Parameter Efficiency**: The combination of reversible connections, grouped modules, and weight tying significantly enhances parameter efficiency. The authors emphasize that these techniques collectively promote the scale of GNNs, allowing networks to be both deeper and wider without a linear increase in memory requirements.\n\nThe methods presented enable the development of very deep GNN architectures, pushing the boundaries of what is feasible with traditional GNN models, particularly in terms of depth and memory efficiency. Each method contributes to breaking the existing constraints and allows for the training of GNNs that can reach thousands of layers while achieving comparable performance metrics to shallower models."
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-papers100M",
+    "Dataset Link": "../nodeprop/#ogbn-papers100M",
+    "Rank": 8,
+    "Method": "FSGNN",
+    "External Data": "No",
+    "Test Accuracy": "0.6807 ± 0.0006",
+    "Validation Accuracy": "0.7175 ± 0.0007",
+    "Contact": "mailto:skmaurya@net.c.titech.ac.jp",
+    "Paper Link": "https://arxiv.org/abs/2105.07634",
+    "Code Link": "https://github.com/sunilkmaurya/FSGNN",
+    "Parameters": "16,453,301",
+    "Hardware": "NVIDIA V100 (16GB)",
+    "Date": "Sep 16, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-papers100M/FSGNN.pdf",
+    "Paper Summary": "The paper \"Improving Graph Neural Networks with Simple Architecture Design\" presents a novel approach to Graph Neural Networks (GNNs) focused on the node classification task. The authors aim to decouple feature aggregation from representation learning, introduce soft-selection of features, and implement hop-normalization for improved model performance.\n\n### Key Model Design Aspects:\n\n1. **Decoupling Feature Generation and Representation Learning**:\n   - The authors propose separating the steps of feature generation and representation learning to gain flexibility in handling various datasets, particularly those displaying homophily and heterophily. This separation allows for the selection of a relevant subset of features for classification tasks, avoiding the inclusion of less informative features that may introduce noise.\n\n2. **Soft-Selection of Features**:\n   - The model employs a softmax function to learn the importance of different feature matrices by assigning scalar weights to each. These weights can be adjusted during training to give more prominence to useful features while dampening the impact of irrelevant ones. The formulation allows the model to adaptively scale features relative to their significance for the prediction task, hence termed \"soft-selection\".\n\n3. **Hop-Normalization**:\n   - Hop-normalization is suggested as a method to normalize the output activations of the GNN layers after aggregation. This ensures that the feature representations from different hops maintain a balanced impact on the final embeddings. The authors propose a row-wise L2-normalization of hidden layer activations, described mathematically to enhance model stability and performance.\n\n4. **Feature Selection Graph Neural Network (FSGNN)**:\n   - Combining the above strategies, the authors introduce FSGNN as a simple, shallow GNN model designed to outperform existing state-of-the-art models. FSGNN implements the decoupled architecture where the first layer aggregates features with soft-selection and normalizes with hop-normalization before passing the final combined features through a second linear layer for classification.\n\n5. **Unique Mapping for Features**:\n   - Each feature set can be transformed using dedicated linear layers, allowing the model to learn transformations specific to each input feature matrix instead of using a common transformation across all features. This flexibility is beneficial for distinguishing between the various input features effectively.\n\nThrough these design strategies, FSGNN aims to leverage the intrinsic properties of graph data while simplifying model architecture, enabling better adaptability to diverse types of data distributions present in real-world graph datasets."
+}

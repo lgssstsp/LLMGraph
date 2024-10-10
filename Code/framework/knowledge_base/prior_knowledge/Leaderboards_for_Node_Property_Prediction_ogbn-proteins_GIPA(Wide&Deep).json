@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 2,
+    "Method": "GIPA(Wide&Deep)",
+    "External Data": "No",
+    "Test Accuracy": "0.8917 ± 0.0007",
+    "Validation Accuracy": "0.9472 ± 0.0020",
+    "Contact": "mailto:lihouyi2008@126.com",
+    "Paper Link": "https://arxiv.org/pdf/2301.08209.pdf",
+    "Code Link": "https://github.com/houyili/gipa_wide_deep",
+    "Parameters": "17,438,716",
+    "Hardware": "Tesla V100-SXM2(32G)",
+    "Date": "Jan 19, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/GIPA(Wide&Deep).pdf",
+    "Paper Summary": "The paper proposes the General Information Propagation Algorithm (GIPA) as a novel approach for graph neural networks (GNNs), focusing on refined information propagation through a two-fold correlation mechanism: **bit-wise correlation** and **feature-wise correlation**. The core design aspects of GIPA are detailed below:\n\n1. **Model Architecture**:\n   - GIPA integrates node features, edge features, and their correlations for effective representation learning.\n   - It employs a wide & deep architecture, where dense embeddings and sparse embeddings are used to capture deep information and retain original features, respectively. \n\n2. **Attention Mechanisms**:\n   - **Bit-wise Correlation Module**:\n     - Computes attention weights at the element level, using a Multi-Layer Perceptron (MLP) to analyze the dense representations of nodes and associated edges.\n     - The attention weights correspond dimensionally to the dense representation of each node, allowing for targeted information filtering.\n\n   - **Feature-wise Correlation Module**:\n     - Focuses on one-hot representations of node attributes to perform feature selection and compute attention weights based on these representations.\n     - This approach ensures that relevant attributes are emphasized during information propagation.\n\n3. **Propagation Process**:\n   - Information is propagated from neighboring nodes using:\n     - **Node Features and Edge Features**: Incorporates both in the embedding update, allowing GIPA to capture relational context.\n     - Distinct operations for dense and sparse embeddings ensure that the model leverages a comprehensive understanding of node interactions.\n\n4. **Integration of Attention and Propagation**:\n   - The model utilizes bit-wise and feature-wise attention for the propagation of messages from neighbors.\n   - Attention outputs from both mechanisms are combined through element-wise operations to generate refined messages for the target node.\n\n5. **Aggregation Process**:\n   - GIPA aggregates messages from neighboring nodes and updates the target node's embedding using a residual connection.\n   - The aggregation method sums up all neighbor messages followed by applying a linear projection to update the node embeddings.\n\n6. **Overall Workflow**:\n   - The workflow consists of three main processes: **Attention**, **Propagation**, and **Aggregation**.\n   - Within each process, the model emphasizes specific features through the designed correlation mechanisms to manage noise and effectively propagate essential information.\n\nIn summary, GIPA employs a dual-correlation approach to refine information propagation through structured attention mechanisms that consider both node and edge features, leading to more accurate and meaningful embeddings in graph learning tasks."
+}

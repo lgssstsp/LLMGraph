@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molhiv",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 19,
+    "Method": "GCN+GraphNorm",
+    "External Data": "No",
+    "Test Accuracy": "0.7883 ± 0.0100",
+    "Validation Accuracy": "0.7904 ± 0.0115",
+    "Contact": "mailto:shengjie.luo@outlook.com",
+    "Paper Link": "https://arxiv.org/abs/2009.03294",
+    "Code Link": "https://github.com/lsj2408/GraphNorm",
+    "Parameters": "526,201",
+    "Hardware": "NVIDIA Tesla P100 (16GB GPU)",
+    "Date": "Sep 16, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molhiv/GCN+GraphNorm.pdf",
+    "Paper Summary": "### Summary of Methodology in \"GraphNorm: A Principled Approach to Accelerating Graph Neural Network Training\"\n\n**Objective:**\nThe paper investigates normalization methods for Graph Neural Networks (GNNs) and proposes GraphNorm, aiming to enhance training speed and generalization abilities.\n\n#### 1. **Normalization Adaptation:**\n\n- **Existing Techniques:**\n  The authors explore three well-known normalization strategies from other domains:\n  - **Batch Normalization (BatchNorm)**\n  - **Layer Normalization (LayerNorm)**\n  - **Instance Normalization (InstanceNorm)**\n\n- **Adapting to GNNs:**\n  These methods are adapted to GNNs by normalizing node representations at different levels. Notably, InstanceNorm is adapted such that it normalizes all nodes within a single graph, which helps speed up convergence but has limitations for regular graphs.\n\n#### 2. **Insights on Instance Normalization:**\n\n- **Preconditioning Effect:**\n  The authors explain that the shift operation inherent in InstanceNorm serves as a preconditioner for the aggregation in GNNs, aiding optimization by smoothing the curvature of the optimization landscape. However, it potentially degrades expressiveness by discarding mean statistics which may contain graph structural information.\n\n- **Limitations Noted:**\n  The existing InstanceNorm approach could hurt performance on highly regular graphs due to loss of mean information.\n\n#### 3. **Proposed GraphNorm:**\n\n- **Learnable Shift:**\n  GraphNorm introduces a learnable parameter for shifts, allowing the model to retain beneficial information during normalization. This is formalized as:\n  \n  \\[\n  GraphNorm(h) = \\gamma \\cdot \\hat{h} + \\beta\n  \\]\n\n  where \\(\\hat{h} = \\hat{h} - \\alpha \\cdot \\mu\\) and \\(\\mu\\) is the mean of the node features. The learnable parameter \\(\\alpha\\) determines how much mean information to keep, addressing expressiveness degradation concerns.\n\n- **Normalization Across Nodes:**\n  GraphNorm operates across nodes within a single graph, leveraging both shift and scale transformations with learnable parameters to improve expressiveness while accelerating convergence.\n\n#### 4. **Implementation Architecture:**\n\n- **Network Structure:**\n  The discussed models typically employ a multi-layer architecture, with GraphNorm applied to each hidden layer. GraphNorm supports both Graph Convolutional Networks (GCN) and Graph Isomorphism Networks (GIN).\n\n- **Aggregation Function:**\n  The sampling and aggregation functions play a crucial role in the network's design—node representations are iteratively updated by aggregating features from neighboring nodes.\n\nBy harnessing these normalization strategies, the proposed GraphNorm facilitates a more effective optimization process, thereby improving training efficiency for GNNs. The introduction of learnable components seeks to overcome the limitations of traditional normalization methods in the context of graph-structured data."
+}

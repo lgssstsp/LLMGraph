@@ -1,0 +1,7 @@
+{
+    "name": "SuperGATConv",
+    "description": "The self-supervised graph attentional operator from the \"How to Find Your Friendly Neighborhood: Graph Attention Design with Self-Supervision\" paper.",
+    "link": "../generated/torch_geometric.nn.conv.SuperGATConv.html#torch_geometric.nn.conv.SuperGATConv",
+    "paper_link": "https://openreview.net/forum?id=Wi5KUNlqWty",
+    "paper_name": "\"How to Find Your Friendly Neighborhood: Graph Attention Design with Self-Supervision\""
+}

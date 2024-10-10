@@ -1,0 +1,7 @@
+{
+    "name": "LargestConnectedComponents",
+    "description": "Selects the subgraph that corresponds to the largest connected components in the graph (functional name: largest_connected_components).",
+    "link": "../generated/torch_geometric.transforms.LargestConnectedComponents.html#torch_geometric.transforms.LargestConnectedComponents",
+    "paper_link": null,
+    "paper_name": null
+}

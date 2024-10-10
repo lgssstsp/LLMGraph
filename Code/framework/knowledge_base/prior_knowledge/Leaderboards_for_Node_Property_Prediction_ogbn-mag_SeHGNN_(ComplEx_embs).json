@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 4,
+    "Method": "SeHGNN (ComplEx embs)",
+    "External Data": "No",
+    "Test Accuracy": "0.5719 ± 0.0012",
+    "Validation Accuracy": "0.5917 ± 0.0009",
+    "Contact": "mailto:yangxc96@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2207.02547",
+    "Code Link": "https://github.com/ICT-GIMLab/SeHGNN/tree/master/large",
+    "Parameters": "8,371,231",
+    "Hardware": "NVIDIA Tesla T4 (15 GB)",
+    "Date": "Jul 7, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/SeHGNN_(ComplEx_embs).pdf",
+    "Paper Summary": "The paper introduces the Simple and Efficient Heterogeneous Graph Neural Network (SeHGNN), which aims to reduce the complexity commonly associated with existing heterogeneous graph neural networks (HGNNs). Below are the key model design aspects discussed in the article:\n\n### Key Findings\n1. **Attention Mechanism Analysis**: The study identifies that semantic attention is essential for capturing the importance of different semantics, while neighbor attention is unnecessary in heterogeneous graphs. This understanding drives the architectural choices made in SeHGNN.\n\n2. **Network Structure**: The paper emphasizes that models with a single-layer structure and long metapaths outperform those with multi-layer structures and shorter metapaths. Therefore, SeHGNN adopts a single-layer design to leverage longer metapaths, allowing for greater receptive fields and higher performance.\n\n### SeHGNN Design\n1. **Neighbor Aggregation**:\n   - **Pre-computation**: SeHGNN employs a light-weight mean aggregator for neighbor aggregation, which captures structural information effectively while simplifying the process by avoiding neighbor attention.\n   - **Single Processing Step**: By computing neighbor aggregation only once during the preprocessing phase, SeHGNN mitigates the computational burden seen in traditional models where aggregation recurs every training epoch.\n\n2. **Receptive Field Extension**: \n   - The model integrates long metapaths, extending the receptive field for better contextual understanding of the node relationships across heterogeneous graphs.\n\n3. **Semantic Fusion**:\n   - SeHGNN incorporates a transformer-based semantic fusion module designed to learn mutual relationships between pairs of semantic vectors derived from different metapaths. This aspect of the model enhances its ability to capture complex semantic interactions more effectively than traditional weighted sum methods used by existing models.\n\n4. **Feature Projection**: \n   - The network utilizes a multi-layer perceptron (MLP) in its feature projection step rather than relying solely on linear projections. This helps to normalize the semantic vectors across different metapaths and prepares the data for more effective semantic fusion.\n\n### Conclusion\nIn summary, the SeHGNN model addresses the limitations of existing HGNNs by simplifying the neighbor aggregation process, implementing a single-layer structure with long metapaths, and enhancing feature representation through a transformer-based semantic fusion approach. These design choices lead to a more efficient model capable of handling the complexities of heterogeneous graphs."
+}

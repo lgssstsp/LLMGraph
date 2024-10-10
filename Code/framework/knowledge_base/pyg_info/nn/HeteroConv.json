@@ -1,0 +1,7 @@
+{
+    "name": "HeteroConv",
+    "description": "A generic wrapper for computing graph convolution on heterogeneous graphs.",
+    "link": "../generated/torch_geometric.nn.conv.HeteroConv.html#torch_geometric.nn.conv.HeteroConv",
+    "paper_link": null,
+    "paper_name": null
+}

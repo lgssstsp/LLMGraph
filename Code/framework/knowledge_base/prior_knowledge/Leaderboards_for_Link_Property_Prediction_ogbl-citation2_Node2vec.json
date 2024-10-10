@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 20,
+    "Method": "Node2vec",
+    "External Data": "No",
+    "Test Accuracy": "0.6141 ± 0.0011",
+    "Validation Accuracy": "0.6124 ± 0.0011",
+    "Contact": "mailto:matthias.fey@tu-dortmund.de",
+    "Paper Link": "https://arxiv.org/abs/1607.00653",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/linkproppred/citation2",
+    "Parameters": "374,911,105",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "Jan 4, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/Node2vec.pdf",
+    "Paper Summary": "The paper presents **node2vec**, an algorithm for scalable feature learning in networks, focusing on two main components: a flexible sampling strategy for node neighborhoods and an optimization framework that learns feature representations.\n\n### Core Methodology:\n\n1. **Objective Function**:\n   - The goal of the algorithm is to define a neighborhood-preserving objective that learns embeddings of nodes in a continuous vector space. This is formalized as:\n   \\[\n   \\max \\log P(N_S(u) | f(u))\n   \\]\n   where \\( N_S(u) \\) is the sampled neighborhood of node \\( u \\) and \\( f(u) \\) is its feature representation.\n\n2. **Neighborhood Sampling**:\n   - A flexible neighborhood sampling strategy is implemented using biased random walks with two parameters: \\( p \\) and \\( q \\).\n     - **Parameter \\( p \\)** controls the likelihood of revisiting a previously visited node during the walk. Higher values discourage revisits, promoting exploration.\n     - **Parameter \\( q \\)** differentiates between inward (nodes closer to the source) and outward (further nodes) exploration, allowing the algorithm to adapt its sampling towards either local (BFS-like) or global (DFS-like) perspectives.\n   - By adjusting \\( p \\) and \\( q \\), the algorithm can smoothly interpolate between the extremes of BFS and DFS, enabling the capture of both homophily and structural equivalence in networks.\n\n3. **Random Walks**:\n   - The random walks are designed as 2nd order Markov chains, where the next node depends on the current node and the last node visited, leveraging the defined transition probabilities:\n   \\[\n   P(c = x | c_{i-1} = v) = \\frac{\\pi_{vx}}{Z}\n   \\]\n   where \\( \\pi_{vx} \\) is the unnormalized transition probability and \\( Z \\) is the normalization constant.\n\n4. **Feature Representation Learning**:\n   - The learned representations are obtained through stochastic gradient descent (SGD) optimization. The objective function is optimized using negative sampling, which transforms the complex softmax problem into a more computationally manageable one, allowing the method to scale effectively even with large networks.\n\n5. **Pairwise Node Representation**:\n   - Although focused initially on individual nodes, node2vec can be extended to learn representations for pairs of nodes (edges) by applying binary operators (e.g., average, Hadamard product) on the features of two connected nodes, generating a composite representation for link prediction tasks.\n\n### Summary:\nOverall, the node2vec algorithm is characterized by its flexible neighborhood exploration framework that effectively balances between local and global structures in a network, while employing a robust optimization method that enables scalable learning of meaningful node embeddings. This design allows it to adapt to various connectivity patterns and maintain efficient computation, making it suitable for diverse network analysis tasks."
+}

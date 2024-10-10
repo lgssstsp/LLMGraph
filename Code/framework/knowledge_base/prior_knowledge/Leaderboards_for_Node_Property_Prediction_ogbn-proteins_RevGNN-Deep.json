@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 6,
+    "Method": "RevGNN-Deep",
+    "External Data": "No",
+    "Test Accuracy": "0.8774 ± 0.0013",
+    "Validation Accuracy": "0.9326 ± 0.0006",
+    "Contact": "mailto:guohao.li@kaust.edu.sa",
+    "Paper Link": "https://arxiv.org/pdf/2106.07476.pdf",
+    "Code Link": "https://github.com/lightaime/deep_gcns_torch/tree/master/examples/ogb_eff/ogbn_proteins",
+    "Parameters": "20,031,384",
+    "Hardware": "NVIDIA RTX 6000 (48G)",
+    "Date": "Jun 16, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/RevGNN-Deep.pdf",
+    "Paper Summary": "The paper \"Training Graph Neural Networks with 1000 Layers\" focuses on innovating the design of Graph Neural Networks (GNNs) to mitigate the challenges associated with training very deep models while addressing memory consumption concerns. The primary methods discussed include:\n\n1. **Reversible Connections**: This technique allows for the construction of deep GNNs by enabling the backpropagation of gradients without storing intermediate activations. This drastically reduces memory usage as the activations are reconstructed on-the-fly during backpropagation. Consequently, the memory complexity becomes independent of the number of layers, permitting the training of models with over a thousand layers.\n\n2. **Grouped Reversible Connections**: The authors extend reversible connections by introducing grouping, where the input feature matrix is divided into several groups. Each group undergoes processing, which reduces the overall parameter count without compromising model performance. This approach leads to further memory savings while still leveraging the benefits of reversible architectures.\n\n3. **Weight Tying**: In this method, weights are shared across different layers of the GNN. As a result, the number of parameters remains constant regardless of the model depth. This contributes to a lower memory footprint while maintaining competitive performance. The effective depth of the model, in terms of layer complexity, is increased without directly increasing memory resource usage.\n\n4. **Deep Equilibrium Models (DEQ-GNN)**: These models incorporate implicit differentiation where the network is assumed to reach a fixed-point equilibrium during processing. As DEQ-GNNs are designed to approximate an infinitely deep model, they exhibit similar memory efficiency to weight-tied models while allowing for a more extensive network representation.\n\n5. **Modification of Training Blocks**: The architecture of the GNN blocks includes normalization and dropout layers integrated into reversible blocks. This enables high model expressiveness and helps prevent overfitting while using efficient memory strategies.\n\nOverall, these methods are pivotal in designing scalable GNNs that enable the training of extremely deep architectures without significantly increasing memory costs, thus opening avenues for more advanced applications in graph-based learning."
+}

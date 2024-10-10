@@ -1,0 +1,41 @@
+{
+  "Task Description": "Graph Classification with Super-pixel (MNIST/CIFAR10) datasets. Graph classification task using the MNIST and CIFAR10 image datasets transformed into graphs via super-pixels. This task tests the ability of GNNs to perform image classification, challenging them to maintain high accuracy especially for MNIST, and perform adequately on CIFAR10, thus serving as a sanity check for GNN capabilities in handling image data.",
+  "Dataset Description": "The datasets convert MNIST and CIFAR10 images into graphs where each node represents a super-pixel generated via the SLIC technique. MNIST graphs typically consist of up to 75 nodes, while CIFAR10 graphs can have up to 150 nodes. Edges are formed based on the 8-nearest neighbor principle in the Euclidean space of the super-pixel coordinates, with node features derived from the pixel intensities.",
+  "Performance Summary": {
+    "General": "These datasets provide a standard test to measure the effectiveness of GNNs in image classification, using the compact and expressive graph format derived from traditional image data.",
+    "Detailed Performance": {
+      "MNIST": {
+        "Best Model": "GatedGCN",
+        "Test Accuracy": "97.340±0.143",
+        "Train Accuracy": "100.000±0.000",
+        "Epochs": "96.25"
+      },
+      "CIFAR10": {
+        "Best Model": "GatedGCN",
+        "Test Accuracy": "67.312±0.311",
+        "Train Accuracy": "94.533±1.100",
+        "Epochs": "97.00"
+      },
+      "Comparative Insights": {
+        "MLP": {
+          "MNIST Test Accuracy": "95.340±0.138",
+          "CIFAR10 Test Accuracy": "56.340±0.181"
+        },
+        "vanilla GCN": {
+          "MNIST Test Accuracy": "90.705±0.218",
+          "CIFAR10 Test Accuracy": "55.710±0.381"
+        },
+        "GraphSage": {
+          "MNIST Test Accuracy": "97.312±0.097",
+          "CIFAR10 Test Accuracy": "65.767±0.308"
+        },
+        "GIN": {
+          "MNIST Test Accuracy": "96.485±0.252",
+          "CIFAR10 Test Accuracy": "55.251±1.527"
+        }
+      }
+    },
+    "Analysis": "The GatedGCN model performs best across both datasets, particularly excelling in the MNIST with near perfect training accuracy and high test accuracy. This indicates the model's effectiveness in leveraging the graph structure and node features to classify images. The difference in performance across MNIST and CIFAR10 also highlights the challenges posed by more complex image data in CIFAR10 compared to the simpler MNIST."
+  }
+}
+

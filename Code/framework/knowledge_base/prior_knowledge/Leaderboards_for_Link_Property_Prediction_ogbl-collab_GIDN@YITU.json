@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-collab",
+    "Dataset Link": "../linkprop/#ogbl-collab",
+    "Rank": 2,
+    "Method": "GIDN@YITU",
+    "External Data": "No",
+    "Test Accuracy": "0.7096 ± 0.0055",
+    "Validation Accuracy": "0.9620 ± 0.0040",
+    "Contact": "mailto:zwang62@hust.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2210.01301",
+    "Code Link": "https://github.com/WizcoxYu/ogbl",
+    "Parameters": "60,449,025",
+    "Hardware": "DepGraph@SCTS/CGCL",
+    "Date": "Oct 10, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-collab/GIDN@YITU.pdf",
+    "Paper Summary": "The paper introduces the Graph Inception Diffusion Networks (GIDN) model, which is designed to improve link prediction in knowledge graphs by enhancing graph diffusion processes across different feature spaces while maintaining computational efficiency. \n\nKey design aspects of the GIDN model include:\n\n1. **Graph Diffusion Representation**: GIDN employs a method for encapsulating graph diffusion that captures the neighborhood information of nodes based on distance (H-hop nodes). This representation is structured using a matrix where each row corresponds to information at varying hops from a target node. This process transfers the diffusion modeling from complex graphs to a more manageable representation.\n\n2. **Efficient Feature Extraction**: The model incorporates an inception module that helps extract rich features while avoiding the excessive computational costs typically associated with deeper neural network architectures. This design choice enables GIDN to maintain accuracy while being adaptable to larger datasets.\n\n3. **Generalized Weighting Coefficients**: GIDN utilizes learnable generalized weighting coefficients to regulate the influence of different hops during the diffusion process, enhancing the model's flexibility and efficiency in resource management.\n\n4. **Data Augmentation Techniques**: The model also emphasizes data augmentation focused on nodes and edges, utilizing random walk methods to effectively build connections that enhance training data diversity. This approach aims to improve robustness in graph structure learning.\n\nOverall, the GIDN model's design is centered around optimizing the balance between computational efficiency and predictive performance by innovatively utilizing graph diffusion and inception-based feature extraction."
+}

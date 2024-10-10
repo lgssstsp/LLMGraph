@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 3,
+    "Method": "PSHGCN",
+    "External Data": "No",
+    "Test Accuracy": "0.5752 ± 0.0011",
+    "Validation Accuracy": "0.5943 ± 0.0015",
+    "Contact": "mailto:mingguo@ruc.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2305.19872",
+    "Code Link": "https://github.com/ivam-he/PSHGCN/tree/main/ogbn-mag",
+    "Parameters": "4,852,434",
+    "Hardware": "Tesla A100 (80 GB GPU)",
+    "Date": "Jun 8, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/PSHGCN.pdf",
+    "Paper Summary": "The paper presents a novel method for heterogeneous graph convolution using positive noncommutative polynomials. This is crucial for improving the expressiveness and performance of Heterogeneous Graph Neural Networks (HGNNs). The authors propose **Positive Spectral Heterogeneous Graph Convolutional Network (PSHGCN)**, which introduces the concept of spectral heterogeneous graph convolution and ensures the learned graph filters maintain positive semidefiniteness.\n\n### Model Design Aspects:\n\n1. **Spectral Heterogeneous Graph Convolution:**\n   - The proposed method expands upon traditional spectral graph convolution, adapting it for heterogeneous graphs.\n   - PSHGCN uses positive noncommutative polynomials, which helps in creating valid filters that satisfy positive semidefinite constraints.\n\n2. **Generalized Graph Optimization Framework:**\n   - The authors introduce a framework based on graph optimization that underlies the rationale for PSHGCN.\n   - This framework allows the model to effectively learn heterogeneous graph filters, guaranteeing their theoretical validity.\n\n3. **Noncommutative Polynomials:**\n   - PSHGCN employs noncommutative polynomials to define the spectral heterogeneous graph convolution. \n   - These polynomials are allowed to take different shift operators representing the various types of edges in the heterogeneous graph, thus enabling the learning of a wider variety of filters with greater expressiveness.\n\n4. **Parameters and Coefficients:**\n   - The network learns polynomial coefficients during training, avoiding the reliance on predefined structures like meta-paths, and enhances flexibility in capturing node relationships.\n\n5. **Architecture Overview:**\n   - The architecture comprises multiple components:\n     - **Feature Projection Layer:** Aligns features of different types of nodes into a common dimensional space.\n     - **Graph Convolution Operation:** Applies the learned spectral filters to aggregate information from neighboring nodes based on the learned noncommutative polynomial functions.\n\n6. **Scalability:** \n   - A decoupled version of PSHGCN is designed for scalability on large graphs. The feature transformation and propagation processes are separated, allowing the model to handle larger datasets effectively.\n\n7. **Flexibility and Expressiveness:**\n   - The design allows PSHGCN to adaptively learn valid heterogeneous graph filters, demonstrating an improved ability to express complex relationships in data compared to existing methods that rely on manually specified meta-paths.\n\nBy employing these techniques, PSHGCN manages to build a robust framework that effectively addresses the challenges associated with heterogeneous graphs while maintaining computational efficiency and expressiveness in its learned representations."
+}

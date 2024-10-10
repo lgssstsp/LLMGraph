@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-biokg",
+    "Dataset Link": "../linkprop/#ogbl-biokg",
+    "Rank": 11,
+    "Method": "RotatE",
+    "External Data": "No",
+    "Test Accuracy": "0.7989 ± 0.0004",
+    "Validation Accuracy": "0.7997 ± 0.0002",
+    "Contact": "mailto:hyren@cs.stanford.edu",
+    "Paper Link": "https://arxiv.org/abs/1902.10197",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/linkproppred/biokg",
+    "Parameters": "187,597,000",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "Jun 10, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-biokg/RotatE.pdf",
+    "Paper Summary": "The paper discusses the development of the RotatE model for knowledge graph embedding. Here are the key design aspects of the model:\n\n### Model Design of RotatE\n\n1. **Complex Vector Space**:\n   - RotatE maps entities and relations into a complex vector space.\n   - Each relation is represented as a rotation from the source entity (head) to the target entity (tail).\n\n2. **Relational Representation**:\n   - Given a triplet \\( (h, r, t) \\), the RotatE model expects that \\( t = h \\circ r \\), where \\( |r| = 1 \\).\n   - The operation defined here is an element-wise rotation in the complex plane using the Hadamard product.\n   - Each dimension of the relation embedding \\( r \\) is constrained to have a modulus of 1, which means it can be expressed as \\( r_i = e^{i\\theta_{r,i}} \\) for rotation by angle \\( \\theta \\).\n\n3. **Modeling Relation Patterns**:\n   -  The model effectively captures three essential relation patterns:\n     - **Symmetry/Antisymmetry**: A relation \\( r \\) is symmetric if for all entities \\( x, y \\), \\( r(x,y) \\) implies \\( r(y,x) \\).\n     - **Inversion**: Relations are inverses if \\( r_1(x,y) \\) implies \\( r_2(y,x) \\).\n     - **Composition**: A relation \\( r_3 \\) can be composed of relations \\( r_1 \\) and \\( r_2 \\) if \\( r_1(x,y) \\) and \\( r_2(y,z) \\) imply \\( r_3(x,z) \\).\n\n4. **Distance Function**:\n   - The distance between two entity embeddings given a relation embedding is defined as:\n     \\[\n     d(h,t) = \\lVert h \\circ r - t \\rVert\n     \\]\n   - This distance is essential for training the model and is based on the idea that the distance should be minimized when the triplet is valid.\n\n5. **Self-Adversarial Negative Sampling**:\n   - To optimize the training process, RotatE introduces a novel self-adversarial negative sampling technique.\n   - Instead of uniform sampling, negative triples are drawn based on the current embeddings, leading to more efficient training.\n   - The sampling relies on a probability distribution derived from the model’s current performance.\n\nIn summary, RotatE uses complex vector representations and rotational relationships to efficiently model various relational patterns in knowledge graphs. Its design emphasizes element-wise operations and includes an advanced negative sampling technique to enhance the training process."
+}

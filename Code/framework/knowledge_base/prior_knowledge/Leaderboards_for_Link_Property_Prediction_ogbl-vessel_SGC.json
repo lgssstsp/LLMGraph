@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-vessel",
+    "Dataset Link": "../linkprop/#ogbl-vessel",
+    "Rank": 12,
+    "Method": "SGC",
+    "External Data": "No",
+    "Test Accuracy": "0.5009 ± 0.0011",
+    "Validation Accuracy": "0.5010 ± 0.0011",
+    "Contact": "mailto:kingsleyhsu1@gmail.com",
+    "Paper Link": "https://arxiv.org/pdf/1902.07153.pdf",
+    "Code Link": "https://github.com/KingsleyHsu/SMPLP",
+    "Parameters": "897",
+    "Hardware": "Tesla V100(32GB)",
+    "Date": "Aug 24, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-vessel/SGC.pdf",
+    "Paper Summary": "The paper \"Simplifying Graph Convolutional Networks\" focuses on the methodical simplification of Graph Convolutional Networks (GCNs) to reduce their complexity while maintaining performance. The key contributions of the paper can be summarized as follows:\n\n### Model Design Aspects:\n\n1. **Introduction of Simple Graph Convolution (SGC)**:\n   - The authors propose a simplified version of GCNs called Simple Graph Convolution (SGC), which aims to eliminate unnecessary complexities by removing nonlinear activation functions between the layers and collapsing the computations into a single linear transformation.\n\n2. **Linear Model Derivation**:\n   - The authors derive a linear model from the GCN framework, which approximates the overall operations of multiple layers into a single linear transformation. This model is intuitive and interpretable and avoids deep architectures that may introduce additional complexity without significant gains.\n\n3. **Feature Propagation**:\n   - The feature propagation in SGC is treated as applying a fixed low-pass filter across the graph. This mechanism allows nodes to share similar representations and predictions, helping to smooth feature values across connected nodes in the graph.\n\n4. **Weight Matrix Collapsing**:\n   - In SGC, weight matrices across multiple layers are collapsed, leading to a single learned weight matrix for the linear transformation instead of multiple learned weights for each layer. This reduces the number of parameters and the computational burden.\n\n5. **Normalization Trick**:\n   - The model leverages the \"renormalization trick\" by adding self-loops to the graph. This helps stabilize the propagation matrix, enhancing the effectiveness of the linear transformations while creating a domain that optimally uses the fixed filter framework of SGC.\n\n6. **Classification**:\n   - The final classification is achieved using a softmax function applied to the output of the linear transformation, producing class probabilities. This step differentiates feature extraction from classification, further simplifying the overall design.\n\nOverall, the paper emphasizes streamlining GCNs into SGC to enhance efficiency while retaining competitive performance, laying the groundwork for effective graph representation and learning models without excessive complexity."
+}

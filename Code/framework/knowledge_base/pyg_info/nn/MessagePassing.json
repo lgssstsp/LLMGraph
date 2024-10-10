@@ -1,0 +1,7 @@
+{
+    "name": "MessagePassing",
+    "description": "Base class for creating message passing layers.",
+    "link": "../generated/torch_geometric.nn.conv.MessagePassing.html#torch_geometric.nn.conv.MessagePassing",
+    "paper_link": null,
+    "paper_name": null
+}

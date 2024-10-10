@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molhiv",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 7,
+    "Method": "Graphormer + FPs",
+    "External Data": "No",
+    "Test Accuracy": "0.8225 ± 0.0001",
+    "Validation Accuracy": "0.8396 ± 0.0001",
+    "Contact": "mailto:1520655940@qq.com",
+    "Paper Link": "https://arxiv.org/pdf/2106.05234.pdf",
+    "Code Link": "https://github.com/ytchx1999/Graphormer/tree/main/examples/ogb",
+    "Parameters": "47,085,378",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Aug 5, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molhiv/Graphormer_+_FPs.pdf",
+    "Paper Summary": "The paper introduces **Graphormer**, a novel model based on the standard Transformer architecture designed for graph representation learning. It addresses the challenges of utilizing Transformers effectively with graph-structured data. Key design features of Graphormer include:\n\n1. **Structural Encoding**: Graphormer incorporates three main structural encodings to better represent graph information within the Transformer framework:\n   - **Centrality Encoding**: This measures the importance of nodes in a graph. It introduces learnable embedding vectors associated with each node based on its degree centrality, which is added to the node features. This encoding helps the model account for the influence of more central nodes in the attention distributions.\n   - **Spatial Encoding**: This captures the structural relationship between nodes. It assigns a learnable embedding based on the shortest path distance between node pairs in the graph. This embedding serves as a bias term in the self-attention mechanism to facilitate better modeling of spatial dependencies in the graph.\n   - **Edge Encoding**: Graphormer introduces a new way to incorporate edge features directly into the attention mechanism. For each node pair, it computes an average of feature interactions along the shortest path connecting them and integrates that information into the attention computation as an additional bias term.\n\n2. **Graphormer Layer Design**: The layer is a modified version of the classic Transformer encoder. It includes:\n   - **Layer Normalization**: Applied before the multi-head self-attention and feed-forward blocks for more effective optimization.\n   - **Multi-Head Self-Attention (MHA)**: Each layer allows nodes to attend to each other globally, unlike traditional GNNs which are restricted to local neighborhoods.\n   - **Feed-Forward Neural Networks (FFN)**: Incorporating the outputs from the attention mechanism to produce updated node representations.\n\n3. **Incorporation of a Special Node**: Graphormer uses a special node (referred to as **[VNode]**) connected to all other nodes. This node captures global graph information and aids the model in representing graph embeddings effectively.\n\n4. **Expressiveness**: It is mathematically demonstrated that Graphormer's design can simulate the operations of popular GNN architectures through careful selection of weights and functions, highlighting its capacity to expand beyond traditional message-passing mechanisms.\n\nThese components make Graphormer a powerful architecture for graph-related tasks, leveraging Transformers' capabilities while effectively addressing the unique characteristics of graph data."
+}

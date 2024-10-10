@@ -1,0 +1,37 @@
+{
+  "Task Description": "Graph Classification and Isomorphism Testing with CSL dataset. Graph classification and isomorphism testing within the CSL dataset designed to test the expressivity of GNNs by classifying graphs based on their skip-link patterns, which determine isomorphism classes. The graphs are symmetric and contain cycles with skip links connecting nodes across the graph.",
+  "Dataset Description": "Each graph in the CSL dataset is generated using a 4-regular graph structure with edges connected to form a cycle, including additional skip-links. The dataset encompasses multiple isomorphism classes based on these skip-link patterns. The dataset is class-balanced with each class represented by 15 graphs.",
+  "Performance Summary": {
+    "General": "The dataset challenges GNNs to identify and classify graphs based on subtle structural differences imparted by the skip-link configurations. This is intended to test and enhance the expressivity and discriminative power of GNNs.",
+    "Detailed Performance": {
+      "Best Model": "GatedGCN-E with 16 layers",
+      "Test Accuracy": "100.000±0.000",
+      "Node Positional Encoding Influence": "The inclusion of Laplacian positional encodings significantly improves the performance of GNN models, indicating their effectiveness in capturing node spatial relationships and enhancing model sensitivity to graph topology.",
+      "Model Comparisons": {
+        "GCN": {
+          "Test Accuracy": "100.000±0.000",
+          "Without Node Positional Encoding": "10.000±0.000"
+        },
+        "GAT": {
+          "Test Accuracy": "99.933±0.467",
+          "Without Node Positional Encoding": "10.000±0.000"
+        },
+        "GraphSage": {
+          "Test Accuracy": "99.933±0.867",
+          "Without Node Positional Encoding": "10.000±0.000"
+        },
+        "GIN": {
+          "Test Accuracy": "99.333±1.333",
+          "Without Node Positional Encoding": "10.000±0.000"
+        },
+        "3WL-GNN": {
+          "With Node Positional Encoding": "97.800±10.916",
+          "Without Node Positional Encoding": "97.800±10.916"
+        }
+      }
+    },
+    "Analysis": "The consistent high performance across various GNN models with Laplacian positional encodings underscores their importance in graph classification tasks, particularly in distinguishing graphs with complex isomorphic structures. Models without positional encodings performed at baseline levels, highlighting the critical role of encoding spatial information for this task."
+  }
+}
+
+

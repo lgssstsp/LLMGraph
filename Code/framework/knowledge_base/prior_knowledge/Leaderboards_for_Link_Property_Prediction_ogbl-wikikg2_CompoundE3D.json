@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 7,
+    "Method": "CompoundE3D",
+    "External Data": "No",
+    "Test Accuracy": "0.7006 ± 0.0011",
+    "Validation Accuracy": "0.7175 ± 0.0015",
+    "Contact": "mailto:ge.xiou.2012@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2304.00378",
+    "Code Link": "https://github.com/hughxiouge/CompoundE3D",
+    "Parameters": "750,662,700",
+    "Hardware": "Tesla A100 (40GB GPU)",
+    "Date": "Dec 29, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/CompoundE3D.pdf",
+    "Paper Summary": "The paper introduces a new method for Knowledge Graph Embedding (KGE) called CompoundE3D, which leverages a series of composite 3D affine geometric transformations to effectively model relationships among entities in knowledge graphs. The primary design aspects include:\n\n1. **3D Affine Transformations**: CompoundE3D employs various geometric transformations in 3D space, such as translation, rotation, scaling, reflection, and shear. This enhances the flexibility of relation representations compared to traditional 2D methods.\n\n2. **Model Variants**: By combining different transformations, the model allows for numerous design variants tailored to the specific characteristics of the knowledge graph, enabling adaptability to diverse relation types.\n\n3. **Scoring Functions**: Three distinct scoring functions are defined for triple evaluation:\n   - **CompoundE3D-Head**: This function manipulates the head entity using a transformation operator and measures the distance to the tail entity.\n   - **CompoundE3D-Tail**: Similar to the head function, but it applies transformations on the tail entity.\n   - **CompoundE3D-Complete**: This function utilizes transformation operators on both head and tail entities simultaneously.\n\n4. **Beam Search Algorithm**: The proposed beam search procedure incrementally identifies optimal variants by exploring operator pairs at each stage of the model-building process. It evaluates multiple operator combinations and retains the best-performing variants for further stages, thus optimizing the model complexity and learning effectiveness.\n\n5. **Decision Ensemble Strategies**: The model explores two main strategies to enhance performance through ensemble learning. The first involves weighted-distance sums, where various scoring functions from multiple variants are aggregated. The second utilizes rank fusion techniques to improve the final predictions by considering the ranks of multiple candidate triples.\n\n6. **Transformation Analysis**: Each transformation's unique properties are analyzed to understand their advantages in modeling different relation types. This not only aids in the design of the model but also provides insight into how specific transformations can best capture various relational structures.\n\nIn essence, the design of CompoundE3D refines the traditional approach to KGE by utilizing advanced geometric transformations in 3D space, enabling a flexible and adaptive modeling framework capable of better capturing the complexities of relations in knowledge graphs."
+}

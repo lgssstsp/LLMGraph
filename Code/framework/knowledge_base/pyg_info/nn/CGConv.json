@@ -1,0 +1,7 @@
+{
+    "name": "CGConv",
+    "description": "The crystal graph convolutional operator from the \"Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties\" paper.",
+    "link": "../generated/torch_geometric.nn.conv.CGConv.html#torch_geometric.nn.conv.CGConv",
+    "paper_link": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.145301",
+    "paper_name": "\"Crystal Graph Convolutional Neural Networks for an Accurate and Interpretable Prediction of Material Properties\""
+}

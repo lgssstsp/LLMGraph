@@ -1,0 +1,7 @@
+{
+    "name": "TargetIndegree",
+    "description": "Saves the globally normalized degree of target nodes (functional name: target_indegree).",
+    "link": "../generated/torch_geometric.transforms.TargetIndegree.html#torch_geometric.transforms.TargetIndegree",
+    "paper_link": null,
+    "paper_name": null
+}

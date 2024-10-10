@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 19,
+    "Method": "GCN+JKNet",
+    "External Data": "No",
+    "Test Accuracy": "0.6056 ± 0.0869",
+    "Validation Accuracy": "0.6776 ± 0.0095",
+    "Contact": "mailto:hh498@cornell.edu",
+    "Paper Link": "https://arxiv.org/abs/1609.02907",
+    "Code Link": "https://github.com/Chillee/ogb_ddi",
+    "Parameters": "1,421,571",
+    "Hardware": "Geforce GTX 1080 Ti (11GB GPU)",
+    "Date": "Sep 15, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/GCN+JKNet.pdf",
+    "Paper Summary": "The paper presents a novel approach to semi-supervised learning on graph-structured data using Graph Convolutional Networks (GCNs). The core model design revolves around an efficient layer-wise propagation rule that allows for effective information flow through the graph.\n\n### Model Design Aspects:\n\n1. **Layer-wise Propagation Rule**:\n   - The GCN employs a multi-layer architecture with a propagation rule defined as:\n     \\[\n     H^{(l+1)} = \\sigma(D^{\\tilde{-1/2}} A^{\\tilde{}} D^{\\tilde{-1/2}} H^{(l)} W^{(l)})\n     \\]\n     where \\(A\\) is the adjacency matrix, \\(D\\) is the degree matrix, \\(W\\) are layer-specific weight matrices, and \\(\\sigma\\) is a non-linear activation function (e.g., ReLU).\n\n2. **Normalization and Self-connections**:\n   - The propagation rule includes normalization terms to handle varying node degrees effectively, which is crucial in networks with wide degree distributions. Self-connections are added to facilitate learning by enhancing local information for nodes via \\(A^{\\tilde} = A + I\\).\n\n3. **Efficiency**:\n   - The complexity of the propagation process is linear concerning the number of graph edges, \\(O(|E|FC)\\), making it scalable for large graphs.\n\n4. **First-order Approximation of Spectral Graph Convolutions**:\n   - The GCN model is motivated by a first-order approximation of spectral graph convolutions. This involves using Chebyshev polynomial expansions for localized filtering, ensuring that the operations remain computationally feasible while preserving useful structural information from the graph.\n\n5. **Modular Design**:\n   - The GCN architecture is flexible, allowing for stacking multiple convolutional layers while ensuring the model can adapt to varying graph structures without needing distinct parameterizations for different nodes.\n\n6. **Training Mechanism**:\n   - The loss function integrates supervised loss over labeled nodes and allows gradient propagation through the graph structure, enabling the model to leverage both labeled and not-labeled nodes efficiently.\n\n7. **Graph-Conditioned Function**:\n   - The model learns the representations of nodes based directly on their features and graph structure (dependency on adjacency matrix \\(A\\)), avoiding explicit graph-based regularization. This enhances the model's capability to fine-tune representations based on the actual graph topology.\n\n8. **Renormalization Trick**:\n   - To mitigate numerical instabilities commonly encountered with deeper networks, the authors introduce a renormalization trick, adjusting the transition to ensure stable learning across layers.\n\nThese design aspects collectively enable the GCN model to effectively perform semi-supervised classification by utilizing the graph structure and local features common in many real-world applications."
+}

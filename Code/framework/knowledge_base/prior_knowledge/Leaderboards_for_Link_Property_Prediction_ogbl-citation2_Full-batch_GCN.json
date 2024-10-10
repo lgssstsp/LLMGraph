@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 14,
+    "Method": "Full-batch GCN",
+    "External Data": "No",
+    "Test Accuracy": "0.8474 ± 0.0021",
+    "Validation Accuracy": "0.8479 ± 0.0023",
+    "Contact": "mailto:matthias.fey@tu-dortmund.de",
+    "Paper Link": "https://arxiv.org/abs/1609.02907",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/linkproppred/citation2",
+    "Parameters": "296,449",
+    "Hardware": "Quadro RTX 8000 (48GB GPU)",
+    "Date": "Jan 4, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/Full-batch_GCN.pdf",
+    "Paper Summary": "The paper presents a novel model for semi-supervised learning on graph-structured data known as the Graph Convolutional Network (GCN). This model incorporates several key design aspects aimed at efficiently encoding both graph structure and node features.\n\n1. **Layer-wise Propagation Rule**: The GCN employs a simple and well-behaved layer-wise propagation rule defined as:\n   \\[\n   H^{(l+1)} = \\sigma(D^{\\tilde{-1/2}} A^{\\tilde{}} D^{\\tilde{-1/2}} H^{(l)} W^{(l)})\n   \\]\n   Here, \\( \\sigma \\) is an activation function, \\( A^{\\tilde{}} \\) is the adjacency matrix with added self-connections, and \\( D^{\\tilde{}} \\) is the degree matrix. This formulation allows the model to effectively propagate information across nodes based on their neighboring connections.\n\n2. **Localized Spectral Graph Convolutions**: The design is motivated by a first-order approximation of spectral graph convolutions, which avoids computationally expensive eigenvalue decompositions. By using Chebyshev polynomial expansions, the GCN achieves K-localized convolutions efficiently, focusing on the Kth-order neighborhoods of nodes.\n\n3. **Parameter Sharing**: The model utilizes a single trainable weight matrix per layer, allowing it to handle graphs with varying node degrees without requiring node-degree-specific parameters. This leads to reduced complexity and the potential to build deeper models.\n\n4. **Renormalization Trick**: To stabilize training and avoid numerical instabilities associated with deep networks, the GCN uses a renormalization trick that modifies the adjacency computation:\n   \\[\n   D^{\\tilde{-1/2}} A^{\\tilde{}} D^{\\tilde{-1/2}}\n   \\]\n   This ensures that the eigenvalues remain bounded, promoting robustness during training.\n\n5. **End-to-End Architecture**: The GCN can be trained end-to-end using gradient descent, leveraging the graph structure and node features directly without relying on explicit graph-based regularization in the loss function.\n\n6. **Scalability**: The design allows the GCN to perform efficiently on large graphs, with computational complexity scaling linearly with the number of edges. The model’s architecture supports training on large datasets that might not fit in memory by utilizing sparse matrix representations and the ability to handle mini-batch training in future extensions.\n\nThrough these design choices, the GCN demonstrates an effective framework for semi-supervised node classification, capable of incorporating structural information from the graph while maintaining computational efficiency and scalability."
+}

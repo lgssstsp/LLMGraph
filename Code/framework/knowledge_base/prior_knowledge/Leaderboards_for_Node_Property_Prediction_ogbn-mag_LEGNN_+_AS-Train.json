@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 12,
+    "Method": "LEGNN + AS-Train",
+    "External Data": "No",
+    "Test Accuracy": "0.5378 ± 0.0016",
+    "Validation Accuracy": "0.5528 ± 0.0013",
+    "Contact": "mailto:yule@buaa.edu.cn",
+    "Paper Link": "http://arxiv.org/abs/2205.15653",
+    "Code Link": "https://github.com/yule-BUAA/LEGNN",
+    "Parameters": "5,147,997",
+    "Hardware": "NVIDIA Tesla T4 (15 GB)",
+    "Date": "May 31, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/LEGNN_+_AS-Train.pdf",
+    "Paper Summary": "The paper introduces a novel framework, labeled Label-Enhanced Graph Neural Network (LEGNN), aimed at improving semi-supervised node classification by effectively integrating rich label information into Graph Neural Networks (GNNs). The key methodologies discussed regarding model design are summarized as follows:\n\n1. **Heterogeneous Graph Construction**: The framework starts by constructing a heterogeneous graph that incorporates both nodes and labels. Each class label is represented by a virtual center that connects to its corresponding nodes, which facilitates the representation learning by leveraging inter-class relations. The adjacency matrix for this heterogeneous graph combines information from the original node connections and newly defined relations between labels and nodes.\n\n2. **Heterogeneous Message Passing**: The framework employs a heterogeneous message passing mechanism that learns node and label representations simultaneously. It aligns the feature dimension of node and label feature matrices to enable effective message aggregation between nodes and their corresponding labels during the GNN layers. The message passing processes use separate parameters for nodes and labels, enabling the model to efficiently communicate between these different types.\n\n3. **Training Node Selection**: To alleviate the label leakage issue, a training node selection technique is implemented whereby only a subset of labeled nodes is used at each training epoch. This subset is determined by a pre-defined selection rate, ensuring that the model does not trivialize predictions for labeled nodes, thus promoting its generalization capabilities.\n\n4. **Adaptive Self-Training Strategy (AS-Train)**: To boost the robustness of the training process, the AS-Train strategy iteratively enlarges the training set by adding reliable pseudo-labeled nodes. This strategy distinguishes the importance of each pseudo-labeled node's contribution during model training based on training and evaluating confidence levels. The approach ensures that only highly confident predictions are considered for labeling while mitigating the risks associated with incorrect pseudo-labeling.\n\nTogether, these design elements form the backbone of the LEGNN framework, which facilitates a richer learning environment for GNNs in the semi-supervised classification context by emphasizing the invaluable role of label information throughout the model training process."
+}

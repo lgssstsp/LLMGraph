@@ -1,0 +1,59 @@
+{
+  "Task Description": "Graph Regression with ZINC dataset. Graph regression task aimed at predicting the constrained solubility of molecules. The task involves calculating the molecular property known as logP (octanol-water partition coefficients), penalized by synthetic accessibility score (SA) and the number of long cycles (cycle), which are critical for assessing the biological activity of molecules.",
+  "Dataset Description": "The ZINC dataset includes 12K molecular graphs, which are a subset extracted from a larger collection of 250K molecules. Each molecular graph's nodes represent heavy atoms and edges represent the chemical bonds between them.",
+  "Performance Summary": {
+    "General": "The performance overview indicates varied success across different GNN models on the ZINC dataset, with the GatedGCN-E-PE model showing optimal performance when incorporating edge features and positional encodings.",
+    "Detailed Performance": {
+      "vanilla GCN": {
+        "MAE": "0.459±0.006 (Test), 0.343±0.011 (Train)",
+        "Epochs": "196.25",
+        "Time": "2.89s per epoch"
+      },
+      "GraphSage": {
+        "MAE": "0.368±0.011 (Test), 0.128±0.009 (Train)",
+        "Layers": "16",
+        "Epochs": "197.00",
+        "Time": "12.78s per epoch"
+      },
+      "GAT": {
+        "MAE": "0.475±0.007 (Test), 0.317±0.014 (Train)",
+        "Layers": "4",
+        "Epochs": "177.50",
+        "Time": "2.93s per epoch"
+      },
+      "GatedGCN": {
+        "MAE": "0.435±0.011 (Test), 0.287±0.014 (Train)",
+        "Layers": "4",
+        "Epochs": "173.50",
+        "Time": "5.76s per epoch"
+      },
+      "GatedGCN-E-PE": {
+        "MAE": "0.214±0.013 (Test), 0.067±0.019 (Train)",
+        "Layers": "16",
+        "Epochs": "185.00",
+        "Time": "20.50s per epoch"
+      },
+      "GIN": {
+        "MAE": "0.387±0.015 (Test), 0.319±0.015 (Train)",
+        "Layers": "16",
+        "Epochs": "153.25",
+        "Time": "2.29s per epoch"
+      },
+      "RingGNN": {
+        "MAE": "0.512±0.023 (Test), 0.383±0.020 (Train)",
+        "Layers": "2",
+        "Epochs": "90.25",
+        "Time": "327.65s per epoch"
+      },
+      "3WL-GNN": {
+        "MAE": "0.470±0.028 (Test), 0.272±0.037 (Train)",
+        "Layers": "3",
+        "Epochs": "111.25",
+        "Time": "286.23s per epoch"
+      }
+    },
+    "Analysis": "The data shows that models like GatedGCN-E-PE significantly improve performance by using edge features and positional encodings, particularly in deeper network configurations (16 layers). Additionally, training time and convergence rate are crucial factors to consider when selecting models."
+  }
+}
+
+

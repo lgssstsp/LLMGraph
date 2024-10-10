@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 17,
+    "Method": "HGConv",
+    "External Data": "No",
+    "Test Accuracy": "0.5045 ± 0.0017",
+    "Validation Accuracy": "0.5300 ± 0.0018",
+    "Contact": "mailto:yule@buaa.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2012.14722",
+    "Code Link": "https://github.com/yule-BUAA/HGConv.git",
+    "Parameters": "2,850,405",
+    "Hardware": "NVIDIA TITAN Xp (12GB)",
+    "Date": "Feb 14, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/HGConv.pdf",
+    "Paper Summary": "The paper introduces a novel model named **HGConv** (Heterogeneous Graph Convolution), designed to enhance representation learning on heterogeneous graphs, which are characterized by multiple types of nodes and edges. The key contributions of the model lie in its unique architectural design, focusing on two main aspects: **micro-level** and **macro-level** convolutions, combined with a **weighted residual connection**.\n\n### Key Aspects of Model Design:\n\n1. **Hybrid Micro/Macro Level Convolution**:\n   - **Micro-Level Convolution**: This component concentrates on learning the importance of nodes within the same relation. It employs transformation matrices and attention vectors specific to node types, allowing for the projection of nodes into their latent spaces and capturing the distinct attributes of different node types.\n   - **Macro-Level Convolution**: This mechanism distinguishes the subtle differences across various relations. It utilizes transformation matrices specific to relation types and a shared attention vector to learn the relational importance across heterogeneity, ensuring that the relationships within the graph are adequately captured.\n\n2. **Weighted Residual Connection**:\n   - The architecture incorporates a weighted residual connection to merge both the inherent attributes of the focal node and the information obtained from neighboring nodes. This weighted approach helps to balance the contributions from these two sources, ensuring more effective representation learning.\n\n3. **Layer Structure**:\n   - The model consists of multiple heterogeneous graph convolutional layers. Each layer integrates the hybrid convolution operations and the weighted residual connections. This multi-layer structure further allows the model to consider the impact of both directly connected and multi-hop reachable neighbors.\n\n### Summary of Operation:\n- **Focal Node Representation**: For each focal node, the micro-level convolution assesses neighboring nodes associated with the same relation, while the macro-level convolution aggregates information across different relations.\n- **Attention Mechanism**: Both levels utilize attention mechanisms that adaptively emphasize the most significant relationships for the focal node, leading to richer representations.\n- **End-to-End Trainability**: The entire architecture is optimized end-to-end, allowing it to systematically adjust to the complexities of heterogeneous datasets.\n\nIn essence, the design of HGConv embraces the multifaceted nature of heterogeneous graphs, effectively leveraging the beneficial characteristics of both micro and macro-level information through its convolutional operations and residual connections. This methodological advancement aims to enhance representation learning while providing the interpretability crucial for applications in graph analysis."
+}

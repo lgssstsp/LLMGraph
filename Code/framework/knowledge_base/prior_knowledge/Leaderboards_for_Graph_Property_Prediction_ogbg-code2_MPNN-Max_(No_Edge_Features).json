@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-code2",
+    "Dataset Link": "../graphprop/#ogbg-code2",
+    "Rank": 11,
+    "Method": "MPNN-Max (No Edge Features)",
+    "External Data": "No",
+    "Test Accuracy": "0.1552 ± 0.0022",
+    "Validation Accuracy": "0.1441 ± 0.0016",
+    "Contact": "mailto:sat62@cam.ac.uk",
+    "Paper Link": "https://arxiv.org/abs/2104.01481",
+    "Code Link": "https://github.com/shyam196/egc",
+    "Parameters": "10,971,506",
+    "Hardware": "GTX1080Ti/RTX2080Ti",
+    "Date": "Apr 6, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-code2/MPNN-Max_(No_Edge_Features).pdf",
+    "Paper Summary": "The paper introduces the Efficient Graph Convolution (EGC) architecture, a new isotropic Graph Neural Network (GNN) model that challenges conventional wisdom in the GNN community by demonstrating that it can outperform existing anisotropic models. Here are the key design aspects of EGC:\n\n### Model Design Aspects\n\n1. **Model Type**:\n   - EGC is an isotropic model, which means that the messages exchanged among nodes depend only on the source node, contrasting with anisotropic models where messages depend on both source and target nodes. \n\n2. **Layer Variants**:\n   - Two primary versions are proposed: EGC-S (single aggregator) and EGC-M (multi-aggregator). \n   - EGC-S uses a single aggregation mechanism, while EGC-M combines multiple aggregation functions for better representational power.\n\n3. **Message Propagation**:\n   - The model utilizes a weighted aggregation of local neighborhood features using basis weights, formulated as:\n     \\[\n     y(i) = \\sum_{b=1}^{B} w(i) \\sum_{j \\in N(i)} \\alpha(i, j) \\Theta x(j)\n     \\]\n   - Here, \\(w(i)\\) represents the per-node weighting coefficients, \\(\\alpha(i, j)\\) is a normalization factor, and \\(\\Theta\\) is the weight matrix.\n\n4. **Weighting Mechanism**:\n   - The combination of weights is computed through a linear function \\(w(i) = \\Phi x(i) + b\\), where \\(\\Phi\\) are parameters specific to the model.\n   - Using simple normalization techniques like symmetric normalization allows for efficient implementation via sparse matrix multiplication (SpMM), which contributes to reduced memory consumption (O(V)) compared to O(E) required by anisotropic models.\n\n5. **Adaptive Filters**:\n   - EGC constructs its architecture using a series of learned filters that adapt to the local graph structure. This allows each node to effectively utilize its dedicated weight matrix, facilitating localized spectral filtering.\n   - The architecture can be conceptualized in terms of adaptive filtering, where the weights evolve based on the attributes of neighboring nodes.\n\n6. **Aggregator Fusion**:\n   - The multi-aggregator version allows the model to apply varied aggregation techniques (mean, max, standard deviation, etc.) in a computationally efficient manner, leveraging the benefits of reusing already computed messages.\n\n7. **Compatibility and Efficiency**:\n   - EGC's design caters to efficiency, making it suitable for deployment on hardware accelerators since it avoids heavy memory overhead and complex data flow patterns.\n   - Additionally, being an isotropic model, EGC can serve as a drop-in replacement for existing GNN layers without sacrificing accuracy.\n\nThe above construction provides a comprehensive view of how the EGC model is architecturally designed to perform efficiently on graph-based tasks while maintaining competitive or superior performance compared to traditional anisotropic models."
+}

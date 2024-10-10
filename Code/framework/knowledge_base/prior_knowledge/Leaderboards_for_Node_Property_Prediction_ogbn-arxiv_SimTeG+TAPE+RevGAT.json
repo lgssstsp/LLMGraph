@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-arxiv",
+    "Dataset Link": "../nodeprop/#ogbn-arxiv",
+    "Rank": 1,
+    "Method": "SimTeG+TAPE+RevGAT",
+    "External Data": "Yes",
+    "Test Accuracy": "0.7803 ± 0.0007",
+    "Validation Accuracy": "0.7846 ± 0.0004",
+    "Contact": "mailto:k.duan@u.nus.edu",
+    "Paper Link": "https://arxiv.org/pdf/2308.02565.pdf",
+    "Code Link": "https://github.com/vermouthdky/SimTeG",
+    "Parameters": "1,386,219,488",
+    "Hardware": "4 * A100-XMS4 (40GB GPU)",
+    "Date": "Aug 7, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-arxiv/SimTeG+TAPE+RevGAT.pdf",
+    "Paper Summary": "The paper presents SimTeG, a novel approach for Textual Graph (TG) representation learning, designed to enhance the integration of language models (LMs) with graph neural networks (GNNs). The core methodology comprises two main stages:\n\n1. **Parameter-Efficient Fine-Tuning (PEFT) of the Language Model**: \n   - The process begins with the supervised fine-tuning of a pre-trained LM on the textual data of a TG, where task-specific labels guide the training. This is done to effectively adapt the LM to the downstream task, such as node classification. \n   - The fine-tuned LM generates node embeddings from its last hidden states, providing features that represent the text associated with each node in the graph.\n\n2. **Graph Neural Network Training**:\n   - The next stage involves training a GNN, such as GraphSAGE, using the embeddings produced from the fine-tuned LM, along with the graph's structural information. The GNN further processes these embeddings for the same downstream task, essentially integrating the textual features captured from the LM with the graph's structure.\n\nThe paper emphasizes the simplicity of this approach, as it does not introduce complex models or architectures but rather effectively utilizes existing frameworks. The design flexibility allows the usage of any combination of LMs and GNNs, enabling customization based on specific dataset or task needs. Additionally, the method copes with the prevalent issue of overfitting in LMs by employing PEFT, which mitigates overfitting and helps maintain a well-regularized feature space for the subsequent GNN training.\n\nOverall, SimTeG's methodology underscores the significance of leveraging LMs for generating robust textual embeddings that can be effectively utilized by GNNs to improve performance on textual graph-related tasks."
+}

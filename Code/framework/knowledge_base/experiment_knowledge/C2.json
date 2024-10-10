@@ -1,0 +1,53 @@
+{
+  "Task Description": "Graph Regression with AQSOL dataset. Graph regression task aimed at predicting the aqueous solubility of molecules. This task utilizes the AqSolDB, a standardized database of solubility values, emphasizing the importance of accurately predicting solubility for various applications in chemistry and pharmacology.",
+  "Dataset Description": "The AQSOL dataset consists of 9,982 molecular graphs derived from AqSolDB, each graph representing a molecule with nodes as atoms and edges as chemical bonds. Solubility values are standardized to LogS units, reflecting their aqueous solubility from experimental measurements collected from nine different data sources.",
+  "Performance Summary": {
+    "General": "This dataset tests the capacity of various GNN models to regress on molecular properties, particularly aqueous solubility, which is crucial for drug discovery and other chemical applications.",
+    "Detailed Performance": {
+      "vanilla GCN": {
+        "Test MAE": "1.483±0.014",
+        "Train MAE": "0.791±0.034",
+        "Epochs": "110.25"
+      },
+      "GraphSage": {
+        "Test MAE": "1.402±0.013",
+        "Train MAE": "0.651±0.021",
+        "Epochs": "121.50"
+      },
+      "GAT": {
+        "Test MAE": "1.441±0.023",
+        "Train MAE": "0.678±0.021",
+        "Epochs": "111.75"
+      },
+      "GatedGCN": {
+        "Test MAE": "1.355±0.016",
+        "Train MAE": "0.465±0.038",
+        "Epochs": "99.25"
+      },
+      "GatedGCN-E-PE": {
+        "Test MAE": "0.996±0.008",
+        "Train MAE": "0.367±0.012",
+        "Epochs": "110.25"
+      },
+      "GIN": {
+        "Test MAE": "1.894±0.024",
+        "Train MAE": "0.660±0.058",
+        "Epochs": "115.75"
+      },
+      "RingGNN": {
+        "Test MAE": "3.769±1.012",
+        "Train MAE": "0.470±0.022",
+        "Epochs": "63.75"
+      },
+      "3WL-GNN": {
+        "Test MAE": "1.052±0.034",
+        "Train MAE": "0.287±0.023",
+        "Epochs": "67.00"
+      }
+    },
+    "Analysis": "The models exhibit a wide range of mean absolute errors (MAE) in predicting solubility, with GatedGCN-E-PE showing the best performance, indicating the effectiveness of incorporating edge features and positional encodings. The large variation in performance across models highlights the complexity of the task and the potential impact of model architecture and feature utilization on prediction accuracy."
+  }
+}
+
+
+

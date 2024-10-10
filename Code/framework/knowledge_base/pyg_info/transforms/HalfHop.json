@@ -1,0 +1,7 @@
+{
+    "name": "HalfHop",
+    "description": "The graph upsampling augmentation from the \"Half-Hop: A Graph Upsampling Approach for Slowing Down Message Passing\" paper.",
+    "link": "../generated/torch_geometric.transforms.HalfHop.html#torch_geometric.transforms.HalfHop",
+    "paper_link": "https://openreview.net/forum?id=lXczFIwQkv",
+    "paper_name": "\"Half-Hop: A Graph Upsampling Approach for Slowing Down Message Passing\""
+}

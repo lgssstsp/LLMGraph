@@ -1,0 +1,7 @@
+{
+    "name": "RadiusGraph",
+    "description": "Creates edges based on node positions data.pos to all points within a given distance (functional name: radius_graph).",
+    "link": "../generated/torch_geometric.transforms.RadiusGraph.html#torch_geometric.transforms.RadiusGraph",
+    "paper_link": null,
+    "paper_name": null
+}

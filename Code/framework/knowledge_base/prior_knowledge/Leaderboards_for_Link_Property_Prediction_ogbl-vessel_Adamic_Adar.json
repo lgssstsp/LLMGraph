@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-vessel",
+    "Dataset Link": "../linkprop/#ogbl-vessel",
+    "Rank": 17,
+    "Method": "Adamic Adar",
+    "External Data": "No",
+    "Test Accuracy": "0.4849 ± 0.0000",
+    "Validation Accuracy": "0.4849 ± 0.0000",
+    "Contact": "mailto:julian.mcginnis@tum.de",
+    "Paper Link": "https://www.cs.toronto.edu/~bor/303s19/docs/adamic-adar.pdf",
+    "Code Link": "https://github.com/facebookresearch/SEAL_OGB",
+    "Parameters": "0",
+    "Hardware": "Quadro RTX 8000 Ti (48GB GPU)",
+    "Date": "Aug 20, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-vessel/Adamic_Adar.pdf",
+    "Paper Summary": "The paper by Adamic and Adar discusses methods for searching social networks by utilizing local information about immediate contacts. Specifically, it focuses on two main aspects: constructing social networks from real-world data and simulating search strategies based on theoretical models.\n\n### Network Construction:\n1. **Email Network**: The authors derived a social network from email logs at HP Labs, defining social contacts based on reciprocal email exchanges. They applied a threshold of six emails exchanged both ways over about three months to minimize one-sided communication noise, leading to a network with 430 individuals and a specific degree distribution.\n\n2. **Students' Social Networking Data**: The ClubNexus platform provided information from students who listed friends on a community website. This network was less comprehensive than the email network, reflecting only a subset of actual friendships, and was characterized by a variety of friendship counts.\n\n### Model Design Aspects:\n1. **Search Strategies**: In the context of the email network, the authors explored three different search strategies:\n   - **High-Degree Seeking**: Messages were sent to contacts with the highest degree (most connections). However, this was found less effective in their filtered network.\n   - **Organizational Hierarchy**: The strategy involved passing messages to contacts closest in the organizational hierarchy to the target. The authors designed a hierarchy assigning distances within the organizational structure.\n   - **Geographical Proximity**: Contacts were selected based on their physical distance from the target, which was mapped to the physical layout of the HP Labs.\n\n2. **Simulation of Search**: The authors employed simulations to implement these strategies. The simulation allowed each participant to know only their immediate contacts and designed an iterative message-passing system, mirroring real-world small world experiments.\n\n3. **Assessment of Linking Probability**: They analyzed how the probability of individuals linking varies with their organizational distance and physical proximity. For the email network, they aimed to verify if the linking probabilities conformed to theoretical models about social structures conducive to effective searches (like those proposed by Watts et al. and Kleinberg).\n\n4. **Attribute-Based Strategies**: In the ClubNexus network, a more complex multi-attribute search strategy was created, considering various personal attributes against the target's details (e.g., shared dorm, year in school). The lack of a defined hierarchical structure in this data made it challenging to apply the same successful approaches from the email network.\n\nThe paper combines theoretical frameworks with practical network designs to propose methods for navigating social networks effectively, highlighting the role of structure in optimizing search strategies."
+}

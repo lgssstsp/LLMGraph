@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 13,
+    "Method": "PLNLP",
+    "External Data": "No",
+    "Test Accuracy": "0.8492 ± 0.0029",
+    "Validation Accuracy": "0.8490 ± 0.0031",
+    "Contact": "mailto:wztzenk@gmail.com",
+    "Paper Link": "https://arxiv.org/pdf/2112.02936.pdf",
+    "Code Link": "https://github.com/zhitao-wang/PLNLP",
+    "Parameters": "146,514,551",
+    "Hardware": "Tesla-V100 (32G GPU)",
+    "Date": "Dec 7, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/PLNLP.pdf",
+    "Paper Summary": "The paper presents a novel framework called Pairwise Learning for Neural Link Prediction (PLNLP), which redefines the link prediction problem as a pairwise learning-to-rank task. The model consists of four main components: \n\n1. **Neighborhood Encoder**: This component is responsible for extracting expressive neighborhood information for the input node-pairs. It can utilize various graph neural network (GNN) architectures, such as Graph Convolutional Networks (GCN), GraphSAGE, or specific link prediction architectures like SEAL and NANs. The encoder obtains hidden representations of input samples, considering both node-level and edge-level representations. \n\n2. **Link Predictor**: The framework includes multiple scoring functions for evaluating the link prediction. Common scoring functions include:\n   - **Dot Predictor**: Computes the linking score using a dot product between the hidden representations of the nodes.\n   - **Bilinear Dot Predictor**: Suitable for directed graphs, this method uses a bilinear product involving a learnable weight matrix to derive the linking score.\n   - **MLP Predictor**: A multi-layer perceptron that can take various forms of inputs (e.g., concatenation or Hadamard product of hidden representations) to generate the linking score.\n\n3. **Negative Sampler**: This component aims to generate negative samples essential for training. It proposes several sampling strategies tailored for specific problem types:\n   - **Global Sampling**: Samples uniformly from the entire set of node pairs.\n   - **Local Sampling**: Samples based on local structures around a positive sample node.\n   - **Adversarial Sampling**: Utilizes a generative model to create challenging negative samples for the link prediction task.\n\n4. **Objective Function**: The objective function is centered around a pairwise ranking loss tailored to maximize the Area Under the Curve (AUC). The framework employs various surrogate losses such as squared loss, hinge loss, or weighted hinge loss, allowing flexibility in optimizing model parameters with respect to the ranking objective.\n\nThis systematic design allows PLNLP to effectively harness neighborhood information and optimize for link prediction tasks using a robust pairwise learning approach, addressing challenges faced by traditional binary classification methods."
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-arxiv",
+    "Dataset Link": "../nodeprop/#ogbn-arxiv",
+    "Rank": 17,
+    "Method": "GIANT-XRT+GraphSAGE (use raw text)",
+    "External Data": "Yes",
+    "Test Accuracy": "0.7435 ± 0.0014",
+    "Validation Accuracy": "0.7595 ± 0.0011",
+    "Contact": "mailto:ichien3@illinois.edu",
+    "Paper Link": "https://arxiv.org/pdf/2111.00064.pdf",
+    "Code Link": "https://github.com/amzn/pecos/tree/mainline/examples/giant-xrt",
+    "Parameters": "546,344",
+    "Hardware": "Tesla T4 (16GB GPU)",
+    "Date": "Nov 8, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-arxiv/GIANT-XRT+GraphSAGE_(use_raw_text).pdf",
+    "Paper Summary": "The paper introduces a self-supervised learning framework named Graph Information Aided Node feature extraction (GIANT), which addresses the issue of graph-agnostic feature extraction in traditional Graph Neural Network (GNN) pipelines. The core components of GIANT focus on utilizing graph structure directly during the feature extraction process from raw data (typically text).\n\n### Key Components of GIANT:\n\n1. **Neighborhood Prediction Task**: \n   - GIANT incorporates a novel self-supervised task called neighborhood prediction. This task aims to model the relationships between a node and its neighbors using the raw text data associated with the nodes.\n   - The task is framed as an Extreme Multi-label Classification (XMC) problem, where the neighborhood of each node is encoded into binary multi-label vectors indicating the presence or absence of edges.\n\n2. **Integration with XR-Transformers**:\n   - GIANT leverages XR-Transformers, which are specifically designed to handle large-scale XMC problems efficiently. These transformers enable the model to perform hierarchical clustering of labels (neighborhoods) that improves the prediction of neighborhoods.\n   - The XR-Transformer architecture supports mini-batch processing, making it scalable for large datasets.\n\n3. **Graph-Supervised Fine-Tuning**:\n   - The BERT language model is employed as the encoder to convert raw text into numerical node features. However, unlike conventional methodologies, GIANT fine-tunes BERT using the neighborhood prediction task, thus enabling it to take graph topology into account during the feature extraction process.\n   - This methodology helps bridge the gap between raw feature extraction and the GNN's input expectations, enhancing the overall representation of the nodes.\n\n4. **PIFA Representations**:\n   - GIANT uses Positive Instance Feature Aggregation (PIFA) to construct embeddings. The PIFA embeddings are created by aggregating features from neighboring nodes, exploiting the relationships derived from both the text and the underlying graph structure.\n\n### Methodological Innovations:\n- **Resolving Graph-Agnostic Limitations**: By integrating the graph topology data into the feature extraction process through self-supervised learning, GIANT overcomes limitations observed in graph-agnostic methods that do not consider the correlations between node features and graph structures.\n- **Flexible Input Types**: While the primary focus is on extracting features from raw text, the framework is designed to extend beyond texts to include other raw data formats, such as images and audio, which can be relegated to future work.\n\nIn summary, the GIANT framework reshapes the feature extraction process within GNNs to ensure it is learning from both the data and the graph structure simultaneously, facilitating better node representations and subsequently enhancing the performance on downstream graph learning tasks."
+}

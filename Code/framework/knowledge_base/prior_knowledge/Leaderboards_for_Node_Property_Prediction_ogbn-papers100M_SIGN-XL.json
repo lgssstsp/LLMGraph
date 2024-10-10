@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-papers100M",
+    "Dataset Link": "../nodeprop/#ogbn-papers100M",
+    "Rank": 14,
+    "Method": "SIGN-XL",
+    "External Data": "No",
+    "Test Accuracy": "0.6606 ± 0.0019",
+    "Validation Accuracy": "0.6984 ± 0.0006",
+    "Contact": "mailto:ffrasca@twitter.com",
+    "Paper Link": "https://arxiv.org/abs/2004.11198",
+    "Code Link": "https://github.com/twitter-research/sign",
+    "Parameters": "7,180,460",
+    "Hardware": "NVIDIA K80 GPU (12GB GPU)",
+    "Date": "Nov 4, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-papers100M/SIGN-XL.pdf",
+    "Paper Summary": "The paper introduces SIGN (Scalable Inception Graph Neural Networks), a new architecture aimed at efficiently scaling graph neural networks without relying on traditional graph sampling methods. \n\n### Model Design Aspects:\n\n1. **Architecture Overview**:\n   - SIGN employs a set of linear diffusion operators represented as matrices, \\( A_1, \\ldots, A_r \\), which can be precomputed. The model operates on node-wise features, combining these precomputed matrices with learnable parameter matrices to form its predictions.\n\n2. **Key Equations**:\n   - The node feature transformation is given by:\n     \\[\n     Z = \\sigma([X\\Theta_0, A_1X\\Theta_1, \\ldots, A_rX\\Theta_r])\n     \\]\n     where \\( Z \\) is the output after applying a non-linearity \\( \\sigma \\), and \\( Y = \\xi(Z\\Omega) \\) produces the final predictions, with \\( \\xi \\) being another non-linearity (e.g., softmax).\n\n3. **Precomputation Efficiency**:\n   - The model leverages the precomputation of matrices \\( A_1, \\ldots, A_r \\). This structure allows the complexity of SIGN to reduce significantly, aiding in scaling to very large graphs.\n\n4. **Operator Diversity**:\n   - SIGN allows for the incorporation of various types of localized graph operators based on different adjacency matrices, such as:\n     - Normalized adjacency matrix\n     - Personal PageRank-based adjacency\n     - Triangle-based adjacency\n   - The model can adapt these operators based on the structure of the graph and task requirements, enhancing its expressiveness.\n\n5. **Inception-Like Module**:\n   - Inspired by the Inception module from CNNs, SIGN can use multiple convolutional filters of different sizes (powers of the diffusion operators) concurrently, effectively capturing diverse connectivity patterns in the graph without the need to stack multiple layers.\n\n6. **Shallow Architecture**:\n   - Unlike typical deep architectures that stack multiple graph convolutional layers, SIGN achieves competitive performance with a shallow architecture. It emphasizes parallel application of operators rather than sequential stacking to manage performance while minimizing depth-related training challenges.\n\n7. **Labels Processing**:\n   - During training and inference, the model processes only labeled nodes, optimizing efficiency and memory usage. This differentiates it from other methods that must compute on entire subgraphs.\n\n8. **Configurations**:\n   - The model's flexibility allows for numerous configurations based on the combination of powers of the different operators. This capability enables it to be tailored to specific tasks or data characteristics.\n\nOverall, SIGN represents a significant shift in graph neural network design, focusing on efficient training and inference while retaining sufficient expressiveness for large-scale applications."
+}

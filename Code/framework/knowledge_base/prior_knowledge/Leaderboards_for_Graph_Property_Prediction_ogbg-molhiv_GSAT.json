@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molhiv",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 10,
+    "Method": "GSAT",
+    "External Data": "No",
+    "Test Accuracy": "0.8067 ± 0.0950",
+    "Validation Accuracy": "0.8347 ± 0.0031",
+    "Contact": "mailto:miao61@purdue.edu",
+    "Paper Link": "https://arxiv.org/abs/2201.12987",
+    "Code Link": "https://github.com/Graph-COM/GSAT",
+    "Parameters": "249,602",
+    "Hardware": "Quadro RTX 6000",
+    "Date": "May 15, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molhiv/GSAT.pdf",
+    "Paper Summary": "The paper discusses the **Graph Stochastic Attention (GSAT)** model, proposing a novel attention mechanism designed for interpretable and generalizable graph learning. The GSAT emphasizes two main design principles:\n\n1. **Attention Mechanism with Stochasticity**: GSAT injects stochasticity into the attention weights assigned to edges within the graph. This approach differentiates the model by allowing it to selectively focus on task-relevant subgraphs while diminishing the influence of label-irrelevant features. The stochastic attention mechanisms are sampled from Bernoulli distributions, affecting the edges based on their relevance to the prediction task.\n\n2. **Information Bottleneck Principle**: The model is based on the information bottleneck (IB) principle, which focuses on maximizing mutual information between the input graph and the output label while minimizing the information passed through irrelevant components. By formulating the attention mechanism as an IB, the GSAT can effectively filter out unnecessary information and enhance interpretability.\n\n### Key Design Aspects of GSAT:\n\n- **Unified Architecture**: GSAT utilizes a single Graph Neural Network (GNN) framework for both graph extraction and prediction tasks. This simplifies the model while maintaining its functionality across different phases.\n\n- **Reduced Stochasticity Approach**: During training, GSAT can adaptively reduce stochasticity over edges that are more pertinent to the label, offering a dynamic method to emphasize relevant features.\n\n- **No Strict Assumptions on Graph Structure**: Unlike many previously designed models that depend on constraints regarding graph size or connectivity, GSAT operates without such assumptions, making it versatile in various graph settings.\n\n- **Attention Weight Interpretation**: The learned attention weights are utilized to rank the edges, leading to a ranked list of edges that correspond best to the model’s interpretation results. This facilitates the extraction of meaningful subgraphs which play a critical role in the decision-making process.\n\nOverall, the GSAT model stands out for its ability to combine interpretability with enhanced prediction performance by integrating stochasticity and the information bottleneck principle into its design."
+}

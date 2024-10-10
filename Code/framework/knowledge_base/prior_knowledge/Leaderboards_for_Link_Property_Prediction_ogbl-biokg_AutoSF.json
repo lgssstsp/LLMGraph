@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-biokg",
+    "Dataset Link": "../linkprop/#ogbl-biokg",
+    "Rank": 7,
+    "Method": "AutoSF",
+    "External Data": "No",
+    "Test Accuracy": "0.8309 ± 0.0008",
+    "Validation Accuracy": "0.8317 ± 0.0007",
+    "Contact": "mailto:zhangyongqi@4paradigm.com",
+    "Paper Link": "https://arxiv.org/pdf/1904.11682.pdf",
+    "Code Link": "https://github.com/AutoML-4Paradigm/AutoSF/tree/AutoSF-OGB",
+    "Parameters": "93,824,000",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "Apr 2, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-biokg/AutoSF.pdf",
+    "Paper Summary": "The paper introduces **AutoSF**, an automated approach for designing scoring functions (SFs) for knowledge graph embeddings (KGE). The key innovations in the model design include the following aspects:\n\n1. **Unified Representation of Scoring Functions**: The authors present a unified representation for bilinear model (BLM)-based SFs, allowing them to set up a structured search space. This representation enables the incorporation of various human-designed SFs and facilitates the search for new functions.\n\n2. **Progressive Greedy Algorithm**: A greedy search algorithm is proposed to explore the search space efficiently. It begins with simpler models and progressively adds complexity by incorporating more non-zero terms into the scoring functions.\n\n3. **Filter and Predictor Mechanisms**: \n   - **Filter**: Designed to eliminate redundant candidates in the search process, this mechanism ensures that equivalent structures derived from permutations and sign flips are not repeatedly evaluated.\n   - **Predictor**: A specifically designed learning model that assesses the performance of SF candidates based on domain-specific features. This predictor ranks the candidates to select the most promising ones for further training, thus enhancing search efficiency.\n\n4. **Domain-Specific Constraints**: The AutoSF framework employs constraints that are specifically tailored to different kinds of relationships within knowledge graphs, such as symmetric, anti-symmetric, and inverse relations. By incorporating these constraints, AutoSF can adaptively regularize the relation matrix R based on the characteristics of the dataset.\n\n5. **Symmetry-Related Features (SRFs)**: The paper introduces a method for extracting SRFs that help to quantify the extent to which candidate SFs can be symmetric or skew-symmetric. These features aid in identifying promising candidates during the search.\n\n6. **Bi-level Optimization Formulation**: AutoSF is modeled as a bi-level optimization problem, where the outer level focuses on hyper-parameter tuning and model structure learning, while the inner level involves training the embedding models.\n\nBy implementing these methods, AutoSF successfully automates the design of scoring functions that are tailored to the specific characteristics of distinct knowledge graphs, enabling improved performance in KGE."
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-arxiv",
+    "Dataset Link": "../nodeprop/#ogbn-arxiv",
+    "Rank": 11,
+    "Method": "GIANT-XRT+AGDN+BoT",
+    "External Data": "Yes",
+    "Test Accuracy": "0.7618 ± 0.0016",
+    "Validation Accuracy": "0.7724 ± 0.0006",
+    "Contact": "mailto:chuxiongsun@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2012.15024",
+    "Code Link": "https://github.com/skepsun/Adaptive-Graph-Diffusion-Networks",
+    "Parameters": "1,309,760",
+    "Hardware": "Tesla V100 (16GB GPU)",
+    "Date": "Sep 2, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-arxiv/GIANT-XRT+AGDN+BoT.pdf",
+    "Paper Summary": "The paper introduces the **Adaptive Graph Diffusion Networks (AGDNs)** as an enhancement of Graph Diffusion Networks (GDNs), aimed at improving performance and mitigating issues faced by traditional Graph Neural Networks (GNNs), such as over-smoothing and overfitting.\n\n### Key Methodological Contributions:\n\n1. **Graph Diffusion Methodology**:\n   - AGDNs replace standard graph convolution operators with a more efficient graph diffusion operator that can be computed in a multi-hop fashion.\n   - The multi-hop representations are combined through a linear summation rather than traditional deep layers with numerous transformations, reducing excessive feature transformations and enhancing performance.\n\n2. **Adaptive Weighting Coefficients**:\n   - AGDN introduces **two novel mechanisms** to capture multi-hop information adaptively:\n     - **Hop-wise Attention (HA)**:\n       - Utilizes a learnable query vector to compute attention scores for various hops. This method allows different nodes to have distinct influence based on their connectedness at various hops, landing on a weight matrix that reflects this importance. The attention scores are normalized, enabling an adaptive emphasis on nearby versus distant nodes.\n     - **Hop-wise Convolution (HC)**:\n       - This mechanism defines learnable parameters for each hop, allowing for distinct aspects of the representation per hop and feature channel. It effectively integrates multi-hop features by applying convolutional operations across different feature channels.\n\n3. **Transition Matrix Design**:\n   - AGDNs propose a **pseudo-symmetric normalized adjacency matrix** for the transition matrix which balances the influence from source and destination nodes, providing flexibility over the standard representations.\n   - This design choice enhances the model's capacity to utilize local neighborhood features while still capturing prevalent graph structures.\n\n4. **Layer Structure**:\n   - The architecture stacks multiple AGDN layers, with each layer leveraging both HA and HC mechanisms, ensuring that the model can efficiently capture a diverse range of node relationships without escalating computational costs considerably.\n   - The formulation of each AGDN layer includes iterative representation update equations to compute k-hop intermediate representations, aggregating these integrally with learnable coefficients.\n\n5. **Complexity and Efficiency**:\n   - The model is designed to maintain a moderate computational footprint while improving expressiveness. The complexity analysis illustrates that the added hop aggregations come with linear time complexity relative to k (the number of hops), making the AGDNs efficient for practical applications.\n\nIn essence, the AGDNs architecture emphasizes flexibility and adaptive learning from graph data, enriching the model's expressive capabilities while keeping resource utilization in check."
+}

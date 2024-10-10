@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 19,
+    "Method": "AutoSF",
+    "External Data": "No",
+    "Test Accuracy": "0.5458 ± 0.0052",
+    "Validation Accuracy": "0.5510 ± 0.0063",
+    "Contact": "mailto:zhangyongqi@4paradigm.com",
+    "Paper Link": "https://arxiv.org/pdf/1904.11682.pdf",
+    "Code Link": "https://github.com/AutoML-4Paradigm/AutoSF/tree/AutoSF-OGB",
+    "Parameters": "500,227,800",
+    "Hardware": "Quadro RTX 8000 (45GB GPU)",
+    "Date": "Apr 2, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/AutoSF.pdf",
+    "Paper Summary": "In the paper \"AutoSF: Searching Scoring Functions for Knowledge Graph Embedding,\" the authors propose an automated method for designing scoring functions (SFs) for knowledge graph embedding (KGE), called AutoSF. Here are the key methodologies related to model design discussed in the article:\n\n1. **Unified Representation**: The authors identify a unified representation for existing bilinear model (BLM)-based SFs, allowing them to formulate the design of SFs as an AutoML problem. This representation helps establish a search space for AutoSF that balances between including human-designed SFs and accommodating novel SFs.\n\n2. **Search Space and Constraints**: The proposed search space is comprehensive yet specific enough to include effective SFs. The authors observe that different KGs exhibit distinct relation properties (symmetric, anti-symmetric, inverse, etc.), which motivate the implementation of domain-specific constraints to guide the search effectively.\n\n3. **Greedy Algorithm for Search**: A progressive greedy algorithm is introduced to search for effective SFs within the defined space. This algorithm iteratively adds new components to the score functions while optimizing for expressiveness and adhering to the constraints.\n\n4. **Filter and Predictor Mechanisms**: To enhance the efficiency of the search process:\n   - **Filter**: This component eliminates redundant candidates and checks structural constraints (e.g., ensuring no zero rows/columns exist in the SF) to focus on potentially effective SFs.\n   - **Predictor**: Designed to evaluate the performance of candidate SFs, the predictor uses features related to domain-specific properties, such as symmetry and skew-symmetry. This helps in narrowing down the candidates to the most promising options before detailed training.\n\n5. **Handling Complex Embeddings**: The design incorporates both real and complex embeddings. The authors utilize multi-dimensional real-valued embeddings to facilitate the deep connections among entities and relations.\n\n6. **Symmetry-Related Features (SRFs)**: SRFs are developed to capture the properties of symmetries in KGs, which are then used to improve the performance of the predictor. These features are designed to be invariant under permutations and sign flips, ensuring robustness.\n\n7. **Progressive Steps and Efficiency**: The search process involves progressively increasing the complexity of SFs, starting from simpler forms and gradually adding layers or terms. This structured approach minimizes the search space and training time significantly.\n\nIn summary, the model design aspects discussed in the paper highlight an innovative approach to automating the generation of scoring functions tailored to specific knowledge graph embeddings, focusing on the efficiency and effectiveness of the search algorithm through the integration of filters, predictors, and a well-defined search space."
+}

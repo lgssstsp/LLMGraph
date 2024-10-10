@@ -1,0 +1,7 @@
+{
+    "name": "ToUndirected",
+    "description": "Converts a homogeneous or heterogeneous graph to an undirected graph such that \\((j,i) \\in \\mathcal{E}\\) for every edge \\((i,j) \\in \\mathcal{E}\\) (functional name: to_undirected).",
+    "link": "../generated/torch_geometric.transforms.ToUndirected.html#torch_geometric.transforms.ToUndirected",
+    "paper_link": null,
+    "paper_name": null
+}

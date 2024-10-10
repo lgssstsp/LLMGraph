@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-ppa",
+    "Dataset Link": "../graphprop/#ogbg-ppa",
+    "Rank": 14,
+    "Method": "GCN",
+    "External Data": "No",
+    "Test Accuracy": "0.6839 ± 0.0084",
+    "Validation Accuracy": "0.6497 ± 0.0034",
+    "Contact": "mailto:weihuahu@cs.stanford.edu",
+    "Paper Link": "https://arxiv.org/abs/1609.02907",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/graphproppred/ppa",
+    "Parameters": "479,437",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "May 1, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-ppa/GCN.pdf",
+    "Paper Summary": "The paper presents a novel approach for semi-supervised learning on graph-structured data using Graph Convolutional Networks (GCNs). The key methodological contributions of the paper can be summarized as follows:\n\n1. **Graph Convolutional Network Design**: The authors introduce a layer-wise propagation rule for GCNs based on a first-order approximation of spectral graph convolutions. This model allows for scalable and efficient processing of graphs by directly operating on their structure while encoding local information.\n\n2. **Layer-wise Propagation Rule**: The GCN utilizes the following layer-wise propagation function:\n   \\[\n   H^{(l+1)} = \\sigma(D^{\\tilde{-1/2}}A^{\\tilde{}}D^{\\tilde{-1/2}}H^{(l)}W^{(l)})\n   \\]\n   - Here, \\(A^{\\tilde{}} = A + I\\) is the adjacency matrix augmented with self-connections, \\(D^{\\tilde{}}\\) is the degree matrix of \\(A^{\\tilde{}}\\), and \\(W^{(l)}\\) is a learnable weight matrix for layer \\(l\\). The activation function \\(\\sigma(\\cdot)\\) can be any non-linear function, such as ReLU.\n\n3. **Computational Efficiency**: The propagation rule emphasizes computational efficiency, with a complexity of \\(O(|E|FC)\\), where \\(|E|\\) is the number of edges, \\(C\\) is the number of input features, and \\(F\\) is the number of filters. This linear complexity in terms of edges allows for scalability to large graphs.\n\n4. **Graph Representation**: The GCN receives both node features \\(X\\) and the graph structure \\(A\\) as inputs. By conditioning the model on both, it facilitates the propagation of gradient information from labeled to unlabeled nodes, enabling the network to learn richer representations for semi-supervised tasks.\n\n5. **Parameter Sharing**: The GCN architecture includes shared weight matrices across layers, allowing the model to learn effectively while limiting the number of parameters. This contrasts with previous models that might utilize node-degree-specific weights, which can be inefficient for graphs with wide variations in node degrees.\n\n6. **Renormalization Trick**: To enhance model stability during optimization and alleviate issues related to exploding or vanishing gradients, the paper proposes a renormalization technique that transforms the propagation rule to prevent instability associated with deeper networks.\n\n7. **Implementation of Semi-supervised Learning**: The network is designed to perform semi-supervised classification by incorporating a softmax layer on top of the GCN for final predictions and training with labeled and unlabeled nodes. The loss function combines supervised loss with the predicted labels, leveraging the underlying graph structure for regularization implicitly.\n\nOverall, the paper emphasizes the efficiency and scalability of the GCN model while maintaining the ability to learn complex representations from graph-structured data, thus providing a powerful tool for semi-supervised classification tasks."
+}

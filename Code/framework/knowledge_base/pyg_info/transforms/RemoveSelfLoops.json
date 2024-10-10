@@ -1,0 +1,7 @@
+{
+    "name": "RemoveSelfLoops",
+    "description": "Removes all self-loops in the given homogeneous or heterogeneous graph (functional name: remove_self_loops).",
+    "link": "../generated/torch_geometric.transforms.RemoveSelfLoops.html#torch_geometric.transforms.RemoveSelfLoops",
+    "paper_link": null,
+    "paper_name": null
+}

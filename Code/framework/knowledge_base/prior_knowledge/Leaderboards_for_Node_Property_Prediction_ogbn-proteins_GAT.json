@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 15,
+    "Method": "GAT",
+    "External Data": "No",
+    "Test Accuracy": "0.8501 ± 0.0046",
+    "Validation Accuracy": "0.9067 ± 0.0043",
+    "Contact": "mailto:luoyk@buaa.edu.cn",
+    "Paper Link": "https://arxiv.org/pdf/2406.08993",
+    "Code Link": "https://github.com/LUOyk1999/tunedGNN",
+    "Parameters": "2,943,472",
+    "Hardware": "GeForce RTX 3090 (24GB GPU)",
+    "Date": "Jun 15, 2024",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/GAT.pdf",
+    "Paper Summary": "The paper presents a detailed evaluation of classic Graph Neural Networks (GNNs)—specifically GCN, GAT, and GraphSAGE—highlighting their design aspects and configurations for enhancing performance in node classification tasks. Key focus areas include:\n\n1. **Model Architecture**:\n   - **Message Passing**: GNNs aggregate information from neighboring nodes iteratively to update node representations. This approach is crucial for leveraging the graph structure and node features effectively.\n   - Each GNN layer consists of an aggregation function and an update function, forming a layered architecture of message passing.\n\n2. **Specific Models**:\n   - **Graph Convolutional Networks (GCN)**: Utilizes a simplified layer iteration based on local node features and adjacency matrices, employing a learnable weight matrix and activation functions (e.g., ReLU).\n   - **Graph Attention Networks (GAT)**: Incorporates attention mechanisms to weigh different neighboring nodes, allowing the network to focus on the most relevant connections during aggregation.\n   - **GraphSAGE**: Combines various strategies to generate embeddings by sampling neighbors instead of considering all adjacency neighbors, making it efficient for inductive learning.\n\n3. **Key Hyperparameters**:\n   - **Normalization**: Techniques like Layer Normalization (LN) and Batch Normalization (BN) are leveraged to stabilize training by reducing internal covariate shift across layers.\n   - **Dropout**: Introduced post-activation to combat overfitting by randomly deactivating nodes during training.\n   - **Residual Connections**: Facilitates gradient flow and alleviates vanishing gradient issues by providing direct paths for gradients, enhancing expressiveness, especially in deep networks.\n   - **Network Depth**: Evaluates the impact of varying layer numbers, indicating that deeper models can capture more complex features, particularly beneficial for heterophilous graphs.\n   - **Jumping Knowledge (JK) Mode**: A technique for mixing representations from different layers, though its influence on performance appears minimal compared to other factors.\n\n4. **Model Configuration**:\n   - A variety of architectural configurations are assessed, including the number of layers, normalization types, dropout rates, and the application of residual connections. These configurations aim to fine-tune the models for optimal performance across various graph structures.\n\nThese design considerations and configurations underscore the potential of classic GNNs, suggesting that with appropriate tuning and structural designs, they can significantly compete with newer architectures like Graph Transformers (GTs) in node classification tasks."
+}

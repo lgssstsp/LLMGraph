@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 6,
+    "Method": "NARS-GAMLP+RLU+SCR",
+    "External Data": "No",
+    "Test Accuracy": "0.5631 ± 0.0021",
+    "Validation Accuracy": "0.5734 ± 0.0035",
+    "Contact": "mailto:yufei.he@bit.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2112.04319",
+    "Code Link": "https://github.com/THUDM/SCR",
+    "Parameters": "6,734,882",
+    "Hardware": "GeForce RTX 3090 24GB (GPU)",
+    "Date": "Jun 13, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/NARS-GAMLP+RLU+SCR.pdf",
+    "Paper Summary": "The paper presents the SCR (Consistency Regularization) framework aimed at enhancing the training of Graph Neural Networks (GNNs) in a semi-supervised setting. SCR introduces two main strategies for consistency regularization: \n\n1. **SCR (Standard Consistency Regularization)**: This strategy minimizes the disagreement among perturbed predictions generated from different versions of a GNN model. These different versions can be achieved through various methods such as data augmentation or leveraging the stochastic nature of the model (e.g., applying dropout). By reducing the differences in predictions across these versions, SCR aims to improve the generalization ability of the GNN model.\n\n2. **SCR-m (Mean Teacher Consistency Regularization)**: This strategy utilizes the Mean Teacher paradigm to enforce consistency. In this approach, the model comprises two networks: a student network and a teacher network. The student network is trained normally, while the teacher network's parameters are updated using an Exponential Moving Average (EMA) of the student model's parameters. During training, the consistency loss is computed between the predictions from the student model and the predictions produced by the teacher model. This method emphasizes more stable and reliable predictions from the teacher network, leveraging the idea that a well-trained teacher can guide the student effectively.\n\nThe SCR framework combines both supervised and unsupervised learning strategies by incorporating a loss function that consists of two components: the supervised loss evaluated on labeled nodes and the unsupervised consistency loss, computed on confident predictions from unlabeled nodes. The approach uses pseudo-labeling to assign labels to unlabeled nodes based on the average or the teacher predictions, subsequently filtered through a confidence mask to exclude low-confidence predictions.\n\nOverall, the SCR framework is designed to improve GNN training efficiency and scalability across various architectures, demonstrating its flexibility and applicability to different types of GNN models. It highlights the effectiveness of integrating consistency regularization techniques to utilize both labeled and unlabeled data effectively in graph-based learning tasks."
+}

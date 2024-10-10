@@ -1,0 +1,7 @@
+{
+    "name": "GINEConv",
+    "description": "The modified GINConv operator from the \"Strategies for Pre-training Graph Neural Networks\" paper.",
+    "link": "../generated/torch_geometric.nn.conv.GINEConv.html#torch_geometric.nn.conv.GINEConv",
+    "paper_link": "../generated/torch_geometric.nn.conv.GINConv.html#torch_geometric.nn.conv.GINConv",
+    "paper_name": "GINConv"
+}

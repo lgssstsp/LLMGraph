@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 8,
+    "Method": "TranS",
+    "External Data": "No",
+    "Test Accuracy": "0.6939 ± 0.0011",
+    "Validation Accuracy": "0.7058 ± 0.0018",
+    "Contact": "mailto:xuanyuzhang94@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2204.08401",
+    "Code Link": "https://github.com/xyznlp/trans",
+    "Parameters": "38,430,804",
+    "Hardware": "Tesla V100 (16GB)",
+    "Date": "Apr 19, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/TranS.pdf",
+    "Paper Summary": "The paper introduces TranS, a novel transition-based method for knowledge graph embedding (KGE). The primary innovation in TranS is its use of **synthetic relation representation** to address limitations in traditional scoring patterns, which often rely on a single relation vector that fails to adequately represent complex relationships, especially when an entity pair can have multiple relations.\n\n### Key Model Design Aspects:\n\n1. **Synthetic Relation Representation**:\n   - In contrast to traditional KGE methods where the scoring function correlates entity pairs through a single relation vector \\( r \\), TranS utilizes a **synthetic relation vector**, formulated as \\( \\bar{r} + r + \\hat{r} \\). This allows the model to handle multiple relations between the same entity pairs by combining different relation vectors.\n\n2. **Scoring Function**:\n   - The scoring function for TranS is designed as:\n     \\[\n     f(h, t) = -||R_h - R_t + R_r||\n     \\]\n     where \\( R_h \\) and \\( R_t \\) are representations of the head and tail entities which incorporate context from relations. These representations use auxiliary vectors (denoted as \\( \\tilde{h} \\) and \\( \\tilde{t} \\)) to enhance the embedding process.\n\n3. **Vector Composition**:\n   - The model utilizes Hadamard products to combine various representations:\n     \\[\n     R_h = h \\circ \\tilde{t}, \\quad R_t = t \\circ \\tilde{h}, \\quad R_r = \\bar{r} \\circ h + r + \\hat{r} \\circ t\n     \\]\n     This formulation allows for a more sophisticated representation of the relationships by integrating contextual information with the main entity vectors.\n\n4. **Training Mechanism**:\n   - The training process involves a self-adversarial negative sampling loss function, enabling the model to effectively distinguish between correct and incorrect triplet predictions based on the derived embeddings.\n\nBy replacing the traditional scoring patterns with this innovative approach, TranS effectively addresses the complexities involved in multi-relational knowledge graphs, leading to improved representation and embedding efficacy."
+}

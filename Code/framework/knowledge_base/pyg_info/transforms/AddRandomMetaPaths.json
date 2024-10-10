@@ -1,0 +1,7 @@
+{
+    "name": "AddRandomMetaPaths",
+    "description": "Adds additional edge types similar to AddMetaPaths.",
+    "link": "../generated/torch_geometric.transforms.AddRandomMetaPaths.html#torch_geometric.transforms.AddRandomMetaPaths",
+    "paper_link": "../generated/torch_geometric.transforms.AddMetaPaths.html#torch_geometric.transforms.AddMetaPaths",
+    "paper_name": "AddMetaPaths"
+}

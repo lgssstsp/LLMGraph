@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 7,
+    "Method": "NGNN + SEAL",
+    "External Data": "No",
+    "Test Accuracy": "0.8891 ± 0.0022",
+    "Validation Accuracy": "0.8879 ± 0.0022",
+    "Contact": "mailto:ereboas@sjtu.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2111.11638",
+    "Code Link": "https://github.com/dmlc/dgl/tree/master/examples/pytorch/ogb/ngnn_seal",
+    "Parameters": "1,134,402",
+    "Hardware": "Tesla T4(16GB)",
+    "Date": "Nov 6, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/NGNN_+_SEAL.pdf",
+    "Paper Summary": "The paper introduces a model-agnostic methodology called Network In Graph Neural Network (NGNN) designed to enhance the capacity of Graph Neural Networks (GNNs) by making them deeper without adding additional GNN layers. Instead of simply increasing the number of GNN layers or the size of hidden dimensions—which can lead to overfitting or over-smoothing—NGNN enhances GNN architecture by inserting non-linear feedforward neural network layers into each GNN layer.\n\nKey aspects of the model design include:\n\n1. **Deepening GNN Models**: NGNN achieves increased model expressiveness by inserting one or more non-linear feedforward layers between the regular GNN layers. This approach parallels the Network-in-Network architecture and allows for deeper models with fewer parameters compared to traditional methods.\n\n2. **Architecture Generality**: The NGNN framework is applicable to various GNN architectures, allowing for flexibility and adaptability across different tasks.\n\n3. **Improved Stability**: By incorporating non-linear layers within the GNN architecture, NGNN maintains model stability against perturbations in node features and graph structure. This is particularly beneficial in real-world applications where data might be noisy.\n\n4. **Layer Configuration**: The paper discusses how additional non-linear layers can be configured. Various settings include different activation functions and combining multiple layers of non-linear transformations.\n\n5. **Methodological Efficiency**: Unlike previous deep GNN approaches that may require near doubling of parameters and computational costs for modest performance gains, NGNN provides a more effective means of increasing performance without incurring large memory overheads.\n\nOverall, NGNN innovatively enhances GNN architectures by systematically integrating non-linear transformations, allowing GNNs to become deeper and more powerful while addressing common issues related to overfitting and performance gains associated with deeper learning implementations."
+}

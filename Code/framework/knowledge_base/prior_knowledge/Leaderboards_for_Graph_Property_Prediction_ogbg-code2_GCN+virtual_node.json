@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-code2",
+    "Dataset Link": "../graphprop/#ogbg-code2",
+    "Rank": 7,
+    "Method": "GCN+virtual node",
+    "External Data": "No",
+    "Test Accuracy": "0.1595 ± 0.0018",
+    "Validation Accuracy": "0.1461 ± 0.0013",
+    "Contact": "mailto:weihuahu@cs.stanford.edu",
+    "Paper Link": "https://arxiv.org/abs/1609.02907",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/graphproppred/code2",
+    "Parameters": "12,484,310",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "Feb 24, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-code2/GCN+virtual_node.pdf",
+    "Paper Summary": "The paper presents a novel approach for semi-supervised learning on graph-structured data, introducing a model called the Graph Convolutional Network (GCN). The design of the GCN architecture is motivated by a localized first-order spectral graph convolution approximation. Key aspects of the model design include:\n\n1. **Layer-wise Propagation Rule**: The core of the GCN is defined by a layer-wise propagation rule which enables efficient feature propagation across the graph. It uses the following formula:\n   \\[\n   H^{(l+1)} = \\sigma(D'^{-\\frac{1}{2}} A' D'^{-\\frac{1}{2}} H^{(l)} W^{(l)})\n   \\]\n   Here, \\(A'\\) is the adjacency matrix with added self-connections, \\(D'\\) is the degree matrix of the modified adjacency matrix, \\(H^{(l)}\\) is the activation matrix at layer \\(l\\), \\(W^{(l)}\\) is a layer-specific weight matrix, and \\(\\sigma(\\cdot)\\) denotes an activation function, typically ReLU.\n\n2. **Efficient Graph Filtering**: The GCN uses a first-order approximation of spectral graph convolutions to limit the computational complexity to linear in the number of edges, avoiding the expensive matrix multiplications required by the eigen decomposition in full spectral methods.\n\n3. **Weight Sharing**: The model employs shared weights across all nodes in each layer, simplifying the parameterization and making training more efficient. Only one weight matrix per layer is utilized irrespective of the varying node degrees.\n\n4. **Normalization Trick**: To address issues related to numerical stability in deeper models, the authors introduce a normalization method that adjusts the propagation operator to prevent exploding/vanishing gradients:\n   \\[\n   D'^{-\\frac{1}{2}} A' D'^{-\\frac{1}{2}}\n   \\]\n   This enables better training of deeper networks.\n\n5. **Flexibility in Node Classification**: The design allows the model to be conditionally based on both node features and the structure of the graph, facilitating the smoothing of labeled information across nodes. This design is particularly useful where the adjacency matrix contains information not present in the feature vectors.\n\n6. **Scalability**: The GCN is designed to scale efficiently with the size of the graph, maintaining a computational budget that is manageable even for large graphs, and allowing for the possibility of training with mini-batch stochastic gradient descent.\n\n7. **Hybrid Approach**: Instead of relying solely on local node features or graph structure, GCN integrates both directly within the propagation procedure, making it capable of leveraging the rich relational information embedded within graphs.\n\nOverall, the GCN model’s architecture is characterized by its emphasis on efficient computation, scalability, and the integration of graph structure with node feature representations, making it suitable for semi-supervised learning tasks in large-scale graph data settings."
+}

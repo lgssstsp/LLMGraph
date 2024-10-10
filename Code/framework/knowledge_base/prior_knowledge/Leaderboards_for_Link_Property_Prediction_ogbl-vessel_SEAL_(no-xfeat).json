@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-vessel",
+    "Dataset Link": "../linkprop/#ogbl-vessel",
+    "Rank": 8,
+    "Method": "SEAL (no-xfeat)",
+    "External Data": "No",
+    "Test Accuracy": "0.8077 ± 0.0001",
+    "Validation Accuracy": "0.8073 ± 0.0001",
+    "Contact": "mailto:chihuixuan99@gmail.com",
+    "Paper Link": "https://arxiv.org/pdf/2010.16103.pdf",
+    "Code Link": "https://github.com/ytchx1999/ogbl-vessel",
+    "Parameters": "43,714",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Aug 28, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-vessel/SEAL_(no-xfeat).pdf",
+    "Paper Summary": "The paper introduces a theory concerning the use of Graph Neural Networks (GNNs) for multi-node representation learning, particularly focusing on the limitations of traditional aggregation methods when seeking to represent sets of nodes (e.g., links between nodes) effectively.\n\n### Key Model Design Aspects:\n\n1. **Aggregation Methods**:\n   - Traditional approaches typically compute individual node representations using GNNs and then aggregate these representations to form a multi-node representation. This method, however, fails to capture the dependencies between nodes in the node set, potentially leading to ineffective joint representations.\n\n2. **Labeling Trick**:\n   - The authors propose a novel method called the labeling trick, which addresses the limitations of direct aggregation. This technique involves labeling nodes based on their relationships with a target node set before applying the GNN. By doing so, the GNN can better learn relationships within the context of the node set.\n   - Two essential properties are identified for the effectiveness of a labeling trick:\n     1. **Target-nodes-distinguishing**: Nodes in the target set should have distinct labels that can differentiate them from other nodes.\n     2. **Permutation equivariance**: The label assignments should change consistently under permutations of the graph.\n\n3. **Specific Implementations**:\n   - **Zero-One Labeling Trick**: This specific implementation involves creating a diagonal labeling matrix that assigns the value of 1 to target nodes and 0 to others. This allows the GNN to be aware of which nodes are part of the target while preserving the evolution of the representations through layers of message passing.\n   - **Enclosing Subgraph Labeling**: The method extracts a subgraph surrounding the node pairs of interest, using specific labeling approaches (like Double Radius Node Labeling) that account for distances to the target nodes.\n\n4. **Link Prediction Frameworks**:\n   - The paper underscores the difference between classic GNN frameworks (like Graph AutoEncoder) and more advanced models (like SEAL). SEAL showcases superior performance because it utilizes the labeling trick effectively, emphasizing the importance of incorporating node relationships into the aggregative process.\n\n5. **Expressiveness**:\n   - The authors assert that using a sufficiently expressive GNN with the labeling trick allows for learning the most expressive structural representations of node sets, formally addressing any joint learning tasks over such sets.\n\nBy focusing on these design aspects, the paper establishes a foundation for how GNNs can be more effectively utilized in multi-node representation learning scenarios through nuanced handling of node interactions and systematic labeling strategies."
+}

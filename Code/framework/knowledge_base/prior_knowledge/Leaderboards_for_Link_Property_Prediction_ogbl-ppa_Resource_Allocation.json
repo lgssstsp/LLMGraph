@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ppa",
+    "Dataset Link": "../linkprop/#ogbl-ppa",
+    "Rank": 9,
+    "Method": "Resource Allocation",
+    "External Data": "No",
+    "Test Accuracy": "0.4933 ± 0.0000",
+    "Validation Accuracy": "0.4722 ± 0.0000",
+    "Contact": "mailto:ofanshen@gmail.com",
+    "Paper Link": "https://arxiv.org/pdf/0901.0553.pdf",
+    "Code Link": "https://github.com/fs302/EasyLink/blob/main/example/ogbl_ppa_ra.py",
+    "Parameters": "0",
+    "Hardware": "Tesla-V100(32GB GPU)",
+    "Date": "Jul 5, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ppa/Resource_Allocation.pdf",
+    "Paper Summary": "The paper focuses on designing a framework for predicting missing links in networks based on local node similarity measures. Specifically, it deals with the following methods and model design aspects:\n\n1. **Local Similarity Measures**: The framework primarily uses local structural information to determine the similarity between nodes. The authors compare nine well-known local similarity measures, such as Common Neighbors (CN), Adamic-Adar Index (AA), Jaccard Index, and others.\n\n2. **Similarity Scoring**: For a given pair of nodes \\(x\\) and \\(y\\), a score \\(s_{xy}\\) is assigned, quantifying the similarity between them. The scores are derived from metrics that count common or neighbor relationships, and they are used to rank potential links where the highest scores correspond to the most likely missing links.\n\n3. **Resource Allocation Index (RA)**: This measure is introduced as a new similarity metric based on the concept of resource allocation where nodes can be seen as transmitters sending resources to their common neighbors. The similarity score is defined by the amount of resources that node \\(y\\) receives from \\(x\\) through these intermediaries.\n\n   \\[\n   s_{xy} = \\sum_{z \\in \\Gamma(x) \\cap \\Gamma(y)} \\frac{1}{k(z)}\n   \\]\n   where \\(k(z)\\) is the degree of node \\(z\\).\n\n4. **Improving Prediction Accuracy**: To address the limitation of neighborhood-based measures yielding identical scores for many node pairs (degenerate states), the authors propose the Local Path (LP) index. This index incorporates information from common neighbors and extends to include information from next nearest neighbors, enhancing the distinction between scores.\n\n   The similarity matrix \\(S\\) is described as:\n   \\[\n   S = A^2 + \\epsilon A^3\n   \\]\n   where \\(A^2\\) counts common neighbors and \\(A^3\\) captures paths of length 3 between nodes \\(x\\) and \\(y\\). The parameter \\(\\epsilon\\) is introduced to control the weight of the second part of the equation, highlighting its role in breaking the degeneracies present in the simple measures.\n\n5. **Model Scaling and Complexity**: Most measures discussed, including RA and LP, use local information to maintain low computational complexity, making them suitable for large networks. The authors emphasize that while local measures are efficient, they might lack the robustness seen in global models which involve complex calculations.\n\nThe presented methods illustrate a clear progression from simple neighbor counting towards more elaborate models that leverage local paths and resource distribution, with the intent of optimizing the prediction of missing links in complex networks."
+}

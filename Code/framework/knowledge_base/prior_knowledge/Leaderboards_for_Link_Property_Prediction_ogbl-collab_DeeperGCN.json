@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-collab",
+    "Dataset Link": "../linkprop/#ogbl-collab",
+    "Rank": 20,
+    "Method": "DeeperGCN",
+    "External Data": "No",
+    "Test Accuracy": "0.5273 ± 0.0047",
+    "Validation Accuracy": "0.6187 ± 0.0045",
+    "Contact": "mailto:guohao.li@kaust.edu.sa",
+    "Paper Link": "https://arxiv.org/abs/2006.07739",
+    "Code Link": "https://github.com/lightaime/deep_gcns_torch/tree/master/examples/ogb",
+    "Parameters": "117,383",
+    "Hardware": "NVIDIA Tesla V100 (32GB GPU)",
+    "Date": "Oct 21, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-collab/DeeperGCN.pdf",
+    "Paper Summary": "The paper presents several innovative methods focused on enhancing the training of deeper Graph Convolutional Networks (GCNs) through a model called DeeperGCN. Key design aspects of the model include:\n\n1. **Generalized Aggregation Functions**: The authors introduce a differentiable generalized message aggregation function, which serves as a family of permutation invariant functions that extends traditional methods like mean and max. Specifically, two variants, SoftMax aggregation and PowerMean aggregation, are proposed as generalized mean-max functions. These functions allow for better adaptability and tuning to specific tasks by varying parameters that govern their behavior.\n\n2. **Modified Residual Connections**: The paper proposes adopting a pre-activation version of residual connections, where the order of operations is adjusted to Normalization → ReLU → Graph Convolution → Addition. This design choice has shown improvements in performance when training deep GCNs by allowing better gradients propagation through the network layers.\n\n3. **Message Normalization Layer (MsgNorm)**: A novel message normalization layer is introduced to enhance the performance of GCNs, particularly when using under-performing aggregation functions. MsgNorm is applied during the vertex update phase, helping to normalize the aggregated messages and incorporate them effectively into the updated vertex features.\n\n4. **Training Framework (GENeralizedAggregationNetworks, GEN)**: Based on the proposed generalized message aggregator, pre-activation residual connections, and message normalization layers, the GEN framework is developed. This framework integrates these components into a cohesive architecture designed to efficiently train GCNs on large-scale datasets.\n\n5. **Dynamic Aggregator Learning (DyResGEN)**: The authors further expand on their model by proposing DyResGEN, which allows parameters such as those in the SoftMax and PowerMean aggregators to be dynamically learned during training. This adaptability can enhance performance as the GCN learns which aggregation method is more suitable for each layer or dataset.\n\nThese design aspects aim to effectively tackle issues like vanishing gradients, over-smoothing, and performance degradation typically encountered in deeper GCN architectures, thereby enabling successful training of extremely deep models."
+}

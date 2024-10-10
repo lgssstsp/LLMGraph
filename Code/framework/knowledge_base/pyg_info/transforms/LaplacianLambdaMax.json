@@ -1,0 +1,7 @@
+{
+    "name": "LaplacianLambdaMax",
+    "description": "Computes the highest eigenvalue of the graph Laplacian given by torch_geometric.utils.get_laplacian() (functional name: laplacian_lambda_max).",
+    "link": "../generated/torch_geometric.transforms.LaplacianLambdaMax.html#torch_geometric.transforms.LaplacianLambdaMax",
+    "paper_link": "utils.html#torch_geometric.utils.get_laplacian",
+    "paper_name": "torch_geometric.utils.get_laplacian()"
+}

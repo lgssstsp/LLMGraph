@@ -1,0 +1,7 @@
+{
+    "name": "SSGConv",
+    "description": "The simple spectral graph convolutional operator from the \"Simple Spectral Graph Convolution\" paper.",
+    "link": "../generated/torch_geometric.nn.conv.SSGConv.html#torch_geometric.nn.conv.SSGConv",
+    "paper_link": "https://openreview.net/forum?id=CYO5T-YjWZV",
+    "paper_name": "\"Simple Spectral Graph Convolution\""
+}

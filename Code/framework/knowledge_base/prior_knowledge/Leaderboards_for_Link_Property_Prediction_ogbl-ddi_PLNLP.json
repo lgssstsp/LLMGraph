@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 6,
+    "Method": "PLNLP",
+    "External Data": "No",
+    "Test Accuracy": "0.9088 ± 0.0313",
+    "Validation Accuracy": "0.8242 ± 0.0253",
+    "Contact": "mailto:wztzenk@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2112.02936",
+    "Code Link": "https://github.com/zhitao-wang/PLNLP",
+    "Parameters": "3,497,473",
+    "Hardware": "Tesla-P40(24GB GPU)",
+    "Date": "Dec 7, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/PLNLP.pdf",
+    "Paper Summary": "The paper \"Pairwise Learning for Neural Link Prediction\" introduces a novel framework called Pairwise Learning for Neural Link Prediction (PLNLP) designed to effectively tackle the link prediction problem by treating it as a pairwise learning-to-rank issue. The framework comprises four main components: \n\n1. **Neighborhood Encoder**: This component is tasked with extracting expressive neighborhood information for the input node pairs. It can utilize any generic graph neural network (GNN) architectures, such as Graph Convolutional Networks (GCN) or GraphSAGE, or specific architectures for link prediction like SEAL or Neighborhood Attention Networks (NANs). There are two types of neighborhood encoders discussed:\n   - **Node Neighborhood Encoder (NNE)**: Encodes the two nodes of the input sample separately along with their respective neighborhoods.\n   - **Edge-level Neighborhood Encoder (ENE)**: Encodes the neighborhood subgraph of the paired nodes as a single hidden representation.\n\n2. **Link Score Predictor**: After obtaining hidden representations, this component computes the link scores of the input samples. Various scoring functions can be employed, including:\n   - **Dot Product**: Simple dot product between two hidden representations.\n   - **Bilinear Dot Product**: Useful for directed graphs, allowing for non-commutative scoring using a learnable matrix.\n   - **Multi-Layer Perceptron (MLP)**: A neural network that can take various forms of input based on whether a node-level or edge-level neighborhood encoder is used.\n\n3. **Negative Sampler**: A crucial component given the extreme imbalance between positive and negative pairs in link prediction tasks. The framework proposes several strategies for negative sampling:\n   - **Global Sampling**: Uniformly samples negative node pairs from the entire node set.\n   - **Local Sampling**: Samples negative node pairs based on a specific anchor node, potentially using distributions like node degrees.\n   - **Adversarial Sampling**: Uses a generative model to create high-quality negative samples through adversarial learning.\n   - **Negative Sample Sharing**: Facilitates efficient sharing of negative samples among training pairs, enhancing the use of negatives.\n\n4. **Objective Function**: The framework employs a pairwise ranking-based objective function, designed to maximize the Area Under the Curve (AUC) metric. Several variations for the loss function are proposed, including:\n   - **Squared Hinge Loss**: Aims to enforce a margin between positive and negative samples.\n   - **Weighted Hinge Loss**: Allows margins that are not fixed and can adapt based on sample weights.\n\nTogether, these components create a flexible and effective framework for link prediction that can adapt to varying types of graphs and the specific needs of different applications."
+}

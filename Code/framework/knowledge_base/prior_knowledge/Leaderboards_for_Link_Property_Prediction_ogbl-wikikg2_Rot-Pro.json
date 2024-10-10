@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 18,
+    "Method": "Rot-Pro",
+    "External Data": "No",
+    "Test Accuracy": "0.5602 ± 0.0016",
+    "Validation Accuracy": "0.5740 ± 0.0008",
+    "Contact": "mailto:songtengwei@gmail.com",
+    "Paper Link": "https://arxiv.org/pdf/2110.14450.pdf",
+    "Code Link": "https://github.com/Tigter/ogblwikikg2-RotPro",
+    "Parameters": "1,000,669,602",
+    "Hardware": "Tesla V100(32GB)",
+    "Date": "Sep 5, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/Rot-Pro.pdf",
+    "Paper Summary": "The paper presents the Rot-Pro model, aiming to effectively model various relation patterns in knowledge graphs, particularly focusing on transitivity. The key aspects of the model's design are as follows:\n\n1. **Modeling Transitivity**:\n   - The authors propose that transitive relations can be represented using idempotent transformations, specifically projections. A projection matrix is structured similarly to a diagonal matrix with its diagonal values being either 0 or 1, enabling a representation that supports the transitive property.\n\n2. **Combining Projections and Rotations**:\n   - The Rot-Pro model integrates both projection and relational rotation. This combination allows it to model not only transitivity but also symmetry, asymmetry, inversion, and composition. \n   - The model defines relations as relational rotations of projected entity embeddings in complex space, allowing it to maintain representation flexibility across different relation types.\n\n3. **Theoretical Foundation**:\n   - Rot-Pro is theoretically validated to infer all five relation patterns (symmetry, asymmetry, inversion, composition, and transitivity). The model ensures that transitive properties are respected by requiring that repeated transformations of an entity through a relation must yield consistent embeddings.\n\n4. **Projection Mechanism**:\n   - The transformation is designed so each relation \\( r \\) applied to an entity embedding \\( (h, r, t) \\) should yield consistent results across instances. This means for any two entities in a transitive chain, the projection must maintain equality through various hops along that chain.\n   - The model uses an orthogonal projection defined by matrices that satisfy idempotent transformations, hence linking it to the concept of transitivity.\n\n5. **Score Function**:\n   - The distance function for the Rot-Pro model is defined based on the difference between the projected embeddings of the head and tail entities after applying rotation, encapsulated as:\n   \\[\n   d_r(e_h, e_t) = ||rot(p(e_h), θ) - p(e_t)||\n   \\]\n   This reflects the model's approach to calculating embeddings for link prediction tasks.\n\n6. **Optimization Objective**:\n   - The training mechanism adopts self-adversarial negative sampling. It includes penalties to ensure that projection matrices remain true to their idempotent nature, adjusting the parameters to maintain the constraints of 0 or 1 for the diagonal values.\n\nIn summary, the Rot-Pro model strategically combines projections and rotations in its design to validate theoretical grounds for modeling complex relations within knowledge graphs, particularly focusing on preserving the transitive property efficiently."
+}

@@ -1,0 +1,7 @@
+{
+    "name": "KNNGraph",
+    "description": "Creates a k-NN graph based on node positions data.pos (functional name: knn_graph).",
+    "link": "../generated/torch_geometric.transforms.KNNGraph.html#torch_geometric.transforms.KNNGraph",
+    "paper_link": null,
+    "paper_name": null
+}

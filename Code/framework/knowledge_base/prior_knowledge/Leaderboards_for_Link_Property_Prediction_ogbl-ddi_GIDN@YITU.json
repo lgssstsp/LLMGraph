@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 3,
+    "Method": "GIDN@YITU",
+    "External Data": "No",
+    "Test Accuracy": "0.9542 ± 0.0000",
+    "Validation Accuracy": "0.8258 ± 0.0000",
+    "Contact": "mailto:zwang62@hust.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2210.01301",
+    "Code Link": "https://github.com/WizcoxYu/ogbl_d",
+    "Parameters": "3,506,691",
+    "Hardware": "DepGraph@SCTS/CGCL",
+    "Date": "Oct 11, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/GIDN@YITU.pdf",
+    "Paper Summary": "The paper introduces a novel model called the **Graph Inception Diffusion Network (GIDN)**, designed for efficient link prediction in knowledge graphs. The core idea behind GIDN is to enhance graph diffusion processes across various feature spaces while minimizing computational complexity.\n\n### Model Design Aspects:\n\n1. **Graph Diffusion Mechanism:**\n   - GIDN encapsulates graph diffusion to represent information about nodes' neighborhoods more effectively than the original graph structure.\n   - It uses a matrix representation for each target prediction, capturing the proximity information of nodes.\n   - The model incorporates small-hop nodes and learnable generalized weighting coefficients, allowing for multi-layer generalized graph diffusion in diverse feature spaces.\n\n2. **Inception Module:**\n   - To address the computational challenges of deeper models, GIDN utilizes the inception module. \n   - This module allows the model to capture a rich set of features without the excessive computation typically associated with deeper networks.\n   - It enhances adaptability for training with larger datasets while managing computational resources efficiently.\n\n3. **Data Augmentation:**\n   - The method also includes data augmentation strategies focusing on nodes and edges within the graph structure.\n   - A notable technique involves using random walks to remove edges between nodes with differing labels while forming connections among nodes with the same labels.\n\n4. **Computational Efficiency:**\n   - GIDN is designed to strike a balance between accuracy and computational speed, leveraging lower complexity in its calculations, which is vital for handling large-scale knowledge graphs.\n\nOverall, GIDN's architecture emphasizes efficient computation and effective feature extraction while maintaining the ability to model complex relationships in knowledge graphs."
+}

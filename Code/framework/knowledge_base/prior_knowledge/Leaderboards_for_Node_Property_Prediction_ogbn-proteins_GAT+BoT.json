@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 7,
+    "Method": "GAT+BoT",
+    "External Data": "No",
+    "Test Accuracy": "0.8765 ± 0.0008",
+    "Validation Accuracy": "0.9280 ± 0.0008",
+    "Contact": "mailto:espylapiza@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2103.13355",
+    "Code Link": "https://github.com/dmlc/dgl/tree/master/examples/pytorch/ogb/ogbn-proteins",
+    "Parameters": "2,484,192",
+    "Hardware": "Tesla A100 (40GB GPU)",
+    "Date": "Jun 16, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/GAT+BoT.pdf",
+    "Paper Summary": "### Summary of Methods in \"Bag of Tricks for Node Classification with Graph Neural Networks\"\n\nThe paper presents several novel techniques to enhance node classification using Graph Neural Networks (GNNs), focusing on model design aspects, particularly related to label usage and architecture design. Here are the key methodologies discussed:\n\n1. **Sampling Techniques**: The paper proposes a sampling approach that allows GNNs to utilize averaged random subsets of original labels as model input. This technique is aimed at improving the input quality for GNNs without over-relying on extensive label data.\n\n2. **Label Usage**:\n   - **Label as Input**: Incorporating true labels into the training process allows GNNs to leverage available label information directly during inference. The authors introduce an innovative parallel propagation mechanism that uses both node features and labels during both training and inference phases.\n   - **Label Reuse**: This method recycles the predicted labels from previous iterations, feeding them back into the model as input for further training. This iterative approach enhances the learning process by continuously refining the label predictions even for unlabeled nodes.\n\n3. **Robust Loss Functions**: The paper discusses a robust loss function that mitigates issues related to outlier sensitivity of classic logistic loss. A quasi-convex loss function is proposed, which is designed to maintain robustness, particularly when dealing with mislabeled data. This flexible loss function can adapt to various datasets and is beneficial for GNN training.\n\n4. **Architecture Tweaks**:\n   - **Combination of Label and Feature Propagation**: By exploring combinations of label propagation algorithms and GNN architectures, the authors aim to address the limitations typically associated with using either method in isolation. They outline a methodology that allows for holistic learning from both features and labels.\n   - **Enhancements to Graph Attention Networks (GAT)**: The authors propose modifications to GAT architectures to better connect them with GCN principles—using symmetric normalized adjacency and adding a linear connection to the propagation rule—enhancing stability and improving expressiveness.\n\nThe techniques introduced aim not just for incremental improvements but significantly enhance node classification performance, highlighting how effective model design strategies can lead to substantial advancements in GNN applications."
+}

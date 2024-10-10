@@ -1,0 +1,7 @@
+{
+    "name": "AddSelfLoops",
+    "description": "Adds self-loops to the given homogeneous or heterogeneous graph (functional name: add_self_loops).",
+    "link": "../generated/torch_geometric.transforms.AddSelfLoops.html#torch_geometric.transforms.AddSelfLoops",
+    "paper_link": null,
+    "paper_name": null
+}

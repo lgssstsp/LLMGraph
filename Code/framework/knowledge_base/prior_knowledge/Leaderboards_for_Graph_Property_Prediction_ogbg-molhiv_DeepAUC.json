@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molhiv",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 4,
+    "Method": "DeepAUC",
+    "External Data": "No",
+    "Test Accuracy": "0.8352 ± 0.0054",
+    "Validation Accuracy": "0.8238 ± 0.0061",
+    "Contact": "mailto:yzhuoning@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2012.03173",
+    "Code Link": "https://github.com/yzhuoning/DeepAUC_OGB_Challenge",
+    "Parameters": "3,444,509",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Oct 10, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molhiv/DeepAUC.pdf",
+    "Paper Summary": "The paper introduces a novel approach to optimize the area under the ROC curve (AUC) in deep learning models through a new margin-based surrogate loss function, referred to as the AUC margin loss. This loss function addresses two critical issues found in the traditional AUC square loss: its sensitivity to noisy data and the adverse effects of easy data (well-classified examples).\n\n### Key Methods Discussed:\n\n1. **AUC Margin Loss:**\n   - The AUC margin loss is framed within a min-max optimization structure, akin to the AUC square loss but with enhancements for robustness.\n   - The formulation includes a margin parameter \\(m\\), which aids in separating predictions of positive and negative classes more effectively while reducing sensitivity to noisy data.\n   - This loss is designed to ensure that when a model is performing well, gradient updates will favor pushing positive scores further apart from negative scores, whereas in cases of poor performance, it mitigates incorrect updates stemming from noisy labels.\n\n2. **Min-Max Formulation:**\n   - The method leverages a min-max strategy that allows efficient stochastic optimization for large-scale datasets, minimizing the need to handle pairs of positive and negative instances directly.\n   - It updates model parameters (including network weights) based on calculated gradients derived from the AUC margin loss.\n\n3. **Algorithm Design (PESG):**\n   - The authors utilize a proximal epoch stochastic gradient (PESG) method for training, which updates a set of primal variables that include the model's weights, and the optimal predictions for positive and negative classes, while ensuring non-negativity for the margin parameter α.\n\n4. **Two-Stage Training Framework:**\n   - The approach employs a two-stage training process where the first stage focuses on representation learning via a conventional cross-entropy loss. Subsequently, in the second stage, the model's decision boundary is fine-tuned with the AUC margin loss for improved performance on the classification tasks.\n\n5. **Implementation Details:**\n   - The network architecture primarily involves convolutional neural networks (CNNs) for feature extraction, followed by optimization of a classifier layer with the AUC margin loss.\n   - Parameter tuning for the margin \\(m\\) is emphasized, as it's crucial for balancing between enhancing margin separation and maintaining robustness against noisy input.\n\nThis methodological framework provides a more effective way to handle imbalanced datasets commonly encountered in medical image classification and leverages advancements in deep learning optimization to enhance model performance directly related to AUC maximization. The proposed methods form foundational aspects of the deep AUC maximization paradigm introduced in this study."
+}

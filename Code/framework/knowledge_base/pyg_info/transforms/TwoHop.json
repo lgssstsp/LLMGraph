@@ -1,0 +1,7 @@
+{
+    "name": "TwoHop",
+    "description": "Adds the two hop edges to the edge indices (functional name: two_hop).",
+    "link": "../generated/torch_geometric.transforms.TwoHop.html#torch_geometric.transforms.TwoHop",
+    "paper_link": null,
+    "paper_name": null
+}

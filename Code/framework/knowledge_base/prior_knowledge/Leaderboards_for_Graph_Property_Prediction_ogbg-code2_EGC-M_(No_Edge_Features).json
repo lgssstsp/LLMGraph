@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-code2",
+    "Dataset Link": "../graphprop/#ogbg-code2",
+    "Rank": 7,
+    "Method": "EGC-M (No Edge Features)",
+    "External Data": "No",
+    "Test Accuracy": "0.1595 ± 0.0019",
+    "Validation Accuracy": "0.1464 ± 0.0021",
+    "Contact": "mailto:sat62@cam.ac.uk",
+    "Paper Link": "https://arxiv.org/abs/2104.01481",
+    "Code Link": "https://github.com/shyam196/egc",
+    "Parameters": "10,986,002",
+    "Hardware": "GTX1080Ti/RTX2080Ti",
+    "Date": "Apr 6, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-code2/EGC-M_(No_Edge_Features).pdf",
+    "Paper Summary": "The paper proposes a new architecture for Graph Neural Networks (GNNs) called Efficient Graph Convolution (EGC), which fundamentally challenges the prevailing belief that anisotropic models (where message passing considers both the source and target nodes) are necessary for state-of-the-art performance. Here, we focus on the architectural design aspects of EGC:\n\n1. **Model Structure**: EGC is characterized as an isotropic model, where the messages are determined solely by the source node, using spatially-varying adaptive filters. This design allows EGC to require memory proportional to the number of vertices (O(V)) rather than edges, which is common in anisotropic models (O(E)). \n\n2. **Layer Design**: The architecture presents two versions: \n   - **EGC-S (Single Aggregator)**: This variant utilizes a single shared aggregator for the model.\n   - **EGC-M (Multiple Aggregators)**: This version extends EGC-S by incorporating multiple aggregation functions, allowing the model to capture richer representations.\n\n3. **Aggregation Mechanism**: The aggregation is designed to avoid the need for explicit message materialization, which is crucial for optimizing memory and latency. EGC uses a simple combination of basis weights for messages, thus minimizing computational complexity and maximizing efficiency. The equations governing the aggregations ensure that the process can be executed using sparse matrix multiplication (SpMM).\n\n4. **Weight Calculation**: The model employs a unique weight calculation mechanism where each node has its own combination weighting coefficients, allowing the aggregation of messages from neighboring nodes to be tailored per node. This is represented mathematically by the equations that produce weights based on node features.\n\n5. **Memory Efficiency**: EGC efficiently inlines node-wise weight operations at inference time, which significantly reduces memory overhead and enables effective utilization of hardware accelerators for inference.\n\n6. **Aggregator Fusion**: The architecture introduces an aggregator fusion approach, which maximizes the re-use of memory during computations. This means that multiple aggregators can be applied simultaneously without incurring significant additional costs, improving both runtime performance and maintaining the benefits of working with sparse data.\n\n7. **Flexible Aggregation**: The designs for both EGC-S and EGC-M allow for flexibility in the choice of aggregation methods (such as mean, max, etc.), which can be tailored to the specific dataset or problem context. This flexibility is critical as it allows the architecture to adapt to different data characteristics while retaining efficiency.\n\nOverall, the Efficient Graph Convolution architecture not only argues for isotropic modeling in GNNs but also puts a strong emphasis on efficiency through innovative architectural choices, offering a compelling alternative to existing anisotropic approaches."
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 19,
+    "Method": "HGT (TransE embs)",
+    "External Data": "No",
+    "Test Accuracy": "0.4982 ± 0.0013",
+    "Validation Accuracy": "0.5124 ± 0.0046",
+    "Contact": "mailto:ly979@nyu.edu",
+    "Paper Link": "https://arxiv.org/pdf/2003.01332.pdf",
+    "Code Link": "https://github.com/lingfanyu/pyHGT/tree/master/ogbn-mag",
+    "Parameters": "26,877,657",
+    "Hardware": "Tesla T4 (15GB)",
+    "Date": "Feb 17, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/HGT_(TransE_embs).pdf",
+    "Paper Summary": "The paper presents the Heterogeneous Graph Transformer (HGT) architecture designed to effectively model heterogeneous and dynamic graphs, addressing common challenges faced by existing Graph Neural Networks (GNNs).\n\n### Key Methods and Model Design Aspects:\n\n1. **Heterogeneous Mutual Attention**:\n   - HGT incorporates a heterogeneous mutual attention mechanism which utilizes meta-relations (e.g., relationships between node and edge types) to parameterize weight matrices. This allows for capturing different semantic relationships and improves the model's ability to understand the interactions between different node types.\n\n2. **Heterogeneous Message Passing**:\n   - During message passing, HGT employs a targeted approach that takes into account the varying distributions of features among different node types. The messages from source nodes are projected into a message vector using type-specific linear projections, enabling the model to aggregate information more effectively.\n\n3. **Target-Specific Aggregation**:\n   - The information gathered from source nodes is aggregated into target node representations, with attention weights derived from mutual attention, ensuring that the aggregation process respects the distinct characteristics of different node and edge types.\n\n4. **Relative Temporal Encoding (RTE)**:\n   - HGT introduces RTE to model the temporal aspect of graph data without losing structural dependencies across different timestamps. Instead of slicing the graph into separate temporal segments, RTE maintains a unified representation of all edges while allowing for the learning of temporal relationships. Each edge is associated with a timestamp, and the temporal information enriches the node representations.\n\n5. **Heterogeneous Mini-Batch Graph Sampling (HGSampling)**:\n   - To effectively handle large-scale heterogeneous graphs, HGT employs HGSampling, which ensures a balanced sampling of different node types and aims to keep the sampled sub-graphs dense. This minimizes information loss during the sampling process and enhances model training efficiency.\n\n6. **Layered Architecture**:\n   - HGT utilizes multiple layers for stacking, allowing cross-layer message passing. This design enables nodes to reach a larger subset of the graph during the representation learning process while respecting the heterogeneity of node and edge types.\n\n7. **Parameter Sharing**:\n   - HGT aims to share parameters across similar types of edges within the meta-relational framework, thus reducing the complexity of the model while still maintaining the ability to model unique relationships.\n\nOverall, HGT’s design leverages the unique properties of heterogeneous graphs through careful attention to node and edge types, effective message passing and aggregation tailored to graph heterogeneity, and additional innovations to address the challenges of dynamic graphs at scale."
+}

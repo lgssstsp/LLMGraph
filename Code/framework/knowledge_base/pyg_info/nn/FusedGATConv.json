@@ -1,0 +1,7 @@
+{
+    "name": "FusedGATConv",
+    "description": "The fused graph attention operator from the \"Understanding GNN Computational Graph: A Coordinated Computation, IO, and Memory Perspective\" paper.",
+    "link": "../generated/torch_geometric.nn.conv.FusedGATConv.html#torch_geometric.nn.conv.FusedGATConv",
+    "paper_link": "https://proceedings.mlsys.org/paper/2022/file/9a1158154dfa42caddbd0694a4e9bdc8-Paper.pdf",
+    "paper_name": "\"Understanding GNN Computational Graph: A Coordinated Computation, IO, and Memory Perspective\""
+}

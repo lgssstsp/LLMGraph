@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-vessel",
+    "Dataset Link": "../linkprop/#ogbl-vessel",
+    "Rank": 5,
+    "Method": "SUREL+",
+    "External Data": "No",
+    "Test Accuracy": "0.8496 ± 0.0068",
+    "Validation Accuracy": "0.8489 ± 0.0067",
+    "Contact": "mailto:yinht@purdue.edu",
+    "Paper Link": "https://arxiv.org/abs/2303.03379",
+    "Code Link": "https://github.com/Graph-COM/SUREL_Plus",
+    "Parameters": "56,353",
+    "Hardware": "Quadro RTX 6000 (24GB)",
+    "Date": "Feb 28, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-vessel/SUREL+.pdf",
+    "Paper Summary": "The paper presents **SUREL+**, a novel framework designed for scalable subgraph-based graph representation learning (SGRL). The key focus is on moving from using random walks to node sets for representing subgraphs, significantly improving efficiency while maintaining predictive accuracy.\n\n### Model Design Aspects:\n\n1. **Core Concept:**\n   - SUREL+ employs sets of nodes rather than random walks, which alleviates issues of node duplication prevalent in traditional methods.\n   - This allows for more efficient data storage and retrieval, effectively representing query-induced subgraphs via online joining.\n\n2. **Customized Sparse Data Structure (SpG):**\n   - SUREL+ introduces a new data structure, **SpG**, which efficiently stores sampled node sets and their associated structural features.\n   - SpG consists of:\n     - An **index pointer array (indptr)** that tracks starting indices for each node set.\n     - An **indices array** holding all sampled node indices.\n     - A **structural features array (SFptr)** that contains the structural features corresponding to each node in the sampled sets.\n\n3. **Set Samplers:**\n   - The framework employs two types of samplers:\n     - **Walk-based Samplers:**\n       - Conduct short-step random walks to gather nodes that are distinct.\n     - **Metric-based Samplers:**\n       - Utilize proximity metrics such as Personalized Page Rank (PPR) scores and shortest path distances to determine the significance of nodes to be included in the sampled sets.\n   - Both samplers work offline, optimizing the computational efficiency of the graph learning process.\n\n4. **Structure Encoders:**\n   - SUREL+ uses structure encoders to create structural features associated with the sampled nodes.\n   - Encoders include metrics such as landing probabilities and shortest paths, enhancing the representation of local graph structures.\n\n5. **Sparse Join Operator (SpJoin):**\n   - The SpJoin operator allows for efficient joining of node sets stored in SpG, enabling quick construction of query-level structural features.\n   - It employs parallel processing, dividing queries into manageable batches to mitigate delays caused by variable workloads.\n\n6. **Set Neural Encoders:**\n   - SUREL+ provides flexibility in choosing set neural encoders:\n     - Options include mean pooling, LSTM, and attention mechanisms to aggregate structural features from the node sets.\n   - This modular design allows for the adaptation of encoders based on the specific nature of SGRL tasks, ensuring robust performance across varying contexts.\n\nBy focusing on these core components, SUREL+ enhances scalability, reduces computational overhead, and promotes efficient representation learning within graph-based frameworks. Overall, the design choices improve both memory efficiency and predictive capability in handling various SGRL tasks."
+}

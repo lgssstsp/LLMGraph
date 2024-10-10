@@ -1,0 +1,7 @@
+{
+    "name": "AddMetaPaths",
+    "description": "Adds additional edge types to a HeteroData object between the source node type and the destination node type of a given metapath, as described in the \"Heterogenous Graph Attention Networks\" paper (functional name: add_metapaths).",
+    "link": "../generated/torch_geometric.transforms.AddMetaPaths.html#torch_geometric.transforms.AddMetaPaths",
+    "paper_link": "../generated/torch_geometric.data.HeteroData.html#torch_geometric.data.HeteroData",
+    "paper_name": "HeteroData"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "FastRGCNConv",
+    "description": "See RGCNConv.",
+    "link": "../generated/torch_geometric.nn.conv.FastRGCNConv.html#torch_geometric.nn.conv.FastRGCNConv",
+    "paper_link": "../generated/torch_geometric.nn.conv.RGCNConv.html#torch_geometric.nn.conv.RGCNConv",
+    "paper_name": "RGCNConv"
+}

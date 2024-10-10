@@ -1,0 +1,7 @@
+{
+    "name": "AddRemainingSelfLoops",
+    "description": "Adds remaining self-loops to the given homogeneous or heterogeneous graph (functional name: add_remaining_self_loops).",
+    "link": "../generated/torch_geometric.transforms.AddRemainingSelfLoops.html#torch_geometric.transforms.AddRemainingSelfLoops",
+    "paper_link": null,
+    "paper_name": null
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-products",
+    "Dataset Link": "../nodeprop/#ogbn-products",
+    "Rank": 9,
+    "Method": "LD+GAMLP",
+    "External Data": "Yes",
+    "Test Accuracy": "0.8645 ± 0.0012",
+    "Validation Accuracy": "0.9415 ± 0.0003",
+    "Contact": "mailto:zhihaoshi@mail.ustc.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2309.14907",
+    "Code Link": "https://github.com/MIRALab-USTC/LD",
+    "Parameters": "144,331,677",
+    "Hardware": "GeForce RTX 3090 (24GB GPU)",
+    "Date": "Sep 27, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-products/LD+GAMLP.pdf",
+    "Paper Summary": "The paper presents a novel method called **Label Deconvolution (LD)**, designed to address issues in node representation learning on large-scale attributed graphs, particularly regarding the separation of node encoders (NEs) and graph neural networks (GNNs). Here's a summary focusing on the model design aspects:\n\n### Model Design\n\n1. **Architecture Integration**:\n   - The approach integrates pre-trained models, which serve as node encoders to extract features from node attributes, with GNNs that process both node features and graph structure.\n   - Pre-trained models like ESM2 for protein sequences and BERT for texts are employed for feature extraction.\n\n2. **Independent Training Framework**:\n   - LD proposes a separate training framework for NEs and GNNs, tackling scalability issues while preserving adequate performance.\n   - Traditional methods, while effective in joint training, tend to ignore the influence of GNN feature convolutions when training NEs, resulting in a learning bias.\n\n3. **Label Deconvolution Mechanism**:\n   - LD introduces a technique to alleviate learning bias by effectively approximating the inverse mapping of GNNs.\n   - The method formulates an objective function that aligns with the joint training outcome while incorporating GNNs into the NE training phase.\n\n4. **Optimizing Node Encoder Parameters**:\n   - The model operates by first training GNNs based on fixed node features, subsequent to which LD computes inverse labels to guide NEs during their training phase.\n   - Optimization involves deriving labels based on the GNN output and pre-processed representations.\n\n5. **Efficient Approximations**:\n   - LD utilizes spectral formulations to decouple time-consuming matrix convolutions from GNN operations, significantly improving efficiency.\n   - The model leverages learned node features while pre-processing them to avoid repetitive computations during NE training.\n\n6. **Dynamic Label Adjustments**:\n   - The model adaptively updates inverse labels during training, establishing a robust linkage between node attributes and graph structures to enhance feature learning.\n   - This dual approach allows the model to maintain expressiveness while reducing computational overhead.\n\nIn summary, Label Deconvolution effectively bridges the learning gap between separate trained NEs and GNNs by using an innovative inverse mapping technique, promoting better scalability and performance in node representation learning on attributed graphs."
+}

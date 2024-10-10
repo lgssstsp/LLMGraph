@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-vessel",
+    "Dataset Link": "../linkprop/#ogbl-vessel",
+    "Rank": 15,
+    "Method": "GraphSAGE",
+    "External Data": "No",
+    "Test Accuracy": "0.4989 ± 0.0678",
+    "Validation Accuracy": "0.4993 ± 0.0676",
+    "Contact": "mailto:julian.mcginnis@tum.de",
+    "Paper Link": "https://arxiv.org/abs/2005.00687",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/linkproppred/vessel",
+    "Parameters": "396,289",
+    "Hardware": "Quadro RTX 8000 Ti (48GB GPU)",
+    "Date": "Aug 20, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-vessel/GraphSAGE.pdf",
+    "Paper Summary": "The paper presents the Open Graph Benchmark (OGB), which introduces a collection of graph datasets designed for machine learning research, specifically targeting scalability and robustness. The discussion focuses on model design aspects across various prediction tasks organized under node property prediction, link property prediction, and graph property prediction.\n\n### Model Design Aspects\n\n1. **Node Property Prediction**:\n   - Several architectures are highlighted, including:\n     - **MLP**: Utilizes raw node features directly without leveraging graph structures.\n     - **NODE2VEC**: Combines raw node features with node embeddings derived from the NODE2VEC algorithm.\n     - **GCN (Graph Convolutional Network)**: Implements standard GCN architecture for feature propagation.\n     - **GRAPH SAGE**: Adopts a sampling-based approach to gather neighbor features, allowing it to scale better.\n     - **Mini-batch Training Techniques**: Such as NEIGHBORSAMPLING, CLUSTERGCN, and GRAPHSAINT are introduced as alternatives to standard training methods for handling larger datasets efficiently.\n\n2. **Link Property Prediction**:\n   - Models used include GCN, GRAPH SAGE, and MATRIX FACTORIZATION.\n   - GNNs are integrated with edge features, which are computed as the Hadamard product of the embeddings of the two nodes connected by an edge.\n   - The development of additional mini-batch GNN training techniques is also discussed to accommodate memory constraints while ensuring model performance.\n\n3. **Graph Property Prediction**:\n   - The paper emphasizes models like GCN and GIN (Graph Isomorphism Network), focusing on how these architectures can be enhanced by integrating unique design features:\n     - **Virtual Nodes**: Introduced in models to capture additional structural properties and facilitate message passing throughout the graph.\n     - **Pooling Operations**: Methods such as average pooling are explored to synthesize node embeddings at the graph level.\n\n### Advanced Techniques:\n- **Augmented Architectures**: Including variations of GCN incorporating virtual nodes or edge features, allowing for richer, contextualized learning.\n- **Node and Edge Features**: Emphasizes the inclusion of diverse features (like atom properties in molecular graphs) for improved prediction accuracy.\n- **Learning Strategies**: Explores scaffold-based and time-based splitting strategies in dataset preparation to yield more meaningful training scenarios, ensuring that models are trained on data representative of real-world applications.\n\nBy focusing on the continuous adaptation and enhancement of architectures like GCN and GIN, as well as the innovative integration of features (both node and edge), OGB aims to set a foundation for future advances in graph machine learning methodologies."
+}

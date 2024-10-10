@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-vessel",
+    "Dataset Link": "../linkprop/#ogbl-vessel",
+    "Rank": 11,
+    "Method": "LRGA",
+    "External Data": "No",
+    "Test Accuracy": "0.5415 ± 0.0437",
+    "Validation Accuracy": "0.5418 ± 0.0439",
+    "Contact": "mailto:iyuanchenbei@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2006.07846",
+    "Code Link": "https://github.com/YuanchenBei/LRGA-vessel",
+    "Parameters": "26,577",
+    "Hardware": "Tesla A100 (80GB)",
+    "Date": "Aug 31, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-vessel/LRGA.pdf",
+    "Paper Summary": "The paper introduces the **Low-Rank Global Attention (LRGA)** module aimed at improving the generalization capabilities of Graph Neural Networks (GNNs). It emphasizes augmenting existing GNN layers with the LRGA module, which is designed to be computationally and memory efficient compared to standard dot-product attention mechanisms.\n\n### Key Model Components:\n\n1. **LRGA Module Design**:\n   - **Input**: Takes a feature matrix \\( X \\in \\mathbb{R}^{n \\times d} \\) from the GNN.\n   - **Structure**: \n     - Composed of multiple multi-layer perceptrons (MLPs) that transform the input features, followed by computations involving a normalized attention matrix.\n     - The core formulation is:\n       \\[\n       LRGA(X) = \\eta(X)^{-1} m_1(X)(m_2(X)^T m_3(X))\n       \\]\n       where \\( \\eta(X) \\) is the normalization factor ensuring the output attention matrix is well-scaled.\n  \n2. **Computational Complexity**:\n   - Standard global attention requires \\( O(n^2) \\) memory and \\( O(n^3) \\) computation, which is impractical for large graphs.\n   - LRGA reduces this complexity to \\( O(n\\kappa) \\) for memory and \\( O(n\\kappa^2) \\) for computation where \\( \\kappa \\) is the rank of the attention matrix.\n\n3. **Permutations Equivariance**:\n   - The LRGA module maintains permutation equivariance, which is a crucial property in GNNs, thereby respecting the ordering of nodes in graph representations.\n\n4. **Algorithmical Alignment**:\n   - The LRGA-augmented GNN aims to align with the **2-Folklore Weisfeiler-Lehman (2-FWL)** algorithm, enhancing the expressive power of the network. This is achieved through the ability to simulate 2-FWL updates using solely monomial functions.\n\n5. **Integration with Random Graph Neural Networks (RGNN)**:\n   - The framework explores augmenting the RGNN — which combines random features sampled on each forward pass — with the LRGA to achieve universal capabilities and improved generalization. This combination allows for precise approximations of graph functions.\n\nThe paper concludes that augmenting GNNs with the LRGA module not only enhances their ability to generalize but also retains scalability and efficiency while adapting the expressive power necessary for complex graph structured data."
+}

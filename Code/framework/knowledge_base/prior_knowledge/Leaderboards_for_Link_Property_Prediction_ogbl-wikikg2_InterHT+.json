@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 3,
+    "Method": "InterHT+",
+    "External Data": "No",
+    "Test Accuracy": "0.7293 ± 0.0018",
+    "Validation Accuracy": "0.7391 ± 0.0023",
+    "Contact": "mailto:destin.bxwang@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2202.04897",
+    "Code Link": "https://github.com/destwang/InterHT",
+    "Parameters": "156,332,770",
+    "Hardware": "Tesla A100 (80GB)",
+    "Date": "Dec 23, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/InterHT+.pdf",
+    "Paper Summary": "The paper presents two novel distance-based methods for knowledge graph embedding: InterHT and InterHT+. These methods address the limitations of traditional knowledge graph embedding models, which typically represent head and tail entities independently, potentially restricting their learning capacity.\n\n### InterHT Design\n1. **Interaction between Entities**: InterHT facilitates better interaction between head and tail entities during their representation learning. This is accomplished through an element-wise multiplication of the head entity's representation with an auxiliary tail entity vector. Thus, the head entity's representation is combined with information from the tail entity, leading to a more informed embedding.\n  \n2. **Mathematical Representation**:\n   - For the head entity:\n     \\[\n     ||h \\circ t - t \\circ h + r||\n     \\]\n   - For the tail entity:\n     \\[\n     ||t \\circ (h + e) - h \\circ (t + e) + r||\n     \\]\n   Here, \\( h \\) and \\( t \\) denote the embeddings of the head and tail entities, and \\( r \\) is the relation vector. The auxiliary vector helps encode contextual information.\n\n### InterHT+ Design\n1. **Enhanced Interaction**: Building on InterHT, the InterHT+ method further incorporates the relation embeddings into the entity representations. This additional layer of complexity allows for a richer interaction between them, leading to improved model expressiveness.\n  \n2. **Mathematical Representation**:\n   - The model improves the embedding interaction through the following formula:\n     \\[\n     ||u \\cdot h \\circ t + h \\circ (u \\cdot r + e) - t \\circ (u \\cdot r + e) + r||\n     \\]\n   where \\( u \\) is a constant scalar that further refines the entity relations and context within the embeddings.\n\n### Entity Representation Method\n1. **DigPiece Representation**: The paper introduces an entity representation technique called DigPiece. This method utilizes a directed coarse-to-fine neighborhood representation, where subgraphs of target nodes consist of various types of nodes, including:\n   - Anchors\n   - In-direction neighbors\n   - Out-direction neighbors\n   - Center nodes\n\n   This approach allows the model to better capture the characteristics of nodes through detailed aggregation methods, enhancing overall representation quality.\n\n2. **NodePiece**: For representing entities, the model also employs NodePiece, which tokenizes entity nodes into sets of anchors, significantly reducing parameter size and improving generalization, particularly for unseen entities.\n\n### Loss Function\nThe model is trained using a self-adversarial negative sampling loss function, which optimizes the representations by contrasting correct fact triplet representations against negative samples, thereby refining the accuracy of predictions through effective embeddings.\n\nOverall, the proposed methods InterHT and InterHT+ significantly enhance the capabilities of knowledge graph embeddings through improved entity interaction and representation methods."
+}

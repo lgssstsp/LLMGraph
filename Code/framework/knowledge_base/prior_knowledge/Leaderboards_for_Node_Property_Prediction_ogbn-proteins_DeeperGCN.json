@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 14,
+    "Method": "DeeperGCN",
+    "External Data": "No",
+    "Test Accuracy": "0.8580 ± 0.0017",
+    "Validation Accuracy": "0.9106 ± 0.0016",
+    "Contact": "mailto:guohao.li@kaust.edu.sa",
+    "Paper Link": "https://arxiv.org/abs/2006.07739",
+    "Code Link": "https://github.com/lightaime/deep_gcns_torch/tree/master/examples/ogb",
+    "Parameters": "2,374,568",
+    "Hardware": "NVIDIA Tesla V100 (32GB GPU)",
+    "Date": "Jun 16, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/DeeperGCN.pdf",
+    "Paper Summary": "The paper \"DeeperGCN: All You Need to Train Deeper GCNs\" introduces several key methods to enhance the training of deep Graph Convolutional Networks (GCNs). Below are the main model design aspects discussed in the paper:\n\n### 1. **Generalized Aggregation Functions:**\n   - The authors propose a **Generalized Aggregation Function** that accommodates various types of message aggregation operations (e.g., mean, max) within GCNs. This function is designed to be **permutation invariant** and **differentiable**, allowing it to be adapted and learned during the training process. \n   - Two specific forms of aggregation—**SoftMax Aggregation** and **Power Mean Aggregation**—are introduced, which can interpolate between mean and max based on control parameters.\n\n### 2. **Modified Residual Connections:**\n   - A **pre-activation version of residual connections** is proposed for GCN architectures. This design changes the order of operations, activating nodes after normalization, which has been shown to improve representational power compared to traditional residual connections.\n   - The residual connection structure is specifically designed to help maintain performance even with increased model depth.\n\n### 3. **Message Normalization Layer (MsgNorm):**\n   - The authors highlight the significance of **normalization techniques** in deep GCNs, introducing a **MsgNorm layer**. This layer improves model performance by normalizing the features of the aggregated messages before they are used to update node features. This is achieved through a learnable scaling factor applied to the normalized message.\n   - The MsgNorm layer aims to combat issues related to over-smoothing in deep networks, particularly in instances where aggregation methods may not perform well.\n\n### 4. **Architectural Framework - GENeralized Aggregation Networks (GEN):**\n   - The proposed architecture combines the generalized message aggregators, pre-activation residual connections, and the MsgNorm layer into a unified framework, termed **GEN**. \n   - This framework is designed to be flexible and robust for training deeper GCNs efficiently, addressing challenges associated with vanishing gradients, over-smoothing, and overfitting when increasing model depth.\n\n### Summary: \nThese design aspects collectively aim to enhance the capability of GCNs to learn effective representations from large-scale graph datasets. By integrating generalized aggregation methods, modified residual connections, and a dedicated normalization layer, the proposed model design facilitates the training of significantly deeper GCNs, ultimately leading to improved performance across a range of tasks involving graph data."
+}

@@ -1,0 +1,7 @@
+{
+    "name": "RemoveDuplicatedEdges",
+    "description": "Removes duplicated edges from a given homogeneous or heterogeneous graph.",
+    "link": "../generated/torch_geometric.transforms.RemoveDuplicatedEdges.html#torch_geometric.transforms.RemoveDuplicatedEdges",
+    "paper_link": null,
+    "paper_name": null
+}

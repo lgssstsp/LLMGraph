@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-ppa",
+    "Dataset Link": "../graphprop/#ogbg-ppa",
+    "Rank": 6,
+    "Method": "DeeperGCN",
+    "External Data": "No",
+    "Test Accuracy": "0.7712 ± 0.0071",
+    "Validation Accuracy": "0.7313 ± 0.0078",
+    "Contact": "mailto:guohao.li@kaust.edu.sa",
+    "Paper Link": "https://arxiv.org/abs/2006.07739",
+    "Code Link": "https://github.com/lightaime/deep_gcns_torch/tree/master/examples/ogb",
+    "Parameters": "2,336,421",
+    "Hardware": "NVIDIA Tesla V100 (32GB GPU)",
+    "Date": "Jun 16, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-ppa/DeeperGCN.pdf",
+    "Paper Summary": "The paper proposes a novel architecture called DeeperGCN designed to address the challenges faced when training deeper Graph Convolutional Networks (GCNs), such as vanishing gradients, over-smoothing, and overfitting. Key aspects of the model's design include:\n\n1. **Generalized Aggregation Functions**: DeeperGCN introduces a differentiable generalized message aggregation function that encompasses various commonly used functions such as mean and max, ensuring that it remains permutation invariant. The proposed functions allow for parameter tuning to adapt to different tasks and can be learned in an end-to-end manner.\n\n2. **Message Normalization Layer (MsgNorm)**: A new normalization layer is introduced that normalizes the aggregated message features during the vertex update phase. This helps in achieving better performance by dynamically adjusting the node features in relation to the aggregated messages.\n\n3. **Pre-activation Residual Connections**: The architecture employs a pre-activation variant of residual connections. This approach alters the order of activation functions and convolutional layers to improve representational power. The design follows the sequence: Normalization → ReLU → GraphConvolution → Addition, which is shown to enhance convergence and performance of deep GCN models.\n\n4. **Combination of Techniques**: DeeperGCN integrates the generalized aggregation functions, modified skip connections, and message normalization into a unified framework. This combination is targeted toward achieving enhanced learning capabilities and performance on large-scale graph datasets.\n\nThe model design thus emphasizes flexibility in message aggregation and normalization, aiming to mitigate issues that arise when increasing the depth of GCN architectures."
+}
