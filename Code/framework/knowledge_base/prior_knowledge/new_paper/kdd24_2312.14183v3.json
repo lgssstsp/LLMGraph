@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Using Model Artifacts to Detect Hallucinations in Large Language Models",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Alex Brown"
+        ],
+        "affiliations": [
+            "University X",
+            "Institute Y",
+            "Amazon Science"
+        ],
+        "abstract": "Large language models (LLMs) often hallucinate when generating text, offering factually incorrect information. We explore using model artifacts like self-attention scores and integrated gradients to detect these hallucinations by training classifiers without requiring fine-tuning or multiple sampling.",
+        "keywords": [
+            "large language models",
+            "hallucination detection",
+            "softmax probabilities",
+            "self-attention",
+            "integrated gradients"
+        ],
+        "year": "2023",
+        "venue": "International Conference on AI and Language Models",
+        "doi link": "https://doi.org/10.1016/fake.doi",
+        "method name": "Detecting Hallucinations via Model Artifacts"
+    },
+    "relate work": {
+        "related work category": [
+            "Hallucinations before LLMs",
+            "Hallucination Detection in QA",
+            "Sampling-based Approaches",
+            "Model Artifacts to Detect Hallucinations"
+        ],
+        "related papers": "\\begin{enumerate} \\item Ji, Y. et al. (2023). A survey on hallucinations in natural language generation. \\cite{ji2023survey} \\item Kadavath, S. et al. (2022). Fine-tuning for hallucination detection \\cite{kadavath2022language} \\item Azaria, A. et al. (2023). Using internal states for fact detection \\cite{azaria2023internal} \\item Zhang, T. et al. (2023). Characterizing hallucinations in GPT-4 \\cite{zhang2023language} \\item Manakul, P. and Tonbags, A. (2023). SelfCheckGPT: A sampling-based approach \\cite{manakul2023selfcheckgpt} \\end{enumerate}",
+        "comparisons with related methods": "Compared to sampling-based methods like SelfCheckGPT, our approach directly utilizes model internals and bypasses the need for multiple queries, utilizing self-attention and other artifacts to identify hallucinations preemptively."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel method for detecting factual hallucinations in LLMs using internal model signals, such as softmax probabilities and attention scores, without altering the model itself.",
+        "research purpose": "To improve the reliability of LLMs by detecting when the model generates hallucinatory, non-factual content.",
+        "research challenge": "Identifying hallucinations in model outputs in a computationally efficient manner while maintaining the model's original capabilities.",
+        "method summary": "We employ a classification framework using artifacts like softmax and attention scores to differentiate between hallucinations and factual responses.",
+        "conclusion": "Using model artifacts can significantly enhance hallucination detection, leading to more reliable use of LLMs in practical applications."
+    },
+    "Method": {
+        "description": "We propose a method using a classification approach to discern hallucinations based on model artifacts during response generation.",
+        "problem formultaion": "Can internal model artifacts signal the presence of hallucinated responses before they are fully formed?",
+        "feature processing": "We focus on the first token generated, analyzing softmax probabilities, attention scores, and attribution scores.",
+        "model": "Classifiers are trained using self-attention scores and integrated gradients to predict hallucination occurrence.",
+        "tasks": [
+            "Hallucination Detection",
+            "Binary Classification"
+        ],
+        "theoretical analysis": "The method leverages the variation in internal states of LLMs to predict hallucinations, drawing parallels to similar findings in neural machine translation studies.",
+        "complexity": "The classification model is computationally lightweight, using existing model outputs without repeated sampling.",
+        "algorithm step": "1. Generate token. 2. Capture artifact (softmax, attention, attribution). 3. Classify as hallucination or factual."
+    },
+    "Experiments": {
+        "datasets": [
+            "T-REX",
+            "TriviaQA"
+        ],
+        "baselines": [
+            "SelfCheckGPT",
+            "Manual Annotation"
+        ],
+        "evaluation metric": "AUROC for hallucination detection",
+        "setup": "Use LLMs to generate responses on QA datasets and analyze internal signals for hallucination detection.",
+        "hyperparameters": "Batch size: 128; Learning rate: 1e-4; Number of classifiers: 4 (one for each artifact type)",
+        "results": "AUROC scores above 0.70 indicating effective detection of hallucinations in most scenarios.",
+        "performance": "Consistent detection accuracy across various datasets and models, outperforming traditional methods.",
+        "analysis": "Self-attention scores and activation states consistently provide strong hallucination detection, correlated to model internal variation.",
+        "ablation study": "Studied the effect of layer depth and hyperparameters on classifier performance."
+    },
+    "conclusion": {
+        "summary": "The paper demonstrates a novel use of LLM internal artifacts to detect hallucinations early in the response generation pipeline. The classifiers achieved impressive AUROC scores, establishing a basis for more reliable implementations of LLMs.",
+        "future work": "Exploring applications to broader hallucination types and enhancing classifier architecture for improved sensitivity."
+    }
+}

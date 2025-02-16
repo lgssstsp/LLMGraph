@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Community Information Pathway Prediction in Social Media",
+        "authors": [
+            "Srijan Kumar",
+            "Yiqing Liu",
+            "Chenhao Tan",
+            "Yaxiong Wang"
+        ],
+        "affiliations": [
+            "Georgia Institute of Technology",
+            "University of Chicago"
+        ],
+        "abstract": "The study of information flow in online communities is crucial to understanding and managing its impact. We propose \\model, a dynamic graph-based framework that predicts the pathways of information spread across online communities, specifically focusing on the multimodal nature and temporal dynamics of information on social media. The proposed method considers community influence, visual content, and community dynamics, validated on datasets collected from Reddit and YouTube, outperforming existing baselines in community-level information pathway prediction tasks. This work harnesses the fusion of multimodal information and community dynamics for bridging the gap in understanding community interactions in online ecosystems.",
+        "keywords": [
+            "Information Pathway Prediction",
+            "Dynamic Graphs",
+            "Social Media Analytics",
+            "Multimodal Information",
+            "Community Dynamics"
+        ],
+        "year": "2023",
+        "venue": "ACM SIGKDD",
+        "doi link": null,
+        "method name": "INPAC"
+    },
+    "relate work": {
+        "related work category": [
+            "Information Diffusion",
+            "Graph Neural Networks"
+        ],
+        "related papers": "gomez2012inferring, shu2019defend, li2017deepcas, kipf2016semi, xu2020inductive",
+        "comparisons with related methods": "The study emphasizes a novel approach by combining dynamic graph-based methods with multimodal data for more accurate community-level information pathway predictions, showing superior results over traditional user-level diffusion models."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The research aims to model and predict the flow of information across online communities using a dynamic graph-based framework. By capturing the multimodal nature of information and community dynamics, \\model achieves improved predictions on information pathways.",
+        "research purpose": "To predict community-level information pathways efficiently by integrating community dynamics and multimodal content within a dynamic graph framework.",
+        "research challenge": "Capturing the dynamic, multimodal, and community-specific nature of information flow effectively.",
+        "method summary": "INPAC models community relationships and influence via dynamic graphs and uses multimodal data to predict information spread across social media communities.",
+        "conclusion": "The approach outperforms existing user-centric models by focusing on community interactions and the multimodal nature of shared information."
+    },
+    "Method": {
+        "description": "INPAC leverages a dynamic graph framework to predict the flow of information in online communities. It models information propagation as a series of community interactions and uses multimodal content data for accurate predictions.",
+        "problem formultaion": "Formulate the problem as predicting the sequence of communities where a given piece of information will appear next.",
+        "feature processing": "Data from Reddit and YouTube are processed to extract community interactions and information content characteristics.",
+        "model": "The model consists of a dynamic graph that captures community interactions, multimodal encoders for content, and a prediction module informed by community-level influence graphs.",
+        "tasks": [
+            "Community Influence Modeling",
+            "Video Content Modeling",
+            "Dynamic Propagation Prediction"
+        ],
+        "theoretical analysis": "The paper offers theoretical insights into capturing influence pathways using multimodal data and continuous-time dynamic graphs.",
+        "complexity": "Analyzes real-time computational demands of dynamic graphs and their scalability for large community datasets.",
+        "algorithm step": "1. Construct community influence graphs. 2. Encode video content. 3. Dynamically model propagation sequences. 4. Predict community interactions."
+    },
+    "Experiments": {
+        "datasets": [
+            "Reddit data from 2018-2022",
+            "YouTube video links shared on Reddit"
+        ],
+        "baselines": [
+            "MF",
+            "NGCF",
+            "LightGCN",
+            "SVD-GCN",
+            "TiSASRec",
+            "TGAT",
+            "TGN"
+        ],
+        "evaluation metric": "Recall@$K$, NDCG@$K$, MRR",
+        "setup": "Datasets split into train/validation/test with separate influence graph construction on training data to avoid leakages.",
+        "hyperparameters": "Embedding size set to 64, learning rate optimized in range [$1e-4$, $1e-2$], GNN layers set to 4 for community modeling.",
+        "results": "\\model achieved significant performance improvement over baselines in both warm-start and cold-start scenarios, demonstrating strong predictive capabilities in dynamic community environments.",
+        "performance": "Achieved up to 18.8% improvement in MRR and 6.2% in Recall across test cases.",
+        "analysis": "Ablation studies confirmed the importance of community influence modeling and integration of multimodal data.",
+        "ablation study": "Conducted to assess the impact of different graph construction methods and confirm the superiority of the proposed approach using community influence graphs."
+    },
+    "conclusion": {
+        "summary": "The INPAC approach offers a comprehensive framework for predicting community-level information pathways. Through extensive experimentation, it demonstrates the significance of community influences and multimodal data in modeling social information propagation.",
+        "future work": "Future work may include refining the influence graph construction, integrating multi-platform data, and exploring new dynamic graph models to enhance information flow predictions."
+    }
+}

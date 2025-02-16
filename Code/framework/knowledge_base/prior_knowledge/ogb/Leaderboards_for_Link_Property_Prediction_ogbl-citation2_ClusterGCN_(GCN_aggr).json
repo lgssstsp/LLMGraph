@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 18,
+    "Method": "ClusterGCN (GCN aggr)",
+    "External Data": "No",
+    "Test Accuracy": "0.8004 ± 0.0025",
+    "Validation Accuracy": "0.7994 ± 0.0025",
+    "Contact": "mailto:matthias.fey@tu-dortmund.de",
+    "Paper Link": "https://arxiv.org/abs/1905.07953",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/linkproppred/citation2",
+    "Parameters": "296,449",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "Jan 4, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/ClusterGCN_(GCN_aggr).pdf",
+    "Paper Summary": "The paper introduces **Cluster-GCN**, a novel algorithm designed to facilitate the training of large-scale Graph Convolutional Networks (GCNs) efficiently, focusing on memory and computational costs.\n\n### Key Methodology Aspects of Cluster-GCN:\n\n1. **Graph Clustering**: \n   - The algorithm leverages graph clustering techniques (e.g., using METIS) to partition the graph nodes into smaller, dense subgraphs. \n   - By doing this, it maximizes the number of intra-cluster edges, which improves the efficiency of the mini-batch stochastic gradient descent (SGD) updates.\n\n2. **Utilization of *Embedding Utilization* Concept**:\n   - Cluster-GCN aims to maximize \"embedding utilization,\" which refers to leveraging shared embeddings among nodes within the same cluster.\n   - This approach significantly reduces the number of unique embeddings that need to be computed, enhancing computational efficiency.\n\n3. **Stochastic Multi-Partitioning**: \n   - To address the potential issues of losing some edges (between-cluster links) during clustering, the method incorporates a stochastic sampling strategy.\n   - During each epoch, multiple clusters are randomly selected to create a mini-batch rather than relying on a single cluster. This ensures that more edges are used and helps reduce variance across batches.\n\n4. **Matrix Operations**:\n   - The algorithm simplifies computations by focusing on matrix multiplications instead of complex neighborhood searches traditionally associated with GCNs.\n   - The computational complexity per update is linear in terms of the number of layers (L) rather than exponential, which is typical in conventional GCN setups.\n\n5. **Block-Diagonal Approximation**:\n   - Cluster-GCN utilizes a block-diagonal structure to represent the adjacency matrix for improved efficiency. This reapportioning allows the model to compute gradients while minimizing out-of-cluster links, making calculations more manageable.\n\n6. **Embedding Calculation**:\n   - The embeddings for layers are computed in a way that permits reusing previously calculated embeddings across clusters, thus minimizing memory requirements and enhancing speed.\n\n7. **Memory Efficiency**:\n   - The approach does not require storing all node embeddings for every layer in memory, significantly reducing memory usage.\n\nThese optimizations allow Cluster-GCN to train deeper GCNs effectively, providing a scalable solution for large graphs, where traditional GCN methods struggle due to high memory demand and computational overheads."
+}

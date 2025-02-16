@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Graph Convolutional Hawkes Processes (GCHP): Tackling Performance Saturation in Neural Point Processes",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous"
+        ],
+        "abstract": "We introduce the performance saturation phenomenon in neural marked point processes, where increased network complexity does not improve performance. We propose using a graph convolutional network-based architecture (GCHP) along with a novel loss function for enhanced efficiency and prediction accuracy.",
+        "keywords": [
+            "Graph Convolutional Networks",
+            "Neural Point Processes",
+            "Performance Saturation",
+            "Likelihood Loss",
+            "Marked Point Processes"
+        ],
+        "year": "2023",
+        "venue": "Anonymous",
+        "doi link": null,
+        "method name": "Graph Convolutional Hawkes Process (GCHP)"
+    },
+    "relate work": {
+        "related work category": [
+            "Non-neural marked point processes",
+            "Neural-based marked point processes"
+        ],
+        "related papers": "Models from the perspective of traditional statistical learning incorporate techniques such as regularization and non-parametric methods. The Dirichlet-Hawkes process integrates textual and temporal information. Bayesian models bring in clustering tasks. Neural models focus on learning point processes with neural networks, considering architectures like RNTPP, NHPP, FulNN, and GeoHP.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper investigates the saturation phenomenon in neural marked point processes, proposes a graph convolutional architecture with temporal similarity graphs for efficient training, and a likelihood loss function to enhance performance.",
+        "research purpose": "To determine an effective method for predicting marked point processes without unnecessary architectural complexity and ensuring computational efficiency.",
+        "research challenge": "Understanding the underlying factors of the performance saturation phenomenon in neural point processes without making complex network models.",
+        "method summary": "Employing graph convolutional networks instead of RNNs or LSTMs and using a likelihood ratio loss function to enhance the training process.",
+        "conclusion": "Enhancing the performance of neural point processes requires a robust probabilistic assumption rather than mere architectural complexity."
+    },
+    "Method": {
+        "description": "The proposed method uses graph convolutional layers with a temporal similarity graph as input for training, avoiding assumptions on the intensity function and leveraging a probabilistic approach.",
+        "problem formultaion": "Given temporal event sequences with attributes, how can we better model the sequences using neural architectures considering the minimization of training time and computational resources?",
+        "feature processing": "Utilizing a temporal similarity graph to illustrate time-event relationships.",
+        "model": "Graph Convolutional Hawkes Process (GCHP) with nonlinear marked processes and multiplicative kernels.",
+        "tasks": [
+            "Predicting next event attributes.",
+            "Efficient training using graph convolutional networks."
+        ],
+        "theoretical analysis": null,
+        "complexity": "Training the GCHP focuses on efficiency, with complexity reducing compared to RNN or attention-based counterparts.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Hawkes (synthetic)",
+            "IPTV",
+            "Weeplace",
+            "ATM"
+        ],
+        "baselines": [
+            "RMTPP",
+            "IRNN",
+            "NHPP",
+            "MAHP",
+            "GeoHP",
+            "THP"
+        ],
+        "evaluation metric": null,
+        "setup": "Experiments are conducted on synthetic and real-world datasets across different network architectures.",
+        "hyperparameters": null,
+        "results": "The GCHP-based model outperformed baselines in time prediction error, feature prediction accuracy, and training efficiency.",
+        "performance": "Consistently showed improvements over baselines, signifying the effectiveness of graph-based architectures in neural point processes.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The study presented the saturation phenomenon, indicating added complexity doesn't necessarily improve neural point process models. Effective design requires simple yet efficient models with well-defined probabilistic frameworks.",
+        "future work": "Future studies will aim to theoretically investigate the saturation phenomenon in depth."
+    }
+}

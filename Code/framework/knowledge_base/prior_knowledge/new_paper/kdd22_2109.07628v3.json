@@ -1,0 +1,86 @@
+{
+    "meta_data": {
+        "title": "SuPerFed: A Personalized Federated Learning Framework via Low-Loss Subspace Connectivity",
+        "authors": [
+            "Anonymous Authors"
+        ],
+        "affiliations": [
+            ":",
+            ":",
+            ":"
+        ],
+        "abstract": "Federated Learning (FL) allows learning of global models without sharing of private data by parallel training across distributed clients. However, heterogeneity of data distributions at clients often results in poor model generalization. Personalized Federated Learning (PFL) proposes solutions for individual client needs. We propose SuPerFed, an innovative PFL framework leveraging model connectivity from deep loss landscape studies, to jointly train models on low-loss subspaces. SuPerFed enhances model personalization, resilience to label noise, and its two variations, Model Mixing (MM) and Layer Mixing (LM), significantly outperformed existing PFL methodologies.",
+        "keywords": [
+            "Federated Learning",
+            "Personalized Federated Learning",
+            "Model Connectivity",
+            "Machine Learning",
+            "Data Privacy"
+        ],
+        "year": "2023",
+        "venue": ":",
+        "doi link": null,
+        "method name": "SuPerFed"
+    },
+    "relate work": {
+        "related work category": [
+            "FL with Non-IID Data",
+            "PFL Methods",
+            "Connectivity of Deep Networks"
+        ],
+        "related papers": "9 related works, including FedAvg [mc+17], FedPer [FedPer], and Dirichlet-based non-IID Setting [diri].",
+        "comparisons with related methods": "Our work extends existing PFL approaches by constructing a connected low-loss subspace for joint modeling, unlike previous methods focusing on partial parameter sharing or sequential updates. This is crucial for enhancing personalization in non-IID datasets."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces SuPerFed, a personalized federated learning method oriented towards achieving enhanced performance in non-IID environments by utilizing model connectivity. The method connects federated global models with local personalized models, achieving beneficial learning leveraging low-loss subspaces.",
+        "research purpose": "Addressing personalized FL needs in non-IID data settings with a framework that achieves low-loss connectivity for improved generalization and personalization.",
+        "research challenge": "Handling non-IIDness in FL and maintaining personalization with reduced generalization error.",
+        "method summary": "SuPerFed creates a low-loss subspace incorporating both local and federated models through a model mixture, integrating them in a mutually beneficial manner. It is efficient in maintaining personalization across distributed clients.",
+        "conclusion": "SuPerFed demonstrates effective personalization and noise-robustness via connected model subspaces, outperforming traditional and existing model mixture-based PFL approaches."
+    },
+    "Method": {
+        "description": "SuPerFed, a model mixture-based PFL method, constructs a connected low-loss subspace between local and federated models at clients, optimizing both for personalized performance and overall generalization.",
+        "problem formultaion": "The need to mitigate high generalization errors caused by diverse data distributions in FL while maintaining each client's personalized training model.",
+        "feature processing": null,
+        "model": "Described as a composite model incorporating local and federated sub-models interconnected in a low-loss landscape for optimal FL training.",
+        "tasks": [
+            "Federated Learning",
+            "Personalized Federated Learning"
+        ],
+        "theoretical analysis": "Draws upon studies in connectivity of deep networks showcasing enhancement in local minima connection reducing loss, thus achieving diversified and robust learning.",
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "MNIST",
+            "CIFAR10",
+            "CIFAR100",
+            "TinyImageNet",
+            "FEMNIST",
+            "Shakespeare"
+        ],
+        "baselines": [
+            "FedAvg",
+            "FedProx",
+            "SCAFFOLD",
+            "FedPer",
+            "LG-FedAvg",
+            "APFL",
+            "pFedMe",
+            "Ditto",
+            "FedRep"
+        ],
+        "evaluation metric": "Top-1/Top-5 Accuracy, Expected/Max Calibration Error (ECE/MCE)",
+        "setup": "Experiments executed across several benchmarks with non-IID scenarios utilizing stochastic gradient descent for optimization.",
+        "hyperparameters": "Exploration on mixing constant λ, regularization constants μ, ν.",
+        "results": "SuPerFed outperformed existing PFL methods, maintaining performance across varied settings with efficient personalization.",
+        "performance": "SuPerFed proved resilience to label noise and statistical heterogeneity with less affected performance spanning diverse datasets.",
+        "analysis": "Demonstrated how a low-loss subspace and connected models yield high personalization retaining calibration and robustness, addressing concerns on convergence and distribution non-IIDness.",
+        "ablation study": "Validation of parameters λ, μ, ν showed flexible optimization allowing SuPerFed to adjust to diverse FL settings."
+    },
+    "conclusion": {
+        "summary": "SuPerFed advances PFL by leveraging model connectivity and low-loss subspaces for improved personalization and generalization in non-IID settings.",
+        "future work": "Exploration of further reduction in communication overhead and extending the approach to additional challenging tasks."
+    }
+}

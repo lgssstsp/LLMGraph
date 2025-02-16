@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "This paper introduces a novel approach to address the prediction delay in time series prediction",
+        "authors": [],
+        "affiliations": [],
+        "abstract": "In this paper, we redefine GRU as differential equation that reflect past observations to the current hidden state for processing continuously generalizing GRU. We propose a continuous-time bi-directional gated recurrent unit (GRU) network based on neural ordinary differential equation (NODE) and train it with explicit time-derivative regularizations, thus addressing the inherent prediction delay observed in various time series forecasting models. Our contributions can be summarized as follows: We propose CONTIME By continuously extending the bi-directional GRU, we present a novel architecture that facilitates the supervision of the time-derivative of observations in the continuous time domain. We conduct time series forecasting with minimal prediction delays through our proposed time-derivative regularization. CONTIME demonstrates outstanding performance in addressing the prediction delay across all 6 benchmark datasets. In addition to minimizing the prediction delay, it excels in all three metrics (TDI, DTW, and MSE). Our code is available at this link https://github.com/sheoyon-jhin/CONTIME.",
+        "keywords": [
+            "Time Series Forecasting",
+            "Prediction Delay",
+            "Neural Ordinary Differential Equation",
+            "Bi-directional GRU",
+            "Time-Derivative Regularization"
+        ],
+        "year": "2023",
+        "venue": "arXiv",
+        "doi link": null,
+        "method name": "CONTIME"
+    },
+    "relate work": {
+        "related work category": [
+            "Time Series Forecasting Models",
+            "Evaluation Metrics",
+            "Prediction Delay"
+        ],
+        "related papers": "The study extensively covers existing models in time series forecasting like PatchTST, DLinear, Neural ODE, and mentions detailed advancements using transformer architectures. ",
+        "comparisons with related methods": "The paper makes explicit comparison to state-of-the-art models like PatchTST and DLinear, emphasizing CONTIME's superior performance in not only MSE but also its added dimensions of TDI and DTW for evaluating prediction accuracy and delay management."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces CONTIME, a unique approach leveraging differential equations to address prediction delay in time series tasks by employing bi-directional continuous-time GRUs.",
+        "research purpose": "The main aim is to overcome prediction delays inherent in current time-series forecasting models and improve the accuracy of forecasting outcomes.",
+        "research challenge": "The challenge addressed is the prediction delay which diminishes the effectiveness and reliability of time-series data models.",
+        "method summary": "CONTIME method extends existing GRU technology using neural ordinary differential equations to integrate time-derivatives and manage prediction delays effectively.",
+        "conclusion": "CONTIME displays exceptional performance over several benchmark datasets, showcasing improvement over existing methods in metrics conventionally used (MSE) and novel measurements (TDI and DTW)."
+    },
+    "Method": {
+        "description": "CONTIME redefines GRU as a continuous-time differential model, introducing a bidirectional component to capture dependencies accurately with minimal delay.",
+        "problem formultaion": "CONTIME addresses prediction delays in time-series forecasting by redefining GRU networks using NODE frameworks.",
+        "feature processing": null,
+        "model": "A continuous-time bi-directional gated recurrent unit (GRU) network based on neural ordinary differential equation (NODE).",
+        "tasks": [
+            "Time-Dependency Analysis",
+            "Forecasting Accuracy Improvement"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Seamlessly integrates with existing GRU architecture \n2. Extends ODE-based time derivative calculations to minimize prediction delays"
+    },
+    "Experiments": {
+        "datasets": [
+            "AAPL",
+            "AMZN",
+            "GOOG",
+            "MSFT",
+            "Exchange",
+            "Weather"
+        ],
+        "baselines": [
+            "DLinear",
+            "Neural ODE",
+            "NCDE",
+            "Autoformer",
+            "FEDformer",
+            "PatchTST"
+        ],
+        "evaluation metric": "Compared using MSE, DTW, and TDI metrics for a comprehensive performance appraisal.",
+        "setup": "Experiments were conducted in a controlled software and hardware environment; using Ubuntu 18.04 LTS and Nvidia RTX A5000 for computation.",
+        "hyperparameters": null,
+        "results": "CONTIME showed consistent improvements over existing models, especially in dealing with prediction delays and achieving lower TDI and DTW scores.",
+        "performance": "Across six tested datasets, CONTIME led with the best results across evaluation metrics (MSE, DTW, TDI).",
+        "analysis": null,
+        "ablation study": "Studied the impact of proposed time-derivative regularization versus other loss configurations; confirmed its necessity and advantages in mitigating delays."
+    },
+    "conclusion": {
+        "summary": "CONTIME successfully alleviates prediction delay issues in time-series forecasting, showing great promise across several benchmark datasets.",
+        "future work": "Future explorations may consider expanding CONTIME's applicability to more diverse datasets and further refining its delay management mechanisms."
+    }
+}

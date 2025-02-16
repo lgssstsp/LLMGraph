@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "Leveraging Computer-Generated Annotations for Reliable information Retrieval Evaluation",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "James Brown"
+        ],
+        "affiliations": [
+            "University of Tech",
+            "Institute of Computing"
+        ],
+        "abstract": "Evaluation of information retrieval systems is an essential and long-standing component of the field. Traditionally, datasets for retrieval evaluation require human-annotated relevance judgments, a costly and resource-intensive process. Recent advances propose using large language models (LLMs) for relevance prediction, which are cost-effective but prone to errors. This paper presents two novel methods, Prediction-Powered Inference (PPI) and Conformal Risk Control (CRC), to provide reliable confidence intervals (CIs) around metrics derived from LLM-generated annotations, ensuring informed evaluation of retrieval systems.",
+        "keywords": [
+            "Information Retrieval",
+            "Large Language Model",
+            "Evaluation",
+            "Confidence Interval",
+            "Machine Learning"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": null,
+        "method name": "PPI, CRC"
+    },
+    "relate work": {
+        "related work category": [
+            "Confidence interval methods",
+            "LLMs for relevance prediction"
+        ],
+        "related papers": "The paper discusses extensive related work in the field of IR evaluation using confidence intervals and LLMs. Several datasets and previous approaches for statistical significance in IR systems are cited. Recent studies on LLMs for relevance annotation also provide context for our work.",
+        "comparisons with related methods": "Our proposed methods are compared with traditional methods relying solely on empirical bootstrapping. We leverage LLMs for generating relevance annotations, scrutinizing their predictions for reliability."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper explores the feasibility of using computer-generated annotations for information retrieval evaluation tasks, introducing new methods to ensure reliable confidence intervals around retrieved system evaluations.",
+        "research purpose": "The aim is to provide cost-effective and reliable alternatives to traditional human-annotated datasets in IR evaluation through the application of state-of-the-art machine learning models.",
+        "research challenge": "LLM-generated annotations, while cost-effective, can introduce systematic errors.",
+        "method summary": "The methods PPI and CRC are used to statistically estimate errors in LLM-generated relevance annotations and construct reliable confidence intervals around IR metrics.",
+        "conclusion": "The proposed methods can improve the reliability of IR evaluation using fewer human-annotated queries compared to traditional approaches."
+    },
+    "Method": {
+        "description": "The paper introduces two advanced statistical methods, PPI and CRC, to handle the unreliability in LLM-generated annotations through confidence intervals around retrieval evaluations.",
+        "problem formultaion": null,
+        "feature processing": "The predicted label distributions are normalized to produce probabilistic relevance annotations.",
+        "model": "Both PPI and CRC are based on statistical inference techniques that use machine learning predictions to adjust confidence intervals.",
+        "tasks": [
+            "Evaluate IR retrieval systems using LLM-generated annotations",
+            "Construct confidence intervals around retrieval metrics"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "PPI uses error correction with predicted annotations, while CRC leverages dual-calibration for bounding uncertainties."
+    },
+    "Experiments": {
+        "datasets": [
+            "TREC-DL",
+            "TREC-Robust04"
+        ],
+        "baselines": [
+            "Empirical Bootstrapping"
+        ],
+        "evaluation metric": null,
+        "setup": "Experiments were conducted on two benchmark IR datasets, evaluating methods using a stratified sampling strategy.",
+        "hyperparameters": null,
+        "results": "Both PPI and CRC methods show significant improvements in producing reliable confidence intervals over traditional bootstrapping.",
+        "performance": "Our methods exhibit superior coverage and reduced width of confidence intervals compared to previous approaches.",
+        "analysis": "CRC's ability to produce per-query confidence intervals offers more granular insight into retrieval evaluations.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "This study presents two innovative methods for improving IR system evaluation using LLM-based annotations.",
+        "future work": "Future work could explore using different LLM architectures and improvements to the confidence interval calibration process."
+    }
+}

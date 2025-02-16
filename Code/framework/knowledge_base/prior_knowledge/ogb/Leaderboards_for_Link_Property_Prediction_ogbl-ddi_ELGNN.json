@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 2,
+    "Method": "ELGNN",
+    "External Data": "No",
+    "Test Accuracy": "0.9777 ± 0.0037",
+    "Validation Accuracy": "0.8965 ± 0.0021",
+    "Contact": "mailto:huang-zh20@mails.tsinghua.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2310.14166",
+    "Code Link": "https://github.com/wongzhenhao/ELGNN",
+    "Parameters": "10,512,391",
+    "Hardware": "NVIDIA A100 GPU (80G RAM)",
+    "Date": "Oct 23, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/ELGNN.pdf",
+    "Paper Summary": "The paper introduces **ELGNN**, an ensemble learning technique designed to enhance the performance and robustness of Graph Neural Networks (GNNs) for link prediction, particularly in the context of drug-drug interactions.\n\n### Key Methods and Model Design Aspects:\n\n1. **Ensemble Learning Framework**:\n   - ELGNN combines multiple GNN models with diverse initializations or architectures. This ensemble is tailored to capture various aspects of the data through a weighted voting mechanism.\n\n2. **Feature Extraction and Aggregation**:\n   - The model focuses on consolidating predictions from various GNNs that employ different feature extraction and aggregation methods. This approach aims to leverage structural information and node features to optimize link predictions.\n\n3. **Optimization with Tree-Structured Parzen Estimator (TPE)**:\n   - ELGNN integrates the TPE algorithm for hyperparameter optimization. TPE is a Bayesian optimization approach that creates a probabilistic model of the objective function to efficiently explore weight parameters for the ensemble, enhancing model performance.\n   \n4. **Weighted Voting Mechanism**:\n   - In the prediction layer, each model in the ensemble contributes a prediction score, which is combined using a weighted approach. The weights are assigned based on the predictions made by each model, ensuring that more reliable models have a higher influence on the final output.\n\n5. **Architecture Composition**:\n   - The architecture includes models like Adaptive Graph Diffusion Network (AGDN), Graph Inception Diffusion Network (GIDN), and Path-aware Siamese GNN (PSG). Each of these models incorporates unique data representations and extraction techniques:\n     - **AGDN**: Utilizes multi-layer generalized graph diffusion with scalable weighting coefficients to capture multi-hop information.\n     - **GIDN**: Employs the inception module to process diverse features efficiently, minimizing computational demands.\n     - **PSG**: Focuses on both node and edge features, preserving k-neighborhood structure information and applying self-supervised learning for distinguishing between positive and negative links.\n\n6. **Link Prediction Objective**:\n   - The design is oriented towards ranking true drug interactions higher than non-interacting pairs. Consequently, the model aims at optimizing the prediction score for link presence based on both node and structural information.\n\n7. **Flexibility and Parallelization**:\n   - ELGNN allows for the parallel training of base models, making it more efficient in utilizing the computational resources and facilitating diverse input feature processing.\n\nOverall, ELGNN is engineered to effectively harness various GNN architectures and optimize multi-model predictions through an ensemble approach, thereby significantly enhancing the overall link prediction capabilities for complex graph-structured data."
+}

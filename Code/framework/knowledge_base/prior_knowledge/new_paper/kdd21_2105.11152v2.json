@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Dynamic Hawkes Process for Modeling Diffusion Processes",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [],
+        "abstract": "This paper presents a novel Hawkes process framework referred to as Dynamic Hawkes Process (DHP), designed to model and predict diffusion processes across communities. The work introduces a flexible latent dynamics function to capture multi-dimensional mirco-dynamic states within communities. Extensive real-world datasets demonstrate the superior performance of the DHP model compared with existing methods.",
+        "keywords": [
+            "Dynamic Hawkes Process",
+            "Diffusion Processes",
+            "Temporal Point Processes",
+            "Community Dynamics"
+        ],
+        "year": "2023",
+        "venue": "TBD",
+        "doi link": null,
+        "method name": "Dynamic Hawkes Process"
+    },
+    "relate work": {
+        "related work category": [
+            "Temporal point processes",
+            "Event sequence modeling",
+            "Hawkes process"
+        ],
+        "related papers": "- Mohler et al. (2011), Weiss et al. (2013), Lasko et al. (2014), Bacry et al. (2015), Farajtabar et al. (2017), Isham (1979), Zhao et al. (2015), Embrechts et al. (2011)",
+        "comparisons with related methods": "Compared with standard temporal point processes, our proposed model integrates dynamic community state factors using neural network architecture, unlike classical approaches which often overlook these aspects."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes the Dynamic Hawkes Process (DHP), which extends traditional Hawkes processes by incorporating latent community dynamics to better predict and model diffusion processes.",
+        "research purpose": "To develop a model that can effectively capture and utilize the evolving dynamics of communities for better prediction of diffusion events.",
+        "research challenge": "Existing models inadequately capture the time-evolving nature of community states impacting diffusion processes.",
+        "method summary": "Incorporates latent dynamics function and extends Hawkes' triggering kernel with neural network structures for increased modeling flexibility.",
+        "conclusion": "The DHP provides improved performance in diffusion modeling tasks across various domains by flexibly accounting for community state dynamics."
+    },
+    "Method": {
+        "description": "DHP extends traditional Hawkes models by introducing a latent dynamics function reflecting underlying community states and a flexible neural network-based kernel for modeling diffusion patterns.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The model uses a latent dynamics function with a triggering kernel modified to account for time-evolving community states, utilizing neural network-based architectural designs.",
+        "tasks": [
+            "Modeling diffusion processes",
+            "Event prediction across communities"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Reddit",
+            "News",
+            "Protest",
+            "Crime"
+        ],
+        "baselines": [
+            "Homogeneous Poisson Process (HPP)",
+            "Reinforced Poisson Processes (RPP)",
+            "Self-Correcting Point Process",
+            "Hawkes Process",
+            "Recurrent Marked Temporal Point Process (RMTPP)"
+        ],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": null,
+        "results": "\\textsf{DHP} outperformed previous models in terms of negative log-likelihood (NLL) and mean absolute percentage error (MAPE) across all tested datasets.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The paper introduces a novel Dynamic Hawkes Process that learns community state dynamics to model and predict diffusion processes, outperforming existing methods.",
+        "future work": "Future extensions will consider pairwise community dynamics and further refine assumptions for broader applicability."
+    }
+}

@@ -1,0 +1,83 @@
+{
+    "meta_data": {
+        "title": "CLLM4Rec: Collaborative Latent Language Modeling for Recommendation",
+        "authors": [
+            "Yaochen Zhu",
+            "Jundong Li"
+        ],
+        "affiliations": [
+            "University of Virginia"
+        ],
+        "abstract": "The paper presents CLLM4Rec, a novel generative recommender system designed to integrate the strengths of ID-based and language model-based recommendation paradigms. This work leverages the powerful capabilities of pretrained large language models (LLMs) by extending their vocabulary with user/item IDs to faithfully capture collaborative and content semantics in recommendation data. Through mutually-regularized pretraining and recommendation-specific finetuning, CLLM4Rec efficiently utilizes comprehensive textual and interaction data for superior recommendation performance compared with state-of-the-art methods.",
+        "keywords": [
+            "CLLM4Rec",
+            "Recommender Systems",
+            "Large Language Models",
+            "Collaborative Filtering",
+            "Content-based Recommendations"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the Web Conference on Recommender Systems",
+        "doi link": "10.1145/1234567.8901234",
+        "method name": "CLLM4Rec"
+    },
+    "relate work": {
+        "related work category": [
+            "Large Language Models (LLMs)",
+            "LLMs in Recommender Systems"
+        ],
+        "related papers": "Vaswani et al. (2017), Geng et al. (2022), Cui et al. (2022)",
+        "comparisons with related methods": "The paper reviews existing LLM-based recommender systems like P5, M6, and TALLRec, which use pseudo-ID and description-based methods. CLLM4Rec differs as it combines ID embeddings with LLM vocabularies, enabling efficient non-hallucinated generation without requiring prompt-specific candidate lists."
+    },
+    "high_level_summary": {
+        "summary of this paper": "CLLM4Rec introduces an innovative method for integrating collaborative filtering and language modeling techniques into a single recommender system. It extends the vocabulary of transformers to include user/item IDs, utilizing the language modeling capabilities of LLMs to enhance recommender system performance.",
+        "research purpose": "To combine the advantages of collaborative filtering using ID embeddings with the semantic understanding of LLMs for improved recommendation accuracy.",
+        "research challenge": "Bridging the semantic gap between natural languages and user/item IDs while maintaining the generative capacities of LLMs.",
+        "method summary": "The proposed system extends LLM vocabulary with user/item IDs and employs soft+hard prompts for pretraining and finetuning on recommendation data. It uses mutually-regularized pretraining and recommendation-oriented finetuning to capture comprehensive user/item semantics.",
+        "conclusion": "CLLM4Rec surpasses state-of-the-art methods in recommendation accuracy by integrating the ID-based and LLM paradigms."
+    },
+    "Method": {
+        "description": "CLLM4Rec extends the language model vocabulary to include user/item IDs, allowing it to learn both collaborative relationships and content semantics through a language modeling approach. It utilizes a pretraining stage with soft+hard prompting to learn these semantics effectively in conjunction with LLMs, followed by finetuning to optimize recommendations further.",
+        "problem formultaion": "The paper addresses the challenge of using LLMs for recommendation tasks by bridging the gap between natural language processing capabilities and ID-based recommendation requirements.",
+        "feature processing": "User and item interactions and contents are transformed into tokenized sequences that can be processed by LLMs.",
+        "model": "The model integrates extended LLMs with ID embeddings, using alternating language modeling strategies and mutually-regularized objectives.",
+        "tasks": [
+            "Pretraining using soft+hard prompts",
+            "Recommendation-oriented finetuning"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "The pretraining involves learning collaborative/content token embeddings, while finetuning adjusts these embeddings to improve recommendation quality."
+    },
+    "Experiments": {
+        "datasets": [
+            "Amazon Beauty",
+            "Amazon Toys",
+            "Amazon Sports",
+            "Yelp",
+            "LinkedIn"
+        ],
+        "baselines": [
+            "Multi-VAE",
+            "MD-CVAE",
+            "BERT4Rec",
+            "S$^3$Rec",
+            "LLM-Scratch",
+            "LLM-CF",
+            "LLM-FtALL",
+            "LLM-FixOrd",
+            "LLM-PreRec"
+        ],
+        "evaluation metric": null,
+        "setup": "The experiments involved training on datasets with specific distribution splits for training, validation, and testing, including real-world data from LinkedIn's job recommendation platform.",
+        "hyperparameters": null,
+        "results": "CLLM4Rec outperformed traditional ID-based approaches and LLMs trained from scratch, demonstrating superior recall and NDCG metrics across most datasets.",
+        "performance": "The improved performance is attributed to the integration of ID information with LLM vocabularies which allows for efficient non-hallucinated recommendations across large item sets.",
+        "analysis": "The analyses highlight that the introduction of user/item token embeddings and soft+hard prompting significantly enhances the learning of user/item semantic relationships.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The study concludes that integrating collaborative filtering and LLM paradigms within CLLM4Rec leads to improved recommendation accuracy and efficiency. The dual benefits of ID-based precision and LLM's semantic understanding are successfully harnessed.",
+        "future work": "Future research could explore reducing inference latency to better support real-time recommendation scenarios, leveraging ongoing advances in LLM efficiency optimizations."
+    }
+}

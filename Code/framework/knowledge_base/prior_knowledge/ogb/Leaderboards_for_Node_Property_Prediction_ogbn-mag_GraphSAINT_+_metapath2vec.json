@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 20,
+    "Method": "GraphSAINT + metapath2vec",
+    "External Data": "No",
+    "Test Accuracy": "0.4966 ± 0.0022",
+    "Validation Accuracy": "0.5066 ± 0.0017",
+    "Contact": "mailto:1520655940@qq.com",
+    "Paper Link": "https://arxiv.org/abs/1907.04931",
+    "Code Link": "https://github.com/ytchx1999/PyG-ogbn-mag/tree/main/saint%2Bmetapath2vec",
+    "Parameters": "309,764,724",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Apr 9, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/GraphSAINT_+_metapath2vec.pdf",
+    "Paper Summary": "The paper presents GraphSAINT, a novel graph sampling-based method designed to improve the efficiency and accuracy of training Graph Convolutional Networks (GCNs), particularly in large graph settings. \n\n### Key Model Design Aspects:\n\n1. **Graph Sampling Method**:\n   - Unlike traditional GCNs that sample nodes or edges across layers after constructing a complete GCN on the entire graph, GraphSAINT samples subgraphs directly to construct minibatches. This approach alleviates the \"neighbor explosion\" issue, ensuring that each GCN in a minibatch is complete and well-connected.\n\n2. **Minibatch Construction**:\n   - Within GraphSAINT, minibatches are formed by sampling the training graph itself, allowing a complete GCN to be built from a well-chosen subgraph. The algorithm aims to retain highly connected subgraphs for effective feature propagation.\n\n3. **Integration of Connective Nodes**:\n   - The design of GraphSAINT requires that nodes with higher influence over each other are more likely to be selected in the same subgraph. This connection is vital for minimizing information loss during propagation.\n\n4. **Normalization Techniques**:\n   - To address biases arising from non-uniform sampling probabilities of nodes and edges, GraphSAINT incorporates normalization techniques. It computes normalization coefficients to ensure that the learning process does not favor frequently sampled nodes unduly.\n\n5. **Variance Reduction**:\n   - The method includes algorithms that aim to reduce the variance of estimates derived from the sampled subgraphs. By addressing this, GraphSAINT seeks to improve the stability and quality of the training process.\n\n6. **Adaptability to Different GCN Architectures**:\n   - GraphSAINT is designed to be architecture-agnostic, allowing it to be integrated with various GCN extensions, such as Jumping Knowledge Networks (JK-net) and Graph Attention Networks (GAT). Its design supports both inductive and transductive learning settings.\n\n7. **Sampling Algorithms**:\n   - Several efficient and lightweight sampling algorithms are implemented within GraphSAINT, including random node samplers, edge samplers, and random walk samplers. These algorithms are tailored to ensure that the sampled subgraphs are representative of the whole graph.\n\n8. **Pre-processing**:\n   - Before training, a pre-processing step is performed where node and edge sampling probabilities are estimated. This preparation aims to enable effective normalization during mini-batch training, thus optimizing performance.\n\nOverall, GraphSAINT’s innovative approach to graph sampling and normalization not only improves training efficiency in large graphs but also enhances the accuracy of learned representations in GCNs by resolving potential biases and variance issues present in conventional methods."
+}

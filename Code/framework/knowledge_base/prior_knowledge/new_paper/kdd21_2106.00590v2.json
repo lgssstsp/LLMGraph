@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "NewsEmbed: Learning Document Representations for News Content in Multiple Domains:",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous"
+        ],
+        "abstract": "We propose a system called NewsEmbed to effectively model text-rich news content from the public web, enhancing applications in information retrieval and recommendation. This model achieves robust document-level embeddings using weakly supervised data and advanced model architectures. Key contributions of the work include scalable multilingual data collection, a unique approach to co-train models for contrastive and classification tasks, and competitive performance across a variety of benchmarks.",
+        "keywords": [
+            "document embeddings",
+            "news",
+            "multilingual",
+            "contrastive learning",
+            "information retrieval"
+        ],
+        "year": "2023",
+        "venue": "ArXiv",
+        "doi link": null,
+        "method name": "NewsEmbed"
+    },
+    "relate work": {
+        "related work category": [
+            "Text Representation",
+            "Contrastive Learning",
+            "News Modeling"
+        ],
+        "related papers": "[devlin2019bert, lample2019cross]",
+        "comparisons with related methods": "Unlike previous methods, our approach utilizes weakly supervised learning with a novel dataset collection method to improve document-level embeddings specifically for news tasks."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces NewsEmbed, a model leveraging weak supervision to learn document-level representations for news. Using multilingual data, it demonstrates competitive performance on various benchmarks, emphasizing its robustness across tasks.",
+        "research purpose": "To create robust document embeddings for text-rich news content, enhancing applications in information retrieval, recommendation, and beyond.",
+        "research challenge": "Handling out-of-vocabulary concepts and evolving entities in diverse news content.",
+        "method summary": "Uses weakly supervised data, cross-lingual document triplets, and a co-trained model approach to optimize performance across different news tasks.",
+        "conclusion": "NewsEmbed successfully produces effective document embeddings in the news domain, outperforming baselines in various downstream tasks."
+    },
+    "Method": {
+        "description": "The method employs cross-lingual document triplets to train an encoder with weak supervision, focusing on achieving high precision in semantic similarity and topic associations.",
+        "problem formultaion": null,
+        "feature processing": "The method ensures document is text-rich by discarding non-rich content and applying deduplication techniques.",
+        "model": "NewsEmbed incorporates a BERT-initialized encoder model for robust document representation, optimized with InfoNCE and BCE loss functions.",
+        "tasks": [
+            "Document Clustering",
+            "Topic Classification",
+            "Information Retrieval"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Collect large-scale multilingual weak supervision data; 2. Train encoder on triplet dataset with contrastive objective; 3. Co-train with multi-label classification on topics."
+    },
+    "Experiments": {
+        "datasets": [
+            "Multi-News",
+            "Stream-News",
+            "BBC",
+            "20 Newsgroups",
+            "AG News",
+            "MIND-small"
+        ],
+        "baselines": [
+            "SBERT",
+            "USE",
+            "mUSE",
+            "LaBSE"
+        ],
+        "evaluation metric": "Adjusted Rand Index, Spearman rank correlation, classification accuracy",
+        "setup": "The model is evaluated on various clustering, retrieval, and classification tasks across both in-domain and cross-lingual datasets.",
+        "hyperparameters": "Batch size: 8,196, Learning rate: 5e-5, Temperature τ: 0.05",
+        "results": "NewsEmbed outperformed competitors across most tasks, particularly in in-domain clustering and semantic text similarity evaluations.",
+        "performance": "Demonstrated strong performance on document clustering and retrieval tasks, outperforming several baseline models.",
+        "analysis": "Effective for long text encoding and cross-lingual scenarios, but slightly impacted in token-level reasoning.",
+        "ablation study": "Ablation studies held on data partitioning for generalization and alternative design choices were shown to enhance model robustness."
+    },
+    "conclusion": {
+        "summary": "The study presented a successful approach for news-specific document representation using weakly supervised learning. NewsEmbed offers strong outcomes across varied tasks, showing improvements compared to existing methodologies.",
+        "future work": "Future work may explore handling longer documents efficiently and expand model capabilities to include multimodal data such as images and audio."
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Principal Neighbourhood Aggregation (PNA): Enhancing Graph Neural Network Expressiveness",
+        "authors": [
+            "Anonymous Authors"
+        ],
+        "affiliations": [
+            "Unknown Affiliation"
+        ],
+        "abstract": "Graph Neural Networks have faced difficulties in evaluating their expressive power and benchmarking. This work proposes Principal Neighbourhood Aggregation (PNA) model, addressing these challenges by using multiple aggregators and introducing degree-scalers to improve the model's expressive capacity, benchmarked on multi-task datasets.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Principal Neighbourhood Aggregation",
+            "Expressive Power",
+            "Multi-task Benchmarking",
+            "Degree-scalers"
+        ],
+        "year": "2023",
+        "venue": "Unknown Venue",
+        "doi link": null,
+        "method name": "Principal Neighbourhood Aggregation (PNA)"
+    },
+    "relate work": {
+        "related work category": [
+            "GNN Expressiveness",
+            "Spectral Graph Theory",
+            "Benchmarking GNNs"
+        ],
+        "related papers": "1. Scarselli et al., 2009\n2. Bronstein et al., 2017\n3. Battaglia et al., 2018\n4. Hamilton et al., 2017",
+        "comparisons with related methods": "Compared with other aggregation strategies and spectral methods for GNN expressive power, highlighting the necessity for multiple aggregator strategies."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents the Principal Neighbourhood Aggregation (PNA) model, innovating through the introduction of multiple aggregators and degree-scalers to enhance graph neural network expressiveness. It addresses challenges in GNN expressive power, establishing cross-task benchmarks to validate improvements.",
+        "research purpose": "To improve the expressive power of Graph Neural Networks by developing a model incorporating multiple aggregation strategies and degree-scalers, allowing for enhanced benchmarking and analysis of GNN capabilities.",
+        "research challenge": "The lack of standardized benchmarks and theoretical frameworks for GNN expressive power evaluation.",
+        "method summary": "Principal Neighbourhood Aggregation leverages multiple aggregators and degree-scalers to improve expressive model power and solve multi-task benchmark problems.",
+        "conclusion": "The PNA model shows improved performance over traditional models, verified by theoretical and empirical evaluations across synthetic and real-world benchmarks."
+    },
+    "Method": {
+        "description": "Principal Neighbourhood Aggregation (PNA) combines multiple aggregation strategies and degree-scalers to enhance GNN model expressiveness over various graph structures.",
+        "problem formultaion": "Address the aggregation deficiencies in GNNs for one-hop neighbourhood understanding and structural property characterization.",
+        "feature processing": "The method focuses on aggregating neighbourhood features like mean, max, min, and standard deviation for robust representation learning.",
+        "model": "Principal Neighbourhood Aggregation encompasses multiple aggregation techniques (mean, max, min, standard deviation) and degree-based scalers to improve expressiveness.",
+        "tasks": [
+            "Graph Representation Learning",
+            "Node Representation Learning",
+            "Graph-level Task Benchmarking",
+            "Multi-task Learning"
+        ],
+        "theoretical analysis": "Theoretical demonstration of the need for multiple aggregators for distinguishing multisets of continuous features.",
+        "complexity": "Moderately increased computational complexity due to multiple aggregation strategies, balanced by parameter sharing.",
+        "algorithm step": "The algorithm integrates PNA within the message-passing framework, utilizing various aggregators and scalers for each node's neighbourhood messages."
+    },
+    "Experiments": {
+        "datasets": [
+            "Artificially generated graph datasets",
+            "ZINC",
+            "MolHIV",
+            "CIFAR10",
+            "MNIST"
+        ],
+        "baselines": [
+            "Graph Convolutional Network (GCN)",
+            "Graph Attention Network (GAT)",
+            "Graph Isomorphism Network (GIN)",
+            "Message Passing Neural Network (MPNN)"
+        ],
+        "evaluation metric": "Mean Squared Error (MSE) assesses task performance across benchmarks.",
+        "setup": "Multiple GNN layers experimenting with a range of aggregators and scalers. Performance compared on individual and multi-task benchmarks.",
+        "hyperparameters": "Depend on task complexity and network architecture; learning rate, weight decay, and dropout were optimized based on validation error.",
+        "results": "The PNA model outperforms state-of-the-art GNNs on both artificial and real-world benchmarks.",
+        "performance": "Consistent performance advantage demonstrated over traditional models in various settings, particularly excelling on diverse chemical datasets.",
+        "analysis": "Noted improvement on graph tasks with higher diameter nodes, overcoming previous aggregation limitations.",
+        "ablation study": "Results analyzed over components like individual/combined aggregators and scalers; assessed on shape robustness and multi-task performance."
+    },
+    "conclusion": {
+        "summary": "PNA significantly advances GNN expressiveness by integrating multiple aggregators, supported by both improved theoretical frameworks and empirical benchmarks.",
+        "future work": "Further exploration into dynamic adaptability of PNA to extended graph variances and scalability across larger unseen datasets."
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Path-Based Explanation for Graph Neural Network Models in Knowledge Graph Completion",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Alice Johnson"
+        ],
+        "affiliations": [
+            "Department of Computer Science, University of XYZ"
+        ],
+        "abstract": "Graph neural networks (GNNs) have demonstrated significant progress in applications related to knowledge graph completion (KGC). However, the black-box nature of GNNs presents challenges in understanding their decision processes. This paper introduces a novel path-based explanatory framework that elucidates how GNN models make decisions in the context of KGC, enhancing model interpretability and scalability.",
+        "keywords": [
+            "graph neural networks",
+            "knowledge graph",
+            "path-based explanation",
+            "model interpretability",
+            "explainable AI"
+        ],
+        "year": "2023",
+        "venue": "Advances in Knowledge Discovery",
+        "doi link": null,
+        "method name": "Path-Based Explanation Framework"
+    },
+    "relate work": {
+        "related work category": [
+            "Knowledge Graph Completion (KGC)",
+            "GNN explanation",
+            "Paths on Graphs"
+        ],
+        "related papers": "- Bordes A., et al. Translating Embeddings for Modeling Multi-relational Data.\n- Galarraga L.A., et al. Fast Rule Mining in Ontological Knowledge Bases with AMIE.\n- Tjoa E., et al. A Survey on Explainable Artificial Intelligence (XAI): Toward Transparent AI.\n- SubgraphX.\n- PGExplainer.\n- PaGE-Link.",
+        "comparisons with related methods": "Method is compared with existing GNN explanation methods that target homogeneous graphs. It surpasses these methods by providing path-centric explanations tailored for the KGC task, outperforming both instance-based and subgraph-based baseline methods."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes the first path-based explanation method tailored for GNN models in the knowledge graph completion task. It introduces a technique that leverages paths between nodes to enhance the interpretability and scalability of explanations compared to traditional instance-based and subgraph-based methods.",
+        "research purpose": "To address the shortcomings of current explanation methods for GNN-based knowledge graph completion tasks and provide better interpretability and scalability.",
+        "research challenge": "Existing explanation methods do not effectively address the interpretable path-centric nature of knowledge graphs.",
+        "method summary": "The method leverages path-based explanations to provide more intuitive insights into the performance of GNNs in the KGC task. It introduces a novel graph-powering technique to efficiently generate explanatory paths.",
+        "conclusion": "The proposed path-based explanation framework effectively enhances the interpretability and scalability of GNN-based KGC models, outperforming state-of-the-art methods."
+    },
+    "Method": {
+        "description": "The proposed method utilizes path-based explanations to uncover how GNNs perform knowledge graph completion tasks. By employing paths, the explanations are both scalable and human-interpretable, providing insights into the GNN decision process.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The model integrates a triplet edge scorer (TES) and a path-enforcing learning mechanism to highlight important paths in the graph.",
+        "tasks": [
+            "Knowledge graph completion",
+            "Explanatory path extraction"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Demonstrated improved time complexity over existing methods, particularly due to a novel graph-power-based approach that requires fewer computational resources.",
+        "algorithm step": "The method involves extracting an L-hop subgraph, using TES to evaluate edge importance, and leveraging a graph-power technique to enhance important paths for generating explanations."
+    },
+    "Experiments": {
+        "datasets": [
+            "FB15k-237",
+            "WN18RR"
+        ],
+        "baselines": [
+            "GNNExplainer",
+            "PGExplainer",
+            "PaGE-Link"
+        ],
+        "evaluation metric": "Fidelity+, Fidelity-, Sparsity, HΔR:1, HΔR:3, HΔR:5",
+        "setup": "The experiments evaluated the framework's ability in the context of multiple GNN-based KGC models, varying path lengths to generate explanations and comparing performance against baseline methods.",
+        "hyperparameters": "The path length parameter was varied to assess its influence. Explanations were generated for sample sets of high-confidence triplets.",
+        "results": "The method consistently outperformed baseline explainer methods in generating human-interpretable paths and exhibited superior scalability to large graphs.",
+        "performance": null,
+        "analysis": "The path-based approach demonstrated more concise and meaningful explanations as compared to subgraph-based methods, notably in denser datasets such as FB15k-237.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The study proposes a novel method for explaining GNN-based models in the knowledge graph completion task using path-based explanations.",
+        "future work": "Future research could explore adapting the path-centric explanation framework for other graph-based tasks or integrating with further XAI approaches for broader applicability."
+    }
+}

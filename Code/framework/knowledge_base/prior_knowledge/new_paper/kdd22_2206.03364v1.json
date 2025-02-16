@@ -1,0 +1,50 @@
+{
+    "meta_data": {
+        "title": "Knowledge-Guided Pre-training of Graph Transformer (KGPT)",
+        "authors": [],
+        "affiliations": [],
+        "abstract": "",
+        "keywords": [],
+        "year": "",
+        "venue": "",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [],
+        "related papers": "",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces the Knowledge-Guided Pre-training of Graph Transformer (KGPT) model, designed to optimize the learning processes of graph-structured data.",
+        "research purpose": "The purpose of the research is to improve the efficiency and accuracy of graph data representation and processing by incorporating domain knowledge into the pre-training phase of a Graph Transformer model.",
+        "research challenge": null,
+        "method summary": null,
+        "conclusion": null
+    },
+    "Method": {
+        "description": "The method leverages domain knowledge to enhance the pre-training phase of a Graph Transformer by guiding the model to focus on important graph structures and patterns.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Graph Transformer with Knowledge-Guided Pre-training (KGPT)",
+        "tasks": [],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [],
+        "baselines": [],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": null,
+        "results": "",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "",
+        "future work": null
+    }
+}

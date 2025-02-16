@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Graph Convolutional Network for Attributed Multiplex Heterogeneous Networks",
+        "authors": [
+            "Wei Zhang",
+            "Guang Yu",
+            "Qi Liu"
+        ],
+        "affiliations": [
+            "School of Information and Technology, Tianjin University, China",
+            "National Engineering Research Center for E-Commerce Technologies, China"
+        ],
+        "abstract": "We propose a novel Graph Convolutional Network, called \\system, for tackling the representation learning problem on attributed multiplex heterogeneous networks (AMHENs). Our approach effectively captures multi-relational topological dependencies by decoupling such networks into multiple homogeneous and bipartite sub-networks. Inspired by the graph neural networks (GNNs), \\system further aggregates these sub-networks for effective embedding learning. Comprehensive experiments demonstrate its superiority in downstream tasks such as link prediction and node classification.",
+        "keywords": [
+            "Graph Convolutional Networks",
+            "Multiplex Heterogeneous Networks",
+            "Representation Learning",
+            "Link Prediction"
+        ],
+        "year": "2023",
+        "venue": "ICML",
+        "doi link": "https://doi.org/10.1145/3485000",
+        "method name": "Multiplex Heterogeneous Graph Convolutional Network"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Heterogeneous Network Embedding",
+            "Multiplex Network Embedding"
+        ],
+        "related papers": "1. Graph Neural Networks for Node Classification~\\cite{Kipf2017SemiSupervisedCW}, 2. Heterogeneous Network Embedding using Metapaths~\\cite{dong2017metapath2vec}, 3. Multiplex Network Embedding with Spectral Transformations ~\\cite{liu2020fast}.",
+        "comparisons with related methods": "The proposed \\system outperforms conventional models like Metapath2Vec by not requiring domain-specific metapath design and demonstrates efficiency over models such as GTN by reducing computational intensity."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces \\system, a graph convolutional architecture for learning embeddings from AMHENs, achieving superior tasks performance like link prediction and node classification by leveraging its novel architecture.",
+        "research purpose": "To develop a GCN tailored to multiplex heterogeneous networks that effectively preserves node and edge heterogeneity with varying interactions.",
+        "research challenge": "Existing methods often require prior knowledge for metapath design and overlook the multiplex characteristics inherent in real-world graphs.",
+        "method summary": "The paper introduces a framework that decouples AMHENs into simpler sub-networks, which are then re-aggregated using relation-aware weights to learn comprehensive embeddings.",
+        "conclusion": "\\system demonstrates superior accuracy and efficiency, elevating graph representation learning by capturing detailed structural characteristics in heterogeneous and multiplex networks."
+    },
+    "Method": {
+        "description": "The framework comprises a multiplex relation aggregation step followed by a multilayer graph convolution module. An automated weight learning mechanism assigns importance to different relations to dynamically adjust representation focus across multiplex edges.",
+        "problem formultaion": "How to effectively preserve both node and edge heterogeneity in multiplex networks during the embedding process.",
+        "feature processing": "Aggregates multi-relational contextual signals across heterogeneous nodes while dynamically adjusting for diverse relationship types.",
+        "model": "\\system decouples a complex network into homogeneous and bipartite sub-networks, re-aggregating them with learned weights to yield node embeddings.",
+        "tasks": [
+            "Link Prediction",
+            "Node Classification"
+        ],
+        "theoretical analysis": "The model maintains a balance between preserving low-complexity computation and achieving high-quality embeddings by simplifying convolution operations.",
+        "complexity": "Considering the trade-off between computational demands and embedding precision, the model optimizes complexity by omitting non-linear transformations.",
+        "algorithm step": "1. Decouple network, 2. Learn relation-aware weights, 3. Apply multi-layer convolution, 4. Aggregate embeddings from sub-networks."
+    },
+    "Experiments": {
+        "datasets": [
+            "Alibaba",
+            "Amazon",
+            "AMiner",
+            "IMDB",
+            "DBLP"
+        ],
+        "baselines": [
+            "node2vec",
+            "RandNE",
+            "FastRP",
+            "MAGNN",
+            "GATNE"
+        ],
+        "evaluation metric": "F1 Score, Macro-F1, Micro-F1",
+        "setup": "Training with sub-networks derived from multi-typed node relations, employing logistic regression for evaluation.",
+        "hyperparameters": "Embedding dimension is set to 200; learning rate varied among tested values; other parameters optimized as per dataset-specific performance.",
+        "results": "\\system consistently outperforms baselines, showing significantly faster convergence and achieving higher accuracy across different node embedding tasks.",
+        "performance": "Demonstrates significant accuracy gains, over 11% on tested datasets, and achieves fast convergence rates during training.",
+        "analysis": "Ablation study validates the importance of assigning relation-aware weights and leveraging multi-layered convolution for capturing diverse relation types.",
+        "ablation study": "Highlights the sensitivity to variations in number of layers and dimensional size; confirms the efficacy of the relation-aware weight mechanism in improving embedding impact."
+    },
+    "conclusion": {
+        "summary": "\\system is a highly-efficient GCN method tailored for multiplex heterogeneous networks, introducing considerable improvements to link prediction and node classification through strategic model architecture.",
+        "future work": "Exploring further computational optimizations and real-world applications in dynamic network environments."
+    }
+}

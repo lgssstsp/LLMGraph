@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 9,
+    "Method": "GIPA",
+    "External Data": "No",
+    "Test Accuracy": "0.8700 ± 0.0010",
+    "Validation Accuracy": "0.9187 ± 0.0003",
+    "Contact": "mailto:qinkai.zheng1028@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2105.06035",
+    "Code Link": "https://github.com/yongchao-liu/gipa",
+    "Parameters": "4,831,056",
+    "Hardware": "GeForce Titan RTX (24GB GPU)",
+    "Date": "May 13, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/GIPA.pdf",
+    "Paper Summary": "### GIPA: General Information Propagation Algorithm for Graph Learning - Model Design Aspects\n\n**1. Architecture Overview:**\nThe General Information Propagation Algorithm (GIPA) introduces a novel graph attention neural network specifically designed for attributed graphs. GIPA comprises three core components: attention, propagation, and aggregation.\n\n**2. Attention Component:**\n- **Multi-head Attention:** GIPA utilizes a multi-head attention mechanism implemented via a multi-layer perceptron (MLP). This is designed to compute the importance scores of neighboring nodes and edges more effectively than previous models.\n- **Attention Calculation:** The attention scores between nodes \\(i\\) and \\(j\\) involve concatenating the features of these nodes and the edge features connecting them. This allows the attention function to learn importance through deeper interactions across features.\n\n**3. Propagation Component:**\n- **Incorporation of Features:** Unlike existing models that primarily utilize node features (e.g., GAT), GIPA integrates both node and edge features during the information propagation process.\n- **Edge-wise Propagation:** The method focuses on propagating information from each neighboring node \\(j\\) to the target node \\(i\\), utilizing the associated edge features. This is achieved by concatenating the node embedding of neighbor \\(j\\) and the edge embedding connecting \\(i\\) and \\(j\\) through an MLP.\n\n**4. Aggregation Component:**\n- **Residual Connections:** After message propagation, GIPA employs a residual connection to enhance the sharing of information. The final output for each node combines the aggregated messages from neighboring nodes with a linear projection of its own features.\n- **Aggregation Function:** The aggregation process utilizes a summation approach, collecting all propagated messages to compute the updated embedding for the target node.\n\n**5. Model Dynamics:**\n- The final output is produced by considering the combined effects of attention and propagation mechanisms, allowing GIPA to adaptively learn and update node representations based on both the structural and feature information inherent in the graph.\n\nOverall, GIPA's design emphasizes a comprehensive utilization of both node and edge features through its attention mechanism and residual connections to effectively produce enriched node embeddings suitable for various downstream tasks."
+}

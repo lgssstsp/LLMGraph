@@ -1,0 +1,88 @@
+{
+    "meta_data": {
+        "title": "Harnessing Graph Neural Networks: Insights into Deep Models and the Advent of Adaptive Initial Residual",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Graph AI Research Institute"
+        ],
+        "abstract": "Graph Neural Networks (GNNs) have become a central point of interest in the realm of data mining for graph-structured datasets, paving the way for advancements in various applications. However, the depth of these models, especially the Propagation Depth ($D_p$) and Transformation Depth ($D_t$), considerably influences their performance. This paper investigates the over-smoothing and model degradation issues associated with deep GNNs, presenting Adaptive Initial Residual (AIR) as a solution to ameliorate these challenges and enable deeper architectures.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Deep Learning",
+            "Model Degradation",
+            "Over-smoothing",
+            "Residual Connections"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Artificial Intelligence (ICAICON)",
+        "doi link": "https://doi.org/10.1000/182",
+        "method name": "Adaptive Initial Residual (AIR)"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Deep Learning Architectures",
+            "Residual Networks"
+        ],
+        "related papers": "Zhang et al. 2021, Kipf et al. 2016, Wu et al. 2019",
+        "comparisons with related methods": "The proposed AIR method contrasts with widely adopted residual learning approaches by specifically addressing both over-smoothing and model degradation issues in GNNs."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper provides an in-depth analysis of the performance degradation factors in deep GNNs and introduces a novel module, AIR, to tackle these limitations, ultimately enhancing the depth scalability and performance of GNN models.",
+        "research purpose": "To identify the major factors causing performance degradation in deep GNNs and develop a solution to support deeper architectures while maintaining performance.",
+        "research challenge": "Deep GNN models often suffer from performance decline due to over-smoothing and model degradation issues.",
+        "method summary": "The proposed method, AIR, integrates learnable residual connections to mitigate the challenges associated with increasing Propagation and Transformation depth in GNNs.",
+        "conclusion": "The Adaptive Initial Residual module significantly improves GNN performance on deep models, as demonstrated on multiple datasets, by effectively addressing both over-smoothing and model degradation."
+    },
+    "Method": {
+        "description": "The paper introduces Adaptive Initial Residual (AIR), a module designed to alleviate performance degradation in GNNs by incorporating adaptive residual connections, thereby addressing over-smoothing and model degradation.",
+        "problem formultaion": "The research aims to improve the performance of deep GNNs by addressing two critical issues: over-smoothing with large Propagation Depth ($D_p$) and model degradation with large Transformation Depth ($D_t$).",
+        "feature processing": "Node and graph-level features are preprocessed through disentangled Propagation and Transformation layers in GNNs.",
+        "model": "Adaptive Initial Residual (AIR) integrates into existing GNN frameworks, fostering deeper architectures with improved accuracy.",
+        "tasks": [
+            "Node Classification",
+            "Graph Classification",
+            "Link Prediction"
+        ],
+        "theoretical analysis": "AIR's theoretical foundation rests on explicitly utilizing residual connections to tackle over-smoothing and degradation challenges in multi-layer architectures.",
+        "complexity": "The integration of AIR adds marginal computational complexity, which is outweighed by the resultant performance improvements.",
+        "algorithm step": "AIR incorporates learnable coefficients to modulate the influence of raw input features at varying depths in GNNs."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "PubMed",
+            "ogbn-arxiv",
+            "ogbn-products",
+            "ogbn-papers100M"
+        ],
+        "baselines": [
+            "GCN",
+            "GraphSAGE",
+            "JK-Net",
+            "ResGCN",
+            "APPNP",
+            "AP-GCN",
+            "DAGNN",
+            "SGC",
+            "SIGN",
+            "S 2 GC",
+            "GBP"
+        ],
+        "evaluation metric": "Node classification accuracy",
+        "setup": "Experiments were conducted on multiple citation network datasets to benchmark AIR against state-of-the-art methods.",
+        "hyperparameters": "Varied $D_p$ and $D_t$ depending on the architecture and dataset, employing adaptive learning rates.",
+        "results": "The AIR enhancement led to significant accuracy improvements across tested datasets, particularly in deep and sparse network settings.",
+        "performance": "AIR-enhanced models outperformed baselines, confirming its efficacy in alleviating over-smoothing and degradation issues.",
+        "analysis": "Performance analyses revealed that AIR contributes to bandwidth flexibility by furnishing deeper models with resilience against common performance pitfalls.",
+        "ablation study": "Conducted to verify the additive value of adaptive coefficients and depth regulation attributes of AIR in achieving robust model performance"
+    },
+    "conclusion": {
+        "summary": "Adaptive Initial Residual (AIR) emerges as a vital component in augmenting deep GNN architectures, mitigating typical pitfalls like over-smoothing and model degradation and thus pushing the frontiers of performance in graph-based learning tasks.",
+        "future work": "Further exploration could delve into optimizing AIR for more diverse network structures beyond citation and co-purchase networks."
+    }
+}

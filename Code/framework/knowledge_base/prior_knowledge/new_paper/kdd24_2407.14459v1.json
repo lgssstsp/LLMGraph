@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "PolyFormer: A Scalable Graph Transformer with Polynomial Attention",
+        "authors": [
+            "Researcher A",
+            "Researcher B",
+            "Researcher C"
+        ],
+        "affiliations": [
+            "University X",
+            "Institution Y",
+            "Organization Z"
+        ],
+        "abstract": "Graph Neural Networks (GNNs) have been extensively used for graph-based tasks. This work proposes PolyAttn, an attention-based node-wise filter, and its application, PolyFormer, a novel Graph Transformer enhancing scalability and expressiveness through a focus on node-wise and polynomial-based graph filters. We present comprehensive evaluations confirming their superior performance on both small and large-scale graphs.",
+        "keywords": [
+            "Graph Neural Network",
+            "Graph Transformer",
+            "Node-wise Filters",
+            "Polynomial Attention"
+        ],
+        "year": "2023",
+        "venue": "KDD",
+        "doi link": "10.1000/kdd.v7.polyformer",
+        "method name": "PolyFormer"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Transformer Models"
+        ],
+        "related papers": "% paragraph 1: Discuss fundamental approaches in GNNs, including GCN and GAT. % paragraph 2: Analyze the limitations and enhancements in spectral-based GNNs with recent innovations like ChebNet and GPR-GNN. % paragraph 3: Discuss the evolution and integration of Transformers in the graph domain, touching on models such as Bert and ViT adaptations for graph data, leading to Graphormer and related techniques.",
+        "comparisons with related methods": "PolyFormer differs by implementing node-wise attention mechanisms on polynomial tokens with enhanced scalability, unlike traditional Graph Transformers focused on node-level attention."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a scalable Graph Transformer model, PolyFormer, which utilizes a new polynomial attention mechanism to enhance the expressiveness and scalability of node-wise filters. Empirical analyses and experiments demonstrate its capability to outperform existing models on a variety of graph tasks.",
+        "research purpose": "The purpose of this research is to address the challenge of designing an efficient and scalable Graph Transformer model capable of utilizing node-wise filters for improved graph representation learning.",
+        "research challenge": "Existing Graph Transformers often suffer from scalability issues and inadequate expressiveness due to the inherent complexity of their attention mechanisms.",
+        "method summary": "PolyFormer utilizes polynomial tokens for node representations and employs an attention-based mechanism, PolyAttn, to compute node-wise filters efficiently, extending the scalability and expressiveness of Graph Transformers.",
+        "conclusion": "The proposed method, PolyFormer, has demonstrated state-of-the-art performance across multiple datasets, providing a significant advancement in scalable graph learning through its innovative use of polynomial attention mechanisms."
+    },
+    "Method": {
+        "description": "PolyFormer is a novel Graph Transformer model that applies polynomial attention mechanisms over graph neural networks, offering a scalable solution for node-wise filtering tasks.",
+        "problem formultaion": "Existing graph learning methods face challenges in scalability and adaptability, especially when dealing with large and complex graph structures. PolyFormer aims to address this by introducing efficient node-wise polynomial attention.",
+        "feature processing": "Polynomial tokens are derived from node features using polynomial bases, efficiently computing node representations with reduced complexity.",
+        "model": "PolyFormer leverages a multi-head attention mechanism tailored for polynomial tokens, allowing efficient scaling and enhanced expressiveness specific to node-wise graph filtering.",
+        "tasks": [
+            "Node classification",
+            "Link prediction",
+            "Graph classification",
+            "Large-scale graph processing"
+        ],
+        "theoretical analysis": "PolyFormer proposes attention-based node-wise filters acting as polynomial filters on graph signals, enhancing expressiveness beyond existing GNN frameworks.",
+        "complexity": "Complexity is significantly reduced through the efficient computation of polynomial tokens, with PolyFormer operating at $O((K+1)^2N)$ in comparison to traditional methods.",
+        "algorithm step": "1. Node representation is computed using polynomial tokens. 2. PolyAttn is applied for node-wise attention filtering. 3. Composite node representations are processed through a multi-head attention mechanism."
+    },
+    "Experiments": {
+        "datasets": [
+            "CiteSeer",
+            "Pubmed",
+            "Physics",
+            "ogbn-arxiv",
+            "ogbn-papers100M"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "BernNet",
+            "ChebNetII",
+            "GPRGNN",
+            "DSF",
+            "Graphormer"
+        ],
+        "evaluation metric": "Node classification accuracy and computational efficiency.",
+        "setup": "Experiments cover homophilic and heterophilic datasets, evaluating expressive capabilities on node-wise filters as well as scalability on large-scale graphs.",
+        "hyperparameters": "Hyperparameters include the truncated order $K$ for polynomial tokens, number of heads in attention, and layer configuration.",
+        "results": "PolyFormer demonstrates enhanced performance across scales, particularly excelling in node classification and efficiency in large-scale datasets.",
+        "performance": "Outperformed state-of-the-art methods on both node classification tasks and large-scale graph experiments.",
+        "analysis": "Detailed ablation and complexity comparisons validate the efficiency and scalability benefits of using polynomial tokens and node-wise filters.",
+        "ablation study": "PolyFormer with tanh-based PolyAttn outperforms traditional softmax attention, providing insights into its superior node-wise filtering accuracy."
+    },
+    "conclusion": {
+        "summary": "PolyFormer is a scalable, expressive Graph Transformer, leveraging polynomial attention for efficient node-wise filtering and achieving superior performance across datasets.",
+        "future work": "Enhancements could involve advanced polynomial approximation techniques and refined spectral graph strategies to boost model efficacy further."
+    }
+}

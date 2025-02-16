@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "Pre-training and Prompting for Few-shot Node Classification with Text-Attributed Graphs",
+        "authors": [
+            "Yongqiang Sun",
+            "Xinyi Wen",
+            "Yifan Chen",
+            "Jiaqi Li",
+            "Peilin Liu",
+            "Meng Jiang"
+        ],
+        "affiliations": [
+            "Department of Computer Science and Engineering, University of Notre Dame, Indiana, USA"
+        ],
+        "abstract": "The few-shot node classification task involves identifying the classes of nodes in a text-attributed graph (TAG) using only a few labeled examples. This paper introduces a novel framework for addressing the few-shot node classification task by leveraging pre-training and prompting strategies. We propose a new method, \\model, which integrates a language model (LM) and graph neural network (GNN) for self-supervised pre-training on TAGs, followed by a prompt-based tuning phase to bridge the gap between pre-training and downstream tasks. Extensive experiments demonstrate the effectiveness of \\model over existing methods on several real-world TAG datasets.",
+        "keywords": [
+            "Few-shot Learning",
+            "Node Classification",
+            "Pre-training and Prompting",
+            "Text-Attributed Graphs",
+            "Self-supervised Learning"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Learning Representations (ICLR)",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Meta-Learning",
+            "Self-supervised Learning",
+            "Graph Neural Networks",
+            "Text-Attributed Graphs"
+        ],
+        "related papers": "1. Yao et al., 2020, 'Graph Few-shot Learning with Prototype Networks'\n2. Huang et al., 2020, 'G-Meta: Learning to Generate Local Subgraphs for Meta-learning'\n3. Zhao et al., 2022, 'GLEM: Graph Learning with Encoder Mixed with LMs'\n4. Yang et al., 2021, 'GraphFormer: A Transformer-based Model for Graph Representations'\n5. Chien et al., 2022, 'GIANT: A GNN Integrated with Automatic Feature Learning'\n6. Wen et al., 2023, 'G2P2: Leveraging Graph Structure for Predicting Few-shot Label Alignments'",
+        "comparisons with related methods": "The proposed method \\model outperforms several baselines, such as G-Meta and TENT, by integrating textual and structural information for few-shot learning tasks on TAGs. Unlike past models that kept graph and language model encodings independent, \\model unifies these processes, resulting in superior performance across various datasets."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper presents a new unified framework, named \\model, for few-shot node classification within text-attributed graphs (TAGs) through pre-training and prompting mechanisms. The paper highlights the model's ability to effectively marry language and graph understanding, significantly improving classification accuracies across multiple benchmark datasets.",
+        "research purpose": "To enhance the few-shot node classification accuracies on text-attributed graphs by effectively combining language models and graph neural networks through a novel pre-training and prompting method.",
+        "research challenge": "Aligning the pre-training tasks of language models and subsequent graph node classification tasks in a computationally efficient manner, without losing the specific domain requirements of TAGs.",
+        "method summary": "\\model employs a two-step approach – first integrating a language model with a graph neural network for pre-training, followed by employing prompting strategies to ensure readiness for downstream node classification tasks.",
+        "conclusion": "\\model not only achieves state-of-the-art results on several datasets but also provides a generalizable approach for integrating the text and structure attributes of graphs, thereby setting a new standard for few-shot node classification tasks."
+    },
+    "Method": {
+        "description": "The methodology involves a pre-training phase where a language model is integrated with a graph neural network to learn comprehensive node representations by leveraging text and structure information jointly. This is followed by a prompting phase to ready the pre-trained models for rapid adaptation to new node classification tasks in a few-shot setting.",
+        "problem formultaion": "Few-shot node classification on text-attributed graphs aims to infer the correct class of graph nodes with minimal labeled data using comprehensive node representations.",
+        "feature processing": "Feature processing incorporates both textual data (via language model encodings) and structural data (via graph neural networks).",
+        "model": "The model integrates a pre-trained language model to encode node texts, which are then adapted into node representations through a graph neural network. Prompting aligns the node representations to the downstream task's label space.",
+        "tasks": [
+            "Few-shot Node Classification"
+        ],
+        "theoretical analysis": "The integration of language models and GNNs clarifies the alignment across modality encodings, optimizing few-shot learning accuracy.",
+        "complexity": "The strategy adopts mini-batch training with random walk subgraph samplers to handle computational overheads of large models like DeBERTa-base.",
+        "algorithm step": "Jointly train LM and GNN for masked language modeling; efficiently adapt learned features to downstream tasks using carefully designed prompts."
+    },
+    "Experiments": {
+        "datasets": [
+            "ogbn-arxiv",
+            "ogbn-products",
+            "Amazon Review: Children",
+            "Amazon Review: History",
+            "Amazon Review: Computers",
+            "Amazon Review: Photo"
+        ],
+        "baselines": [
+            "GPN",
+            "G-Meta",
+            "TENT",
+            "GIANT",
+            "G2P2"
+        ],
+        "evaluation metric": "Classification Accuracy",
+        "setup": "The experiments evaluate accuracy across various few-shot settings (5-way 3-shot, etc.). Baselines were meta-learning, self-supervised, and prompting methods.",
+        "hyperparameters": "Hyperparameters like mask rate and walk length tailored for balanced computational efficiency and training quality.",
+        "results": "The proposed \\model outperformed all baselines on few-shot node classification tasks, with an improvement range of +18.98% to +35.98% accuracy across six datasets.",
+        "performance": "\\model demonstrated superior performance in few-shot settings, substantially outperforming the previous state-of-the-art methods.",
+        "analysis": "The results highlight the importance of a joint training mechanism and purposeful prompt construction, emphasizing the unified approach of text and graph data handling.",
+        "ablation study": "Ablation studies explored the influence of different language models, prompt designs, etc., illustrating the robustness of \\model's core ideas."
+    },
+    "conclusion": {
+        "summary": "The proposed framework \\model unifies the processes of pre-training and few-shot learning for TAGs, producing state-of-the-art classification accuracies. A novel integration of GNNs and language models ensures optimal utilization of node textual and structural data.",
+        "future work": "Future studies might refine the pre-training tasks further by incorporating dynamic graph adjustments or exploring broader prompt initialization strategies."
+    }
+}

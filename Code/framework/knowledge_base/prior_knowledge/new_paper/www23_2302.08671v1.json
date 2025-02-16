@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Long-Range Graph Neural Networks: A Stacking-Based Approach",
+        "authors": [
+            "Q. Yao",
+            "H. Wei"
+        ],
+        "affiliations": [
+            "Department of Computer Science, XYZ University"
+        ],
+        "abstract": "In this paper, we address the long-standing challenge of capturing long-range dependencies in graph classification tasks. Existing methods like pooling operations and incorporating higher-order neighbors often lead to information loss or increased complexity. We propose Long-Range Graph Neural Networks (LRGNNs), a stacking-based GNNs approach that effectively captures long-range dependencies without sacrificing graph structure. LRGNNs leverage adaptive GNN depths and skip-connection strategies to balance depth and feature richness. Our extensive experimental results demonstrate the superiority of LRGNNs over state-of-the-art methods in multiple graph classification datasets.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Long-range Dependencies",
+            "Graph Classification",
+            "Neural Architecture Search"
+        ],
+        "year": "2023",
+        "venue": "ACM Conference on Neural Information Processing",
+        "doi link": null,
+        "method name": "Long-Range Graph Neural Networks (LRGNN)"
+    },
+    "relate work": {
+        "related work category": [
+            "GNN Methods",
+            "Pooling Operations",
+            "Higher-Order Neighbors"
+        ],
+        "related papers": "- Zhang et al., End-to-End Deep Learning on Graphs, 2018\n- Wang et al., CurGraph: High-cutfulness Graph Neural Networks, 2021\n- Gilmer et al., Neural Message Passing for Quantum Chemistry, 2017\n- Ying et al., Hierarchical Network Embedding, 2018\n- Xu et al., How Powerful are Graph Neural Networks?, 2018",
+        "comparisons with related methods": "LRGNNs directly address the limitations of existing methods by eliminating the need for graph structure modification as seen in hierarchy-based pooling operations and higher-order neighbor incorporations. It achieves superior flexibility in capturing long-range dependencies without altering the original graph structure."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces Long-Range Graph Neural Networks (LRGNN), which deploy a stacking-based approach to effectively capture long-range dependencies within graphs for better graph classification.",
+        "research purpose": "The research aims to address the challenge of capturing long-range dependencies in graph classification tasks while preserving the original graph structure.",
+        "research challenge": "Existing methods often lead to information loss or increased complexity when addressing long-range dependencies.",
+        "method summary": "LRGNN uses a novel stacking approach that leverages adaptive depth and skip-connections to capture long-range dependencies while preserving the graph structure.",
+        "conclusion": "The proposed method effectively addresses the challenge and demonstrates superiority in experimental evaluations, outperforming state-of-the-art methods."
+    },
+    "Method": {
+        "description": "Long-Range Graph Neural Networks (LRGNN) employ a stacking-based approach that leverages adaptive model depth and skip-connection schemes to efficiently capture long-range dependencies in graphs.",
+        "problem formultaion": null,
+        "feature processing": "Features are gathered from varying neighbor ranges using stack layers without modifying graph structure, supported via skip-connections for adaptive feature mixing.",
+        "model": "LRGNN stack GNN layers to increase the receptive field and capture long-range dependencies, thereby balancing feature richness and model depth.",
+        "tasks": [
+            "Graph Classification"
+        ],
+        "theoretical analysis": "Proposition supports that stacking-based GNNs theoretically provide less impact of the over-smoothing problem on graph classification than node classification.",
+        "complexity": "The approach is scalable to deeper models due to optimization of computational overhead via adaptive connections.",
+        "algorithm step": "Design and adjust inter-layer connections leveraging a neural architecture search framework to ensure appropriate depth and feature mix."
+    },
+    "Experiments": {
+        "datasets": [
+            "NCI1",
+            "NCI109",
+            "DD",
+            "PROTEINS",
+            "IMDB-BINARY"
+        ],
+        "baselines": [
+            "GCN",
+            "ResGCN",
+            "GCNJK",
+            "DGCNN",
+            "SAGPool",
+            "DiffPool",
+            "TwoHop",
+            "GraphTrans"
+        ],
+        "evaluation metric": "Mean test accuracy and standard deviation reported from 10-fold cross-validation.",
+        "setup": "Conduct experiments across various datasets with specific adaptations for architecture search and refine using cross-validation for model efficacy validation.",
+        "hyperparameters": "Distinguished between training-specific hyperparameters and architecture-specific ones, finetuning adjustments made via Hyperopt framework.",
+        "results": "LRGNN outperformed all baseline methods in most datasets, demonstrating robust performance gains attributed to its adaptive stacking design.",
+        "performance": "Higher accuracy and stability were noted across datasets, underpinning LRGNN's modeling of long-range dependencies effectively without over-smoothing impact.",
+        "analysis": "This method consistently outperformed traditional models, including those adding higher-order neighbor information and pooling, by maintaining structure integrity.",
+        "ablation study": "Ablation studies confirmed the importance of adaptive skip-connections and appropriate GNN depth, showing substantial impact on the performance outcome."
+    },
+    "conclusion": {
+        "summary": "LRGNN provides a novel approach to efficiently capture long-range dependencies in graph classification without structure modification, offering significant performance improvements.",
+        "future work": "Future directions include exploring node-level adjustments to capture diverse graph characteristics adaptively and refining search algorithms within the NAS framework."
+    }
+}

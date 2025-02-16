@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-collab",
+    "Dataset Link": "../linkprop/#ogbl-collab",
+    "Rank": 6,
+    "Method": "PLNLP+ LRGA",
+    "External Data": "No",
+    "Test Accuracy": "0.6909 ± 0.0055",
+    "Validation Accuracy": "1.0000 ± 0.0000",
+    "Contact": "mailto:kingsleyhsu1@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2006.07846",
+    "Code Link": "https://github.com/KingsleyHsu/OGB-LPP",
+    "Parameters": "35,200,656",
+    "Hardware": "NVIDIA Tesla V100 (32GB GPU)",
+    "Date": "Jun 26, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-collab/PLNLP+_LRGA.pdf",
+    "Paper Summary": "The paper proposes a Low-Rank Global Attention (LRGA) module designed to enhance Graph Neural Networks (GNNs) by improving their generalization capabilities. This approach provides a computationally efficient alternative to standard dot-product attention methods that typically suffer from high complexity, especially in large graphs.\n\n### Model Design Aspects:\n\n1. **Low-Rank Global Attention (LRGA) Module**:\n   - **Functionality**: LRGA integrates into any GNN layer, enabling global weighted aggregations of node features while maintaining low memory consumption and computational complexity.\n   - **Complexity**: The LRGA operates at \\(O(\\kappa |V|)\\) memory and \\(O(\\kappa^2 |V|)\\) computational complexity, where \\(\\kappa\\) represents the rank of the attention matrix.\n   - **Matrix Definition**: The LRGA module is defined as:\n     \\[\n     LRGA(X) = \\frac{1}{\\eta(X)} m_1(X)(m_2(X)^T m_3(X))\n     \\]\n     where \\(m_1, m_2, m_3, m_4\\) are multilayer perceptron (MLP) functions that operate on the feature dimension.\n\n2. **Integration into GNN Framework**:\n   - The general form of updating the GNN layer with LRGA is:\n     \\[\n     X^{l+1} \\leftarrow [X^l, LRGA(X^l), GNN(X^l)]\n     \\]\n   - This design ensures that the LRGA output is concatenated with the original node features and the GNN output, allowing flexible and enhanced feature representation.\n\n3. **Algorithmical Alignment**:\n   - The paper establishes that the RGNN augmented with LRGA can align with the 2-Folklore Weisfeiler-Lehman (2-FWL) isomorphism test, which strengthens the model's ability to generalize on different graph structures.\n   - This alignment is achieved through polynomial kernels, facilitating the model to learn via monomial functions that have predictable sample complexity bounds.\n\n4. **Random Graph Neural Networks (RGNN)**:\n   - RGNN serves as the foundational architecture for proving the universality in probability, where input features are sampled randomly at each forward pass.\n   - The architecture combines conventional GNN functionalities with random feature generation, enhancing its robustness and generalization.\n\n5. **Permutations Equivariance**:\n   - A critical design aspect of both LRGA and the underlying GNN architecture is the preservation of permutation invariance, ensuring that the results remain unchanged regardless of the ordering of nodes in the graph.\n\n### Summary:\n\nThe employed method leverages the LRGA's computational efficiency and the expressive power of GNNs, proposing a synergistic model structure that empirically enhances performance while theoretically grounding its generalization capabilities in rigorous alignment with powerful graph isomorphism tests."
+}

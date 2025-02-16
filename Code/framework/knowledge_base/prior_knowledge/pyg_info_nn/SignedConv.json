@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "SignedGraph Convolutional Networks: Incorporating Balance Theory for Effective Node Embeddings",
+        "authors": [
+            "John Doe",
+            "Anna Smith",
+            "Robert Brown"
+        ],
+        "affiliations": [
+            "Department of Computer Science, University X"
+        ],
+        "abstract": "Graph Convolutional Networks (GCNs) have predominantly been applied to unsigned graphs; however, the rise of online social media underscores the importance of handling signed graphs. This paper introduces a Signed Graph Convolutional Network (SGCN) that effectively integrates signed network social theories, most notably balance theory, to learn meaningful node embeddings. This approach involves redesigning GCNs to handle negative links intelligently, conducting evaluations on real-world signed networks, and demonstrating the superiority of SGCN against state-of-the-art baselines in signed network analyses.",
+        "keywords": [
+            "Graph Convolutional Networks",
+            "Signed Networks",
+            "Balance Theory",
+            "Node Embeddings"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Artificial Intelligence",
+        "doi link": null,
+        "method name": "Signed Graph Convolutional Network (SGCN)"
+    },
+    "relate work": {
+        "related work category": [
+            "Signed Network Embedding",
+            "Graph Convolutional Networks"
+        ],
+        "related papers": "Research efforts into signed network embedding stem from social psychology, leveraging theories such as balance theory [Heider-1946]. Notable works include SNE [Yuan-etal2017], which uses log-bilinear models, SiNE [Wang-etal2017], a deep neural network model based on balance theory, and others focusing on matrix factorization techniques [Kunegis-etal2010]. Graph Convolutional Networks, pioneered by Kipf and Welling [2016], have shaped much of the recent developments in node representation learning.",
+        "comparisons with related methods": "Existing methods like SiNE and SIDE showed promise in exploiting balance theory; however, their complexities are higher compared to GCN-based architectures. GCNs, while focused on unsigned graphs, set the foundation for the inclusion of graph-specific convolutional operations, adapted by SGCN to encompass signed network attributes effectively."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes a novel model, Signed Graph Convolutional Network (SGCN), for learning node representations on signed graphs. It addresses the inherent challenges of incorporating negative links by leveraging social theories from psychology, particularly balance theory.",
+        "research purpose": "To develop a GCN framework capable of effectively handling the complexities introduced by both positive and negative links in signed graphs.",
+        "research challenge": "The main challenges include redesigning GCNs to account for signed edges' influence, achieving effective integration of both positive and negative links, and validating the efficacy of balance theory in graph convolution processes.",
+        "method summary": "The proposed method, SGCN, formulates a modified aggregation strategy incorporating balance theory principles. It defines separate embeddings for 'friend' and 'enemy' relationships and introduces multiple aggregation layers that capture nuanced network structures.",
+        "conclusion": "SGCN, through empirical evaluation, demonstrates superior performance in capturing complex network relations compared to existing state-of-the-art embeddings in signed graph contexts."
+    },
+    "Method": {
+        "description": "SGCN is designed to capture the idiosyncrasies of signed social networks leveraging social theories for informed graph convolution processes. The network extracts friend-relationship embeddings via balance theory, contrasting them with traditional GCN approaches.",
+        "problem formultaion": null,
+        "feature processing": "Embeddings derived from principal social theories.",
+        "model": "SGCN explicitly incorporates sentiments from negative and positive edges into convolution operations, adjusting for depth and balance in path-considerations.",
+        "tasks": [
+            "Signed Node Embedding",
+            "Link Sign Prediction"
+        ],
+        "theoretical analysis": "Rooting the method in balance theory aligns it with historical social psychology constructs, optimizing performance via validated principles.",
+        "complexity": "The complexity is reduced by avoiding full convolutions, using sparse representations inherent to these networks.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Bitcoin-Alpha",
+            "Bitcoin-OTC",
+            "Slashdot",
+            "Epinions"
+        ],
+        "baselines": [
+            "Signed Spectral Embedding (SSE)",
+            "SiNE",
+            "SIDE"
+        ],
+        "evaluation metric": "AUC and F1-score on link prediction tasks.",
+        "setup": "Each dataset is represented as an undirected graph; missing links are predicted by the model during evaluation phases.",
+        "hyperparameters": "Hyperparameter tuning performed via grid search on the training datasets, with primary attention on balance-theory contributions.",
+        "results": "The results indicate SGCN outperforms baselines in predictive accuracy across various evaluation metrics and datasets.",
+        "performance": "SGCN excels by leveraging longer path aggregation and balance theory for improved accuracy in sign prediction tasks.",
+        "analysis": null,
+        "ablation study": "Various model configurations were tested, confirming balance theory's significance in enhancing node representation quality in predictive contexts."
+    },
+    "conclusion": {
+        "summary": "This paper has successfully demonstrated a method to integrate social theories in the creation of a graph convolutional network suitable for signed graphs.",
+        "future work": "Future research will explore additional tasks within signed networks beyond embeddings, and develop more complex architectures incorporating generative models."
+    }
+}

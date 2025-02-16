@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "Disenangled Representation Learning Framework for Discrete-time Dynamic Graphs",
+        "authors": [
+            "The authors were not specified."
+        ],
+        "affiliations": [
+            "The affiliations were not specified."
+        ],
+        "abstract": "Graph data, which captures the relationships or interactions between entities, is ubiquitous in the real world, e.g., social networks, citation graphs, traffic networks, etc. With the abundance of graph data but the expensiveness of training labels, unsupervised graph representation learning has attracted much research attention. It aims to learn a low-dimensional representation of each node in graphs, which can be used for various downstream tasks, including node classification and link prediction. Traditional graph representation learning mainly focuses on static graphs with a fixed set of nodes and edges. However, real-world graphs generally evolve, where graph structures are dynamically changing with time. How to learn dynamic graph representation becomes a significant research problem. Existing methods for dynamic graph representation learning mainly fall into two categories: continuous-time approaches and discrete-time approaches. Despite the preliminary success, existing methods typically adhere to a paradigm that generates a mixed representation for each node, neglecting to differentiate between the varying factors that determine dynamic graphs. In this paper, we introduce a novel disentangled representation learning framework for discrete-time dynamic graphs, namely DyTed. We aim to disentangle the time-invariant and time-varying information in dynamic graph representations and propose a time-invariant representation generator with a carefully designed temporal-clips contrastive learning task, together with a time-varying representation generator with structure contrastive learning.",
+        "keywords": [
+            "Dynamic Graphs",
+            "Representation Learning",
+            "Graph Neural Networks",
+            "Disentangled Representation"
+        ],
+        "year": "The publication year was not specified.",
+        "venue": "The venue was not specified.",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Dynamic Graph Representation Learning",
+            "Disentangled Representation Learning"
+        ],
+        "related papers": "These include references such as liu2019characterizing, 10.5555/3367471.3367648, Li2022TKDD, 10.1145/2806416.2806512, zhu2020deep, cen2019anae, 10.1145/3459637.3482389, yang2021discrete, trivedi2019dyrep, zuo2018embedding, yu2018netwalk, nguyen2018dynamic, sankar2020dysat, pareja2020evolvegcn, goyal2018dyngem, locatello19a, ma19a, pmlr-v97-locatello19a, Cao2022SIGIR, Zhao2022Web, and wang2022disenctr.",
+        "comparisons with related methods": "Existing methods mix various factors into a single representation, which leads to limited capability in handling different downstream tasks. The study identifies the need to disentangle these factors for better performance in discrete-time dynamic graphs."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces the DyTed framework for disentangled representation learning for discrete-time dynamic graphs. The novel approach disentangles the intrinsic stable characteristics of nodes (time-invariant factors) from their dynamic preferences (time-varying factors) to improve the representations' capability across various tasks.",
+        "research purpose": "To distinguish and separate the varying intrinsic and temporal factors in dynamic graphs' representation learning.",
+        "research challenge": "Existing methods fail to distinguish between various factors of dynamic graph evolution, mixing them into a single node representation.",
+        "method summary": "DyTed proposes separate time-invariant and time-varying representation generators enhanced by a disentanglement-aware discriminator under an adversarial learning framework.",
+        "conclusion": "DyTed significantly improves state-of-the-art methods in various tasks with robustness and efficiency, setting a new standard for future dynamic graph representation learning research."
+    },
+    "Method": {
+        "description": "DyTed effectively disentangles the time-invariant and time-varying representations of nodes in dynamic graphs. It uses two separate generators and a discriminator to ensure the separation of these factors under an adversarial learning setup.",
+        "problem formultaion": "Existing dynamic graph representation learning fails to separate intrinsic stable node characteristics and dynamic preferences.",
+        "feature processing": null,
+        "model": "The framework utilizes separate generators for time-invariant and time-varying representations and an adversarial learning setup.",
+        "tasks": [
+            "Time-invariant Representation Generation",
+            "Time-varying Representation Generation",
+            "Disentanglement through Adversarial Learning"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The paper argues that this methodology results in representational efficiency greater than traditional joint representations.",
+        "algorithm step": "1. Generate time-invariant representations using temporal-clips contrastive learning.\n2. Generate time-varying representations with structure contrastive learning.\n3. Use a disentanglement-aware discriminator to ensure representation separation."
+    },
+    "Experiments": {
+        "datasets": [
+            "Tencent dynamic capital transactions",
+            "five other public datasets"
+        ],
+        "baselines": [
+            "DySAT",
+            "EvolveGCN",
+            "HTGN",
+            "ROLAND"
+        ],
+        "evaluation metric": "Evaluation metrics include F1 score for classification and measures like AUC for link prediction tasks.",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "DyTed achieves state-of-the-art performance across tasks such as node classification and link prediction, demonstrating enhanced robustness and efficiency.",
+        "performance": "Outperforms current baseline methods in diverse analytical scenarios.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "We propose DyTed, a robust disentangled representation learning framework for dynamic graphs, achieving substantial performance improvements with state-of-the-art results in various tasks.",
+        "future work": "Future endeavors will explore extending DyTed to continuous-time dynamic graph contexts."
+    }
+}

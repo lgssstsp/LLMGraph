@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-papers100M",
+    "Dataset Link": "../nodeprop/#ogbn-papers100M",
+    "Rank": 4,
+    "Method": "SAGN+SLE (4 stages)",
+    "External Data": "No",
+    "Test Accuracy": "0.6830 ± 0.0008",
+    "Validation Accuracy": "0.7163 ± 0.0007",
+    "Contact": "mailto:chuxiongsun@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2104.09376",
+    "Code Link": "https://github.com/skepsun/SAGN_with_SLE",
+    "Parameters": "8,556,888",
+    "Hardware": "Tesla V100 (16GB GPU)",
+    "Date": "Sep 21, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-papers100M/SAGN+SLE_(4_stages).pdf",
+    "Paper Summary": "The paper presents the **Scalable and Adaptive Graph Neural Network (SAGN)** and an innovative training method called **Self-Label-Enhanced (SLE) training** aimed at improving scalable Graph Neural Networks (GNNs).\n\n### Model Design Aspects\n\n1. **SAGN Architecture**:\n   - **Decoupling of Modules**: SAGN separates graph convolutions from learnable transformations, allowing for more straightforward mini-batch training suitable for large-scale graphs.\n   - **Attention Mechanism**: Instead of concatenating multiple representations from different hops (as in previous models like SIGN), SAGN employs learnable attention weights. This mechanism assesses the importance of different neighborhood information for each node, enhancing both expressiveness and interpretability of the model.\n   - **Multi-hop Encoders**: SAGN utilizes a multi-layer perceptron (MLP) encoder to process node features from K-hops, enabling the gathering of comprehensive neighborhood information.\n   - **Residual Connections**: A residual layer is included to improve feature propagation while retaining original node features in the final representation.\n\n2. **Self-Label-Enhanced (SLE) Training**:\n   - **Label Model Integration**: The SLE approach introduces a scalable label model that processes and enhances training sets by iteratively incorporating pseudo-labels generated through hard-label propagation.\n   - **Training Stages**: The training is organized into multiple stages. In each stage, a model is trained first on a raw training set, and in subsequent stages, previously predicted labels are integrated back into the training process.\n   - **Label Propagation**: Instead of inner random masking, SLE effectively uses a straightforward label propagation technique to generate input for the label model, allowing for smoother transitions in the learning process.\n\n3. **Training Process**:\n   - The training itself is staged, starting from pure labeled data and gradually including pseudo-labels from confidently predicted nodes, thus dynamically enhancing the training set over several iterations.\n   - In every stage, label propagation is performed, and both true and pseudo-labels are utilized to maintain a rich representation of node information.\n\n4. **Complexity and Efficiency**:\n   - The design maintains a complexity comparable to that of SIGN, while the attention mechanism adds only a marginal increase to memory usage compared to naive concatenation methods.\n   - The system is reported to have a lower overall parameter count and memory footprint due to the reduced complexity in processing.\n\nThese design elements allow SAGN to gather and utilize neighborhood information more effectively, enhancing performance while scaling to larger datasets efficiently."
+}

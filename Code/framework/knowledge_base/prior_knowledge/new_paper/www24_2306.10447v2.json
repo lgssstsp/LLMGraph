@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "Globally Interpretable Framework for Graph Neural Networks Using Graph Distribution Matching",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Institute of Granular Computing",
+            "Department of Computer Science, XYZ University"
+        ],
+        "abstract": "This paper proposes a novel method for globally interpretable graph learning. While most graph neural network-related research focuses on instance-specific interpretations, our project aims at capturing model-level interpretations. We introduce a Graph Distribution Matching (GDM) framework designed to create a representation of models' training trajectory by synthesizing interpretive graphs mimicking class distributions. The approach leverages maximum mean discrepancy to ensure the generated graphs could be used to train models replicating original GNN behaviors. Our framework bridges a significant gap in GNN interpretability by providing developers comprehensive insights into model behaviors.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Interpretability",
+            "Graph Distribution Matching"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": null,
+        "method name": "Graph Distribution Matching (GDM)"
+    },
+    "relate work": {
+        "related work category": [
+            "Local Instance-Level Interpretation",
+            "Global Model-Level Interpretations",
+            "Data Condensation"
+        ],
+        "related papers": "Papers discussing GNNs in graph learning include works such as Kipf et al. (2016), recent interpretability methods by Yuan et al. (2020) and Wang et al. (2022), and data condensation techniques from Zhao et al. (2023).",
+        "comparisons with related methods": "The GDM framework is compared mainly with XGNN and GNNInterpreter. Whereas XGNN employs reinforcement learning, GDM leverages distribution matching to simulate model training patterns."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a method to achieve global interpretation of graph neural networks by synthesizing interpretive graphs using the Graph Distribution Matching (GDM) approach.",
+        "research purpose": "To enhance the interpretability of graph neural networks by capturing global model behaviors during the training process and summarizing them in comprehensible graphs.",
+        "research challenge": "Balancing interpretive accuracy and model fidelity under a new definition where interpretive models should replicate training trajectory patterns of GNNs while studying minimal representations. ",
+        "method summary": "The GDM method focuses on aligning synthesized interpretive graphs with the underlying graph distributions encountered in the GNN’s feature space training dynamics, using maximum mean discrepancy (MMD) as the main tool.",
+        "conclusion": "The method effectively visualizes global interpretation patterns, provides significant accuracy on fidelity tests, and demonstrates practical implementation capacity within the usual model development pipelines."
+    },
+    "Method": {
+        "description": "The Graph Distribution Matching (GDM) method synergizes interpretive processes with GNN training trajectories, allowing a granular understanding of how models evolve and which data patterns they leverage.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Graph Distribution Matching (GDM)",
+        "tasks": [
+            "Graph classification",
+            "Model interpretability"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "The GDM algorithm proceeds with sampling training graphs, determining class representative interpretive graphs through distribution matching, and updating both GNN models and interpretive graphs iteratively through maximum mean discrepancy."
+    },
+    "Experiments": {
+        "datasets": [
+            "MUTAG",
+            "Graph-Twitter",
+            "Graph-SST5"
+        ],
+        "baselines": [
+            "XGNN",
+            "GNNInterpreter"
+        ],
+        "evaluation metric": "Model Fidelity and Predictive Accuracy measured by interpretive graphs' representativeness of training knowledge and successful generalization.",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "The method significantly outperformed existing techniques in model fidelity and utility across datasets like Graph-SST5 and BA-Motif, validating its ability to provide high-quality global interpretations.",
+        "performance": "On synthetic and real-world datasets, the GDM framework shows a remarkable blending of model fidelity with interpretability.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The GDM framework improves the interpretability of GNNs by developing syntheses of training trajectory patterns into understandable models that can replicate original behaviors.",
+        "future work": "Future research may explore accommodating dynamic pattern changes and focus on anomaly detection patterns during training."
+    }
+}

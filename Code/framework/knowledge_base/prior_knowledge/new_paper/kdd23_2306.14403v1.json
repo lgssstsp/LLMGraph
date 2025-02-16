@@ -1,0 +1,109 @@
+{
+    "meta_data": {
+        "title": "Adaptive Anomaly Score Discrimination in Weakly-Supervised Anomaly Detection",
+        "authors": [
+            "Minqi Zhang",
+            "Songlin Cai",
+            "Hailiang Huang"
+        ],
+        "affiliations": [
+            "SUFE AI Lab, Shanghai University of Finance and Economics",
+            "FlagInfo-SHUFE Joint Laboratory"
+        ],
+        "abstract": "This paper presents Overlap Loss, a novel loss function designed for weakly-supervised anomaly detection. The Overlap Loss aims to minimize the distribution overlap of anomaly scores between normal and abnormal instances without predefined score targets, improving adaptability across diverse data scenarios. Empirical evidence shows that models utilizing the Overlap Loss exceed the performance of current state-of-the-art methods in detecting anomalies with minimal label supervision.",
+        "keywords": [
+            "Anomaly Detection",
+            "Overlap Loss",
+            "Weakly-Supervised Learning",
+            "Score Distribution"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the Neural Information Processing Systems (NeurIPS)",
+        "doi link": "10.48550/arXiv.2306.11324",
+        "method name": "Overlap Loss"
+    },
+    "relate work": {
+        "related work category": [
+            "Unsupervised Anomaly Detection",
+            "Semi-supervised Anomaly Detection",
+            "Weakly-supervised Anomaly Detection",
+            "Score Distribution Techniques"
+        ],
+        "related papers": "[1] Liu et al., \"Isolation Forest,\" 2008. [2] Ruff et al., \"DeepSVDD,\" 2019. [3] Pang et al., \"DevNet,\" 2019. [4] Zhou et al., \"FEAWAD,\" 2018.",
+        "comparisons with related methods": "The proposed Overlap Loss outperforms traditional anomaly detection loss functions such as Inverse Loss and Hinge Loss by dynamically minimizing the overlap in score distributions between normal and anomaly instances, which allows better adaptability across varying datasets."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces the Overlap Loss for adaptive anomaly score discrimination, improving anomaly detection in weakly-supervised scenarios by optimally separating the distribution of anomaly scores of normal and abnormal instances.",
+        "research purpose": "To design a loss function that effectively differentiates anomalies from normal instances in weakly-supervised settings with minimal labeled data.",
+        "research challenge": "Existing anomaly detection methods heavily rely on predefined score targets or margins, which limit model adaptability and performance across diverse datasets.",
+        "method summary": "The Overlap Loss minimizes the overlap of score distributions between normal and abnormal data, removing the need for predefined anomaly score targets and enhancing data adaptability.",
+        "conclusion": "Overlap Loss enhances anomaly detection models' accuracy by optimizing score distribution overlaps, offering improved flexibility and efficacy compared to conventional loss functions."
+    },
+    "Method": {
+        "description": "Overlap Loss drives adaptive discrimination of anomaly scores by minimizing the overlap of score distributions for anomalies and normal instances without requiring predefined targets.",
+        "problem formultaion": "Given a dataset with both labeled anomalies and unlabeled normal data, the task is to build a model that assigns higher anomaly scores to anomalies while maintaining adaptability to various datasets.",
+        "feature processing": "Feature representation architectures such as MLPs and transformers can be used to encode input data, followed by the overlap loss computation that evaluates score distributions.",
+        "model": "An anomaly scoring model utilizing Overlap Loss which integrates feature representation layers with anomaly score distribution estimation to adaptively minimize overlap.",
+        "tasks": [
+            "Anomaly Detection",
+            "Score Distribution Estimation",
+            "Anomaly Score Discrimination"
+        ],
+        "theoretical analysis": "The Overlap Loss is theoretically grounded in minimizing distribution overlaps, leading to better generalization capabilities and reduced overfitting compared to traditional losses.",
+        "complexity": null,
+        "algorithm step": "1. Model input as feature embeddings; 2. Calculate anomaly scores; 3. Apply kernel density estimation for score distributions; 4. Identify and minimize distribution overlap."
+    },
+    "Experiments": {
+        "datasets": [
+            "ALOI",
+            "AnnThyroid",
+            "Cardiotocography",
+            "Fault",
+            "HTTP",
+            "Landsat",
+            "Letter",
+            "Magic Gamma",
+            "Mammography",
+            "MNIST",
+            "Musk",
+            "OptDigits",
+            "PageBlocks",
+            "Pendigits",
+            "Satellite",
+            "SatImage-2",
+            "Shuttle",
+            "Skin",
+            "SpamBase",
+            "Speech",
+            "Thyroid",
+            "Vowels",
+            "Waveform",
+            "Wilt",
+            "Yeast"
+        ],
+        "baselines": [
+            "Iforest",
+            "ECOD",
+            "DeepSVDD",
+            "GANomaly",
+            "DeepSAD",
+            "REPEN",
+            "DevNet",
+            "PReNet",
+            "FEAWAD",
+            "ResNet",
+            "FTTransformer"
+        ],
+        "evaluation metric": "AUC-PR and AUC-ROC",
+        "setup": "Experiments are conducted across diverse real-world datasets to compare Overlap Loss against various baseline models.",
+        "hyperparameters": null,
+        "results": "Models utilizing Overlap Loss consistently demonstrated superior performance in both AUC-PR and AUC-ROC scores across numerous datasets, indicating effective anomaly score discrimination.",
+        "performance": "The Overlap-based models outstripped corresponding baseline models by 5% to 50% in AUC-PR metrics, particularly with less than 10% labeled anomalies.",
+        "analysis": "Overlap Loss maintains adaptability and robustness across datasets, eliminating the pre-requisite of score target specification which is a challenge for traditional loss functions.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Overlap Loss introduces an adaptive approach to anomaly detection that improves model performance across varied data settings by focusing on minimizing score distribution overlap.",
+        "future work": "Future explorations could involve using complex probability estimations to refine the overlap loss further, and expanding the scope to more challenging scenarios like time-series anomaly detection."
+    }
+}

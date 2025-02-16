@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-products",
+    "Dataset Link": "../nodeprop/#ogbn-products",
+    "Rank": 19,
+    "Method": "Spec-MLP-Wide + C&S",
+    "External Data": "No",
+    "Test Accuracy": "0.8451 ± 0.0006",
+    "Validation Accuracy": "0.9132 ± 0.0010",
+    "Contact": "mailto:1520655940@qq.com",
+    "Paper Link": "https://arxiv.org/abs/2010.13993",
+    "Code Link": "https://github.com/ytchx1999/PyG-ogbn-products/tree/main/spectral%2Bmlp%2Bcs",
+    "Parameters": "406,063",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Jul 27, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-products/Spec-MLP-Wide_+_C&S.pdf",
+    "Paper Summary": "In the paper \"Combining Label Propagation and Simple Models Out-Performs Graph Neural Networks,\" the authors propose a model called Correct and Smooth (C&S) for transductive node classification that combines simple base predictors with classical label propagation techniques.\n\n### Model Design Aspects\n\n1. **Base Predictor**: \n   - The initial predictions are generated using a simple model (e.g., a linear model or a shallow Multi-Layer Perceptron, MLP) that ignores the graph structure. This allows the model to be lightweight and scalable, avoiding the complexity associated with Graph Neural Networks (GNNs).\n\n2. **Error Correction via Label Propagation**:\n   - An error correlation step is introduced to improve the accuracy of the base predictions by spreading errors across the graph. This step assumes that errors are positively correlated among neighboring nodes, capturing the intuition that misclassifications by nearby nodes are likely to share similarities.\n   - The authors employ label propagation to estimate and correct these errors, using a residual matrix that measures the difference between the base predictions and the true labels for the labeled nodes. The process involves iteratively updating the error estimates until convergence, utilizing a diffusion approach to propagate these errors throughout the graph.\n\n3. **Prediction Smoothing**:\n   - After correcting the base predictions, the model further smooths the output predictions. This is done using another round of label propagation to ensure that predictions for adjacent nodes in the graph are similar, leveraging the concept of homophily.\n   - The final label predictions are derived by combining the corrected predictions from the previous step with the known labels of the training nodes.\n\n4. **Post-Processing Mechanism**:\n   - Both the error correction and prediction smoothing steps are post-processing techniques, meaning they do not involve end-to-end training of a neural network, thus reducing computational costs and making the process faster and easier to scale.\n\n5. **Feature Augmentation**:\n   - The model can employ feature augmentation techniques, like utilizing spectral embeddings extracted from the graph structure, to enhance the input features for the base predictor. This integration helps to maintain some connection with the graph without relying on complex GNN architectures.\n\nIn essence, the C&S method focuses on harnessing the strengths of simple models and classical label propagation techniques while minimizing reliance on extensive graph structures and deep learning processes. This combination effectively addresses node classification tasks efficiently and accurately."
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molpcba",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 14,
+    "Method": "RandomGIN-vn+FLAG",
+    "External Data": "No",
+    "Test Accuracy": "0.2881 ± 0.0028",
+    "Validation Accuracy": "0.3035 ± 0.0047",
+    "Contact": "mailto:giulia.fracastoro@polito.it",
+    "Paper Link": "https://arxiv.org/pdf/2103.15565.pdf",
+    "Code Link": "https://github.com/diegovalsesia/ran-gnn-molpcba",
+    "Parameters": "5,572,026",
+    "Hardware": "Titan Xp (12GB GPU)",
+    "Date": "Jul 29, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molpcba/RandomGIN-vn+FLAG.pdf",
+    "Paper Summary": "The paper \"RAN-GNNs: Breaking the Capacity Limits of Graph Neural Networks\" introduces a new model design approach for Graph Neural Networks (GNNs) through the concept of randomly wired architectures, referred to as RAN-GNNs. This approach contrasts traditional deep GNNs that stack multiple layers, which often leads to underperformance due to limitations like oversmoothing and the inability to capture diverse receptive fields. Key design aspects discussed include:\n\n1. **Randomly Wired Architecture**: Instead of stacking many layers, RAN-GNNs arrange layers in a randomly connected directed acyclic graph (DAG). This structure allows data to propagate through multiple paths, merging contributions from receptive fields of varying sizes. Such a design increases the network's capacity to learn richer graph representations.\n\n2. **Ensembling of Paths**: RAN-GNNs operate based on an ensemble of paths. Each path serves as a way to aggregate information from nodes and their neighborhoods, enabling the model to capture features from multiple depths and sizes of receptive fields. The varying lengths of these paths contribute differently to the node features, merging contributions effectively.\n\n3. **Adaptive Receptive Fields**: The architecture's weights can be modulated during training, allowing for adaptive merging of contributions from receptive fields of different sizes. This modulation enables the GNN to adjust the size of the receptive field according to the needs of the specific graph task.\n\n4. **Incorporation of Sequential Paths**: To promote the use of larger receptive fields, the paper proposes embedding a sequential path that traverses all architecture nodes. This modification biases the generative process to include longer paths in the computation, enhancing the network’s ability to learn from broader neighborhood information.\n\n5. **Monte Carlo DropPath Regularization**: The authors introduce a Monte Carlo approach where architecture edges can be randomly dropped, akin to dropout techniques used in neural networks. This strategy decorrelates the contributions of paths, encouraging the model to learn more robust features and avoid overfitting.\n\n6. **Layer Operations**: Each architecture node in RAN-GNNs performs operations that include weighted aggregation of input from other architecture nodes, nonlinear transformations, and batch normalization. This maintains some convolutional properties while allowing for flexibility in how information is processed.\n\nThrough these design principles, RAN-GNNs aim to enhance the capacity and performance of GNNs, moving away from the limitations of traditional deep architectures while enabling richer representation learning tailored to graph-structured data."
+}

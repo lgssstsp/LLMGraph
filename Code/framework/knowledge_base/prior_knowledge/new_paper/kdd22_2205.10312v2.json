@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Scaling Up Embedding-based Entity Alignment with ClusterEA: A Method to Align Large Knowledge Graphs",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            ""
+        ],
+        "abstract": "This paper proposes \\ClusterEA{}, a novel method for scaling up entity alignment methods on large knowledge graphs by optimizing similarity matrix normalization and employing stochastic training in graph neural networks. With promising experimental results, \\ClusterEA{} notably improves entity alignment accuracy while enhancing computational efficiency and scalability.",
+        "keywords": [
+            "Entity alignment",
+            "Knowledge graphs",
+            "Embedding-based methods",
+            "Graph neural networks",
+            "Scalability"
+        ],
+        "year": "2023",
+        "venue": "",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "GNN-based EA",
+            "KGE-based EA",
+            "Side information"
+        ],
+        "related papers": "\\begin{itemize}[topsep=0pt,itemsep=0pt,parsep=0pt,partopsep=0pt,leftmargin=*]    \\item {\\em KGE-based EA}: \\cite{MTransE17, IPTransE17, BootEA18, TransEdge19}    \\item {\\em GNN-based EA}: \\cite{GCN-Align18, KECG19, MRAEA20, AliNet20, HyperKA20, MuGNN19}    \\item {\\em Side information}: \\cite{JAPE17,MultiKE19,DGMC20,DegreeAware20, BERT-INT20, AttrGNN20, EASY21, SEU21, LargeEA22, DSE1,DSE2, MultiKE19, BERT-INT20, EVA20, GCN-Align18, COTSAE20, EPEA20}  \\end{itemize}",
+        "comparisons with related methods": "Unlike earlier methods which arduous the implementation of side information for enhancing entity alignment accuracy, \\ClusterEA{} augments structure-based methods, thereby eliminating dependency on additional data classes and exhibiting robustness across varying dataset scales."
+    },
+    "high_level_summary": {
+        "summary of this paper": "\\ClusterEA{} introduces a scalable, structure-enhanced entity alignment method for large knowledge graphs. By embedding improved normalization methods and leveraging stochastic training strategies, the framework achieves high performance without relying on supplemental data.",
+        "research purpose": "To increase the accuracy and scalability of embedding-based entity alignment methods in large-scale knowledge graph settings.",
+        "research challenge": "Ensuring precise entity alignment across extensive, real-world scale data while maintaining computational feasibility.",
+        "method summary": "\\ClusterEA{} employs a stochastic training approach via mini-batch sampling techniques which leverage graph neural networks for embedding computation, and precise normalization strategies like Sinkhorn for similarity matrix transformation.",
+        "conclusion": "\\ClusterEA{} attains superior entity alignment performance, exceeding previous benchmarks without side information, enabling broader applicability in diverse real-world contexts."
+    },
+    "Method": {
+        "description": "\\ClusterEA{} integrates stochastic GNN training, an innovative mini-batch sampling strategy, and sophisticated similarity matrix normalization based on Sinkhorn iteration to conduct scalable embedding-based entity alignment.",
+        "problem formultaion": "The task is defined as drawing parallels between entity sets across different knowledge graphs using embeddings.",
+        "feature processing": "Transforming graph structures into feature vectors is executed through GNN layers incorporated within the framework.",
+        "model": "A Siamese GNN employing neighborhood sampling constructs embeddings, which are aligned using enhanced normalization techniques.",
+        "tasks": [
+            "Entity alignment",
+            "Graph embedding"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "IDS15K_EN-FR",
+            "IDS100K_EN-FR",
+            "IDS15K_EN-DE",
+            "IDS100K_EN-DE",
+            "DBP1M_EN-FR",
+            "DBP1M_EN-DE"
+        ],
+        "baselines": [
+            "GCN-Align",
+            "RREA",
+            "Dual-AMN",
+            "LargeEA",
+            "Stochastic Training Variant"
+        ],
+        "evaluation metric": "Hit@1, Hit@10, Mean Reciprocal Rank (MRR), running time, and GPU memory usage.",
+        "setup": "Experiments span different datasets to emulate real-world knowledge graphs, with baselines enhanced by CSLS for fairness.",
+        "hyperparameters": null,
+        "results": "\\ClusterEA{} achieved notably higher Hit@1 scores in comparison to all evaluated baselines, confirming its efficacy in close entity alignment.",
+        "performance": "\\ClusterEA{} demonstrated significant gains in both precision and resource management, effectively handling large datasets with minimum loss in accuracy.",
+        "analysis": "The efficacy of \\ClusterEA{} under varying scale demonstrates the feasibility of employing the framework in broader, industrially relevant settings.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\ClusterEA{} emerges as a robust, scalable solution for embedding-based entity alignment in expansive knowledge graphs, eliminating the need for auxiliary information.",
+        "future work": "Exploration of dangling settings and additional enhancements to the stochastic training process might further refine capability and applicability."
+    }
+}

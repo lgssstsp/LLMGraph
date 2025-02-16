@@ -1,0 +1,84 @@
+{
+    "meta_data": {
+        "title": "Sub-Cluster Component Algorithm for Scalable Hierarchical Clustering",
+        "authors": [
+            "Jesse Schwartz",
+            "Nicholas Monath",
+            "Andrew McCallum"
+        ],
+        "affiliations": [
+            "University of Massachusetts Amherst"
+        ],
+        "abstract": "This paper presents the Sub-Cluster Component Algorithm (SCC), a scalable bottom-up hierarchical clustering approach that improves over-existing solutions by efficiently balancing accuracy and scalability. SCC utilizes best-first, bottom-up hierarchical agglomerative clustering techniques with enhancements in linkage functions and reducing over-merging issues. Through extensive theoretical and empirical analysis, we validate SCC's performance as both a hierarchical clustering tool and a flat clustering method encompassing a novel approximation approach to the DP-Means objective.",
+        "keywords": [
+            "Hierarchical Clustering",
+            "Agglomerative Clustering",
+            "Scalability",
+            "Flat Clustering",
+            "Clustering Algorithms"
+        ],
+        "year": "2023",
+        "venue": "Journal of Machine Learning Research",
+        "doi link": null,
+        "method name": "Sub-Cluster Component Algorithm (SCC)"
+    },
+    "relate work": {
+        "related work category": [
+            "Hierarchical Clustering",
+            "Scalable Clustering",
+            "Clustering Algorithms",
+            "Bottom-up Clustering"
+        ],
+        "related papers": "1. Schwartz et al. (2020) Clustering large-scale datasets for single-cell genomics.\n2. Monath et al. (2019) Grafting strategies for scalable hierarchical clustering.\n3. Bateni et al. (2017) Affinity clustering through MST algorithms.\n4. Bainiro et al. (2018) Alternative approaches to fast clustering non-parametric datasets.",
+        "comparisons with related methods": "SCC shows superior performance compared to Affinity clustering and randomization methods, specifically in datasets demonstrating high-dimensionality and diverse clustering needs. It efficiently manages over-merging issues seen in Affinity clustering and supports more accurate judgment on hierarchical structures."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The Sub-Cluster Component Algorithm (SCC) is introduced to address scalability issues in hierarchical clustering while maintaining accuracy by leveraging a round-based threshold approach and improved linkage functions.",
+        "research purpose": "To develop an effective and scalable algorithm for hierarchical clustering that can also serve as a robust tool for flat clustering, improving on existing methods' accuracy and computational demands.",
+        "research challenge": "Scalability in clustering large datasets while ensuring accuracy and reducing issues such as cluster over-merging.",
+        "method summary": "SCC works by iteratively grouping data points in sub-clusters, using dynamically adjusted and increasing thresholds to ensure optimal clustering accuracy. The method encompasses best-practice procedures such as sub-cluster components to enhance hierarchical and flat clustering outcomes.",
+        "conclusion": "The SCC algorithm provides a scalable solution for practical clustering applications, outperforming established methods by producing more coherent clusters with efficiently managed computational resources."
+    },
+    "Method": {
+        "description": "The Sub-Cluster Component Algorithm (SCC) encompasses a hierarchical clustering approach employing gradually increasing threshold levels to determine sub-cluster merges. This manages the balance between computational efficiency and clustering accuracy.",
+        "problem formultaion": "Given a set of data points, devise a clustering method that scales well with dataset size while mitigating clustering inaccuracies, such as over-merged clusters.",
+        "feature processing": null,
+        "model": "SCC is built upon a hierarchical agglomerative clustering framework, focusing on leveraging optimized hierarchical structures to reveal both fine-grained and broad data point relationships.",
+        "tasks": [
+            "Hierarchical Clustering",
+            "Flat Clustering",
+            "Scalable Data Processing"
+        ],
+        "theoretical analysis": "SCC is analyzed for baseline clustering accuracy under known separability conditions, showcasing its capability to produce target separations through a combination of theoretical guarantees and empirical studies.",
+        "complexity": "SCC demonstrates O(N(T+S)) computational complexity, where N is the number of data points and T, S are the complexity of sub-tasks like connected components determination.",
+        "algorithm step": "1. Initial flat clustering setup.\n2. Define and calculate sub-cluster components.\n3. Interactively merge sub-cluster components based on pre-defined thresholds.\n4. Generate state-of-the-art hierarchical clustering."
+    },
+    "Experiments": {
+        "datasets": [
+            "CovType",
+            "Speaker",
+            "ALOI",
+            "ILSVRC (Sm.)",
+            "ILSVRC (Lg.)"
+        ],
+        "baselines": [
+            "Affinity Clustering",
+            "Perch",
+            "Grinch",
+            "Hierarchical K-Means (HKM)",
+            "Birch",
+            "HDBSCAN"
+        ],
+        "evaluation metric": "Dendrogram Purity, Pairwise F1 Score, DP-Means Objective",
+        "setup": "Each dataset leveraged shared benchmark parameters. A geometric sequence of thresholds was applied with sparsification strategies where applicable.",
+        "hyperparameters": "Number of rounds, linkage functions used (average linkage), threshold values.",
+        "results": "SCC achieved superior results in dendrogram purity and DP-Means objective compared to existing algorithms, showcasing efficiency on datasets as large as 30 billion queries.",
+        "performance": "SCC provided state-of-the-art results against all benchmarks for large datasets.",
+        "analysis": "SCC illustrated effective management of computational resources while maintaining clustering accuracy, proving scalable and theoretically robust across datasets.",
+        "ablation study": "The effectiveness of SCC is largely attributed to its threshold strategies and its capacity to manage sub-cluster components in hierarchical form efficiently."
+    },
+    "conclusion": {
+        "summary": "SCC presents a methodology that circumvents the limitations of existing hierarchical clustering methods through superior scalability and accuracy.",
+        "future work": "Explorations could focus on real-time applications or synergy with more sophisticated feature extraction methods such as deep learning."
+    }
+}

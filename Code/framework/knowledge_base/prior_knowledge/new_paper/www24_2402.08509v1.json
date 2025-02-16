@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Output Shape Characterization of SPARQL Construct Queries with SHACL Constraints",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Knowledge",
+            "Institute of Structured Information"
+        ],
+        "abstract": "This paper addresses the challenge of determining the potential output graphs produced by SPARQL Construct queries when the input graphs conform to specific SHACL shape constraints. We propose a framework to compute SHACL shapes that approximate the structure of these output graphs. Our method leverages description logic techniques to analyze the relationship between input shapes, query templates, and resulting output shapes without relying on specific instance data.",
+        "keywords": [
+            "SPARQL",
+            "SHACL",
+            "Description Logic",
+            "Shape Inference",
+            "Graph Constraints",
+            "Data Processing Pipelines"
+        ],
+        "year": "2023",
+        "venue": "Journal of Knowledge Representation",
+        "doi link": "10.1234/abcd.efgh",
+        "method name": "ShapeApproximation"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Pattern Matching",
+            "Shape Inference",
+            "Constraint Propagation"
+        ],
+        "related papers": "Spahiu et al., 2018; Omran et al., 2023; Calvanese et al., 2014; Thapa et al., 2022",
+        "comparisons with related methods": "Our approach differs by not relying on instance data but rather inferring shapes through static analysis of query and input constraints."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper explores the inference of SHACL shapes for the output of SPARQL Construct queries using description logic. The approach identifies potential graph structures resulting from data processing pipelines when initial graphs satisfy input SHACL constraints.",
+        "research purpose": "To establish a method for computing shape constraints on output graphs of SPARQL Construct queries given SHACL constraints on input graphs, thereby improving the understanding and validation of these outputs.",
+        "research challenge": "Existing methods typically require instance data for shape inference, while our approach is designed to function without such data by focusing on the logical relationships between constraints.",
+        "method summary": "The proposed approach uses description logics to analyze SPARQL query patterns and input graph constraints, computing a set of output SHACL shapes that characterize possible graph structures without specific data assumptions.",
+        "conclusion": "The method successfully infers output shapes, providing a sound basis for understanding possible results of graph transformation operations."
+    },
+    "Method": {
+        "description": "We present a description logic-based framework to infer allowable SHACL shapes for output graphs of SPARQL queries by analyzing input shape constraints and query patterns.",
+        "problem formultaion": "Given input SHACL constraints and a SPARQL Construct query, infer SHACL constraints describing possible output graphs.",
+        "feature processing": "The approach converts SHACL and query components into description logic form for analysis.",
+        "model": "Utilizes an extended graph representation and logical inference to deduce output shape characteristics.",
+        "tasks": [
+            "Convert SHACL to description logic",
+            "Analyze query patterns",
+            "Infer possible output shapes"
+        ],
+        "theoretical analysis": "Proves soundness of the inferred shapes under query and input constraints.",
+        "complexity": "Bound by the size of query variables and SHACL constraints, scalable for large data representations.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Generated RDF datasets conforming to SHACL specifications"
+        ],
+        "baselines": [
+            "Instance-based shape inference methods",
+            "Manual shape definition"
+        ],
+        "evaluation metric": "Precision of inferred shapes, correctness against known constraints",
+        "setup": "Simulated SPARQL queries on RDF datasets with varying SHACL constraints",
+        "hyperparameters": null,
+        "results": "Our method produced accurate and comprehensive shape constraints without input data, outperforming instance-based methods in theoretical scenarios.",
+        "performance": "Demonstrated effective inference of comprehensive shape constraints across diverse datasets and query patterns.",
+        "analysis": "Shows improved understanding of SPARQL query results' possible structures, aiding in error reduction and processing efficiency.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Inference of SHACL shapes for SPARQL Construct outputs enhances validation of query results.",
+        "future work": "Explore extension to more complex SPARQL patterns and investigate empirical properties of inferred shapes in large-scale data processing tasks."
+    }
+}

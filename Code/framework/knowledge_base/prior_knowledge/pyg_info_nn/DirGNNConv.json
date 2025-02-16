@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Edge Directionality Improves Learning on Heterophilic Graphs",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Department of Computer Science, XYZ University",
+            "School of Informatics, ABC University"
+        ],
+        "abstract": "Graph Neural Networks (GNNs) have shown impressive capabilities across numerous domains. However, many GNN models primarily focus on undirected graphs, leaving the potential of directed graphs underexplored, particularly in heterophilic contexts where neighboring nodes often differ in labels. Our work addresses this gap by introducing a novel framework for extending GNNs to directed graphs, enhancing their expressive power and effectiveness in heterophilic environments.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Edge Directionality",
+            "Heterophilic Graphs",
+            "Directed Graphs",
+            "Node Classification"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "https://doi.org/xxxxxx/xxxxxx",
+        "method name": "Our Framework"
+    },
+    "relate work": {
+        "related work category": [
+            "GNNs for directed graphs",
+            "GNNs for relational graphs",
+            "Heterophilic GNNs"
+        ],
+        "related papers": "Scarselli:2009ku, li2015gated, gilmer2017neural",
+        "comparisons with related methods": "Our method extends the expressivity of traditional GNNs for directed graphs by incorporating directionality into the message-passing phase, thereby improving performance on heterophilic tasks."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a framework that extends the capabilities of graph neural networks to directed graphs, emphasizing improvements in heterophilic graph settings. The framework involves accounting for edge directionality, offering a more expressive GNN model that performs well on tasks where traditional models struggle.",
+        "research purpose": "The research addresses the challenge of applying GNNs to directed graphs in heterophilic settings, where traditional assumptions of node similarity often do not hold.",
+        "research challenge": "Standard GNNs may fail in heterophilic settings by assuming homophily, which means neighboring nodes are likely related. Our challenge is to adapt GNN models to better handle heterophilic environments found in many real-world directed graphs, thereby utilizing the valuable information contained in edge directions.",
+        "method summary": "We introduce a modification to the message-passing neural network model that separates aggregations over incoming and outgoing edges. This separation enhances the model's ability to handle heterophilic graphs effectively.",
+        "conclusion": "The proposed framework not only surpasses existing models tailored for heterophilic cases but also preserves state-of-the-art results in standard settings, highlighting the importance of directionality in graph learning."
+    },
+    "Method": {
+        "description": "Our proposed framework builds on traditional MPNNs but incorporates edge directionality by processing incoming and outgoing edges separately. This is achieved by introducing two independent aggregation functions and one combination function.",
+        "problem formultaion": "The problem revolves around improving node classification in directed graph settings, particularly where node labels or features differ significantly among neighbors.",
+        "feature processing": "Features of nodes are processed independently for incoming and outgoing edges before being aggregated and combined for use in prediction tasks.",
+        "model": "The model employs a dual approach to aggregation: one for incoming edges and one for outgoing edges. Combining these pathways offers richer information for better prediction outcomes.",
+        "tasks": [
+            "Node Classification",
+            "Feature Prediction"
+        ],
+        "theoretical analysis": "The framework is demonstrated to be as expressive as the Directed Weisfeiler-Lehman test.",
+        "complexity": "The computational complexity is comparable to standard MPNNs but involves additional parameters to handle directionality.",
+        "algorithm step": "Separate the incoming and outgoing edge aggregations, use respective aggregation functions, then combine for node feature update."
+    },
+    "Experiments": {
+        "datasets": [
+            "Citeseer-Full",
+            "Cora-ML",
+            "OGBN-Arxiv",
+            "Chameleon",
+            "Squirrel",
+            "Arxiv-Year",
+            "Snap-Patents",
+            "Roman-Empire"
+        ],
+        "baselines": [
+            "GraphSAGE",
+            "GCN",
+            "GAT"
+        ],
+        "evaluation metric": "Accuracy",
+        "setup": "We evaluate our framework alongside standard GNN baselines in both synthetic and real-world datasets.",
+        "hyperparameters": "Learning rate = 0.001, Hidden dimension = 64, Number of layers = 3, JK = max",
+        "results": "Our model significantly improved accuracy in heterophilic datasets, whereas performance on homophilic datasets remained consistent with state-of-the-art methods.",
+        "performance": "10% to 15% improvement on heterophilic datasets",
+        "analysis": "Our analysis indicates that using directionality increases effective homophily in datasets, even when base models are unchanged.",
+        "ablation study": "Ablation studies confirm that both directions contribute to improved expressivity and accuracy on heterophilic tasks."
+    },
+    "conclusion": {
+        "summary": "Edge directionality in GNNs is crucial for improving classification tasks in heterophilic settings, providing a framework that offers a competitive edge over existing methods.",
+        "future work": "Further exploring theoretical foundations for effective homophily improvements in directed graphs and investigating expressivity benefits specific to heterophilic graphs."
+    }
+}

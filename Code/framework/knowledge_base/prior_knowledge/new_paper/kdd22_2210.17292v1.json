@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "M3Care: Compensating Missing Modalities in Multimodal Electronic Health Records for Clinical Tasks",
+        "authors": [
+            "R. Zhang",
+            "L. Ma",
+            "J. Wang"
+        ],
+        "affiliations": [
+            "Institute of Computing Technology, Chinese Academy of Sciences",
+            "Peking University",
+            "University of California"
+        ],
+        "abstract": "This paper presents \\mname, an end-to-end model designed to address missing modalities in EHR data for clinical applications. Traditional methods treating missing modalities either discard incomplete samples or rely on imputation, which may not be optimal for domains like healthcare. In contrast, our approach imputes missing modality representations in a latent space derived from both the patient's existing data and similar ones, improving prediction tasks. Extensive experiments demonstrate \\mname's superior performance across various metrics and datasets, validating its robustness and utility in extracting insightful information consistent with medical expertise.",
+        "keywords": [
+            "multimodal learning",
+            "electronic health records",
+            "missing data imputation",
+            "clinical prediction",
+            "healthcare AI"
+        ],
+        "year": "2023",
+        "venue": "ICML",
+        "doi link": "https://doi.org/10.1145/xxxxxx",
+        "method name": "M3Care"
+    },
+    "relate work": {
+        "related work category": [
+            "Multimodal learning for healthcare",
+            "Methods for missing modalities"
+        ],
+        "related papers": "RAIM (Xu et al., 2018), FitRec (Ni et al., 2019), SMIL (Ma et al., 2021), HGMF (Chen et al., 2020), CM-AEs (Ngiam et al., 2011)",
+        "comparisons with related methods": "M3Care effectively mitigates the limitations presented in current methods by ensuring the handling of modality-missing scenarios while maintaining robust performance for clinical prediction tasks."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This work introduces \\mname, a model designed to compensate for missing modalities in multimodal EHR data by leveraging both the patient's existing data and information from similar patients. The model operates in a latent space and features modale-adaptive similarity metrics, which guide task-relevant imputation to enhance clinical prediction accuracy.",
+        "research purpose": "To address the challenge of missing modalities in EHR data, particularly in the domain of healthcare where complete sample availability is rare.",
+        "research challenge": "Existing methods either drop incomplete samples or rely on traditional imputation methods that may not adequately preserve task-relevant data, leading to decreased predictive performance.",
+        "method summary": "The proposed \\mname framework includes components for unimodal representation extraction, similar patient discovery, adaptive modality imputation, and multimodal interaction capture, all designed to work in an end-to-end manner for clinical tasks.",
+        "conclusion": "\\mname demonstrates superior performance in compensating for missing modalities, surpassing existing state-of-the-art models and aligning with clinical insights, therefore contributing valuable information to the healthcare domain."
+    },
+    "Method": {
+        "description": "M3Care addresses missing modalities in multimodal EHR data by imputing representations in latent space using patient and peer data insights.",
+        "problem formultaion": "Determine the disease diagnosis performance in scenarios with missing modalities in a data-driven and clinically relevant way.",
+        "feature processing": "Addressed by diversifying the approaches for extracting unimodal representations tailored to specific modality data types through frameworks like ResNet, Transformer, or MLP.",
+        "model": "\\mname, featuring deep task-guided kernels for similarity computation and an imputation mechanism leveraging extracted insights from similar patients.",
+        "tasks": [
+            "Disease diagnosis",
+            "Prognosis"
+        ],
+        "theoretical analysis": "M3Care assumes EHR features have low-rank and predictable covariance structure properties, enabling efficient imputation through proximal feature similarities.",
+        "complexity": "The model's complexity arises from the interaction of multiple modalities and patient data within the deep kernel spaces.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Ocular Disease Intelligent Recognition (ODIR)",
+            "Ophthalmic Vitrectomy (OV)"
+        ],
+        "baselines": [
+            "MFN",
+            "MulT",
+            "ViLT",
+            "HGMF",
+            "CM-AEs"
+        ],
+        "evaluation metric": "Micro-AUC, Macro-AUC, AUPRC, AUROC, Accuracy",
+        "setup": "The datasets were divided into training, validation, and test sets. The model's performance was compared against state-of-the-art baselines under various missing modality scenarios.",
+        "hyperparameters": "Adam optimizer, embedding dimensions (128/256 for ODIR/OV), and batch sizes as 32 and 512 for OV and ODIR datasets respectively.",
+        "results": "M3Care exhibited a 4.9% relative improvement in micro-AUC on the ODIR dataset and a significant performance boost in AUPRC on the OV dataset compared to best baseline methods.",
+        "performance": null,
+        "analysis": "Further analysis reinforced the model's alignment with medical insights, showcasing foci on medically relevant modalities in predictive tasks.",
+        "ablation study": "Experimental ablations demonstrated the necessity of the task-guided deep kernels and Information Aggregation modules, both contributing to additional performance increases."
+    },
+    "conclusion": {
+        "summary": "M3Care effectively compensates for missing modality-induced data quality loss while consistently outperforming existing models in enhancing clinical prediction performance and providing explainable insights consistent with medical expertise.",
+        "future work": "Further investigation into extending the model to broader healthcare datasets and real-time clinical environments for practical integration."
+    }
+}

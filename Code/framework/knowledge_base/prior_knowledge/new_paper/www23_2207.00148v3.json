@@ -1,0 +1,83 @@
+{
+    "meta_data": {
+        "title": "Counterfactual-Inspired Generative Model for Graph Contrastive Learning: High-Quality Hard Negative Sampling",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Xin Liu"
+        ],
+        "affiliations": [
+            "Dept. of Computing, University A",
+            "AI Research Lab, Company X",
+            "School of AI, Institute B"
+        ],
+        "abstract": "Graph contrastive learning (GCL) has emerged as a powerful paradigm for unsupervised graph representation learning. However, existing methods primarily focus on generating high-quality positive pairs while neglecting efficient negative sample generation, leading to a potential deficiency in learning robustness. In this work, we propose a counterfactual-inspired generative model that addresses the challenge of hard negative sampling in GCL. Our method introduces constraints and a sophisticated similarity-aware loss function to ensure the quality and hardness of the negative samples. Extensive experiments demonstrate the proposed model's superiority over state-of-the-art methods.",
+        "keywords": [
+            "Graph Contrastive Learning",
+            "Negative Sampling",
+            "Graph Neural Networks",
+            "Counterfactual Reasoning"
+        ],
+        "year": "2023",
+        "venue": "AI and Machine Learning Conference",
+        "doi link": "10.1234/ai_ml_conf.2023.5678",
+        "method name": "Counterfactual-Inspired Hard Negative Generation"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Contrastive Learning",
+            "Counterfactual Reasoning",
+            "Negative Sample Generation"
+        ],
+        "related papers": "DGI, InfoGraph, GraphCL, GCC, DSGC.",
+        "comparisons with related methods": "Unlike previous methods that rely mostly on heuristic or random sampling like GCC or GraphCL, our method employs a generative approach inspired by counterfactual reasoning to achieve higher quality hard negative samples."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes a novel method for generating high-quality negative samples in graph contrastive learning using a counterfactual-inspired approach. It introduces a sophisticated constraint-based system to ensure negative samples are 'hard' while minimizing false negatives, ultimately improving representation learning.",
+        "research purpose": "To enhance graph contrastive learning methodologies by improving the quality of negative samples through counterfactual-inspired generation techniques.",
+        "research challenge": "The main challenge is obtaining high-quality hard negative samples and ensuring they differ semantically yet remain structurally similar to the original data.",
+        "method summary": "The proposed method generates hard negative samples using graph perturbations and feature masking guided by counterfactual reasoning principles. It employs a similarity-aware loss to ensure the quality of the samples.",
+        "conclusion": "The counterfactual-inspired generated negative samples significantly improve the performance of graph contrastive learning on various datasets, showing superior results over existing methods."
+    },
+    "Method": {
+        "description": "The method utilizes counterfactual reasoning techniques to generate hard negative samples for graph contrastive learning.",
+        "problem formultaion": "How to achieve large semantic divergence with minimal structural perturbation in graph data to generate effective negative samples while preserving representation quality?",
+        "feature processing": "Feature masking is employed to manipulate node feature representations effectively.",
+        "model": "The model generates two types of samples: proximity-perturbed and feature-masked graphs, thus extending the diversity of hard negative samples.",
+        "tasks": [
+            "Negative Sample Generation",
+            "Graph Representation Learning",
+            "Contrastive Learning"
+        ],
+        "theoretical analysis": "The paper theoretically analyses the efficacy of counterfactual-inspired sample generation concerning similarity constraints.",
+        "complexity": null,
+        "algorithm step": "1. Sample or generate initial negative graph instances. 2. Apply proximity perturbations and feature masking based on counterfactual principles. 3. Optimize similarity constraints between original and negative samples using sophisticated loss functions."
+    },
+    "Experiments": {
+        "datasets": [
+            "PROTEINS_full",
+            "FRANKENSTEIN",
+            "Synthie",
+            "ENZYMES"
+        ],
+        "baselines": [
+            "RandomWalk Kernel",
+            "ShortestPath Kernel",
+            "sub2vec",
+            "graph2vec",
+            "GraphCL",
+            "GCA"
+        ],
+        "evaluation metric": "F1-Micro and F1-Macro scores",
+        "setup": "Experiments were conducted using a three-layer GCN for most datasets; learning rates and training epochs were tailored to each dataset for optimal performance.",
+        "hyperparameters": "Learning rates of 0.0001 for hard negative generation; 0.3 thresholds for edge and feature constraints; variations adjusted for different datasets.",
+        "results": "Across all datasets, the method achieved notable improvements, especially in multiclass classification tasks, indicating its robustness and adaptability.",
+        "performance": "The method outperformed state-of-the-art baselines on most datasets, especially notable in enriched node-feature spaces.",
+        "analysis": "The method's adaptability to varying dataset complexity showed its superior capability in contrastive representation learning.",
+        "ablation study": "Analyzed the impact of different types of generated hard negative samples, showing that combining proximity-perturbed and feature-masked graphs provided the best results."
+    },
+    "conclusion": {
+        "summary": "The paper presents an advanced approach to hard negative sample generation in graph contrastive learning, outperforming current state-of-the-art techniques.",
+        "future work": "Future enhancements may explore alternative mathematical formulations for similarity constraints and integrate other types of augmentation techniques."
+    }
+}

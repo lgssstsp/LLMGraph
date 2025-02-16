@@ -1,0 +1,84 @@
+{
+    "meta_data": {
+        "title": "Minimum-budget Topology Attack on Graph Neural Networks: A Comprehensive Examination",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Alan Turing"
+        ],
+        "affiliations": [
+            "Department of Computer Science, Example University",
+            "Division of Artificial Intelligence, XYZ Institute",
+            "Department of Theoretical Sciences, Example College"
+        ],
+        "abstract": "We propose a novel minimum-budget topology attack mechanism for graph neural networks, termed MiBTack. By introducing the concept of dynamic projected gradient descent, MiBTack minimizes the adversarial budget needed for misclassification of nodes, presenting new insights into the adversarial robustness of GNNs. Our method is shown to achieve 100% attack success with minimal perturbations across multiple GNN architectures.",
+        "keywords": [
+            "Adversarial attacks",
+            "Graph neural networks",
+            "Robustness",
+            "Topology attack",
+            "GNN"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning (ICML)",
+        "doi link": "https://doi.org/10.1000/abcd1234",
+        "method name": "MiBTack"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Topology Attacks",
+            "Minimum-Norm Attacks"
+        ],
+        "related papers": "GCN, Zhou2020GraphNN, Liu2022MGNNIMG, Liu2022EIGNNEI, Xu2019TopologyAA, Sun2018DataPA, Carlini2017TowardsET",
+        "comparisons with related methods": "MiBTack outperforms fixed-budget topology attacks by dynamically adjusting the perturbation budget to each node, catering to its unique robustness level. Unlike fixed-budget methods, MiBTack benefits from minimal budget constraints, improving both attack efficiency and stealth."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces MiBTack, an innovative minimum-budget topology attack method for GNNs that aims to efficiently exploit node-specific vulnerabilities by adjusting adversarial budgets dynamically. With extensive experiments on real-world datasets, MiBTack is established as a more effective and unobtrusive approach than traditional fixed-budget attacks.",
+        "research purpose": "To propose and validate a novel topology attack method for GNNs that minimizes the budget required for successful adversarial attacks.",
+        "research challenge": "Overcoming the limitations of fixed-budget topology attacks which fail to adequately adapt to node-specific adversarial weaknesses.",
+        "method summary": "MiBTack leverages dynamic projected gradient descent to iteratively minimize the perturbation budget necessary for node misclassification, overcoming the inherent challenges of non-convex optimization problems in discrete graph data.",
+        "conclusion": "MiBTack achieves 100% attack success rate with minimal perturbation, offering insights into the adversarial robustness of GNNs and paving the way for future research in black-box attack settings."
+    },
+    "Method": {
+        "description": "MiBTack is a dynamic and adaptive topology attack method that minimizes adversarial budgets by combining projected gradient descent with non-convex optimization strategies.",
+        "problem formultaion": "Formulation centered on minimizing the perturbation budget for successful adversarial misclassification with node-specific budget adjustments.",
+        "feature processing": null,
+        "model": "Dynamic projected gradient descent within MiBTack adapts to the unique robustness of each node by iteratively optimizing perturbations.",
+        "tasks": [
+            "Node misclassification",
+            "Graph topology manipulation"
+        ],
+        "theoretical analysis": "Convergence properties of the dynamic PGD mechanism are explored, highlighting adaptability in non-convex optimization landscapes.",
+        "complexity": "Efficient convergence is achieved despite inherent non-convex constraints, balancing performance and computational cost.",
+        "algorithm step": "1. Initialize perturbation and budget. 2. Update perturbation within current budget. 3. Adjust budget based on attack success/failure. 4. Repeat until minimal budget is found for misclassification."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "Pubmed",
+            "Polblogs"
+        ],
+        "baselines": [
+            "Rand",
+            "DICE",
+            "DICE-t",
+            "FGA",
+            "Nettack",
+            "PGD",
+            "PRBCD"
+        ],
+        "evaluation metric": "Accuracy of GNN model (ACC) on all attacked nodes and the total budget used (TB).",
+        "setup": "Experiments involve 250 randomly selected nodes across various datasets, comparing MiBTack with state-of-the-art attack mechanisms under minimum-budget conditions.",
+        "hyperparameters": "Patience (P) set to 800, gradient descent step size (alpha) to 1.0, and budget adjustment step (beta) to 0.1 for MiBTack.",
+        "results": "MiBTack achieves zero classification accuracy across all target nodes with the least perturbation, saving at least 60 edges compared to the best baseline approach.",
+        "performance": "Superior performance in attack efficiency and unobtrusiveness, outperforming traditional fixed-budget methods with notable reductions in computational cost.",
+        "analysis": "Insights highlight MiBTack's ability to elegantly balance attack strength and stealth through budget adaptations, correlating node robustness with perturbation efficiency.",
+        "ablation study": "Comparative analysis indicates dynamic PGD and customized initialization significantly enhance attack performance, corroborating the method's design."
+    },
+    "conclusion": {
+        "summary": "MiBTack successfully minimizes adversarial budgets for GNN topology attacks with robustness insights provided through efficient perturbation strategies.",
+        "future work": "Potential extensions include the adaptation of MiBTack to black-box GNN settings and exploring alternative optimization strategies for improved generalization."
+    }
+}

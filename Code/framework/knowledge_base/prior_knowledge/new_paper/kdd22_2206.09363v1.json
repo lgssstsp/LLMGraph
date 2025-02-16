@@ -1,0 +1,60 @@
+{
+    "meta_data": {
+        "title": "Acknowledgments, Appendices, and SIGCHI Extended Abstracts Instructions",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Unknown"
+        ],
+        "abstract": "This paper offers guidance on the inclusion of acknowledgments, appendices, and usage of the SIGCHI Extended Abstracts template style in research documents. It provides specific instructions on how to prepare these sections to facilitate metadata extraction and ensure formatting consistency.",
+        "keywords": [
+            "Acknowledgments",
+            "Appendices",
+            "SIGCHI Extended Abstracts",
+            "Metadata Extraction",
+            "Formatting Guidelines"
+        ],
+        "year": "2023",
+        "venue": "Unpublished Manuscript",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [],
+        "related papers": "",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper aims to guide authors in properly formatting the Acknowledgments, Appendices, and SIGCHI Extended Abstracts sections for academic documents. It describes how to ensure these sections are formatted to facilitate easy metadata extraction.",
+        "research purpose": "To provide formatting instructions for acknowledgments, appendices, and SIGCHI Extended Abstracts in academic papers.",
+        "research challenge": null,
+        "method summary": null,
+        "conclusion": null
+    },
+    "Method": {
+        "description": "",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "",
+        "tasks": [],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [],
+        "baselines": [],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": null,
+        "results": "",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The document successfully outlines approaches for including acknowledgments and appendices in a research paper while utilizing the sigchi-a template. These instructions ensure proper section formatting and uniformity across publications.",
+        "future work": null
+    }
+}

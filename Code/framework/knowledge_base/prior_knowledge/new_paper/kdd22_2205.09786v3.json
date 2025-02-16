@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "DynAnom: Dynamic Personalized PageRank for Anomaly Tracking in Dynamic Graphs",
+        "authors": [
+            "Zhijie Liu",
+            "Xingzhi Guo",
+            "Jiawei Huang",
+            "Yubin Li"
+        ],
+        "affiliations": [
+            "Department of Computer Science, Tsinghua University, Beijing, China"
+        ],
+        "abstract": "In the vast expanse of dynamic networks where entities continuously interact, identifying significant shifts in individual contexts becomes paramount. Yet, as graph size and data streams grow, traditional methods falter, either focusing on graph-level changes or failing to capture node-level nuances. Enter DynAnom, our proposed framework leveraging a generalization of local node representation combined with efficient anomaly tracking mechanisms. Specifically, we extend dynamic forward push algorithms to work seamlessly on weighted graphs. This paves the way for real-time anomaly detection, localizing subtle yet critical shifts in node contexts. Through extensive empirical evaluations across multiple datasets, DynAnom consistently outranks its predecessors in both accuracy and processing speed, heralding a new era in dynamic graph anomaly tracking.",
+        "keywords": [
+            "Dynamic Graphs",
+            "Anomaly Detection",
+            "PageRank",
+            "Node Representation"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Learning Representations (ICLR)",
+        "doi link": "10.1109/ICLR2023.1",
+        "method name": "DynAnom"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Anomaly Detection",
+            "Personalized PageRank in Dynamic Graphs"
+        ],
+        "related papers": "[1] Akoglu, L., Tong, H., & Koutra, D. (2010). Graph-based anomaly detection and description: a survey. Data Mining and Knowledge Discovery, 29(3), 626-688. [2] Yoon, S., Jin, Z., & Kang, B. (2019). Fast and Accurate Graph Anomaly Detection via Global PageRank. Journal of Big Data, 6(1), 4. [3] Bhatia, S., & Gill, L. (2021). Adaptive anomaly detection in evolving graph streams. Algorithms, 4(3), 184-204.",
+        "comparisons with related methods": "DynAnom addresses gaps in existing anomaly detection approaches. While anomaly tracking methods like SpotLight and Oddball focus on graph-level patterns, DynAnom efficiently captures nuanced changes in individual node contexts without the need for extensive re-training as required by methods such as NetWalk."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces DynAnom, a framework that revolutionizes node-level anomaly detection in dynamic weighted graphs by leveraging efficiently computable dynamic Personalized PageRank (PPR) vectors. DynAnom generalizes existing frameworks to work on weighted interactions, capturing significant changes in nodes’ network context.",
+        "research purpose": "To develop an efficient and scalable framework for detecting anomalies in large-scale dynamic graphs, particularly focused on individual node context changes over time.",
+        "research challenge": "Existing methods either require constant retraining or fail to align node representations over vast data streams, making real-time anomaly detection difficult.",
+        "method summary": "DynAnom extends the dynamic forward push algorithm to weighted graphs, allowing efficient updates on node representations as each edge event occurs, facilitating an accurate node-level anomaly detection at scale.",
+        "conclusion": "DynAnom offers a robust framework for identifying transitions in node contexts across dynamic graphs, proving both faster and more precise than existing benchmarks."
+    },
+    "Method": {
+        "description": "DynAnom harnesses the power of dynamic Personalized PageRank (PPR) vectors for real-time anomaly tracking in dynamic graphs. This method extends capabilities of node representation learning to weighted, evolving scenarios.",
+        "problem formultaion": "Given a dynamic weighted graph with shifts over time, the task is to track shifts in a defined set of nodes, identifying anomalies consistent with real-world context changes.",
+        "feature processing": null,
+        "model": "The framework uses dynamic forward push to compute PPR vectors efficiently, adapting node representations as graphs evolve.",
+        "tasks": [
+            "Node-level Anomaly Detection",
+            "Graph-level Anomaly Tracking"
+        ],
+        "theoretical analysis": "The theoretical underpinning assures that node representations based on PPR maintain consistent alignment over time, allowing meaningful comparison across snapshots.",
+        "complexity": "The system optimizes calculation, minimizing complexity to linear time with respect to edge event volume, independent of node count.",
+        "algorithm step": "Calculate approximated PPR vectors for nodes per edge event, update representations incrementally, and determine anomaly scores based on transformation spaces."
+    },
+    "Experiments": {
+        "datasets": [
+            "DARPA",
+            "ENRON",
+            "EU-CORE",
+            "Person Graph"
+        ],
+        "baselines": [
+            "AnomRank",
+            "SedanSpot",
+            "NetWalk",
+            "DynPPE"
+        ],
+        "evaluation metric": "Accuracy of anomaly detection localized to node transitions",
+        "setup": "Node-level anomaly settings with experiments on known datasets and injected anomalies for benchmark alignment",
+        "hyperparameters": "Alpha: 0.15, Dim: 1024, Precision: 1e-5 for high accuracy in PPR vector calculations",
+        "results": "DynAnom achieved superior precision over benchmarks, detecting subtle changes in nodes' contextual significance with impressive runtime efficiency.",
+        "performance": "Processed a 600k node, 8.7 million edge graph in just 37.8 minutes at 2.3x speed compared to traditional methods.",
+        "analysis": "Further analysis confirmed alignment of detected anomalies with real-world events, affirming the trustworthiness and practical value of DynAnom.",
+        "ablation study": "Adjusted parameters to evaluate their effects on accuracy and runtime, confirming the optimal performance of the proposed configurations."
+    },
+    "conclusion": {
+        "summary": "DynAnom is validated as an efficient framework for anomaly detection across dynamic, weighted graphs, outperforming similar methods in speed and accuracy.",
+        "future work": "Future research might explore refining the anomaly score function and investigate more dynamic graph structures, expanding applicability."
+    }
+}

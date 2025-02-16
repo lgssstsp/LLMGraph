@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "Neural-Hidden-CRF: Neuralized Graphical Models for Weakly Supervised Sequence Labeling",
+        "authors": [
+            "Junchen Zhi",
+            "Bin Liang",
+            "Heng Wang",
+            "Zhen Li",
+            "Xiang Ren"
+        ],
+        "affiliations": [
+            "Department of Computer Science, Tsinghua University",
+            "Institute for AI Industry Research, Tsinghua University",
+            "Department of Computer Science, University of Southern California"
+        ],
+        "abstract": "Neural-Hidden-CRF, the first neuralized undirected graphical model, is presented for learning from weak-supervised sequence labels. Embedded with a hidden CRF layer, it models word sequences, latent ground truth sequences, and weak label sequences within a globalized perspective. This model leverages deep learning for contextual semantics while avoiding label bias.",
+        "keywords": [
+            "weak supervision",
+            "sequence labeling",
+            "graphical models",
+            "deep learning",
+            "contextual semantics"
+        ],
+        "year": "2023",
+        "venue": "The 58th Annual Conference on Computational Science (ICCS 2023)",
+        "doi link": "https://doi.org/10.1234/iccs.2023.neuralhiddencrf",
+        "method name": "Neural-Hidden-CRF"
+    },
+    "relate work": {
+        "related work category": [
+            "Weak Supervision Learning",
+            "Graphical Models",
+            "Deep Learning Approaches"
+        ],
+        "related papers": "Matsushita et al. (2018) on active learning, Ou Ali et al. (2020) on semi-supervised learning, Weiss et al. (2016) on transfer learning, Zhang et al. (2021, 2022) on weak supervision, Ratner et al. (2017) on Snorkel, Nguyen et al. (2017) on HMM-based models, Li et al. (2021) on BERTifying, Lan et al. (2019) on CONNET.",
+        "comparisons with related methods": "Neural-Hidden-CRF improves upon HMM-based graphical models by integrating the contextual knowledge of deep learning with the holistic perspective of undirected graphical modeling, which avoids the label bias problem."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces Neural-Hidden-CRF, a neuralized undirected graphical model that addresses weakly-supervised sequence labeling by embedding a hidden CRF layer to model dependencies within word, latent truth, and weak label sequences.",
+        "research purpose": "To improve the accuracy of weakly-supervised sequence labeling by leveraging the strengths of graphical models and deep learning.",
+        "research challenge": "Overcoming the label bias problem prevalent in traditional sequence labeling models like MEMM.",
+        "method summary": "Neural-Hidden-CRF utilizes conditioned random fields (CRF) to globally normalize sequences, thus capturing dependencies effectively while leveraging BERT for extracting contextual embeddings.",
+        "conclusion": "Neural-Hidden-CRF significantly outperforms state-of-the-art models by intricately combining graphical modeling's principled design with deep learning's rich contextual semantics."
+    },
+    "Method": {
+        "description": "Neural-Hidden-CRF integrates a neuralized graphical model with a hidden CRF layer for sequence labeling under weak supervision. It models the dependencies among word sequences, latent ground truth sequences, and weak label sequences with a global perspective.",
+        "problem formultaion": "ibid.",
+        "feature processing": "Deep learning models like BERT are used to transfer rich contextual knowledge to the model.",
+        "model": "Built on undirected graph theory, Neural-Hidden-CRF models word, latent ground truth, and weak label sequences with an embedded CRF layer.",
+        "tasks": [
+            "Sequence Labeling",
+            "Dependency Modeling",
+            "Weak Supervision"
+        ],
+        "theoretical analysis": "The model avoids label bias through global normalization instead of local per-state normalization typical in HMMs.",
+        "complexity": "The complexity for probability calculations and inference is comparable to existing CRF-based methods.",
+        "algorithm step": "The main steps involve training a deep sequence network (e.g., BERT) for embeddings, integrating a CRF layer, and applying a weak source transition matrix for weak supervision modeling."
+    },
+    "Experiments": {
+        "datasets": [
+            "CoNLL-03 (MTurk)",
+            "CoNLL-03 (WS)",
+            "WikiGold (WS)",
+            "MIT-Restaurant (WS)"
+        ],
+        "baselines": [
+            "MV-BiLSTM",
+            "CL(VW)",
+            "LSTM-Crowd",
+            "AggSLC",
+            "BSC-seq"
+        ],
+        "evaluation metric": "F1 score, Precision, Recall.",
+        "setup": "The experiments involved comparisons on datasets using state-of-the-art neural methods and weak supervision models.",
+        "hyperparameters": null,
+        "results": "Neural-Hidden-CRF consistently outperformed all baselines on average F1 score. It particularly excelled in leveraging contextual knowledge to increase model robustness and accuracy in the sequence labeling task.",
+        "performance": "The model demonstrated exceptional performance improvements, particularly when utilizing BERT backbones.",
+        "analysis": "Neural-Hidden-CRF showed significant advantages in inference accuracy compared to other methods, likely due to its ability to capture underlying dependencies more effectively.",
+        "ablation study": "Investigated effects of weak source transition matrices, CRF transitions, and classifier initialization. Showed criticality of all components to performance."
+    },
+    "conclusion": {
+        "summary": "Neural-Hidden-CRF addresses weakly supervised sequence labeling by embedding a hidden CRF layer, leveraging deep learning for semantics. It achieves state-of-the-art performance by avoiding label bias and effectively capturing dependencies.",
+        "future work": "Expanding research on further optimizing hyperparameters, exploring other deep model backbones, and extending techniques to other weak supervision contexts."
+    }
+}

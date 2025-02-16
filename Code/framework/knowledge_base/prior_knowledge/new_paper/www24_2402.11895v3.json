@@ -1,0 +1,70 @@
+{
+    "meta_data": {
+        "title": ".",
+        "authors": [
+            "."
+        ],
+        "affiliations": [
+            "."
+        ],
+        "abstract": ".",
+        "keywords": [
+            "."
+        ],
+        "year": ".",
+        "venue": ".",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Polarization in social media",
+            "Intergroup interactions",
+            "Contact hypothesis",
+            "Previous linguistic measures of polarization"
+        ],
+        "related papers": "esteban2008polarization, egorov2021divided, bauer2016can, homer2010environment, halberstam2016homophily, garimella2017long, allcott2020welfare, asimovic2021testing, bail2018exposure, poole1985spatial, gentzkow2019measuring, demszky-etal-2019-analyzing, conover2011political, guerra2013measure, bonchi2019discovering, morales2015measuring, musco2018minimizing, efstratiou2023non, garimella2018quantifying, dash2022divided, ding2023same, allport1954nature, camargo2010interracial, rao2019familiarity, bazzi2019unity, levendusky2021we, santoro2022promise, tropp2005relationships, saguy2009irony, lowe2021types, majumdar2023reducing",
+        "comparisons with related methods": "The paper compares its Group Conformity Score (GCS) using contextual embeddings to previous measures like BOW partisanship, highlighting improved semantic capture and applicability to social media contexts."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper examines religious polarization on Indian Twitter during COVID-19, introducing the Group Conformity Score (GCS) using contextualized tweet embeddings to study intergroup interactions between religious majority and minority groups.",
+        "research purpose": "The research aims to understand how intergroup interactions on social media influence polarization amidst crises, specifically during the COVID-19 pandemic, by introducing a novel metric to measure group conformities.",
+        "research challenge": "Determining the nuanced effects of intergroup interactions on polarization, considering factors like event type, emotion, and user engagement.",
+        "method summary": null,
+        "conclusion": "Intergroup interactions generally reduce polarization, though this effect varies across events and user group alignments, with minority groups experiencing increased polarization during communal events."
+    },
+    "Method": {
+        "description": "The study introduces a Group Conformity Score (GCS) leveraging contextualized embeddings from tweets to measure users' alignment with their group during the COVID-19 crisis.",
+        "problem formultaion": null,
+        "feature processing": "The study incorporates contextualized embeddings using a pre-trained model to capture the semantics of religiously charged tweets beyond mere word frequency.",
+        "model": "The GCS model uses sentence transformers to map tweets into a semantic vector space, computing a conformity score relative to group centroids.",
+        "tasks": [
+            "Measuring polarization",
+            "Evaluating intergroup interactions",
+            "Assessing event-driven polarization dynamics"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Global Reactions to COVID-19 on Twitter"
+        ],
+        "baselines": [
+            "DW-NOMINATE",
+            "BOW-based estimator for polarization"
+        ],
+        "evaluation metric": "Group Conformity Score (GCS)",
+        "setup": "Tweets from COVID-19 events specific to Indian contexts were analyzed, separated by religious affiliations inferred from usernames.",
+        "hyperparameters": null,
+        "results": "Intergroup interaction generally led to decreased polarization, except during communal events or politically charged instances.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Intergroup interactions on social media can serve to decrease polarization except during highly communalized events, where they may heighten minority group conformities.",
+        "future work": "Future research could explore applying the GCS measure to other forms of identity-based polarization on different social media platforms or real-world political contexts."
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "RetroGraph: A Graph-Based Approach to Efficient Retrosynthetic Planning",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Department of Chemistry, University of Example",
+            "Department of Computer Science, University of Example"
+        ],
+        "abstract": "Retrosynthetic planning seeks to synthesize novel target molecules by constructing viable reaction pathways from known reactants. While traditional approaches model this as a tree-search problem, we identify and eliminate major inefficiencies due to redundant nodes in these trees. We propose using a graph-based model and a Graph Neural Network (GNN) for guidance in retrosynthesis, improving efficiency and success rates.",
+        "keywords": [
+            "Retrosynthetic Planning",
+            "Graph Neural Network",
+            "Chemical Synthesis",
+            "Tree Search"
+        ],
+        "year": "2023",
+        "venue": "Journal of Computational Chemistry",
+        "doi link": "10.1000/j.cc.2023.01.001",
+        "method name": "RetroGraph"
+    },
+    "relate work": {
+        "related work category": [
+            "Retrosynthetic Planning",
+            "Single-step Retrosynthesis",
+            "Algorithmic Search"
+        ],
+        "related papers": "Chen et al. (2020) - Retro*\\cite{Chen2020}; Kim et al. (2021) - Improvements with forward models\\cite{Kim2021}; Kishimoto et al. (2019) - Proof Number Search\\citep{kishimoto2019depth}; Hong et al. (2021) - Monte Carlo Tree Search\\citep{Hong2021}",
+        "comparisons with related methods": "RetroGraph addresses both intra-target and inter-target redundancies that existing methods using tree-based approaches fail to handle effectively. The proposed method outperforms these past approaches as shown in extensive experiments."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents RetroGraph, a novel approach to retrosynthetic planning that leverages a graph-based model instead of traditional tree-based methods. By transforming retrosynthesis into a graph problem, RetroGraph effectively reduces redundancy and improves search efficiency. A Graph Neural Network (GNN) is introduced to guide the search process, enhancing the selection of promising pathways.",
+        "research purpose": "To innovatively handle inefficiencies in retrosynthetic planning using graph-based methods, aiming to improve synthesis success rates.",
+        "research challenge": "Handling the redundancy due to similar sub-reactions and shared intermediates in synthetic pathways, which is exacerbated in conventional tree-search approaches.",
+        "method summary": "The core methodology involves representing retrosynthesis as a graph with molecule and reaction nodes, and using a GNN to guide the expansion and selection process, reducing redundancy and improving pathway selection.",
+        "conclusion": "RetroGraph significantly enhances retrosynthetic planning performance over traditional methods by using a graph-based model complemented by a GNN for efficient node selection."
+    },
+    "Method": {
+        "description": "RetroGraph models retrosynthetic planning as a graph with molecule and reaction nodes, mitigating intra-target and inter-target duplication inherent in tree methodologies. A Graph Neural Network (GNN) assists in refining the search, providing a learned guidance to select promising search paths.",
+        "problem formultaion": "Traditional tree-based retrosynthesis suffers from duplication of nodes due to overlap between synthetic paths. This results in inefficiencies in retrosynthetic exploration.",
+        "feature processing": "The GNN processes molecule features such as Morgan fingerprints and associated costs. Reaction templates are validated using Rdchiral.",
+        "model": "The method constructs an AND-OR graph, where molecule nodes are connected to reaction nodes, forming a bipartite structure.",
+        "tasks": [
+            "Retrosynthetic Planning",
+            "Node Selection and Expansion"
+        ],
+        "theoretical analysis": "Theoretically models retrosynthetic pathways with overlap considerations, showing that graph-based approaches handle redundancy efficiently.",
+        "complexity": "Mitigating node duplication reduces computational complexity, but the graph formulation introduces challenges in managing cycles and dependencies.",
+        "algorithm step": "Node selection driven by cost estimation using GNN guidance; graph expansion by top-K reaction predictions; iterative refinement of graph state."
+    },
+    "Experiments": {
+        "datasets": [
+            "USPTO",
+            "USPTO-EXT"
+        ],
+        "baselines": [
+            "Retro*",
+            "Greedy DFS",
+            "DFPN-E",
+            "MCTS-rollout",
+            "EG-MCTS"
+        ],
+        "evaluation metric": "Success rate under iteration limits; performance measured by number of iterations, route length, and quality.",
+        "setup": "Two datasets, USPTO and a new USPTO-EXT, are used for evaluation. Comparisons made against established benchmarks with success rate and computational resource utilization as key metrics.",
+        "hyperparameters": "For single-step model: top-K reaction templates (K=50), learning rate (0.001); For GNN: learning rate (0.0001), batch size (32), embedding elements (128).",
+        "results": "RetroGraph achieved a 99.47% success rate on USPTO with significantly reduced iterations and nodes. On USPTO-EXT, 72.89% success was observed, showing improvements over baselines.",
+        "performance": "Demonstrated superior success and efficiency over baselines using a graph-based approach with GNN guidance.",
+        "analysis": "Experiments confirmed eliminating intra-target and inter-target redundancy as critical in performance improvement.",
+        "ablation study": "Key contribution of graph structure and GNN guidance demonstrated through controlled experiments."
+    },
+    "conclusion": {
+        "summary": "RetroGraph introduces a significant advancement in retrosynthetic planning by leveraging a graph-based model and a GNN-guided selection process. This addresses inefficiencies found in tree-based methodologies, improving both success rates and computational efficiency.",
+        "future work": "Further exploration of larger batch sizes in target planning and enhancing GNN model effectiveness could offer even greater improvements in retrosynthetic efficiency."
+    }
+}

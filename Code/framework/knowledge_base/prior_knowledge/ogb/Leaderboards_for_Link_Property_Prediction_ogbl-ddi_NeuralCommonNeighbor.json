@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 11,
+    "Method": "NeuralCommonNeighbor",
+    "External Data": "No",
+    "Test Accuracy": "0.8232 ± 0.0610",
+    "Validation Accuracy": "0.7172 ± 0.0025",
+    "Contact": "mailto:wangxiyuan@pku.edu.cn",
+    "Paper Link": "https://arxiv.org/pdf/2302.00890.pdf",
+    "Code Link": "https://github.com/GraphPKU/NeuralCommonNeighbor",
+    "Parameters": "1,412,098",
+    "Hardware": "RTX 4090 (24GB)",
+    "Date": "Mar 17, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/NeuralCommonNeighbor.pdf",
+    "Paper Summary": "The paper introduces a novel model for link prediction called Neural Common Neighbor (NCN), leveraging a unique architecture termed MPNN-then-SF (Message Passing Neural Network followed by Structural Feature). This approach aims to enhance both expressiveness and scalability in link prediction tasks.\n\n### Key Methods and Model Design Aspects:\n\n1. **Architecture Design**:\n   - The NCN model employs the MPNN-then-SF architecture where MPNN processes the original graph first, followed by structural features guiding the pooling of node representations. This structure allows the model to capture the features of common neighbors effectively while only requiring a single run of MPNN for all target links.\n\n2. **Representation of Target Links**:\n   - The representation of a target link \\( (i, j) \\) is formulated as:\n     \\[\n     \\text{Pool}({MPNN(u, A, X)|u \\in S}),\n     \\]\n     where Pool is a function that maps a set of node representations to a single representation, providing flexibility in obtaining different link representations based on the chosen set.\n\n3. **Incorporating Structural Features**:\n   - The model captures first-order common neighbors and their features by concatenating the MPNN outputs of the target nodes with the MPNN representations of the common neighbors, thus ensuring rich representation through encoded relationships.\n\n4. **Common Neighbor Completion Mechanism (CNC)**:\n   - To tackle the issue of graph incompleteness, NCN is augmented with a completion method referred to as CNC. This method predicts the existence probabilities of unobserved common neighbors using NCN, effectively enhancing the model's robustness to incomplete graphs.\n\n5. **Link Representation in NCNC**: \n   - The final model, Neural Common Neighbor with Completion (NCNC), is defined as:\n     \\[\n     NCNC(i,j,A,X)=MPNN(i,A,X) \\odot MPNN(j,A,X) \\parallel P MPNN(u,A,X),\n     \\]\n     where \\( P \\) denotes the predicted probability of a node serving as a common neighbor. This structure allows NCNC to utilize completed common neighbor information when making predictions.\n\n### Summary of Contributions:\n- The design of NCN and NCNC focuses on integrating common neighbor information effectively while mitigating the drawbacks of graph incompleteness through a two-step completion process. This systematic model design offers a robust framework for handling link prediction tasks in various graph structures."
+}

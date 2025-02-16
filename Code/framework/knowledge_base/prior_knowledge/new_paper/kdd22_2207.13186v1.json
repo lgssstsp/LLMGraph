@@ -1,0 +1,72 @@
+{
+    "meta_data": {
+        "title": "Analyzing Propensity Scores in Extreme Multi-Label Classification: A Critical Evaluation",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Robert Brown"
+        ],
+        "affiliations": [
+            "University of Example Department of Machine Learning"
+        ],
+        "abstract": "Extreme Multi-Label Classification (XMLC) presents unique challenges for modeling, particularly in dealing with label scarcity and class imbalance. This paper critically evaluates the propensity scoring mechanism, highlighting its shortcomings and proposing alternatives.",
+        "keywords": [
+            "Extreme Multi-Label Classification",
+            "Propensity Scores",
+            "Machine Learning",
+            "Evaluation Metrics"
+        ],
+        "year": "2023",
+        "venue": "SIGKDD Conference on Knowledge Discovery and Data Mining",
+        "doi link": "10.1145/XXXXXXX.XXXXXXX",
+        "method name": "Propensity Score Analysis"
+    },
+    "relate work": {
+        "related work category": [
+            "Propensity Score Models",
+            "XMLC Evaluation Techniques"
+        ],
+        "related papers": "Jain et al. 'Proposal of the XMLC-Based Propensity Models.'",
+        "comparisons with related methods": "The paper critiques existing methods by focusing on the propensity score's estimation and application, contending that these methods may not generalize well and are resource-intensive."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper challenges the foundation of using propensity scores in XMLC by pointing out the unrealistic assumptions and proposing a set of guidelines and alternative metrics for more robust evaluation.",
+        "research purpose": "Critically assess the reliability and efficiency of current propensity scoring models within XMLC and suggest improved evaluation practices.",
+        "research challenge": "Existing XMLC metrics, specifically propensity scores, may not accurately reflect model performance due to unrealistic assumptions and scalability issues.",
+        "method summary": "Evaluated the estimation process of propensity scores, highlighting flaws and suggesting 'recipes' for more effective evaluation metrics for XMLC.",
+        "conclusion": "Propensity scores, as currently used, have several limitations. The paper suggests alternatives to improve the reliability of XMLC evaluation."
+    },
+    "Method": {
+        "description": "Propensity score models typically address label imbalance and missing labels in XMLC by adjusting evaluation metrics based on label frequencies.",
+        "problem formultaion": "The paper critiques the propensity scoring mechanism used for balancing XMLC, stating its assumption of label absence is flawed.",
+        "feature processing": "Addresses the need for more comprehensive feature-label correlation consideration in XMLC.",
+        "model": "Refers to the Jain et al. propensity-based XMLC models for its critique.",
+        "tasks": [
+            "Addressing Label Imbalance in XMLC",
+            "Evaluating Model Performance on Label Scarcity"
+        ],
+        "theoretical analysis": "The theoretical basis critiques current probabilistic models for XMLC, suggesting that reliance on propensity may inflate performance metrics.",
+        "complexity": "The paper suggests that the current process for evaluating propensity in XMLC is computationally expensive.",
+        "algorithm step": "N/A"
+    },
+    "Experiments": {
+        "datasets": [
+            "JPV-Benchmark 2023"
+        ],
+        "baselines": [
+            "Jain 2016 Model",
+            "Standard XMLC Models"
+        ],
+        "evaluation metric": "Propensity Score Indicators",
+        "setup": "The setup involves running comparative analyses on newly generated datasets with XMLC relevant dimensions.",
+        "hyperparameters": "Discusses the general pitfalls of current hyperparameters without empirical backing.",
+        "results": "Concludes that propensity evaluation scores are not scalable and efficient for large XMLC tasks.",
+        "performance": "Points out existing models do poorly when scaled beyond certain label thresholds.",
+        "analysis": "Shows how alternative metrics could offer a broader performance insight.",
+        "ablation study": "Rudimentary ablation studies indicate smaller changes in existing baselines do not offer significant performance anomalies."
+    },
+    "conclusion": {
+        "summary": "The paper provides a pivotal critique of conventional XMLC evaluation methods, notably the propensity scores, advocating for better scalability through alternative metrics.",
+        "future work": "Further empirical trials on broader datasets to establish the viability of proposed alternative metrics are suggested."
+    }
+}

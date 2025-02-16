@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Learning Differential Operators for Interpretable Time Series Forecasting",
+        "authors": [
+            "Unknown"
+        ],
+        "affiliations": [
+            "Unknown"
+        ],
+        "abstract": "The development of effective models for time series data such as physiologic signals, financial markets, and traffic flows holds significant utility across various domains. While deep learning models have marked improvements in forecasting accuracy, they are often criticized for lack of interpretability. This paper proposes a novel framework leveraging neural differential equations to learn partial differential equations (PDEs) for interpretable time series modeling. The key architecture, $P$-block, successfully captures multivariate dynamics and facilitates the learning of polynomials over target variables and derivatives. Additionally, the hybrid PDE model with meta-learning allows adaptive responses to dynamics, enhancing performance and interpretability.",
+        "keywords": [
+            "time series",
+            "differential equations",
+            "machine learning",
+            "interpretability",
+            "PDE",
+            "deep learning"
+        ],
+        "year": "2023",
+        "venue": "Unknown",
+        "doi link": null,
+        "method name": "$P$-block"
+    },
+    "relate work": {
+        "related work category": [
+            "Time Series Forecasting",
+            "Neural Differential Equations",
+            "Dynamical System Modeling"
+        ],
+        "related papers": "Autoregressive integrated moving average models, State Space Models, Gaussian Processes, Neural Ordinary Differential Equations, Physics-informed Neural Networks",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper presents a method for learning interpretable differential operators for time series forecasting through a new framework that automatically extracts explicit PDEs from data. This involves using $P$-blocks and a hybrid PDE model with a meta-learning controller to manage changing data dynamics, demonstrating strong predictive performance along with interpretability.",
+        "research purpose": "To develop interpretable models for time series forecasting that maintain predictive accuracy while offering insights into data dynamics.",
+        "research challenge": "Current deep learning models offer high accuracy but lack interpretability due to operations in latent space.",
+        "method summary": "This method involves the use of $P$-blocks to capture multivariate dynamics through convolution and element-wise operations, creating polynomial combinations of differential terms. A hybrid model adapts to data dynamics using meta-learning for hyperparameter control.",
+        "conclusion": "The model introduces an interpretable mathematical structure for time series forecasting through differential operators, balancing accuracy and interpretability."
+    },
+    "Method": {
+        "description": "This approach combines learnable $P$-blocks and a hybrid PDE model to capture and interpret complex sequential dynamics in time series data.",
+        "problem formultaion": "The task is defined as predicting future values of a target variable, $y$, based on past multivariate time series, handled through PDEs that describe time-evolving dependencies.",
+        "feature processing": null,
+        "model": "The model consists of adaptable $P$-blocks that use convolutional layers to approximate differential operators, capturing polynomial relationships between derivatives and inputs.",
+        "tasks": [
+            "Time series forecasting"
+        ],
+        "theoretical analysis": "It demonstrates the ability of $P$-blocks to function as a polynomial approximator with bounded error on smooth derivatives.",
+        "complexity": "The method addresses computational intractability of representing PDEs with high-dimensional variables by learning them directly from data.",
+        "algorithm step": "The method uses numerical differentiation of $P$-blocks and meta-learning for real-time parameter updates, simulating a dynamical PDE system balancing long-term and short-term trends."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Dataset",
+            "Orderbook Dataset",
+            "MISO Dataset",
+            "PhysioNet Dataset"
+        ],
+        "baselines": [
+            "LSTM",
+            "ARIMA",
+            "Prophet",
+            "Neural ODE",
+            "ODE-RNN",
+            "ConvTrans",
+            "DeepAR"
+        ],
+        "evaluation metric": "Relative Mean Squared Error (RMSE)",
+        "setup": "Datasets are divided into training, validation, and testing sets. The model's hyperparameters are optimized through grid search for the best validation performance.",
+        "hyperparameters": "Learning rate, batch size, hidden dimensions, regularization weights, different in baselines own by specific parameters.",
+        "results": "The proposed method shows comparable performance to existing models, excelling in efficiency and interpretability, especially on smoothed datasets.",
+        "performance": "Exhibits high accuracy and interpretability during both single and multi-step forecasting across varied datasets.",
+        "analysis": "The model's adaptable nature allows it to capture the dominant trends in time series data dynamically.",
+        "ablation study": "Ablation studies confirmed the importance of the meta-learning component in optimizing hybrid PDE model parameters."
+    },
+    "conclusion": {
+        "summary": "The paper introduces an approach for interpretable forecasting using PDEs, with successful experiments across various data.",
+        "future work": "Potential for exploring additional models to address non-smooth variations and further optimize the balance between interpretability and accuracy."
+    }
+}

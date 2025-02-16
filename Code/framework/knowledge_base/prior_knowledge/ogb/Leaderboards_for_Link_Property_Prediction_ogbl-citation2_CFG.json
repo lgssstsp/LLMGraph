@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 3,
+    "Method": "CFG",
+    "External Data": "No",
+    "Test Accuracy": "0.9003 ± 0.0007",
+    "Validation Accuracy": "0.8992 ± 0.0007",
+    "Contact": "mailto:jingsonglv@zhejianglab.com",
+    "Paper Link": "https://arxiv.org/abs/2309.06574",
+    "Code Link": "https://github.com/jingsonglv/CFG",
+    "Parameters": "686,253",
+    "Hardware": "NVIDIA A100 (80GB GPU)",
+    "Date": "Sep 30, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/CFG.pdf",
+    "Paper Summary": "The paper “Circle Feature Graphormer: Can Circle Features Stimulate Graph Transformer?” introduces a novel approach to enhance link prediction tasks in graph-based neural networks by integrating local graph features called Circle Features into a Graph Transformer model.\n\n### Methods Overview:\n\n1. **Circle Features:**\n   - Two types of Circle Features are defined:\n     - **Modified Swing Feature**: This feature adapts the original swing concept to common graphs, allowing for the prediction of missing links. The modified swing feature is built to differentiate link strength using an adjusted adjacency matrix.\n     - **Bridge Feature**: This indicates the significance of two nodes within different friendship circles, calculated based on the number of shared circles. It helps assess potential connections based on local clustering.\n\n2. **Model Architecture:**\n   - **Circle Feature aware Graph Transformer (CFG)**: The CFG model is constructed based on a dual-tower architecture using the SIEG network framework, which combines Global and Local structure features. The architecture captures both comprehensive graph structure and localized neighborhood information:\n     - **Graph Self-Attention Mechanism**: The model augments the self-attention mechanism of the transformer by incorporating the Circle Features. The attention mechanism evaluates the relationships between nodes considering both circles of friends and existing bridge connections, effectively connecting local and global features.\n     - The attention formula integrates additional complexity introduced by the circle features to enhance the prediction capabilities.\n\n3. **Feature Computation:**\n   - The CFG model formally defines the computation of Circle Features and incorporates them into the transformer’s attention mechanism:\n     - For any two connected nodes, the features computed are based on their existing connections and their respective circle relationships, helping to gauge their likelihood of being connected through missing links.\n\nThis model leverages the concept of neighborhood influence through enhanced features derived from social network concepts, aiming to improve the effectiveness and accuracy of link predictions in graph neural networks."
+}

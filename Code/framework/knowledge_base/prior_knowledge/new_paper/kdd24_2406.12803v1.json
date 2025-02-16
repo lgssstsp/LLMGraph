@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Sampling for Rules List Learning: A Scalable Approach",
+        "authors": [
+            "Author1",
+            "Author2"
+        ],
+        "affiliations": [
+            "Affiliation1",
+            "Affiliation2"
+        ],
+        "abstract": "Interpretability is a key characteristic of machine learning models, particularly in socially significant decision-making areas. Rule-based models like rule lists provide easily interpretable alternatives to complex, opaque models. While effective scalable methods exist, deriving optimal rule lists remains computationally challenging, especially with large datasets. This paper introduces the SamRuLe algorithm, offering scalable learning with rigorous guarantees on approximation quality, leveraging novel upper and lower bounds for VC-dimension. Experimental results highlight the efficacy of SamRuLe in large-scale dataset scenarios, demonstrating speed advantages over exact methods and improved accuracy over heuristic methods.",
+        "keywords": [
+            "Interpretability",
+            "Machine Learning",
+            "Rule Lists",
+            "Scalable Algorithms",
+            "VC-Dimension"
+        ],
+        "year": "2023",
+        "venue": "ML Conference",
+        "doi link": null,
+        "method name": "SamRuLe"
+    },
+    "relate work": {
+        "related work category": [
+            "Exact Methods",
+            "Heuristic Methods",
+            "Theoretical Analysis",
+            "Scalable Methods"
+        ],
+        "related papers": "1. Angelino et al. (2018) - CORELS 2. Rudin and Ertekin (2018) 3. Okajima and Sadamasa (2019) 4. Yu et al. (2021) 5. Rivest (1987) - Greedy Splitting Techniques 6. Cohen (1995) - RIPPER 7. Yang et al. (2017) - Bayesian Approach",
+        "comparisons with related methods": "SamRuLe contrasts with CORELS by trading exact optimality for computational efficiency and provides guarantees compared to heuristic methods like SBRL and RIPPER."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes SamRuLe, a novel scalable algorithm for learning rule lists that balances accuracy with computational efficiency. By using sampling, SamRuLe accelerates the discovery of nearly optimal rule lists and guarantees their quality with respect to the true optimal list regarding accuracy.",
+        "research purpose": "To develop a scalable approach for learning rule lists that maintain high interpretability and predictive accuracy without the computational cost of handling large datasets directly.",
+        "research challenge": "Rule list learning is computationally intensive, especially for large datasets where existing methods, whether exact or heuristic, struggle with scalability and maintaining accuracy.",
+        "method summary": "SamRuLe leverages sampling and derives bounds based on the VC-dimension of rule lists to ensure efficient approximation of optimal rule lists in large datasets.",
+        "conclusion": "SamRuLe offers a promising compromise between computational efficiency and model accuracy, outperforming current state-of-the-art techniques in speed and competitive accuracy."
+    },
+    "Method": {
+        "description": "SamRuLe uses a sampling-based approach to approximate optimal rule lists, protecting against the computational burden of large datasets. It ensures approximation quality using bounds derived from VC-dimension theory.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Rule list model with conditions represented as conjunctions of binary feature indicators.",
+        "tasks": [
+            "Rule list learning for prediction"
+        ],
+        "theoretical analysis": "Novel bounds were proved for the VC-dimension of rule lists, providing theoretical underpinnings for the sampling approach.",
+        "complexity": "The method shows linear scaling in sample size with small dependency on dataset size, relevant for fast execution on large datasets.",
+        "algorithm step": "1. Estimate sample size. 2. Draw a random sample. 3. Search for the rule list minimizing loss on this sample. 4. Leverage exact methods like CORELS on sampled subsets."
+    },
+    "Experiments": {
+        "datasets": [
+            "UCI benchmarks",
+            "Synthetic datasets"
+        ],
+        "baselines": [
+            "CORELS",
+            "SBRL",
+            "RIPPER"
+        ],
+        "evaluation metric": "Loss and computation time relative to the optimal solution.",
+        "setup": "Comparison of results with baselines across various datasets and hyperparameter settings.",
+        "hyperparameters": "Maximum number of rules, Maximum conditions per rule, Approximation parameters ε, θ.",
+        "results": "SamRuLe demonstrated a significant reduction in computation time compared to CORELS and improved accuracy over heuristic methods, maintaining close approximation to optimal loss levels.",
+        "performance": "Consistently showed speed-up by orders of magnitude over exact methods while ensuring negligible loss deviations.",
+        "analysis": "Findings confirm the theoretical predictions with empirical data; SamRuLe is practical for large datasets and adaptable to different rule list configurations.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "SamRuLe is a scalable, interpretable approach for rule list learning, achieving high accuracy comparable to detailed models with reduced computational overhead.",
+        "future work": "Exploring data-dependent measures like Rademacher averages for sharper guarantees and applying sampling techniques to other rule-based models."
+    }
+}

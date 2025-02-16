@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 12,
+    "Method": "ELPH",
+    "External Data": "No",
+    "Test Accuracy": "0.7704 ± 0.0582",
+    "Validation Accuracy": "0.6928 ± 0.0096",
+    "Contact": "mailto:benjamin.chamberlain@gmail.com",
+    "Paper Link": "https://openreview.net/pdf?id=m1oqEOAozQU",
+    "Code Link": "https://github.com/melifluos/subgraph-sketching",
+    "Parameters": "2,910,817",
+    "Hardware": "Tesla K80 (12GB GPU)",
+    "Date": "Jul 5, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/ELPH.pdf",
+    "Paper Summary": "The paper introduces two innovative models for link prediction (LP) in graph neural networks (GNNs): ELPH (Efficient Link Prediction with Hashing) and BUDDY. These models address the expressiveness limitations of existing GNNs, particularly in terms of their ability to count substructures like triangles and to differentiate automorphic nodes.\n\n### Key Model Design Aspects:\n\n1. **ELPH Model:**\n   - **Full-Graph GNN Structure:** ELPH is designed as a full-graph GNN that processes the entire graph rather than relying on subgraph constructions, which can be computationally expensive and inefficient.\n   - **Subgraph Sketching:** ELPH uses sketching methods—HyperLogLog and MinHash—to create condensed representations of subgraph features without explicitly building them. This allows for efficient estimation of key structural features for nodes.\n   - **Message Passing Mechanism:** ELPH incorporates a message-passing framework where it enhances the node features by appending structural features derived from the sketches. The model captures pairwise structural features to improve the link prediction task.\n   - **Expressive Power:** The paper asserts that ELPH is provably more expressive than traditional message-passing neural networks (MPNNs) by effectively distinguishing between automorphic nodes.\n\n2. **BUDDY Model:**\n   - **Scalability Enhancements:** BUDDY extends ELPH’s capabilities by enabling precomputation of node features and sketches to enhance scalability. It avoids memory overload issues that arise when graph sizes exceed GPU memory limits.\n   - **Preprocessing Approach:** It efficiently handles the computational requirements by caching structure features and propagating node features through sparse scatter operations, allowing it to operate without needing to generate subgraphs during inference.\n   - **Feature Integration:** Similar to ELPH, BUDDY integrates node representations with structural counts resulting from the sketches. This design emphasizes parallel computation, improving efficiency over traditional methods.\n\n### Overall Contributions:\nBoth ELPH and BUDDY focus on improving the expressiveness, efficiency, and scalability of GNNs in link prediction tasks. By leveraging sketching techniques and novel message-passing strategies, these models aim to overcome existing challenges related to automorphic node representation and the computational burdens of subgraph generation, thereby enabling better performance across various graph datasets."
+}

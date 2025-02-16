@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "\\sysname: A Memory-Efficient Meta Learning Approach for On-Device DNN Adaptation",
+        "authors": [
+            "Zhongnan Qu",
+            "Zimu Zhou",
+            "Lothar Thiele"
+        ],
+        "affiliations": [
+            "Swiss Federal Institute of Technology Zurich",
+            "Singapore Management University"
+        ],
+        "abstract": "This paper presents \\sysname, a novel meta learning method designed for data and memory efficiency in deep neural network (DNN) adaptation on resource-constrained devices. Our approach is based on selective parameter updates, identifying both layer-wise and channel-wise adaptation-critical weights. Evaluations in few-shot image classification and reinforcement learning tasks show that \\sysname offers significant improvements in memory and computation efficiency while maintaining high accuracy.",
+        "keywords": [
+            "meta learning",
+            "memory-efficient adaptation",
+            "few-shot learning",
+            "deep neural networks",
+            "IoT"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": null,
+        "method name": "\\sysname"
+    },
+    "relate work": {
+        "related work category": [
+            "Meta Learning for Few-Shot Learning",
+            "Efficient DNN Training"
+        ],
+        "related papers": "bib:ICLR19:Antreas, bib:ICML17:Finn, bib:ICLR20:Raghu, bib:ICLR21:Oh, bib:arXiv16:Chen, bib:MLSys21:Mathur",
+        "comparisons with related methods": "The paper compares \\sysname with various gradient-based meta-learning techniques like MAML and its extensions, highlighting its superiority in memory and computation efficiency. It also contrasts with sparse DNN training solutions which are less suited for IoT constraints."
+    },
+    "high_level_summary": {
+        "summary of this paper": "\\sysname introduces a meta-learning framework enhancing memory efficiency for on-device DNN adaptation, applicable to few-shot learning scenarios. It does so by systematically updating only crucial parameters (layer-wise and channel-wise), leading to reduced memory and computational overheads.",
+        "research purpose": "To design a memory and computation-efficient on-device DNN adaptation framework suitable for resource-constrained environments like IoT.",
+        "research challenge": "Existing methods, like MAML, fail in IoT contexts due to memory-intensive adaptation processes.",
+        "method summary": "\\sysname employs structured sparsity through selective gradients and meta-learning techniques, evaluating attention mechanisms to dynamically manage parameter updates, ensuring effective adaptation with minimal resource usage.",
+        "conclusion": "Evaluations illustrate \\sysname's ability to lower memory usage and computational costs, showing potential for broad deployment in IoT without compromising adaptation quality."
+    },
+    "Method": {
+        "description": "\\sysname, a meta learning strategy, optimizes on-device DNN adaptation by updating only the most critical parameters (layer-wise and channel-wise), reducing memory usage without sacrificing accuracy.",
+        "problem formultaion": "How to efficiently adapt DNNs on low-resource devices without incurring high memory and computational costs.",
+        "feature processing": null,
+        "model": "Gradient-based meta-learning framework with selective parameter updates and meta-attention.",
+        "tasks": [
+            "Image Classification",
+            "Reinforcement Learning"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "Meta-trains DNN across multiple tasks, identifying critical parameters which can be dynamically updated during on-device adaptation."
+    },
+    "Experiments": {
+        "datasets": [
+            "MiniImageNet",
+            "TieredImageNet",
+            "CUB"
+        ],
+        "baselines": [
+            "MAML",
+            "ANIL",
+            "BOIL",
+            "MAML++"
+        ],
+        "evaluation metric": "Accuracy, Gradient Mean Absolute Cost (GMAC), Peak Memory",
+        "setup": "Meta-training followed by few-shot learning experiments across various datasets with different configurations.",
+        "hyperparameters": "Inner step size, sparse inner step sizes, clip ratio for meta attention",
+        "results": "\\sysname achieves superior memory and computational efficiency, reducing peak dynamic memory usage by up to 2.5x while maintaining competitive accuracy.",
+        "performance": "High accuracy, reduced memory and computational overhead compared to traditional methods.",
+        "analysis": "\\sysname's structured parameter updates and attention mechanisms provide robust adaptations with low resource demand on-edge devices.",
+        "ablation study": "Meta attention's role and layer-wise sparsity effects on performance were analyzed, confirming efficiency improvements."
+    },
+    "conclusion": {
+        "summary": "\\sysname demonstrates a promising methodological shift for memory-efficient on-device adaptations, offering a viable solution for expanding DNN applications on edge devices.",
+        "future work": "Future research will seek to refine parameter selection methods and expand the approach to more complex models and real-world IoT applications."
+    }
+}

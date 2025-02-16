@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Linear-time Deterministic Algorithms for Non-monotone Submodular Maximization with Cardinality Constraints",
+        "authors": [
+            "Author 1",
+            "Author 2",
+            "Author 3"
+        ],
+        "affiliations": [
+            "Institute A",
+            "Institute B",
+            "Institute C"
+        ],
+        "abstract": "This paper addresses the problem of maximizing a non-monotone submodular function subject to a cardinality constraint. We propose several deterministic algorithms ranging from single-pass streaming to nearly linear-time, focusing on providing constant approximation guarantees. Our work achieves significant improvements in run-time while maintaining competitive approximation ratios compared to existing approaches.",
+        "keywords": [
+            "submodular optimization",
+            "approximation algorithms",
+            "deterministic algorithms",
+            "non-monotone functions"
+        ],
+        "year": "2023",
+        "venue": "N/A",
+        "doi link": "N/A",
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Single-pass algorithms",
+            "Approximations for submodular functions"
+        ],
+        "related papers": "The work is related to single-pass streaming algorithms and deterministic approximations. Notable related methods include Buchbinder's work on randomized algorithms and Kuhnle's approaches to linear-time deterministic algorithms.",
+        "comparisons with related methods": "This paper provides improvements on deterministic linear-time algorithms presented by Kuhnle, particularly in time complexity and memory usage. Additionally, it compares favorably with randomized approaches by offering constant approximations in deterministic contexts without sacrificing efficiency."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper presents novel deterministic algorithms for optimizing non-monotone submodular functions under cardinality constraints, notably achieving linear-time performance and constant approximation ratios.",
+        "research purpose": "The purpose is to develop efficient deterministic algorithms for submodular maximization that remain competitive with existing randomized and deterministic methods in terms of approximation ratios.",
+        "research challenge": "The primary challenge is to achieve constant approximation ratios in linear time for non-monotone submodular functions, a task complicated by their inherent complexity.",
+        "method summary": "The methods include single-pass streaming algorithms and a nearly linear-time deterministic algorithm that achieves superior approximation ratios through iterative, threshold-driven approaches.",
+        "conclusion": "The proposed algorithms demonstrate linear-time performance with constant approximation ratios, marking significant progress in deterministic submodular optimization."
+    },
+    "Method": {
+        "description": "The study designs linear-time deterministic algorithms for maximizing non-monotone submodular functions under cardinality constraints, employing novel iteration and threshold techniques.",
+        "problem formultaion": "The primary problem identified is maximizing a submodular function, which is not inherently monotone, subject to cardinality constraint k, a context where classical greedy algorithms struggle.",
+        "feature processing": null,
+        "model": "The study uses set-functions and iterative algorithms to enhance approximation within linear bounds.",
+        "tasks": [
+            "Optimize non-monotone submodular functions",
+            "Develop deterministic algorithms"
+        ],
+        "theoretical analysis": "The methods employ rigorous analyses to demonstrate constant factor approximations and time complexity improvements over random counterparts.",
+        "complexity": "The main algorithm is designed to be efficient, achieving linear-time complexity in practice compared with superlinear time bounds in prior work.",
+        "algorithm step": "Detailed steps include initializing candidate solution sets, iterative element addition based on marginal gains, competitive ratio assessments, and algorithm derandomization efforts where applicable."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic BA random graph",
+            "Facebook social network",
+            "CIFAR-10 image datasets"
+        ],
+        "baselines": [
+            "Randomized methods by Buchbinder",
+            "Previous deterministic methods like those by Kuhnle"
+        ],
+        "evaluation metric": "The performance evaluation involves measuring the approximation ratio and time complexity across datasets.",
+        "setup": "The experiments compare the proposed deterministic algorithms against standard greedy and recent random and deterministic methods, assessing computational load and accuracy.",
+        "hyperparameters": "Experiment settings are consistent across test runs with parameters such as accuracy metric ε set to 0.1 for stability.",
+        "results": "Experiment results indicate the deterministic algorithms match or outpace standard greedy methods and are more efficient in big data contexts.",
+        "performance": "The deterministic methods achieve competitive objective values, similar to top-performing greedy algorithms, while minimizing computational costs.",
+        "analysis": "The empirical analysis highlights the significant reduction in oracle queries compared to existing methods, supporting the real-world viability of the algorithm.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The research presents deterministic algorithms that deliver linear-time solutions with achievable constant approximation ratios, substantially extending the scope of efficient submodular optimization in practice.",
+        "future work": "Exploring reduction in constant factors for approximation ratios and improving scalability further remain key areas for future exploration to optimize beyond linear constraints."
+    }
+}

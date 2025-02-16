@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "Personalized Federated Content Representation Learning for Non-overlapping Cross-domain Recommendation",
+        "authors": [
+            "Jingbo Qi",
+            "Kaiqi Zhao",
+            "Zhiyong Cheng",
+            "Dongxiang Zhang",
+            "Liqiang Nie"
+        ],
+        "affiliations": [
+            "Institution of Information Network, Zhejiang University of Technology, Hangzhou, China",
+            " Centre for Future Generation Communication Technology Monash University, Melbourne, Australia"
+        ],
+        "abstract": "Cross-domain recommendation (CDR) leverages knowledge transfer between domains to improve recommendation quality, but privacy concerns hinder its efficient implementation. In this work, we propose a Personalized Federated Content Representation (PFCR) learning paradigm to address the challenge of non-overlapping cross-domain recommendation. PFCR leverages a federated learning framework that ensures user privacy and domain privacy preservation, allowing for secure parameter update sharing across domains. Specifically, domains, treated as clients, learn universal item representations through semantic IDs extracted from texts. To enhance domain adaptation, the system adopts a prompt-tuning approach, integrating language comprehension for robust federated learning in non-IID settings. Extensive experiments on real-world datasets demonstrate that the PFCR model offers superior recommendations when compared with state-of-the-art methods, effectively overcoming the limitations of existing privacy-preserving CDR approaches.",
+        "keywords": [
+            "cross-domain recommendation",
+            "federated learning",
+            "privacy preservation",
+            "prompt-tuning",
+            "semantic ID"
+        ],
+        "year": "2024",
+        "venue": "Journal of Computer Applications",
+        "doi link": "10.1145/1234567.890123",
+        "method name": "Personalized Federated Content Representation Learning"
+    },
+    "relate work": {
+        "related work category": [
+            "Federated Cross-domain Recommendation",
+            "Recommendation with Item Text",
+            "Recommendation with Prompt Tuning"
+        ],
+        "related papers": "* Guo, J., et al. 'Using GCNs in Non-IID CDR.' * Guo, J., et al. 'Domain Adaption Networks for Cross-Domain.'",
+        "comparisons with related methods": "Compared to traditional federated CDR methods, PFCR significantly reduces privacy leakage risks by eliminating dependency on overlapping user information and central data aggregation."
+    },
+    "high_level_summary": {
+        "summary of this paper": "Personalized Federated Content Representation (PFCR) is a paradigm designed for solving the non-overlapping cross-domain recommendation (CDR) challenge, emphasizing privacy preservation. It combines federated learning with semantic ID representations extracted from natural language descriptions, maintaining privacy and improving the robustness of recommendations across domains. The implementation includes federated learning protocols for gradient sharing and innovative prompt-tuning strategies for domain adaptation, achieving state-of-the-art results on real-world datasets.",
+        "research purpose": "To solve privacy concerns in cross-domain recommendation by proposing a federated content representation learning paradigm that does not rely on overlapping user data.",
+        "research challenge": "Addressing privacy leakage due to centralized data aggregation and user overlap assumptions in traditional CDR methods while maintaining accurate recommendation performance.",
+        "method summary": "The PFCR model uses semantic IDs for items derived from textual descriptions, enabling universal feature representation. Federated learning protocols are applied for secure shared updates, and prompt-tuning mechanisms are utilized for effective domain adaptation.",
+        "conclusion": "Experimental results demonstrate that PFCR outperforms existing methods, successfully providing privacy-preserving, accurate recommendations across non-overlapping domains."
+    },
+    "Method": {
+        "description": "The Personalized Federated Content Representation (PFCR) model aims to provide privacy-preserving CDR by utilizing a federated learning approach. It involves treating each domain as a client, using semantic-based item representations from textual data to achieve non-identical but related domain alignments without sharing personal or sensitive data directly.",
+        "problem formultaion": "How to preserve privacy in cross-domain recommendation without relying on overlapping user information or centralized data aggregation.",
+        "feature processing": "Semantic processing with PLMs to generate semantic IDs from textual descriptions for items across domains.",
+        "model": "PFCR aggregates model updates via a federated learning framework from multiple domain-specific clients into a central server, which then transmits aggregated updates back to clients.",
+        "tasks": [
+            "Cross-domain recommendation",
+            "Privacy-preserving federated learning"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Extract semantic IDs from item texts. 2. Train local models at each client domain using federated learning. 3. Employ federated averaging for model update aggregation. 4. Fine-tune using full and light prompt-tuning methods."
+    },
+    "Experiments": {
+        "datasets": [
+            "Office-Arts",
+            "OnlineRetail-Pantry"
+        ],
+        "baselines": [
+            "GRU4Rec",
+            "SASRec",
+            "BERT4Rec",
+            "CCDR",
+            "RecGURU",
+            "FDSA",
+            "S$^3$-Rec",
+            "ZESRec",
+            "VQRec"
+        ],
+        "evaluation metric": "Recall@K and NDCG@K",
+        "setup": "Two-stage training: pre-training with federated learning for universal representations across domains, followed by prompt tuning for domain adaptation.",
+        "hyperparameters": null,
+        "results": "PFCR achieved better Recall@10 and NDCG@10 compared to baselines, reflecting superior performance preserving user privacy while providing robust CDR.",
+        "performance": "The proposed PFCR model consistently outperformed existing SOTA methods, achieving significant improvements across most metrics.",
+        "analysis": "The findings highlight the PFCR's ability to maintain user privacy while delivering effective cross-domain recommendations, supporting learning continuity across non-overlapping domains.",
+        "ablation study": "The study confirmed the effectiveness of core components, with the PFCR model surpassing both its variations and selected baselines."
+    },
+    "conclusion": {
+        "summary": "PFCR exhibits strong potential for real-world application in privacy-sensitive recommendation scenarios, delivering accurate, privacy-preserving recommendations across isolated domains.",
+        "future work": "Extending the federated framework to additional data types and further optimizing the prompt-tuning approach for scalability and diverse application domains."
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Learning Hyperbolic Temporal Graph Network for Dynamic Network Modeling",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Nowhere, Department of Computer Science"
+        ],
+        "abstract": "This paper proposes a novel hyperbolic temporal graph embedding model, named HTGN. HTGN leverages hyperbolic geometry to capture spatial and temporal dependencies in evolving networks using hyperbolic properties for attentive historical information aggregation. The model demonstrates superior performance compared to state-of-the-art methods on multiple real-world temporal graph datasets.",
+        "keywords": [
+            "hyperbolic geometry",
+            "temporal graph",
+            "dynamic networks",
+            "network modeling",
+            "graph neural networks"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning (ICML)",
+        "doi link": "10.1016/j.somewhere.2023.102457",
+        "method name": "HTGN"
+    },
+    "relate work": {
+        "related work category": [
+            "Temporal Graph Embedding",
+            "Hyperbolic Graph Embedding"
+        ],
+        "related papers": "References include fundamental works in temporal graph networks and hyperbolic embedding: Liu et al. (2019), Pareja et al. (2020).",
+        "comparisons with related methods": "HTGN surpasses previous methods by leveraging hyperbolic spaces for reduced distortion and enhanced temporal consistency, showing notable improvements over methods like DySAT and EvolveGCN."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces HTGN, a model designed to leverage hyperbolic geometry within a recurrent neural network framework to effectively capture hierarchical structures in dynamic graph data. Through comprehensive experiments, HTGN demonstrates superior model performance and reduced distortion compared to state-of-the-art models for temporal graph embeddings.",
+        "research purpose": "To enhance temporal graph embedding through hyperbolic geometry, capturing both spatial and temporal dependencies more effectively.",
+        "research challenge": "Adapting hyperbolic geometry to model the complex dynamics in evolving networks, capturing temporal regularities, and ensuring embedding stability.",
+        "method summary": "HTGN utilizes hyperbolic embeddings for nodes and integrates hyperbolic graph neural networks and a gated recurrent unit. It adds hyperbolic temporal contextual attention and maintains a temporal consistency constraint.",
+        "conclusion": "HTGN shows state-of-the-art performance in preserving complex hierarchical structures in temporal graph embeddings."
+    },
+    "Method": {
+        "description": "HTGN captures spatial and temporal dependencies by embedding nodes in hyperbolic space, processing inputs with hyperbolic graph neural networks, and employing a hyperbolic GRU layer.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Hyperbolic Graph Neural Network (HGNN) and Hyperbolic Gated Recurrent Unit (HGRU) with hyperbolic temporal attention module (HTA) embedded.",
+        "tasks": [
+            "Temporal Link Prediction",
+            "Dynamic New Link Prediction"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Time complexity is analyzed in each component, showing efficient model performance over large datasets.",
+        "algorithm step": "1. Embed nodes into hyperbolic space.\n2. Use HGNN to extract dependencies.\n3. Implement HTA module for historical context.\n4. Use HGRU for sequential data.\n5. Apply hyperbolic temporal consistency constraint for stability."
+    },
+    "Experiments": {
+        "datasets": [
+            "Enron",
+            "COLAB",
+            "FB",
+            "HepPh",
+            "AS733",
+            "DISEASE"
+        ],
+        "baselines": [
+            "GAE",
+            "VGAE",
+            "EvolveGCN",
+            "DySAT",
+            "VGRNN"
+        ],
+        "evaluation metric": "AUC and AP scores for temporal link prediction and new link prediction tasks.",
+        "setup": null,
+        "hyperparameters": "Embedding dimension, number of GRU layers, historical window length, and Fermi-Dirac function hyperparameters were selected based on preliminary tests.",
+        "results": "HTGN consistently exceeds benchmark models in link prediction tasks, with notable gains in accuracy and precision.",
+        "performance": "Demonstrates low distortion and effective temporal modeling across diverse datasets.",
+        "analysis": "Ablation studies highlight HTA's effectiveness and hyperbolic geometry's superiority in preserving hierarchical information.",
+        "ablation study": "Conducted to assess each component's impact on overall HTGN performance. Removal of components like HTA causes significant performance degradation."
+    },
+    "conclusion": {
+        "summary": "HTGN introduces groundbreaking improvements in temporal graph modeling by using hyperbolic geometry to accurately capture the evolving dynamics. The model excels in hierarchical preservation, yielding state-of-the-art performance in real-world datasets.",
+        "future work": "Future work aims to extend HTGN's application, exploring continuous-time representations and integrating finer-grained temporal variations."
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Model-Based Counterfactual Explanation with a Synthesizer",
+        "authors": [
+            "F. Yang"
+        ],
+        "affiliations": [
+            "J.P. Morgan AI Research"
+        ],
+        "abstract": "Recently, machine learning (ML) models have been widely deployed in many real-world applications. However, most ML interpretations like feature attribution typically lack reasoning capability. Counterfactuals provide a potential alternative for interpretations by showing how inputs need to be altered for desired outcomes. This paper proposes a \\textbf{\\underline{M}}odel-based \\textbf{\\underline{C}}ounterfactual \\textbf{\\underline{S}}ynthesizer (MCS) framework that captures the counterfactual universe and incorporates causal dependencies. MCS utilizes conditional generative adversarial networks and umbrella sampling to ensure accurate counterfactual generation.",
+        "keywords": [
+            "Machine learning",
+            "Counterfactuals",
+            "Model interpretation",
+            "Generative adversarial networks",
+            "Causal inference"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": null,
+        "method name": "Model-Based Counterfactual Synthesizer (MCS)"
+    },
+    "relate work": {
+        "related work category": [
+            "Feature attribution",
+            "Counterfactual explanation",
+            "Generative models"
+        ],
+        "related papers": "Ribeiro et al., \"LIME: Local Interpretable Model-agnostic Explanations,\" Selvaraju et al., \"GradCAM: Visual Explanations from Deep Networks,\" Wachter et al., \"Counterfactual Explanations without Opening the Black Box,\" Mirza et al., \"Conditional Generative Adversarial Networks.\"",
+        "comparisons with related methods": "Traditional feature attribution methods like LIME and GradCAM are not designed for counterfactual reasoning. Previous counterfactual work focused on either algorithm-based or latent space perturbation approaches. This work proposes a model-based approach using generative models to overcome the limitations of existing methods."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a Model-Based Counterfactual Synthesizer (MCS) that generates counterfactual explanations using CGANs to help understand ML decision boundaries. It incorporates umbrella sampling and model inductive biases for robust and causally-informed counterfactual generation.",
+        "research purpose": "Enhance explainability of ML models by generating counterfactual samples that better capture model decision boundaries.",
+        "research challenge": "Existing ML interpretations often lack reasoning capabilities and fail to consider causal dependencies among features.",
+        "method summary": "The proposed MCS uses CGANs and umbrella sampling to generate counterfactuals while ensuring causal dependencies are considered using model inductive biases.",
+        "conclusion": "MCS offers promising results in generating counterfactuals that align with human reasoning and enable understanding of model decisions."
+    },
+    "Method": {
+        "description": "MCS employs conditional generative adversarial networks to synthesize counterfactuals that align with causal dependencies and data distributions. Umbrella sampling is used to enhance the training process.",
+        "problem formultaion": "The task is to generate counterfactual explanations from a trained ML model, capturing desired outcomes from input modifications while respecting data validity.",
+        "feature processing": "Feature processing involves encoding continuous features with Gaussian mixtures and discrete features with one-hot encoding.",
+        "model": "Conditional Generative Adversarial Networks (CGANs) framework is used as the base model for generating counterfactual samples.",
+        "tasks": [
+            "Counterfactual generation",
+            "Model interpretation",
+            "Causal reasoning"
+        ],
+        "theoretical analysis": "Analyzes the counterfactual universe and incorporates causal dependencies into the generative process to ensure feasibility and validity of counterfactuals.",
+        "complexity": "Owing to CGANs, the training process shifts complexity concerns from each query to an initial setup phase, improving efficiency for explanation generation.",
+        "algorithm step": "The algorithm leverages adversarial training with conditional vectors and employs umbrella sampling for balanced training data preparation."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Moons Dataset",
+            "Synthetic Circles Dataset",
+            "Adult Dataset",
+            "Home Credit Dataset"
+        ],
+        "baselines": [
+            "DiCE",
+            "C-CHVAE",
+            "CADEX",
+            "CLEAR"
+        ],
+        "evaluation metric": "Average Euclidean distance to evaluate similarity of generated samples to input queries.",
+        "setup": "Different classifiers (RBF SVM, Random Forest, MLP) are deployed to assess MCS's counterfactual generation across synthetic and real-world datasets.",
+        "hyperparameters": "Hyperparameters are tuned across model layers, regularization coefficients, and training batch sizes for optimal results.",
+        "results": "MCS generates causally coherent and effective counterfactuals across datasets, demonstrating superior efficiency compared to algorithm-based methods.",
+        "performance": "Achieves significant improvement in generating in-need counterfactuals, especially when incorporating domain-specific causal knowledge.",
+        "analysis": "MCS is more efficient than algorithm-based methods, with stable performance across multiple queries, demonstrating robustness in modeling counterfactual distribution.",
+        "ablation study": "Investigates the effect of umbrella sampling and model inductive biases, validating their contributions to the MCS's effectiveness."
+    },
+    "conclusion": {
+        "summary": "The proposed MCS framework effectively synthesizes causal and data-distribution consistent counterfactuals, contributing to enhanced model explainability. It bridges gaps in current interpretability approaches by efficiently generating plausible alternative scenarios.",
+        "future work": "Future research may focus on adapting MCS to address challenges posed by high-dimensional datasets, time-series data, and considerations of ethical implications in ML interpretations."
+    }
+}

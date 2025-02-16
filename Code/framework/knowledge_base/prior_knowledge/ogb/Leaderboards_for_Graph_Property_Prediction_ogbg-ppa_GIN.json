@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-ppa",
+    "Dataset Link": "../graphprop/#ogbg-ppa",
+    "Rank": 12,
+    "Method": "GIN",
+    "External Data": "No",
+    "Test Accuracy": "0.6892 ± 0.0100",
+    "Validation Accuracy": "0.6562 ± 0.0107",
+    "Contact": "mailto:weihuahu@cs.stanford.edu",
+    "Paper Link": "https://arxiv.org/abs/1810.00826",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/graphproppred/ppa",
+    "Parameters": "1,836,942",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "May 1, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-ppa/GIN.pdf",
+    "Paper Summary": "The paper \"How Powerful Are Graph Neural Networks?\" introduces a theoretical framework for analyzing the expressiveness of Graph Neural Networks (GNNs). Here are the key points specifically related to model design:\n\n1. **Neighborhood Aggregation Framework**: GNNs operate through a neighborhood aggregation approach, where each node's representation is updated by aggregating features from its neighbors. This is done iteratively over several layers, allowing the model to capture structural information within the node's k-hop neighborhood.\n\n2. **Multiset Representation**: The authors conceptualize the set of neighboring node features as a multiset, which allows for repeated elements. The ability of a GNN to distinguish different multisets determines its representational power. It is crucial for a GNN's aggregation function to be able to map multisets to different representations.\n\n3. **Injective Aggregation**: A major focus is on ensuring that the aggregation functions used in GNNs are injective. An injective function ensures that distinct neighborhoods (multisets of node features) are mapped to different representations, enhancing the GNN's discriminative ability.\n\n4. **Graph Isomorphism Network (GIN)**: The authors introduce GIN as a specific GNN architecture that is provably maximally expressive. GIN satisfies conditions that allow it to be as powerful as the Weisfeiler-Lehman graph isomorphism test. The model incorporates injective functions in its neighbor aggregation and graph-level readout, enabling a unique mapping of different graph structures to distinct embeddings.\n\n5. **Parameterization of Aggregation Functions**: The GIN architecture employs multilayer perceptrons (MLPs) to parameterize the aggregation functions, ensuring they can represent complex injective functions over multisets. The model updates node representations using a defined formulation that combines features from neighboring nodes via MLPs.\n\n6. **Readout Function**: The graph-level readout function in GIN captures node features from all iterations to generate the representation of the entire graph. This is done in a concatenated manner, allowing all structural information to be considered.\n\n7. **Continuous Improvements**: While GIN is highlighted as the most powerful GNN by the authors' theoretical framework, they note that multiple architectures can theoretically achieve similar capacities. They focus on GIN for its simplicity and effectiveness in design.\n\nOverall, the methods discussed emphasize building GNNs that can capture rich structural information through injective and well-parameterized aggregation functions, leading to enhanced expressiveness in learning from graph data."
+}

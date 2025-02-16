@@ -1,0 +1,47 @@
+{
+  "Task Description": "Node Classification with WikiCS dataset. Node classification task aimed at classifying Wikipedia's Computer Science articles into one of ten categories based on the content of the articles. This dataset is designed to evaluate the capability of GNNs to handle textual content represented as nodes linked by their conceptual similarities.",
+  "Dataset Description": "WikiCS is a node classification dataset consisting of 11,701 nodes and 216,123 edges, where each node corresponds to a Wikipedia Computer Science article and edges represent hyperlinks between articles. Nodes are endowed with 300-dimensional GloVe word embeddings as features, representing the average textual content of the articles.",
+  "Performance Summary": {
+    "General": "The WikiCS dataset provides a more challenging environment compared to simpler node classification tasks due to its denser node neighborhoods and varying connectivity across nodes from different classes.",
+    "Detailed Performance": {
+      "vanilla GCN": {
+        "Test Accuracy": "77.103±0.830",
+        "Train Accuracy": "98.918±0.619",
+        "Epochs": "293.84"
+      },
+      "GraphSage": {
+        "Test Accuracy": "74.767±0.950",
+        "Train Accuracy": "99.976±0.095",
+        "Epochs": "303.68"
+      },
+      "GCN": {
+        "Test Accuracy": "77.469±0.854",
+        "Train Accuracy": "98.925±0.590",
+        "Epochs": "299.85"
+      },
+      "MoNet": {
+        "Test Accuracy": "77.431±0.669",
+        "Train Accuracy": "98.737±0.710",
+        "Epochs": "355.81"
+      },
+      "MoNet-PE": {
+        "Test Accuracy": "77.481±0.712",
+        "Train Accuracy": "98.767±0.726",
+        "Epochs": "357.74"
+      },
+      "GAT": {
+        "Test Accuracy": "76.908±0.821",
+        "Train Accuracy": "99.914±0.262",
+        "Epochs": "275.48"
+      },
+      "GIN": {
+        "Test Accuracy": "75.857±0.577",
+        "Train Accuracy": "99.575±0.388",
+        "Epochs": "321.25"
+      }
+    },
+    "Analysis": "MoNet-PE and GCN models show the best test accuracy, indicating their effectiveness in capturing node features and structural dependencies within the graph. The variability in model performance underscores the importance of feature handling and graph structure in achieving higher classification accuracy."
+  }
+}
+
+

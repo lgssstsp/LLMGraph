@@ -1,0 +1,71 @@
+{
+    "meta_data": {
+        "title": "Methodologies for Training Very Deep Graph Convolutional Networks",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous"
+        ],
+        "abstract": "Graph Convolutional Networks (GCNs) have gained significant traction due to their ability to process non-Euclidean data. However, training deep GCN architectures remains challenging due to issues like vanishing gradients and over-smoothing. In this paper, we extend techniques successful in deep CNNs, such as residual and dense connections, to GCNs. Our approach significantly improves GCN depth and performance, achieving state-of-the-art results in point cloud semantic segmentation. We also conduct extensive experiments to understand these adaptations, establishing the foundation for more effective GCN training.",
+        "keywords": [
+            "GCN",
+            "Deep Learning",
+            "Residual Connections",
+            "Graph Convolution",
+            "Semantic Segmentation"
+        ],
+        "year": "2023",
+        "venue": "Arxiv",
+        "doi link": null,
+        "method name": "ResGCN and DenseGCN"
+    },
+    "relate work": {
+        "related work category": [
+            "Non-Euclidean Data Processing",
+            "Deep CNN Techniques Applied to GCN",
+            "GCN Architectural Challenges"
+        ],
+        "related papers": "1. Kipf et al. (2016) - Semi-Supervised Node Classification\n2. Pham et al. (2017) - Column Networks (CLN)\n3. Rahimi et al. (2018) - Highway GCNs\n4. Xu et al. (2018) - Jump Knowledge Network\n5. Li et al. (2018) - Depth Limitations of GCNs\n6. Wang et al. (2018) - EdgeConv applied to Point Clouds",
+        "comparisons with related methods": "Unlike CNNs, GCNs face unique challenges with depth, often restricted to only 3 layers in practice. Our approach, incorporating residual and dense connections, significantly extends the feasible depth, improving stability and performance."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces methodologies aimed at extending the depth of Graph Convolutional Networks (GCNs) through the incorporation of residual, dense, and dilated connections, to enhance their applicability to non-Euclidean datasets, specifically exemplified in point cloud semantic segmentation.",
+        "research purpose": "The purpose is to enable the training of very deep GCNs without the issues of vanishing gradients and over-smoothing, thereby expanding their practical applications.",
+        "research challenge": "Training deep GCN architectures is not straightforward due to vanishing gradient and over-smoothing problems, which stabilize at only a few layers.",
+        "method summary": "We adapt residual, dense, and dilated convolution techniques from CNNs to GCNs, allowing for networks up to 56 layers deep, improving accuracy and stability.",
+        "conclusion": "Deep CNN-derived structures can be successfully adapted to GCNs, demonstrating that GCNs can indeed be trained deeper, enhancing performance on tasks like point cloud semantic segmentation."
+    },
+    "Method": {
+        "description": "This paper proposes the integration of residual connections, dense connections, and dilated convolutions into GCNs to aim deeper architectures and solve common GCN problems.",
+        "problem formultaion": "How to enable the training of very deep GCNs while mitigating issues such as vanishing gradients and over-smoothing?",
+        "feature processing": null,
+        "model": "ResGCN and DenseGCN are configurations designed by adopting CNN techniques, structured to overcome depth-related training issues in GCNs.",
+        "tasks": [
+            "Point Cloud Semantic Segmentation"
+        ],
+        "theoretical analysis": "The paper hypothesizes that residual, dense, and dilated convolution techniques from CNN architectures can address GCNs' training issues.",
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "S3DIS Point Cloud Dataset"
+        ],
+        "baselines": [
+            "DGCNN",
+            "PlainGCN"
+        ],
+        "evaluation metric": "Overall Accuracy (OA), Mean Intersection over Union (mIoU)",
+        "setup": "Models trained with similar hyper-parameters with 28 and 56 layers compared to previous shallow architectures",
+        "hyperparameters": "Initial learning rate 0.001 with an Adam optimizer; Learning rate decays 50% every 300k steps; Batch size is 8 per GPU; Dropout rate at 0.3",
+        "results": "ResGCN achieves state-of-the-art results, with up to a 3.7% improvement over baselines on the S3DIS dataset.",
+        "performance": null,
+        "analysis": "Deep GCNs benefit significantly from residual connections; achieving stability in gradients and enhanced receptive field with dilated convolutions.",
+        "ablation study": "Analysis highlights the contribution of residual, dense, and dilated connections, showing enhanced stability and accuracy in deeper architectures."
+    },
+    "conclusion": {
+        "summary": "By extending CNN architectures' methods like residual and dense connections to GCNs, we demonstrate that GCNs can be trained deeper, overcoming traditional problems like vanishing gradients.",
+        "future work": "Exploration of other CNN techniques applicable to GCNs, and improvements in graph representation methods for better segmentation outcomes."
+    }
+}

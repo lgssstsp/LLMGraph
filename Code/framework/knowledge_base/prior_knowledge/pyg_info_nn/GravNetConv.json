@@ -1,0 +1,73 @@
+{
+    "meta_data": {
+        "title": "Distance-Weighted Graph Networks for Irregular Calorimeter Data",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Multiple Institutions"
+        ],
+        "abstract": "This paper proposes two novel layer architectures, the \\aggregators and \\neighbours layers, which are designed to enhance Deep Learning capabilities for particle reconstruction tasks when working with irregular detector data. As a solution for hit clustering within calorimeters, these layers are positioned as a versatile alternative to convolutional and existing graph-based neural networks.",
+        "keywords": [
+            "Graph Networks",
+            "Calorimeters",
+            "Deep Learning",
+            "High Energy Physics",
+            "Neural Architecture"
+        ],
+        "year": "2023",
+        "venue": "Unpublished",
+        "doi link": null,
+        "method name": "\\aggregators and \\neighbours Layers"
+    },
+    "relate work": {
+        "related work category": [
+            "DL in HEP",
+            "Non-regular DL Architectures",
+            "Graph-based Networks"
+        ],
+        "related papers": "DeepSets~\\cite{Komiske:2018cqr}, Graph Networks~\\cite{Qu:2019gqs}, \\DGCNN~\\cite{wang2018dynamic}",
+        "comparisons with related methods": "The \\aggregators and \\neighbours present computational advantages and versatility over CNNs by handling irregular detector data with less geometric assumptions, enhancing applicability in realistic detector environments."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces graph-based (\naggregators and \nneighbours) layers tailored for sparse irregular data from particle physics detectors. Evaluations indicate that these layers provide a balance between precision and computational efficiency, extending neural networks beyond conventional setups for high-energy particle analysis.",
+        "research purpose": "To improve graph network architectures for practical deployment in LHC experiments by addressing computational constraints while providing high accuracy in particle identification.",
+        "research challenge": "High computational demands and geometric assumptions of traditional CNNs restrict application in irregular calorimeter geometries.",
+        "method summary": "Utilizing graph-based architectures to streamline particle reconstruction processes without preprocessing dependencies, potentially enhancing calorimetry tasks.",
+        "conclusion": "These architectures demonstrate a promising path towards accommodating high-granularity and non-reproducible detector environments."
+    },
+    "Method": {
+        "description": "Investigation of graph network architectures tailored for calorimeter data, introducing the \naggregators and \nneighbours layers that aim to minimize computational overhead while maximizing data processing efficacy.",
+        "problem formultaion": null,
+        "feature processing": "Raw calorimeter data representing sensor hits are processed directly by the graph architectures without preprocessing.",
+        "model": "The layers use Euclidean distances to dynamically estimate data relationships without spatial constraints, enabling efficient high-throughput operations.",
+        "tasks": [
+            "Hit Clustering",
+            "Particle Identification"
+        ],
+        "theoretical analysis": "The architecture's definition of dynamic connectivity reduces memory use and aligns with computational limits within collider environments.",
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Simulated Calorimeter Data",
+            "GEANT4-based Geometry"
+        ],
+        "baselines": [
+            "Traditional CNN",
+            "Graph Networks"
+        ],
+        "evaluation metric": "Clustering accuracy, Mean squared error",
+        "setup": "The architecture was tested on a simulated calorimeter environment inspired by HGCAL geometries.",
+        "hyperparameters": "20 nodes in CNN layers, 64 nodes in dense layers for the \\DGCNN model, varied across layers in the graph architectures.",
+        "results": "The \\neighbours architecture achieved better clustering performance on overlapping showers while maintaining resource efficiency.",
+        "performance": "Good accuracy and efficiency reported in comparison to traditional method baselines.",
+        "analysis": "Overlapping shower discrimination improved, with resource-efficient configurations that align with high-throughput demands.",
+        "ablation study": "Examined effects of various layer hyperparameters and input feature configurations on model performance."
+    },
+    "conclusion": {
+        "summary": "The proposed graph-based architectures demonstrate effectiveness in handling calorimeter data by maintaining compression efficiency and boosting partitioning accuracy.",
+        "future work": "Investigating deployment within real LHC environments and extending utility across various high-energy physics data applications."
+    }
+}

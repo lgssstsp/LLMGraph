@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Highly Nonlinear Parametric Partial Differential Equation Discovery from Sparse and Noisy Data",
+        "authors": [
+            "First Author"
+        ],
+        "affiliations": [
+            "Institution Name"
+        ],
+        "abstract": "The paper presents a new framework for discovering highly nonlinear parametric partial differential equations (PDEs) from sparse and noisy data. The proposed approach combines physical principles with machine learning to improve the discovery of PDE structures and coefficients.",
+        "keywords": [
+            "PDE discovery",
+            "Sparse data",
+            "Noisy data",
+            "Nonlinear coefficients",
+            "Machine learning"
+        ],
+        "year": "2023",
+        "venue": "Journal of Computational Physics",
+        "doi link": null,
+        "method name": "HIN-PDE"
+    },
+    "relate work": {
+        "related work category": [
+            "Dynamical System Modeling",
+            "Data-driven Discovery"
+        ],
+        "related papers": "Early trials for equation discovery in the last century \\cite{dzeroski1995discovering} and recent symbolic regression approaches.",
+        "comparisons with related methods": "The proposed framework outperforms existing methods like SGTRidge, PDE-Net, and A-DLGA, especially in discovering PDEs with variable coefficients."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a novel framework, HIN-PDE, for discovering partial differential equations with highly nonlinear variable coefficients from sparse and noisy data. It utilizes physics-guided learning constraints to enhance the discovery process.",
+        "research purpose": "To develop a method that effectively discovers complex PDEs with highly nonlinear coefficients using sparse and noisy datasets.",
+        "research challenge": "Existing methodologies fail to accurately discover PDEs with highly nonlinear coefficients, especially from sparse and noisy data.",
+        "method summary": "The HIN-PDE framework integrates physical principles as learning constraints and employs a spatial kernel sparse regression model to discover PDEs robustly.",
+        "conclusion": "Experimental results demonstrate the method's superior accuracy and robustness against noise compared to existing baselines."
+    },
+    "Method": {
+        "description": "HIN-PDE employs a physics-guided spatial kernel estimation strategy to effectively discover PDEs with highly nonlinear coefficients.",
+        "problem formultaion": "The goal is to discover PDE structures and their coefficients under noise and sparse data conditions.",
+        "feature processing": null,
+        "model": "A spatial kernel sparse regression model that emphasizes smoothness and conservation principles to discover PDEs.",
+        "tasks": [
+            "PDE discovery from sparse data",
+            "Handling noisy datasets"
+        ],
+        "theoretical analysis": "The paper theoretically establishes the reduction in coefficient estimation error using HIN-PDE compared to existing baselines.",
+        "complexity": "The computational complexity is linearly proportional to the dataset size, allowing the proposed method to scale efficiently.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Burgers' Equation",
+            "Korteweg-de Vries Equation",
+            "Chaffe-Infante Equation",
+            "Five highly nonlinear coefficient fields (HNC) datasets"
+        ],
+        "baselines": [
+            "PDE-net",
+            "SGTRidge",
+            "SINDy",
+            "A-DLGA"
+        ],
+        "evaluation metric": "Recall of discovered PDE terms, mean absolute error of coefficient estimation, and target fitting error.",
+        "setup": "Training and evaluation on both PDEs with constant and variable coefficients under various noise levels.",
+        "hyperparameters": null,
+        "results": "HIN-PDE accurately discovered all test PDEs even at high noise levels, outperforming existing baselines significantly.",
+        "performance": "HIN-PDE achieved the lowest coefficient estimation errors and consistently discovered correct PDE structures across different datasets.",
+        "analysis": "The model showed robustness against overfitting and was effective under different hyperparameter settings.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "HIN-PDE provides a robust framework for discovering highly nonlinear parametric PDEs from sparse and noisy data using a physics-guided approach.",
+        "future work": "Future work may investigate methods to avoid the influence of correlated terms and improve differential accuracy."
+    }
+}

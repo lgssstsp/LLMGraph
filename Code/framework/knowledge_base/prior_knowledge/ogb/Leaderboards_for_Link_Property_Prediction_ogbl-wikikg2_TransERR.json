@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 15,
+    "Method": "TransERR",
+    "External Data": "No",
+    "Test Accuracy": "0.6359 ± 0.0020",
+    "Validation Accuracy": "0.6518 ± 0.0012",
+    "Contact": "mailto:futuretopdelli@163.com",
+    "Paper Link": "https://arxiv.org/pdf/2306.14580.pdf",
+    "Code Link": "https://github.com/dellixx/TransERR",
+    "Parameters": "500,441,802",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Jun 26, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/TransERR.pdf",
+    "Paper Summary": "The paper presents TransERR, a translation-based knowledge graph embedding (KGE) method that integrates efficient relation rotation for encoding knowledge graphs. The key aspects of the model design are:\n\n### Model Structure:\n1. **Hypercomplex-Valued Space**: TransERR encodes knowledge graphs in a hypercomplex-valued space, enabling a higher degree of rotational freedom compared to traditional vector spaces.\n\n2. **Unit Quaternion Vectors**: The method utilizes two learnable unit quaternion vectors for both the head entity and the tail entity. These quaternions allow for smooth rotation and spatial translation within the hypercomplex space.\n\n3. **Relation Rotation**: To minimize the translation distance between the head and tail entities, TransERR adaptively rotates them via the corresponding unit quaternions. This rotation is accomplished using Hamilton product, which enhances the expressive capability for rotational transformations.\n\n### Distance Function:\nThe model defines the distance function between the head entity \\( h \\) and the tail entity \\( t \\) as:\n\n\\[\nd(h, t) = \\| h \\otimes r_H + r - t \\otimes r_T \\|\n\\]\n\nWhere \\( r_H \\) and \\( r_T \\) are the quaternion vectors for the head and tail respectively, and \\( \\otimes \\) denotes the Hamilton product. This formulation promotes better alignment of the entities in the hypercomplex space.\n\n### Adaptive Learning:\nThe unit quaternion vectors are learned during model training, allowing the model to adaptively find better representations for the head and tail, further narrowing the translation distance.\n\n### Mathematical Foundations:\nTransERR is equipped with mathematical proofs that validate its capability to model various relation patterns. These include:\n- Symmetry\n- Antisymmetry\n- Inversion\n- Composition\n- Subrelation patterns\n\nThese validated properties contribute to the model’s ability to capture complex relationships between entities more effectively than existing methods.\n\n### Conclusion:\nOverall, the design of TransERR emphasizes a combination of rotational dynamics and translation capabilities in a hypercomplex space, which allows for more flexible and expressive knowledge graph embeddings."
+}

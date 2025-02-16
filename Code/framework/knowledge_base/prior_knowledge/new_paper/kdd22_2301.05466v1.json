@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Conflict Optimization in Social Networks",
+        "authors": [
+            "Author A",
+            "Author B",
+            "Author C"
+        ],
+        "affiliations": [
+            "University of Technology, School of Information Science"
+        ],
+        "abstract": "In the digital age, online social networks proliferate, leading to various social phenomena such as polarization, echo chambers, and resistance. We address optimizing these phenomena by adjusting the opinions of select individuals within a network. Using a supermodular framework, we propose two efficient greedy algorithms to minimize conflict measures, controversy, and resistance, and validate their performance using real-world networks.",
+        "keywords": [
+            "Social Networks",
+            "Conflict Optimization",
+            "Polarization",
+            "Greedy Algorithm"
+        ],
+        "year": "2023",
+        "venue": "Conference on Social Network Analysis",
+        "doi link": null,
+        "method name": "NaiveGreedy & FastGreedy"
+    },
+    "relate work": {
+        "related work category": [
+            "Optimization Problems",
+            "Opinion Dynamics",
+            "Algorithm Development"
+        ],
+        "related papers": "1. Ma, Te, et al. \"Conflict Optimization in Social Networks.\" Journal of Optimization, 2017.\n2. Xu, Ba, et al. \"Resistance in Opinion Dynamics.\" Social Media Studies, 2021.\n3. Ga, De, et al. \"Echo Chambers and Filter Bubbles in Social Networks.\" 2018.",
+        "comparisons with related methods": "Compared to BOMP (Best Opinion Modification Process), our FastGreedy algorithm reduces computational time significantly while providing comparable reduction in controversy and resistance. Previous methods like Gama et al. focused on link addition, whereas we optimize by modifying individual opinions."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper focuses on optimizing conflict metrics in social networks by modifying the opinions of a select few individuals to reduce controversy and resistance. This approach is innovative as it incorporates a supermodular function to derive a solution through greedy algorithms.",
+        "research purpose": "To develop efficient algorithms that optimize conflict by modifying individual opinions in social networks, rather than changing network topology.",
+        "research challenge": "Handling the computational complexity associated with large-scale networks while ensuring approximation accuracy.",
+        "method summary": "The paper presents two greedy algorithms based on supermodular optimization: NaiveGreedy with a $(1-1/e)$ approximation and FastGreedy with a $(1-1/e-\\epsilon)$ approximation, successfully reducing computation times significantly.",
+        "conclusion": "The proposed methods effectively utilize the supermodular property for optimizing conflict measures, proving both efficient and scalable to large networks."
+    },
+    "Method": {
+        "description": "The method leverages supermodular function properties, enabling efficient greedy optimization strategies for minimizing network conflict measures.",
+        "problem formultaion": "The problem is formulated as finding a set of nodes whose opinion alteration minimizes perceived conflict measures (controversy and resistance) across the network.",
+        "feature processing": null,
+        "model": "Supermodular optimization leveraging NaiveGreedy and FastGreedy algorithms.",
+        "tasks": [
+            "Identification of key individuals for opinion modification",
+            "Reduction of controversy and resistance metrics"
+        ],
+        "theoretical analysis": "Our method's supermodular properties guarantee well-performing approximations of the optimal solutions.",
+        "complexity": "The basic naive method runs at $O(n^3)$, while FastGreedy operates at $\\Otil(mk\\epsilon^{-2})$, scalable for large networks.",
+        "algorithm step": "The algorithm iteratively identifies nodes for opinion alteration that lead to maximal reduction in controversy and resistance using greedy selection."
+    },
+    "Experiments": {
+        "datasets": [
+            "Karate",
+            "Books",
+            "ClintonTrump",
+            "Polblogs",
+            "AstroPh"
+        ],
+        "baselines": [
+            "PageRank",
+            "BOMP",
+            "Random Selection"
+        ],
+        "evaluation metric": "Reduction in conflict measures: controversy and resistance",
+        "setup": "Algorithms were run on multiple datasets with different initial opinion distributions: uniform, exponential, and power-law.",
+        "hyperparameters": "Set $k$ to 50 selected nodes across datasets; parameter $\n\\epsilon=0.5$ for approximation accuracy trade-offs.",
+        "results": "Both NaiveGreedy and FastGreedy consistently outperformed baseline methods, with FastGreedy achieving comparable effectiveness to NaiveGreedy with significantly reduced run times.",
+        "performance": "FastGreedy demonstrated up to 20x speed improvement compared to BOMP, maintaining high accuracy.",
+        "analysis": "Performance varied minimally across opinion distributions, supporting the robustness of the algorithms.",
+        "ablation study": "Not covered in this study."
+    },
+    "conclusion": {
+        "summary": "The paper concluded that optimizing social networks by changing a limited number of opinions using supermodular optimization is efficient and scalable, effectively balancing computational time and outcome accuracy.",
+        "future work": "Future work may explore applications of this framework on weighted and directed graphs or integrate additional social network phenomena into the analysis."
+    }
+}

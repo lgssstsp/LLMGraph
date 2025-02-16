@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Efficient Distributed Sparse Logistic Regression with Communication-Efficient Surrogate Likelihood (CSL)",
+        "authors": [
+            "Author A",
+            "Author B"
+        ],
+        "affiliations": [
+            "Institution 1",
+            "Institution 2"
+        ],
+        "abstract": "In this paper, we present \\newowa, a novel proximal solver designed to efficiently optimize the Communication-Efficient Surrogate Likelihood (CSL) objective for distributed sparse logistic regression models. \\newowa effectively handles the challenges of high-dimensional data, including sparsity and communication overhead, by combining proximal Newton steps with adaptive proximal regularization. Our approach shows significant improvements in accuracy and efficiency over existing methods on large-scale high-dimensional datasets.",
+        "keywords": [
+            "Sparse Logistic Regression",
+            "Distributed Computing",
+            "Proximal Newton Method",
+            "Communication-Efficient Surrogate Likelihood",
+            "High-Dimensional Data"
+        ],
+        "year": "2023",
+        "venue": "Journal of Machine Learning Research",
+        "doi link": "http://dx.doi.org/10.1145/replaced_with_actual_doi",
+        "method name": "\\newowa"
+    },
+    "relate work": {
+        "related work category": [
+            "Sparse Logistic Regression",
+            "Distributed Estimation",
+            "One-Shot Estimation",
+            "Communication-Efficient Updates"
+        ],
+        "related papers": "Zhuang et al. (2015), Gopal et al. (2013), Lin et al. (2014), Chen et al. (2014), Shamir et al. (2014), Jordan et al. (2018), Wang et al. (2017), Fan et al. (2023), Izbicki et al. (2020).",
+        "comparisons with related methods": "\\newowa demonstrates superior results in high-dimensional settings, compared to traditional CSL methods and recent advancements such as sCSL and sDANE, by converging faster and achieving better sparsity-accuracy trade-offs."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces \\newowa, an advanced proximal solver that significantly improves the performance of distributed sparse logistic regression models by efficiently optimizing the CSL objective.",
+        "research purpose": "To solve computational challenges in high-dimensional sparse logistic regression across distributed systems using a more efficient algorithm.",
+        "research challenge": "Handling extensive data sparsity and reducing communication bottleneck in distributed systems.",
+        "method summary": "\\newowa employs proximal Newton techniques with adaptive proximal regularization to efficiently solve the CSL objective, resulting in notable improvements in both convergence rate and accuracy.",
+        "conclusion": "\\newowa showcases impressive improvements in convergence and sparsity handling for high-dimensional datasets, outperforming previous methods like sCSL and sDANE."
+    },
+    "Method": {
+        "description": "\\newowa is a structured proximal solver that combines advanced techniques like proximal Newton steps and adaptive regularization to solve the CSL objective efficiently.",
+        "problem formultaion": "Addressing the inefficiency of CSL methods in handling sparse logistic regression in distributed systems.",
+        "feature processing": "Sparsity-inducing penalties such as L1 regularization are used to promote sparse solutions.",
+        "model": "CSL objective optimized using proximal Newton method and adaptive proximal regularization to achieve high accuracy and efficient communication.",
+        "tasks": [
+            "Sparse Logistic Regression",
+            "Distributed Computing"
+        ],
+        "theoretical analysis": "The method is analyzed for convergence properties, especially in high-dimensional settings where conventional convergence guarantees of CSL may fail.",
+        "complexity": "Achieving $\n\\mathcal{O}(SMnd)$ complexity for dense data and $\n\\mathcal{O}(SMz)$ for sparse data, where $z$ is the number of non-zero elements, proving computational efficiency.",
+        "algorithm step": "Iterative proximal Newton steps with adaptive regularization to update model parameters efficiently across distributed nodes."
+    },
+    "Experiments": {
+        "datasets": [
+            "amazon7",
+            "url",
+            "criteo",
+            "ember-100k",
+            "ember-1M"
+        ],
+        "baselines": [
+            "Naive Avg.",
+            "OWA",
+            "sCSL",
+            "sDANE"
+        ],
+        "evaluation metric": "Test accuracy and runtime compared to baseline.",
+        "setup": "Experiments conducted on multi-core single node and fully distributed settings using standard libraries and computational frameworks.",
+        "hyperparameters": "Maximum outer and inner steps set to ensure convergence for different datasets and settings.",
+        "results": "\\newowa consistently achieved better test accuracy and convergence speeds than baselines, particularly on high-dimensional datasets.",
+        "performance": "\\newowa yields superior performance in both single-node and multi-node distributed environments, excelling in achieving optimal sparsity and accuracy.",
+        "analysis": "Results illustrate \\newowa's robustness and efficiency across varying sparsity levels in challenging high-dimensional scenarios.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\newowa outperforms existing distributed sparse logistic regression methods by providing efficient, accurate solutions to CSL objectives on large-scale data.",
+        "future work": "Future directions could involve integrating coreset methods and exploring connections with differentially private logistic regression applications."
+    }
+}

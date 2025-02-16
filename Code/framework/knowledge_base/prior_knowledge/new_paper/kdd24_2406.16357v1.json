@@ -1,0 +1,83 @@
+{
+    "meta_data": {
+        "title": "Lightweight Graph Neural Architecture Search with Curriculum Graph Sparsification and Network Pruning",
+        "authors": [
+            "Author A",
+            "Author B",
+            "Author C"
+        ],
+        "affiliations": [
+            "Institution 1",
+            "Institution 2",
+            "Institution 3"
+        ],
+        "abstract": "Graph data is ubiquitous in various domains, including social networks, protein interactions, and transportation networks. Graph Neural Networks (GNNs) model these graphs for tasks like node classification and link prediction. However, designing effective GNNs manually can be laborious, leading to the development of Graph Neural Architecture Search (GNAS) for automated design. Lightweight GNAS further reduces computational demands, making it suitable for more applications. This paper introduces GASSIP, a novel approach that iteratively optimizes graph data and architectures through curriculum graph sparsification and operation pruning, enhancing the effectiveness and efficiency of lightweight GNNs.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Network Pruning",
+            "Graph Data Sparsification",
+            "Automated Design",
+            "Lightweight Architecture Search"
+        ],
+        "year": "2023",
+        "venue": "Academic Conference on Artificial Intelligence",
+        "doi link": null,
+        "method name": "GASSIP"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Architecture Search",
+            "Graph Data Sparsification",
+            "Lightweight Graph Neural Networks"
+        ],
+        "related papers": "GraphNAS, DARTS, GASSO, ALGNN",
+        "comparisons with related methods": "ALGNN searches for lightweight GNNs but neglects graph structure while GASSIP considers co-optimizing the graph structure and model parameters for efficient lightweight GNN design."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes a novel lightweight graph neural architecture search algorithm, GASSIP, which utilizes curriculum graph sparsification and network pruning. The method reduces inference costs by optimizing both the graph structure and model parameters, achieving high performance with fewer computational resources.",
+        "research purpose": "The study aims to enhance the efficiency and applicability of lightweight GNNs by automating the architecture design process and reducing computational requirements using GASSIP.",
+        "research challenge": "Automating the design of high-performance lightweight GNNs by efficiently searching sub-architectures while managing the computational trade-offs.",
+        "method summary": "GASSIP iteratively optimizes graph data and architectures through curriculum graph sparsification and operation pruning, constructing lightweight GNNs with fewer parameters while maintaining performance.",
+        "conclusion": "GASSIP achieves significant parameter reduction and computational efficiency on various datasets, making it advantageous over traditional manual GNN design and existing automated methods."
+    },
+    "Method": {
+        "description": "GASSIP combines operation-pruned architecture search with curriculum graph sparsification to identify effective GNN sub-architectures.",
+        "problem formultaion": "GASSIP is formulated as a joint optimization problem that navigates both graph structure and model parameter sparsity to achieve lightweight and effective GNN designs.",
+        "feature processing": null,
+        "model": "Uses differentiable operation and structure masks to guide pruning and sparsification.",
+        "tasks": [
+            "Node Classification",
+            "Graph Clustering"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Employs sparse matrix implementations to handle complexity, reducing parameters and computational demands.",
+        "algorithm step": "Builds a supernet, prunes operations and structures, and refines graph data iteratively for optimized lightweight GNN design."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "CiteSeer",
+            "PubMed",
+            "Physics",
+            "Ogbn-Arxiv"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "ARMA",
+            "DARTS",
+            "GraphNAS"
+        ],
+        "evaluation metric": "Node classification accuracy",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "GASSIP outperforms traditional GNN baselines and automated architecture search methods on all datasets with fewer parameters and reduced search times.",
+        "performance": "Achieves 83.20% accuracy on Cora, surpassing all baselines, and maintains efficiency advantages in multiple scenarios.",
+        "analysis": "Exhibits robustness against noisy and adversarially perturbed data, excelling in parameter efficiency while optimizing performance.",
+        "ablation study": "Highlights that curriculum sparsification notably enhances architecture search efficacy, with additional studies on operation pruning effects."
+    },
+    "conclusion": {
+        "summary": "The study introduces GASSIP, an efficient lightweight GNN architecture search technique using curriculum sparsification and operation pruning. The method significantly reduces computational load while enhancing performance across several datasets.",
+        "future work": "Future work includes testing GASSIP on larger-scale graphs, providing theoretical analysis of convergence, and developing a unified lightweight GNAS benchmark."
+    }
+}

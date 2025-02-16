@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Log-Euclidean Mixup for Biologically-Inspired Networks",
+        "authors": [
+            "Sam Liu",
+            "Wei Jin",
+            "Ming Zhang"
+        ],
+        "affiliations": [
+            "Emory University",
+            "Peking University"
+        ],
+        "abstract": "We propose a data augmentation method designed for biological networks that leverages the log-Euclidean metrics for SPD matrices. Our method addresses the swelling and incorrect-label effects inherent in current state-of-the-art augmentation techniques. The method improves performance across both regression and classification tasks. Comprehensive experiments showcase its efficacy, especially in low-resource settings.",
+        "keywords": [
+            "log-Euclidean metric",
+            "biological networks",
+            "SPD matrices",
+            "data augmentation",
+            "deep learning"
+        ],
+        "year": "2023",
+        "venue": "Neuroinformatics Conference 2023",
+        "doi link": "https://doi.org/10.1145/3487568",
+        "method name": "\\method"
+    },
+    "relate work": {
+        "related work category": [
+            "Mixup for Data Augmentation",
+            "Geometric Deep Learning"
+        ],
+        "related papers": "Mixup~\\cite{zhang2018mixup}, RegMix~\\cite{regmix}, C-Mixup~\\cite{yao2022cmix}, NodeMixup~\\cite{wang2021mixup}, GraphMixup~\\cite{wu2021graphmixup}, G-Mixup~\\cite{han2022gmixup}",
+        "comparisons with related methods": "Existing Mixup techniques such as vanilla Mixup and RegMix are limited by overfitting and mislabeling in regression tasks. Our proposed \\method overcomes these through geometrically-influenced augmentation on SPD data forms."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper tackles limitations within existing biological data augmentation techniques by introducing a method that incorporates log-Euclidean metrics to enhance data augmentation for SPD matrices.",
+        "research purpose": "Develop and showcase a Mixup-based data augmentation method to mitigate the swelling and incorrect-labeling problems in biological network analysis.",
+        "research challenge": "Integrating deep learning with non-Euclidean data measures while avoiding overfitting and incorrect interpretation issues.",
+        "method summary": "\\method creates stronger augmentation samples by aligning SPD matrices' intrinsic properties along Riemannian geodesics.",
+        "conclusion": "\\method offers robust advantages for enhancing model generalization in biological networks by effectively leveraging Riemannian geometry."
+    },
+    "Method": {
+        "description": "\\method augments samples from SPD matrices by employing log-Euclidean metrics to combat swelling and stratification in eigenvalue distribution.",
+        "problem formultaion": "Early Mixup approaches overlooked non-Euclidean aspects of SPD data, resulting in exaggerated eigenvectors as well as incorrect label augmentation.",
+        "feature processing": "Utilizes the log and exp mappings to maintain SPD structures, ensuring rigorous positive-definiteness properties.",
+        "model": "Adopts a Transformer neural network framework for implementations.",
+        "tasks": [
+            "classification",
+            "regression"
+        ],
+        "theoretical analysis": "Examines manifold distribution of SPD matrices and brings in heat kernel theory for robust regression modeling.",
+        "complexity": "Computationally efficient given the reformulation reduces repetitive eigenvalue decomposition through strategic precalculations.",
+        "algorithm step": "1. Compute logarithms of SPD matrices. 2. Apply log-Euclidean metric geodesic mixup. 3. Map back to SPD via exponentiation."
+    },
+    "Experiments": {
+        "datasets": [
+            "ABCD",
+            "PNC",
+            "ABIDE",
+            "TCGA-Cancer"
+        ],
+        "baselines": [
+            "Vanilla Mixup",
+            "C-Mixup",
+            "DropNode",
+            "DropEdge",
+            "G-Mixup"
+        ],
+        "evaluation metric": "AUROC, MSE, Precision, Recall",
+        "setup": "Runs are averaged over multiple iterations with both large and small datasets, varying sample size as an additional evaluation.",
+        "hyperparameters": null,
+        "results": "\\method outperformed other Mixup variants across datasets in AUROC and overall metric efficacy.",
+        "performance": "Exhibited particularly strong performance for small sample sizes and high-dimensional data environments.",
+        "analysis": "Showed benefits of Riemannian metric usage in predictions, preserving dataset geometry and improving label correction compared to Euclidean approaches.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\method outperforms current approaches in addressing overfitting and incorrect label issues in data augmentation for biological networks, showing improved transferability and prediction accuracy.",
+        "future work": "Further exploration could delve into manifold metrics beyond log-Euclidean, enriching applicability to expansive datasets and higher-dimensional network environments."
+    }
+}

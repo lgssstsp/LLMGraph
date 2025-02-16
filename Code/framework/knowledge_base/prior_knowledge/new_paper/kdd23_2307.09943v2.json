@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "Impatient Bandits: Efficient Online Exploration with Progressive Feedback",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous"
+        ],
+        "abstract": "This paper introduces a novel bandit algorithm to optimize for delayed rewards in environments where intermediate outcomes related to the final reward are revealed progressively. Utilizing a progressive feedback setting, the approach combines meta-learning with Bayesian filtering and Thompson sampling. The methodology is evaluated on a concrete podcast recommendation task and shows significant improvements over baselines that rely on short-term proxies or fully-delayed feedback. Further studies could extend this work to personalized settings or explore theoretical bounds on the benefits of incorporating progressive feedback.",
+        "keywords": [
+            "bandit algorithms",
+            "progressive feedback",
+            "meta-learning",
+            "Bayesian filtering",
+            "Thompson sampling",
+            "podcast recommendation"
+        ],
+        "year": "2023",
+        "venue": "Not Specified",
+        "doi link": null,
+        "method name": "Impatient Bandit Algorithm"
+    },
+    "relate work": {
+        "related work category": [
+            "Multi-Armed Bandits",
+            "Thompson Sampling",
+            "Recommender Systems & Long-Term Goals"
+        ],
+        "related papers": "Kandasamy et al., 2018, Chapelle et al., 2011, Li et al., 2010",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a new bandit algorithm that efficiently optimizes the long-term rewards in environments where feedback arrives progressively. The proposed method, referred to as the \"Impatient Bandit,\" enables better predictions of long-term outcomes by leveraging intermediate feedback rather than waiting for fully-delayed rewards. Evaluations demonstrate significant improvements over baselines in a podcast recommendation setting.",
+        "research purpose": "To develop an algorithm that efficiently balances exploration and exploitation in scenarios where intermediate outcomes progressively reveal the final reward.",
+        "research challenge": null,
+        "method summary": "By employing a Bayesian filter to make predictions based on progressively available data and applying Thompson sampling, the approach merges exploration and exploitation efficiently.",
+        "conclusion": "The methodology leverages intermediate outcomes to significantly outperform methods reliant on short-term proxies or delayed feedback. Future work may extend this approach to personalized settings."
+    },
+    "Method": {
+        "description": "A novel bandit algorithm is proposed for scenarios where feedback is progressively revealed. This approach utilizes a probabilistic model to make predictions about future outcomes based on intermediate data.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The model relies on Bayesian filtering to utilize intermediate outcomes for predicting final rewards.",
+        "tasks": [
+            "Podcast recommendation",
+            "Recommender system optimization"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Spotify podcast listening dataset (confidential)"
+        ],
+        "baselines": [
+            "Delayed feedback approach",
+            "Day-two proxy",
+            "Oracle baseline"
+        ],
+        "evaluation metric": "Cumulative regret minimization",
+        "setup": "Non-personalized, evaluating 180 rounds over podcast dataset",
+        "hyperparameters": null,
+        "results": "The 'Impatient Bandit' resulted in lower regret scores closer to Oracle performance compared to baselines relying on delayed feedback or short-term proxies.",
+        "performance": "Reported significant reduction in regret scores; showcased efficient exploration in a dynamic action set.",
+        "analysis": "Oracle's performance, based on full feedback, was exceeded only by the proposed method in terms of progressive optimization of user engagement.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The 'Impatient Bandit' represents a considerable advancement in the use of progressive feedback over waiting for fully-delayed outcomes, specifically within the context of optimizing podcast recommendations.",
+        "future work": "Potential to apply the method in personalized recommendation scenarios or to another domain like hyperparameter tuning."
+    }
+}

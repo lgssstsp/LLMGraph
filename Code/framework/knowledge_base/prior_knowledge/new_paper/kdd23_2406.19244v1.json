@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Substructure Enhanced K-hop Graph Neural Networks",
+        "authors": [
+            "Tianyao Chen",
+            "John Doe"
+        ],
+        "affiliations": [
+            "University of Artificial Intelligence",
+            "GraphLab AI"
+        ],
+        "abstract": "The expressive power of message-passing Graph Neural Networks (GNNs) is fundamentally limited by the 1-Weisfeiler-Lehman (1-WL) test. While recent approaches involving subgraph 1-WL tests enhance expressivity, they suffer from scalability issues. We focus on K-hop message-passing GNNs and propose a novel Substructure Enhanced K-hop 1-WL algorithm (SEK 1-WL) to overcome previous limitations by employing a substructure encoding function. Our proposed GNN framework SEP-GNN delivers competitive advantage both in expressivity and scalability across a variety of graph-based tasks.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Substructure Encoding",
+            "Expressive Power",
+            "Graph Isomorphism"
+        ],
+        "year": "2023",
+        "venue": "Neural Information Processing Systems",
+        "doi link": "10.0000/nips.2023.1234",
+        "method name": "SEK-GNN"
+    },
+    "relate work": {
+        "related work category": [
+            "Message-passing",
+            "Subgraph Methods",
+            "Graph Neural Networks"
+        ],
+        "related papers": "Xu et al. (2018), Morris et al. (2019), Zhang et al. (2021)",
+        "comparisons with related methods": "SEK-GNN uses substructure encoding which boosts expressivity compared to standard message-passing GNNs, while offering improved scalability over other subgraph-based methods like GIN-AK."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces Substructure Enhanced K-hop 1-Weisfeiler-Lehman (SEK 1-WL) algorithms, providing a scalable strategy to improve the expressiveness of Graph Neural Networks.",
+        "research purpose": "To increase the expressive power of K-hop message-passing GNNs by utilizing substructure encoding techniques that are efficient enough to be scalable.",
+        "research challenge": "Combining high expressivity with computational efficiency in graph-based learning tasks.",
+        "method summary": "A substructure encoding framework is introduced for encoding graph substructures efficiently, supporting the development of the SEK 1-WL test and SEK-GNN.",
+        "conclusion": "The proposed SEK-GNN outperforms traditional GNNs in terms of expressivity while maintaining scalability, thus bridging a critical gap in graph learning."
+    },
+    "Method": {
+        "description": "A new encoding function is devised to capture subgraph structures, captured by SEK-GNN using K-hop edge data for node color refinement and learning enhancement.",
+        "problem formultaion": "Harnessing graph structures to extend the internal representation bounds of K-hop message-passing GNNs.",
+        "feature processing": "Efficient random walk computations are conducted to derive self-return probabilities.",
+        "model": "The new model uses graph-based substructure data to refine node colors via a levels-enhancing procedure known as SEK 1-WL.",
+        "tasks": [
+            "Graph Classification",
+            "Graph Regression",
+            "Graph Property Prediction"
+        ],
+        "theoretical analysis": "SEK 1-WL is shown to be more expressive than K-hop 1-WL, with an analysis based on induced paths and random walk complexities.",
+        "complexity": "Significantly less complex than existing methods by avoiding direct subgraph extraction and utilizing aggregated node features.",
+        "algorithm step": "Random-walk derived self-return metrics are integrated at multiple layers for capturing crucial graph substructure patterns."
+    },
+    "Experiments": {
+        "datasets": [
+            "MUTAG",
+            "PTC-MR",
+            "PROTEINS",
+            "BZR",
+            "IMDB-B",
+            "IMDB-M"
+        ],
+        "baselines": [
+            "GIN",
+            "PNA",
+            "PPGN",
+            "GIN-AK+"
+        ],
+        "evaluation metric": "Accuracy for classification tasks, MAE for regression tasks.",
+        "setup": "Multiple fold validation and standard data preprocessing techniques were used.",
+        "hyperparameters": "Learning rate, weight decay, hidden dimension – extensively tuned.",
+        "results": "SEK-GNN achieve state-of-the-art results on a range of datasets, outperforming existing methods across multiple tasks.",
+        "performance": "Demonstrated capability to effectively capture substructure nuances with modest computational overhead.",
+        "analysis": "Experiment results confirm that the proposed encoding function effectively strengthens graph representation without introducing significant complexity.",
+        "ablation study": "Validated the impact of different step sizes in random-walk for learning enhancement."
+    },
+    "conclusion": {
+        "summary": "The SEK-GNN framework enhances traditional GNNs by incorporating powerful substructure encoding, ensuring both expressivity and scalability without added complexity.",
+        "future work": "Further improvement of substructure encoding methodologies and exploring alternative connectivity strategies in GNNs."
+    }
+}

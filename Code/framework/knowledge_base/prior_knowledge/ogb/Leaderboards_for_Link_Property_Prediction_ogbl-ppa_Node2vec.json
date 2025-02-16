@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ppa",
+    "Dataset Link": "../linkprop/#ogbl-ppa",
+    "Rank": 20,
+    "Method": "Node2vec",
+    "External Data": "No",
+    "Test Accuracy": "0.2226 ± 0.0083",
+    "Validation Accuracy": "0.2253 ± 0.0088",
+    "Contact": "mailto:matthias.fey@tu-dortmund.de",
+    "Paper Link": "https://arxiv.org/abs/1607.00653",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/linkproppred/ppa",
+    "Parameters": "73,878,913",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "May 1, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ppa/Node2vec.pdf",
+    "Paper Summary": "The paper introduces **node2vec**, a scalable algorithm designed for unsupervised feature learning in networks. The core concept revolves around learning continuous feature representations for nodes through a random walk strategy that intelligently navigates network neighborhoods. \n\n### Key Model Design Aspects:\n\n1. **Objective Function**:\n   - The goal of node2vec is to maximize a graph-based objective function that preserves the likelihood of observing a node’s neighborhood while embedding the nodes into a feature space. This is formalized as:\n     \\[\n     \\max f\\, \\sum_{u \\in V} \\log P(N_S(u) | f(u))\n     \\]\n   \n2. **Sampling Strategy**:\n   - The algorithm employs a **2nd order random walk** method, parameterized by \\(p\\) and \\(q\\), allowing for a flexible exploration of neighborhoods. \n     - **Parameter \\(p\\)**: Controls the likelihood of revisiting a node in the walk; higher values discourage revisiting, favoring greater exploration.\n     - **Parameter \\(q\\)**: Differentiates between \"inward\" (nodes closer to the start node) and \"outward\" nodes (further away), enabling a balance between local and global exploration.\n   - Two extreme sampling strategies, **Breadth-First Search (BFS)** and **Depth-First Search (DFS)**, can be tuned through these parameters to capture structural equivalences and homophily.\n\n3. **Random Walks**:\n   - The procedure initiates from a source node and follows weighted transition probabilities to choose the next node, incorporating the structure of the graph to generate diverse neighborhood samples.\n   - This method ensures that the exploration of the graph is intelligent and adaptive, allowing the algorithm to focus on relevant connections rather than sampling uniformly across the graph.\n\n4. **Feature Representation**:\n   - The learned features are structured as a mapping \\(f : V \\to \\mathbb{R}^d\\), capturing the local structure of the network while allowing flexibility to adapt to different communities or node roles based on the sampling strategy employed.\n   - The final representation of each node can further be expanded to pairs of nodes (edges) using binary operations, facilitating tasks such as link prediction.\n\n5. **Learning Process**:\n   - Weights in the model are updated using **Stochastic Gradient Descent (SGD)**, supporting efficient computation and scalability.\n   - The learning of parameters \\(p\\) and \\(q\\) can occur semi-supervised, optimizing with minimal labeled data, which enhances adaptability across diverse tasks without being tied to task-specific features.\n\nOverall, the design philosophy of node2vec focuses on efficiently exploring the complex relationships within networks while enabling the discovery of meaningful node embeddings that are applicable across various prediction tasks. This flexibility in representation and sampling is key to the algorithm's effectiveness."
+}

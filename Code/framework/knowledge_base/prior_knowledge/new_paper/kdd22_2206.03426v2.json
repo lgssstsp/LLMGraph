@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "A Fair View on Graph Neural Networks: Varying Correlation to Mitigate Sensitive Attribute Leakage",
+        "authors": [
+            "Yushun Dong",
+            "Jundong Li"
+        ],
+        "affiliations": [
+            "University of Virginia"
+        ],
+        "abstract": "As the world becomes more connected, graph mining plays a crucial role in many domains, such as drug discovery and recommendation systems. Graph Neural Networks (GNNs) are prominent tools for learning low-dimensional node representations but have been demonstrated to have issues with fairness. This paper presents a novel framework called Fair View Graph Neural Network (FairVGNN), which aims to mitigate sensitive information leakage during learning by varying feature correlations and utilizing adaptive weight clamping.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Fairness",
+            "Sensitive Attribute Leakage",
+            "Correlation Variation"
+        ],
+        "year": "2023",
+        "venue": "NeurIPS",
+        "doi link": null,
+        "method name": "Fair View Graph Neural Network (FairVGNN)"
+    },
+    "relate work": {
+        "related work category": [
+            "Augmentation-based fairness methods",
+            "Adversarial-based fairness methods"
+        ],
+        "related papers": "[1] Fan 2019, [2] Chen 2021, [3] Dai 2021, [4] NIFTY 2021",
+        "comparisons with related methods": "FairVGNN differs from previous methods by focusing on the phenomenon of sensitive attribute leakage due to correlation variation and addresses the fairness issue by introducing feature masking and weight clamping strategies guided by adversarial learning."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces FairVGNN, a framework for learning fair node representations by addressing the challenge of sensitive attribute leakage during feature propagation in GNNs.",
+        "research purpose": "To mitigate sensitive information leakage and discrimination in GNN-based predictions by considering the impact of correlation variation in feature propagation.",
+        "research challenge": "Sensitive information leakage occurs when non-sensitive features become highly correlated with sensitive features during GNN propagation, leading to biased predictions.",
+        "method summary": "FairVGNN masks sensitive-correlated features to reduce discriminatory outcomes and uses adaptive weight clamping of the encoder to filter sensitive-related information.",
+        "conclusion": "FairVGNN demonstrates effectiveness in reducing sensitive information leakage and achieves a better trade-off between utility and fairness than existing methods."
+    },
+    "Method": {
+        "description": "FairVGNN utilizes a generative adversarial framework to learn fair views of node features and employs adaptive weight clamping to minimize sensitive information encoded in GNNs.",
+        "problem formultaion": "The problem is formulated as creating node representations that preserve task-relevant information while minimizing bias from sensitive features.",
+        "feature processing": "Features are masked and adjusted during GNN propagation based on correlation measures to reduce sensitive information.",
+        "model": "The model includes a view generator, a GNN-based encoder, a discriminator, and a classifier, working together in an adversarial training framework.",
+        "tasks": [
+            "Node classification",
+            "Link prediction"
+        ],
+        "theoretical analysis": "FairVGNN provides a theoretical exploration of weight clamping's role in minimizing sensitive information overlap in representations.",
+        "complexity": null,
+        "algorithm step": "1. Train a generator for fair feature views. 2. Use a GNN-based encoder to learn representations. 3. Apply adaptive weight clamping after adversarial training. 4. Evaluate on node classification tasks."
+    },
+    "Experiments": {
+        "datasets": [
+            "German Credit",
+            "Credit Defaulter",
+            "Recidivism"
+        ],
+        "baselines": [
+            "NIFTY",
+            "EDITS",
+            "FairGNN"
+        ],
+        "evaluation metric": "Statistical parity delta and equal opportunity difference",
+        "setup": "Models were evaluated on group fairness metrics using three different GNN backbones: GCN, GIN, and GraphSAGE.",
+        "hyperparameters": "Learning rates and regularization coefficients were optimized for each dataset and model configuration.",
+        "results": "FairVGNN demonstrated significant improvement in fairness metrics while maintaining competitive model utility across multiple datasets.",
+        "performance": "Achieved less biased predictions than other fair learning baselines with reduced utility loss.",
+        "analysis": "Ablation studies show the necessity of both feature masking and weight clamping for minimizing bias.",
+        "ablation study": "Analyzed the contribution of FairVGNN components, showing the combined effect of feature masking and weight clamping reduces bias effectively."
+    },
+    "conclusion": {
+        "summary": "FairVGNN offers a comprehensive framework to mitigate bias in GNNs by addressing sensitive leakage, yielding a balanced trade-off between utility and fairness.",
+        "future work": "Plans to explore relationships between feature propagation and network homophily, and extend the framework for multi-sensitive group fairness."
+    }
+}

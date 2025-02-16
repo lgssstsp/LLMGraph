@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Ultrahyperbolic Knowledge Graph Embeddings: Mitigating the Heterogeneous Topological Structures",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "-"
+        ],
+        "abstract": "Knowledge graph (KG) embeddings have emerged as an effective way for a wide range of KG-based applications. While numerous approaches utilize the Euclidean geometry, recent studies show that hyperbolic geometries are more suitable for embedding hierarchical data due to their exponentially growing volumes. However, real-world KGs also exhibit heterogeneous topological structures including hierarchical and non-hierarchical relations. Current hyperbolic embedding methods struggle to capture these complex structures. We present UltraE, the first ultrahyperbolic KG embedding method, which employs an ultrahyperbolic manifold that interleaves the hyperbolic and spherical spaces. Our framework enables simultaneous embedding of hierarchical and non-hierarchical relations with relation-specific geometric mappings and complex relational patterns inference. UltraE achieves state-of-the-art results on standard benchmarks for KG completion tasks, outperforming previous Euclidean and non-Euclidean approaches.",
+        "keywords": [
+            "Knowledge Graph Embeddings",
+            "Ultrahyperbolic Geometry",
+            "Heterogeneous Topologies",
+            "Geometric Mapping",
+            "Complex Relational Patterns"
+        ],
+        "year": "2023",
+        "venue": "TBD",
+        "doi link": null,
+        "method name": "UltraE"
+    },
+    "relate work": {
+        "related work category": [
+            "Knowledge Graph Embeddings",
+            "Ultrahyperbolic Embeddings"
+        ],
+        "related papers": "Recent advancements in KG embeddings have focused on improving relational operations and embedding spaces, from Euclidean to hyperbolic geometries. Notably, hyperbolic models like MuRP and rotational models such as RotH/RefH offer advancements but still encounter limitations with mixed topological structures. Ultrahyperbolic embedding has been explored in representation learning, although less so in KG settings.",
+        "comparisons with related methods": "UltraE distinguishes itself by leveraging ultrahyperbolic manifolds to account for various local geometries, unlike homogenous geometric spaces in previous methods. It surpasses existing models, including product manifold mixtures and hyperbolic embeddings, by efficiently embedding heterogeneous structures and inferring relational patterns."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces UltraE, a novel KG embedding method using an ultrahyperbolic manifold that accommodates hierarchical and non-hierarchical relations. By exploiting pseudo-orthogonal transformations, UltraE successfully models multiple geometric patterns within a single framework, providing improvements in KG completion tasks over existing models.",
+        "research purpose": "To develop a comprehensive KG embedding method that addresses the limitations of existing Euclidean and hyperbolic approaches in managing heterogeneous topological structures in real-world KGs.",
+        "research challenge": "Capturing the diverse topological structures and relational patterns within KGs using a unitary embedding framework.",
+        "method summary": "UltraE utilizes ultrahyperbolic manifolds, integrating hyperbolic and spherical geometries to tailor entity and relation embeddings. It introduces novel parameterizations and transformation decompositions for effective relational patterns modeling.",
+        "conclusion": "UltraE offers significant enhancements in representing and processing KG topological heterogeneity, achieving state-of-the-art results across several benchmark datasets."
+    },
+    "Method": {
+        "description": "UltraE represents entities and relations within an ultrahyperbolic manifold, allowing simultaneous representation of hierarchical and non-hierarchical structures. Relations are modeled as pseudo-orthogonal transformations, decomposed into circular and hyperbolic rotations to capture diverse relational patterns.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Ultrahyperbolic manifolds supporting multiple geometric embeddings via pseudo-orthogonal matrices.",
+        "tasks": [
+            "KG Completion"
+        ],
+        "theoretical analysis": "The method draws on hyperbolic Cosine-Sine decomposition to streamline matrix transformations, aligning with different geometric properties for efficient embeddings.",
+        "complexity": "The method achieves linear parameter and time complexity, proving scalable to large, complex KGs with improved performance over quadratic model counterparts.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "WN18RR",
+            "FB15k-237",
+            "YAGO3-10"
+        ],
+        "baselines": [
+            "TransE",
+            "RotatE",
+            "ComplEx",
+            "QuatE",
+            "5$\\star$E",
+            "MuRE",
+            "MuRP",
+            "RotH/RefH",
+            "AttH",
+            "MuRMP"
+        ],
+        "evaluation metric": "Mean Reciprocal Rank (MRR), Hit Rate @ K (H@K)",
+        "setup": null,
+        "hyperparameters": "Experiments evaluated multiple batch sizes, margins, and learning rates against fixed curvature radius and manifold signature.",
+        "results": "UltraE demonstrated superior performance and representation capabilities particularly in low-dimensional spaces, establishing new baselines in multiple KG benchmarks.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "UltraE bridges gaps in existing KG embedding models by addressing topological heterogeneity via ultrahyperbolic spaces, offering robust performance improvements.",
+        "future work": "Investigate further extensions to incorporate more nuanced KG structures and enhance ultrahyperbolic geometry understanding in embeddings."
+    }
+}

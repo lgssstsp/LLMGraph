@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Adaptive IPS for Off-Policy Evaluation of Ranking Policies with Diverse User Behavior",
+        "authors": [
+            "A. Smith",
+            "B. Johnson",
+            "C. Davis"
+        ],
+        "affiliations": [
+            "University of Artificial Intelligence Research",
+            "Institute of Data Science and Technology"
+        ],
+        "abstract": "This paper addresses the challenge of off-policy evaluation (OPE) in ranking systems, especially under the complexity of diverse user behavior. Existing estimators often falter as they rely on universal assumptions about user interactions, which do not hold across diverse populations. To overcome this, we introduce the Adaptive IPS (AIPS) estimator, which operates based on a novel context-aware formulation, minimizing variance while maintaining unbiased estimates. AIPS is shown to achieve superior mean squared error (MSE) performance over traditional techniques in both synthetic and real-world data evaluations.",
+        "keywords": [
+            "Off-Policy Evaluation",
+            "Ranking Systems",
+            "Diverse User Behavior",
+            "Adaptive Importance Sampling"
+        ],
+        "year": "2023",
+        "venue": "Journal of Artificial Intelligence and Machine Learning",
+        "doi link": null,
+        "method name": "Adaptive Inverse Propensity Scoring"
+    },
+    "relate work": {
+        "related work category": [
+            "Offline Reinforcement Learning",
+            "Contextual Bandits",
+            "Ranking Systems Evaluation",
+            "Variance Reduction Techniques"
+        ],
+        "related papers": "[1] Saito et al. 'Counterfactual evaluation of slate recommender systems', [2] McInerney et al. 'Counterfactual Learning in Ranking', [3] Kiyohara et al. 'Doubly Robust Policy Evaluation in the Large Action Space', [4] Li et al. 'Off-Policy Learning with User Feedback'.",
+        "comparisons with related methods": "Compared to traditional methods such as IPS and Doubly Robust (DR) estimators, AIPS incorporates a context-aware strategy, allowing it to adaptively weigh the relevance of actions, thereby achieving a lower variance and unbiasedness across diverse user scenarios. Its superiority is observed even against advanced methods like Cascade-DR, particularly in large action spaces."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes a new estimator, Adaptive IPS (AIPS), for off-policy evaluation in ranking systems where user behavior is diverse and context-dependent. Unlike traditional estimators that apply a single assumption uniformly, AIPS adapts based on user context, capturing the heterogeneity in user behavior to provide accurate estimation.",
+        "research purpose": "To develop a more suitable OPE estimator that accounts for diverse user behavior in ranking systems, reducing bias and variance while maintaining accuracy in evaluating new policies.",
+        "research challenge": "Existing OPE methods often apply a single universal assumption about user behavior, which introduces significant bias and variance when user interactions are diverse.",
+        "method summary": "The proposed AIPS estimator uses adaptive importance weighting, leveraging a context-dependent formulation to adaptively apply different importance weights to different scenarios.",
+        "conclusion": "AIPS is an unbiased estimator that minimizes variance among IPS-based estimators. It enhances OPE accuracy through adaptive user behavior modeling, showing significant improvement over existing methods in both synthetic and real-world experiments."
+    },
+    "Method": {
+        "description": "Adaptive IPS (AIPS) is an estimator for off-policy evaluation that adaptively applies importance weighting based on user context and behavior distribution.",
+        "problem formultaion": "The problem is cast as a bias-variance tradeoff in OPE of ranking systems where user behavior can be extremely diverse.",
+        "feature processing": null,
+        "model": ".AIPS leverages an action-reward interaction matrix to model diverse user behavior, applying appropriate importance weights for each context.",
+        "tasks": [
+            "Off-Policy Evaluation",
+            "Bias-Variance Tradeoff Analysis"
+        ],
+        "theoretical analysis": "The paper provides a comprehensive theoretical analysis proving that AIPS is unbiased under any user behavior distribution and achieves optimal variance attributes.",
+        "complexity": "The complexity primarily involves adaptive weighting, which can increase computational overhead, but experiments suggest it's manageable.",
+        "algorithm step": "1. Formulate the action-reward interaction matrix based on user context. 2. Apply adaptive importance weighting based on the matrix. 3. Evaluate the policy using the position-wise policy value."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic User Data",
+            "Real-World E-Commerce Data"
+        ],
+        "baselines": [
+            "Inverse Propensity Scoring (IPS)",
+            "Independent IPS (IIPS)",
+            "Reward Interaction IPS (RIPS)"
+        ],
+        "evaluation metric": "Mean Squared Error (MSE)",
+        "setup": "Experiments were conducted using both synthetic datasets reflecting varied user behavior and a real-world e-commerce dataset for validating practical applicability.",
+        "hyperparameters": "Considerations include context space partitioning and behavior model assignments, tuned based on MSE minimization.",
+        "results": "AIPS consistently outperformed baseline estimators, showing a significant reduction in MSE, particularly in scenarios with diverse user behavior.",
+        "performance": "Exponentially scalable, minimizing both bias and variance.",
+        "analysis": "Highlighted the ability of AIPS to leverage context-specific behavior modeling for better policy evaluation accuracy.",
+        "ablation study": "An ablation study demonstrated the contribution of context-aware behavior modeling in achieving low variance outcomes."
+    },
+    "conclusion": {
+        "summary": "AIPS provides an advanced solution for OPE in ranking policies, accounting for diversity and context-dependency in user behavior, leading to improved evaluation accuracy.",
+        "future work": "Investigate applying control variates to further reduce variance, exploring action embedding to handle larger action spaces, and using AIPS for more efficient off-policy learning."
+    }
+}

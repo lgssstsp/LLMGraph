@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "Cohesion-aware Graph Contrastive Learning with Topology Augmentation",
+        "authors": [
+            "[Author Names Here]"
+        ],
+        "affiliations": [
+            "[Author Affiliations Here]"
+        ],
+        "abstract": "Graph Contrastive Learning (GCL) has emerged as an effective self-supervised paradigm, leveraging topology augmentations to enrich graph and node embeddings. While stochastic topology augmentations have been prevalent, the integration of cohesion properties such as $k$-core and $k$-truss can enhance GCL. In this study, we propose a novel framework, CTAug, to embed cohesion properties into GCL. With topology augmentation enhancement and graph learning enhancement modules, CTAug substantially enhances GCL across various graph datasets. Our research demonstrates the value of embedding domain-specific knowledge into self-supervised models.",
+        "keywords": [
+            "graph contrastive learning",
+            "self-supervised learning",
+            "topology augmentation",
+            "cohesion properties",
+            "GNNs"
+        ],
+        "year": "2023",
+        "venue": "[Venue Here]",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Contrastive Learning (GCL)",
+            "Topology Augmentation",
+            "Graph Neural Networks (GNNs)"
+        ],
+        "related papers": "[1] Wu, et al., 'Self-supervised on graphs'.\n[2] You, et al., 'Graph Contrastive Learning with Edge Centrality'.",
+        "comparisons with related methods": "CTAug differentiates itself by embedding graph cohesion properties into two of the most common GCL topology augmentation strategies: probabilistic and deterministic. While similar works rely on domain knowledge such as edge centrality, CTAug incorporates novel cohesion metrics leading to more cohesive subgraph retention and improved embeddings."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a novel framework called CTAug to integrate cohesion properties into Graph Contrastive Learning (GCL). With a topology augmentation enhancement and graph learning enhancement module, CTAug outperforms existing state-of-the-art methods.",
+        "research purpose": "To explore the potential of cohesion properties such as $k$-core and $k$-truss to enhance GCL.",
+        "research challenge": "Cohesion properties are yet to be fully harnessed for graph augmentation in GCL. Existing methods do not ensure the retention of graph substructures in augmented datasets.",
+        "method summary": "CAug integrates cohesion properties by modifying conventional augmentation strategies to favor cohesive subgraphs and enhances graph learning by considering these substructures during representation learning.",
+        "conclusion": "CTAug effectively leverages cohesion properties, leading to superior performance in graph representation tasks compared to traditional GCL augmentation strategies."
+    },
+    "Method": {
+        "description": "CTAug modifies topology augmentation to preserve cohesive graph substructures, enhancing graph learning by leveraging cohesive insights.",
+        "problem formultaion": "How can we effectively integrate cohesion properties like $k$-core and $k$-truss into the GCL framework to improve graph embedding's quality?",
+        "feature processing": null,
+        "model": "An integrated framework combining topology augmentation and enhanced GNN encoding, focusing on maintaining cohesive graph properties during the learning process.",
+        "tasks": [
+            "Graph Classification",
+            "Node Classification"
+        ],
+        "theoretical analysis": "Explores the mutual information perspective to establish the theoretical backing for the proposed method's improved performance.",
+        "complexity": "Efforts are made to optimize augmentation steps, ensuring that integrating cohesion properties does not significantly bestow computational burden.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "IMDB-B",
+            "IMDB-M",
+            "COLLAB",
+            "RDT-B",
+            "RDT-T",
+            "ENZYMES",
+            "PROTEINS"
+        ],
+        "baselines": [
+            "GraphCL",
+            "JOAO",
+            "MVGRL",
+            "InfoGraph",
+            "AD-GCL",
+            "AutoGCL",
+            "RGCL",
+            "SimGRACE",
+            "GCL-SPAN"
+        ],
+        "evaluation metric": "Accuracy measured on various dataset-specific tasks.",
+        "setup": "Unsupervised representation learning setting for GCL benchmarks was used, complemented by a linear SVM classifier for classification tasks.",
+        "hyperparameters": "Settings varied across tasks, with decay factors chosen through grid search for enhancement modules.",
+        "results": "CTAug consistently improves upon baseline GCL methods, especially pronounced in high-degree graphs where cohesive subgraphs are more prevalent.",
+        "performance": "Highlighted by improvements measured in accuracy across datasets of diverse domains.",
+        "analysis": "Demonstrates how cohesion properties align with graph labels, validating enhancement modules in retaining cohesion features.",
+        "ablation study": "Examined effectiveness of CTAug modules revealing importance of cohesion properties integration."
+    },
+    "conclusion": {
+        "summary": "CTAug introduces a paradigm shift in GCL by embedding cohesion properties such as $k$-core into both probabilistic and deterministic augmentations, yielding enhanced embeddings.",
+        "future work": "Explore integration of other domain-specific substructures, extend framework to generative and predictive learning in self-supervised graph paradigms."
+    }
+}

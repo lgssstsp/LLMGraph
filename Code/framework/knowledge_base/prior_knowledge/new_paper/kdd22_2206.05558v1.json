@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Communication-Efficient Federated Bilevel Optimization for Learning with Noisy Labels",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Lin Wang"
+        ],
+        "affiliations": [
+            "Department of Computer Science, University X",
+            "Department of Electrical Engineering, Institute Y",
+            "School of Engineering, Institute Z"
+        ],
+        "abstract": "Federated Learning (FL) allows multiple clients to collaboratively train a model while keeping client data private. However, FL faces challenges such as privacy, data heterogeneity, and communication costs. An often-overlooked issue is the label noise in client datasets, which can degrade model performance. This paper addresses the noisy label problem in FL by formulating it as a bilevel optimization problem. We propose two efficient algorithms for this problem, leveraging gradient compression to reduce communication costs. Empirical evaluations show our methods outperform other approaches in mitigating the effects of noisy labels.",
+        "keywords": [
+            "Federated Learning",
+            "Bilevel Optimization",
+            "Noisy Labels",
+            "Gradient Compression",
+            "Machine Learning"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning (ICML)",
+        "doi link": null,
+        "method name": "Comm-FedBiO"
+    },
+    "relate work": {
+        "related work category": [
+            "Federated Learning",
+            "Gradient Compression",
+            "Bilevel Optimization"
+        ],
+        "related papers": "In~\\cite{chen2020focus}, the FOCUS method addresses FL with noisy labels by using a credibility score based on losses evaluated on local and clean validation sets. In~\\cite{tuor2021overcoming}, clients use a benchmark model to filter corrupted data samples. Gradient compression techniques are discussed in~\\cite{wen2017terngrad, lin2017deep}. Bilevel optimization techniques are addressed in~\\cite{ghadimi2018approximation, ji2020provably}.",
+        "comparisons with related methods": "The proposed Comm-FedBiO algorithm leverages gradient compression to handle the high communication costs associated with FL. In contrast to other FL methods, such as FOCUS and Preprocess, which operate at the client level, Comm-FedBiO effectively identifies and mitigates the influence of noisy labels directly through federated bilevel optimization."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes a novel approach to address noisy label issues in Federated Learning environments by employing a federated bilevel optimization framework. The descriptive use of two subroutines—Iterative and Non-iterative algorithms—demonstrates effective hypergradient estimation under communication constraints. The developed methods show significant performance improvements in benchmark datasets affected by label noise.",
+        "research purpose": "To propose and evaluate algorithms for mitigating noisy label impact in Federated Learning through a bilevel optimization approach.",
+        "research challenge": "How to efficiently calculate hypergradients in a federated setting with high communication costs and noisy data.",
+        "method summary": "The research introduces the Comm-FedBiO method, which uses a federated bilevel optimization framework. It involves distributed optimization across client nodes, leveraging techniques like gradient compression to exchange only essential data, minimizing communication overhead.",
+        "conclusion": "The results demonstrate significant improvements over baseline methods in handling noisy labels within Federated Learning environments."
+    },
+    "Method": {
+        "description": "Our method, Comm-FedBiO, employs a federated bilevel optimization framework that leverages gradient compression to mitigate communication cost while dealing with noisy labels across distributed clients.",
+        "problem formultaion": "The problem is formulated as a bilevel optimization challenge, where the outer problem minimizes empirical loss on a validation set subject to the inner problem solution, which fits model parameters to weighted local datasets.",
+        "feature processing": "Not explicitly focused, the study primarily addresses model parameter fitting and the hypergradient evaluation challenge.",
+        "model": "The model consists of a primary learning mechanism embedded with federated bilevel optimization processes, leveraging techniques from gradient descent and data compression strategies.",
+        "tasks": [
+            "Noisy Label Identification",
+            "Federated Model Training",
+            "Bilevel Problem Solving"
+        ],
+        "theoretical analysis": "Derived convergence guarantees for both hypergradient estimation algorithms, supported by rigorous proofs and sketch matrices properties.",
+        "complexity": "The algorithm exploits sublinear communication complexity by strategic compression. Iterative algorithms achieve $O(1/I)$ approximation error, and non-iterative ones maintain $O(\\epsilon)$ relative error bound.",
+        "algorithm step": "1. Formulate the federated learning problem with noisy labels as a bilevel optimization problem. 2. Develop Iterative and Non-iterative methods for hypergradient estimation, incorporating gradient compression techniques."
+    },
+    "Experiments": {
+        "datasets": [
+            "MNIST",
+            "CIFAR-10",
+            "FEMNIST"
+        ],
+        "baselines": [
+            "FedAvg",
+            "FedAvg-Oracle",
+            "FOCUS",
+            "Preprocess"
+        ],
+        "evaluation metric": "Test accuracy and F1 score",
+        "setup": "We simulate Federated Learning environments using multiple datasets with introduced label noise. Experiments are run on servers using Pytorch and Distributed Learning Packages.",
+        "hyperparameters": "Hyper-learning rate of 0.1, learning rate of 0.01, local iterations $T=5$.",
+        "results": "The proposed methods significantly outperform baselines, achieving higher test accuracy and robustness to label noise, especially in non-i.i.d. data scenarios.",
+        "performance": "Our algorithms surpass other methods in retaining model accuracy in the face of noisy labels. Techniques using gradient compression achieve efficient communication without performance trade-offs.",
+        "analysis": "The study shows that iterative methods handle high compression rates effectively, and non-iterative solutions do well with moderate compression, showcasing the complimentary capacity of these approaches.",
+        "ablation study": "Compression rate effects and noise impact were analyzed, revealing method robustness at different perturbation levels."
+    },
+    "conclusion": {
+        "summary": "The study effectively tackles label noise in Federated Learning by introducing the Comm-FedBiO framework, which leverages bilevel optimization and gradient compression techniques. The proposed algorithms exhibit superior efficacy and communication efficiency in empirical tests on real-world datasets.",
+        "future work": "Future research could focus on optimizing algorithmic components for additional gains in other non-standard learning settings."
+    }
+}

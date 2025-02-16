@@ -1,0 +1,86 @@
+{
+    "meta_data": {
+        "title": "Source Localization Variational Autoencoder for Graph Diffusion",
+        "authors": [
+            "Jinyang Jiang",
+            "Yongxin Tong",
+            "Ying Zhang",
+            "Chengliang Chai"
+        ],
+        "affiliations": [
+            "Tsinghua University",
+            "The University of Sydney",
+            "Hunan University"
+        ],
+        "abstract": "The rapid spread of online information highlights the growing need for effective diffusion source localization to manage network-related risks. This work introduces a novel framework, Source Localization Variational Autoencoder (SL-VAE), which leverages deep generative models to enhance diffusion source localization. SL-VAE effectively models and quantifies diffusion uncertainty and outperforms existing approaches across varying diffusion patterns.",
+        "keywords": [
+            "Source Localization",
+            "Variational Autoencoder",
+            "Graph Diffusion",
+            "Deep Generative Models",
+            "Information Diffusion"
+        ],
+        "year": "2023",
+        "venue": "ICML",
+        "doi link": "10.5555/3475651.3476666",
+        "method name": "SL-VAE"
+    },
+    "relate work": {
+        "related work category": [
+            "Information Diffusion Estimation",
+            "Source Localization",
+            "Generative Models for Inverse Problem"
+        ],
+        "related papers": "\\cite{prakash2012spotting}, \\cite{zang2015locating}, \\cite{wang2017multiple}, \\cite{zhu2017catch}, \\cite{dong2019multiple}, \\cite{zhu2016information}",
+        "comparisons with related methods": "SL-VAE shows a significant improvement over traditional methods by employing deep generative models that effectively capture uncertainty, unlike traditional deterministic approaches."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This study introduces SL-VAE, a novel method for identifying diffusion origins in graphs by leveraging deep generative models to account for uncertainty. Experimental results on seven datasets demonstrate the model's superior performance over existing methods.",
+        "research purpose": "To address the challenges of accurately localizing diffusion sources in various network diffusion patterns using a probabilistic modeling approach.",
+        "research challenge": "Handling the ill-posed nature of diffusion source localization which results in non-unique solutions based on the same observation.",
+        "method summary": "SL-VAE embeds diffusion patterns within a variational autoencoder framework to capture and quantify uncertainties in diffusion source localization.",
+        "conclusion": "SL-VAE surpasses traditional models by effectively utilizing deep generative approaches to quantify uncertainty, ultimately improving diffusion source localization."
+    },
+    "Method": {
+        "description": "SL-VAE integrates a forward diffusion estimation model and deep generative techniques to localize diffusion sources by learning probabilistic patterns from data.",
+        "problem formultaion": "Given a set of nodes and edges representing a graph G, identifying the diffusion source nodes from a pattern of observed diffusion requires reconstructing the infection pattern while minimizing empirical loss or maximizing posterior probabilities.",
+        "feature processing": "Use of prior knowledge from observed diffusion patterns to improve predictions.",
+        "model": "Variational Autoencoder tailored for graph diffusion localization with Bayesian inference components.",
+        "tasks": [
+            "Diffusion Source Localization",
+            "Uncertainty Quantification",
+            "Model Generalization"
+        ],
+        "theoretical analysis": "Incorporating the Bayesian framework allows for theoretical treatment of uncertainty, improving prediction accuracy.",
+        "complexity": "Addresses computational challenges inherent in graph-based problems with non-Euclidean data structures.",
+        "algorithm step": "Formulation and optimization using evidence lower bound and Kullback-Leibler divergence for efficient probabilistic inference."
+    },
+    "Experiments": {
+        "datasets": [
+            "Karate",
+            "Jazz",
+            "Cora-ML",
+            "Power Grid",
+            "Network Science",
+            "Digg",
+            "Memetracker"
+        ],
+        "baselines": [
+            "NetSleuth",
+            "LPSI",
+            "OJC",
+            "GCNSI"
+        ],
+        "evaluation metric": "F1 Score, AUC-ROC Curve",
+        "setup": "Compared SL-VAE with baselines over 7 datasets using various epidemic models such as SI, SIR, and real-world datasets.",
+        "hyperparameters": "Three-layer MLP, 0.002 learning rate, 1,000 epochs",
+        "results": "SL-VAE achieves a 20% increase in AUC-ROC and 10% in F1 score over baselines.",
+        "performance": "Consistent superior performance across varying sizes and complexities of networks, confirming the model's scalability.",
+        "analysis": "Qualitative analysis of reconstruction accuracy validates the quantitative improvements.",
+        "ablation study": "Evaluated the significance of individual components, confirming benefits from full model integration."
+    },
+    "conclusion": {
+        "summary": "SL-VAE addresses key challenges in diffusion source localization by incorporating deep generative model techniques within a graph diffusion context, leading to significant performance enhancements across real-time applications.",
+        "future work": "Extending SL-VAE to other types of network-related inverses and examining the implications of variable network sizes on performance."
+    }
+}

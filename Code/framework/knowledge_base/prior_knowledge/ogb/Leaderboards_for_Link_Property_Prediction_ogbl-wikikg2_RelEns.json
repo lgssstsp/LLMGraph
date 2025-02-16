@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 1,
+    "Method": "RelEns",
+    "External Data": "No",
+    "Test Accuracy": "0.7392 ± 0.0011",
+    "Validation Accuracy": "0.7509 ± 0.0009",
+    "Contact": "mailto:qyaoaa@mail.tsinghua.edu.cn",
+    "Paper Link": "https://arxiv.org/pdf/2310.08917.pdf",
+    "Code Link": "https://github.com/LARS-research/RelEns",
+    "Parameters": "2,176,767,622",
+    "Hardware": "Tesla A100(80GB)",
+    "Date": "Oct 15, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/RelEns.pdf",
+    "Paper Summary": "The paper introduces a novel method known as Relation-aware Ensemble Learning for Knowledge Graph Embedding, particularly focusing on an approach called RelEns-DSC (Relation-aware ensemble with Divide-Search-Combine). The proposed method aims to enhance knowledge graph (KG) embedding by addressing the complexities associated with traditional ensemble methods, particularly in multi-relational settings.\n\n### Key Method Design Aspects:\n\n1. **Relation-wise Ensemble Problem**: The authors observe that existing embedding models have varying strengths and weaknesses when handling different types of relations in KGs. To utilize these strengths effectively, the paper proposes learning distinct ensemble weights for individual relations rather than using a uniform weight across all relations.\n\n2. **Divide-Search-Combine Strategy**: RelEns-DSC employs a divide-search-combine approach that separates the overall ensemble learning objective into multiple independent sub-problems. Specifically, the ensemble weights for each relation are searched independently:\n   - **Divide**: The dataset is divided into subsets based on different relations.\n   - **Search**: Ensemble weights are optimized for each relation based on their performance on the validation set.\n   - **Combine**: The searched weights are then combined to generate a final ranking for testing entities.\n\n3. **Optimization of Ensemble Weights**: The method introduces a specific optimization problem for learning relation-wise ensemble weights. The objective is formulated to maximize the mean reciprocal rank (MRR) for positively ranked triplets. By assigning different weights α_r to different models for each relation r, the approach allows each embedding model to specialize in specific relations, leading to enhanced overall performance.\n\n4. **Algorithm Structure**: The paper outlines the complete procedure of the RelEns-DSC algorithm, detailing the steps of dividing the dataset, searching for optimal weights independently, and combining results for evaluation. This is designed to efficiently manage the computational complexity often associated with ensemble learning.\n\n5. **Empirical Performance**: Though the experimental results are excluded in this summary, the method claims to simplify the search space in comparison to traditional ensemble methods, allowing for better efficiency and performance gains specifically in relation to knowledge graph embeddings.\n\nThrough these approaches, the paper emphasizes that the utilization of relation-specific ensemble weights enables improved performance in knowledge graph embedding tasks by leveraging the strengths of different base models according to the specific relational characteristics they are meant to represent."
+}

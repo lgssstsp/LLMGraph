@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Jackknife Uncertainty Quantification for Graph Convolutional Networks",
+        "authors": [
+            "Author A",
+            "Author B"
+        ],
+        "affiliations": [
+            "University X"
+        ],
+        "abstract": "We present a novel framework to quantify uncertainty in Graph Convolutional Networks (GCN) using frequentist principles. Unlike existing methods, our approach allows for post-hoc uncertainty quantification without requiring additional model parameters or training modifications. Our framework effectively improves GCN performance in node classification and benefits applications such as active learning.",
+        "keywords": [
+            "Graph Convolutional Networks",
+            "Uncertainty Quantification",
+            "Frequentist Methods",
+            "Active Learning",
+            "Node Classification"
+        ],
+        "year": "2023",
+        "venue": "Conference Y",
+        "doi link": null,
+        "method name": "Jackknife Uncertainty Quantification"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks (GNNs)",
+            "Uncertainty Quantification"
+        ],
+        "related papers": "[Kipf & Welling, 2017, Defferrard et al., 2016, Zhao et al., 2020, Stadler et al., 2021]",
+        "comparisons with related methods": "Our method does not require additional model retraining and can be applied post-hoc, unlike existing methods where parameterization such as Dirichlet distributions or learning a teacher network is required."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a frequentist-based approach to quantify uncertainty in Graph Convolutional Networks using jackknife resampling. The proposed method allows for efficient and accurate estimation of prediction uncertainty without altering the underlying model architecture, making it a suitable tool for enhancing task performance in areas like node classification and active learning.",
+        "research purpose": "To develop a method that quantifies uncertainty in GCNs using a post-hoc frequentist approach.",
+        "research challenge": "Existing methods require altering GCN training procedures and additional parameters, which our method aims to overcome.",
+        "method summary": "A jackknife resampling-based approach that leverages influence functions to estimate uncertainty without additional training burden.",
+        "conclusion": "The proposed method effectively distinguishes between aleatory and epistemic uncertainty and can generalize to various applications beyond node classification."
+    },
+    "Method": {
+        "description": "We propose a post-hoc frequentist framework leveraging jackknife resampling to measure uncertainty in GCNs. This approach uses influence functions to estimate the variability of model parameters and predictions, providing a reliable uncertainty measure without retraining the network.",
+        "problem formultaion": "Traditional GCN models overlook prediction uncertainty, essential for applications like fraud detection. This tool fills that gap by accurately quantifying predictive uncertainty.",
+        "feature processing": null,
+        "model": "A Graph Convolutional Network (GCN) framework employing jackknife resampling and influence functions for uncertainty measurement.",
+        "tasks": [
+            "Node Classification",
+            "Active Learning"
+        ],
+        "theoretical analysis": "Our method builds upon the GCN framework and extends it by applying frequentist jackknife resampling to measure uncertainty, with theoretical backing from jackknife estimator properties.",
+        "complexity": null,
+        "algorithm step": "Computes influence functions for estimating model parameter variability, determining a node's predictive confidence interval."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "Pubmed",
+            "Reddit"
+        ],
+        "baselines": [
+            "AGE",
+            "ANRMAB",
+            "Coreset",
+            "SOPT-GCN",
+            "Random"
+        ],
+        "evaluation metric": "Micro-F1 score and time/memory efficiency measures.",
+        "setup": "We evaluate the method on benchmark datasets for active learning and node classification tasks.",
+        "hyperparameters": "Coverage parameter (\n \n$\n \nα\n \n$\n \n) and scale factor hyperparameter (\n \n$\n \nτ\n \n$\n \n).",
+        "results": "The proposed method demonstrates superior performance in terms of Micro-F1 scores across various datasets when compared to baselines, especially when label budgets are small.",
+        "performance": "Proposed method achieves higher performance in effective labeling for node classification and leverages high uncertainty measurement for active learning.",
+        "analysis": "By interpreting uncertainty as a variance measure, this method selects pivotal training nodes contributing to improved GCN performance.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "We have effectively quantified uncertainty in GCNs using a frequentist jackknife approach, beneficial for high-stake applications.",
+        "future work": "The approach's potential to extend beyond GCNs to other learning models and tasks is a promising direction for future research."
+    }
+}

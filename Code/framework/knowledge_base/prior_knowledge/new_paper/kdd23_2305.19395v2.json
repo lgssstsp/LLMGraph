@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Learning with Noisy Supervision for Fine-Tuning Pre-trained Language Models",
+        "authors": [
+            "Author A",
+            "Author B"
+        ],
+        "affiliations": [
+            "University of Tech",
+            "Institute of AI"
+        ],
+        "abstract": "We explore techniques for fine-tuning pre-trained language models (PLMs) on noisy-labeled datasets to overcome overfitting challenges in natural language processing tasks.",
+        "keywords": [
+            "Noisy Labels",
+            "Language Models",
+            "Deep Learning",
+            "Fine-Tuning",
+            "Robust Learning"
+        ],
+        "year": "2023",
+        "venue": "Venue Name",
+        "doi link": "doi-link-example",
+        "method name": "\\ours (Our Method)"
+    },
+    "relate work": {
+        "related work category": [
+            "Noise Transition Matrix Estimation",
+            "Regularization from Multiple Models",
+            "Training Dynamics for Data Cleaning"
+        ],
+        "related papers": "Numerous studies have been made regarding learning from noisy-labeled data.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents \\ours, a novel approach for the denoised fine-tuning of pre-trained language models (PLMs) using training dynamic patterns and generative models.",
+        "research purpose": "To address challenges in fine-tuning PLMs using noisy-labeled datasets, minimizing overfitting and enhancing model robustness.",
+        "research challenge": "Fine-tuning PLMs with noisy labels is challenging as it leads to overfitting, causing reduced performance.",
+        "method summary": "\\ours models dynamic patterns in embedding spaces during training to distinguish noisy from clean samples, enhancing robustness by converting noisy predictions into true labels through a generative model.",
+        "conclusion": "\\ours significantly improves model robustness and accuracy over state-of-the-art baselines across different datasets and noise ratios."
+    },
+    "Method": {
+        "description": "Our approach proposes a noise-robust fine-tuning of PLMs using dynamic patterns in embeddings to distinguish between clean and noisy samples.",
+        "problem formultaion": "Fine-tuning PLMs with noisy labels often leads to overfitting and model performance degradation.",
+        "feature processing": "Dynamic patterns in hidden embeddings are analyzed to differentiate between clean and noisy samples.",
+        "model": "\\ours (Dynamics-enhanced Generative Model)",
+        "tasks": [
+            "Text Classification",
+            "Noisy Label Identification"
+        ],
+        "theoretical analysis": "Dynamic patterns during training serve as vital indicators in modeling the transition from noisy to true labels.",
+        "complexity": null,
+        "algorithm step": "Utilizes a two-stage process: initial standard noisy-supervised training to encode dynamic patterns and a generative model-driven re-calibration of noisy to true labels."
+    },
+    "Experiments": {
+        "datasets": [
+            "20newsgroup",
+            "AG News",
+            "ChemProt",
+            "TREC",
+            "SemEval"
+        ],
+        "baselines": [
+            "Base",
+            "Co-Training",
+            "JoCoR",
+            "CR",
+            "NPC",
+            "CR w/ NPC"
+        ],
+        "evaluation metric": "Accuracy improvement",
+        "setup": "Experiments with synthetic and real-world noisy datasets across different noise ratios using noisy-supervised and generative models.",
+        "hyperparameters": null,
+        "results": "\\ours achieves significant accuracy improvement over existing baselines on datasets with synthetic and real-world noisy labels.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "This paper proposes \\ours, a novel method for effectively fine-tuning PLMs under noisy supervision by leveraging training dynamic patterns.",
+        "future work": "Future research could explore extending \\ours to other modalities such as images or audio."
+    }
+}

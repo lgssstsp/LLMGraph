@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "An Unsupervised Learning Framework for Solving the Maximum Minimal Cut Problem",
+        "authors": [
+            "Xin Wang",
+            "Yue Wang",
+            "Miao Wang",
+            "Kai Zhang"
+        ],
+        "affiliations": [
+            "State Grid Corporation of China",
+            "Chinese Academy of Sciences"
+        ],
+        "abstract": "This paper introduces PIONEER, a novel framework combining unsupervised learning and heuristics to address the Maximum Minimal Cut Problem (MMCP). The framework simplifies graphs through partitioning, applies unsupervised learning combined with a robust solver for learning, and improves the quality with a heuristic solver. Extensive experiments on synthetic and real-world datasets demonstrate the effectiveness and efficiency of PIONEER in yielding high-quality solutions across different graph structures. The method offers a fast, high-quality solution without the need for labeled datasets.",
+        "keywords": [
+            "Unsupervised Learning",
+            "Heuristics",
+            "Maximum Minimal Cut Problem",
+            "Graph Theory",
+            "Combinatorial Optimization"
+        ],
+        "year": "2023",
+        "venue": "Research Article",
+        "doi link": null,
+        "method name": "PIONEER Framework"
+    },
+    "relate work": {
+        "related work category": [
+            "Maximum Minimal Cut Problem (MMCP)",
+            "Combinatorial Optimization (CO) Solver"
+        ],
+        "related papers": "Duarte et al. (2021) examined the complexity of MMCP on planar bipartite graphs, Flynn et al. (2017) focused on simple 3-connected graphs. For solving CO problems, Gao et al. (2022) and Zhang et al. (2020) utilized dynamic and sealing approaches respectively.",
+        "comparisons with related methods": "Unlike existing solvers, PIONEER combines unsupervised learning and heuristic strategies to tackle MMCP without the need for labeled data. The complexity analyzes and computational advantages make it stand out from traditional heuristics and modern neural approaches."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research introduces PIONEER, a framework for solving MMCP using unsupervised learning and heuristics. It simplifies graph structures for computational efficiency and achieves high-quality solutions validated through comprehensive experiments.",
+        "research purpose": "To address the computational intractability of finding exact solutions for MMCP by developing a high-performing framework that combines unsupervised learning with heuristics, thereby avoiding the NP-hard challenge.",
+        "research challenge": "Although neural networks can solve CO problems, effectively encoding bi-connectivity constraints remains complex and unsolved. The lack of methods to efficiently decode and process relaxed neural network solutions further complicates solving MMCP.",
+        "method summary": "PIONEER simplifies the graph using bridge removal, applies unsupervised learning with relaxation-and-rounding techniques, and leverages heuristics to enhance the initial solutions, effectively discovering satisfied solutions across diverse graph structures.",
+        "conclusion": "PIONEER demonstrates significant improvements over current methods, offering faster and higher-quality solutions without requiring labeled datasets. It opens avenues for future research on unsupervised learning in other complex graph structures."
+    },
+    "Method": {
+        "description": "PIONEER combines unsupervised learning and heuristics to effectively solve MMCP, leveraging graph partitioning and heuristic tree transformations to streamline the process.",
+        "problem formultaion": "The MMCP requires division of a graph into two connected subgraphs with maximized connecting edges between them, maintaining bi-connectivity post-separation.",
+        "feature processing": "Graph partitioning simplifies the graph into smaller components devoid of bridges, aiding computational efficiency and solving complexity.",
+        "model": "A neural network model is employed within the unsupervised learning framework to output relaxed solutions, which are then optimized through rounding methods and heuristic enhancements.",
+        "tasks": [
+            "Graph Partitioning",
+            "Learning via Unsupervised Combinatorial Solver",
+            "Heuristic Tree Transformation"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The graph partitioning accelerates the solving process by reducing problem size, with time complexity of heuristic solvers approximated at O(n^3 + n^2 * m log n).",
+        "algorithm step": "1. Remove bridges to form subgraphs. 2. Use unsupervised learning for initial solutions. 3. Optimize through heuristic transformations."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Mnist dataset",
+            "ENZYMES dataset",
+            "IMDB dataset",
+            "REDDIT dataset"
+        ],
+        "baselines": [
+            "Brute Force Algorithm",
+            "Random Tree Search",
+            "Genetic Algorithm"
+        ],
+        "evaluation metric": "Cut-set value, execution time per graph.",
+        "setup": "Experiments conducted on both synthetic graphs mimicking pictures in MNIST and complex real-world datasets, utilizing Ubuntu with NVIDIA GeForce RTX 3090.",
+        "hyperparameters": null,
+        "results": "PIONEER consistently provides superior solutions with lower computational time across various graph datasets, surpassing methods like random tree search and genetic algorithms.",
+        "performance": "Demonstrates competitive performance, displaying significant time advantages and maintaining quality solutions without labeled inputs.",
+        "analysis": "The analysis highlights PIONEER's ability to efficiently leverage unsupervised learning and heuristics, showcasing potential broader applications in network analysis.",
+        "ablation study": "Presented further insights into the unsupervised solver's efficiency and deterministic rounding's impact, emphasizing the importance of combining both unsupervised and heuristic methods."
+    },
+    "conclusion": {
+        "summary": "PIONEER introduces a novel method using unsupervised learning and heuristics to adeptly solve the MMCP. The framework processes graphs, ensuring quick, quality solutions even without labeled inputs.",
+        "future work": "Future research will focus on enhancing the unsupervised solver's capability with sparse graphs and exploring deeper correlations between optimal solutions and graph spanning trees."
+    }
+}

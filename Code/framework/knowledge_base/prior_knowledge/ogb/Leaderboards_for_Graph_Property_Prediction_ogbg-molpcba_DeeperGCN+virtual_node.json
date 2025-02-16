@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molpcba",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 18,
+    "Method": "DeeperGCN+virtual node",
+    "External Data": "No",
+    "Test Accuracy": "0.2781 ± 0.0038",
+    "Validation Accuracy": "0.2920 ± 0.0025",
+    "Contact": "mailto:guohao.li@kaust.edu.sa",
+    "Paper Link": "https://arxiv.org/abs/2006.07739",
+    "Code Link": "https://github.com/lightaime/deep_gcns_torch/tree/master/examples/ogb",
+    "Parameters": "5,550,208",
+    "Hardware": "NVIDIA Tesla V100 (32GB GPU)",
+    "Date": "Aug 11, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molpcba/DeeperGCN+virtual_node.pdf",
+    "Paper Summary": "The paper proposes the **DeeperGCN** architecture, enhancing the training of very deep Graph Convolutional Networks (GCNs) by addressing key challenges such as vanishing gradients, over-smoothing, and overfitting.\n\n### Key Methods:\n\n1. **Generalized Aggregation Function**:\n   - Introduces a **differentiable generalized aggregation function** that unifies various message aggregation operations (like mean and max).\n   - This function is **permutation invariant**, enabling flexible tuning for different tasks.\n\n2. **Novel Normalization Layer**:\n   - Proposes **MsgNorm**, a message normalization layer that improves performance by normalizing aggregated messages during the vertex update phase.\n   - This layer normalizes the features of the aggregated message, enhancing the overall robustness of the GCN model.\n\n3. **Modified Residual Connections**:\n   - Adapts **pre-activation versions of residual connections** specifically for GCNs to better handle the ordering of operations.\n   - This variation helps maintain a wider output range of residual functions, aiding in more effective gradient flow during training.\n\n4. **Dynamic Aggregation**:\n   - Implements **DyResGEN**, allowing the model to dynamically learn parameters of the aggregation functions (e.g., β for **SoftMax** and p for **PowerMean**). This adaptability ensures that the model can fine-tune its aggregators based on the dataset.\n\n5. **Message Construction and Aggregation**:\n   - The paper details message construction functions that ensure positive message features, essential for applying the generalized mean-max aggregation functions effectively.\n   - It constructs messages by combining node features and adjacent node features, followed by utilizing the generalized aggregation functions to derive a new feature representation.\n\n6. **Pipeline Integration**:\n   - The integration encompasses a flow of operations: message construction → aggregation → normalization → activation, to foster better training dynamics and deeper network stackability.\n\nThese design choices culminate in a model capable of training deeper GCNs, enhancing their representation capabilities across diverse tasks in the realm of graph learning."
+}

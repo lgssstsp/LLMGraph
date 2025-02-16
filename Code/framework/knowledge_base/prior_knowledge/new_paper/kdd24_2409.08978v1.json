@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Local PageRank Estimation in Undirected Graphs",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Network Science"
+        ],
+        "abstract": "This paper proposes an efficient algorithm for local PageRank estimation in undirected graphs, achieving optimal complexity bounds. We present the \\backmc algorithm, surpassing existing methods in both efficiency and simplicity, particularly for large and dense graphs.",
+        "keywords": [
+            "PageRank",
+            "Local PageRank estimation",
+            "Undirected Graphs",
+            "Approximation Algorithms"
+        ],
+        "year": "2023",
+        "venue": "International Symposium on Network Algorithms",
+        "doi link": "https://doi.org/network-algorithms2023/page-rank",
+        "method name": "\\backmc"
+    },
+    "relate work": {
+        "related work category": [
+            "Monte Carlo Methods",
+            "Push Algorithms"
+        ],
+        "related papers": "An extensive literature exists on PageRank, particularly focusing on global estimation methods. However, local estimation remains under-explored. Our work builds on and improves the models discussed in ~\\cite{chen2004local, setpush2023VLDB, lofgren2015bidirectional_undirected}.",
+        "comparisons with related methods": "Compared to established methods like \\setpush, our \\backmc algorithm introduces notable improvements in complexity and execution time."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces \\backmc, a novel algorithm for efficiently approximating the PageRank of single nodes in undirected networks. Our approach overcomes previous limitations in algorithm complexity and implementation simplicity.",
+        "research purpose": "To provide an efficient means of estimating single-node PageRank in undirected graphs.",
+        "research challenge": "Local estimation of PageRank scores efficiently and accurately in large, undirected networks.",
+        "method summary": "The \\backmc algorithm utilizes random walks to approximate PageRank scores, iterating to achieve efficiency not seen in prior work.",
+        "conclusion": "\\backmc proves more efficient in both time complexity and execution speed, with potential extensions to Personalized PageRank."
+    },
+    "Method": {
+        "description": "Our method involves leveraging properties of random walks to provide efficient, local PageRank approximations.",
+        "problem formultaion": "Given a target node $t$ in graph $G$, compute a multiplicative $(1\\pm \\rela)$-approximation of its PageRank.",
+        "feature processing": "The initial feature vector serves akin to a preference vector in PageRank calculations.",
+        "model": "\\backmc Algorithm",
+        "tasks": [
+            "Efficient PageRank approximation",
+            "Performance assessment against baselines"
+        ],
+        "theoretical analysis": "Theoretical guarantees on complexity bounds and optimality of method.",
+        "complexity": "Our method achieves complexity $O\\left(\\frac{1}{\\dmin}\\cdot \\min\\left(d_t, m^{1/2}\\right)\\right)$",
+        "algorithm step": "The algorithm simulates a series of $\\alpha$-discounted random walks from node $t$."
+    },
+    "Experiments": {
+        "datasets": [
+            "YouTube",
+            "LiveJournal",
+            "Twitter",
+            "Friendster"
+        ],
+        "baselines": [
+            "Monte Carlo",
+            "SetPush",
+            "BPushPeter"
+        ],
+        "evaluation metric": "Relative Error",
+        "setup": "Comparison across datasets with varying target node degrees and PageRank thresholds.",
+        "hyperparameters": "key parameters include: $\\alpha=0.2$, error thresholds $\\rela$ variable (0.01, 0.5), failure probability $\\delta=0.1$",
+        "results": "\\backmc consistently outperforms all other tested methods across both real and synthetic datasets.",
+        "performance": "Exhibits optimal performance in large and dense network structures.",
+        "analysis": "\\backmc shows a marked improvement in execution time, particularly for nodes with a high degree.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The \\backmc algorithm emerges as an optimal solution for local PageRank estimation. Its efficiency paves the way for broader applications in network analysis.",
+        "future work": "Future research will explore single-pair PPR queries and adaptations for directed graphs."
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Exploring Group Consensus Behind Group-Item and User-Item Interactions for Improved Recommendations",
+        "authors": [
+            "Xiaohui Zhang",
+            "Min Chen",
+            "Long Zhang",
+            "Ke Tang"
+        ],
+        "affiliations": [
+            "School of Computer Science, Fudan University, Shanghai",
+            "Alibaba Group",
+            "ByteDance Ltd."
+        ],
+        "abstract": "In this paper, we focus on exploring group consensus behind group-item and user-item interactions to improve the performance and meaningfulness of recommendations. Our proposed model, ConsRec, addresses existing limitations by employing multi-view modeling and a novel hypergraph learning architecture to capture group consensus and provide effective member-level aggregation. Extensive experiments on two public datasets show the efficiency and effectiveness of our model.",
+        "keywords": [
+            "Group recommendation",
+            "Consensus modeling",
+            "Hypergraph learning",
+            "Multi-view modeling"
+        ],
+        "year": "2023",
+        "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+        "doi link": null,
+        "method name": "ConsRec"
+    },
+    "relate work": {
+        "related work category": [
+            "Preference Aggregation",
+            "Recent Directions"
+        ],
+        "related papers": "[AGREE], [SoAGREE], [MoSAN], [Voting], [GAME], [HyperCube], [HCR], [HyperGroup], [HHGR], [GroupIM], [HyperCube], [COM], [PIT], [UL_ALL]",
+        "comparisons with related methods": "The proposed ConsRec demonstrates superior performance by combining multi-view modeling with hypergraph learning, addressing previous limitations in capturing group consensus and providing efficient member-level aggregation."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel approach to the group recommendation task by capturing the underlying group consensus through innovative multi-view modeling and hypergraph learning architecture, leading to improved recommendation performance.",
+        "research purpose": "To enhance recommendation performance by exploring and capturing group consensus in group-item and user-item interactions.",
+        "research challenge": "Addressing the limitations of current systems that fail to holistically model group consensus and provide efficient member-level aggregation.",
+        "method summary": "ConsRec uses multi-view modeling to capture group consensus through three novel views: member-level aggregation, item-level interests, and group-level inherent preferences. A hypergraph neural network further aids in efficient and expressive member-level aggregation.",
+        "conclusion": "The ConsRec model outperforms baseline methods in capturing and modeling group consensus, providing superior recommendation performance."
+    },
+    "Method": {
+        "description": "ConsRec is designed to explore group consensus behind interactions by employing a multi-view modeling strategy. Each view is targeted at addressing different facets of group consensus, leading to a comprehensive and accurate representation.",
+        "problem formultaion": "The problem is formulated as effectively aggregating user preferences to reflect a group's collective interest while maintaining individual member impact.",
+        "feature processing": "Features are processed through multiple graph views, utilizing a novel hypergraph learning architecture for efficient aggregation.",
+        "model": "The model incorporates member-level, item-level, and group-level views, with graph neural networks enhancing representation learning.",
+        "tasks": [
+            "Group consensus modeling",
+            "Efficient recommendation generation"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The method wins in efficiency compared to traditional attention-focused strategies, enhancing computational feasibility under large datasets.",
+        "algorithm step": "The algorithm iteratively learns via a graph neural network framework, updating embeddings for users, items, and groups while capturing consensus across the three defined views."
+    },
+    "Experiments": {
+        "datasets": [
+            "Mafengwo",
+            "CAMRa2011"
+        ],
+        "baselines": [
+            "Popularity",
+            "NCF",
+            "AGREE",
+            "HyperGroup",
+            "HCR",
+            "GroupIM",
+            "[S$^{2}$]-HHGR",
+            "CubeRec"
+        ],
+        "evaluation metric": "Hit Ratio (HR), Normalized Discounted Cumulative Gain (NDCG)",
+        "setup": "Experiments are conducted on real-world datasets, evaluating the model's performance across standard metrics compared to baselines.",
+        "hyperparameters": "Embedding dimension set to 32, convolutional layers tuned between 1-4, negative sampling set to 8 for optimization.",
+        "results": "ConsRec achieves superior performance in group recommendation tasks on both datasets, demonstrating the efficacy of consensus-based modeling.",
+        "performance": "Outperforms all baselines in group recommendation tasks, achieving higher HR and NDCG scores.",
+        "analysis": "Ablation studies confirm each view's distinct role in enhancing performance; a case study provides insight into the model's consensus capturing ability.",
+        "ablation study": "Each view is evaluated by systematic removal, demonstrating their individual contribution to model performance."
+    },
+    "conclusion": {
+        "summary": "The paper introduces ConsRec, a model that efficiently captures group consensus to enhance recommendation systems. By modeling through multi-view approaches and utilizing hypergraph learning, ConsRec delivers significant improvements over traditional methods, validated by experiments on public datasets.",
+        "future work": "Investigating more complex relationships within groups and expanding model capability to encompass dynamic group formations."
+    }
+}

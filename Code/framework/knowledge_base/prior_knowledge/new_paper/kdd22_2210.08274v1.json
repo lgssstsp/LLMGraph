@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "CLARE: A Framework for Semi-supervised Community Detection",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous Institution"
+        ],
+        "abstract": "This paper explores the semi-supervised community detection problem from a subgraph perspective. We propose a novel framework, CLARE, with two primary components: the Community Locator and Community Rewriter. CLARE uses training data to infer potential communities and refine them using reinforcement learning-based optimization, showcasing improvements over traditional seed-based methods.",
+        "keywords": [
+            "Community Detection",
+            "Semi-supervised Learning",
+            "Subgraph",
+            "Reinforcement Learning"
+        ],
+        "year": "2023",
+        "venue": "Conference on Knowledge Discovery and Data Mining (KDD)",
+        "doi link": null,
+        "method name": "CLARE"
+    },
+    "relate work": {
+        "related work category": [
+            "Community Detection",
+            "Subgraph Matching",
+            "Graph Combinatorial Optimization with RL"
+        ],
+        "related papers": "- Perozzi, B., Al-Rfou, R., & Skiena, S. (2014). DeepWalk: Online Learning of Social Representations. KDD.\n- Blondel, V. D., Guillaume, J. L., Lambiotte, R., & Lefebvre, E. (2008). Fast unfolding of communities in large networks.\n- Zhang, Z., Wang, J., Zhang, B., Wang, X., & Han, J. (2015). Incorporating Label Dependency and Graph Structure into Multi-label Learning. KDD.\n- Jin, W., Gao, F., Zhao, Y., & Xiao, J. (2019). Graph Convolutional Networks Meet Markov Random Fields: Semi-Supervised Community Detection via Deep Learning and Probabilistic Modeling. SIGKDD.",
+        "comparisons with related methods": "The proposed method, CLARE, offers a novel subgraph-based perspective compared to traditional seed-based methods like Bespoke and SEAL, providing more targeted and computationally efficient community detection."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a semi-supervised community detection framework named CLARE, which leverages subgraphs to quickly locate and refine potential communities in a network. The method employs deep reinforcement learning to enhance the accuracy and efficiency of the community detection process.",
+        "research purpose": "The main purpose is to improve community detection in networks by focusing on subgraphs rather than relying on individual seed nodes, thereby increasing both the precision and efficiency of detecting targeted communities.",
+        "research challenge": "Traditional community detection algorithms struggle to isolate specific community types within networks; semi-supervised methods are sensitive to seed quality and computational overhead.",
+        "method summary": "CLARE consists of a Community Locator that encodes community similarities into vectors and a Community Rewriter that uses reinforcement learning to fine-tune community structures.",
+        "conclusion": "CLARE demonstrates a significant improvement over existing methods, providing accurate and efficient community detection in both targeted and general contexts."
+    },
+    "Method": {
+        "description": "CLARE is a semi-supervised community detection framework that identifies targeted communities through subgraph matching and refinement.",
+        "problem formultaion": "Given a graph, the goal is to identify communities similar to labeled training communities using subgraph-based methods for targeted community detection.",
+        "feature processing": null,
+        "model": "The CLARE model comprises a Community Locator for initial detection and a Community Rewriter for refinement using reinforcement learning.",
+        "tasks": [
+            "Community Detection",
+            "Subgraph Matching",
+            "Reinforcement Learning"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Train the Community Locator to encode subgraphs. 2. Use the locator to identify potential community subgraphs. 3. Apply the Community Rewriter to refine those using reinforcement learning."
+    },
+    "Experiments": {
+        "datasets": [
+            "Amazon",
+            "DBLP",
+            "Livejournal",
+            "Amazon+DBLP",
+            "DBLP+Livejournal"
+        ],
+        "baselines": [
+            "BigClam",
+            "ComE",
+            "CommunityGAN",
+            "vGraph",
+            "Bespoke",
+            "SEAL"
+        ],
+        "evaluation metric": "F1 Score, Jaccard Score, ONMI",
+        "setup": "Experiments conducted on both single and hybrid datasets, comparing CLARE against strong standard and semi-supervised detection baselines.",
+        "hyperparameters": "Embedding dimension: 64; Learning rate for locator: 1e-4; Maximum size of outer boundary: 10; Margin parameter: 0.4.",
+        "results": "CLARE achieves significant improvements in detecting targeted communities compared to baselines, demonstrating robust performance under various conditions.",
+        "performance": "Outperforms traditional methods, especially on hybrid datasets, maintaining high accuracy and efficiency.",
+        "analysis": "CLARE's unique subgraph approach and reinforcement learning refinement enhance its scalability and adaptability across diverse datasets.",
+        "ablation study": "Removing the Community Rewriter leads to a noticeable performance drop, indicating its importance for refining community structures."
+    },
+    "conclusion": {
+        "summary": "CLARE offers a novel framework for semi-supervised community detection, shifting from seed-based to subgraph-based methodologies, achieving greater accuracy and efficiency.",
+        "future work": "Exploring other RL techniques to further optimize the Community Rewriter and testing on larger attributed datasets."
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Spatio-temporal Diffusion Point Processes (DSTPP)",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous Institute"
+        ],
+        "abstract": "This paper introduces Spatio-temporal Diffusion Point Processes (DSTPP), a novel framework for effectively learning spatio-temporal joint distributions without requiring independence assumptions or Monte Carlo sampling. The method excels at addressing structural limitations present in existing frameworks by employing a diffusion model paradigm that allows for easy training and closed-form sampling. Experimental results across diverse datasets showcase DSTPP's superior performance over state-of-the-art Spatio-temporal Point Process (STPP) models.",
+        "keywords": [
+            "Spatio-temporal point processes",
+            "Diffusion models",
+            "Probability distribution",
+            "Machine Learning",
+            "Denoising"
+        ],
+        "year": "2023",
+        "venue": "To be published",
+        "doi link": null,
+        "method name": "Spatio-temporal Diffusion Point Processes"
+    },
+    "relate work": {
+        "related work category": [
+            "Spatio-temporal Point Processes",
+            "Denoising Diffusion Models"
+        ],
+        "related papers": "Reference works on temporal point processes and diffusion models form the backbone of this study, drawing from resources like Mei's Neural Hawkes Process, and Ho's denoising diffusion models.",
+        "comparisons with related methods": "Compared to existing spatio-temporal point process models like Neural Hawkes Process and DeepSTPP, DSTPP differentiates itself by removing structural restrictions, allowing for joint distribution modeling without assumptions."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes a new approach to modeling spatio-temporal events through the DSTPP framework, capitalizing on denoising diffusion probabilistic models to capture joint distributions, overcoming typical limitations seen in traditional models.",
+        "research purpose": "To develop a novel modeling paradigm that can effectively address the spatio-temporal joint distribution in point processes.",
+        "research challenge": "The main challenges entail managing large sample spaces inherent in spatio-temporal distributions and capturing complex coupling correlations between time and space.",
+        "method summary": "DSTPP employs a diffusion-based approach to break down complex spatio-temporal distributions into manageable modeling tasks, improving prediction and adaptability over traditional methods.",
+        "conclusion": "The proposed DSTPP framework establishes new standards for modeling spatio-temporal processes by effortlessly addressing joint distribution complexities and delivering superior prediction capabilities."
+    },
+    "Method": {
+        "description": "DSTPP leverages denoising diffusion probabilistic models to learn spatio-temporal joint distributions effectively. It restructures complex distributions into simplified forms through a series of Markov chain steps, capturing both space and time aspects adaptively.",
+        "problem formultaion": "Concerned with learning spatio-temporal joint probability distributions that efficiently represent event sequences considering both temporal and spatial domains.",
+        "feature processing": "Utilizes positional encoding for time and linear embedding for space; incorporates these into a self-attention network to handle multi-dimensional input for effective processing.",
+        "model": "Spatio-temporal Diffusion Point Processes (DSTPP)",
+        "tasks": [
+            "Modeling joint spatio-temporal distributions",
+            "Analyzing spatio-temporal interdependencies",
+            "Predictive modeling of point processes"
+        ],
+        "theoretical analysis": "The framework essentially removes previous model constraints, allowing for joint learning of space-time distributions.",
+        "complexity": "DSTPP's design minimizes computational overhead typical in spatio-temporal models by simplifying distributions at each modeling step without needing extensive sampling techniques.",
+        "algorithm step": "The framework involves encoding spatio-temporal data, iteratively applying diffusion models across Markov steps, and utilizing co-attentive mechanisms for final distribution predictions."
+    },
+    "Experiments": {
+        "datasets": [
+            "Earthquake records in Japan",
+            "COVID-19 spread records in New Jersey",
+            "Citibike data from New York City",
+            "Simulated Hawkes Gaussian Mixture Model data",
+            "Atlanta Crime Data"
+        ],
+        "baselines": [
+            "Conditional Kernel Density Estimation (KDE)",
+            "Continuous Normalizing Flow (CNF)",
+            "Poisson Process",
+            "Hawkes Process",
+            "Neural Jump Stochastic Differential Equations (NJSDE)",
+            "DeepSTPP"
+        ],
+        "evaluation metric": "Negative Log-Likelihood (NLL) and RMSE for temporal; Euclidean Distance for spatial predictions.",
+        "setup": "Experiments are conducted on both synthetic and real-world datasets, engaging multiple baselines for comprehensive evaluations.",
+        "hyperparameters": "Reported optimization with diffusion steps, embedding sizes, and learning rates adjusted per dataset.",
+        "results": "DSTPP surpasses competing models by consistently reducing NLL scores and prediction errors across various experiment settings, proving efficient in continuous and discrete space scenarios.",
+        "performance": "Achieves remarkable gains over existing methodologies, particularly in its flexible approach to modeling spatio-temporal interdependence.",
+        "analysis": "In-depth analysis affirms DSTPP's ability to dynamically adapt joint space-time interactions through co-attention mechanisms.",
+        "ablation study": "Explores the effects of modeling choices such as the joint spatio-temporal dependency and diffusion step configurations."
+    },
+    "conclusion": {
+        "summary": "The DSTPP framework marks a significant breakthrough in how spatio-temporal processes are modeled, capturing the essence of joint distributions without assumptions previously necessary, and showing superior performance over established methods.",
+        "future work": "Future research could see the DSTPP framework applied to large-scale natural systems like climate change observations and ocean currents."
+    }
+}

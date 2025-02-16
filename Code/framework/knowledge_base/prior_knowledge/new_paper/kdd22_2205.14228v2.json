@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Weakly Supervised Named Entity Recognition (NER) with Sparse-CHMM",
+        "authors": [
+            "Yinghao Li",
+            "other authors"
+        ],
+        "affiliations": [
+            "Some University"
+        ],
+        "abstract": "This work introduces \\ours, a weakly supervised model for named entity recognition (NER) that relies on BERT embeddings for enhanced token contextualization. \\ours contrasts with existing models by employing a sparse emission matrix, capturing both the reliability and misclassification probabilities of labeling functions (LFs). A three-stage training strategy with Dirichlet sampling further aids in stabilization and optimization. Our method outperforms baseline models across multiple datasets, showing superior recall, efficiency, and adaptability in processing weakly labeled datasets.",
+        "keywords": [
+            "Named Entity Recognition",
+            "Weak Supervision",
+            "Labeling Functions",
+            "Hidden Markov Models",
+            "Deep Learning"
+        ],
+        "year": "2023",
+        "venue": "ACM Conference on Computation",
+        "doi link": null,
+        "method name": "\\ours"
+    },
+    "relate work": {
+        "related work category": [
+            "Weak Supervision",
+            "Named Entity Recognition",
+            "Graphical Models"
+        ],
+        "related papers": "Ratner et al., 2016; Nguyen et al., 2017; Parker & Yu, 2021",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research paper presents \\ours, a novel method for weakly supervised named entity recognition combining BERT embeddings with sparse conditional hidden Markov models (CHMM).",
+        "research purpose": "To improve the efficiency and accuracy of NER by leveraging weak supervision and adaptable emission matrices.",
+        "research challenge": "Existing methods struggle with capturing semantic nuances without extensive labeled data.",
+        "method summary": "\\ours uses BERT embeddings for token representation, predicts sparse emission matrices, and incorporates Dirichlet sampling to improve model robustness.",
+        "conclusion": null
+    },
+    "Method": {
+        "description": "\\ours is built on CHMM but uses BERT embeddings and a sparsity-driven approach in predicting labeling functions' emission and transition matrices, enhancing performance on weakly supervised NER tasks without clutter from non-critical parameters.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "\\ours leverages BERT embeddings and is evaluated through a CHMM framework, incorporating diagonal and off-diagonal are refined with weighted XOR scores.",
+        "tasks": [
+            "Named Entity Recognition"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "CoNLL 2003",
+            "NCBI-Disease",
+            "BC5CDR",
+            "LaptopReview",
+            "OntoNotes 5.0"
+        ],
+        "baselines": [
+            "Majority Voting",
+            "Snorkel",
+            "HMM",
+            "Conditional HMM",
+            "ConNet"
+        ],
+        "evaluation metric": "Micro-averaged entity-level precision, recall, and F1 scores.",
+        "setup": "Different BERT embeddings applied based on datasets; evaluated using Wrench datasets; training involves three-stage process for model robustness.",
+        "hyperparameters": null,
+        "results": "\\ours provides significant improvements over baselines in F1 score, with an average improvement of 3.01 across datasets. It effectively predicts entities not observed by any LF.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\ours advances NER tasks using weak supervision, capitalizing on model adaptability and reduced reliance on heavily annotated data.",
+        "future work": "Future research may explore enhancement using heuristic knowledge and the extension of \\ours into broader sequence labeling tasks."
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "meta_data": {
+        "title": "Introduction",
+        "authors": [],
+        "affiliations": [],
+        "abstract": "For experimental and industrial systems, reducing sensor requirements while maintaining optimal control performance is crucial for human experts to understand target systems and potentially transpose these techniques to industrial cases. It is one of human beings' most critical intellectual activities, i.e., extracting knowledge from unknown environments to recognize and exploit the world. To better understand the target system, scientists/engineers use intuition and domain knowledge to identify critical information based on continuous observations of system performance. But for a complex system with massive sensory inputs, this handcrafted solution through trial-and-error is normally time-consuming, costly, and heavily reliant on human expertise. Thus, it is vital to develop an effective and systematic solution to identify relevant sensors without or with minimal human intervention.\n\nNowadays, DRL has shown great success in complex system control problems by combining reinforcement learning and deep learning. The introduction of Deep Neural Networks (DNN) can extract important features from a huge set of raw inputs. Despite its success, the opaque nature of DNN hides the critical information about which sensors are most relevant for control. Existing solutions for sensor selection under DRL have been limited to the recursive sensor set selection and evaluation with certain heuristic algorithms. As their complexity increases rapidly with the number of candidate sensors, these methods are inapplicable for systems with massive possible inputs.\n\nThis requirement is similar to the Feature Selection (FS) problem in Machine Learning(ML), also known as variable selection or attribute selection. This process aims to select a subset of relevant features with respect to the modeling labels. However, due to the distinctiveness of the control process, choosing a suitable variable as a label is very troublesome. For example, Fig.\\ref{fig:intro} shows a classic flow control problem to reduce the drag and lift of a cylinder by adjusting flow injection/suction with two jets(represented by two red dots) and 151 probes. Firstly, the immediate reward corresponding to the time series state set is often meaningless as a label. The instance injection/suction might not change the immediate reward significantly. Secondly, the goal for control typically uses the discounted cumulative return as a loss function that often has long and uncertain latency and has little relevance to the single-step state. Thus, neither immediate reward nor cumulative return is appropriate as the mandatory training label in most feature selection methods. In later experiments, we also experimentally prove that existing feature selection methods are not suitable in systems with control.\n\nFor effective control, a DRL controller has already learned the relevance of different inputs during its exploration and exploitation. Can we make the hidden knowledge on the relevance of respective sensors explicit and provide qualitative evaluation during DRL training? To address this challenge, we propose a new solution, the Dual-world based Attentive embedded Feature Selection(D-AFS), a general mechanism that enables the DRL controller to interact with the real world and its virtual peer with twisted features. Our method combines general DRL framework and feature selection module, which can identify the contribution of inputs simultaneously with strategy learning process. In summary, our contributions are:\n\nA new direction for embedded feature selection in control: We combine the exploration and exploitation capabilities of DRL with an attention-based feature evaluation module, that qualitatively evaluates the impact of different features by translating feature weight calculation to feature selection probability problem. The method can identify the feature importance of unknown systems for control during DRL's strategy learning process.\n\nA dual-world architecture design: We propose a dual-world architecture that includes real world and virtual world, of which the virtual world is mapped from its real peer by the feature evaluation module. Dual-world enables D-AFS complete feature importance ranking without jeopardizing DRL's strategy exploration.\n\nExcellent results on active flow control: We apply D-AFS with the Proximal Policy Optimization (PPO) algorithm in the case mentioned above. D-AFS/PPO successfully reduces a five-sensor layout from 151 possible probes, with a drag coefficient of 2.938, very close to the theoretical limit of 2.93 without vortex shedding, and achieves 18.7% drag reduction than the state-of-the-art solutions using 151 probes.\nWe also successfully adapt Deep Q-Network(DQN) and Deep Deterministic Policy Gradient (DDPG) into D-AFS, apply them on four OpenAI Gym classical control cases. In all cases, D-AFS selects the same or better sensor subsets than the original expert-based solutions (Gym provided). Results clearly show that our solution can effectively identify system key sensors, improve the interpretability of the target system and reduce the reliance on human expertise.",
+        "keywords": [],
+        "year": "",
+        "venue": "",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Feature Selection in ML",
+            "Optimal Sensor Placement in Flow Control"
+        ],
+        "related papers": "",
+        "comparisons with related methods": "The paper discusses existing feature selection methods in machine learning and sensor placement techniques for control systems, emphasizing the challenges of applying these methods to complex control problems characterized by large data sets and intricate system dynamics. The D-AFS approach is positioned against traditional methods, highlighting how it offers more interpretable feature importance and reduced sensor dependency without sacrificing control quality."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel approach to improve sensor relevancy determination for control systems through a dual-world methodology. This technique allows the integration of deep reinforcement learning (DRL) with feature selection modules, aiming to seamlessly identify and evaluate sensor importance during the learning process. The paper showcases the reduction of sensor requirements while maintaining or improving system efficacy and interpretability.",
+        "research purpose": "The purpose of the research is to develop a systematic solution using dual-world based attentive embedded feature selection for identifying relevant sensors in control systems without or with minimal human intervention.",
+        "research challenge": "Adapting feature selection techniques to identify relevant sensors in complex control tasks, traditionally handled through handcrafted and heuristic algorithms, which often face challenges of scalability and interpretability.",
+        "method summary": "The main method proposed is the Dual-world based Attentive embedded Feature Selection (D-AFS), which leverages deep reinforcement learning to provide qualitative evaluations of sensors by mapping a real-world control environment onto a virtual world for feature selection and relevancy analysis.",
+        "conclusion": "The research successfully demonstrates the application and efficacy of the D-AFS approach in reducing sensor layout complexity without compromising control efficiency, offering a potential shift in how sensor relevance is approached in industrial systems."
+    },
+    "Method": {
+        "description": "The paper introduces the D-AFS method which combines DRL’s exploration capabilities with an attention-based feature selection module to identify relevant features crucial for control tasks.",
+        "problem formultaion": "Given a control system with extensive sensory inputs, the task is to select a subset of relevant sensors that maximizes control performance while minimizing sensor dependency.",
+        "feature processing": "Utilizes deep reinforcement learning strategies, accentuating feature weights to determine sensor relevancy through the interaction of real and virtual system models.",
+        "model": "The model involves a dual-world architecture where a real-world control system is mapped onto a virtual model to ascertain sensor importance in a dynamically controlled environment.",
+        "tasks": [
+            "Active Flow Control",
+            "Classical Control Problems (OpenAI Gym scenarios)"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Active Flow Control System",
+            "OpenAI Gym Control Environments"
+        ],
+        "baselines": [
+            "Standard Proximal Policy Optimization (PPO)",
+            "Deep Q-Network (DQN)",
+            "Deep Deterministic Policy Gradient (DDPG)"
+        ],
+        "evaluation metric": "Control performance metrics, such as drag coefficient, lift coefficient, and recirculation area size, against baseline methods.",
+        "setup": "The experiments include applying D-AFS to reduce the sensor requirements in a flow control system from 151 to 5 sensors while maintaining control efficiency. Further testing was done in OpenAI Gym environments to prove method adaptability.",
+        "hyperparameters": null,
+        "results": "D-AFS effectively reduced sensor layout in active flow control from 151 to 5 probes while achieving a drag reduction rate that surpassed state-of-the-art solutions, demonstrating significant advancements in reducing reliance on expert knowledge and improving interpretability.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The research elucidates a novel approach for sensor relevance determination in control systems, offering a systematic way to minimize sensor usage without undermining system performance. By fusing DRL with a feature selection paradigm, it propounds a significant advancement over traditional methods, enhancing both system efficacy and interpretability.",
+        "future work": "Future endeavors may focus on applying the D-AFS methodology to more complex systems with rigorous sensor requirements and expanding the theoretical framework to automate sensor selection further."
+    }
+}

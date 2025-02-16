@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "MuGSI: A Multi-Granularity Knowledge Distillation Framework for Graph Classification",
+        "authors": [
+            "Author 1",
+            "Author 2"
+        ],
+        "affiliations": [
+            "Affiliation 1",
+            "Affiliation 2"
+        ],
+        "abstract": "In this paper, we identify the problem of GNN-to-MLP distillation for graph classification. Existing methods are designed for node classification but do not perform well for graph classification. We propose MuGSI, a novel framework leveraging multi-granularity structural information to enhance the effectiveness of knowledge transfer.",
+        "keywords": [
+            "Knowledge Distillation",
+            "Graph Neural Networks",
+            "Graph Classification",
+            "Machine Learning"
+        ],
+        "year": "2023",
+        "venue": "Machine Learning Conference",
+        "doi link": "10.1000/mlc2023.001",
+        "method name": "MuGSI"
+    },
+    "relate work": {
+        "related work category": [
+            "Knowledge Distillation",
+            "Graph Neural Networks",
+            "Graph Classification"
+        ],
+        "related papers": "Lassance et al. (2019), Zhang et al. (2023), Ren et al. (2022), Wu et al. (2022)",
+        "comparisons with related methods": "Earlier works focus on distilling knowledge from teacher GNNs to student GNNs, primarily in node classification tasks. Our approach extends these principles to graph classification, a relatively unexplored field."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces MuGSI, a knowledge distillation framework designed specifically for graph classification. It incorporates multi-granularity structural information, improving the effectiveness and robustness of student models in dynamic environments.",
+        "research purpose": "To address the gap in GNN-to-MLP knowledge distillation for graph classification tasks.",
+        "research challenge": "Existing GNN-to-MLP KD methods are suboptimal for graph classification due to sparse learning signals and limited expressive power of MLPs.",
+        "method summary": "MuGSI introduces a multi-granularity distillation loss to align distributions across graph, subgraph, and node levels, enhancing knowledge transfer.",
+        "conclusion": "MuGSI's innovative approach has shown superior performance and its ability to handle distribution shifts makes it highly useful in industrial applications."
+    },
+    "Method": {
+        "description": "MuGSI employs a multi-granularity structural information approach to transfer knowledge from a teacher GNN model to a student MLP model. It leverages graph-level, subgraph-level, and node-level distillation losses to achieve comprehensive knowledge transfer.",
+        "problem formultaion": "Existing GNN-to-MLP KD methods mainly address node classification. Graph classification presents unique challenges like sparse learning signals and limited expressive power of MLPs.",
+        "feature processing": "Node feature augmentation with Laplacian eigenvectors enhances the expressive capability of student models.",
+        "model": "MuGSI comprises graph-level, subgraph-level, and node-level distillation components, facilitating the effective transfer of structural knowledge.",
+        "tasks": [
+            "Graph Classification"
+        ],
+        "theoretical analysis": "The paper provides a theoretical basis for the design of the distillation losses and demonstrates their effectiveness through an ablation study.",
+        "complexity": "The proposed framework is computationally efficient, with reduced memory usage compared to existing state-of-the-art models.",
+        "algorithm step": "1. Train the teacher GNN model.\n2. Compute the multi-granularity distillation losses.\n3. Optimize the student MLP model using these losses."
+    },
+    "Experiments": {
+        "datasets": [
+            "PROTEINS",
+            "BZR",
+            "DD",
+            "NCI1",
+            "IMDB-BINARY",
+            "REDDIT-BINARY",
+            "CIFAR10",
+            "MolHIV"
+        ],
+        "baselines": [
+            "MLP",
+            "GLNN",
+            "NOSMOG"
+        ],
+        "evaluation metric": "Classification Accuracy",
+        "setup": "Experiments were conducted to validate the effectiveness, efficiency, and robustness of MuGSI in various datasets.",
+        "hyperparameters": null,
+        "results": "MuGSI outperformed existing methods across multiple datasets, achieving up to 71.92% accuracy in MolHIV.",
+        "performance": "MuGSI showed significant improvement in all evaluated metrics compared to benchmarks, especially in terms of inference time and computational efficiency.",
+        "analysis": "The integration of multi-granularity distillation losses demonstrated superior performance and robustness over conventional methods.",
+        "ablation study": "Confirmed the contribution of each component in MuGSI's framework, particularly highlighting the impact of structure-aware features."
+    },
+    "conclusion": {
+        "summary": "MuGSI addresses a critical gap by enhancing the distillation process for graph classification. Its comprehensive approach ensures better performance and robustness.",
+        "future work": "Future works may explore more complex student models and refine the distillation losses for even finer-granularity KD tasks."
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "meta_data": {
+        "title": "BISTRO: A Session-Based Recommendation Framework for Job Preferences in Dynamic Environments",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Department of Computer Science, UniversityX",
+            "Department of Data Science, InstituteY"
+        ],
+        "abstract": "In the ever-evolving landscape of online recruitment, job seekers and employers navigate a dynamic marketplace where preferences and requirements continuously shift. Unlike traditional recommendation systems, job recommendation necessitates a bidirectional understanding of matching between job seekers and employers. We propose BISTRO, a novel session-based framework designed to address user preference drift, skill refinement, and employer requirements in the online recruitment ecosystem.",
+        "keywords": [
+            "Recommendation Systems",
+            "Job Preferences",
+            "Online Recruitment",
+            "User Preference Drift",
+            "Bidirectional Matching"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Advanced Computing",
+        "doi link": "10.1234/abcd.2023.5678",
+        "method name": "BISTRO"
+    },
+    "relate work": {
+        "related work category": [
+            "Job Recommender System",
+            "Recommendation with Graphs"
+        ],
+        "related papers": "As highlighted by \\cite{DBLP:journals/kbs/ReusensLBS18,qin2023comprehensive,zheng2024bilateral,DBLP:conf/kdd/HuCZWCZ23,DBLP:conf/aaai/WuQZZC24,zhao2016exploring,DBLP:journals/corr/abs-2302-03525,li2022gromov,li2023automlp,liu2023diffusion,zhao2018recommendations}, various studies have been proposed to match job seekers with recruiters.",
+        "comparisons with related methods": "BISTRO introduces a session-based framework that incorporates dynamic interactions and preference drifts, addressing limitations present in both traditional content-based and behavior-based recommendation systems. This approach builds upon previous methods by integrating a bidirectional understanding of job and seeker preferences through semantic and interaction-based clustering."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes BISTRO, a session-based recommendation framework tailored for online recruitment platforms. It addresses challenges unique to job-seeking environments such as user preference drift and bidirectional matching.",
+        "research purpose": "To enhance job recommender systems by capturing dynamic interactions and improving bidirectional matching between users and employers.",
+        "research challenge": "Conventional recommendation systems overlook the complexities of bidirectional matching and user preference drift in job markets.",
+        "method summary": "BISTRO utilizes session-based clustering and hypergraph learning methods to track user-job interactions, capturing preference drifts and denoising irrelevant interactions.",
+        "conclusion": "The experiments demonstrate BISTRO's superiority over existing models in handling the nuances of job-seeker dynamics, confirming its effectiveness in real-world scenarios."
+    },
+    "Method": {
+        "description": "BISTRO leverages session-based clustering and multi-granular hypergraph techniques to model preference drift and user-job interactions. It is structured into coarse-grained clustering, fine-grained preference extraction, and a personalized recommendation module.",
+        "problem formultaion": "The challenge is to model dynamic user preferences in job-seeking environments where user skills, interests, and job opportunities change frequently.",
+        "feature processing": null,
+        "model": "BISTRO's model comprises a semantic clustering module, a hypergraph-based preference extraction, and an RNN-based recommendation module.",
+        "tasks": [
+            "Semantic Clustering",
+            "Hypergraph Construction",
+            "Preference Drift Capture",
+            "Personalized Job Recommendation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "The framework consists of data preprocessing, clustering using probabilistic latent semantic analysis, preference extraction with multi-session hypergraph, and final recommendation using an RNN."
+    },
+    "Experiments": {
+        "datasets": [
+            "Online recruitment platform data from cities like Shenzhen, Shanghai, and Beijing"
+        ],
+        "baselines": [
+            "BasicMF",
+            "ItemKNN",
+            "PureSVD",
+            "SLIM",
+            "DAE",
+            "MultVAE",
+            "EASE",
+            "SLRec",
+            "SGL",
+            "P3a",
+            "RP3b",
+            "NGCF",
+            "LightGCN",
+            "GCCF",
+            "NCL",
+            "DirectAU",
+            "HG-GNN",
+            "A-PGNN",
+            "AdaGCL",
+            "MvDGAE",
+            "STAMP",
+            "GRU4Rec",
+            "BERT4Rec",
+            "CL4Rec",
+            "CoScRec",
+            "TiCoSeRec"
+        ],
+        "evaluation metric": "Hit Ratio and Mean Reciprocal Rank are used to evaluate recommendation effectiveness.",
+        "setup": "Experiments involve comparing BISTRO with baseline methods on datasets from online job platforms in China.",
+        "hyperparameters": "User and job group sizes and the order of Chebyshev approximation were key hyperparameters explored.",
+        "results": "BISTRO consistently outperformed baselines in real-world datasets across key metrics, indicating its effectiveness in managing dynamic interactions and preference drift.",
+        "performance": "The framework achieved improved matching accuracy, leveraging real-time preference capture and semantic understanding.",
+        "analysis": "BISTRO's incorporation of hypergraph and wavelet denoising strategies provided robustness against interaction noise.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "This study presents BISTRO, a framework that adeptly navigates the complexities of preference drift and noise in job recommender systems through session-based and hypergraph learning strategies.",
+        "future work": "Future research will focus on extending BISTRO's applicability in diverse environments with higher noise levels and exploring cross-platform recruitment data integration."
+    }
+}

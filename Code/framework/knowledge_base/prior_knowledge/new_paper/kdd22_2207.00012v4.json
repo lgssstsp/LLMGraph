@@ -1,0 +1,84 @@
+{
+    "meta_data": {
+        "title": "STABLE: Robust GNNs with Reliable Structure Refinement",
+        "authors": [
+            "First Author",
+            "Second Author",
+            "Third Author"
+        ],
+        "affiliations": [
+            "Institute of AI",
+            "University of Technology",
+            "Graph Research Group"
+        ],
+        "abstract": "Graph neural networks (GNNs) are vulnerable to adversarial attacks that can easily fool the network into misclassification by altering the graph structure or node features. This paper presents a defense model named STABLE, which aims to strengthen GNNs' robustness by refining graph structures using unsupervised representation learning. The STABLE model consists of two parts: a structure learning network that captures robust representations and adjusts the graph structure appropriately, followed by an advanced GCN that enhances performance resilience. Extensive experiments demonstrate that STABLE outperforms existing state-of-the-art methods against various adversarial attacks.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Adversarial Attacks",
+            "Robustness",
+            "Graph Structure Learning",
+            "Contrastive Learning"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "https://doi.org/10.1016/j.artifintell.2023.108303",
+        "method name": "STABLE"
+    },
+    "relate work": {
+        "related work category": [
+            "Robust GNNs",
+            "Graph Contrastive Learning"
+        ],
+        "related papers": "Zugner et al (2018), Dai et al (2018), Wu et al. (2019), Zhu et al. (2022)",
+        "comparisons with related methods": "STABLE utilizes unsupervised contrastive learning for structure refinement, unlike previous methods that focus on end-to-end learning or metric-based pruning using raw features."
+    },
+    "high_level_summary": {
+        "summary of this paper": "In this paper, we propose a robust defense mechanism for graph neural networks named STABLE, which aims at refining the graph structure using unconstrained representation learning. It enhances GNN robustness against adversarial attacks by addressing structure learning through a specially crafted contrastive learning mechanism.",
+        "research purpose": "To enhance the robustness of graph neural networks (GNNs) against adversarial attacks through structure refinement using robust representations.",
+        "research challenge": "Traditional approaches often use supervised signals or raw features for graph refinement, which might not be reliable under adversarial settings.",
+        "method summary": "STABLE leverages a novel contrastive learning method to acquire task-irrelevant representations that are less sensitive to structural perturbations, which are further employed in refining the graph structure.",
+        "conclusion": "STABLE significantly improves the robustness of GNNs, demonstrating increased resilience against a variety of adversarial attacks compared to state-of-the-art methods."
+    },
+    "Method": {
+        "description": "STABLE employs unsupervised representation learning via contrastive methods to refine graph structures for GNNs, aiming to robustify them against adversarial attacks.",
+        "problem formultaion": "How can we make GNNs more robust against adversarial attacks that target node features and graph structures?",
+        "feature processing": "Performs robustness-oriented graph data augmentation by recovering a small fraction of pruned edges.",
+        "model": "Utilizes a one-layer GCN encoder in a contrastive learning framework to derive reliable node representations which are insensitive to adversarial changes.",
+        "tasks": [
+            "Node Classification",
+            "Graph Structure Refinement"
+        ],
+        "theoretical analysis": "Provides insights into the impact of edge insertion/deletion on graph robustness and identifies nodes susceptible to adversarial attacks.",
+        "complexity": "The complexity of each step in the method is addressed by employing task-irrelevant unsupervised learning, which is inherently efficient under large-scale graphs.",
+        "algorithm step": "The process involves pre-processing the graph, learning node representations, refining the graph structure using similarity scores, conducting robustness-oriented augmentations, and implementing advanced GCN for the final classification."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "PubMed",
+            "Polblogs"
+        ],
+        "baselines": [
+            "GCN",
+            "RGCN",
+            "Jaccard",
+            "GNNGuard",
+            "GRCN",
+            "ProGNN",
+            "SimpGCN",
+            "Elastic"
+        ],
+        "evaluation metric": "Classification accuracy on node-level tasks.",
+        "setup": "Experiments are performed using widely used benchmark datasets and perturbed with standardized adversarial attack techniques like MetaAttack and DICE.",
+        "hyperparameters": "Parameters like perturbation rate, recovery proportion, augmentation views, and similarity thresholds are carefully tuned to showcase performance.",
+        "results": "STABLE consistently outperforms baseline methods by demonstrating superior accuracy and robustness across multiple adversarial scenarios.",
+        "performance": "Achieves up to 24% improvement in classification accuracy under high perturbation rates compared to existing methods.",
+        "analysis": "Revealed that robustness-oriented augmentations significantly strengthen the model's resilience, especially in heavily contaminated graphs.",
+        "ablation study": "Verified contributions from different components of STABLE, clearly showing how novel integration of contrastive learning and refinements aids in defense mechanisms."
+    },
+    "conclusion": {
+        "summary": "STABLE stands out in effectively addressing the adversarial vulnerability of graph neural networks by integrating reliable representations and innovative graph refinement techniques.",
+        "future work": "Further exploration of the roles of unsupervised methods in GNN robustness and enhancement strategies for other graph-based applications."
+    }
+}

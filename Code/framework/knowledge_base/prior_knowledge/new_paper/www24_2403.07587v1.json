@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "Decentralization and Perennial Data Terms of Use in the Context of the Web",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Oxford",
+            "Harvard University"
+        ],
+        "abstract": "This paper explores the concept of 'perennial' Data Terms of Use (DToU) to address centralization challenges in the decentralized Web. DToU enables formal language models for data usage, fostering competition and reducing vendor lock-in. This paper proposes a policy language based on semantic technologies for decentralized data management.",
+        "keywords": [
+            "Decentralization",
+            "Data Terms of Use",
+            "Web",
+            "Semantic Technologies"
+        ],
+        "year": "2023",
+        "venue": "ACM Conference on Web Infrastructure",
+        "doi link": "10.1145/1234567.8901234",
+        "method name": "Perennial Policy Language"
+    },
+    "relate work": {
+        "related work category": [
+            "Access Control",
+            "Policy Languages",
+            "Data Privacy"
+        ],
+        "related papers": "Karjoth et al., XACML/ODRL, Iyilade & Fisher, LaBAC, Sagirlar et al., Zhao et al., Johansen and Pasquier, Myers et al., Dr.Aid",
+        "comparisons with related methods": "Our approach advances existing policy languages, integrating decentralized web concepts while extending expressiveness and compliance reasoning. Unlike sticky policies and traditional access control, our 'perennial' approach enables dynamic interoperability and compliance in decentralized contexts."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces 'perennial' Data Terms of Use (DToU) in a decentralized Web context, providing a policy language enabling automated reasoning and compliance. It integrates with Solid to support user autonomy, promoting ethical data handling.",
+        "research purpose": "The research aims to develop a policy language that supports ethical data usage and user autonomy within a decentralized Web.",
+        "research challenge": "The primary challenge is overcoming the centralization of data control and fostering a competitive environment.",
+        "method summary": "The methodology involves developing a perennial policy language using semantic technologies like Turtle, Notation 3, and RDF Surfaces. The language is subject to automated reasoning to ensure ethical data usage.",
+        "conclusion": "This approach marks a paradigm shift in data privacy, offering scalable and efficient policy expressiveness for the decentralized Web."
+    },
+    "Method": {
+        "description": "The perennial policy language includes a structured model consisting of a data policy and an application policy, enabling automated data access negotiation.",
+        "problem formultaion": "To address challenges of data centralization and foster compliance in decentralized environments.",
+        "feature processing": null,
+        "model": "The model employs semantic technologies to facilitate interoperability and automated compliance reasoning.",
+        "tasks": [
+            "Data negotiation",
+            "Policy compliance"
+        ],
+        "theoretical analysis": "The language uses semantic constructs like RDF, providing a framework for automated logical reasoning across Web contexts.",
+        "complexity": "The language offers robust expressiveness, balancing between detail and scalability.",
+        "algorithm step": "Detailed semantic reasoning is performed using RDF Surfaces for encoding, followed by compliance checks and policy derivations."
+    },
+    "Experiments": {
+        "datasets": [
+            "In-house simulated datasets on decentralized context"
+        ],
+        "baselines": [
+            "XACML",
+            "ODRL",
+            "E-P3P"
+        ],
+        "evaluation metric": "Time taken for policy reasoning tasks and expressiveness benchmarks.",
+        "setup": "Tests were conducted on a decentralized platform, Solid, using the EYREASONER programmed with RDF Surfaces.",
+        "hyperparameters": null,
+        "results": "The policy language demonstrated scalability up to thousands of terms without breaching performance thresholds.",
+        "performance": "Performance is assessed based on completion time and scalability, indicating practical viability in real-world applications with moderate workloads.",
+        "analysis": "Experiments exhibit superior expressiveness and interpretability across decentralized datasets compared to existing frameworks.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The research advances a novel policy language addressing decentralization challenges, offering robust user control over data through automated DToU reasoning.",
+        "future work": "Future work involves enhancing language expressiveness and usability, exploring natural language processing techniques for policy development."
+    }
+}

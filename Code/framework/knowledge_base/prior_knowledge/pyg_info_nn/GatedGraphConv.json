@@ -1,0 +1,73 @@
+{
+    "meta_data": {
+        "title": "Graph Neural Networks and Their Extensions for Learning Sequential Outputs",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [],
+        "abstract": "Graph Neural Networks (GNNs) are a class of neural networks tailored for graph-structured data. This paper presents an extension of GNNs that can produce sequences of outputs, which is crucial for solving tasks requiring sequential outputs from graph-structured inputs. Our model, called \\OurMethods~(\\OurMethodShorts), is particularly useful for problems in machine learning, such as program verification, that deal with graphs. We demonstrate the effectiveness of \\OurMethods~on bAbI tasks and practical applications in program verification, showcasing its ability to output sequences effectively.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Sequential Learning",
+            "Program Verification",
+            "bAbI Tasks",
+            "Machine Learning"
+        ],
+        "year": "2023",
+        "venue": "arXiv",
+        "doi link": null,
+        "method name": "Graph Neural Networks with Sequential Output Extensions (\\OurMethods)"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Machine Learning",
+            "Program Verification"
+        ],
+        "related papers": "\\cite{gori2005new, scarselli2009graph} discuss the original Graph Neural Networks (GNNs). \\cite{perozzi2014deepwalk} and \\cite{duvenaud2015convolutional} explore feature learning on graphs. \\cite{brockschmidt2015learning} focus on the application of GNNs in program verification. Similar sequential learning tasks using neural networks are explored in \\cite{sukhbaatar2015end} and \\cite{bahdanau2014neural}.",
+        "comparisons with related methods": "While traditional GNNs can handle graph-level classifications, they are not inherently designed for producing sequences of outputs. In contrast, methods like \\OurMethods~extend the capability of GNNs to address sequential output problems efficiently. Methods like Pointer Networks \\cite{vinyals2015pointer} are analogous in utilizing graph structures but differ in the kinds of graphs they handle."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces an extension of Graph Neural Networks designed to produce sequences of outputs, enhancing their application to tasks that require more than graph-level classifications, such as logical formula generation in program verification.",
+        "research purpose": "To extend Graph Neural Networks to efficiently handle and produce sequences of outputs for various machine learning tasks.",
+        "research challenge": "Existing GNNs are limited in handling single output tasks, but many real-world problems require sequential outputs.",
+        "method summary": "We propose a method where several \\OurMethodMinorShorts~operate in sequence to produce sequential outputs, broadening the applicability of Graph Neural Networks.",
+        "conclusion": "The extended model demonstrates significant improvements in learning tasks requiring sequential outputs, validated by experiments on bAbI tasks and program verification."
+    },
+    "Method": {
+        "description": "We extend the standard Graph Neural Network framework to handle sequential outputs by introducing a series of transformations and adaptations to propagate node states and generate sequential outputs.",
+        "problem formultaion": "We address the problem of generating sequential outputs from graph-structured inputs, a need in tasks like program verification where outputs are logical sequences.",
+        "feature processing": "The model initializes node states using annotations and iteratively refines these states to capture both topological and sequential dependencies in the graph.",
+        "model": "The model consists of several interconnected \\OurMethodMinorShorts~that process a graph to produce a sequence of outputs by propagating and updating node states iteratively.",
+        "tasks": [
+            "Sequential Outputs",
+            "Program Verification",
+            "bAbI Task Reasoning"
+        ],
+        "theoretical analysis": "The method maps graph inputs to sequences of outputs, a task that traditionally requires explicit sequence learning mechanisms.",
+        "complexity": "The model complexity is managed by using effective node-level state propagation and aggregation, making it feasible for large graphs.",
+        "algorithm step": "Each \\OurMethodMinorShort~operates on the initialized graph to produce intermediate outputs that help form the final sequential output."
+    },
+    "Experiments": {
+        "datasets": [
+            "bAbI Tasks",
+            "Custom-generated Graphs for Program Verification"
+        ],
+        "baselines": [
+            "RNN",
+            "LSTM",
+            "Traditional Graph Neural Networks"
+        ],
+        "evaluation metric": "Accuracy in predicting sequences correctly.",
+        "setup": "The model is tested on bAbI tasks and program verification tasks to demonstrate its capability to output sequences.",
+        "hyperparameters": null,
+        "results": "Our model achieves high accuracy with fewer training examples on bAbI tasks and yields accurate program verification outputs without the need for extensive feature engineering.",
+        "performance": "The extended GNN model outperforms baseline RNN and LSTM models, particularly on tasks requiring graph-based sequential reasoning.",
+        "analysis": "The experiments on bAbI tasks illustrate the model's learning efficiency and ability to handle complex logical tasks.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Our extension of Graph Neural Networks to handle sequential outputs demonstrates significant improvements over traditional methods for tasks requiring sequences, especially in areas like program verification, by leveraging graph structures efficiently.",
+        "future work": "Future work will explore integration with less structured input forms and broader application in natural language tasks requiring structured reasoning."
+    }
+}

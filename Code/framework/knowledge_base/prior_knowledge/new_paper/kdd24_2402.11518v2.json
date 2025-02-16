@@ -1,0 +1,92 @@
+{
+    "meta_data": {
+        "title": "ReStruct: Integrating Large Language Model Reasoning into Meta-Structure Discovery for Heterogeneous Information Networks",
+        "authors": [
+            "Wei Ding",
+            "Yuan Tian",
+            "Ling Liu"
+        ],
+        "affiliations": [
+            "Nanjing University",
+            "Tsinghua University",
+            "China Academy of Electronics and Information Technology"
+        ],
+        "abstract": "Heterogeneous Information Networks (HINs) allow for joint modeling of network topology and multi-typed relations, making them essential in various applications. Despite advancements using meta-paths and meta-structures in Graph Neural Networks (GNNs), challenges remain in scaling up meta-structure discovery without domain expertise. This paper introduces \\emph{ReStruct}, a novel framework combining the reasoning capabilities of Large Language Models (LLMs) with evolutionary algorithms to improve meta-structure search. Extensive experiments reveal state-of-the-art performance on recommendation and node classification tasks across diverse datasets. Furthermore, human evaluations suggest superior explainability of our discovered meta-structures.",
+        "keywords": [
+            "Heterogeneous Information Networks (HINs)",
+            "Meta-structures",
+            "Large Language Models (LLMs)",
+            "Graph Neural Networks (GNNs)",
+            "Meta-structure Discovery",
+            "Recommendation",
+            "Node Classification"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the International Conference on Knowledge Discovery and Data Mining",
+        "doi link": null,
+        "method name": "ReStruct"
+    },
+    "relate work": {
+        "related work category": [
+            "Identifying Meta-structures on HINs",
+            "Deep Learning on HINs",
+            "LLM for Graph Learning",
+            "LLM for Pattern Discoveries"
+        ],
+        "related papers": "\\[1\\] Shi, C., et al. \"Survey on Heterogeneous Information Network Analysis.\" IEEE Transactions on Knowledge and Data Engineering (2016). \\[2\\] Sun, Y., et al. \"PathSim: Meta path-based top-K similarity search in heterogeneous information networks.\" Proceedings of the VLDB Endowment (2011).",
+        "comparisons with related methods": "ReStruct introduces LLM reasoning, differing from genetic algorithms and deep reinforcement learning approaches by integrating explainability. This framework marries LLM-guided evaluation with evolutionary processes, marking a novel departure from existing frameworks such as RMSHRec or GEMS."
+    },
+    "high_level_summary": {
+        "summary of this paper": "ReStruct leverages LLM reasoning within an evolutionary optimization framework to automatically discover and explain meta-structures for complex HINs, targeting both recommendation and classification tasks.",
+        "research purpose": "To enhance meta-structure discovery in HINs by integrating LLM reasoning for improving semantic explainability and prediction performance.",
+        "research challenge": "Existing methods rely heavily on pre-defined structures, struggling with complexity and limited scalability. The interpretability of automatically discovered structures remains inadequate.",
+        "method summary": "ReStruct encapsulates LLM-guided natural language encoding, semantic evaluation, and evolutionary optimization processes to search the meta-structure space effectively.",
+        "conclusion": "ReStruct achieves state-of-the-art performance on standard benchmarks while markedly improving the semantic clarity and human interpretability of meta-structures."
+    },
+    "Method": {
+        "description": "ReStruct employs LLMs for the semantic evaluation and generation of meta-structures in HINs, using a grammar-translated encoding approach to better understand and explain the resulting structures.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The model uses evolutionary strategies guided by LLMs to maintain a pool of meta-structure candidates for iterative improvement based on semantic similarity and empirical performance.",
+        "tasks": [
+            "Recommendation",
+            "Node Classification"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Encode meta-structures into natural language sentences for semantic understanding. 2. Generate candidate meta-structures using insertion, grafting, and deletion operations. 3. Predict and select promising candidates via LLM agent. 4. Refine the selection using performance-based evolutionary updates. 5. Explain the discoveries with a differential LLM explainer."
+    },
+    "Experiments": {
+        "datasets": [
+            "Amazon",
+            "Yelp",
+            "Douban Movie",
+            "LastFM",
+            "ACM",
+            "IMDB",
+            "DBLP",
+            "OAG-NN"
+        ],
+        "baselines": [
+            "metapath2vec",
+            "HIN2Vec",
+            "HAN",
+            "RMSHRec",
+            "HERec",
+            "GEMS",
+            "DiffMG",
+            "PMMM"
+        ],
+        "evaluation metric": "AUC for recommendation tasks and Macro-F1 for node classification tasks.",
+        "setup": "The method utilizes eight datasets reflecting realistic applications in recommendation and classification. Structures are iteratively assessed and fine-tuned using evolutionary strategies augmented by LLM feedback.",
+        "hyperparameters": "Generations run for 30 iterations with a population of 5, modifying the structures through 20 candidates per modification cycle.",
+        "results": "ReStruct outperformed all baselines, achieving the highest AUC in recommendation and top Macro-F1 scores in node classification.",
+        "performance": "Displayed consistent improvements across all datasets, particularly excelling in semantic alignment.",
+        "analysis": "User studies affirmed the superior explainability of discovered meta-structures compared to traditional methods.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "ReStruct integrates LLM reasoning in meta-structure discovery, showing remarkable promise in enhancing both model performance and interpretability in heterogeneous information networks.",
+        "future work": "Exploring localized model fine-tuning to alleviate network costs in LLM applications."
+    }
+}

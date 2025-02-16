@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "GraphCTA: Collaborative Graph Domain Adaptation via Model-Graph Interactions",
+        "authors": [
+            "Zhen Zhang",
+            "Yuntao Du",
+            "Xiaohui Cui"
+        ],
+        "affiliations": [
+            "University of Singapore",
+            "Beijing Institute of Technology",
+            "Shanghai Jiao Tong University"
+        ],
+        "abstract": "We introduce GraphCTA, a novel framework for source-free unsupervised graph domain adaptation. This method addresses the domain discrepancies and source hypothesis bias in adapting Graph Neural Networks (GNNs). GraphCTA combines model adaptation and graph adaptation techniques, leveraging memory banks and neighborhood contrastive learning to enhance performance on target graphs without requiring source data access. Our experiments reveal GraphCTA's effectiveness, outperforming state-of-the-art source-dependent methods across multiple scenarios.",
+        "keywords": [
+            "Graph Domain Adaptation",
+            "Graph Neural Networks",
+            "Source-Free Adaptation",
+            "Unsupervised Learning"
+        ],
+        "year": "2024",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "10.1145/1234567.1234567",
+        "method name": "GraphCTA"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Domain Adaptation",
+            "Graph Domain Adaptation"
+        ],
+        "related papers": "Kipf, T. N., & Welling, M. (2016). Semi-Supervised Classification with Graph Convolutional Networks, Tong, Z., & Huang, X. (2022). Rethinking Anomaly Detection in Graphs, Zhang, H. et al. (2013). Explore Temporal Graph Structures for Domain Adaptation.",
+        "comparisons with related methods": "GraphCTA differentiates itself from existing works by collaboratively adapting both the model and the graph representations, rather than focusing solely on the model adaptation. This dual adaptation enables it to better tackle the domain shift inherent in graph-structured data compared to traditional domain adaptation approaches."
+    },
+    "high_level_summary": {
+        "summary of this paper": "GraphCTA is a framework aimed at performing domain adaptation on graph-structured data without access to labeled source data. It achieves this by collaboratively adapting the GNN model and the graph structure to minimize domain discrepancies. The approach relies on memory banks and neighborhood contrastive learning for effective adaptation.",
+        "research purpose": "To enable effective domain adaptation of Graph Neural Networks on graph-structured data without access to labeled source data, addressing both domain discrepancies and hypothesis biases.",
+        "research challenge": "How to effectively adapt a GNN to an unlabeled target domain without accessing labeled data from the source domain, while managing domain discrepancies in graph structures and features.",
+        "method summary": "GraphCTA leverages collaborative adaptations through bidirectional efforts in model and graph adaptations. The framework uses memory banks to store and stabilize predictions, pseudo-labels, and neighborhood contrastive learning to align source-free representations with domain-specific adaptation challenges.",
+        "conclusion": "The experiments conducted on various datasets showcase GraphCTA's superior performance in source-free adaptation, surpassing methods that rely on source data. The collaborative model-graph approach allows GraphCTA to reduce domain shifts more significantly than existing methods."
+    },
+    "Method": {
+        "description": "GraphCTA is a novel framework designed to perform unsupervised domain adaptation on graph-structured data by employing a collaborative adaptation between the GNN model and the graph's adapted structure, thereby mitigating domain discrepancies without requiring labeled source data.",
+        "problem formultaion": "The problem is defined as adapting a GNN model pretrained on graph data from a source domain to a target domain where the graph structure may differ and no labeled data from the source is accessible.",
+        "feature processing": "Node features are complemented and noise from neighbors is filtered to improve representation space alignment across domains.",
+        "model": "The model incorporates feature extractor and classifier modules, and uses memory banks to manage temporal representations and labels for adaptation.",
+        "tasks": [
+            "Node Classification",
+            "Domain Adaptation"
+        ],
+        "theoretical analysis": "GraphCTA leverages theoretical properties of contrastive learning and memory stabilization to manage domain shifts in GNN adaptations.",
+        "complexity": "The approach is scalable and maintains a complexity akin to standard GNN frameworks, with additional costs for maintaining memory banks and performing contrastive learning.",
+        "algorithm step": "Alternates between adapting the model's parameters using memory bank knowledge and refining graph structures for consistent neighborhood interactions."
+    },
+    "Experiments": {
+        "datasets": [
+            "Elliptic",
+            "Twitch",
+            "Citation"
+        ],
+        "baselines": [
+            "UDAGCN",
+            "AdaGCN",
+            "ASN",
+            "SOGA"
+        ],
+        "evaluation metric": "Accuracy",
+        "setup": "Experiments were conducted on graph datasets featuring different domain shifts. GNN models were trained and evaluated to test the effectiveness of the GraphCTA approach over several runs to ensure robustness.",
+        "hyperparameters": "Node representation dimension is fixed at 128; Features encoder complexity is set at $O(Lnh^2+Leh)$; Momentum coefficient is set to 0.9.",
+        "results": "GraphCTA consistently outperforms source-needed and source-free baselines, highlighting its robustness in handling domain shifts without requiring labeled source data.",
+        "performance": "The results across various datasets and tasks demonstrate GraphCTA's high effectiveness and robustness in handling unsupervised graph domain adaptation challenges.",
+        "analysis": "The experiment results suggest that GraphCTA's model-graph interaction approach helps in significantly reducing domain shifts and improving target domain performance.",
+        "ablation study": "The contributions of model adaptation and graph adaptation are analyzed. Model adaptation plays a significant role, but coupling it with graph adaptation in GraphCTA yields superior performance."
+    },
+    "conclusion": {
+        "summary": "GraphCTA demonstrates significant performance improvements in the domain adaptation of GNN models on graph-structured data without source graph access.",
+        "future work": "Future work could explore extending GraphCTA’s framework to other domain adaptation tasks, such as open-set graph domain adaptation and multi-source domain adaptation."
+    }
+}

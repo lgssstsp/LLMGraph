@@ -1,0 +1,73 @@
+{
+    "meta_data": {
+        "title": "Conservativeness in Prediction Sets",
+        "authors": [
+            "Author A",
+            "Author B"
+        ],
+        "affiliations": [
+            "Affiliation X",
+            "Affiliation Y"
+        ],
+        "abstract": "This paper discusses the construction of conservative prediction sets in statistical anomaly detection, highlighting the effects of small calibration sets on regulatory bounds.",
+        "keywords": [
+            "conservativeness",
+            "PAC prediction",
+            "anomy detection",
+            "calibration set"
+        ],
+        "year": "2023",
+        "venue": "Artificial Intelligence Journal",
+        "doi link": "10.1000/aij2023",
+        "method name": "PAC-Wrap"
+    },
+    "relate work": {
+        "related work category": [
+            "Conformal Prediction Methods",
+            "Anomaly Detection Algorithms"
+        ],
+        "related papers": "Smith et al. (2020), Jones et al. (2021)",
+        "comparisons with related methods": "The proposed PAC-Wrap method is more adaptive to uncertainty compared to the traditional conformal prediction methods which often overlook calibration set influence."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper elaborates on the influence of calibration set size in anomaly detection contexts and proposes a methodology to construct more reliable prediction sets under distribution shifts.",
+        "research purpose": "The research explores methods to create more conservative prediction sets under uncertainties in calibration datasets.",
+        "research challenge": "Balancing prediction conservativeness with over-optimization remains challenging.",
+        "method summary": "The authors proposed PAC-Wrap, a novel framework to improve conservativeness using calibrated datasets.",
+        "conclusion": "PAC-Wrap shows substantial improvement in maintaining conservativeness across various datasets."
+    },
+    "Method": {
+        "description": "The PAC-Wrap framework constructs prediction sets that account for variations during calibration to ensure conservativeness.",
+        "problem formultaion": "Defining reliable bounds for prediction sets even with limited calibration data.",
+        "feature processing": "Incremental calibration data adjustments improve outcome predictability.",
+        "model": "Statistical model evaluates prediction bounds based on calibration dataset size and distribution.",
+        "tasks": [
+            "Prediction Set Construction",
+            "Statistical Validation"
+        ],
+        "theoretical analysis": "To ensure theoretical soundness, various statistical modeling techniques were employed.",
+        "complexity": "O(n log n) complexity determined by calibration set adjustment.",
+        "algorithm step": "1. Gather calibration data, 2. Compute prediction bounds, 3. Adjust based on dataset variations."
+    },
+    "Experiments": {
+        "datasets": [
+            "Thyroid",
+            "Synthetic"
+        ],
+        "baselines": [
+            "Conformal Prediction",
+            "Traditional PAC Methods"
+        ],
+        "evaluation metric": "Violation Rate",
+        "setup": "10-fold cross-validation on Thyroid dataset; validation on synthetic data.",
+        "hyperparameters": null,
+        "results": "PAC-Wrap improved the conservativeness of prediction sets resulting in lower violation rates.",
+        "performance": "Outperforms baseline methods in stability and reduced violation rates.",
+        "analysis": "The method significantly mitigates performance gaps across different datasets.",
+        "ablation study": "Analyzed the effect of varying calibration set sizes, showing PAC-Wrap's robustness."
+    },
+    "conclusion": {
+        "summary": "Conservativeness in prediction sets ensures stability in anomaly detection.",
+        "future work": "Further investigation into adaptive recalibration based on online data inputs."
+    }
+}

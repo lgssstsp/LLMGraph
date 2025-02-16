@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Cross-city Mobility Transformer",
+        "authors": [
+            "Author A",
+            "Author B",
+            "Author C"
+        ],
+        "affiliations": [
+            "Institute A",
+            "Institute B",
+            "Institute C"
+        ],
+        "abstract": "This paper proposes a Cross-city mObiLity trAnsformer (COLA) for simulating human trajectories across cities, addressing domain heterogeneity and overconfident problems in deep learning models. Extensive experiments demonstrate its advantages compared to state-of-the-art methods.",
+        "keywords": [
+            "cross-city transfer",
+            "human trajectory simulation",
+            "deep learning"
+        ],
+        "year": "2023",
+        "venue": "ACM Conference on Information Systems",
+        "doi link": null,
+        "method name": "COLA"
+    },
+    "relate work": {
+        "related work category": [
+            "Human Trajectory Simulation",
+            "Cross-city Transfer Learning",
+            "Long-tail Learning"
+        ],
+        "related papers": "Reference papers: Zhang et al. 2023, Wang et al. 2023, Yu et al. 2017, Menon et al. 2021",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper tackles human trajectory simulation across different cities using a cross-city mobility transfer learning framework, focusing on overcoming hurdles in domain heterogeneity and achieving high-fidelity simulations.",
+        "research purpose": "To improve human trajectory simulation by leveraging universal mobility patterns from various cities.",
+        "research challenge": "Addressing domain heterogeneity and long-tail distribution in trajectory data, which limits model performance.",
+        "method summary": "Utilizing the COLA framework, which employs Transformers with shared and private modules to transfer mobility patterns across cities.",
+        "conclusion": "Extensive experiments revealed COLA's superior performance over existing baseline models in simulating human trajectories."
+    },
+    "Method": {
+        "description": "The COLA framework integrates a Half-open Transformer design where city-specific and universal patterns are learned separately via private and shared modules.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Cross-city mObiLity trAnsformer (COLA)",
+        "tasks": [
+            "Human trajectory simulation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Meta Clone of shared parameters.\n2. Internal Update with source city data.\n3. Meta Update for adaptation.\n4. Target model adaptation leveraging post-hoc adjustments."
+    },
+    "Experiments": {
+        "datasets": [
+            "GeoLife",
+            "Yahoo (Japan)",
+            "New York",
+            "Singapore"
+        ],
+        "baselines": [
+            "Markov",
+            "LSTM",
+            "DeepMove",
+            "GAN"
+        ],
+        "evaluation metric": "Metrics include Distance, Radius, Duration, DailyLoc, G-rank, I-rank, and JSD for distribution match.",
+        "setup": "COLA and baselines were tested on preprocessed trajectory datasets following standard protocols.",
+        "hyperparameters": null,
+        "results": "COLA consistently surpasses baselines by capturing global mobility patterns and reducing biased tendencies in predictions.",
+        "performance": "Superior AVG rankings compared to single-city and cross-city baselines, validated across various metrics.",
+        "analysis": null,
+        "ablation study": "Performance decline without COLA's half-open attention and post-hoc modules, affirming their necessity."
+    },
+    "conclusion": {
+        "summary": "The study highlights the effectiveness of leveraging city-universal mobility patterns via the COLA framework. This approach not only ensures enhanced trajectory simulation but also maintains accuracy across varying data scenarios.",
+        "future work": "Explore pre-training potential of Transformers in a broader spectrum of trajectory data."
+    }
+}

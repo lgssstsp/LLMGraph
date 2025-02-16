@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-code2",
+    "Dataset Link": "../graphprop/#ogbg-code2",
+    "Rank": 13,
+    "Method": "GCN",
+    "External Data": "No",
+    "Test Accuracy": "0.1507 ± 0.0018",
+    "Validation Accuracy": "0.1399 ± 0.0017",
+    "Contact": "mailto:weihuahu@cs.stanford.edu",
+    "Paper Link": "https://arxiv.org/abs/1609.02907",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/graphproppred/code2",
+    "Parameters": "11,033,210",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "Feb 24, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-code2/GCN.pdf",
+    "Paper Summary": "The paper introduces a scalable semi-supervised learning approach on graph-structured data utilizing Graph Convolutional Networks (GCNs). Key design aspects of the model include:\n\n1. **Localized Graph Convolutions**: The GCN architecture is motivated by a first-order approximation of spectral graph convolutions, facilitating efficient information propagation through the graph's structure without requiring extensive computation.\n\n2. **Layer-wise Propagation Rule**: The GCN employs a forward propagation rule defined as:\n   \\[\n   H^{(l+1)} = \\sigma(\\tilde{D}^{-1/2} \\tilde{A} \\tilde{D}^{-1/2} H^{(l)} W^{(l)})\n   \\]\n   where \\( \\tilde{A} \\) is the adjacency matrix with added self-connections, \\( \\tilde{D} \\) is the degree matrix, \\( H^{(l)} \\) represents activations in layer \\( l \\), and \\( W^{(l)} \\) is a trainable weight matrix for each layer.\n\n3. **Efficiency**: The GCN model's complexity is linear in terms of the number of graph edges, making it suitable for large-scale graphs. It allows for learning rich node representations by propagating information from neighboring nodes effectively.\n\n4. **Input Feature Handling**: The model can accommodate a feature matrix \\( X \\), representing the initial features of nodes and can effectively learn from both labeled and unlabeled nodes in the graph by conditioning the learned function on both the feature matrix and the adjacency matrix.\n\n5. **Regularization and Loss**: The proposed GCN model avoids using traditional graph-based regularization in the loss function. Instead, it learns the parameters directly through the graph structure, promoting label information distribution among connected nodes.\n\n6. **Activation Functions**: A non-linear activation function, such as ReLU, is applied after the convolution operation, introducing non-linearity to the model and enhancing its capacity to capture complex patterns.\n\n7. **Shared Parameters**: The model favors using shared weight matrices across layers rather than individual matrices per node degree, aiding in scalability and reducing overfitting, especially in graphs with varying node connectivity.\n\n8. **Renormalization**: A renormalization trick is introduced to stabilize training and maintain numerical stability, transforming the adjacency matrix as follows:\n   \\[\n   \\tilde{A} = A + I\n   \\]\n   where \\( I \\) denotes the identity matrix, ensuring that self-connections are accounted for.\n\nThese design choices together facilitate the model's efficiency and effectiveness in semi-supervised node classification on graphs while addressing common limitations faced in previous methods."
+}

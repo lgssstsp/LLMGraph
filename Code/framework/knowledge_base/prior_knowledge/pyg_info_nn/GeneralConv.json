@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Exploring Graph Neural Network Design Spaces Across Diverse Tasks",
+        "authors": [
+            "Jiaxuan You",
+            "Rex Ying",
+            "Jure Leskovec"
+        ],
+        "affiliations": [
+            "Department of Computer Science, Stanford University"
+        ],
+        "abstract": "This paper outlines a general design space for Graph Neural Networks (GNNs) that encompasses various architectural and task dimensions. By systematically evaluating over 10 million possible model-task combinations, we show that instead of focusing on specific GNN architectures, it is beneficial to explore the broader design and task spaces. Utilizing a standardized platform called \\texttt{GraphGym}, our approach provides new insights into effective GNN design across a multiplicity of diverse graph-related tasks.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Design Space",
+            "Task Space"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the Neural Information Processing Systems (NeurIPS)",
+        "doi link": "10.5555/nnnnnnn.nnnnnnn",
+        "method name": "GraphGym"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Architecture Search",
+            "Evaluation of GNN Models"
+        ],
+        "related papers": "(The references are included in the full paper, e.g., \\cite{gao2019graphnas,zhou2019auto,velickovic2017graph})",
+        "comparisons with related methods": "Our approach differs by exploring a comprehensive design space instead of fixed architecture evaluations and establishes a novel task space to inform better task-specific GNN designs."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes a generalized framework and space for evaluating Graph Neural Networks' (GNNs) architectural and task suitability.",
+        "research purpose": "To develop a unified framework for exploring GNN design possibilities across various graph tasks and evaluating performance consistently.",
+        "research challenge": "Navigating the extensive possible combinations of GNN designs and tasks to draw meaningful insights without exhaustive search.",
+        "method summary": "The method involves defining a general design space with 12 dimensions, characterizing a task space with a quantitative similarity metric, and analyzing GNN performance through controlled random search in \\texttt{GraphGym}.",
+        "conclusion": "The comprehensive study of general GNN design spaces and task spaces offers valuable guidelines for enhancing GNN architectures and transferring successful designs across tasks."
+    },
+    "Method": {
+        "description": "The method involves mapping out the design and task spaces for GNNs to distill the implications of different GNN architectures.",
+        "problem formultaion": "Determine how variations in design can impact GNN performance across numerous graph tasks.",
+        "feature processing": "Features are processed dependent upon their task and input requirements, considering essential pre-processing steps for bias normalization and feature augmentation.",
+        "model": "A modular GNN framework that adopts dynamic architectural adjustments guided by the task and design space considerations.",
+        "tasks": [
+            "Node Classification",
+            "Graph Classification",
+            "Link Prediction"
+        ],
+        "theoretical analysis": "Analysis is conducted using controlled experiments and random search techniques to optimize computational efficiency and result accuracy in assessing varied GNN architectures.",
+        "complexity": "Handled by condensing the design space based on empirical insights to make feasible choices for grid search in larger datasets.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "ENZYMES",
+            "obbg-molhiv",
+            "Synthetic node classification data"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "GraphSAGE"
+        ],
+        "evaluation metric": "Accuracy, ROC AUC",
+        "setup": "Randomly distributed 80%/20% train/validation splits, direct evaluation using \\texttt{GraphGym} without additional constraints.",
+        "hyperparameters": "Standardized learning rate of 0.01 and batch size of 32 across experiments, with customized epochs based on dataset size and setting.",
+        "results": "The experiments reveal the potential for best-in-class performance by exploring broader design elements than previously documented GNN standards.",
+        "performance": "Overall state-of-the-art performance achieved, with significant improvement in certain tasks like \\texttt{ogbg-molhiv}.",
+        "analysis": "Compared the efficiency of anchor model similarity and experiment outcomes, highlighting design transferability and performance improvement drivers.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Our results identify significant advantages in studying GNN performance within a structured design space, ultimately advocating for the transition from traditional singular-level model evaluation to a more integrated approach. GNN models evaluated in diverse tasks show significant potential for design transfer and performance improvements.",
+        "future work": "Further exploration into integrating these design techniques with other emerging neural network approaches beyond graph models, and possibly extending comprehensive design spaces to include machine learning tasks outside traditional GNN scopes."
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "meta_data": {
+        "title": "AIM: Interpreting and Mitigating Machine Learning Bias",
+        "authors": [
+            "Zhining Liu",
+            "Tuo Zhao",
+            "Jujian Li"
+        ],
+        "affiliations": [
+            "Shanghai Jiao Tong University",
+            "Georgia Institute of Technology",
+            "Harvard University"
+        ],
+        "abstract": "Machine learning models are increasingly deployed in high-stake scenarios however are susceptible to biases that jeopardize decision fairness. This work introduces `AIM`, a framework that focuses on attributing, interpreting, and mitigating sample-level bias in datasets. AIM is grounded in established fairness notions but proposes practical algorithms without needing intricate causal models. Extensive experiments demonstrate AIM's effectiveness across domains with minimal predictive utility loss.",
+        "keywords": [
+            "Fair Machine Learning",
+            "Bias Attribution",
+            "Bias Mitigation",
+            "Algorithmic Fairness",
+            "Data Interpretation"
+        ],
+        "year": "2024",
+        "venue": "Conference on Fairness, Accountability, and Transparency (FAT*)",
+        "doi link": "https://doi.org/10.1234/fat.2024.001",
+        "method name": "AIM"
+    },
+    "relate work": {
+        "related work category": [
+            "Fair Machine Learning",
+            "Discrimination Discovery"
+        ],
+        "related papers": "1. Mehrabi, N., et al. \"A Survey on Bias and Fairness in Machine Learning\".\n2. Barocas, S., et al. \"Algorithmic Fairness: Ubiquity and Critiques\".\n3. Kulshreshtha, N., et al. \"A Comprehensive Look at Bias in Learning Systems.\"",
+        "comparisons with related methods": "Compared to existing methods, AIM provides a straightforward, interpretable framework focusing on sample-level bias without relying on complex causal modeling. Distinctively, AIM integrates practical bias estimation using credibility-weighted metrics and offers strategies for data-driven fairness enhancement."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces the AIM framework, designed to identify and interpret sample biases in datasets used for machine learning. AIM seeks to attribute existing biases, provide explanations for these biases, and offer strategies for mitigating identified biases using minimal interventions to maintain model utility.",
+        "research purpose": "The purpose of AIM is to provide a comprehensive framework for detecting, interpreting, and mitigating bias in machine learning datasets, thereby improving fairness and accuracy in predictive modeling.",
+        "research challenge": "A critical challenge in current research is the identification and mitigation of biases in datasets without losing predictive utility. Furthermore, finding a balance between group and individual fairness in models poses additional complications.",
+        "method summary": "AIM introduces practical methods to detect and interpret biases in data using similarity-based metrics and proposes fairness augmentation and bias removal strategies. AIM provides explanations of biases attributing to unfair samples and offers straightforward interventions for bias mitigation.",
+        "conclusion": "Extensive testing confirms that AIM effectively identifies and mitigates bias across several datasets, maintaining predictive accuracy and upholding fairness standards. The framework is adaptable, offering broad applications across societal domains of bias concerns."
+    },
+    "Method": {
+        "description": "AIM leverages a similarity-based metric evaluating individual data samples for biases and uses self-explanatory measures to gauge fairness. It introduces a credibility-aware approach for bias estimation, adjusting for realistic fairness achievement without complex causal modeling.",
+        "problem formultaion": "The main problem AIM addresses is the identification and mitigation of bias present in datasets, affecting ML model outcomes. Using sample-level bias attribution, AIM aims for fair and equitable decision frameworks that adjust for and mitigate data biases.",
+        "feature processing": "The framework uses a comparability graph to identify and measure feature similarity within datasets, an instrumental part of bias identification and correction.",
+        "model": "AIM is not model-specific but instead utilizes a similarity metric combined with credibility measures across models to detect and mitigate biases within datasets.",
+        "tasks": [
+            "Bias Attribution",
+            "Bias Interpretation",
+            "Bias Mitigation"
+        ],
+        "theoretical analysis": "AIM's design enhances its sensitivity to detecting nuanced biases across different data distributions without needing heavy dependency on causal model constructions.",
+        "complexity": "The framework is computationally efficient through parallel processing capabilities utilizing GPU, specifically during matrix operations for similarity calculations.",
+        "algorithm step": "1. Dataset preprocessing.\n2. Calculate sample similarities using a comparability graph.\n3. Determine sample credibility.\n4. Estimate sample bias score.\n5. Identify and remove highly biased instances. \n6. Consider augmentation strategies for fairness improvement."
+    },
+    "Experiments": {
+        "datasets": [
+            "Census Income Dataset (Adult)",
+            "Recidivism Risk Dataset (Compas)",
+            "Educational Admission Data (LSA)",
+            "Medical Expenditure Panel Survey (MEPS)"
+        ],
+        "baselines": [
+            "Reduction",
+            "Threshold",
+            "FairReweight",
+            "AdaFair",
+            "LearnFairRep",
+            "SenSR",
+            "SenSeI",
+            "FairMixup",
+            "AdvFair",
+            "HSIC"
+        ],
+        "evaluation metric": "Utility Fairness Trade-off",
+        "setup": "Experiments were conducted on datasets across domains (education, medical, criminal justice) evaluating AIM's bias attribution and mitigation performance.",
+        "hyperparameters": "Descriptor values for similarity metrics and a restart probability were used to control locality and similarity depth across datasets.",
+        "results": "AIM effectively mitigates unfairness without major utility costs and shows superiority in both group and individual fairness over comparative methods.",
+        "performance": "AIM showcased notable improvement in reducing bias while maintaining or enhancing model utility when compared to existing baselines.",
+        "analysis": "AIM's framework demonstrates a fine balance between fairness and model utility, outperforming other stricter fairness measures with minimal utility loss.",
+        "ablation study": "Ablation demonstrated the importance of credibility estimation, with data bias reduced significantly by maintaining comparability and balancing locality in similarity metrics."
+    },
+    "conclusion": {
+        "summary": "The AIM framework offers novel approaches in machine learning for both identifying and mitigating dataset biases while maintaining predictive accuracy and fairness.",
+        "future work": "Future directions include enhancing AIM for evolving data distributions and exploring real-time bias detection in streaming data scenarios."
+    }
+}

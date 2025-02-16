@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-biokg",
+    "Dataset Link": "../linkprop/#ogbl-biokg",
+    "Rank": 8,
+    "Method": "PairRE",
+    "External Data": "No",
+    "Test Accuracy": "0.8164 ± 0.0005",
+    "Validation Accuracy": "0.8172 ± 0.0005",
+    "Contact": "mailto:chulin.cll@antgroup.com",
+    "Paper Link": "https://arxiv.org/abs/2011.03798",
+    "Code Link": "https://github.com/alipay/KnowledgeGraphEmbeddingsViaPairedRelationVectors_PairRE",
+    "Parameters": "187,750,000",
+    "Hardware": "Tesla P100 (16GB GPU)",
+    "Date": "Nov 9, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-biokg/PairRE.pdf",
+    "Paper Summary": "The paper introduces **PairRE**, a novel knowledge graph embedding model designed to tackle complex relations and various relation patterns using paired relation vectors. Here are the key aspects of the model design:\n\n### Model Overview:\n- **Paired Vectors:** Each relation is represented by two vectors, \\( r_H \\) and \\( r_T \\), which project the head entity \\( h \\) and tail entity \\( t \\) into the Euclidean space. This paired structure enables adaptive adjustments in the distance calculations used in the scoring function.\n\n### Key Characteristics:\n1. **Adaptive Margin Adjustment:**\n   - The use of paired vectors allows the margin in the loss function to adapt dynamically based on the type of complex relation being processed, improving the model’s flexibility in handling various relations.\n\n2. **Encoding Relation Patterns:**\n   - **Three Important Relation Patterns:** The model can encode symmetry/antisymmetry, inverse, and composition relations. This is achieved by measuring distance between projected relation vectors, ensuring that relation-specific characteristics are captured effectively.\n\n3. **Incorporation of Constraints:**\n   - PairRE can integrate simple constraints on relation representations to facilitate encoding of subrelations. By doing so, specific rules such as entailment constraints can guide the learning process, enhancing the encoding of subrelations while maintaining robustness to complex phenomena.\n\n4. **Scoring Function:**\n   - The scoring function is defined as:\n     \\[\n     f_r(h, t) = -||h \\circ r_H - t \\circ r_T||\n     \\]\n     where \\( \\circ \\) denotes the Hadamard product, allowing effective distance measurement between entities after transformation through the paired relation vectors.\n\n5. **Implementation of Distance-based Embeddings:**\n   - By adjusting how entities are projected into spaces defined by \\( r_H \\) and \\( r_T \\), PairRE effectively leverages distance-based embeddings, similar to previous models like TransE, but with enhancements that support complex relation encoding.\n\n### Conclusion:\nOverall, the design of PairRE emphasizes flexibility, expressiveness, and efficiency, allowing it to outperform existing methods while handling complex relational patterns through its innovative use of paired vectors. Such design not only addresses the inherent issues in earlier models but also paves the way for better knowledge graph completion and understanding of multi-relational data."
+}

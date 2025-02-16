@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Managing Choice Set Confounding in Discrete Choice Modeling with Causal Inference Methods",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Institution A",
+            "Institution B"
+        ],
+        "abstract": "This paper examines the impact of choice set confounding on discrete choice modeling and proposes methods to mitigate its effects using causal inference techniques. We identify issues in traditional models, such as the choice set confounding caused by chooser-dependent selection mechanisms, which challenge the validity of predictions on counterfactuals. The paper adapts inverse probability weighting and regression controls to address these challenges, simultaneously illustrating how clustering methods can be leveraged for known choosers without specific covariates. Experiments on synthetic and real-world datasets demonstrate the proposed methods' efficacy in reducing confounding impacts and enhancing model predictive accuracy.",
+        "keywords": [
+            "Discrete Choice Modeling",
+            "Causal Inference",
+            "Choice Set Confounding",
+            "Inverse Probability Weighting",
+            "Context Effects"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning (ICML)",
+        "doi link": "10.1145/1234567890",
+        "method name": "Managing Choice Set Confounding"
+    },
+    "relate work": {
+        "related work category": [
+            "Choice Models with Context Effects",
+            "Causal Inference in Recommender Systems"
+        ],
+        "related papers": "Key research includes studies on discrete choice models such as the multinomial logit, context-dependent models, and methods adapted from causal inference for recommender systems.",
+        "comparisons with related methods": "Existing models focused on context effects but often neglected confounding introduced by chooser-dependent choice set assignments. Our methods incorporate causal inference principles to mitigate confounding, providing improved prediction on counterfactuals and surpassing standard choice models in accuracy."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces methods to manage choice set confounding—a significant problem in discrete choice modeling that arises from chooser-dependent choice set assignments. By integrating causal inference methods like inverse probability weighting and regression controls, the authors provide a robust solution to mitigate the effects of confounding, enhancing the accuracy of choice probability estimates with practical applications demonstrated in empirical evaluations.",
+        "research purpose": "To address the overlooked issue of choice set confounding in discrete choice modeling and offer methods to improve model predictions on counterfactuals.",
+        "research challenge": "Much of the existing literature in discrete choice models neglects the impact of choice set assignment mechanisms on choice probability estimation, leading to biased predictions on counterfactual scenarios.",
+        "method summary": "The authors propose the integration of causal inference techniques—specifically inverse probability weighting and regression controls—to manage choice set confounding in choice models. They also explore clustering methods for situations lacking chooser covariates.",
+        "conclusion": "The proposed methods effectively reduce the biases introduced by choice set confounding, improving the predictive accuracy of the models across several datasets."
+    },
+    "Method": {
+        "description": "This study addresses the issue of choice set confounding in discrete choice modeling, where the choice set assignment mechanism affects the validity of learned models on counterfactuals. The proposed method combines techniques from causal inference and clustering to manage confounding effects and improve model generalizability.",
+        "problem formultaion": "Choice modeling traditionally assumes chooser-independent choice sets or preferences, which can lead to biased models if these assumptions are violated.",
+        "feature processing": "Utilizes inverse probability weighting (IPW) adjusted datasets to mitigate confounding impacts, reweighting samples to reflect unbiased choice sets.",
+        "model": "The methods build upon existing discrete choice models by incorporating causal inference adjustments.",
+        "tasks": [
+            "Choice Prediction",
+            "Counterfactual Analysis"
+        ],
+        "theoretical analysis": "Theoretical insights demonstrate the mitigation of biases in choice probability estimation through adapted causal inference methods.",
+        "complexity": null,
+        "algorithm step": "1. Implement inverse probability weighting for choice set correction.\n2. Integrate regression controls into utility formulations to account for covariate effects.\n3. Apply clustering for latent type identification when covariates are unavailable."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Dataset",
+            "Expedia Hotel Choice Dataset",
+            "Yoochoose Online Shopping Dataset"
+        ],
+        "baselines": [
+            "Logit Model",
+            "Multinomial Logit",
+            "Conditional Logit"
+        ],
+        "evaluation metric": "Log-likelihood and prediction accuracy on counterfactual data.",
+        "setup": "Models are trained on both observed and IPW-adjusted datasets, comparing their predictive performance across different confounding levels.",
+        "hyperparameters": null,
+        "results": "Demonstrated improved prediction quality on counterfactuals for IPW-adjusted and cluster-based models compared to baselines, with higher log-likelihood values.",
+        "performance": "Significant reduction in choice probability estimation biases was achieved by addressing the choice set confounding through causal methods, reflected in both synthetic and real datasets.",
+        "analysis": "Models with confounding handling mechanisms showed better generalization capabilities.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The paper's core contribution lies in revealing the role of choice set confounding in discrete choice models and demonstrating techniques to correct for it. This has critical implications for applications requiring robust predictions on new or altered choice sets.",
+        "future work": "Future research may investigate advanced machine learning techniques, such as reinforcement learning, to enhance choice set adjustment mechanisms and further explore the role of different contexts in influencing individual choices."
+    }
+}

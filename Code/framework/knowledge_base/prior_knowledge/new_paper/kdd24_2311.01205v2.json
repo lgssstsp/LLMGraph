@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Exploring Security Vulnerabilities in Quantized Graph Neural Networks through Bit Flip Attacks",
+        "authors": [
+            "Lorenz K. et al."
+        ],
+        "affiliations": [
+            "Vienna Science and Technology Fund (WWTF)"
+        ],
+        "abstract": "This research investigates the potential vulnerabilities of quantized Graph Neural Networks (GNNs) to Bit Flip Attacks (BFAs). While earlier studies have shown the resilience of quantized Convolutional Neural Networks (CNNs) against BFAs, the exploration into GNNs has been limited. We introduce the Injectivity Bit Flip Attack (IBFA) specifically targeting the injective functions within GNNs to degrade their expressivity and predictive power. Extensive experiments demonstrate the efficacy of IBFA over other BFAs in degrading GNN performance across several datasets.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Bit Flip Attacks",
+            "Injectivity",
+            "Quantization",
+            "Security Vulnerabilities"
+        ],
+        "year": "2024",
+        "venue": "Proceedings of KDD 2024",
+        "doi link": "10.5555/ibfakdd2024",
+        "method name": "Injectivity Bit Flip Attack (IBFA)"
+    },
+    "relate work": {
+        "related work category": [
+            "Security in Neural Networks",
+            "Graph Neural Network Vulnerabilities",
+            "Bit Flip Attacks"
+        ],
+        "related papers": "Studies by Wu et al. (2022) and Jin et al. (2021) explore graph poisoning and defense mechanisms. The resilience of CNNs to BFAs is noted in works by Rakin et al. (2019) and Liu et al. (2023).",
+        "comparisons with related methods": "Existing BFAs like the Progressive Bitflip Attack (PBFA) focuses on CNNs exploiting weight-sharing vulnerabilities. However, these approaches don't account for injectivity properties critical in GNNs as targeted by our proposed method."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper examines the vulnerability of quantized GNNs to novel bit flip attacks that exploit their structural expressivity characteristics. Using datasets common in drug development and social network scenarios, it introduces a novel method, IBFA, proving more effective than existing CNN-focused BFAs in degrading GNN capabilities.",
+        "research purpose": "To assess and establish the vulnerability of quantized GNNs to BFAs, specifically focusing on impacts on injective neighborhood functions essential for expressivity.",
+        "research challenge": "Addressing quantized GNN's unique topological properties that protect against traditional BFAs performed on CNNs.",
+        "method summary": "The Injectivity Bit Flip Attack (IBFA) targets the quantized parameter spaces of effective GNN architectures, particularly focusing on disrupting the expressivity derived from the 1-Weisfeiler-Leman test.",
+        "conclusion": "IBFA significantly impairs GNN performance by exploiting mathematical expressivity properties, outperforming traditional BFAs by requiring fewer bit flips for comparable degradation in prediction quality."
+    },
+    "Method": {
+        "description": "IBFA is a novel attack strategy targeting the injective functions in quantized GNNs, primarily the neighborhood aggregation functions within models like the Graph Isomorphism Network (GIN) to diminish their expressivity.",
+        "problem formultaion": "The study's main problem is to determine whether adversarial manipulation of GNN parameters can lead to degradation in their ability to differentiate non-isomorphic graph structures.",
+        "feature processing": "Quantized integer representations are employed to ensure efficient computational performance during experimental evaluations.",
+        "model": "The model being tested is the GIN architecture in a quantized format utilizing injective neighborhood aggregation functions optimum for tasks requiring high structural expressivity.",
+        "tasks": [
+            "Graph Structure Identification",
+            "Node Classification",
+            "Graph Classification"
+        ],
+        "theoretical analysis": "The theoretical focus is on how injecting non-injectivity into functionals like Aggregation and Combination impairs the WL test's expressivity, effectively simplifying graph structure recognition tasks.",
+        "complexity": "IBFA's computational complexity scales with the choice of input datasets and the number of iterated bit flips.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "OGB-MoleculeNet",
+            "TUDataset: COLLAB",
+            "TUDataset: GITHUB_STARGAZERS"
+        ],
+        "baselines": [
+            "Progressive Bitflip Attack (PBFA)",
+            "Random Bit Flip Attack (RBFA)"
+        ],
+        "evaluation metric": "Area Under the Receiver Operating Characteristic Curve (AUROC), Average Precision (AP), Accuracy (ACC).",
+        "setup": "Quantized GIN models are perturbed using different BFA methods across datasets that are benchmarked post-attack for performance degradation metrics.",
+        "hyperparameters": "Quantization mapping (FLOAT32 to INT8), bit flip limits from 24 to 50 per theoretical attack budget.",
+        "results": "IBFA outperforms PBFA and RBFA in reducing prediction accuracy, with fewer bit flips needed for significant performance degradation.",
+        "performance": "IBFA achieves almost random output from attacked GNNs with fewer than 33 bits flipped on average.",
+        "analysis": "IBFA showcases a strong correlation between task structural expressivity and vulnerability, outperforming PBFA especially on tasks aligned with GLWL-discrimination.",
+        "ablation study": "Rigorous experiments varying loss functions and layer preferences provide insights into IBFA' robustness."
+    },
+    "conclusion": {
+        "summary": "A novel attack method that utilizes the mathematical properties of GNNs specific to quantized environments.",
+        "future work": "Further evaluations on other GNN architectures and exploration of defenses against IBFA in safety-critical applications."
+    }
+}

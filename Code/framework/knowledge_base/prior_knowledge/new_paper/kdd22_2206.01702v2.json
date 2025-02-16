@@ -1,0 +1,84 @@
+{
+    "meta_data": {
+        "title": "An Enhanced Examination Hypothesis for Learning to Rank with Click Data",
+        "authors": [
+            "Tian Zhang",
+            "Yong Hu",
+            "Chen Gao",
+            "Yuyu Zhang",
+            "Dezhao Wang"
+        ],
+        "affiliations": [
+            "School of Computer Science and Engineering, Beihang University",
+            "Department of Industrial and Enterprise Systems Engineering, University of Illinois at Urbana-Champaign",
+            "School of Computer Science, Carnegie Mellon University"
+        ],
+        "abstract": "This paper proposes a vector-based examination hypothesis to enhance learning to rank systems by effectively debiasing click data. By modeling the interaction between biases and features in a vector space, our approach provides complete coverage for real-world click functions. Extensive experiments demonstrate superior performance over scalar-based methods, showcasing the ability of our model to adaptively capture complex click patterns.",
+        "keywords": [
+            "Learning to Rank",
+            "Click Data",
+            "Examination Hypothesis",
+            "Vectorization",
+            "Bias Correction"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the ACM SIGIR Conference on Research and Development in Information Retrieval",
+        "doi link": "10.1145/xyz.endeavor",
+        "method name": "Vector-based Examination Hypothesis"
+    },
+    "relate work": {
+        "related work category": [
+            "Debiasing Click Data",
+            "Clicks Beyond Examination Hypothesis",
+            "Vector-based Factorization"
+        ],
+        "related papers": "Joachims et al. (2017) introduced inverse propensity scoring for unbiased learning to rank, while Agarwal et al. (2019) examined trust bias. Our method contrasts with scalar-based approaches, such as the trust bias model (Agarwal et al. 2019), by offering a comprehensive solution through vector-based EH.",
+        "comparisons with related methods": "Our model outperforms scalar-based methods like RegressionEM, DLA, and future-proof methods like Affine, maintaining robustness against common biases like trust bias."
+    },
+    "high_level_summary": {
+        "summary of this paper": "We propose a vector-based examination hypothesis to better handle biased click data in learning to rank systems. This new approach effectively captures interactions between clicks, features, and bias factors, enabling more accurate relevance modeling.",
+        "research purpose": "To advance learning to rank methods by addressing limitations of scalar-based examination hypothesis in handling bias in click data.",
+        "research challenge": "Existing scalar-based examination hypotheses lack the capacity to fully model complex interactions of relevance and bias within click data.",
+        "method summary": "Our method encompasses extending the examination hypothesis into a vector-based formulation, facilitating enhanced modeling of click interactions using a vector space.",
+        "conclusion": "The proposed vector-based examination hypothesis significantly enhances performance in learning to rank tasks by capturing intricate click patterns."
+    },
+    "Method": {
+        "description": "We enhance current learning to rank models by introducing a new examination hypothesis using vectors to model the interaction between bias factors and features in click data.",
+        "problem formultaion": "Traditional scalar-based examination hypothesis assumes limited interactions among clicks, relevance, and observation, not capturing real-world intricacies adequately.",
+        "feature processing": "No pre-specific feature processing procedures are detailed, focusing instead on robust relevance and observation embeddings.",
+        "model": "Vector-based Examination Hypothesis model exploits a dot-product between vectors representing relevance and observation, allowing flexibility and robustness.",
+        "tasks": [
+            "Debiasing Click Data",
+            "Ranking Document Relevance",
+            "Handling Trust Bias"
+        ],
+        "theoretical analysis": "The vector-based hypothesis generalizes traditional scalars, aiming for universally applicable solutions irrespective of click complexity.",
+        "complexity": "As vector dimensions increase, computational complexity rises, demanding optimized calculation methods to balance accuracy and efficiency.",
+        "algorithm step": "1. Develop vector embeddings for relevance and observation. 2. Employ dot-product-based ranking. 3. Leverage real-world click data for robustness checks."
+    },
+    "Experiments": {
+        "datasets": [
+            "Yahoo! LETOR",
+            "Istella-S"
+        ],
+        "baselines": [
+            "RegressionEM",
+            "DLA",
+            "PairDebias",
+            "Affine",
+            "Labeled Data",
+            "Click Data"
+        ],
+        "evaluation metric": "nDCG@k",
+        "setup": "Emulated real-world scenarios using semi-synthetic setups to test the model's efficacy.",
+        "hyperparameters": "Dimension d of vectors, learning rate, regularization parameters were fine-tuned for optimal performance.",
+        "results": "The vector-based model consistently outperformed state-of-the-art ULTR methods across different biases and dataset contexts.",
+        "performance": "Significantly higher accuracy in adapting to complex click patterns, as shown in nDCG@1 and nDCG@5 metrics.",
+        "analysis": "Performance consistently improved with larger vector dimensions, outperforming scalar models, showing robust bias correction capabilities.",
+        "ablation study": "Increasing vector dimensions demonstrated the efficacy of the model in capturing complex bias interactions."
+    },
+    "conclusion": {
+        "summary": "This research presents a novel vector-based examination hypothesis for learning to rank (LTR) with click data. Through extending conventional scalar-based models into vector spaces, our method comprehensively models intricate interactions between bias and relevance. Thus, it achieves superior performance in LTR tasks over traditional approaches.",
+        "future work": "Future explorations could focus on deriving direct optimizations for specific ranking metrics and developing more effective sorting techniques for the proposed vector embedding space."
+    }
+}

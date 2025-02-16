@@ -1,0 +1,84 @@
+{
+    "meta_data": {
+        "title": "CAFO: Channel Attention and Feature Orthogonalization for Multivariate Time Series Classification",
+        "authors": [
+            "S. Lee",
+            "Gyeongho Kim",
+            "Sujin Jeon",
+            "Jae Gyeong Choi"
+        ],
+        "affiliations": [
+            "UNIST"
+        ],
+        "abstract": "We present CAFO, a novel feature-centric explanation framework for multivariate time series (MTS) classification. Our approach utilizes Channel Attention (CA) and Feature Orthogonalization for achieving efficient and interpretable classification. We introduce Channel Attention and Feature Orthogonalization (CAFO) to improve the semantic interpretability of MTS models, addressing a critical gap in the explainability of multivariate data. We propose a new convolution-based framework called DepCA and a QR decomposition-based regularizer named QR-Ortho. These methods provide feature-centric explanations, cutting unnecessary computational and manufacturing costs in industries requiring MTS applications. Extensive experiments validate our methodologies against other explainable approaches.",
+        "keywords": [
+            "Channel Attention",
+            "Feature Orthogonalization",
+            "Multivariate Time Series",
+            "Explainable Artificial Intelligence",
+            "Deep Learning"
+        ],
+        "year": "2023",
+        "venue": "Journal of Artificial Intelligence Research",
+        "doi link": "https://doi.org/10.1016/j.jair.2023.1014",
+        "method name": "CAFO"
+    },
+    "relate work": {
+        "related work category": [
+            "Time Series Classification",
+            "Explainable AI",
+            "Channel Attention",
+            "Multivariate Time Series"
+        ],
+        "related papers": "Beuchert et al. (2020) in overcoming semantic challenges in multivariate time series. Hsieh et al. (2021) discuss variable attention in CNN for time series explanation. Bento et al. (2021) TimeSHAP for recurrent explainability.",
+        "comparisons with related methods": "The CAFO offers a feature-centric perspective in contrast to previous methods that predominantly focus on time-step or instance-specific explanations, such as TimeSHAP and DynaMask. CAFO provides more comprehensive, feature-centric overviews that enhance understanding and better facilitate sensor selection and cost reduction."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces the CAFO framework for enhancing the explainability of multivariate time series (MTS) data. It combines Channel Attention with QR-Ortho regularization to extract and rank feature importance, providing global feature and class-specific insights.",
+        "research purpose": "To establish a feature-centric explainability method for MTS classification, aiding engineers and manufacturers in understanding model decisions and optimizing sensor configurations.",
+        "research challenge": "Previous methods were often limited to time-step explanations, neglecting the comprehensive feature-centric perspective necessary for industrial applicability.",
+        "method summary": "CAFO employs a Depthwise Channel Attention (DepCA) module to compute channel attention scores, and QR-Ortho regularization minimizes feature redundancy by ensuring orthogonality among features. This methodology facilitates feature-centric explanations.",
+        "conclusion": "CAFO offers an invaluable industrial toolset to reduce computational costs, minimize sensor redundancies, and enhance interpretability in MTS classification tasks."
+    },
+    "Method": {
+        "description": "CAFO uses a convolution-based framework (DepCA) with Depthwise Channel Attention and a QR decomposition-based regularizer (QR-Ortho) ensuring feature orthogonality, achieving feature-centric explanations in MTS.",
+        "problem formultaion": "Develop a systematic approach for determining global and class-specific feature importance in multivariate time series data, addressing informatics gaps in deep learning applications.",
+        "feature processing": "Convert multivariate time series into image-like representation for effective channel-specific feature analysis.",
+        "model": "DepCA for establishing precise feature importance and QR-Ortho regularization for enhancing separability.",
+        "tasks": [
+            "Feature Extraction",
+            "Multivariate Classification",
+            "Feature Importance Measurement"
+        ],
+        "theoretical analysis": "Analyze feature redundancy and informatics overlap among features in complex multivariate datasets using QR decomposition.",
+        "complexity": "Ensures computational efficacy through the QR-Ortho regularization mechanism, reducing data dimensionality without compromising interpretability.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Gilon Activity Dataset",
+            "MS Activity Dataset",
+            "SquidGame Synthetic Dataset",
+            "WhichFinger Real-world Dataset"
+        ],
+        "baselines": [
+            "LSTM",
+            "TCN",
+            "ShuffleNet",
+            "ResNet",
+            "ViT",
+            "MLP-Mixer"
+        ],
+        "evaluation metric": "Global Importance (GI) and Class-Wise Relative Importance (CWRI) scores, Spearman and Kendall rank correlations.",
+        "setup": "Comprehensive dataset analysis with various real-world and synthetic datasets to ensure diverse application scenarios.",
+        "hyperparameters": null,
+        "results": "CAFO achieved robust GI and CWRI scores demonstrating superior feature ranking consistency. The method efficiently identified critical features, highlighting feature separability and ranking in different models.",
+        "performance": "Demonstrated the practicality of CAFO in real-world scenarios through better feature importance identification and aligned domain knowledge.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "CAFO presents a novel, feature-centric methodology for interpreting MTS data, with practical implications in reducing costs and improving the efficiency of MTS models.",
+        "future work": "Further exploration into architecture-agnostic evaluation methods and integration with different deep learning contexts beyond image transformation techniques."
+    }
+}

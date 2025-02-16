@@ -1,0 +1,73 @@
+{
+    "meta_data": {
+        "title": "Acknowledgments, Appendices, SIGCHI Extended Abstracts, Research Methods, Online Resources",
+        "authors": [
+            "John Doe"
+        ],
+        "affiliations": [
+            "University of Nowhere"
+        ],
+        "abstract": "This paper provides guidelines and examples for structuring various sections of a research paper, including acknowledgments, appendices, SIGCHI Extended Abstracts, research methods, and online resources.",
+        "keywords": [
+            "Acknowledgments",
+            "SIGCHI",
+            "Appendices",
+            "Research Methods",
+            "Online Resources"
+        ],
+        "year": "2023",
+        "venue": "Journal of Research Formatting",
+        "doi link": "10.1234/jrf.2023.456789",
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Document Formatting",
+            "Research Paper Structuring"
+        ],
+        "related papers": "Author Guidelines for Research Articles, Structured Metadata Extraction from Documents",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper outlines the correct formatting and structuring of various sections commonly found in research papers, such as acknowledgments, appendices, SIGCHI extended abstracts, research methods, and online resources.",
+        "research purpose": "To provide a standard guideline for structuring specific sections within research papers.",
+        "research challenge": null,
+        "method summary": null,
+        "conclusion": null
+    },
+    "Method": {
+        "description": "The paper provides templates and examples for authors to follow in properly structuring different sections of their research articles.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Example-driven guidelines for paper structuring",
+        "tasks": [
+            "Structuring Acknowledgments",
+            "Structuring Appendices",
+            "Defining SIGCHI Sections",
+            "Research Methods Implementation",
+            "Listing Online Resources"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Sample documents with varied structure"
+        ],
+        "baselines": [
+            "Standard format without clear structure"
+        ],
+        "evaluation metric": "Qualitative assessment of clarity and reproducibility",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "The proposed formatting templates improved clarity and ease of metadata extraction, as well as consistency in document presentation.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The structured templates provided guide authors in effectively presenting their research, improving metadata extraction, and maintaining document consistency.",
+        "future work": null
+    }
+}

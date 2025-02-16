@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Unbiased Label Correction for Delayed Feedback Problem in Conversion Rate Prediction",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Affiliation1",
+            "Affiliation2"
+        ],
+        "abstract": "In this paper, we address the delayed feedback problem in Conversion Rate (CVR) prediction using a novel unbiased label correction method. The method tackles the challenge of fresh but unconverted samples by introducing a framework that corrects mislabeled negative samples. We propose an unbiased estimation of the oracle loss through label correction, validated by theoretical analyses and extensive experiments on both public and private datasets, showing the effectiveness of our approach.",
+        "keywords": [
+            "Delayed Feedback",
+            "Conversion Rate Prediction",
+            "Label Correction",
+            "Unbiased Learning"
+        ],
+        "year": "2023",
+        "venue": "Conf AI 2023",
+        "doi link": "10.1016/j.artmed.2023.101900",
+        "method name": "Unbiased Label Correction (ULC)"
+    },
+    "relate work": {
+        "related work category": [
+            "CVR Prediction",
+            "Delayed Feedback"
+        ],
+        "related papers": "\\cite{201401}\\cite{201801}",
+        "comparisons with related methods": "Existing methods make assumptions about delay time or perform unbiased loss estimation, while our method directly uses label correction to address mislabeling in negative samples."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a novel method for addressing the delayed feedback problem in CVR prediction through unbiased label correction, outperforming existing methods by directly tackling mislabeling issues in negative samples.",
+        "research purpose": "To solve the delayed feedback problem in CVR prediction by correcting labels of observed but unconverted samples.",
+        "research challenge": "Handling fresh samples with unknown conversion results due to the delayed feedback nature.",
+        "method summary": "Our method introduces the Unbiased Label Correction (ULC) approach that dynamically updates the labels of unconverted samples to better estimate the CVR model's oracle loss.",
+        "conclusion": "Experimental results indicate that ULC effectively improves CVR prediction accuracy by mitigating issues related to delayed feedback."
+    },
+    "Method": {
+        "description": "The Unbiased Label Correction (ULC) method involves dynamic label correction for samples with uncertain conversion status.",
+        "problem formultaion": "The problem centers on negative feedback from clicks not yet converted by the time-stamp, labeled as negative, introducing noise into CVR models.",
+        "feature processing": null,
+        "model": "The ULC framework consists of a label correction model working in tandem with a CVR predictor to optimize model accuracy.",
+        "tasks": [
+            "Click-Through Rate Prediction",
+            "Conversion Rate Prediction"
+        ],
+        "theoretical analysis": "The paper proves the unbiased nature of the label correction loss using probabilistic estimations for sample conversion probability.",
+        "complexity": "The model complexity is addressed by using a counterfactual labeling strategy for label correction.",
+        "algorithm step": "The ULC algorithm steps involve initializing the CVR and LC models, generating counterfactual labels, and applying alternative training to improve prediction accuracy."
+    },
+    "Experiments": {
+        "datasets": [
+            "Criteo Dataset",
+            "Production Dataset"
+        ],
+        "baselines": [
+            "Vanilla",
+            "Oracle",
+            "DFM",
+            "FSIW",
+            "nnDF"
+        ],
+        "evaluation metric": "Area Under Curve (AUC), Precision-Recall AUC, Log Loss",
+        "setup": "Experiments conducted with both public and private datasets involving public Criteo data sets and privately collected data.",
+        "hyperparameters": "Specific learning rates and layer configurations for neural networks are evaluated to ensure optimal performance.",
+        "results": "ULC outperformed other models, achieving higher AUC and lower log loss across testing scenarios, proving effective against delayed feedback problems.",
+        "performance": "Statistical tests validate significant improvements in CVR prediction metrics with ULC implementation.",
+        "analysis": "Counterfactual labeling intervals were experimented to tune for reducing mislabeling without data staleness.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Our work introduces a practical solution for correcting labels affected by delayed feedback in CVR prediction, improving model accuracy significantly.",
+        "future work": "Future exploration includes implementing variable counterfactual intervals and addressing select bias issues."
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Federated Multi-Granularity Prompt: A Multi-Granular Approach for Personalized Federated Continual Learning",
+        "authors": [
+            "Xiao Wang",
+            "Lan Yang",
+            "Ziwei Chen"
+        ],
+        "affiliations": [
+            "Sichuan University",
+            "Southwestern University of Finance and Economics"
+        ],
+        "abstract": "This paper introduces a novel framework for Personalized Federated Continual Learning (PFCL) that efficiently processes heterogeneous knowledge across time and space. We propose the Federated Multi-Granularity Prompt (FedMGP) approach, which constructs a multi-granularity knowledge space by utilizing coarse-grained global prompts and fine-grained local prompts with a Vision Transformer. Our framework addresses the challenges of spatial-temporal catastrophic forgetting and personalization in dynamic Federated Learning (FL) environments. Extensive experiments demonstrate that our approach yields superior performance in aggregating and personalizing knowledge.",
+        "keywords": [
+            "Federated Learning",
+            "Continual Learning",
+            "Multi-Granularity",
+            "Vision Transformer",
+            "Personalization"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "10.1007/s11265-023-19050-y",
+        "method name": "Federated Multi-Granularity Prompt (FedMGP)"
+    },
+    "relate work": {
+        "related work category": [
+            "Multi-Granularity Computing",
+            "Prompt-Based Continual Learning",
+            "Personalized Federated Learning"
+        ],
+        "related papers": "Hu et al. VL-PET uses multi-granularity controlled mechanism in language models; Chen et al. MultiQA constructs a question-answering dataset for temporal multi-granularity; Li et al. DualPrompt decouples prompts into general and expert categories for continual learning.",
+        "comparisons with related methods": "FedMGP introduces the concept of multi-granularity knowledge space in PFCL for the first time, contrasting with existing methods that rarely explore this combination."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This study proposes a Federated Multi-Granularity Prompt (FedMGP) framework for resolving challenges in Personalized Federated Continual Learning (PFCL). By splitting knowledge representation into coarse-grained and fine-grained prompts, our method achieves better personalization and copes with spatial-temporal forgetting.",
+        "research purpose": "To develop a federated learning framework that accommodates personalization and mitigates catastrophic forgetting in a dynamic environment.",
+        "research challenge": "The challenge is to represent and fuse heterogeneous knowledge without losing critical information due to spatial-temporal catastrophic forgetting.",
+        "method summary": "We design a multi-granularity prompt system using Vision Transformers to separately capture coarse-grained and fine-grained knowledge. This architecture facilitates effective knowledge transfer and personalization.",
+        "conclusion": "Experimental results indicate that FedMGP exhibits superior performance in federated settings by maintaining high knowledge retention rates during dynamic task sequences."
+    },
+    "Method": {
+        "description": "FedMGP is a framework that creates a multi-granularity knowledge space enhancing knowledge fusion and personalization in PFCL scenarios.",
+        "problem formultaion": "The task involves preventing spatial-temporal forgetting while ensuring personalized adaptation of models.",
+        "feature processing": "Utilizes separate prompt levels for coarse-grained and fine-grained representation.",
+        "model": "Implemented on Vision Transformer with a prompt learning mechanism.",
+        "tasks": [
+            "Classification",
+            "Knowledge Transfer",
+            "Personalization"
+        ],
+        "theoretical analysis": "FedMGP aims to balance coarse-grained knowledge aggregation and fine-grained personalization.",
+        "complexity": null,
+        "algorithm step": "Construct coarse-grained global prompts, fine-tune with class-wise fine-grained local prompts, and utilize selective prompt fusion on the server."
+    },
+    "Experiments": {
+        "datasets": [
+            "CIFAR-100"
+        ],
+        "baselines": [
+            "FedAvg",
+            "FedProx",
+            "FedEWC",
+            "GLFC",
+            "FedViT",
+            "FedL2P",
+            "FedDualP"
+        ],
+        "evaluation metric": "Accuracy, Temporal and Spatial Knowledge Retention",
+        "setup": "Conducted on an NVIDIA RTX-3090 GPU using synchronized and asynchronized incremental task sequences in FCL settings with 5 tasks each.",
+        "hyperparameters": "Prompt length and pool size tuned during sensitivity analysis.",
+        "results": "FedMGP showed the highest accuracy and knowledge retention in both synchronous and asynchronous settings when compared to baselines.",
+        "performance": "Outperformed all compared methods in maintaining accuracy and personalization.",
+        "analysis": "Ablation studies confirmed the role of multi-granularity representations in achieving personalization without forgetting.",
+        "ablation study": "Key components like global and local prompts significantly impact retention rates as demonstrated in sensitivity analysis."
+    },
+    "conclusion": {
+        "summary": "FedMGP demonstrates its effectiveness in PFCL by achieving higher performance in personalization and minimizing catastrophic forgetting, thanks to its multi-granularity knowledge representation.",
+        "future work": "Future research will explore the use of multi-granularity representations in other federated learning scenarios, potentially improving privacy and efficiency."
+    }
+}

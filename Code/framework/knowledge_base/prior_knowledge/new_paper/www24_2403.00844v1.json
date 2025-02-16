@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Lower-Left Partial AUC: An Efficiently Generalizable Metric for Recommender Systems",
+        "authors": [
+            "Zhao Wu",
+            "Xiaoyong Li",
+            "Rui Jiang",
+            "Guang Chen",
+            "Qi Wang"
+        ],
+        "affiliations": [
+            "Huazhong University of Science and Technology",
+            "Harbin Institute of Technology",
+            "Northeastern University"
+        ],
+        "abstract": "Recommender systems aim to address the challenge of information overload on the web by recommending the Top-K most relevant items to users. These systems often rely on optimization metrics that focus on item ranking, such as NDCG@K and Recall@K, which are computationally expensive. In this paper, we introduce a novel metric, 'Lower-Left Partial AUC' (LLPAUC), designed to be more aligned with Top-K ranking. LLPAUC focuses on the lower-left corner of the ROC curve, emphasizing the ranking of top items and promising better correlation with Top-K metrics. Our theoretical and empirical analyses demonstrate LLPAUC's efficiency, effectiveness, and robustness across various datasets and conditions.",
+        "keywords": [
+            "LLPAUC",
+            "Recommender Systems",
+            "Top-K Ranking",
+            "Optimization Metrics",
+            "Partial AUC"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the 32nd ACM International Conference on Information and Knowledge Management",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Optimization Metrics",
+            "Loss Functions",
+            "Partial AUC"
+        ],
+        "related papers": "1. DBLP:conf/icml/QiuHZZY22 - Focuses on expensive Top-K metrics.\n2. DBLP:conf/recsys/CovingtonAS16 - Designs classification problems for recommender systems\n3. DBLP:conf/uai/RendleFGS09 - Discusses AUC and its limitations.",
+        "comparisons with related methods": "LLPAUC extends existing methodologies by focusing on top-ranked items through partial AUC representation. Unlike traditional AUC and OPAUC methods, LLPAUC introduces bounded True and False Positive Rates to better reflect performance in a recommendation context."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes LLPAUC, a novel optimization metric for recommender systems that targets efficiency and alignment with Top-K metrics. ",
+        "research purpose": "To bridge the gap between effective recommendation metrics and their computational efficiency by introducing a metric that places emphasis on top-ranked items and is computationally feasible.",
+        "research challenge": "Existing Top-K metrics like NDCG@K suffer from computational inefficiency when scaled.",
+        "method summary": "LLPAUC constrains areas under the ROC curve focusing on lower-left portions with bounds on TPR and FPR, aligning closely with Top-K metrics.",
+        "conclusion": "LLPAUC provides improved performance and robustness over traditional methods in recommendation tasks, as demonstrated through theoretical analysis and extensive experiments."
+    },
+    "Method": {
+        "description": "LLPAUC proposes a reformulation of optimization constraints in AUC by restricting calculations to focus on critical data ranges associated with performance measures like Recall@K and Precision@K.",
+        "problem formultaion": "Reformulating partial AUC measures to focus on relevant thresholds correlating with high-performers in Top-K ranking.",
+        "feature processing": null,
+        "model": "Model involves optimization techniques that apply LLPAUC as a loss function specifically tuned to Top-K tasks.",
+        "tasks": [
+            "Enhancing efficiency in recommender systems",
+            "Aligning recommendation metrics with user expectations"
+        ],
+        "theoretical analysis": "Theoretical bounds established between LLPAUC and Top-K metrics prove that LLPAUC provides tighter alignment and improved calculation efficiency.",
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Adressa",
+            "Yelp",
+            "Amazon-book"
+        ],
+        "baselines": [
+            "BPR",
+            "BCE",
+            "SCE",
+            "LLPAUC"
+        ],
+        "evaluation metric": "Recall@20 and NDCG@20",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "LLPAUC consistently yields superior results across all datasets and settings, outperforming baseline metrics.",
+        "performance": "Improved results particularly noted in noisy interactions, illustrating LLPAUC's robustness.",
+        "analysis": "Highlighted stronger alignment between LLPAUC and Top-K ranking metrics than traditional methods.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The proposed metric, LLPAUC, efficiently correlates with Top-K ranking in recommender systems without exhausting computational resources.",
+        "future work": "Further analysis on extending LLPAUC scope and improving its resilience against noisy data."
+    }
+}

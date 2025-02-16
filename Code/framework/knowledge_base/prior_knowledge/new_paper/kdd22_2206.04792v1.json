@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Adaptive Deep Anomaly Detection for Real-time Evolving Data Streams",
+        "authors": [
+            "Jin Park",
+            "Youngjoon Kim",
+            "Jaeyoung Choi"
+        ],
+        "affiliations": [
+            "KAIST, South Korea"
+        ],
+        "abstract": "This paper introduces \\textbf{\\algname{}}, a novel adaptive framework designed for online deep anomaly detection in evolving data streams. Leveraging adaptive model pooling, the framework integrates two primary techniques: concept-driven inference and concept drift-aware update. Through extensive evaluations, \\algname{} demonstrates superior performance over state-of-the-art streaming anomaly detection methods, achieving up to 37\\% improvement in detection accuracy in various real-time applications.",
+        "keywords": [
+            "Adaptive model pooling",
+            "Concept drift",
+            "Deep anomaly detection",
+            "Online learning"
+        ],
+        "year": "2023",
+        "venue": "IEEE Conference on Big Data",
+        "doi link": null,
+        "method name": "\\algname{}"
+    },
+    "relate work": {
+        "related work category": [
+            "Deep Anomaly Detection",
+            "Streaming Anomaly Detection",
+            "Online Deep Learning"
+        ],
+        "related papers": "[1] Deep Autoencoding Gaussian Mixture Model for Unsupervised Anomaly Detection (DAGMM), [2] RSRAE: An Outlier Detection Method for Streaming Data, [3] LSTM-based Encoder-Decoder for Multi-sensor Anomaly Detection",
+        "comparisons with related methods": "The proposed framework's novelty lies in its adaptive model pooling approach, contrasting with existing ensemble strategies that utilize pre-fixed model sets. \\algname{} dynamically updates and optimizes its model pool to handle evolving data."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel framework for online deep anomaly detection, specifically addressing the challenges of complexity and concept drift within evolving data streams.",
+        "research purpose": "To develop an adaptable anomaly detection method that can accommodate dynamically evolving data characteristics and improve real-time detection performance.",
+        "research challenge": "Handling complexity and rapid evolution of data in real-time.",
+        "method summary": "The framework, \\textbf{\\algname{}}, utilizes adaptive model pooling, combining concept-driven inference and concept-drift-aware updates to maintain high anomaly detection accuracy effectively.",
+        "conclusion": "\\algname{} significantly enhances anomaly detection accuracy in complex and evolving data streams, outperforming existing methodologies."
+    },
+    "Method": {
+        "description": "The proposed method employs adaptive model pooling for anomaly detection in data streams. It helps manage complex and evolving patterns, offering precise anomaly detection.",
+        "problem formultaion": "How to perform efficient and accurate anomaly detection in evolving data streams, with multiple unknown and changing patterns?",
+        "feature processing": "An autoencoder (AE) is utilized for feature processing, aiding anomaly score calculations through learned data point representations.",
+        "model": "The framework dynamically manages multiple models using AE-based anomaly detectors. Each model is optimized for specific data patterns.",
+        "tasks": [
+            "Anomaly Detection",
+            "Model Adaptation"
+        ],
+        "theoretical analysis": "The framework employs deep learning and adaptive pooling techniques to maintain accuracy, adaptively updating models based on current data patterns.",
+        "complexity": "Model updating and pooling ensure scalability within large, complex data streams.",
+        "algorithm step": "The algorithm involves initializing a model pool, detecting anomalies, estimating model reliability, and updating/merging models in the pool based on data evolution."
+    },
+    "Experiments": {
+        "datasets": [
+            "MNIST-AbrRec",
+            "FMNIST-AbrRec",
+            "INSECTS-Abr"
+        ],
+        "baselines": [
+            "sRAPP",
+            "sRSRAE",
+            "MStream",
+            "RRCF"
+        ],
+        "evaluation metric": "Area Under Receiver Operating Characteristic (AUC)",
+        "setup": "Model evaluated on ten datasets characterized by high-dimensionality and evolving data characteristics.",
+        "hyperparameters": "Model training uses default parameter settings unless otherwise necessary for optimization purposes.",
+        "results": "The framework achieves up to 37% improvement in anomaly detection compared to conventional methods.",
+        "performance": "The framework consistently demonstrates superior anomaly detection performance, swiftly adapting to concept drift.",
+        "analysis": "High flexibility in model adaptation enhances detection accuracy, with adaptive model pooling optimizing resource allocation efficiently.",
+        "ablation study": "Significant benefits of the proposed inference and pooling strategies are proven highly effective in improving accuracy."
+    },
+    "conclusion": {
+        "summary": "\\algname{} offers a superior online deep anomaly detection framework with remarkable performance enhancements over existing methods in dynamic environments.",
+        "future work": "Future developments could explore broader model integration and advanced adaptation strategies, potentially incorporating semi-supervised learning."
+    }
+}

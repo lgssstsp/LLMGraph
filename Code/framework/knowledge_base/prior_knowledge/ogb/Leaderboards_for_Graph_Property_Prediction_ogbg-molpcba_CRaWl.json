@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molpcba",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 8,
+    "Method": "CRaWl",
+    "External Data": "No",
+    "Test Accuracy": "0.2986 ± 0.0025",
+    "Validation Accuracy": "0.3075 ± 0.0020",
+    "Contact": "mailto:toenshoff@informatik.rwth-aachen.de",
+    "Paper Link": "https://arxiv.org/abs/2102.08786",
+    "Code Link": "https://github.com/toenshoff/CRaWl",
+    "Parameters": "6,115,728",
+    "Hardware": "Nvidia Tesla V100 (16GB)",
+    "Date": "Mar 27, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molpcba/CRaWl.pdf",
+    "Paper Summary": "In this paper, the authors introduce CRaWl, a novel neural network architecture aimed at enhancing graph learning capabilities, distinct from conventional message-passing graph neural networks (GNNs). Here are the key design aspects of the CRaWl model:\n\n### Model Design Aspects of CRaWl\n\n1. **Architecture Overview**:\n   - CRaWl employs a layered approach, similar to GNNs, where each layer updates node features. It can be combined with GNN layers but operates on fundamentally different principles.\n\n2. **Random Walk Representation**:\n   - The model extracts and aggregates information from subgraphs traversed along random walks. Each layer processes multiple sampled random walks and constructs a set of walk feature matrices that represent the graph structure. \n\n3. **Feature Matrix Construction**:\n   - For a given walk, a feature matrix captures node embeddings, edge embeddings, and local structural characteristics using identity and adjacency features. This matrix is then utilized in the computation of node embeddings for feature updates.\n\n4. **1D Convolutions**:\n   - CRaWl employs 1D Convolutional Neural Networks (CNNs) to process the feature matrices derived from random walks. The CNN captures local patterns in the graph structure reflected in the walk feature matrices.\n   - The convolutional layers utilize both standard convolutions and depthwise separable convolutions to optimize parameter efficiency and memory usage.\n\n5. **Pooling Mechanism**:\n   - The output of the convolutional layers is pooled into the nodes of the graph, allowing for an update of individual node embeddings across layers. This pooling is integral to maintaining the model's ability to learn complex features.\n\n6. **Layer Iteration**:\n   - CRaWl iteratively applies layers to update node embeddings, effectively enabling the model to integrate long-range and local structural information gradually.\n\n7. **Expressiveness**:\n   - A cornerstone of the design is the theoretical proof that CRaWl's expressiveness is incomparable to that of the Weisfeiler-Leman algorithm, indicating its ability to capture diverse structural features beyond those detectable by traditional GNNs.\n\n8. **Hyperparameters**:\n   - The model design incorporates several hyperparameters, including the number of random walks sampled, the length of these walks, the window size for local structure representation, and the parameters for convolutional layers.\n\n9. **Compatibility**:\n   - CRaWl's architecture allows for seamless integration with existing GNN approaches. It optionally includes virtual nodes to improve global information flow within the graph.\n\n10. **Learning Mechanism**:\n   - A residual connection mechanism is utilized between CRaWl layers, enhancing the learning capacity and convergence properties of the network. \n\nThrough these methods, CRaWl is designed to robustly model varying structures and complexities within graph data, capturing patterns that standard GNN architectures may overlook."
+}

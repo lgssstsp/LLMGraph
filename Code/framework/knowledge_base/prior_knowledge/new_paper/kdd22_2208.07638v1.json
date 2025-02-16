@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "Pretrained Knowledge Graph Embeddings for Complex Logical Reasoning",
+        "authors": [
+            "Anonymous Author(s)"
+        ],
+        "affiliations": [
+            "Anonymous Institution(s)"
+        ],
+        "abstract": "We propose \\method, a Transformer-based Graph Neural Network to encode knowledge graphs, equipped with a masked pre-training framework. Our approach reformulates logical reasoning as a masked prediction problem, leveraging general knowledge from pre-trained models in a self-supervised manner. We demonstrate \\method's capability of answering complex logical queries, outperforming existing state-of-the-art approaches on widely-used benchmark datasets.",
+        "keywords": [
+            "Knowledge Graphs",
+            "Transformer",
+            "Graph Neural Networks",
+            "Pre-training",
+            "Logical Reasoning"
+        ],
+        "year": "2023",
+        "venue": "Submitted to: Conference on Neural Information Processing Systems (NeurIPS)",
+        "doi link": null,
+        "method name": "\\method"
+    },
+    "relate work": {
+        "related work category": [
+            "Knowledge Graph Embeddings",
+            "Logical Reasoning",
+            "Pre-training Graph Neural Networks"
+        ],
+        "related papers": "Hamilton et al. (2018), Ren et al. (2019), Arakelyan et al. (2021), Kotnis et al. (2021), Hu et al. (2020)",
+        "comparisons with related methods": "Most existing methods either rely on static knowledge graph embeddings (KGEs) or utilize classical rule-based approaches. \\method introduces a novel pre-training mechanism that extends these traditional methods by using a Transformer-based GNN architecture that can efficiently handle complex EPFO queries."
+    },
+    "high_level_summary": {
+        "summary of this paper": "\\method proposes a new methodology for answering complex logical queries using pre-trained KG embeddings. It introduces deep graph neural networks to coach in understanding the intricate interrelations in knowledge graphs through a unified framework.",
+        "research purpose": "To address the growing complexity in logical queries over knowledge graphs by utilizing a deep learning-based approach that combines GNNs and Transformers.",
+        "research challenge": "Handling complex logical queries requires models that can operate on incomplete data and scale across vast networks.",
+        "method summary": "Employs a Transformer-based GNN architecture, further enhanced by a masked pre-training strategy fine-tuned on EPFO queries, to capture relational intricacies at scale.",
+        "conclusion": "\\method enhances the state-of-the-art in logical query solving with its robust architectural design and self-supervised pre-training framework."
+    },
+    "Method": {
+        "description": "\\method adopts a Transformer-based GNN approach, integrating intricate logic querying through pre-trained graph neural networks. Employs a unique Triple Transformation strategy to effectively encode relations into the model while enabling its self-supervised pre-training.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Transformer-based GNN with Mixture-of-Experts strategy.",
+        "tasks": [
+            "EPFO Logical Query Answering"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "FB15k-237",
+            "NELL995"
+        ],
+        "baselines": [
+            "GQE",
+            "Query2Box",
+            "CQD",
+            "BiQE"
+        ],
+        "evaluation metric": "Hits@3m",
+        "setup": "Two-stage pre-training followed by a fine-tuning stage across both datasets.",
+        "hyperparameters": null,
+        "results": "\\method demonstrates superior performance over existing baselines, achieving significant improvements in both in-domain and out-of-domain query types.",
+        "performance": "\\method achieves marked improvements over state-of-the-art baselines, especially in multi-hop queries and out-of-domain generalization.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\method advances the state-of-the-art in logical quering in knowledge graphs by employing a Transformer-based GNN with comprehensive pre-training strategies.",
+        "future work": "Further exploration, including cross-knowledge transfer via pre-training, and enhancing GNNs by integrating inductive biases from traditional KGEs."
+    }
+}

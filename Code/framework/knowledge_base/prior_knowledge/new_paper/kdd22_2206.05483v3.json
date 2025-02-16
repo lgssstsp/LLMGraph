@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Bilateral Dependency Optimization (BiDO) Strategy for Mitigating Model-Inversion Attacks in Deep Neural Networks",
+        "authors": [
+            "XP",
+            "BH",
+            "JFZ"
+        ],
+        "affiliations": [
+            "HKBU, Department of CSD",
+            "RIKEN",
+            "Japan JST Strategic Basic Research Programs"
+        ],
+        "abstract": "This paper presents a defense strategy named Bilateral Dependency Optimization (BiDO) aimed at mitigating model-inversion attacks in deep neural networks. The BiDO framework leverages statistical dependency measures, such as constrained covariance and Hilbert-Schmidt independence criterion, to regulate information flow within neural models by minimizing the dependency between latent representations and input features to prevent privacy leakage while maximizing the predictive capability through dependent output representations. Experimental results on datasets like CelebA, MNIST, and CIFAR-10 demonstrate significant reduction in privacy attacks with minimal classification accuracy drop.",
+        "keywords": [
+            "Model-inversion Attacks",
+            "Privacy Leakage",
+            "Bilateral Dependency Optimization",
+            "Dependency Measures",
+            "Deep Neural Networks"
+        ],
+        "year": "2023",
+        "venue": "Unknown",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Model-inversion Attacks",
+            "Defending against MI Attacks",
+            "Statistical Dependency Measures"
+        ],
+        "related papers": "(GMI,DMI,VMI, First_MI, Knowledge_Align, updates_leak)",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research paper addresses privacy vulnerability in deep neural networks, focusing on model-inversion (MI) attacks that exploit correlations between model inputs and outputs to reconstruct training data. The paper introduces a Bilateral Dependency Optimization (BiDO) strategy that balances information minimization and maximizes prediction utility in the training phase of DNNs by regulating dependencies in latent and output representations.",
+        "research purpose": "To introduce a novel strategy (BiDO) that mitigates privacy leakage in machine learning models, focusing particularly on countering model-inversion attacks while preserving classification efficacy.",
+        "research challenge": null,
+        "method summary": "BiDO employs statistical dependency measures to regulate data flow within model layers, minimizing input-redundant information and ensuring robust, task-relevant latent representations.",
+        "conclusion": "Experiments illustrate that BiDO reduces privacy leakages through effective regularization of latent representations, outperforming existing defense mechanisms, without deterring model performance on various data sets."
+    },
+    "Method": {
+        "description": "BiDO integrates bilateral dependency strategies during training of neural networks to govern how features are propagated and how predictive power is sustained across tasks.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The target classifiers like VGG-16 for CelebA, ResNet-34, and LeNet for MNIST, use deep neural network architectures prevalent in facial recognition, digit classification, and other classification tasks.",
+        "tasks": [
+            "Face recognition",
+            "Digit classification",
+            "Object classification"
+        ],
+        "theoretical analysis": null,
+        "complexity": "BiDO utilizes statistical computations such as HSIC and COCO, generally exhibiting complexities of O(m^2) to O(m^3), where m represents batch size.",
+        "algorithm step": "The algorithm involves iteratively optimizing model weights, adapting regularization strategies to balance sensitivity and utility during classifier training with given statistical measures."
+    },
+    "Experiments": {
+        "datasets": [
+            "CelebFaces Attributes Dataset (CelebA)",
+            "MNIST",
+            "CIFAR-10"
+        ],
+        "baselines": [
+            "MID (Mutual Information Regularization)"
+        ],
+        "evaluation metric": "Attack accuracy metrics and Fréchet Inception Distance (FID) were used to assess privacy leakage and model robustness.",
+        "setup": "Experiments involve evaluating model robustness against various white-box MI attack strategies with prior state-of-the-art defenses like MID.",
+        "hyperparameters": "Hyperparameters tuned include balancing weights for regularization terms, determined empirically on CelebA, MNIST, and CIFAR-10 datasets.",
+        "results": "BiDO demonstrates superior utility-privacy trade-off over MID on facial models with CelebA dataset, showcasing attack accuracy reduction and minimal FID variance, likewise improving robustness on MNIST and CIFAR-10 against KED-MI.",
+        "performance": "BiDO achieves lower Attack and FID scores, indicating enhanced protection against adversarial inferences, while retaining competitive classification accuracy.",
+        "analysis": null,
+        "ablation study": "An ablation study confirmed BiDO's innate trade-off management efficacy when coupling dependency measures with classifier loss terms."
+    },
+    "conclusion": {
+        "summary": "BiDO provides an innovative solution to tackle privacy challenges posed by MI attacks in ML models, effectively balancing information minimization and model performance.",
+        "future work": "Continuing developments in optimizing dependency measures and applying BiDO in broader privacy-sensitive contexts can further enhance ML model robustness against adversarial threats."
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Dynamic Adjacency Matrix Factorization for Efficient Dynamic Network Embedding",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Confidential"
+        ],
+        "abstract": "We propose the Dynamic Adjacency Matrix Factorization (DAMF) algorithm for dynamic network embedding. Unlike existing methods, DAMF does not require iterative node-wise updates or retraining, reducing computational overhead. DAMF introduces a space projection framework to efficiently update embeddings while preserving network topology dynamics through dynamic Personalized PageRank (PPR) enhancements, maintaining both efficiency and embedding quality. Experimental results demonstrate DAMF's ability to scale to billion-edge graphs with competitive performance on classification, link prediction, and graph reconstruction tasks.",
+        "keywords": [
+            "Dynamic Network Embedding",
+            "Adjacency Matrix",
+            "Matrix Factorization",
+            "Personalized PageRank",
+            "Graph Learning"
+        ],
+        "year": "2023",
+        "venue": "Confidential",
+        "doi link": null,
+        "method name": "Dynamic Adjacency Matrix Factorization (DAMF)"
+    },
+    "relate work": {
+        "related work category": [
+            "Network Embedding",
+            "Dynamic Network Embedding"
+        ],
+        "related papers": "\\begin{itemize}\\n\\item Hamilton, William L., et al. \"Representation Learning on Graphs: Methods and Applications.\" arXiv preprint arXiv:1709.05584 (2017).\\n\\item Zhang, Zhihan, et al. \"ARbitrary-Order Proximity preserved Embedding.\" arXiv preprint arXiv:1803.06793 (2018).\\n\\item Liu, Shikun, et al. \"Real-time Dynamic Network Embedding via Negative Sampling.\" Proceedings of the AAAI Conference on Artificial Intelligence. 2019. \\n\\item Mahdavi, Sahand, et al. \"Dynnode2vec: Scalable Dynamic Network Embedding.\" WWW. 2018.\\n\\end{itemize}",
+        "comparisons with related methods": "DAMF offers an innovative approach by not relying on iterative retraining, unlike methods like Dynnode2vec and GloDyNE, which make extensive updates node-by-node or recalculation. DAMF incorporates dynamic PPR for capturing higher-order neighborhood information, outperforming traditional network embedding techniques."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces the Dynamic Adjacency Matrix Factorization (DAMF) algorithm designed for dynamic network embedding, aiming to balance efficiency and quality without constant retraining. DAMF uses space projections and dynamic Personalized PageRank (PPR) to maintain a concise node embedding while adapting to structural changes dynamically. It achieves state-of-the-art performance on several graph-related tasks.",
+        "research purpose": "The research aims to develop a novel network embedding strategy that efficiently handles dynamic graph changes while maintaining high-quality embedding projections to aid in tasks like classification and link prediction.",
+        "research challenge": "Updating network embeddings quickly in dynamic environments while retaining quality and making the embedding process applicable to large-scale networks.",
+        "method summary": "DAMF uses the concept of space projections and updates graph representations by applying rotations and scaling transformations. It incorporates dynamic Personalized PageRank to capture extended neighborhood information and optimizes the processing of node and edge changes.",
+        "conclusion": "DAMF efficiently updates dynamic network embeddings in a scalable manner, outperforming traditional methods across multiple tasks while keeping computational overhead low."
+    },
+    "Method": {
+        "description": "DAMF (Dynamic Adjacency Matrix Factorization) is designed for dynamic graphs, offering a novel approach to update node embeddings with minimal computational resources. It uses space projections and dynamic Personalized PageRank (PPR) to enhance embeddings.",
+        "problem formultaion": "The challenge is to efficiently update node embeddings in graphs that dynamically change over time without engaging in computationally expensive retraining.",
+        "feature processing": "Applies transformation via space projection matrices to update node positions within the embedding space.",
+        "model": "Dynamic network embeddings using adjacency matrix factorization with a focus on updating space projections using low-rank approximations.",
+        "tasks": [
+            "Node Classification",
+            "Link Prediction",
+            "Graph Reconstruction"
+        ],
+        "theoretical analysis": "Ensures DAMF maintains a low-rank matrix approximation for the updated adjacency matrix and shows adaptability to dynamic graph changes.",
+        "complexity": "DAMF showcases efficiency in update operations, limiting complexity to $O(\\Delta m)$ with respect to changes in the graph.",
+        "algorithm step": "DAMF consists of orthogonalization, rediagonalization, space projection, and dynamic embedding enhancement phases."
+    },
+    "Experiments": {
+        "datasets": [
+            "Wiki",
+            "Cora",
+            "Flickr",
+            "YouTube",
+            "Orkut",
+            "Twitter"
+        ],
+        "baselines": [
+            "LocalAction",
+            "GloDyNE",
+            "Dynnode2vec",
+            "RandNE",
+            "DynGEM",
+            "DNE"
+        ],
+        "evaluation metric": "AUC for link prediction, Precision@K for graph reconstruction, and accuracy for node classification.",
+        "setup": "Experiments were conducted on small, large, and massive graphs with emphasis on runtime and predictive performance across all baselines.",
+        "hyperparameters": "DAMF was tested with different damping factors (detailed within specific subsections of experiments section).",
+        "results": "DAMF consistently outperformed baseline methods in terms of predictive performance and runtime efficiency, particularly on large and massive datasets.",
+        "performance": "Showcased efficient updates with reduced computational time and high accuracy on standard tasks compared to traditional methods.",
+        "analysis": "DAMF demonstrated its strength in balancing computational efficiency and embedding quality, particularly with its unique space-projection mechanism and use of dynamic PPR.",
+        "ablation study": "Showed the importance of dynamic embedding enhancement by comparing performance with and without Personalized PageRank (PPR) enhancement."
+    },
+    "conclusion": {
+        "summary": "The DAMF algorithm efficiently updates dynamic network embeddings using space projections and dynamic PPR, maintaining high-quality low-rank approximations and demonstrating superior performance in various tasks.",
+        "future work": "Future work may involve further optimizing computational efficiency or adapting DAMF to include node attributes in the embedding process."
+    }
+}

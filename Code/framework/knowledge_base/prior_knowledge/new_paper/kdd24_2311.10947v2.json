@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Investigating the Potential of Large Language Models for Explaining Recommender Systems",
+        "authors": [
+            "First Author",
+            "Second Author",
+            "Third Author"
+        ],
+        "affiliations": [
+            "Institution 1",
+            "Institution 2"
+        ],
+        "abstract": "In this paper, we investigate the potential of utilizing large language models (LLMs) as surrogate models for explaining recommender systems. We propose novel alignment approaches to leverage the explainability of LLMs for complex systems. By incorporating behavior alignment, intention alignment, and hybrid alignment, we enhance the comprehensibility of predictive behaviors in recommender systems. Experiments conducted on multiple datasets demonstrate the efficacy of our approach in generating insightful explanations and advancing the field of explainable AI.",
+        "keywords": [
+            "Large Language Models",
+            "Recommender Systems",
+            "Explainability",
+            "Behavior Alignment",
+            "Intention Alignment"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "10.1145/12345678",
+        "method name": "RecExplainer"
+    },
+    "relate work": {
+        "related work category": [
+            "Model Explainability",
+            "LLMs and Multimodality"
+        ],
+        "related papers": "[1] Visualization Methods \n[2] Salient Input Feature Analysis \n[3] Surrogate Models \n[4] LLMs in Multimodal Systems",
+        "comparisons with related methods": "Contrary to traditional surrogate models, our approach leverages the predictive and reasoning capabilities of LLMs, offering improved model fidelity alongside enhanced explainability."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper explores the use of LLMs as surrogate models to improve the explainability of recommender systems. Various alignment methodologies enhance LLMs' capability in mimicking and explaining model behaviors, providing a new angle on AI interpretability.",
+        "research purpose": "To enhance model explainability in recommender systems using large language models.",
+        "research challenge": "Resolving the trade-off between model fidelity and comprehensibility in surrogate models.",
+        "method summary": "We introduce behavior alignment, intention alignment, and hybrid alignment methods to align LLMs with recommender models.",
+        "conclusion": "The proposed alignment approaches effectively demonstrate improved comprehensibility and model fidelity in experiments across different datasets."
+    },
+    "Method": {
+        "description": "We propose three distinct alignment methodologies for tuning LLMs to serve as explainable surrogates for recommender models.",
+        "problem formultaion": "Determine how to align LLMs with predictive behaviors of recommender models for improved explainability.",
+        "feature processing": null,
+        "model": "The core model involves an LLM fine-tuned to align with recommender system outputs and logic.",
+        "tasks": [
+            "Behavior Alignment",
+            "Intention Alignment",
+            "Hybrid Alignment"
+        ],
+        "theoretical analysis": "Our analysis suggests that leveraging LLMs enhances the expressiveness and fidelity of surrogate models traditionally bound by simplicity constraints.",
+        "complexity": "Increased complexity is offset by improved model fidelity and explainability.",
+        "algorithm step": "Begin with behavior alignment, assess model performance, introduce intention alignment, analyze embeddings, and conclude with hybrid alignment."
+    },
+    "Experiments": {
+        "datasets": [
+            "Video Games",
+            "Movies & TV",
+            "Steam"
+        ],
+        "baselines": [
+            "Random",
+            "Popularity",
+            "SASRec"
+        ],
+        "evaluation metric": "Overall performance is assessed based on alignment effect, explanation generation quality, and comprehensiveness.",
+        "setup": "Models are evaluated on public datasets with performance metrics derived from behavioral mimicry, accuracy, and human comprehension ratings.",
+        "hyperparameters": "SASRec embedding sizes; LLM parameters set with effective tuning methodologies such as LoRA; DeepSpeed's ZeRO-2 to manage GPU memory.",
+        "results": "Experiments demonstrate promising alignment effects and explanation qualities, with RecExplainer-H outperforming baselines on majority metrics.",
+        "performance": "RecExplainer-H shows superior alignment and explanation metrics, enhancing both prediction accuracy and model transparency.",
+        "analysis": "Results suggest that combining intention and behavior alignment in a hybrid approach yields robust explanations with minimal performance trade-offs.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "LLMs have shown remarkable potential in explaining recommender models, introducing a new paradigm in alignment methodologies and fostering advancements in model interpretability.",
+        "future work": "Future research should explore the applicability of intentions and behaviors alignments across different machine learning models and systems."
+    }
+}

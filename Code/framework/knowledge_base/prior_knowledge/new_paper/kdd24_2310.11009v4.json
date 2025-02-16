@@ -1,0 +1,86 @@
+{
+    "meta_data": {
+        "title": "LPFormer: A Graph Transformer for Adaptive Link Prediction",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Institution 1",
+            "Institution 2"
+        ],
+        "abstract": "In this paper we introduce a new framework, LPFormer, that aims to integrate a wider variety of pairwise information for link prediction. LPFormer does this via a specially designed graph transformer, which adaptively considers how a node pair relate to each other in the context of the graph. Extensive experiments demonstrate that LPFormer can achieve SOTA performance on a wide variety of benchmark datasets while retaining efficiency. We further demonstrate LPFormer's supremacy at modeling multiple types of LP factors.",
+        "keywords": [
+            "Link Prediction",
+            "Graph Transformer",
+            "Message Passing Neural Networks",
+            "Adaptive Learning"
+        ],
+        "year": "2023",
+        "venue": "To be published in Proceedings of a Prestigious Conference",
+        "doi link": null,
+        "method name": "LPFormer"
+    },
+    "relate work": {
+        "related work category": [
+            "Heuristics for Link Prediction",
+            "MPNNs for Link Prediction",
+            "Graph Transformers"
+        ],
+        "related papers": "Link prediction (LP) aims to model how links are formed in a graph. The process by which links are formed, i.e., link formation, is often governed by a set of underlying factors. We refer to these as \"LP factors\". Two categories of methods are used for modeling these factors -- heuristics and MPNNs. We describe each class of methods. We further include a discussion on existing graph transformers.",
+        "comparisons with related methods": "Recent work has attempted to extend the original Transformer architecture to graph-structured data. Graphormer learns node representations by attending all nodes to each other. SAN considers the use of the Laplacian positional encodings to enhance the learnt structural information. Alternatively, TokenGT considers all nodes and edges as tokens in the sequence when performing attention. Due to the large complexity of these models, they are unable to scale to larger graphs. To address this, several graph transformers have been proposed for node classification that attempt to efficiently attend to the graph. However, there are no graph transformers designed specifically for LP on uni-relational graphs."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes LPFormer, a novel graph transformer for adaptive link prediction. It aims to efficiently integrate multiple types of LP factors like local and global structural information and feature proximity into the link prediction process. LPFormer is designed to outperform conventional methods by incorporating adaptive pairwise encoding strategies, making it suitable for a broader range of graph structures.",
+        "research purpose": "To develop an efficient, adaptive method for link prediction in graphs that considers multiple LP factors through a specialized graph transformer architecture.",
+        "research challenge": "Existing methods either poorly integrate multiple LP factors or customize them at the expense of efficiency, limiting their applicability to diverse datasets.",
+        "method summary": "LPFormer customizes pairwise encodings using a flexible graph transformer setup, capable of dynamically selecting relevant LP factors for each link prediction task.",
+        "conclusion": "LPFormer strongly outperforms existing methods in link prediction tasks due to its adaptable and efficient design, with promising results across various datasets."
+    },
+    "Method": {
+        "description": "LPFormer is a graph transformer designed for efficient link prediction, using adaptive pairwise encodings.",
+        "problem formultaion": null,
+        "feature processing": "Feature representation includes the preprocessing of node attributes and their integration into pairwise encodings using relative positional encodings.",
+        "model": "Graph Transformer, LPFormer",
+        "tasks": [
+            "Link Prediction"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "Pubmed",
+            "ogbl-collab",
+            "ogbl-ppa",
+            "ogbl-ddi",
+            "ogbl-citation2"
+        ],
+        "baselines": [
+            "CN",
+            "AA",
+            "RA",
+            "GCN",
+            "SAGE",
+            "GAE",
+            "SEAL",
+            "NBFNet",
+            "Neo-GNN",
+            "BUDDY",
+            "NCNC"
+        ],
+        "evaluation metric": "Hits@K, MRR based on dataset",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "LPFormer achieves superior performance on most datasets when compared to baseline methods. It excels especially in datasets where conventional methods fail to adapt to various LP factors.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "LPFormer efficiently models a variety of LP factors and adapts well across datasets, outperforming existing methods.",
+        "future work": "Future work aims to explore more global LP factor integration and alternative encoding techniques."
+    }
+}

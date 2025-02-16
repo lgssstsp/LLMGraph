@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "STEP: Enhancing Spatial-Temporal Graph Neural Networks with a Pre-training Model for Multivariate Time Series Forecasting",
+        "authors": [
+            "Zhao Zhang",
+            "Zezhi Shao"
+        ],
+        "affiliations": [
+            "Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences"
+        ],
+        "abstract": "In this paper, we propose STEP, a novel framework for multivariate time series forecasting, where Spatial-Temporal Graph Neural Networks (STGNNs) are enhanced by a scalable pre-training model called TSFormer. By efficiently learning from long-term historical time series, TSFormer generates segment-level representations, providing contextual information to improve STGNNs' performance. Extensive experiments on real-world datasets demonstrate the superiority of our framework.",
+        "keywords": [
+            "Spatial-Temporal Graph Neural Networks",
+            "Pre-training model",
+            "Multivariate time series forecasting",
+            "Graph structure",
+            "TSFormer"
+        ],
+        "year": "2023",
+        "venue": "Conference on Advances in Neural Information Processing Systems (NeurIPS)",
+        "doi link": null,
+        "method name": "STEP"
+    },
+    "relate work": {
+        "related work category": [
+            "Spatial-Temporal Graph Neural Networks",
+            "Pre-training Models"
+        ],
+        "related papers": "STGNNs: DCRNN (2017), Graph WaveNet (2019), MTGNN (2020)\nPre-training: BERT (2019), GPT (2020), MAE (2021)",
+        "comparisons with related methods": "STEP addresses the limitations of STGNNs by leveraging pre-training techniques from NLP, significantly enhancing performance by capturing long-term dependencies."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces the STEP framework, which enhances STGNNs for multivariate time series forecasting using a pre-trained model called TSFormer. This approach efficiently captures long-term dependencies, improving predictive accuracy.",
+        "research purpose": "To improve the accuracy of STGNNs in multivariate time series forecasting by leveraging pre-trained contextual representations from long-term historical data.",
+        "research challenge": "Capturing long temporal dependencies in time series and managing computational complexity.",
+        "method summary": "The STEP framework includes a pre-training model (TSFormer) that generates segment-level representations, which are then employed to enhance the learning capacity of downstream STGNNs.",
+        "conclusion": "The proposed STEP framework significantly outperforms traditional STGNNs in handling multivariate time series forecasting tasks."
+    },
+    "Method": {
+        "description": "The proposed method leverages TSFormer, a pre-training model, to extract segment-level representations from long-term historical data to enhance the STGNNs.",
+        "problem formultaion": "The challenge is to forecast future values in a multivariate time series using spatial-temporal data efficiently.",
+        "feature processing": "Time series data is split into non-overlapping patches and processed to extract semantic information from these segments.",
+        "model": "TSFormer is a pre-training model based on Transformers that captures long-term temporal patterns.",
+        "tasks": [
+            "Multivariate time series forecasting",
+            "Graph structure learning"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The model addresses increased computational costs by using scalable Transformer blocks during pre-training.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "METR-LA",
+            "PEMS-BAY",
+            "PEMS04"
+        ],
+        "baselines": [
+            "HA",
+            "VAR",
+            "SVR",
+            "FC-LSTM",
+            "Graph WaveNet",
+            "ASTGCN",
+            "STSGCN",
+            "MTGNN",
+            "GTS"
+        ],
+        "evaluation metric": "Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), Mean Absolute Percentage Error (MAPE)",
+        "setup": "Experiments were conducted on three datasets, dividing data into training, validation, and test sets, with hyperparameters optimized accordingly.",
+        "hyperparameters": "Patch size L=12, P=168 patches for METR-LA and PEMS-BAY, P=336 for PEMS04.",
+        "results": "STEP framework significantly outperforms other models across all datasets, demonstrating improved accuracy in temporal pattern recognition.",
+        "performance": null,
+        "analysis": "STEP effectively utilizes long-term dependencies, addressing the limitations of existing STGNNs.",
+        "ablation study": "Demonstrated the impact of various components and confirmed the efficiency of graph structure learning and representation extraction."
+    },
+    "conclusion": {
+        "summary": "This paper presents the STEP framework that enhances STGNNs for more effective multivariate time series forecasting by incorporating a pre-training model, TSFormer, to capture long-term temporal patterns.",
+        "future work": "Future research will explore further optimization of TSFormer and its integration with other types of neural networks."
+    }
+}

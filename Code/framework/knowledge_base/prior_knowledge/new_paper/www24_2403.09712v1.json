@@ -1,0 +1,84 @@
+{
+    "meta_data": {
+        "title": "Knowledge-Injected Curriculum Pretraining Framework for Comprehensive Knowledge Graph Learning in Question Answering",
+        "authors": [
+            "Anonymous Authors"
+        ],
+        "affiliations": [
+            "Anonymous Affiliations"
+        ],
+        "abstract": "Knowledge-based question answering (KBQA) serves as a pivotal area in natural language processing and data mining research, facilitating access to and the processing of web data and knowledge. Through leveraging large language models (LLMs), KBQA systems have the potential to revolutionize smart voice assistants and search engines. This paper introduces a novel Knowledge-Injected Curriculum Pretraining Framework (KICP) to enhance LMs with comprehensive knowledge learning and complex reasoning capabilities, overcoming the traditional limitations of knowledge acquisition and application using knowledge graphs (KGs). The KICP framework comprises three pivotal modules: Knowledge Injection (KI), Knowledge Adaptation (KA), and Curriculum Reasoning (CR). Experiments conducted across four datasets demonstrate the superiority of KICP over existing approaches, revealing noteworthy advancements in both knowledge learning and question answering applications.",
+        "keywords": [
+            "Knowledge-Based Question Answering",
+            "Knowledge Graphs",
+            "Language Models",
+            "Curriculum Learning",
+            "Knowledge Injection",
+            "Complex Reasoning"
+        ],
+        "year": "2023",
+        "venue": "Journal of NLP Research",
+        "doi link": null,
+        "method name": "Knowledge-Injected Curriculum Pretraining"
+    },
+    "relate work": {
+        "related work category": [
+            "Knowledge-Based Question Answering",
+            "Knowledge-Enhanced Language Models"
+        ],
+        "related papers": "[saxena2020improving, lv2020graph, zhang2022greaselm, liu2023knowledge, hu2022empowering, yasunaga2022deep, wei2022chain, zhou2022least, yao2022react, logan2019barack, sun2019ernie, wang2021kepler, wang2021k, liu2022enhancing, feng2023factkb]",
+        "comparisons with related methods": "Our approach, unlike previous methods that are tightly coupled with specific techniques and resources, presents a general framework adaptable to multifarious implementations, thereby enabling models with comprehensive complex reasoning abilities along with enhanced knowledge learning."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a novel framework, the Knowledge-Injected Curriculum Pretraining Framework (KICP), designed to improve language models' understanding and reasoning abilities by infusing knowledge from knowledge graphs (KGs). The framework comprises three key modules: Knowledge Injection, Knowledge Adaptation, and Curriculum Reasoning.",
+        "research purpose": "To develop a flexible and potent framework for enhancing language models with comprehensive knowledge learning and reasoning capabilities utilizing KGs.",
+        "research challenge": "Bridging the gap between pre-trained language models and effective knowledge utilization, developing a method to consume KGs comprehensively and flexibly without reliance on specific techniques.",
+        "method summary": "The KICP framework injects knowledge from KGs into LMs by converting triples into sentences for corpus generation, adapting the LMs to retain natural language understanding, and progressive curriculum reasoning to enable complex reasoning.",
+        "conclusion": "The proposed KICP framework demonstrates improved performances over previous methods, offering a generalizable approach for comprehensive KG learning, natural language understanding, and reasoning needed for QA tasks."
+    },
+    "Method": {
+        "description": "KICP boosts KG learning in language models by orchestrating a comprehensive corpus generation and pretraining process employing Knowledge Injection, Knowledge Adaptation, and Curriculum Reasoning modules.",
+        "problem formultaion": "Knowledge-based question answering (KBQA) involves answering questions using a knowledge graph (KG) consisting of entities and relations, which necessitates effective knowledge retrieval and reasoning skills in language models.",
+        "feature processing": "Textual representations derived dynamically from KG elements, employing dynamic sampling for diversity.",
+        "model": "The KICP framework employs pretrained Large Language Models (LLMs) enhanced through curriculum-driven pretraining on enriched corpora generated from knowledge graphs, supported by knowledge adapter modules for knowledge adaptation.",
+        "tasks": [
+            "Knowledge-Injected Pretraining",
+            "Knowledge-Aware Fine-Tuning",
+            "Complex Reasoning Pretraining",
+            "QA Task Evaluation"
+        ],
+        "theoretical analysis": "Demonstrates enhanced knowledge understanding and reasoning through systematic corpus enrichment and pretraining methods.",
+        "complexity": "KICP aims to balance computation demands by selectively converting KGs into suitable training data, leveraging adaptive components and scalable reasoning tasks.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "CN-QA with CN-KG",
+            "ComplexWebQuestions with Wikidata",
+            "FreebaseQA with Wikidata",
+            "Math23K with HowNet"
+        ],
+        "baselines": [
+            "BERT",
+            "RoBERTa",
+            "ERNIE",
+            "K-BERT",
+            "KEPLER",
+            "K-Adapter",
+            "EmbedKGQA",
+            "GPT4",
+            "ChatGLM2"
+        ],
+        "evaluation metric": "F1, EM, ACC (F1 and EM for CN-QA, ACC for FreebaseQA, and answer accuracy for Math23K).",
+        "setup": null,
+        "hyperparameters": "Batch size of 32, learning rate of 0.0005 with warmup steps, masking probability 0.15 in Lesson 1 and 3, 0.3 in Lesson 2.",
+        "results": "KICP consistently outperforms baseline methods across datasets, illustrating improvements in achieving robust knowledge comprehension and reasoning.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "KICP offers a flexible framework for knowledge integration in language models, successfully enhancing their knowledge comprehension and reasoning capabilities with systematic curriculum pretraining.",
+        "future work": "Future endeavors may focus on enhancing the naturalness of corpus generation, expanding to generative models, and incorporating broader knowledge forms."
+    }
+}

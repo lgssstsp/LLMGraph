@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Causal Inference via Style Transfer for Out-of-Distribution Generalisation",
+        "authors": [
+            "Nam Khanh Toan",
+            "Phuong Tran Mai",
+            "Nhat Ho"
+        ],
+        "affiliations": [
+            "University of Illinois Urbana-Champaign"
+        ],
+        "abstract": "We explore causal inference for enhancing Out-of-Distribution (OOD) generalisation in image classification. Exploiting front-door adjustment with style transfer models such as Neural Style Transfer and Fourier-based Style Transfer to capture causal relationships, our methods outperform state-of-the-art approaches on benchmark datasets.",
+        "keywords": [
+            "causal inference",
+            "OOD generalisation",
+            "style transfer",
+            "front-door adjustment",
+            "image classification"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Learning Representations (ICLR)",
+        "doi link": "https://doi.org/10.48550/arXiv.2301.05876",
+        "method name": "Causal Inference via Style Transfer"
+    },
+    "relate work": {
+        "related work category": [
+            "Causal Inference",
+            "Domain Generalisation",
+            "Causal Inference for DG"
+        ],
+        "related papers": "\\textbf{Causal Inference }has been a fundamental research topic. It aims to reconstruct causal relationships between variables and estimate causal effects on variables of interest~\\cite{yao2021survey,glymour2016causal}. Causal inference has been applied to many deep learning research problems, especially in domain adaptation (DA)~\\cite{magliacane2018domain,rojas2018invariant,zhang2013domain,yue2021transporting} and domain generalisation (DG)~\\cite{wang2022out,mahajan2021domain,mitrovic2021representation}.",
+        "comparisons with related methods": "Relative to methods such as MatchDG that attempt to learn domain-invariant features, our approach focuses on modelling causal dependencies, which has proved more robust across diversified datasets."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel causal inference-based method to improve OOD generalisation in image classification using style transfer techniques to model front-door adjustment. The approach shows superior performance on benchmark datasets compared to state-of-the-art methods.",
+        "research purpose": "To address the limitations of standard statistical learning in generalising to OOD samples by leveraging causal inference and style transfer mechanisms.",
+        "research challenge": "Handling hidden confounders in causal inference settings for robust OOD generalisation.",
+        "method summary": "Utilising Neural Style Transfer (NST) and Fourier-based Style Transfer methods to estimate the causal model via front-door adjustment.",
+        "conclusion": "Our proposed method outperforms existing OOD generalisation methods, providing better causal interpretations and inference capabilities."
+    },
+    "Method": {
+        "description": "Our method combines causal inference with image style transfer techniques for robust OOD generalisation in image classification.",
+        "problem formultaion": "Addressing generalisation problems in OOD learning by eliminating confounding biases using a causal framework.",
+        "feature processing": "Features are processed via style transfer models that separate content from style in images.",
+        "model": "Neural Style Transfer (NST) and Fourier-based Style Transfer models.",
+        "tasks": [
+            "Image Classification",
+            "Domain Generalisation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "- Define semantic mediator variable capturing causal dependencies. - Apply style transfer to disentangle content from style. - Use styled images to enhance learning of causal relationships."
+    },
+    "Experiments": {
+        "datasets": [
+            "PACS",
+            "Office-Home",
+            "Digits-DG"
+        ],
+        "baselines": [
+            "DeepAll",
+            "MixStyle",
+            "FACT",
+            "MatchDG"
+        ],
+        "evaluation metric": "Accuracy",
+        "setup": null,
+        "hyperparameters": "Alpha, Beta in Neural Style Transfer and style mixing rate in Fourier Style Transfer.",
+        "results": "Our method outperforms others in the PACS, Office-Home, and Digits-DG datasets, with significant accuracy improvements in challenging domains.",
+        "performance": "Our method achieves 4.5% higher accuracy compared to MixStyle in PACS and consistently beats all tested baselines on varied datasets.",
+        "analysis": "The style transfer mechanism effectively isolates image semantics, enabling improved causal modelling and better OOD generalisation. Performance improvements indicate robustness against domain shifts.",
+        "ablation study": "Analyzed the impact of varying the number of style images and the trade-off between content and style for optimal performance."
+    },
+    "conclusion": {
+        "summary": "This study demonstrates that employing causal inference combined with style transfer significantly enhances OOD generalisation, addressing traditional statistical learning limitations.",
+        "future work": "Exploration can be expanded to include other types of style transfer models, further optimized hyperparameters, and applications beyond image classification."
+    }
+}

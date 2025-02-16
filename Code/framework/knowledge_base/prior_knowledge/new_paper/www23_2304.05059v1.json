@@ -1,0 +1,87 @@
+{
+    "meta_data": {
+        "title": "Understanding and Addressing Hierarchy-Imbalance in Semi-supervised Node Classification with Hyperbolic Geometry",
+        "authors": [
+            "Author 1",
+            "Author 2",
+            "Author 3"
+        ],
+        "affiliations": [
+            "Affiliation 1",
+            "Affiliation 2",
+            "Affiliation 3"
+        ],
+        "abstract": "In real-world graphs, the hierarchical structure is a significant topological property. Understanding the hierarchy-imbalance issue is crucial for semi-supervised node classification. This paper presents a novel framework, \\\\modelname, which explores the hierarchy-imbalance from a hyperbolic geometric perspective. The framework utilizes hyperbolic geometric embedding to capture the implicit hierarchy and adjust classification margins, and uses curvature to enhance message-passing efficiency. Extensive experiments demonstrate the superiority of \\\\modelname across various datasets.",
+        "keywords": [
+            "graph representation learning",
+            "hierarchy-imbalance",
+            "hyperbolic geometry",
+            "graph neural networks",
+            "semi-supervised node classification"
+        ],
+        "year": "2023",
+        "venue": "Graph Machine Learning Conference",
+        "doi link": null,
+        "method name": "\\\\modelname"
+    },
+    "relate work": {
+        "related work category": [
+            "Hierarchy in Graphs",
+            "Graph Neural Networks",
+            "Imbalance in Node Classification"
+        ],
+        "related papers": "Hamilton et al. (2017), Zhang et al. (2020), Chen et al. (2021), Song et al. (2022)",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper discusses the impact of the hierarchy-imbalance issue on semi-supervised node classification, introducing a framework called \\\\modelname. Using hyperbolic geometry, it adjusts classification margins and uses local curvature to enhance message-passing efficiency, outperforming existing methods on multiple datasets.",
+        "research purpose": "To explore and address the hierarchy-imbalance issue in semi-supervised node classification using a hyperbolic geometric perspective.",
+        "research challenge": "Effectively measuring hierarchy-imbalance and adjusting classification boundaries in complex hierarchical graphs.",
+        "method summary": "Using hyperbolic geometric embeddings to capture implicit hierarchy and curvature-aware message-passing to enhance information propagation in graphs.",
+        "conclusion": "The proposed framework \\\\modelname greatly improves prediction accuracy in semi-supervised node classification by addressing hierarchy-imbalance issues."
+    },
+    "Method": {
+        "description": "\\\\modelname leverages hyperbolic geometry to address imbalance by adjusting decision boundary margins with hyperbolic embeddings and enhancing message-passing using local curvature.",
+        "problem formultaion": "Imbalance in classified nodes in hierarchical graphs impacts effective learning.",
+        "feature processing": "Hyperbolic geometric embedding captures the node hierarchy implicitly.",
+        "model": "\\\\modelname: Hyperbolic Geometric Hierarchy-Imbalance Learning Framework",
+        "tasks": [
+            "Node Classification",
+            "Hierarchy Measurement"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Hierarchical Network Model (#N=1024 nodes)",
+            "Cora",
+            "Citeseer",
+            "Photo",
+            "Actor",
+            "Chameleon",
+            "Squirrel"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "GraphSAGE",
+            "ReNode",
+            "TAM",
+            "DropEdge",
+            "SDRF"
+        ],
+        "evaluation metric": "Weighted-F1 and Micro-F1 scores",
+        "setup": "Implementation in PyTorch Geometric; GNN backbones with 2-layer depth; Different hierarchy-level setups.",
+        "hyperparameters": "Hyperbolic curvature c=1; Representation dimension=256",
+        "results": "\\\\modelname consistently outperforms all baselines, especially on hierarchical tasks.",
+        "performance": "Improved classification accuracy significantly with hierarchy-aware margin and message-passing techniques.",
+        "analysis": "Observed significant class distribution effects using hyperbolic geometry and curvature-aware techniques.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\\\modelname addresses the hierarchy-imbalance issue in graph node classification through hyperbolic geometry and curvature-aware techniques, achieving substantial improvements in classification tasks.",
+        "future work": null
+    }
+}

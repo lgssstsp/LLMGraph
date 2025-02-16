@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Universal and Modular Formalism for Graph Pooling in GNNs",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Research Institute"
+        ],
+        "abstract": "Graph Neural Networks (GNNs) often alternate between transforming node features and pooling, which reduces node count to create coarsened graph representations. This research presents a modular framework for graph pooling, introducing three functions: selection, reduction, and connection (SRC). Our comprehensive taxonomy identifies four properties characterizing pooling operators, some mapping node features into fewer nodes, retaining essential graph information through learnable operators like DiffPool and MinCut. Experimentation is focused on evaluating whether pooling operators preserve graph attributes and information structure, offering guidelines for optimal pooling method choices in different scenarios.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Graph Pooling",
+            "SRC Functions",
+            "Node Representation",
+            "Modular Framework"
+        ],
+        "year": "2023",
+        "venue": "Conference on Neural Information Processing (NeurIPS)",
+        "doi link": null,
+        "method name": "SRC Framework"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Pooling Methods",
+            "Learnable Pooling Operators",
+            "Graph Clustering",
+            "Spectral Pooling"
+        ],
+        "related papers": "[1] Gilmer et al. (2017); [2] Battaglia et al. (2018); [3] Ying et al. (2018); [4] Bianchi et al. (2019)",
+        "comparisons with related methods": "The paper describes a unique unified formulation with the SRC framework, differentiating from previous works by offering a clear and versatile method to describe pooling operators in GNNs, supported by theoretical results, allowing for the formulation of universal approximators."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper offers a unifying framework for graph pooling in GNNs by decomposing the process into three primary functions, SRC, and introduces taxonomy based on these functions' characteristics to assess multiple existing pooling techniques.",
+        "research purpose": "To develop a comprehensive, flexible framework for understanding and implementing graph pooling within GNN architectures.",
+        "research challenge": "The challenge addressed is to unify the body's literature on graph pooling into a single, versatile framework that allows for comparative analysis.",
+        "method summary": "The main method involves the decomposition of graph pooling into Selection, Reduction, and Connection (SRC) functions, enabling a modular and analyzable presentation of each pooling operator.",
+        "conclusion": "The SRC framework proved effective at providing a structured approach to graph pooling in GNNs, with empirical evaluation demonstrating its utility in selecting appropriate techniques based on task and data characteristics."
+    },
+    "Method": {
+        "description": "This method divides graph pooling into three operations: Selection (groups nodes into subsets), Reduction (aggregates nodes and attributes), and Connection (links new nodes with edges). This modular approach aids systematic analysis and selection based on specific task needs.",
+        "problem formultaion": null,
+        "feature processing": "Each node's attributes are considered during the selection and reduction phase, aligning closely with node- and graph-embedding operations.",
+        "model": "The model utilizes SRC functions to create a pool mechanism adaptable for various contexts, processing graphs with different characteristics and requirements.",
+        "tasks": [
+            "Node Classification",
+            "Graph Classification",
+            "Graph Clustering"
+        ],
+        "theoretical analysis": "The paper mentions using recent theoretical results to define universal approximators for any pooling operator adhering to the continuous SRC function framework.",
+        "complexity": "The operators vary in complexity from linear to quadratic based on function choice, which can affect computational demands for large graph deployment.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "ModelNet40",
+            "PyGSP",
+            "TUDataset",
+            "Colors-3",
+            "Triangles"
+        ],
+        "baselines": [
+            "No-Pool",
+            "MinCut Pooling",
+            "Top-K Pooling"
+        ],
+        "evaluation metric": null,
+        "setup": "Graphs are tested on preserving original node attributes, structure, and task-specific information using an autoencoder and classification tasks.",
+        "hyperparameters": null,
+        "results": "Pooling methods vary in effectiveness with evaluation metrics like MSE for node information preservation, spectral similarity, edge density, and classification accuracy.",
+        "performance": "Trainable methods excel in maintaining structural integrity while sparse methods are better at node-level features, highlighting trade-offs.",
+        "analysis": "It was observed that different pooling operators yield different trade-offs between node attribute preservation and computational efficiency.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The paper introduces a universal and modular framework for graph pooling in GNNs, known as the SRC framework. By deconstructing the process into selection, reduction, and connection phases, the framework allows exploration of various pooling strategies and systematically evaluates their performance based on different attributes.",
+        "future work": "Further study on extending dense, trainable, and adaptive pooling methods that manage computational overheads while improving graph representation."
+    }
+}

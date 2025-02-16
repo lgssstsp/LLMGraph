@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Top-Personalized-K Recommendation",
+        "authors": [
+            "Wonbin Kweon",
+            "Unnamed"
+        ],
+        "affiliations": [
+            "IITP (South Korea)",
+            "NRF (South Korea)"
+        ],
+        "abstract": "This research investigates the limitations of the globally fixed-size top-K recommendation approach, proposing a personalized sizing method to maximize user satisfaction and system efficacy. Through the Top-Personalized-K Recommendation framework and comprehensive experiments, we showcase enhanced utility and the necessity for adaptive recommendation sizes in multifaceted real-world applications.",
+        "keywords": [
+            "personalized recommendation",
+            "top-K recommendation",
+            "user satisfaction",
+            "system efficacy"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Recommender Systems",
+        "doi link": null,
+        "method name": "PerK"
+    },
+    "relate work": {
+        "related work category": [
+            "Determination of Recommendation Size",
+            "Document List Truncation"
+        ],
+        "related papers": "Top-K recommendation [1], Document list truncation research [2-4].",
+        "comparisons with related methods": "Directly applying document list truncation methods to the present problem results in poor performance due to dataset sparseness and limited target label supervision, unlike PerK's approach."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper identifies the drawbacks of fixed-size top-K recommendation systems, suggesting a novel task—Top-Personalized-K Recommendation—that adjusts recommendation size per user to enhance utility. It proposes PerK as an adaptable framework to compute expected user utility and optimize personal recommendation sizing for improved satisfaction.",
+        "research purpose": "To question the universality of fixed-size top-K recommendations and promote a personalized approach optimizing user satisfaction.",
+        "research challenge": "Addressing individual user satisfaction needs despite historical reliance on fixed global recommendation limits.",
+        "method summary": "PerK framework estimates expected user utility using user-wise calibrated interaction probabilities to optimize personalized ranking sizes, overcoming inherent dataset sparsity and model miscalibration issues.",
+        "conclusion": "PerK exhibits superior performance by delivering tailored recommendations through accurate risk estimates, leading to better user satisfaction across multiple domains."
+    },
+    "Method": {
+        "description": "PerK is designed to determine individualized recommendation sizes maximizing user satisfaction. The framework transitions from globally fixed-size limits to personalized lists by leveraging existing recommender systems, thereby estimating the optimal recommendation through a structured process.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "PerK employs calibration functions applied to recommender model scores, transforming them into calibrated interaction probabilities for computing expected user utility.",
+        "tasks": [
+            "Optimize personalized recommendation sizes",
+            "Estimate user satisfaction based on expected utility"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Calibrate the recommender model's scores using Platt scaling for each user. 2. Estimate the expected user utility based on calibrated probabilities. 3. Determine the optimal recommendation size maximizing utility. 4. Provide a personalized recommendation list of that size."
+    },
+    "Experiments": {
+        "datasets": [
+            "MovieLens 10M",
+            "CiteULike",
+            "MovieLens 25M",
+            "Amazon Books"
+        ],
+        "baselines": [
+            "Top-K",
+            "Rand",
+            "Val-K",
+            "AttnCut",
+            "MtCut"
+        ],
+        "evaluation metric": null,
+        "setup": "Comparative performance with three base recommender models and four utility measures.",
+        "hyperparameters": "Learning rates, batch sizes, number of layers, and embedding sizes were fine-tuned.",
+        "results": "PerK outperforms existing methods, demonstrating significant improvements in user satisfaction across datasets with personalized sizes.",
+        "performance": null,
+        "analysis": "Experiments reveal that fixed-size models misjudge the optimal recommendation count, whereas PerK adapts effectively to each user's needs.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The necessity of personalized recommendation sizes has been highlighted through empirical results, with Top-Personalized-K Recommendation facilitating optimal user satisfaction levels.",
+        "future work": "Future research avenues include extending personalized recommendation frameworks to multi-domain systems, incorporating fairness constraints, and applying approaches to contexts like sponsored advertisements."
+    }
+}

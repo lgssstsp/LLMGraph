@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ppa",
+    "Dataset Link": "../linkprop/#ogbl-ppa",
+    "Rank": 10,
+    "Method": "SEAL",
+    "External Data": "No",
+    "Test Accuracy": "0.4880 ± 0.0316",
+    "Validation Accuracy": "0.5125 ± 0.0252",
+    "Contact": "mailto:muhan.zhang@hotmail.com",
+    "Paper Link": "https://arxiv.org/pdf/2010.16103.pdf",
+    "Code Link": "https://github.com/facebookresearch/SEAL_OGB",
+    "Parameters": "709,122",
+    "Hardware": "GeForce RTX 2080S (8GB GPU)",
+    "Date": "Oct 14, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ppa/SEAL.pdf",
+    "Paper Summary": "The paper introduces the \"labeling trick,\" a theoretical approach to enhance multi-node representation learning using Graph Neural Networks (GNNs). The authors argue that traditional methods typically aggregate individual node representations into a single joint representation for multiple nodes, which fails to capture the relationships or dependencies between those nodes.\n\n### Key Methods and Model Design Aspects:\n\n1. **Direct Node Aggregation Limitation**:\n   - Previous methods like Graph AutoEncoders (GAEs) often compute representations independently for individual nodes before aggregating them. This approach does not effectively capture the structural interdependencies, leading to indistinguishable representations for isomorphic links that differ structurally.\n\n2. **Labeling Trick Definition**:\n   - The labeling trick distinguishes target nodes within a graph through a labeling tensor. The authors formalize this tensor's properties to ensure that it meets two requirements: **target-nodes-distinguishing** and **permutation equivariance**. The labels enable GNNs to learn more expressive representations of node sets.\n\n3. **Usage of Zero-One Labeling**:\n   - As an example of the labeling trick, the zero-one labeling trick assigns the label \"1\" to target nodes and \"0\" to others, making them distinct. This distinction allows GNNs to learn different node representations based on their roles in the target link prediction task.\n\n4. **Aggregation through Labeled Graphs**:\n   - The authors propose feeding the labeled graph (constructed by appending the labeling tensor to the original graph’s feature tensor) into an expressive GNN. The aggregation of structural representations from this labeled graph should yield valid structural representations for the target node sets.\n\n5. **Theoretical Guarantees**:\n   - They prove that with a sufficiently expressive GNN and injective set aggregation function, the aggregation of node representations learned from the labeled graph leads to structural representations that distinguish between isomorphic and non-isomorphic node sets.\n\n6. **Node-Most-Expressive GNN**:\n   - They define a **node-most-expressive GNN**, which assigns different representations to non-isomorphic nodes and can effectively leverage the labeling trick in learning the most expressive structural representations.\n\n7. **Overall Framework**:\n   - The proposed framework suggests a clear pathway where node relations are keenly captured through enhanced labeling and representation techniques, addressing major limitations in previous GNN designs concerning multi-node outputs.\n\nThis method empowers GNNs to tackle joint prediction tasks involving multi-node sets by enabling them to capture relational dependencies and thus improve upon existing representation learning techniques."
+}

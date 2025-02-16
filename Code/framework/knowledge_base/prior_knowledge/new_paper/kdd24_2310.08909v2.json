@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Community Membership Hiding: An Approach Using Deep Reinforcement Learning",
+        "authors": [
+            "Author1",
+            "Author2",
+            "Author3"
+        ],
+        "affiliations": [
+            "Affiliation1",
+            "Affiliation2"
+        ],
+        "abstract": "In interconnected entities such as social networks, identifying communities is vital for understanding complex graph structures. Community detection algorithms group nodes based on shared characteristics, shedding light on network organization and dynamics. This study explores 'community membership hiding,' allowing users to preserve privacy while remaining on platforms. Drawing from counterfactual reasoning, we use a Markov decision process and deep reinforcement learning framework to guide nodes in avoiding community detection. Extensive experiments reveal that our method outperforms existing baselines, offering a balance between privacy and usability.",
+        "keywords": [
+            "Community Detection",
+            "Privacy",
+            "Counterfactual Reasoning",
+            "Deep Reinforcement Learning",
+            "Markov Decision Process"
+        ],
+        "year": "2023",
+        "venue": "Journal of Data Privacy",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Community Detection",
+            "Community Deception"
+        ],
+        "related papers": "Blondel et al., 2008; Fortunato, 2010; Waniek et al., 2018",
+        "comparisons with related methods": "Our experimental analysis reveals that our proposed method of community membership hiding using deep reinforcement learning outperforms existing methods by preserving individual privacy without significant alterations to the network structure."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper addresses community membership hiding, a novel challenge where the goal is to enable nodes in a network to avoid detection by community detection algorithms. We've proposed a method utilizing counterfactual reasoning combined with deep reinforcement learning to achieve this.",
+        "research purpose": "To allow users in social networks to preserve their anonymity from community detection while maintaining network utility.",
+        "research challenge": "To design a method that effectively conceals nodes from community detection algorithms without overly altering the network structure.",
+        "method summary": "We introduced a deep reinforcement learning framework that guides nodes to adjust connections, minimizing the chance of being identified as part of a community.",
+        "conclusion": "Our method successfully achieves community membership hiding, providing a significant improvement over current baselines in both effectiveness and efficiency."
+    },
+    "Method": {
+        "description": "The method is based on the concept of counterfactual reasoning, considering how changes in node connections impact community detection outcomes.",
+        "problem formultaion": "The problem is modeled as an optimization challenge, aiming to modify node relationships without compromising network integrity.",
+        "feature processing": null,
+        "model": "A deep reinforcement learning model framed as a Markov decision process to suggest optimal node-edge modifications for hiding community membership.",
+        "tasks": [
+            "Node Concealment from Community Detection"
+        ],
+        "theoretical analysis": "The task is formulated as an optimization problem where the objective is to maximize privacy metrics without substantial network alterations.",
+        "complexity": "The computational complexity is managed by employing reinforcement learning, focusing on practical, scalable solutions for large networks.",
+        "algorithm step": "1. Define the community detection task; 2. Calculate counterfactual implications for node changes; 3. Use reinforcement learning to recommend changes; 4. Validate with community structures."
+    },
+    "Experiments": {
+        "datasets": [
+            "words",
+            "kar",
+            "vote",
+            "pow",
+            "fb-75"
+        ],
+        "baselines": [
+            "Random-based",
+            "Degree-based",
+            "Betweenness-based",
+            "Roam-based",
+            "Greedy-based"
+        ],
+        "evaluation metric": "The success rate of node hiding and the similarity between original and modified community structures measured via NMI.",
+        "setup": "The experiments were conducted on five datasets with varying network complexities, exploring both symmetric and asymmetric setups.",
+        "hyperparameters": "Parameters considered include maximum budget for graph alterations and threshold for community distinction.",
+        "results": "Experiments show our method consistently outperforms baselines with higher success rates in concealing nodes, while maintaining network integrity.",
+        "performance": "The method demonstrates remarkable performance in preserving user anonymity from community detection across various datasets.",
+        "analysis": "Our method significantly balances the need for privacy with maintaining the network structure, proving superior to comparable methods.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Our study introduces a novel method for community membership hiding that preserves user privacy in social networks.",
+        "future work": "Future research will explore expanding this approach to handle larger and more complex networks, considering overlapping communities and testing against a greater variety of community detection algorithms."
+    }
+}

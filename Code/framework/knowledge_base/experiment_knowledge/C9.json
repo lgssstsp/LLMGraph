@@ -1,0 +1,28 @@
+{
+  "Task Description": "Cycle Detection with CYCLES dataset. Binary classification task to detect the presence of cycles in a graph. The CYCLES dataset comprises graphs with and without cycles of fixed lengths, challenging models to effectively discern structural patterns that indicate cyclic structures.",
+  "Dataset Description": "The CYCLES dataset includes graphs with node counts ranging from 37 to 65 and cycles of length 6. The dataset is evenly split into 9,000 training samples, 1,000 validation samples, and 10,000 test samples, all class-balanced to ensure equitable representation of both cyclic and acyclic graphs.",
+  "Performance Summary": {
+    "General": "The task assesses the ability of GNNs to utilize node features and graph topology to accurately classify graphs based on the presence or absence of cycles, which is a fundamental graph property relevant in numerous applications.",
+    "Detailed Performance": {
+      "Best Model": "GatedGCN-PE with 4 layers",
+      "Test Accuracy": {
+        "200 samples": "95.082±0.346",
+        "500 samples": "96.700±0.381",
+        "1000 samples": "98.230±0.473",
+        "5000 samples": "99.725±0.027"
+      },
+      "Training Insights": "The inclusion of positional encodings (PE) significantly enhances performance, underscoring the importance of node spatial relationships in detecting cycles. Models with positional encodings generally outperform those without, across all training sample sizes.",
+      "Model Comparisons": {
+        "GIN": {
+          "Without PE": "Test Accuracy from 70.585±0.636 at 200 samples to 86.130±1.140 at 5000 samples",
+          "With PE": "Improves to 99.570±0.089 at 5000 samples"
+        },
+        "GatedGCN": {
+          "Without PE": "Remains at 50.000±0.000 across all sample sizes, indicating failure without PE to capture necessary structural features for cycle detection"
+        }
+      }
+    },
+    "Analysis": "Performance improvements with increasing training samples highlight the scalability of GNNs when equipped with suitable architectural features like positional encodings. This dataset serves not only as a benchmark for cycle detection but also showcases the critical role of enhanced node feature encoding in improving GNN outcomes."
+  }
+}
+

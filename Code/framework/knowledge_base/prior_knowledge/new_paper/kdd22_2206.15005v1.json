@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "A Continuous-Time and Multi-level Dynamic Graph Representation Learning Framework for Origin-Destination Demand Prediction",
+        "authors": [
+            "Liang Zhehan"
+        ],
+        "affiliations": [
+            "National Natural Science Foundation of China"
+        ],
+        "abstract": "This study proposes a novel framework for OD demand prediction, modeling demand as a continuous-time dynamic graph. It eliminates the limitations of traditional snapshot-based models by capturing more relevant information. A multi-level structure is used to exploit spatial dependencies between traffic nodes, leading to superior performance on real-world datasets.",
+        "keywords": [
+            "OD demand prediction",
+            "dynamic graph",
+            "representation learning",
+            "multi-level structure"
+        ],
+        "year": "2023",
+        "venue": "Journal of Intelligent Transportation Systems",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "OD Demand Prediction",
+            "Dynamic Graph Representation Learning"
+        ],
+        "related papers": "- Contextualized, cityscale, AdversarialOD, MultiScale, multiresolution, linegraph, zhang2021short, DNEAT, GEML, MultiPerspective, GCN, GraphSage, GAT, GIN, DynGEM, cc, DySAT, EvolveGCN, CTDNE, DyRep, JODIE, STREAMING, TGAT, tgn, TagGen.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces CMOD, a framework for continuous-time dynamic graph representation learning tailored for OD demand prediction. The approach moves away from traditional snapshots to employ continuous-time features and multi-level memory updates, adapting spatial dependencies automatically. CMOD outperforms existing methods by capturing real-time dynamics and relations.",
+        "research purpose": "Address the challenges of OD demand prediction using dynamic graphs by maintaining continuously updated node memories and exploiting multi-level spatial dependencies.",
+        "research challenge": "1. Modeling continuous temporal features in dynamic transport systems.\n2. Determining implicit, non-handcrafted spatial dependencies among traffic nodes.\n3. Managing data sparsity due to the quadratic complexity of OD demand.",
+        "method summary": "A novel framework, CMOD, maintains continuously updating node memory vectors, handles transactions in real-time, and projects station-level data to higher-level entities for more accurate predictions.",
+        "conclusion": "CMOD successfully addresses OD prediction challenges, showing state-of-the-art performance on real datasets and potential applications in various edge prediction scenarios."
+    },
+    "Method": {
+        "description": "CMOD maintains three tiers of continuously updated node representations: station-level, cluster-level, and area-level. This approach allows it to capture spatial and temporal dependencies dynamically.",
+        "problem formultaion": "Predict OD demand matrices in a given timeframe from continuous transaction data, leveraging graph topology and node relations.",
+        "feature processing": "Directly uses timestamped events, allowing time information as continuous features. Utilizes attention mechanisms for spatial dependency modeling.",
+        "model": "A hierarchical dynamic graph representation model leveraging memory updates and attention mechanisms for adaptive clustering and prediction.",
+        "tasks": [
+            "OD demand prediction",
+            "Traffic management insight"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "BJSubway",
+            "NYTaxi"
+        ],
+        "baselines": [
+            "Historical Average (HA)",
+            "Linear Regression (LR)",
+            "XGBoost",
+            "GEML",
+            "DNEAT",
+            "TGN",
+            "DyRep"
+        ],
+        "evaluation metric": "Mean Average Error (MAE), Root Mean Square Error (RMSE), Pearson Correlation Coefficient (PCC)",
+        "setup": "Predictions made for 30-minute intervals; implementation on PyTorch with hyperparameter tuning and early stopping; evaluation on two real-world datasets.",
+        "hyperparameters": "Memory and representation dimensions set to 256; 8 attention heads; Adam optimizer with learning rate starting at 0.0001.",
+        "results": "CMOD consistently outperformed other models, especially on larger datasets.",
+        "performance": "Better MAE, RMSE, and PCC values than benchmarks, showcasing the model's superior capture of dynamic node features.",
+        "analysis": "Continuous-time updates and multi-level structure offer deeper insight and modeling of AD demand dynamics.",
+        "ablation study": "Validates the impact of each component: multi-level structure, memory updater, and custom OD loss all contribute to the model's improved performance."
+    },
+    "conclusion": {
+        "summary": "This study introduced CMOD, a dynamic graph-based framework for OD prediction overcoming snapshot limitations by using continuous-time data models and adaptive structures.",
+        "future work": "The model shows the potential for edge-level predictions in other domains like trade or network usage, suggesting broad applicability beyond transportation."
+    }
+}

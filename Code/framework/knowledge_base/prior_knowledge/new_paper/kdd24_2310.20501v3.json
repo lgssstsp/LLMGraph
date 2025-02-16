@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Exploring Source Bias in Information Retrieval Models",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Example",
+            "Institute of Research"
+        ],
+        "abstract": "This paper examines the impact of LLM-generated text on information retrieval systems, revealing a bias towards this content. By establishing realistic benchmarks and proposing a debiasing method, this study aims to address and mitigate the biases within neural retrieval models.",
+        "keywords": [
+            "Source Bias",
+            "Information Retrieval",
+            "Large Language Models",
+            "Neural Models",
+            "Artificial Intelligence Generated Content"
+        ],
+        "year": "2023",
+        "venue": "Example Conference on AI Research",
+        "doi link": "10.1234/example.2023.001",
+        "method name": "Debiased Constraint"
+    },
+    "relate work": {
+        "related work category": [
+            "Large Language Models for IR",
+            "Artificial Intelligence Generated Content"
+        ],
+        "related papers": "AI-generated content research and IR studies utilizing LLMs.",
+        "comparisons with related methods": "Evaluates the comparative bias between human-written and LLM-generated content in neural models."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper investigates the influence of the growth of LLM-generated content on IR systems, specifically focusing on bias in neural models. By constructing benchmarks and analyzing semantic differences, this study aims to illuminate and correct biases in modern retrieval systems.",
+        "research purpose": "To reveal and address the potential bias towards LLM-generated content within IR systems.",
+        "research challenge": "Addressing the bias favoring LLM-generated text over human-written text.",
+        "method summary": "Implemented a debiased constraint to mitigate bias within retrieval models.",
+        "conclusion": "UR models, particularly neural ones, are biased towards LLM-generated content, requiring mitigation strategies."
+    },
+    "Method": {
+        "description": "The study uses new IR benchmarks to evaluate bias in neural models towards LLM-generated text and proposes a debiased constraint to address this.",
+        "problem formultaion": "Presenting bias towards LLM content in IR systems as a pivotal challenge.",
+        "feature processing": "Transformation of both human-written and LLM-generated content into format-comparable datasets for modeling.",
+        "model": "Neural retrieval models utilizing pretrained language models.",
+        "tasks": [
+            "Bias Detection",
+            "Benchmark Construction",
+            "Bias Mitigation"
+        ],
+        "theoretical analysis": "Singular value analysis showed LLM-generated texts to be semantically more focused, introducing bias.",
+        "complexity": null,
+        "algorithm step": "Integrated the bias constraint into the optimization objective."
+    },
+    "Experiments": {
+        "datasets": [
+            "SciFact+AIGC",
+            "NQ320K+AIGC"
+        ],
+        "baselines": [
+            "TF-IDF",
+            "BM25",
+            "ANCE",
+            "BERM",
+            "TAS-B",
+            "Contriever"
+        ],
+        "evaluation metric": "NDCG@K, MAP@K",
+        "setup": "Neural models were evaluated on newly constructed datasets with mixed content sources.",
+        "hyperparameters": "Debiased coefficient varied between 1e-4 to 1e-2.",
+        "results": "Neural receptors showcase biased performance preferring LLM-generated text.",
+        "performance": "Performance shifts when a debiased constraint is applied.",
+        "analysis": "Semantic and term-based analyses highlight the dataset's quality.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Our findings caution on the implications of source bias in IR systems favoring LLM-generated text.",
+        "future work": "Future work could explore this bias in other domains or modalities, such as images or videos."
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Graph Influence Functions for Graph Unlearning",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Affiliation1",
+            "Affiliation2"
+        ],
+        "abstract": "Graph Unlearning has become essential due to privacy concerns. Current works fall short of efficiently removing such information due to the intertwined structure of GNNs. We develop a Graph Influence Function that effectively identifies and removes nodes, edges, and features. Consequently, we ensure improved unlearning in GNNs.",
+        "keywords": [
+            "Graph Unlearning",
+            "Graph Neural Networks",
+            "Influence Functions",
+            "Privacy",
+            "Model Optimization"
+        ],
+        "year": "2023",
+        "venue": "Conference Name",
+        "doi link": null,
+        "method name": "Graph Influence Function (GIF)"
+    },
+    "relate work": {
+        "related work category": [
+            "Machine Unlearning",
+            "Influence Functions",
+            "Privacy"
+        ],
+        "related papers": "Cao & Yang 2015, Ginart et al. 2019, Karasuyama et al. 2010",
+        "comparisons with related methods": "Influence Functions generally ignore structural reliance; our GIF considers both direct and indirect implications, improving the removal of residual influence."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper addresses the challenge of efficiently removing residual data influence in GNNs through Graph Influence Functions (GIF), allowing data privacy compliance without complete model retraining. This approach yields better balance between model utility, unlearning efficacy, and computational efficiency.",
+        "research purpose": "To develop an efficient method for removing the influence of specific data from GNNs, ensuring comprehensive graph unlearning.",
+        "research challenge": "The traditional methods either provide incomplete unlearning or are computationally expensive due to structural dependencies in GNNs.",
+        "method summary": "GIF considers structural dependencies in GNNs to offer more complete data removal, minimizing residual influences on neighboring data.",
+        "conclusion": "GIF provides superior graph unlearning performance compared to existing methods by integrating structural analysis into influence function processes for heightened data privacy."
+    },
+    "Method": {
+        "description": "We propose the Graph Influence Function (GIF), tailored to graph structured data. GIF identifies and removes nodes, edges, and features that influence targeted graph structures, effectively curtailing their impact on the GNN's predictions.",
+        "problem formultaion": null,
+        "feature processing": "Handel node, edge, and feature perturbations to assess and mitigate their influence on the overall graph structure.",
+        "model": "A novel model based on graph-oriented influence functions designed for node, edge, and feature unlearning tasks.",
+        "tasks": [
+            "Node Unlearning",
+            "Edge Unlearning",
+            "Feature Unlearning"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The model maintains linear time complexity across numerous datasets, optimizing performance thresholds.",
+        "algorithm step": "1. Identify target nodes, edges, and features. 2. Calculate influence using GIF. 3. Remove influence by adjusting GNN predictions."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "CS"
+        ],
+        "baselines": [
+            "Retrain",
+            "GraphEraser (LPA)",
+            "GraphEraser (Kmeans)",
+            "Influence Function"
+        ],
+        "evaluation metric": "F1 Score",
+        "setup": "Extensive benchmarks on unlearning tasks with varying perturbation ratios.",
+        "hyperparameters": null,
+        "results": "GIF consistently exhibited a reduction in unlearning time with comparable F1 results across various models and datasets.",
+        "performance": "GIF closes the gap with traditional retraining methods, enhancing the efficiency and effectiveness dichotomy.",
+        "analysis": "Employing GIF reveals that traditional IF underestimates the complexities inherent in graph structures, indicating the need for more nuanced methods.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The study introduces a novel unlearning algorithm for GNNs, maximizing both efficiency and model utility through innovative structural influence calculations.",
+        "future work": "We aim to explore GIF applications beyond graph unlearning, particularly in security and privacy domains of machine learning."
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 8,
+    "Method": "SUREL",
+    "External Data": "No",
+    "Test Accuracy": "0.8883 ± 0.0018",
+    "Validation Accuracy": "0.8891 ± 0.0021",
+    "Contact": "mailto:yinht@purdue.edu",
+    "Paper Link": "https://arxiv.org/abs/2202.13538",
+    "Code Link": "https://github.com/Graph-COM/SUREL",
+    "Parameters": "79,617",
+    "Hardware": "Quadro RTX 6000",
+    "Date": "Mar 18, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/SUREL.pdf",
+    "Paper Summary": "The paper introduces **SUREL** (Subgraph-based Representation Learning), a novel computational framework that optimizes the process of Graph Representation Learning (GRL) by focusing on subgraph extraction and representation. Its main goal is to improve scalability and efficiency in subgraph-based learning tasks, moving beyond the limitations of canonical Graph Neural Networks (GNNs).\n\n### Key Model Design Aspects:\n\n1. **Walk-Based Subgraph Decomposition**:\n   - SUREL employs a walk-based approach to break down subgraphs into manageable components. This method allows the reuse of walks across different queries, significantly decreasing redundancy and facilitating parallel computation.\n\n2. **Relative Positional Encoding (RPE)**:\n   - To preserve the structural information lost when decomposing subgraphs, SUREL introduces RPE. This encoding captures the intra-nodal distances by recording the position of a node in terms of its distances to other queried nodes. This feature aids in better representation by enabling the model to understand the relational context of nodes within a subgraph.\n\n3. **Subgraph Construction**:\n   - Instead of explicitly extracting subgraphs for each query, SUREL constructs a joint subgraph representation by aggregating walks from multiple nodes in a query set. The model uses a hierarchical data structure that groups walks by their starting nodes, allowing efficient access and updates.\n\n4. **Memory Management**:\n   - SUREL implements an efficient memory management strategy. By storing the RPEs and the sets of sampled walks in optimized data structures, it minimizes memory overhead while maintaining fast access speeds. This design accommodates large-scale graphs without requiring extensive memory resources.\n\n5. **Neural Encoding**:\n   - The joint representation of the queried nodes' walks, along with their corresponding RPEs, is then fed into neural networks for encoding. SUREL utilizes a two-layer Recurrent Neural Network (RNN) or Multi-Layer Perceptron (MLP) architecture to process these inputs, allowing the model to learn complex relationships between nodes efficiently.\n\n6. **Scalable Query-Based Joining**:\n   - The architecture supports query-based joining of subgraphs. Given a set of nodes defined in a query, SUREL can efficiently concatenate the corresponding walks and their RPEs to create a well-formed representation for use in subsequent prediction tasks.\n\nThis cohesive design showcases how SUREL addresses key challenges in existing methods, particularly focusing on improving information preservation and computational efficiency during the graph representation process."
+}

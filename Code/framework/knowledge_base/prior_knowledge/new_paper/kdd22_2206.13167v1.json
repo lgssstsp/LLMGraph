@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Affiliation Metrics for Time Series Anomaly Detection",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of ABC",
+            "Institute of DEF"
+        ],
+        "abstract": "This paper addresses the challenge of anomaly detection in time series data by introducing a novel set of precision/recall metrics known as affiliation metrics. These metrics are designed to overcome the limitations of traditional evaluation metrics in time series anomaly detection, providing robustness, locality, and theoretical grounding.",
+        "keywords": [
+            "Time Series",
+            "Anomaly Detection",
+            "Precision/Recall",
+            "Evaluation Metrics",
+            "Affiliation Metrics"
+        ],
+        "year": "2023",
+        "venue": "Journal of Advanced Computational Intelligence",
+        "doi link": null,
+        "method name": "Affiliation Metrics"
+    },
+    "relate work": {
+        "related work category": [
+            "Evaluation Metrics",
+            "Anomaly Detection"
+        ],
+        "related papers": "Tatbul et al.~\\cite{tatbul2018precision}, Hwang et al.~\\cite{hwang2019time}",
+        "comparisons with related methods": "Affiliation metrics compare favorably against range-based metrics like RP/RR and TaP/TaR due to their robustness to adversary algorithms and locality insightful evaluation."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces affiliation metrics aimed at enhancing the precision/recall evaluation of time series anomaly detection tasks by offering robust, parameter-free, and locally interpretable metrics.",
+        "research purpose": "To address the limitations in traditional anomaly detection metrics by providing a set of metrics that are resilient to adversarial strategies and enable local interpretability.",
+        "research challenge": "Existing metrics are vulnerable to adversarial algorithms and lack interpretability on the local level.",
+        "method summary": "Affiliation metrics use distance calculations and probability formulations to evaluate the accuracy of anomaly detections with respect to time-bound categories.",
+        "conclusion": "Affiliation metrics offer a robust tool for unbiased evaluation of anomaly detection methods, surpassing existing methods in both precision and interpretability."
+    },
+    "Method": {
+        "description": "The proposed method introduces affiliation metrics that leverage average distance and probability comparison against random sampling to provide a more comprehensive evaluation of time series anomalies.",
+        "problem formultaion": "Addressing the misalignment of traditional evaluation metrics when applied to time series anomalies.",
+        "feature processing": null,
+        "model": "The method does not propose a new model but a new evaluation metric system for existing models.",
+        "tasks": [
+            "Anomaly Detection",
+            "Evaluation Metrics"
+        ],
+        "theoretical analysis": "The paper provides proofs and theoretical insights into the robustness of affiliation metrics and their statistical behavior.",
+        "complexity": null,
+        "algorithm step": "1. Calculate directed average distance. 2. Define zones of affiliation. 3. Convert distances to probabilities against random sampling. 4. Calculate final precision/recall by averaging individual probabilities."
+    },
+    "Experiments": {
+        "datasets": [
+            "Machine-Temp",
+            "NYC-Taxi",
+            "Twitter-AAPL",
+            "SWaT"
+        ],
+        "baselines": [
+            "Greenhouse",
+            "LSTM-AD",
+            "Luminol TSB"
+        ],
+        "evaluation metric": "Affiliation metrics, RP/RR, TaP/TaR, Classical Precision/Recall",
+        "setup": "Comparative analysis using open datasets with varying anomaly types and detection algorithms.",
+        "hyperparameters": null,
+        "results": "Affiliation metrics showed resilience against adversary predictions and provided local interpretability that conventional metrics lacked.",
+        "performance": "Outperformed existing range-based metrics in resisting adversary algorithms and highlighted precision and recall for previously ambiguous regions.",
+        "analysis": "Individual event evaluation highlighted strengths and weaknesses in anomaly detection algorithms previously not considered.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The paper successfully introduces a novel affiliation metric that overcomes limitations in traditional metrics, ensuring robust, parameter-free, and interpretable evaluation of time series anomalies.",
+        "future work": "Application to other domains beyond time series anomaly detection, exploring hybrid distance and probability metrics."
+    }
+}

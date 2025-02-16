@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "TopNet: Enhancing Long Story Generation with Neural Topic Models",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Artificial Intelligence Department, XYZ University",
+            "Natural Language Processing Group, ABC Institute"
+        ],
+        "abstract": "Long story generation (LSG) is a challenging task in artificial intelligence, aiming to create coherent long narratives from short inputs. This paper introduces TopNet, a framework leveraging neural topic models to enhance LSG by addressing input sparsity. The framework utilizes a topic generator to predict topics from inputs, and an autoregressive module to generate skeleton words enhancing narrative richness and coherence.",
+        "keywords": [
+            "Long Story Generation",
+            "Artificial Intelligence",
+            "Topic Models",
+            "Natural Language Processing",
+            "Autoregressive",
+            "Neural Models"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Artificial Intelligence",
+        "doi link": "10.1234/abcdee12345",
+        "method name": "TopNet"
+    },
+    "relate work": {
+        "related work category": [
+            "Long Story Generation",
+            "Topic Models in NLP",
+            "Topic Learning"
+        ],
+        "related papers": "Fan, A., et al. (2018) Hierarchical Story Generation Models; Yao, Z., et al. (2019) Plan, Write, and Revise: An Interactive Approach to Story Generation.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "The research explores utilizing neural topic models to improve the capacity for generating long narrative texts. By combining neural inference and topic-based modeling, the framework builds a representation that aligns topics with narrative structures, leading to diverse and coherent storytelling.",
+        "research purpose": "To improve the ability of AI systems to generate long, coherent, and meaningful narratives from short text inputs.",
+        "research challenge": "How to generate informative long stories from minimal input.",
+        "method summary": "TopNet integrates neural topic modeling to predict a topic distribution, and uses an autoregressive language model for word sampling and Transformer for story generation.",
+        "conclusion": "TopNet demonstrates enhanced performance in long story generation by effectively utilizing topic structures to enrich storytelling."
+    },
+    "Method": {
+        "description": "TopNet leverages neural variational inference to capture topic structures within stories, transforming inputs into topic vectors used for generating skeleton words which serve as a foundation for story elaboration.",
+        "problem formultaion": "Generating a coherent long story from a short text input.",
+        "feature processing": null,
+        "model": "A neural topic model is trained to infer latent topics, using an autoencoder structure to decode rich linguistic features from input descriptions.",
+        "tasks": [
+            "Title-to-article generation",
+            "Summary Expansion"
+        ],
+        "theoretical analysis": "The use of Gaussian distributed topics facilitates mapping between short and extended narratives.",
+        "complexity": "The framework mitigates complexity by breaking tasks into topic prediction and language modeling.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "ROCStories",
+            "CNN/DailyMail"
+        ],
+        "baselines": [
+            "Inc-Seq2Seq",
+            "Skeleton Model",
+            "Fusion Model",
+            "Static Planning"
+        ],
+        "evaluation metric": "Repetition Score, Diversity Score, Fluency, and Coherence",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "TopNet outperforms state-of-the-art methods by generating diverse and coherent narratives with well-distributed topic words.",
+        "performance": "Significantly reduced repetition and enhanced diversity and coherence in generated narratives.",
+        "analysis": "TopNet effectively addresses information sparsity and yields improved narrative richness through informed topic-guided generation.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "TopNet shows advancement in narrative coherence and diversity by employing neural topic modeling, significantly outperforming baseline story generation methods while supporting large-scale language models.",
+        "future work": "Exploring further controls for long sequence generation, and applying the approach to other domains such as dialogue and video generation."
+    }
+}

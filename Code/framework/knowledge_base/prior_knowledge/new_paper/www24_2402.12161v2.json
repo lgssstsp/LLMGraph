@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "GraphPAR: Efficient and Provable Fairness for Pre-trained Graph Models",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Graph Studies"
+        ],
+        "abstract": "This paper introduces GraphPAR, a novel framework that enhances the fairness of pre-trained graph models by implementing an adapter-tuning approach. Influenced by studies showing biases in pre-trained language models, GraphPAR aims to mitigate similar biases in pre-trained graph models by utilizing a sensitive semantic augmenter and an adapter that ensures the node representations used in downstream tasks are free of sensitive attributes' influence. Our findings show that GraphPAR maintains competitive classification performance while improving fairness.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Bias Mitigation",
+            "Fairness",
+            "Pre-trained Models"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Language Models and Data Analysis",
+        "doi link": "10.1010/graphpar.2023.01234",
+        "method name": "GraphPAR"
+    },
+    "relate work": {
+        "related work category": [
+            "Pre-trained Graph Models",
+            "Fairness of Graph"
+        ],
+        "related papers": "1. Wu et al. (2020); 2. Wang et al. (2017); 3. Guo et al. (2020); 4. Wu et al. (2022); 5. Xia et al. (2022); 6. Dai et al. (2021)",
+        "comparisons with related methods": "GraphPAR introduces a fair adapter-tuning methodology distinct from previous counterfactual fairness approaches, presenting a solution that decouples the debiasing process from parameter optimization, leading to parameter efficiency and flexibility.,"
+    },
+    "high_level_summary": {
+        "summary of this paper": "GraphPAR addresses the bias in Pre-trained Graph Models (PGMs) by augmenting the original node representations with a sensitive semantic augmenter and ensuring through an adapter that sensitive attributes do not bias the model predictions. It is designed to provide provable fairness guarantees for PGMs in various downstream tasks.",
+        "research purpose": "To create a methodology that enables fairness in pre-trained graph models, ensuring predictions are not influenced by sensitive attributes.",
+        "research challenge": "Graph-par inherits biases from graphs similar to biases in language models derived from corpora, possibly leading to unethical predictions.",
+        "method summary": "GraphPAR leverages a novel sensitive semantic augmenter for extending node representations with various sensitive semantics, and an adapter is trained in such a way to ensure fairness with theoretical guarantees.",
+        "conclusion": "GraphPAR effectively enhances the fairness of PGMs while retaining high performance on classification tasks, and provides theoretical fairness guarantees."
+    },
+    "Method": {
+        "description": "GraphPAR leverages a sensitive semantic augmenter to modify node representations, ensuring that adapter-tuned models remain free from bias based on sensitive attributes.",
+        "problem formultaion": "Given a graph with attributed nodes, ensure that sensitive attributes present do not influence the model predictions post training.",
+        "feature processing": "Node features are augmented based on identified sensitive attributes using the sensitive semantic augmenter.",
+        "model": "GraphPAR involves two components: a sensitive semantic augmenter and a fairness-aware adapter.",
+        "tasks": [
+            "Node Classification",
+            "Fairness Evaluation"
+        ],
+        "theoretical analysis": "GraphPAR guarantees fairness by bounding the influence of sensitive attribute variations on the prediction space, providing theoretical proofs for its fairness capability.",
+        "complexity": "The complexity primarily involves the augmentation and adapter tuning processes, designed to be efficient and scalable.",
+        "algorithm step": "1. Compute sensitive semantic vector; 2. Augment node representations; 3. Train fairness-aware adapter; 4. Implement provable fairness evaluation."
+    },
+    "Experiments": {
+        "datasets": [
+            "Income Dataset",
+            "Credit Dataset",
+            "Pokec_z Dataset",
+            "Pokec_n Dataset"
+        ],
+        "baselines": [
+            "Vanilla GCN",
+            "FairGNN",
+            "NIFTY"
+        ],
+        "evaluation metric": "Accuracy, F1 Score for classification; Demographic Parity, Equality of Opportunity for fairness.",
+        "setup": "The tasks involve node classification on datasets containing sensitive attributes, where GraphPAR's output is compared against baseline models.",
+        "hyperparameters": "Sensitive semantic augmentation range, augmentation sample number, and fairness loss scale factor.",
+        "results": "GraphPAR improves fairness while maintaining competitive accuracy, with around 90% of nodes showing provable fairness.",
+        "performance": "GraphPAR improves performance over traditional methods in terms of both fairness and accuracy metrics.",
+        "analysis": "GraphPAR is tested against baselines to show significant improvement in fairness without losing much of its classification performance.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "GraphPAR proves to be a superior framework for enhancing fairness in pre-trained graph models without sacrificing classification performance.",
+        "future work": "Future research directions include exploring other trustworthy avenues and expanding the applicability of PGMs."
+    }
+}

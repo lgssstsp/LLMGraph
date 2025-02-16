@@ -1,0 +1,83 @@
+{
+    "meta_data": {
+        "title": "Evaluating Task-Specific Node Influence Using Node Removal and Graph Neural Networks",
+        "authors": [
+            "John Smith",
+            "Emily Chen",
+            "Michael Johnson"
+        ],
+        "affiliations": [
+            "University of Technology",
+            "Institute of Computer Science",
+            "Data Science Research Lab"
+        ],
+        "abstract": "We propose a novel approach to measure task-specific node influence in graphs using the concept of node removal. By leveraging graph neural networks (GNNs), our method evaluates the influence of node removal on GNN predictions across various tasks, offering a flexible, efficient, and effective solution.",
+        "keywords": [
+            "node influence",
+            "graph neural networks",
+            "GNN",
+            "node removal",
+            "graph analytics"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "10.1111/example.doi",
+        "method name": "Node-Removal-Based Fast GNN Inference (\textbf{\textmodel})"
+    },
+    "relate work": {
+        "related work category": [
+            "Influence Maximization",
+            "Network Dismantling",
+            "Graph Adversarial Attack",
+            "Graph Counterfactual Explanation"
+        ],
+        "related papers": "Information propagation models~\\cite{diffusion_LT,diffusion_IC,diffusion_SIR}, adversarial attack methods~\\cite{NETTACK,NETTACK_long,InfMax,Meta,PGD,CLGA,edge_attack}, and graph counterfactual explanation methods~\\cite{GNNExplainer,CF-GNNExplainer,RCExplainer,PGExplainer}.",
+        "comparisons with related methods": "Our approach differs in that it specifically evaluates task-specific node influence through node removal, unlike traditional methods which focus on influence spread or adversarial attacks without node removal considerations."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a novel approach to evaluating task-specific node influence in graphs via node removal. The method leverages graph neural networks to capture the changes in node influence across multiple tasks, providing an efficient, flexible, and adaptable solution.",
+        "research purpose": "To measure the influence of node removal on graph neural network predictions across various tasks.",
+        "research challenge": "Existing methods do not adequately capture task-specific node influence, particularly as it pertains to node removal in a flexible and efficient manner.",
+        "method summary": "A graph neural network-based approach that evaluates the influence of node removal by simulating the changed GNN predictions on modified graphs.",
+        "conclusion": "Our method demonstrates superior performance and efficiency compared to existing methods, providing significant insights into task-specific node influence in graphs."
+    },
+    "Method": {
+        "description": "We propose an efficient method to evaluate task-specific node influence using graph neural networks and node removal.",
+        "problem formultaion": "Evaluating task-specific node influence by simulating the impact of node removal on GNN predictions.",
+        "feature processing": null,
+        "model": "Graph Neural Network (GNN)",
+        "tasks": [
+            "Node Classification",
+            "Link Prediction"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The method has a time complexity of $O(LNh^2+LMh)$, where $N$ is the number of nodes, $M$ is the number of edges, $L$ is the number of GNN layers, and $h$ is the hidden size.",
+        "algorithm step": "Approximate node influence using first-order derivatives and graph structure analysis through GNNs."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "CiteSeer",
+            "PubMed",
+            "ogbn-arxiv",
+            "P50",
+            "P_20_50"
+        ],
+        "baselines": [
+            "Node Mask Method",
+            "Prediction Model",
+            "Betweenness Centrality"
+        ],
+        "evaluation metric": "Pearson correlation coefficient",
+        "setup": "Experiments were conducted on six datasets using various GNN models, including GraphSAGE, GAT, and DrGAT, to compare the performance against existing baselines.",
+        "hyperparameters": null,
+        "results": "Our method significantly outperformed baselines in both node classification and link prediction tasks across multiple datasets, showing higher Pearson correlation coefficients.",
+        "performance": "The proposed method demonstrated high efficiency and effectiveness, requiring significantly less computational time than brute-force methods.",
+        "analysis": "Results indicate the robustness and scalability of the proposed method across various graph structures and GNN architectures, outperforming traditional baselines.",
+        "ablation study": "An ablation study on different components showed that combining task-specific influence and structural influence yields the best performance."
+    },
+    "conclusion": {
+        "summary": "The Node-Removal-Based Fast GNN Inference (\textbf{\textmodel}) is an effective method for evaluating task-specific node influence through node removal and GNNs.",
+        "future work": "Future research could explore extending the method to broader applications, such as molecular property prediction and large-scale graph analysis."
+    }
+}

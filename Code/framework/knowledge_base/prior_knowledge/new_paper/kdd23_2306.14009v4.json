@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Boosting Multitask Learning on Graphs via Task Grouping: A New Approach for Handling Negative Transfer",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Affiliation not provided"
+        ],
+        "abstract": "We propose an efficient algorithm for minimizing negative transfer in multitask learning on graphs. By modeling task relationships through a designed affinity scoring system, our method clusters tasks into groups, adapting graph neural network models to each group, thus yielding superior results across diverse datasets.",
+        "keywords": [
+            "multitask learning",
+            "graph neural networks",
+            "negative transfer",
+            "task grouping",
+            "spectral clustering"
+        ],
+        "year": "2023",
+        "venue": "Research Conference on Machine Learning",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Modeling task relationships in MTL",
+            "Transferable graph neural networks",
+            "Overlapping community detection"
+        ],
+        "related papers": "[1] chen2017supervised\n[2] crammer2008learning\n[3] ben2010theory\n[4] yang2016deep\n[5] zhu2021transfer\n[6] zhang2021survey",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper addresses the challenge of negative transfer in multitask learning for graphs by proposing a novel algorithm that clusters tasks into groups. Each group is evaluated and trained using a tailored graph neural network model to optimize overall learning outcomes.",
+        "research purpose": "To optimize multitask learning on graphs by developing methods that minimize negative transfer effects.",
+        "research challenge": "Negative transfer in multitask learning often degrades model performance. Identifying task groupings to mitigate this is a primary challenge.",
+        "method summary": "The proposed method computes task affinity scores to evaluate task relations and uses spectral clustering to organize tasks into groups for enhanced learning outcomes.",
+        "conclusion": "The proposed boosting procedure offers improvements over existing multitask learning models by effectively organizing and managing tasks on graphs to counter negative transfer."
+    },
+    "Method": {
+        "description": "This study introduces a higher-order task affinity score to cluster tasks for boosted multitask learning in graph neural networks.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The model is based on graph neural networks tailored to operate over clusters of related tasks instead of treating all tasks uniformly.",
+        "tasks": [
+            "Node Label Prediction",
+            "Community Detection"
+        ],
+        "theoretical analysis": "Theoretical justification for the task affinity score approach is conducted under planted model assumptions, showing its effectiveness in capturing task relations.",
+        "complexity": "By reducing task interaction complexity through clustering, the method demands fewer computations than traditional approaches.",
+        "algorithm step": "Using spectral clustering on affinity scores, tasks are grouped, and models are individually trained for each group using graph neural networks."
+    },
+    "Experiments": {
+        "datasets": [
+            "Amazon Dataset",
+            "YouTube Dataset",
+            "DBLP Dataset",
+            "LiveJournal Dataset"
+        ],
+        "baselines": [
+            "Naive MTL",
+            "Mixture-Of-Experts",
+            "Task Affinity-Based Methods"
+        ],
+        "evaluation metric": "F1 Score",
+        "setup": "Experiments conducted on social network datasets with defined community labels.",
+        "hyperparameters": null,
+        "results": "Our model demonstrated a 3.98% improvement over naive multitask learning and 4.6% over other prior methods.",
+        "performance": "The model significantly reduced negative transfer occurrences, enhancing overall prediction accuracy for node assignments within clusters.",
+        "analysis": "Graph diffusion processes and community matching confirmed that node-communities have intra-community similarity, but this disjointness causes cross-community negative transfer.",
+        "ablation study": "We explored various task group sizes and model configurations to ensure robust performance regardless of hyperparameter variance."
+    },
+    "conclusion": {
+        "summary": "The proposed model effectively enhances multitask learning key tasks on graph structures by addressing negative transfer through sophisticated task-grouping strategies.",
+        "future work": "Future studies may focus on integrating node/link prediction tasks to expand the applicability of this model in broader multitask scenarios, such as advanced community detection."
+    }
+}

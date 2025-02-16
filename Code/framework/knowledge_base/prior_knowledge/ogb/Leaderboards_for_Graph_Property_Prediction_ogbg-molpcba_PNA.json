@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-molpcba",
+    "Dataset Link": "../graphprop/#ogbg-mol",
+    "Rank": 16,
+    "Method": "PNA",
+    "External Data": "No",
+    "Test Accuracy": "0.2838 ± 0.0035",
+    "Validation Accuracy": "0.2926 ± 0.0026",
+    "Contact": "mailto:dominique@valencediscovery.com",
+    "Paper Link": "https://arxiv.org/pdf/2004.05718.pdf",
+    "Code Link": "https://github.com/Saro00/DGN",
+    "Parameters": "6,550,839",
+    "Hardware": "NVIDIA T4 GPU (16 GB)",
+    "Date": "Mar 4, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-molpcba/PNA.pdf",
+    "Paper Summary": "The paper introduces a novel architecture called Principal Neighbourhood Aggregation (PNA) for Graph Neural Networks (GNNs), emphasizing the importance of multiple aggregation functions, particularly in the presence of continuous features. Here's a summary focusing on the methods:\n\n### Model Design Aspects\n\n1. **Multiple Aggregators**: The authors highlight the limitation of existing GNN models that often utilize a single aggregation method (like mean, sum, or max). They argue that a minimum of 'n' independent aggregators is needed to effectively discriminate between multisets of size 'n' in continuous feature spaces. Therefore, PNA employs multiple aggregators to capture different statistical aspects of node neighborhoods.\n\n2. **Aggregation Functions**:\n    - **Mean**: Computes the average of incoming messages.\n    - **Max/Min**: Capture the highest and lowest incoming messages, which are valuable for tasks needing value range understanding.\n    - **Standard Deviation (STD)**: Measures the spread of incoming message features, informing nodes about the diversity of signals received.\n    - **Normalized Moments**: Higher-order moments (such as skewness and kurtosis) are incorporated to describe the neighborhood more comprehensively, especially useful for nodes with higher degrees.\n\n3. **Degree-based Scalers**: PNA introduces scalers that adjust aggregated values based on the degree of each node:\n    - **Linear Scaling**: Amplifies or attenuates signals relative to node degree.\n    - **Logarithmic Scaling**: Proposed to better capture neighborhood influence, particularly in social network contexts. It normalizes the effects of node degrees, making it injective even for varying node degrees.\n\n4. **Aggregate and Scale Mechanism**: The architecture integrates multiple aggregators and their corresponding scalers in a flexible manner, allowing the GNN to leverage rich statistical features from node neighborhoods to improve expressiveness. \n\n5. **Layer Definition**: In PNA, the update for node features is defined as follows:\n    \\[\n    X_i^{(t+1)} = U \\left( X_i^{(t)}, \\sum_{(j,i) \\in E} M(X_i^{(t)}, E_{j \\to i}, X_j^{(t)}) \\right)\n    \\]\n   where \\( U \\) is a function that reduces the concatenated message size and \\( M \\) represents the aggregation of messages transmitted from neighboring nodes.\n\n6. **Parameter Sharing**: PNA employs weight sharing across layers, following an encode-process-decode architecture. This parameter-efficient approach permits a variable number of convolutions based on input graph size.\n\nIn summary, the PNA architecture emphasizes a thoughtful combination of various aggregators and scalers to enhance GNN performance, particularly when dealing with continuous feature spaces. The design aspects contribute towards enabling the model to more effectively interpret complex graph structures and relationships."
+}

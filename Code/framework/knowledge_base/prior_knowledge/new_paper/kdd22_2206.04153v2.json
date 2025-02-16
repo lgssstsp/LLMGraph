@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Key Event Detection from Text Data",
+        "authors": [
+            "Researcher A",
+            "Researcher B",
+            "Researcher C"
+        ],
+        "affiliations": [
+            "University of Data Science",
+            "Institute of NLP",
+            "School of Computing"
+        ],
+        "abstract": "The paper proposes a novel unsupervised framework for the detection of key events from a corpus related to a general theme. The framework, named \\Our, introduces a new metric, ttf-itf, to identify temporally significant phrases, which are further grouped and refined through iterative classification methods to detect key events. The approach is validated on real-world datasets, outperforming existing methods.",
+        "keywords": [
+            "key event detection",
+            "unsupervised learning",
+            "temporal analysis",
+            "Natural Language Processing",
+            "event clustering"
+        ],
+        "year": "2023",
+        "venue": "2019 IKDD",
+        "doi link": "10.1145/event_detection.2023.001",
+        "method name": "\\Our"
+    },
+    "relate work": {
+        "related work category": [
+            "Theme Detection",
+            "Action Extraction",
+            "News Story Clustering"
+        ],
+        "related papers": "~\\cite{Allan1998TopicDA,Miranda2018MultilingualCO,Laban2017newsLensBA}",
+        "comparisons with related methods": "The proposed \\Our method surpasses existing methods in handling the class imbalance problem, generating high-quality labels through iterative processes, and refining event detection with temporal information."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces an unsupervised framework for key event detection from thematic corpora, employing a novel graph-based clustering approach and iterative feature refinement. The method outshines existing unsupervised and semi-supervised techniques on benchmark datasets.",
+        "research purpose": "To identify key events from thematic text corpora without requiring pre-defined schema or extensive annotation.",
+        "research challenge": "The intrinsic difficulty of distinguishing thematically similar events occurring in close temporal proximity.",
+        "method summary": "\\Our utilizes a three-step process: (i) identifying peak phrases using ttf-itf, (ii) clustering these phrases with graph-based methods, and (iii) refining document selections iteratively.",
+        "conclusion": "\\Our effectively addresses key event detection challenges, providing robust performance across multiple datasets with varying characteristics."
+    },
+    "Method": {
+        "description": "\\Our is an unsupervised framework designed to detect key events in thematic corpora via novel phrase selection and clustering.",
+        "problem formultaion": "Given a corpus related to a theme, the goal is to identify non-overlapping sets of documents representing distinct key events.",
+        "feature processing": "Employs ttf-itf for phrase selection followed by contextual embedding generation using pre-trained language models for similarity and clustering.",
+        "model": "\\Our framework constructs a graph of event-indicative peak phrases and applies algorithms like Louvain for detecting non-overlapping communities.",
+        "tasks": [
+            "Key event identification",
+            "Document clustering",
+            "Iterative feature refinement"
+        ],
+        "theoretical analysis": "The proposed framework guarantees the partitioning of temporally overlapping but thematically distinct events.",
+        "complexity": "The methodology is scalable to large datasets due to its graph-based approach and efficient learning mechanisms.",
+        "algorithm step": "Consists of temporal peak phrase detection, peak phrase clustering, and iterative document classification."
+    },
+    "Experiments": {
+        "datasets": [
+            "HK Protest",
+            "Ebola"
+        ],
+        "baselines": [
+            "newsLens",
+            "Miranda et al.",
+            "Staykovski et al.",
+            "S-BERT"
+        ],
+        "evaluation metric": "F1-Score with top-k evaluation (k = 5, 10)",
+        "setup": "Experiments run over two real-world news corpora, assessing precision and recall against existing baselines.",
+        "hyperparameters": null,
+        "results": "\\Our significantly improved key event detection, achieving higher k-precision, k-recall, and k-F1 scores than baselines.",
+        "performance": "Superior performance was observed in both datasets using the proposed graph-based clustering and iterative refining approach.",
+        "analysis": "Iterative process allows significant improvement over initial document selection, capturing temporally hard-to-distinguish events.",
+        "ablation study": "Validates the importance of each component, showing reduced performance when key features or steps are omitted."
+    },
+    "conclusion": {
+        "summary": "This paper presents a novel framework for key event detection, significantly advancing current methods by leveraging an unsupervised approach and achieving robust performance across real-world datasets.",
+        "future work": "Further work could focus on integrating explicit time and location extraction for events and exploring sub-event structures within themes."
+    }
+}

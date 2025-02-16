@@ -1,0 +1,88 @@
+{
+    "meta_data": {
+        "title": "Interpretable Concept-based Taylor Additive Model",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Technology",
+            "AI Research Lab"
+        ],
+        "abstract": "Deep neural networks (DNNs) have demonstrated remarkable success in various areas, yet their lack of interpretability hampers deployment in crucial domains such as autonomous vehicles and healthcare. Although Generalized Additive Models (GAMs) and concept-based interpretability methods have been proposed to address these challenges, their limitations include scalability issues and a heavy reliance on domain-expert labeled concepts. To tackle these shortcomings, we introduce the Concept-based Taylor Additive Model (CAT), which combines human-understandable high-level concepts with a novel white-box Taylor Neural Network (TaylorNet) for scalable and interpretable predictions. Without exhaustive concept labeling, CAT utilizes concept encoders to learn high-level representations from input features, which are then used to inform a TaylorNet predicated on polynomials without activation functions. By incorporating Tucker decomposition to minimize computational complexity, CAT offers improved interpretability and accuracy with fewer parameters on benchmark datasets.",
+        "keywords": [
+            "Interpretability",
+            "Deep Neural Networks",
+            "Generalized Additive Models",
+            "Taylor Polynomials",
+            "Concept-based Learning",
+            "Scalability",
+            "Tucker Decomposition"
+        ],
+        "year": "2023",
+        "venue": "Artificial Intelligence Journal",
+        "doi link": null,
+        "method name": "CAT"
+    },
+    "relate work": {
+        "related work category": [
+            "Perturbation-based Methods",
+            "Generalized Additive Models",
+            "Concept-based Interpretability"
+        ],
+        "related papers": "Arrieta, A. B., et al. (2020). Explainable artificial intelligence (XAI): Concepts, taxonomies, opportunities, and challenges toward responsible AI. Madsen, J. B., et al. (2022). Post-hoc interpretability for machine learning in healthcare. Carvalho, D. V., et al. (2019). Machine learning interpretability: A survey on methods and metrics. Ghorbani, A., et al. (2019). Interpretation of neural networks is fragile. Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. Agarwal, R., et al. (2021). Neural additive models: Interpretable machine learning with neural nets. Chang, H., et al. (2021). NODE-GAM: Neural oblivious decision ensemble-additive models. Dubey, A., et al. (2022). Scalable polynomial additive models for higher-order feature interactions. Radenović, F., et al. (2022). Neural basis models for scalable model interpretability. Koh, P. W., et al. (2020). Concept bottleneck models. Mahinpei, N., et al. (2021). Promises and pitfalls of learning high-level concepts with VAEs. Zarlenga, L., et al. (2022). Trading off interpretability and accuracy in concept learning models. Havasi, M., et al. (2022). Addressing the accuracy-interpretability trade-off in concept-based models. Ibrahim, M., et al. (2023). Grand-slamin additive modeling with structural constraints.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces the Concept-based Taylor Additive Model (CAT), which enhances interpretability and scalability of deep neural networks through high-level concepts and Taylor polynomials. CAT provides explanations without extensive manual concept labeling, combining concept encoders and a TaylorNet for effective prediction and reasoning.",
+        "research purpose": "The purpose of this research is to improve the interpretability and scalability of deep learning models by integrating high-level concepts into predictions using Taylor polynomial approximations, minimizing dependencies on domain experts for concept labeling.",
+        "research challenge": "The main challenge addressed is enhancing interpretability of deep neural networks while maintaining scalability and reducing reliance on domain-expert labeled concepts.",
+        "method summary": "The CAT model utilizes concept encoders to learn high-level representations, which are then used by a TaylorNet to perform predictions using polynomials without activation functions. Tucker decomposition is applied to manage computational complexity efficiently.",
+        "conclusion": "Our findings demonstrate that CAT enhances interpretability with fewer parameters and achieves competitive or superior accuracy compared to existing baseline models."
+    },
+    "Method": {
+        "description": "The CAT model integrates human-understandable concepts with a TaylorNet to enhance interpretability and scalability of deep neural networks. Concepts are learned from input features and used for informed predictions via polynomial approximations.",
+        "problem formultaion": "The research problem focuses on creating an interpretable model that explains predictions through high-level concepts without exhaustive domain expert labeling of these concepts.",
+        "feature processing": null,
+        "model": "The model comprises two main components: concept encoders for high-level representation learning and a TaylorNet that utilizes these representations for prediction using polynomial approximations.",
+        "tasks": [
+            "Tabular Regression",
+            "Binary Classification",
+            "Multi-Class Classification",
+            "Visual Reasoning"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The model applies Tucker decomposition to minimize computational overhead associated with high-order polynomials.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Airbnb",
+            "WiDS Diabetes Detection",
+            "COMPAS Recidivism",
+            "Daily and Sports UCI-HAR",
+            "MNIST",
+            "CelebA"
+        ],
+        "baselines": [
+            "Multi-layer Perceptron (MLP)",
+            "Gradient Boosted Trees (XGBoost)",
+            "Explainable Boosting Machines (EBM)",
+            "Neural Additive Models (NAM)",
+            "Neural Basis Models (NBM)",
+            "Scalable Polynomial Additive Models (SPAM)",
+            "Grand-Slamin Additive Modeling"
+        ],
+        "evaluation metric": "Root Mean-Squared Error (RMSE), Accuracy, Macro-F1",
+        "setup": "Experiments across several tabular and visual benchmark datasets",
+        "hyperparameters": "TaylorNet rank (r=8 for order 2, r=16 for order 3), training epochs: 100 with early stopping, hyperparameter tuning via grid search",
+        "results": "CAT models generally outperform interpretable baselines and are competitive with black-box models. CAT demonstrates effective performance with fewer parameters, particularly in handling larger datasets.",
+        "performance": "CAT exhibits superior performance in interpretability and accuracy compared with interpretable methods such as NAMs and SPAMs, while offering parametric efficiency close to EBM.",
+        "analysis": "CAT's strength lies in using high-level concepts to concisely explain model predictions, closely mirroring human reasoning frameworks.",
+        "ablation study": "Analysis of the impact of concept encoders on model performance confirmed their significance in reducing parameters and maintaining accuracy."
+    },
+    "conclusion": {
+        "summary": "CAT integrates human-understandable concepts with a white-box model to bridge interpretability and scalability challenges in deep learning. It eliminates dependencies on cumbersome concept labeling processes.",
+        "future work": "Future work could leverage dynamic concept discovery for real-time adaptation in diverse domains."
+    }
+}

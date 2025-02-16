@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-wikikg2",
+    "Dataset Link": "../linkprop/#ogbl-wikikg2",
+    "Rank": 20,
+    "Method": "PairRE (200dim)",
+    "External Data": "No",
+    "Test Accuracy": "0.5208 ± 0.0027",
+    "Validation Accuracy": "0.5423 ± 0.0020",
+    "Contact": "mailto:chulin.cll@antgroup.com",
+    "Paper Link": "https://arxiv.org/abs/2011.03798",
+    "Code Link": "https://github.com/alipay/KnowledgeGraphEmbeddingsViaPairedRelationVectors_PairRE",
+    "Parameters": "500,334,800",
+    "Hardware": "Tesla P100 (16GB GPU)",
+    "Date": "Jan 28, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-wikikg2/PairRE_(200dim).pdf",
+    "Paper Summary": "The paper proposes a new knowledge graph embedding model called **PairRE**, designed to effectively handle complex relations and diverse relation patterns in knowledge graphs. The main design aspects of PairRE are as follows:\n\n1. **Paired Relation Vectors**: Instead of a single vector representation for each relation, PairRE uses **two vectors**—referred to as **rH** (head relation vector) and **rT** (tail relation vector)—for representing each relation in the knowledge graph. This dual representation enables an adaptive adjustment of the distance margin in the loss function, thereby accommodating various complex relations.\n\n2. **Adaptive Margin Adjustment**: By utilizing paired vectors, the model can adaptively fine-tune the margin used in the scoring function based on the nature of the complex relation, enhancing the model's ability to accurately predict links, particularly for N-to-1, 1-to-N, and N-to-N types of relations.\n\n3. **Distance Calculation**: The model employs a distance-based scoring function where the plausibility of a fact triple (h, r, t) is computed using the L1-norm distance between the projected vectors of the head and tail entities after applying their corresponding relation vectors:\n   \\[\n   f_r(h, t) = -||h \\circ r_H - t \\circ r_T||\n   \\]\n   Here, \\( h \\), \\( r_H \\), \\( r_T \\), and \\( t \\) are embedded in real space, ensuring that the model projects the entities into a suitable space where the distances can be effectively minimized or maximized based on the relation types.\n\n4. **Encoding Relation Patterns**: PairRE is designed to encode complex relation patterns including:\n   - **Symmetry and Antisymmetry**: The model can differentiate between symmetric relations (where the order of entities does not matter) and antisymmetric relations (where reversing the order changes the pairing).\n   - **Inverse Relations**: The model can capture inverse relationships, reinforcing the symmetry in the embeddings when specific conditions are met.\n   - **Composition Relations**: PairRE can encode relations that can be seen as compositions of other relations, allowing it to represent complex relational structures effectively.\n   - **Subrelation Encoding**: Importantly, PairRE can also encode subrelations through the application of simple constraints on relation representations, enhancing its expressiveness.\n\n5. **Constraints on Representations**: The model imposes constraints that facilitate the encoding of subrelations. This is achieved by ensuring that the relationships between the associated vectors maintain certain semantic connections, which allows PairRE to model more intricate patterns within the knowledge graph effectively.\n\nThe overall architecture of PairRE is designed to be efficient for handling very large datasets while maintaining the capacity for representing a wide range of relational patterns, making it suitable for various knowledge graph completion tasks."
+}

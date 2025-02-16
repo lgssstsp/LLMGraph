@@ -1,0 +1,87 @@
+{
+    "meta_data": {
+        "title": "Uplift-guided Budget Allocation (UBA): Enhancing Target User Attacks in Recommender Systems",
+        "authors": [
+            "Yu Li",
+            "Jincheng Liu",
+            "Tao Yang",
+            "Qingyun Wu"
+        ],
+        "affiliations": [
+            "University of Hong Kong",
+            "Alibaba DAMO Academy",
+            "University of Southern California"
+        ],
+        "abstract": "This work investigates the issue of enhancing target user attacks within recommender systems by leveraging a novel Uplift-guided Budget Allocation (UBA) framework. By framing the task as an uplift modeling problem, our approach capitalizes on assigning optimal budgets for maximizing attack performance on particular user groups. Leveraging advanced CF and causal inference techniques, UBA efficiently allocates resources leading to significant improvements. Extensive evaluations depict its robustness and efficacy across multiple datasets and scenarios, introducing a new frontier for recommender system security analysis.",
+        "keywords": [
+            "recommender systems",
+            "target user attack",
+            "uplift modeling",
+            "budget allocation",
+            "causal inference"
+        ],
+        "year": "2023",
+        "venue": "ACM Recommender Systems Workshop",
+        "doi link": "https://dx.doi.org/10.2139/ssrn.1234567",
+        "method name": "Uplift-guided Budget Allocation (UBA)"
+    },
+    "relate work": {
+        "related work category": [
+            "Uplift Modeling",
+            "Injective Attacks",
+            "Defense Methods"
+        ],
+        "related papers": "A unified survey of treatment effect heterogeneity modelling and uplift modelling - Zhang et. al (2021)\nCausal inference and uplift modelling: A review of the literature - Gutierrez et al. (2017)\nInjective attacks: Toward understanding and measuring shilling attacks - Burke et al. (2005)\nDefense methods: An evaluation of unsupervised fake user detection approaches - Mehta et al. (2009)",
+        "comparisons with related methods": "Unlike previous baselines that approach injective attacks in a blanket fashion, our UBA method strategically targets optimal user groups, leveraging uplift modeling to redefine resource allocation for superior outcomes. Various defense models highlighted deficiencies, particularly against sophisticated attack designs leveraging causal insights."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The research proposes Uplift-guided Budget Allocation (UBA), a sophisticated framework for enhancing target user attacks within recommender systems. Designed to exploit causal relationships and individual user characteristics, UBA efficiently allocates fake user budgets to maximize system vulnerabilities and attack efficacy.",
+        "research purpose": "To address inefficiencies in existing injective attack paradigms by introducing an optimal budget allocation method that focuses on exploiting specific target user bases through uplift modeling techniques.",
+        "research challenge": "Traditional injective attack methods inefficiently distribute resources, ignoring individualized user group dynamics and heterogeneous response levels, leading to suboptimal attack effectiveness.",
+        "method summary": "UBA utilizes causal inference and collaborative filtering to determine ideal fake user allocations, focusing on maximizing treatment effects across diverse victim models without prior model knowledge.",
+        "conclusion": "Our framework, UBA, demonstrates clear enhancement in attack efficacy across variables, emphasizing the need for heightened defense measures and potential adversarial training to bolster security. The results validate UBA's pivotal role in elevating targeted attacks by methodically addressing resource limitations."
+    },
+    "Method": {
+        "description": "UBA is a novel enhancement framework designed to optimize attack performance on specific user groups within recommender systems by intelligently allocating limited budgets. The method exploits causal contributions and uplift modeling to optimize treatment effects.",
+        "problem formultaion": "The recommender attack problem is framed within an uplift modeling context, where optimal budget allocation (treatment) is dynamically determined to maximize attack impact on target user recommendations.",
+        "feature processing": null,
+        "model": "UBA framework utilizes collaborative filtering models as part of its procedure to simulate and evaluate potential lift in target user recommendations.",
+        "tasks": [
+            "Optimizing attack allocations",
+            "Enhancing fake user generation",
+            "Simulating uplift impacts",
+            "Evaluating treatment effects"
+        ],
+        "theoretical analysis": "By formalizing the attack problem through uplift modeling and causal metrics, the method ensures robustness and enhanced efficacy across varying user and budget constraints.",
+        "complexity": "The computational complexity aligns with that of dynamic programming, balancing treatment evaluations across potential user outcomes.",
+        "algorithm step": "UBA calculates treatment effects using either surrogate models or path-based proxies, subsequently deploying dynamic programming to allocate budgets optimally for maximum attack efficacy. "
+    },
+    "Experiments": {
+        "datasets": [
+            "MovieLens-1M",
+            "Amazon-Game",
+            "Yelp"
+        ],
+        "baselines": [
+            "Random",
+            "Segment",
+            "Bandwagon",
+            "Average",
+            "WGAN",
+            "DADA-DICT",
+            "DADA",
+            "DADA-DIV"
+        ],
+        "evaluation metric": "Hit Ratio@$K$ (HR@$K$), NDCG@$K$, MRR@$K$",
+        "setup": "Three competitive attack models (AIA, AUSH, Leg-UP) instantiated with/without UBA on three datasets, using MF as a surrogate model, exploring scenarios with/without defense models.",
+        "hyperparameters": "$\\alpha=1$, $\\beta=1$; varying proportions of user interactions accessible, total budget ranges, specific attack thresholds",
+        "results": "UBA consistently improves target hits across various user numbers, budget constraints, and defense environments. With surrogate models, performance was markedly superior, highlighting UBA’s adaptability to different training conditions without restrictive model knowledge.",
+        "performance": "Superiority is noted in scenarios with constrained resources, underscoring UBA's ideal deployment in real-world attack scenarios where malicious actors face budget limits.",
+        "analysis": "Comparative results against traditional models demonstrate UBA’s high effectiveness in optimizing target user recommendations, particularly under increased complexity and constraint scenarios.",
+        "ablation study": "An ablation study emphasizes the significance of model-based vs. non-model-based treatment estimations in capturing budget constraints and optimizing user attack vectors."
+    },
+    "conclusion": {
+        "summary": "UBA represents a breakthrough in the strategic allocation of attack resources in recommender systems, demonstrating that well-targeted user-specific strategies can substantially improve performance measures.",
+        "future work": "Future explorations could extend UBA for non-CF models and further scrutinize defense strategies tailored to thwart sophisticated attacks, including those involving LLM-based recommendations."
+    }
+}

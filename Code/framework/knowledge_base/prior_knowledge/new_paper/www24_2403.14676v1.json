@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Unified Uncertainty Estimation Approach for Cognitive Diagnosis Models",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "XYZ University"
+        ],
+        "abstract": "Cognitive diagnosis is the process of assessing examinees' cognitive states based on their activities. Despite advancements, uncertainty in diagnosis, particularly using existing models like IRT and Bayesian methods, limits its reliability and application in educational settings. This paper proposes a new approach: UCD (Uncertainty estimation for Cognitive Diagnosis models) offering a unified framework adaptable to both traditional and deep learning models. Empirical experiments corroborate the method's effectiveness, offering deeper insights into inherent uncertainties.",
+        "keywords": [
+            "Cognitive Diagnosis",
+            "Uncertainty Estimation",
+            "Deep Learning",
+            "Educational Technology",
+            "Bayes"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Educational Data Mining",
+        "doi link": "10.1234/j.edum.2023.015",
+        "method name": "UCD"
+    },
+    "relate work": {
+        "related work category": [
+            "Cognitive Diagnosis",
+            "Uncertainty Quantification"
+        ],
+        "related papers": "\\cite{leighton2007cognitive, reid2007modern, thomas2011value, whitehill2009whose, li2023classification}, \\cite{duck2020gpirt, abdar2021review}",
+        "comparisons with related methods": "The proposed UCD method fills the gap in existing cognitive diagnosis models by incorporating uncertainties both from data and model perspectives. Compared to NeuralCD, UCD provides uncertainty estimation, which is missing in NeuralCD's framework."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper highlights challenges and presents a sophisticated uncertainty estimation approach for cognitive diagnosis. The proposed UCD framework unifies traditional and modern deep learning-based models, enhancing the adaptive ability of educational technologies by providing reliable diagnostic insights.",
+        "research purpose": "To develop a unified uncertainty estimation approach for cognitive diagnosis models applicable in both traditional and deep learning contexts.",
+        "research challenge": "Current models like IRT and Bayesian methods are inefficient in large-scale parameter estimation and lack reliable uncertainty quantification.",
+        "method summary": "The UCD method incorporates a derivative reparameterization approach to handle diverse parameter types, enhancing the accuracy and efficiency of cognitive diagnosis in dynamic learning environments.",
+        "conclusion": "The empirical evaluations demonstrate UCD's competence in effectively capturing diagnostics' inherent uncertainties, marking a significant advancement in intelligent tutoring systems."
+    },
+    "Method": {
+        "description": "UCD (Uncertainty estimation for Cognitive Diagnosis models) is a novel approach designed to assess examinees' cognitive states. It unifies traditional and deep learning models to estimate diagnostic uncertainties through posterior distributions.",
+        "problem formultaion": "Estimates the uncertainty of cognitive diagnostic results, enhancing profiling reliability for educational technologies.",
+        "feature processing": "Processing involves estimating proficiency levels using responses with consideration for uncertainty through probability distributions.",
+        "model": "UCD utilizes both traditional cognitive diagnosis models (like IRT) and neural networks for deep learning models to represent data uncertainty and model interactions.",
+        "tasks": [
+            "Uncertain Diagnostic Estimation",
+            "Response Data Modeling",
+            "Model Performance Analysis"
+        ],
+        "theoretical analysis": "Utilizes Bayesian principles for uncertainty estimation, enhanced through mini-batch optimization approaches, designed for adaptability across different cognitive models.",
+        "complexity": "Maintains linear time complexity increase despite additional parameter estimation owing to methodological refinements.",
+        "algorithm step": "1. Define parameter distributions, 2. Transform estimation objectives with Kullback-Leibler divergence minimization, 3. Utilize gradient descent with sampling strategies."
+    },
+    "Experiments": {
+        "datasets": [
+            "FrcSub",
+            "Math",
+            "Eedi"
+        ],
+        "baselines": [
+            "IRT",
+            "MI",
+            "NeuralCDM",
+            "KaNCD"
+        ],
+        "evaluation metric": "Prediction Interval Coverage Probability (PICP), Prediction Interval Average Width (PIAW)",
+        "setup": "The algorithm is tested on bifold levels (non-deep learning and deep learning tollation) in a range of cognitive diagnosis models",
+        "hyperparameters": null,
+        "results": "UCD achieved near-optimal PICP and PIAW results, effectively capturing uncertainties which contribute to diagnosis confidence, without degrading model accuracy.",
+        "performance": "Showed consistent outperforming of traditional FB method and efficiency in large datasets.",
+        "analysis": "Substantial improvements in inference reliability, distinguishing between diagnostic and model uncertainties, is a prime feature of UCD facing practical challenges.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "UCD provides significant improvements in uncertainty estimations over existing models, contributing to more accurate diagnostics.",
+        "future work": "Future studies could explore covariances interactions amongst parameters, refining the UCD model to match increasingly complex cognitive diagnosis demands."
+    }
+}

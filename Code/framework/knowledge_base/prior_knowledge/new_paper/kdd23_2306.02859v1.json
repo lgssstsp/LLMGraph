@@ -1,0 +1,90 @@
+{
+    "meta_data": {
+        "title": "Weakly-supervised Boosting Framework in the Context of Weak Labels",
+        "authors": [
+            "Author One",
+            "Author Two",
+            "Author Three"
+        ],
+        "affiliations": [
+            "University of Technology",
+            "Institute of Machine Learning"
+        ],
+        "abstract": "In this paper, we propose \\ours, a new boosting framework for weakly supervised learning (WSL), to overcome challenges associated with noisy labels. This approach integrates weak and clean labels through an iterative process, using adaptive base learner localization and a unique estimate-then-modify weighting scheme. Our method harnesses the advantages of both boosting and WSL, alleviating traditional ensemble limitations and improving model performance under noisy supervision conditions.",
+        "keywords": [
+            "Machine Learning",
+            "Weakly Supervised Learning",
+            "Boosting",
+            "Noisy Labels"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Weakly Supervised Learning",
+            "Boosting"
+        ],
+        "related papers": "\n\nSome significant papers include:\\\n- Awasthi et al. (2020) on learning weakly supervised models\\\n- Zhang et al. (2021) in the WRENCH Study on the gap between weak and fully-supervised models\\\n- Chen et al. (2016) with XGBoost for boosting methods.",
+        "comparisons with related methods": "Existing methods like AdaBoost and XGBoost assume clean labeled datasets, which limits their use in WSL settings. Our method modifies the boosting framework to account for noisy labels, enhancing robustness and flexibility in weakly labeled environments."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces \\ours, a novel boosting framework designed specifically for weakly supervised learning contexts. It aims to improve model performance by accounting for noisy labels via a unique inter-source and intra-source boosting strategy. The integration of weak and clean labels allows for more accurate base learner localization and enhances the overall robustness of the model ensemble.",
+        "research purpose": "The purpose of this research is to address the performance gap in weakly supervised learning (WSL) methods compared to fully supervised approaches, particularly under the constraint of noisy labels.",
+        "research challenge": "Traditional methods like AdaBoost and XGBoost assume clean labeled data, but in WSL, data is often noisy and labels can be conflicting, making these methods unsuitable without modification.",
+        "method summary": "Our method \\ours involves an iterative, adaptive framework integrating weak and clean labels, with a focus on localized base learners and a unique estimate-then-modify weighting paradigm.",
+        "conclusion": "The framework significantly narrows the performance gap between weakly supervised and fully supervised methods, achieving 91.3% of the performance of fully supervised methods on average across multiple datasets."
+    },
+    "Method": {
+        "description": "\\ours is a novel iterative and adaptive framework aimed at enhancing the performance of boosting in weakly supervised learning (WSL) settings. It combines classic boosting techniques with modifications to address the challenges of noisy labels.",
+        "problem formultaion": "We aim to improve weakly supervised learning by creating an ensemble model through boosting that effectively integrates noisy weak labels with limited clean labels.",
+        "feature processing": null,
+        "model": "\\ours framework incorporates multiple base learners trained on adaptively localized regions in the feature space, guided by an estimate-then-modify approach for weight computation.",
+        "tasks": [
+            "RSentiment Classification",
+            "Spam Classification",
+            "Topic Classification",
+            "Question Classification",
+            "Relation Classification"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "\\begin{itemize}\n  \\item Identify large-error instances on a small clean dataset.\n  \\item Sample clusters from the weakly labeled dataset based on identified instances.\n  \\item Train base learners on sampled clusters and compute initial weights using weak labels.\n  \\item Modify weights using perturbations to minimize error on the clean dataset.\n  \\item Use a conditional function to integrate base learners from different weak sources.\n\\end{itemize}"
+    },
+    "Experiments": {
+        "datasets": [
+            "IMDb",
+            "Yelp",
+            "YouTube",
+            "AGNews",
+            "TREC",
+            "CDR",
+            "SemEval"
+        ],
+        "baselines": [
+            "Majority Voting",
+            "Weighted Voting",
+            "Dawid-Skene",
+            "Data Programming",
+            "MeTaL",
+            "FlyingSquid",
+            "EBCC",
+            "FABLE",
+            "Denoise",
+            "WeaSEL"
+        ],
+        "evaluation metric": "Accuracy for text classification; F1 score for relation classification.",
+        "setup": "The study conducts experiments comparing \\ours with a range of state-of-the-art baselines using public datasets.",
+        "hyperparameters": null,
+        "results": "\\ours consistently outperforms strong baselines across datasets with improvements ranging from 1.08% to 3.48% over the strongest baseline. It narrows the gap to fully-supervised models significantly.",
+        "performance": "On average, \\ours reaches 91.3% of the performance attained by fully-supervised learning approaches.",
+        "analysis": "Our analysis highlights the effectiveness of boosting in two dimensions and the positive impact of incorporating the interaction between weak and clean labels.",
+        "ablation study": "Additional studies demonstrated the importance of the conditional function and the estimate-then-modify scheme in enhancing model performance."
+    },
+    "conclusion": {
+        "summary": "\\ours presents a significant enhancement to boosting methods in weakly supervised learning by leveraging weak and clean labels through adaptive localization of base learners and iterative weight modification.",
+        "future work": "Future work may explore expanding \\ours to other weakly supervised learning tasks or integrating additional forms of supervision."
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "meta_data": {
+        "title": "Research on Structured Data Extraction",
+        "authors": [
+            "John Doe"
+        ],
+        "affiliations": [
+            "Institute of Data Science"
+        ],
+        "abstract": "This paper discusses structured data extraction from unstructured texts in research papers. The proposed method structures the extracted data into predefined formats, enhancing easier analysis and understanding.",
+        "keywords": [
+            "data extraction",
+            "structured data",
+            "information retrieval"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Data Science",
+        "doi link": null,
+        "method name": "Structured Data Extraction"
+    },
+    "relate work": {
+        "related work category": [
+            "Structured Data Extraction",
+            "Information Retrieval"
+        ],
+        "related papers": "Smith J. et al. (2020), 'Automated Data Processing for Scientific Papers', Journal of Data Science; Brown R. et al. (2021), 'Challenges in Data Extraction', International Journal of Data Analysis.",
+        "comparisons with related methods": "Our approach extends the existing methodologies by incorporating machine learning techniques to improve the efficiency of data extraction."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper develops a method for extracting and structuring data from research papers' unstructured text. It utilizes machine learning to enhance the speed and accuracy of structuring data into a predefined format.",
+        "research purpose": "To automate and structure the extraction of relevant data from research papers.",
+        "research challenge": "Handling varied formats and unstructured data in academic papers.",
+        "method summary": "The method embraces a machine learning model trained on diverse paper formats to identify and segment relevant data, converting it into structured formats.",
+        "conclusion": "The approach improves data extraction efficiency and accuracy, facilitating better data management and analysis in research fields."
+    },
+    "Method": {
+        "description": "The method incorporates a machine learning model trained to recognize and extract specific data elements from unstructured research paper texts.",
+        "problem formultaion": "Handle diverse document formats and extract structured data from academic papers.",
+        "feature processing": "Data preprocessing involves normalizing diverse formats and identifying key textual features.",
+        "model": "A supervised machine learning model is employed to identify and segment relevant textual data.",
+        "tasks": [
+            "Data extraction",
+            "Data structuring"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The model demonstrates linear complexity concerning document size.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Academic Papers Dataset 1",
+            "Scientific Articles Dataset 2"
+        ],
+        "baselines": [
+            "Baseline Method 1",
+            "Baseline Method 2"
+        ],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": null,
+        "results": "The method significantly outperformed baseline techniques by increasing extraction accuracy by 15%.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The proposed method effectively automates the extraction and structuring of data from unstructured texts, improving data accessibility and processing in research.",
+        "future work": "Future studies may explore integrating more diverse datasets to enhance model robustness."
+    }
+}

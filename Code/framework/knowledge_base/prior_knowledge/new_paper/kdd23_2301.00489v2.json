@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Federated Learning with Non-Identical Client Class Sets",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            ""
+        ],
+        "abstract": "Federated learning has emerged as a distributed learning paradigm allowing multiple parties to collaboratively learn a global model while preserving privacy. This paper addresses the challenge of non-identical client class sets in federated learning and proposes a novel federated learning framework to align the latent spaces across clients from both label and data perspectives.",
+        "keywords": [
+            "Federated Learning",
+            "Non-Identical Client Class Sets",
+            "Latent Space Alignment"
+        ],
+        "year": "2023",
+        "venue": "N/A",
+        "doi link": null,
+        "method name": "Federated Learning with Non-Identical Client Class Sets"
+    },
+    "relate work": {
+        "related work category": [
+            "Federated Learning with Non-IID Data",
+            "Label Semantics Modeling"
+        ],
+        "related papers": "1. Kairouz et al. 2021\n2. Li et al. 2020\n3. Lei et al. 2015\n4. Radford et al. 2021",
+        "comparisons with related methods": "Our method builds upon the existing works that address federated learning with non-IID data and label semantics modeling by incorporating label name semantics to anchor class representations and aligning latent spaces for non-identical client class sets."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper addresses the challenge of federated learning with clients having varied, non-identical class sets by introducing a novel framework that aligns latent spaces through label semantics and data representations.",
+        "research purpose": "The research focuses on improving federated learning models under the condition of non-identical class sets across different clients, ensuring a comprehensive global model.",
+        "research challenge": "Existing federated classification assumes identical class sets across clients, which is often not applicable in real-world applications.",
+        "method summary": "A new framework is proposed that incorporates a label encoder initialized through shared label names and pretrained text representations to align class representations in latent space.",
+        "conclusion": "The proposed method effectively addresses the challenge of non-identical client class sets by leveraging domain-specific label semantics, achieving superior performance over several state-of-the-art methods."
+    },
+    "Method": {
+        "description": "The method introduces a novel federated learning framework that utilizes label name semantics and global class representations as anchors to align latent feature spaces for clients with diverse class sets.",
+        "problem formultaion": "Generating a global classification model using federated learning with non-identical client class sets. Each client identifies a different subset of the complete class set, posing challenges in model alignment.",
+        "feature processing": null,
+        "model": "Employs a backbone classification model consisting of a data encoder and label encoder. The label encoder uses natural language label names to derive semantic class representations.",
+        "tasks": [
+            "Single-label Multi-Class Classification",
+            "Multi-Label Classification"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Anchor label representations using label names. 2. Integrate and regulate label and data encoders through alternating training."
+    },
+    "Experiments": {
+        "datasets": [
+            "ExtraSensory",
+            "MIMIC-III",
+            "PAMAP2",
+            "Reuters 21578 R8"
+        ],
+        "baselines": [
+            "FedAvg",
+            "FedProx",
+            "MOON",
+            "Scaffold",
+            "FedRS",
+            "FedPU"
+        ],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": null,
+        "results": "The proposed method outperforms state-of-the-art federated classification methods on various datasets, including challenging scenarios involving multi-label classification and non-overlapping client class sets.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": "An ablation study evaluated the contribution of semantic label name sharing, alignment for unaware classes, and alternating training. Every design was significant to performance improvement."
+    },
+    "conclusion": {
+        "summary": "The method demonstrates superior performance in handling non-identical client class sets in federated learning by incorporating label semantics to guide latent space alignment.",
+        "future work": "Future directions will explore federated learning compatibility with more generalized system heterogeneity, involving diverse network architectures and training processes."
+    }
+}

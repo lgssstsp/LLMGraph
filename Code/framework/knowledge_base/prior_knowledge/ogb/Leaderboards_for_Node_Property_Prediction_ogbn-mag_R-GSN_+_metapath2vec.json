@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 16,
+    "Method": "R-GSN + metapath2vec",
+    "External Data": "No",
+    "Test Accuracy": "0.5109 ± 0.0038",
+    "Validation Accuracy": "0.5295 ± 0.0042",
+    "Contact": "mailto:1520655940@qq.com",
+    "Paper Link": "https://arxiv.org/abs/2105.08330",
+    "Code Link": "https://github.com/ytchx1999/PyG-ogbn-mag/tree/main/rgsn%2Bmetapath2vec",
+    "Parameters": "309,777,252",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Jun 30, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/R-GSN_+_metapath2vec.pdf",
+    "Paper Summary": "The paper proposes two novel tricks for enhancing node classification tasks using Graph Convolutional Networks (GCNs): the **GCN res Framework** and **Embedding Usage**.\n\n### GCN Res Framework\n1. **Residual Connections**:\n   - Inspired by ResNet, this method incorporates adaptive residual connections and initial residual connections to address the over-smoothing problem often encountered in deeper GCNs.\n   - Each layer in the GCN res Framework allows for a weighted summation of the input features, incorporating both initial features and features from the previous layer, using two learnable coefficients (α and β).\n\n2. **Structure**:\n   - The GCN res Framework consists of multiple blocks, where each block includes:\n     - **GCN Convolution Layer**: Performs the graph convolution.\n     - **Normalization Layer**: Stabilizes the training process.\n     - **Activation Function**: Applies a non-linear transformation (ReLU).\n     - **Dropout Unit**: Reduces overfitting.\n   - After processing through these layers, a **softmax layer-aggregation** is applied, which aggregates the outputs from all layers using learnable weights constrained to a softmax distribution.\n\n### Embedding Usage\n1. **Enhanced Feature Representation**:\n   - This technique combines the original input feature matrix with pre-trained embeddings (e.g., from Node2vec or MetaPath2vec) to generate a new input feature set for the GCN.\n   - The merging process can be done through various methods (sum, concatenation, etc.) depending on the task requirements.\n\n2. **Rationale**:\n   - The embeddings capture rich structural information about the graph, which helps improve the performance of GCNs, particularly in scenarios where the node feature information is insufficient.\n\n### Integration\nBoth techniques are designed to be flexible and can be integrated easily into different GCN variants, allowing for broader application across various types of datasets and enhancing overall model robustness and effectiveness in node classification tasks."
+}

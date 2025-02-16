@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-biokg",
+    "Dataset Link": "../linkprop/#ogbl-biokg",
+    "Rank": 3,
+    "Method": "UniBi",
+    "External Data": "No",
+    "Test Accuracy": "0.8550 ± 0.0003",
+    "Validation Accuracy": "0.8553 ± 0.0001",
+    "Contact": "mailto:lrl23@mails.tsinghua.edu.cn",
+    "Paper Link": "https://arxiv.org/pdf/2309.13834.pdf",
+    "Code Link": "https://github.com/lrlbbzl/unibi_ogb",
+    "Parameters": "181,654,170",
+    "Hardware": "RTX 4090 (24GB)",
+    "Date": "Dec 2, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-biokg/UniBi.pdf",
+    "Paper Summary": "The paper introduces the **Unit Ball Bilinear Model (UniBi)** as an innovative solution to address the limitations of existing bilinear-based models in knowledge graph completion (KGC), particularly their inability to capture the prior property known as the \"law of identity.\" The key aspects of the model design are as follows:\n\n### Model Design Aspects\n\n1. **Prior Property**: The authors hypothesize that bilinear-based models primarily focus on posterior properties while neglecting prior properties, such as the law of identity, which states that \"everything is only identical to itself.\" This uniqueness in embeddings for identity relations forms the basis for the UniBi model.\n\n2. **Normalization**: UniBi employs normalization of entity vectors and relation matrices to ensure embeddings lie within a unit ball. Specifically:\n   - Entities are restricted to unit norm: \\( \\|h\\| = 1 \\) and \\( \\|t\\| = 1 \\).\n   - Relation matrices are constrained to have a spectral radius of 1: \\( \\rho(R) = 1 \\).\n   This normalization prevents ineffective learning attributed to scale variations, allowing the model to focus on capturing meaningful relationships and representations.\n\n3. **Score Function**: The score function in UniBi retains the bilinear form:\n   \\[\n   s(h, r, t) = h^\\top R t,\n   \\]\n   where \\( h, R, t \\) are the learned representations of the head entity, relation, and tail entity, respectively. The incorporation of constraints on these components seeks to enforce the uniqueness required to model identity effectively.\n\n4. **Constraints Framework**: The model uses minimal constraints—one per entity or relation—to model the law of identity without excessively limiting expressiveness. This minimalistic approach helps balance modeling capabilities with performance.\n\n5. **Handling Complex Relations**: The design recognizes the inherent complexities of relationships in knowledge graphs. The proposed structure enables distinguishing between identity and other relations effectively by using well-defined score functions and the desired constraint properties.\n\n6. **Theoretical Foundations**: The paper articulates a formal definition for a KGE model to capture the law of identity, emphasizing the need for unique embeddings for identity relations and differentiating representations for distinct entities.\n\n### Key Contributions\n\n- **Modeling Uniqueness**: UniBi captures the uniqueness of identity through the dual constraints on entities and relations, distinguishing it from prior bilinear models that fail to enforce such a property.\n  \n- **Interpretability**: By normalizing the scales that would otherwise obscure the meaningful patterns in the data, UniBi enhances interpretability, allowing clear relationships between the model dimensions (like singular values) and the complexities of the relations.\n\nThis model design thus proposes a new paradigm for KGC that fundamentally emphasizes the incorporation of prior properties to yield improved performance and richer interpretations."
+}

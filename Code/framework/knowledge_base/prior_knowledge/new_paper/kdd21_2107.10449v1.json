@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Learning from Sparsely Annotated Data with Generative Adversarial Networks",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Science",
+            "Institute of Technology"
+        ],
+        "abstract": "Crowdsourced annotations provide a cost-effective means for gathering labeled data; however, the sparsity of such annotations often compromises the quality of training datasets for machine learning models. In this paper, we propose a novel approach, CrowdInG, which leverages Generative Adversarial Networks (GANs) to generate informative annotations from sparse datasets, increasing label density without incurring additional cost. The CrowdInG framework outperforms existing methods in sparse annotation scenarios by strategically generating annotations that align with authentic confusion patterns and boost classifier training efficiency.",
+        "keywords": [
+            "Machine Learning",
+            "Crowdsourcing",
+            "Generative Adversarial Networks",
+            "Data Augmentation"
+        ],
+        "year": "2023",
+        "venue": "Journal of Machine Learning Research",
+        "doi link": null,
+        "method name": "CrowdInG"
+    },
+    "relate work": {
+        "related work category": [
+            "Learning from Crowds",
+            "Deep Learning Models for Crowdsourcing",
+            "Generative Models in Crowdsourcing",
+            "Data Augmentation Techniques"
+        ],
+        "related papers": "\\citet{raykar2010learning} used EM algorithms for expertise estimation and were inspired by the Dawid and Skene model. \\citet{rodrigues2018deep} innovatively replaced confusion matrices with neural networks for modeling annotator expertise. Other studies, such as  \\citet{kamar2015identifying} and \\citet{chu2020learning}, used global confusion matrices to address sparse observations. Semi-supervised GANs were also explored in problems like image generation \\cite{odena2016semi}. \\citet{wang2018graphgan} and \\citet{irissappane2020leveraging} applied GAN frameworks for graph and text data expansion, respectively.",
+        "comparisons with related methods": "While traditional methods rely heavily on observed annotations and simplify annotator confusion, our GAN-based approach generates annotations, minimizing reliance on assumptions. Compared to techniques such as Max-MIG or AggNet tailored for specific confusion patterns, CrowdInG allows flexible, assumption-free modeling, which directly enhances annotation quality and aligns with true label distributions."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces CrowdInG, a GAN-based data augmentation framework that enhances the robustness and accuracy of machine learning models trained on sparsely annotated datasets.",
+        "research purpose": "To address the challenge of sparse annotations in crowdsourced datasets by generating high-quality, informative annotations that improve classifier performance.",
+        "research challenge": "Annotation sparsity remains a significant barrier to deriving value from crowdsourced data due to costs associated with increased labelling and inaccurately modeled annotator confusion resulting from limited observations.",
+        "method summary": "CrowdInG utilizes a GAN framework that combines a generator and discriminator to mimic real annotation distributions and provides a classifier that enhances prediction accuracy by leveraging generated data.",
+        "conclusion": "Our model shows that data augmentation via generated annotations allows cost-effective improvement in classifier learning under sparse labeling conditions."
+    },
+    "Method": {
+        "description": "CrowdInG leverages Generative Adversarial Networks to generate plausible annotations by mimicking real annotation distributions under budget constraints.",
+        "problem formultaion": "The challenge is to optimize classifier training using sparse crowdsourced annotations, balancing quality improvement with budget constraints in data labeling.",
+        "feature processing": "Instance features serve as inputs to the classifier as well as to the generative module for annotation generation.",
+        "model": "Generative Adversarial Networks (GAN) framework combining a generative network for annotation creation and a discriminative network for real vs. generated annotation evaluation.",
+        "tasks": [
+            "Crowdsourcing data augmentation",
+            "Classifier training optimization"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "The training consists of alternating updates for the generative and discriminative modules, guided by information-theoretic principles to ensure informative annotation generation."
+    },
+    "Experiments": {
+        "datasets": [
+            "LabelMe",
+            "Music",
+            "CIFAR-10H"
+        ],
+        "baselines": [
+            "DL-MV",
+            "DL-CL",
+            "Anno-Reg",
+            "Max-MIG",
+            "AggNet"
+        ],
+        "evaluation metric": "Test accuracy",
+        "setup": "The datasets employed were progressively sparsified by removing annotations, simulating increased annotation costs.",
+        "hyperparameters": null,
+        "results": "CrowdInG maintained high accuracy even with significantly reduced annotations, outperforming traditional majority-vote and state-of-the-art DS-based models under extreme sparsity.",
+        "performance": "The model consistently outperformed baselines across varied datasets and demonstrated resilience to sparse annotation scenarios.",
+        "analysis": "The addition of quality-generated annotations for multi-class classification tasks improved robustness and accuracy, aligning with true label distributions without over-reliance on complex assumptions.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The CrowdInG framework, by generating annotations that improve classifier training, offers a novel solution to overcoming sparsity challenges in crowdsourced datasets.",
+        "future work": "Future research could explore cross-domain application of this generative strategy to other areas reliant on sparse data."
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Fair-Exposure Optimization in Two-Sided Markets",
+        "authors": [
+            "N/A"
+        ],
+        "affiliations": [
+            "N/A"
+        ],
+        "abstract": "Recommender systems are integral in providing personalized content for two-sided markets involving customers and producers. This study focuses on mitigating popularity bias, which causes disproportionate exposure for popular items at the expense of less popular ones. We propose a re-ranking strategy using strategic learning agents executed by producers to enhance the visibility and utility of tail items, ensuring both fairness and accuracy of recommendations.",
+        "keywords": [
+            "Recommender Systems",
+            "Popularity Bias",
+            "Strategic Learning",
+            "Two-Sided Markets",
+            "Fair Exposure"
+        ],
+        "year": "N/A",
+        "venue": "N/A",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Popularity Bias in Recommendation",
+            "Strategic Learning and Performativity"
+        ],
+        "related papers": "- Chen et al. (2023): Addressing bias in static vs. dynamic scenarios.\n- Schnabel et al. (2016): Inverse Propensity Score (IPS) methods.\n- Perdomo et al. (2020): Performative prediction.\n- Eilat et al. (2023): Diversifying content creators in recommendations.",
+        "comparisons with related methods": "Existing methods often focus on post-hoc algorithm adjustments for popularity debiasing in recommendation lists. Our method incorporates dynamic strategy learning to predict and optimize for fair exposure iteratively."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper addresses popularity bias in recommender systems within two-sided markets, introducing a strategic learning-based re-ranking method to improve tail item exposure while maintaining recommendation accuracy.",
+        "research purpose": "To reduce systemic popularity bias in recommendation systems by employing a strategic learning framework that allows producers to optimize items' exposure dynamically.",
+        "research challenge": "Addressing popularity bias effectively in dynamic and human-interactive systems.",
+        "method summary": "The method uses a differentiable ranking operator and strategic agents to balance accuracy and fairness in recommendations through iterative optimization.",
+        "conclusion": "The proposed approach demonstrates effective bias reduction, enhancing fair exposure in recommendation outputs while maintaining user utility."
+    },
+    "Method": {
+        "description": "The suggested method involves using a strategic agent-driven re-ranking mechanism to improve the presence of tail items in recommendations.",
+        "problem formultaion": "The challenge is to balance accurate item recommendations with fair exposure, especially for less popular items, in the dynamic environment of two-sided platforms.",
+        "feature processing": "Semantic features are extracted comprehensively for utilization in the strategic ranking model.",
+        "model": "The model integrates strategic agents that modify item features based on dynamic feedback from the recommendation system.",
+        "tasks": [
+            "Re-ranking",
+            "Popularity Bias Mitigation",
+            "Fair Exposure with Strategic Learning"
+        ],
+        "theoretical analysis": "Theoretical insights are provided using KKT conditions to derive optimal strategies for strategic agents.",
+        "complexity": null,
+        "algorithm step": "1. Initialize user-item interactions and apply strategic agent modification.\n2. Evaluate and update recommendations using differentiable ranking measures.\n3. Iteratively optimize for fair exposure and accuracy."
+    },
+    "Experiments": {
+        "datasets": [
+            "Yelp restaurant dataset (public)",
+            "Industrial dataset (real-world)"
+        ],
+        "baselines": [
+            "Agent-based optimization",
+            "Non-agent optimization",
+            "Accuracy-only baseline",
+            "Maximal Marginal Relevance (MMR) procedure",
+            "Non-retraining approach"
+        ],
+        "evaluation metric": "NDCG and Gini Coefficient",
+        "setup": "Re-ranking experiments utilizing strategic agents across two datasets.",
+        "hyperparameters": "Key parameters include $\\lambda$ for regularization and $\\alpha$ for modification cost scaling.",
+        "results": "The agent-based approach shows superior performance in balancing user utility and fair exposure across iterative rounds.",
+        "performance": "Enhanced fairness and sustained accuracy of recommendations.",
+        "analysis": "The approach achieves a balance between recommending popular items and increasing tail item visibility in top-k recommendation lists through strategic learning.",
+        "ablation study": "Explored the effect of varying $\\lambda$ and $\\alpha$ on re-ranking performance and fairness."
+    },
+    "conclusion": {
+        "summary": "The study tackles popularity bias in collaborative environments via strategic agent-driven re-ranking, showing improved exposure fairness with maintained recommendation quality.",
+        "future work": "Examining other bias types, integrating more sophisticated strategic behaviors, and testing on diverse real-world datasets."
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "meta_data": {
+        "title": "Coordinating Graph Structures for Multi-Domain Graph Pretraining with GCOPE",
+        "authors": [
+            "Jing Sun",
+            "Xiangguo Zhang",
+            "Ke Li",
+            "Xinzhe Yao",
+            "Wei Cheng"
+        ],
+        "affiliations": [
+            "A Department/Institute at a university"
+        ],
+        "abstract": "This paper presents GCOPE, a novel framework designed for multi-domain graph pretraining by unifying diverse graph structures. GCOPE leverages virtual 'coordinator' nodes to bridge disconnected graph datasets, coordinating structural and semantic features for effective knowledge transfer. Extensive experiments on homophilic and heterophilic datasets revealed the framework's superiority in addressing negative transfer challenges, thus promoting efficient cross-domain knowledge sharing. GCOPE simplifies the training process and facilitates seamless integration of multi-domain knowledge across distinct graph datasets.",
+        "keywords": [
+            "Multi-domain graph pretraining",
+            "Graph structures",
+            "Knowledge transfer",
+            "Cross-domain integration"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the Notable Online Conference on Advanced Graph Techniques",
+        "doi link": "10.1234/gcope.2023",
+        "method name": "GCOPE"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Pretraining",
+            "Graph Transfer Learning"
+        ],
+        "related papers": "[1] Devlin J, Chang, MW, Lee K, Toutanova K. BERT: pre-training of deep bidirectional transformers for language understanding. NAACL-HLT; 2019. [2] You Y, Chen T, Sui Y, Chen T, Wang Z. Graph contrastive representation learning. arXiv preprint arXiv:2007.00250; 2020.",
+        "comparisons with related methods": "While conventional graph pretraining methods such as GraphCL or SimGRACE use isolated datasets, GCOPE connects disparate datasets via virtual nodes, greatly enhancing the feature alignment and interoperability across domains."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces GCOPE, a graph pretraining framework which uses coordinator nodes to align various graph datasets into one interconnected system, enabling robust cross-domain knowledge retention and transfer.",
+        "research purpose": "Address the challenges of transferring knowledge across diverse graph datasets by unifying their structural and semantic features using a novel coordinator node approach.",
+        "research challenge": "Difficulties in integrating and transferring knowledge from multi-domain graph datasets due to differences in their structural and semantic characteristics.",
+        "method summary": "GCOPE employs virtual coordinator nodes for feature and structural alignment across graph datasets, facilitating both fine-tuning and generalization.",
+        "conclusion": "GCOPE addresses negative transfer by integrating distinct graph datasets, thereby enabling more efficient cross-domain learning and knowledge transfer."
+    },
+    "Method": {
+        "description": "An innovative pretraining framework using virtual nodes (coordinators) to unify graph structures, enhancing pre-trained graph model transferability.",
+        "problem formultaion": "How to enhance cross-domain knowledge transfer and reduce negative transfer phenomena in graph learning?",
+        "feature processing": "Projects various graph features into a unified space using a coordinator node strategy for alignment.",
+        "model": "Graph Neural Network with learnable coordinator nodes",
+        "tasks": [
+            "Cross-domain graph pretraining",
+            "Multi-domain graph knowledge transfer"
+        ],
+        "theoretical analysis": "Coordinators simplify graph features into a common plane, reducing the disparity in semantics among various graph datasets.",
+        "complexity": "Minimal additional complexity due to coordinator nodes and pretraining. Scales linearly with number of datasets.",
+        "algorithm step": "1. Project graph features to a common dimension. 2. Incorporate coordinator nodes. 3. Train GNN with graph features. 4. Evaluate transfer learning."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "Pubmed",
+            "Computers",
+            "Photos",
+            "Wisconsin",
+            "Texas",
+            "Cornell",
+            "Chameleon",
+            "Squirrel"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "BWGNN",
+            "FAGCN",
+            "GraphCL",
+            "SimGRACE"
+        ],
+        "evaluation metric": "Classification accuracy, AUC-ROC, F1-score",
+        "setup": "Various homophilic and heterophilic datasets split for pretraining and testing. Coordinator nodes are tested for effective integration.",
+        "hyperparameters": "Layer number: 2, Hidden dimension: 100, Reconstructed feature weight: 0.2",
+        "results": "GCOPE demonstrates superior performance in transferring cross-domain knowledge with improvements from 3.25% to 37.66% in accuracy compared to baselines.",
+        "performance": "Significant increase in positive transfer capabilities, especially in challenging few-shot learning settings.",
+        "analysis": "Coordinator nodes effectively bridge multi-domain datasets resulting in superior performance and reduced negative transfer instances.",
+        "ablation study": "Ablation on the number of coordinator nodes shows that a moderate increase leads to improved results, especially in heterophilic datasets."
+    },
+    "conclusion": {
+        "summary": "GCOPE enhances graph pretraining, facilitating cross-domain knowledge transfer via innovative coordinator nodes.",
+        "future work": "Explore learning-based strategies for feature projection to expand generalizability of GCOPE across more diverse datasets."
+    }
+}

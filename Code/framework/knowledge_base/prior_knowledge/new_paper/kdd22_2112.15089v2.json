@@ -1,0 +1,89 @@
+{
+    "meta_data": {
+        "title": "Causal Attention for Graph Neural Networks: Enhancing Generalization by Mitigating the Shortcut Bias",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Affiliation 1",
+            "Affiliation 2"
+        ],
+        "abstract": "Graph neural networks (GNNs) excel in tasks like graph classification, but face challenges with shortcut biases during out-of-distribution (OOD) settings. We propose the Causal Attention Learning (CAL) strategy, which mitigates the confounding effects of shortcut features that commonly leak into models during training. Through a novel causal intervention technique and disentanglement strategy, CAL differentiates causal features from trivial ones, significantly boosting generalization capabilities. Extensive experiments demonstrate CAL's effectiveness across synthetic and real-world datasets.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Causality",
+            "Machine Learning",
+            "Out-of-Distribution",
+            "Generalization"
+        ],
+        "year": "2023",
+        "venue": "Neural Information Processing Systems (NeurIPS)",
+        "doi link": null,
+        "method name": "Causal Attention Learning (CAL)"
+    },
+    "relate work": {
+        "related work category": [
+            "Attention Mechanism in GNNs",
+            "OOD Generalization",
+            "Causal Inference"
+        ],
+        "related papers": "1. Velivckovic et al. 2018 - Graph Attention Networks\n 2. Kipf et al. 2016 - Semi-Supervised Classification with GCN\n 3. Pearl 2000 - Models of Causal Inference\n 4. Arjovsky et al. 2019 - Invariant Risk Minimization\n 5. Sagawa et al. 2019 - Distributionally Robust Optimization",
+        "comparisons with related methods": "CAL outperforms baselines such as GCN, GIN, and attention-based models. It offers comparable performance to OOD-focused methods like IRM and DRO, without needing specialized annotations."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes Causal Attention Learning (CAL) to enhance the generalization capability of Graph Neural Networks (GNNs) in OOD scenarios by focusing on causal features while mitigating the influence of shortcut biases.",
+        "research purpose": "To improve GNN generalization by distinguishing causal features from shortcut biases.",
+        "research challenge": "Current GNNs often capture shortcut biases instead of causal features, leading to poor performance in OOD settings.",
+        "method summary": "CAL uses causal intervention techniques to isolate causal features and reduce the impact of shortcuts, using attention mechanisms in GNNs.",
+        "conclusion": "CAL effectively enhances GNN performance in both synthetic and real-world datasets by mitigating shortcut biases."
+    },
+    "Method": {
+        "description": "Causal Attention Learning (CAL) enhances GNNs by distinguishing causal features from non-causal shortcuts through a novel attention and intervention strategy.",
+        "problem formultaion": "Training GNNs on datasets with inherent shortcut biases results in poor OOD performance.",
+        "feature processing": "Attention mechanisms are applied probabilistically to nodes and edges to capture the causal and non-causal attributes.",
+        "model": "Graph Neural Networks equipped with CAL.",
+        "tasks": [
+            "Graph Classification",
+            "Out-of-Distribution Robustness"
+        ],
+        "theoretical analysis": "Uses causal theory to provide insights into shortcut biases harming OOD performance.",
+        "complexity": "Increased computational complexity due to attention calculations; details not provided.",
+        "algorithm step": "Causal features are estimated via soft masks; causal intervention is executed through stratification and backdoor adjustment."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic (SYN-b)",
+            "MUTAG",
+            "NCI1",
+            "PROTEINS",
+            "COLLAB",
+            "IMDB-B",
+            "IMDB-M",
+            "MNIST-Superpixel",
+            "CIFAR-10 Superpixel"
+        ],
+        "baselines": [
+            "GCN",
+            "GIN",
+            "GAT",
+            "GATv2",
+            "SuperGAT",
+            "GlobalAttention",
+            "AGNN",
+            "DiffPool",
+            "SortPool",
+            "Top-k Pool"
+        ],
+        "evaluation metric": "Test Accuracy",
+        "setup": "Experiments were conducted on synthetic as well as real-world datasets. Metrics for evaluation included OOD effectiveness and representation quality.",
+        "hyperparameters": null,
+        "results": "CAL showed superior performance in alleviating OOD issues and improved accuracy across datasets, notably the SYN-b dataset.",
+        "performance": "Significant improvement in datasets exhibiting OOD biases compared to conventional and some SOTA (State-of-the-Art) methods.",
+        "analysis": "Visualizations indicate that CAL effectively focuses on causal subgraphs while ignoring non-informative features.",
+        "ablation study": "Examined roles of node/edge attention, intervention strategies, and influence of hyper-parameters on performance."
+    },
+    "conclusion": {
+        "summary": "CAL improves the generalization of GNNs by focusing on causal features while mitigating shortcut biases.",
+        "future work": "Future research could explore applying CAL to node classification, link prediction, or enhance its disentanglement and intervention strategies."
+    }
+}

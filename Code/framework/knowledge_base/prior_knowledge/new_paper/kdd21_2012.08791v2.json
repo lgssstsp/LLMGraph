@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Minimally Random Convolutional Kernel Transform for Time Series Classification",
+        "authors": [
+            "Author 1",
+            "Author 2"
+        ],
+        "affiliations": [
+            "Affiliation 1",
+            "Affiliation 2"
+        ],
+        "abstract": "This paper presents a novel reformulation of ROCKET, termed MiniROCKET, which focuses on improving computational efficiency and reducing randomness while maintaining high accuracy in time series classification.",
+        "keywords": [
+            "Time Series Classification",
+            "Convolutional Kernels",
+            "Machine Learning",
+            "Data Mining"
+        ],
+        "year": "2023",
+        "venue": "ICML 2023",
+        "doi link": null,
+        "method name": "MiniROCKET"
+    },
+    "relate work": {
+        "related work category": [
+            "Current State of the Art",
+            "ROCKET",
+            "Other Methods"
+        ],
+        "related papers": "Recent advances include methods such as HIVE-COTE, TS-CHIEF, and InceptionTime. MiniROCKET improves upon the ROCKET framework by limiting computational complexity.",
+        "comparisons with related methods": "While ROCKET uses random convolutional kernels, MiniROCKET employs a more deterministic and quicker approach while competing with top-tier models in terms of classification accuracy."
+    },
+    "high_level_summary": {
+        "summary of this paper": "MiniROCKET is a reformulated approach to time series classification from ROCKET, maintaining accuracy with enhanced speed and predictability.",
+        "research purpose": "The aim is to provide a more efficient and slightly deterministic methodology for classifying time series data by optimizing convolutional kernels.",
+        "research challenge": "Addressing the challenge of high compute time associated with accurate time series classification methods.",
+        "method summary": "MiniROCKET replaces random kernels with a fixed, ordered selection, maintaining key ROCKET principles like dilation and PPV for feature transformation.",
+        "conclusion": "MiniROCKET offers a significant enhancement in computational speed without sacrificing much in terms of accuracy, making it preferable for larger datasets."
+    },
+    "Method": {
+        "description": "MiniROCKET involves transformational changes to the ROCKET method to make it significantly faster and mostly deterministic in its approach while maintaining similar accuracy levels.",
+        "problem formultaion": "Streamline time series classification through computational efficiency and minimal randomness.",
+        "feature processing": "Employ convolutional kernels with restricted weights, use dilation and PPV pooling, eliminate redundancy in kernel usage.",
+        "model": "A transform model using convolutional features for linear classification, specifically ridge regression or logistic regression.",
+        "tasks": [
+            "Time Series Classification"
+        ],
+        "theoretical analysis": "MiniROCKET retains a linear complexity framework but optimizes through structural changes in convolutional operations.",
+        "complexity": "O(k * n * l_input) where k, n, and l_input denote features, examples, and input length respectively. The approach leverages kernel property optimizations for faster processing.",
+        "algorithm step": "Transform time series data through convolutional kernels, apply linear classifiers like ridge or logistic regression, evaluate accuracy and speed."
+    },
+    "Experiments": {
+        "datasets": [
+            "FruitFlies",
+            "InsectSound",
+            "MosquitoSound",
+            "DucksAndGeese"
+        ],
+        "baselines": [
+            "HIVE-COTE",
+            "TS-CHIEF",
+            "InceptionTime",
+            "ROCKET"
+        ],
+        "evaluation metric": "Accuracy, Computational Time",
+        "setup": "Evaluations were based on standard datasets from the UCR archive with comparisons to existing methods.",
+        "hyperparameters": null,
+        "results": "MiniROCKET significantly improves computational time across datasets while slightly outperforming ROCKET in accuracy on average.",
+        "performance": "Achieved up to 75 times faster computation on larger datasets like 'MosquitoSound.'",
+        "analysis": "MiniROCKET retains similar classification accuracy with distinctions highlighted in parameter explorations and dataset comparisons.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "MiniROCKET demonstrates an efficient approach to time series classification, combining high speed with competitive accuracy.",
+        "future work": "Further exploration into multivariate time series applications and integration with non-linear classifiers."
+    }
+}

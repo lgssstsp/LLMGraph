@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Explanory Performance Estimation for Machine Learning Model Monitoring",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            ""
+        ],
+        "abstract": "A novel approach to tackle the challenge of monitoring machine learning (ML) models under deployment-related data shifts by estimating feature-specific impacts on model performance, without access to ground truth labels, using a method called Explanatory Performance Estimation (XPE).",
+        "keywords": [
+            "Machine Learning",
+            "Model Monitoring",
+            "Data Shift",
+            "Explanatory Analysis",
+            "Performance Estimation"
+        ],
+        "year": "2024",
+        "venue": "To appear in International Conference on Machine Learning (ICML)",
+        "doi link": null,
+        "method name": "Explanatory Performance Estimation (XPE)"
+    },
+    "relate work": {
+        "related work category": [
+            "Optimal Transport",
+            "Feature Attribution Methods",
+            "Feature Attributions for Model Monitoring",
+            "Label-Free Performance Estimation"
+        ],
+        "related papers": "Fundamental works on optimal transport, applications of feature attribution in model monitoring, domain adaptation techniques, and other noteworthy performance estimation strategies.",
+        "comparisons with related methods": "XPE sets itself apart by combining optimal transport and feature attribution, allowing for a data and model-agnostic assessment of performance variations under data shifts, distinguishing itself from existing methods that require ground truth or rely solely on drift detection."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces a framework, Explanatory Performance Estimation (XPE), which addresses the difficulty of model monitoring across data distribution shifts by estimating performance impacts at the feature level when labels are absent. The method iterates over different feature attributions using theoretical insights and empirical experiments.",
+        "research purpose": "Provide a novel method to anticipate and explain changes in ML model performance due to distribution shifts using feature importance measurements.",
+        "research challenge": "Existing methods typically need ground truth labels or are not designed to explain feature-specific impacts credibly.",
+        "method summary": "A framework that blends optimal transport with Shapley Value-based attribution to quantify and anticipate the impact of distribution shifts on model performance, specifically at a feature level.",
+        "conclusion": "XPE shows promise in effectively revealing feature-specific impacts in model performance under data shifts, showcasing superior results to existing baseline methods."
+    },
+    "Method": {
+        "description": "Explanatory Performance Estimation (XPE) evaluates and explains the anticipated model performance changes due to data shifts on a feature level.",
+        "problem formultaion": "Predicting changes in ML model accuracy under real-world distribution shifts without target labels.",
+        "feature processing": "Incorporates optimal transport to align source and target distributions, employs Shapley Value-based methods for feature-level impact analysis.",
+        "model": "Agnostic to any ML model and does not necessitate access to target labels.",
+        "tasks": [
+            "Predictive Maintenance",
+            "Model Performance Explanation"
+        ],
+        "theoretical analysis": "Evaluates shift impacts using foundational theories in optimal transport and feature attribution, pointing to a new equilibrium of understanding model performance variance due to distribution shifts.",
+        "complexity": "While theoretically intensive, XPE provides computational efficiency by addressing high-dimensional data challenges using kernel and feature aggregation strategies.",
+        "algorithm step": "1. Align source and target distributions using optimal transport. 2. Analyze shifts through feature attribution methods, mainly Shapley Values. 3. Estimate and interpret the performance impact attributable to shifts."
+    },
+    "Experiments": {
+        "datasets": [
+            "MNIST",
+            "FashionMNIST",
+            "OrganaMNIST",
+            "PneumoniaMNIST",
+            "AudioMNIST (voice)",
+            "Various Tabular Datasets"
+        ],
+        "baselines": [
+            "Local Attribution Difference",
+            "Attribution × Shift"
+        ],
+        "evaluation metric": "Shift-faithfulness, Complexity, RemOve And Retrain - Shift (ROAR-S)",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "Demonstrated superior performance of XPE over baselines when subjected to shifts caused by hardware degradation, selection bias, and missing values across multiple datasets.",
+        "performance": "XPE consistently reflected a higher correlation between feature impact estimations and actual model performance changes under shifts.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "XPE provides an innovative and practical framework for monitoring complex machine learning models under data distribution shifts by focusing on feature-specific impacts, thereby assisting in the more effective maintenance and adaptation of these systems.",
+        "future work": "Extending XPE to different model architectures or exploring concept-based explanations could further solidify its effectiveness in real-world applications."
+    }
+}

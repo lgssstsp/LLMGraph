@@ -1,0 +1,74 @@
+{
+    "meta_data": {
+        "title": "Performance conditioned Diverse Generative Adversarial Networks (PcDGAN)",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Institute of Advanced Technology",
+            "Department of Engineering Sciences"
+        ],
+        "abstract": "PcDGAN leverages the strengths of determinantal point processes and novel loss functions to generate design candidates that are both diverse and meet specified performance metrics. Our model offers an innovative approach to overcoming data imbalance issues and enhances the diversity and performance evaluation in continuous conditional generative adversarial networks, outperforming previous state-of-the-art methods like CcGAN.",
+        "keywords": [
+            "Generative Adversarial Network",
+            "PcDGAN",
+            "Diversity",
+            "Performance Metrics",
+            "Continuous Conditioning"
+        ],
+        "year": "2023",
+        "venue": "International Journal of AI and Design",
+        "doi link": "https://doi.org/example",
+        "method name": "Performance conditioned Diverse Generative Adversarial Networks (PcDGAN)"
+    },
+    "relate work": {
+        "related work category": [
+            "Generative Models",
+            "Optimization in Design"
+        ],
+        "related papers": "Gan et al. (2014). Generative adversarial nets. Goodfellow et al. Conditional GAN for Guided Image Synthesis.",
+        "comparisons with related methods": "PcDGAN demonstrates improved diversity and meets continuous conditions more efficiently than CcGAN."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a model named PcDGAN, which uses a blend of generative adversarial network techniques with advanced loss functions to enhance both the diversity of synthesized designs and meet predefined performance criteria.",
+        "research purpose": "The purpose of this research is to develop a method for synthesizing engineering designs that are diverse and aligned with continuous performance specifications without relying on time-intensive simulations.",
+        "research challenge": "The challenge lies in creating a diverse set of solutions in continuous constraint settings while maintaining high condition satisfaction and performance efficiency.",
+        "method summary": "PcDGAN utilizes an innovative blend of DPP loss and singular vicinal loss functions reinforced with Lambert log exponential transition scoring to optimize diversity and conditioning in generated designs.",
+        "conclusion": "PcDGAN outperforms state-of-the-art CcGAN in maintaining diversity in generated designs, fulfilling strict continuous performance conditions, and minimizing performance variation."
+    },
+    "Method": {
+        "description": "PcDGAN combines novel learning mechanisms to create a diverse array of engineering designs that fulfill specific performance requirements without burdensome trial-and-error approaches.",
+        "problem formultaion": "The inverse design problem in high-dimensional spaces where designs must meet specified continuous performance metrics.",
+        "feature processing": "-",
+        "model": "Generative Adversarial Networks with Determinantal Point Processes and Singular Vicinal Loss functions.",
+        "tasks": [
+            "Diverse Design Synthesis",
+            "Performance Condition Satisfaction",
+            "Generator Training"
+        ],
+        "theoretical analysis": "PcDGAN employs a Lambert log exponential transition score to systematically optimize the conditioning quality and design diversity.",
+        "complexity": "O(n^2) where n is the number of design candidates.",
+        "algorithm step": "1. Initialize GAN with random weights. 2. Apply Lambert score to gauge conditioning. 3. Train generator with DPP-based diversity loss."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Design Dataset",
+            "UIUC Airfoil Database"
+        ],
+        "baselines": [
+            "State-of-the-art CcGAN"
+        ],
+        "evaluation metric": "Diversity score, Likelihood score, Label error",
+        "setup": "Experiments conducted on real-world and synthetic examples to test design diversity and performance metrics.",
+        "hyperparameters": "Lambert cutoff a=4.7; Batch size=32; Learning rate=10^{-4} for PcDGAN.",
+        "results": "PcDGAN significantly improves diversity (14% in airfoil generation) and enhances conditioning likelihood by 69% in design tasks.",
+        "performance": "High performance in continuous conditioning; maintains low label error and high likelihood across all conditions.",
+        "analysis": "Through empirical analysis, it was observed that PcDGAN maintains robust design space coverage even when confronted with sparse data distributions.",
+        "ablation study": "Singular vicinal loss and DPP loss individually contribute significantly to conditioning quality and diversity."
+    },
+    "conclusion": {
+        "summary": "PcDGAN introduces a new paradigm in generative design synthesis, merging GANs with DPP and vicinal loss methods to effectively navigate the challenges of continuous performance metrics and data sparsity, outshining current benchmarks.",
+        "future work": "Explore PcDGAN's potential in 3D design, CAD generation, and multi-objective optimization. Adapt singular vicinal loss for higher-dimensional applications."
+    }
+}

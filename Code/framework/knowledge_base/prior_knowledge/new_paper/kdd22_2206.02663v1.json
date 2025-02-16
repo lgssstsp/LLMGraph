@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "\\sys: A Novel Two-Phase Transfer Learning Framework for Automatic Hyperparameter Optimization",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous"
+        ],
+        "abstract": "Machine learning models often require careful hyperparameter optimization (HPO) to reach optimal performance. Transfer learning can help mitigate the challenges of HPO by leveraging past experiences. We present \\sys, a two-phase transfer learning framework that efficiently aggregates knowledge across tasks to improve HPO. Empirical validations across several benchmarks demonstrate superior performance of \\sys compared to traditional methods.",
+        "keywords": [
+            "Machine Learning",
+            "Hyperparameter Optimization",
+            "Transfer Learning",
+            "Bayesian Optimization"
+        ],
+        "year": "2023",
+        "venue": "NIPS",
+        "doi link": null,
+        "method name": "\\sys"
+    },
+    "relate work": {
+        "related work category": [
+            "Bayesian Optimization",
+            "Transfer Learning for HPO"
+        ],
+        "related papers": "\\cite{hutter2011sequential,bergstra2011algorithms,snoek2012practical,bardenet2013collaborative,springenberg2016bayesian,wistuba2015hyperparameter,frezieres2022taketo}",
+        "comparisons with related methods": "\\sys outperforms traditional Bayesian optimization methods by efficiently leveraging past HPO results through a learnable weight framework, providing more accurate predictions and improved performance."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces \\sys, a two-phase transfer learning framework designed to optimize the hyperparameter tuning process in machine learning models by leveraging past knowledge across tasks.",
+        "research purpose": "The aim of the research is to enhance hyperparameter optimization by introducing a transfer learning-based framework that can jointly and adaptively utilize knowledge from past tasks.",
+        "research challenge": "Addressing the complementary nature among source tasks and dealing with the dynamics of knowledge aggregation as the tasks progress.",
+        "method summary": "\\sys is built on Bayesian optimization principles, decoupling the transfer learning process into two phases: aggregating knowledge from source tasks and refining this knowledge with target task observations using adaptive weighted combinations.",
+        "conclusion": "\\sys is shown to accelerate the hyperparameter optimization process across numerous benchmarks, outperforming conventional baselines through its innovative transfer learning framework."
+    },
+    "Method": {
+        "description": "\\sys employs a two-phase transfer learning framework to optimize hyperparameters by leveraging past task history. It aggregates knowledge from multiple source tasks and adaptively combines it with current task data for effective learning.",
+        "problem formultaion": "Aimed at improving hyperparameter optimization through transfer learning by borrowing auxiliary knowledge from past tasks.",
+        "feature processing": "Standardizing the numerical ranges of data from different tasks to ensure consistency.",
+        "model": "\\sys's two-phase framework leverages Bayesian optimization and integrates transfer learning surrogate modeling.",
+        "tasks": [
+            "Hyperparameter Optimization",
+            "Neural Architecture Search"
+        ],
+        "theoretical analysis": "Presents empirical evaluations that demonstrate the superior effectiveness of \\sys in contrast to both standalone Bayesian optimization and other transfer learning-based HPO methods.",
+        "complexity": "The framework presents a complexity of O(kn^3), promising scalability with respect to both the number of tasks and trials.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "OpenML Datasets",
+            "NAS-Bench201"
+        ],
+        "baselines": [
+            "Random Search",
+            "I-GP",
+            "SCoT",
+            "SGPR",
+            "POGPE",
+            "TST",
+            "TST-M",
+            "RGPE"
+        ],
+        "evaluation metric": "Average Rank, Average Distance to Minimum",
+        "setup": "Conducted on 30 publicly available datasets with a leave-one-out cross-validation format, optimizing configurations for various ML algorithms.",
+        "hyperparameters": null,
+        "results": "Empirical results showcased \\sys leading in efficiency and accuracy across static and dynamic TL settings, improving the hyperparameter tuning process with a significant performance advantage in neural architecture search tasks.",
+        "performance": "Achieved leading positions in both static and dynamic TL settings, with notable speedups in NAS evaluations.",
+        "analysis": "\\sys demonstrated consistent superiority over baselines across multiple ML tasks, attributed to its efficient two-phase knowledge transfer and adaptive learning approach.",
+        "ablation study": "Extensive testing confirmed that \\sys effectively learned and integrated useful source knowledge through its two-phase framework."
+    },
+    "conclusion": {
+        "summary": "In summary, \\sys presents a robust and scalable solution for hyperparameter tuning, effectively utilizing past task knowledge to enhance current HPO tasks, reducing evaluation times and surpassing existing methods.",
+        "future work": null
+    }
+}

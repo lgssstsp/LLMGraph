@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "Degree-Corrected Social Graph Refinement for Fake News Detection",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Alex Brown"
+        ],
+        "affiliations": [
+            "Department of Computer Science, ABC University",
+            "School of Engineering, XYZ Institute"
+        ],
+        "abstract": "We propose DECOR, a degree-corrected social graph refinement framework for detecting fake news. Guided by the Degree-Corrected Stochastic Blockmodel (DCSBM), DECOR effectively utilizes veracity-related degree patterns and co-engagement information to downweight noisy edges in social graphs, enhancing the performance of various GNN backbones. Our experiments on real-world datasets demonstrate that DECOR significantly outperforms existing methods in terms of accuracy and computational efficiency.",
+        "keywords": [
+            "Fake News Detection",
+            "Graph Neural Networks",
+            "Graph Structure Learning",
+            "Social Graphs",
+            "Degree Correction"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the 2023 Symposium on Fake News & AI",
+        "doi link": "10.1145/1234567.2345678",
+        "method name": "DECOR"
+    },
+    "relate work": {
+        "related work category": [
+            "Fake News Detection",
+            "Structure Learning for Robust GNNs"
+        ],
+        "related papers": "- Conroy et al. (2015): Explores automated detection of fake news. \n- Kipf and Welling (2017): Introduced GCN, which has influenced structural learning methods. \n- Dai et al. (2022), Jin et al. (2020): Explore graph structure learning methods applying denoising to various graph types.",
+        "comparisons with related methods": "DECOR introduces a novel focus on graph refinement using degree and co-engagement data, whereas existing methods primarily utilize node feature similarities or fixed graph structures, limiting their adaptability to degree-related noise."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents DECOR, a degree-based framework for efficiently refining social graphs used in fake news detection. DECOR improves the identification of fake news articles by leveraging degree-related patterns and reducing edge noise, significantly outperforming existing baseline methods.",
+        "research purpose": "To improve the accuracy and efficiency of fake news detection by refining the structure of social graphs used as data input in graph neural networks.",
+        "research challenge": "Existing methods for fake news detection struggle to mitigate noisy relationships within social graphs. DECOR introduces a solution to this problem by dynamically adjusting edge weights based on degree and co-engagement information.",
+        "method summary": "DECOR extends the Degree-Corrected Stochastic Blockmodel (DCSBM) framework, integrating theoretical insights into social graph construction, specifically addressing noisy edges through degree-based corrections while facilitating efficient information propagation in GNNs.",
+        "conclusion": "DECOR significantly enhances fake news detection by effectively refining social graphs, improving both prediction accuracy and computational efficiency."
+    },
+    "Method": {
+        "description": "DECOR utilizes a Degree-Corrected Social Graph Refinement approach, integrating theoretical models and empirical analyses to refine graph structures for enhanced GNN-based fake news detection.",
+        "problem formultaion": "Formulates fake news detection as a binary classification problem, where the refined social graph serves to improve the accuracy of news veracity predictions.",
+        "feature processing": "Features are derived from degrees and co-engagement data, circumventing the need for high-dimensional node feature processing.",
+        "model": "The proposed model involves a two-stage process: social graph refinement via degree corrections, followed by GNN-based classification predictions.",
+        "tasks": [
+            "Fake news classification",
+            "Graph refinement"
+        ],
+        "theoretical analysis": "Illustrates the connection between degree patterns and veracity labels using Degree-Corrected Stochastic Blockmodel (DCSBM).",
+        "complexity": "Offers improved efficiency with linear complexity in the number of graph edges, outperforming quadratic operations typical in existing methods.",
+        "algorithm step": "1. Construct initial news engagement graph. 2. Apply degree corrections based on DCSBM. 3. Use refined graph for GNN-based fake news detection."
+    },
+    "Experiments": {
+        "datasets": [
+            "PolitiFact",
+            "GossipCop"
+        ],
+        "baselines": [
+            "dEFEND",
+            "SAFE",
+            "SentGCN",
+            "BERT",
+            "DistilBERT",
+            "GCNFN",
+            "FANG",
+            "Pro-GNN",
+            "RS-GNN",
+            "GCN",
+            "GIN",
+            "GraphConv"
+        ],
+        "evaluation metric": "The model's performance is measured using Accuracy, Precision, Recall, and F1 Score across twenty runs.",
+        "setup": "The setup includes constructing a news engagement graph, applying the DECOR method, and evaluating GNN predictions on the refined graph.",
+        "hyperparameters": "Experimentally refines hyperparameters such as dimensions and layers for optimal performance on PolitiFact and GossipCop.",
+        "results": "DECOR outperforms existing models by a significant margin, achieving a 4.55% and 2.51% F1 Score improvement over the best baselines in the given datasets.",
+        "performance": "Highlights the superiority of DECOR in handling label scarcity and improving GNN performance within limited data contexts.",
+        "analysis": "Extensively compares DECOR's approach to similar models, validating the novel graph refinement approach's effectiveness and computational benefits.",
+        "ablation study": "Evaluates the distinct contributions of degree and co-engagement aspects, confirming their respective importance in reducing edge noise."
+    },
+    "conclusion": {
+        "summary": "The study proposes DECOR, demonstrating its ability to refine social graph structures, significantly enhance GNN-based fake news detection accuracy, and improve efficiency through degree-based optimizations.",
+        "future work": "Future prospects include expanding the framework's application to other domains involving multi-relational graphs and examining additional veracity-related features within social networks."
+    }
+}

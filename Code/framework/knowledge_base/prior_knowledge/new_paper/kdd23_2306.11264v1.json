@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "A Graph Structure Learning Model for Open-World Generalization",
+        "authors": [
+            "Wtao Zhao"
+        ],
+        "affiliations": [
+            "University of Science and Technology"
+        ],
+        "abstract": "Graph neural networks (GNNs), as a model class based on the message passing principle, show promising efficacy for learning node representations for graph-structured data, used in physics simulation, traffic prediction, and drug recommendation. However, issues such as spurious and unobserved edges affect outcomes. Graph structure learning remedies this by optimizing structures and classifiers concurrently. Current methods are limited as they rely on a closed-world hypothesis, which is dependent on discovering structure from the same graph in training and testing scenarios. We propose a novel open-world setting targeting a generalizable model trained across multiple source graphs, adapting directly to unseen target graphs through bi-level optimization without re-training. This research introduces a structure learner to leverage transferrable knowledge and enhance generalization.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Structure Learning",
+            "Open-World Generalization",
+            "Machine Learning"
+        ],
+        "year": "2023",
+        "venue": "Journal of Graph Machine Learning",
+        "doi link": "https://doi.org/10.1000/exampledoi",
+        "method name": "\\mymodel"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Graph Structure Learning",
+            "Out-of-Distribution Generalization"
+        ],
+        "related papers": "[12] GCN, [9] GAT, [13] GraphSAGE, and others.",
+        "comparisons with related methods": "Our method surpasses previous models by enabling open-world scenario generalization across datasets not seen in training."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes a novel graph structure learning model, \\mymodel, that operates under an open-world setting, aiming to generalize across multiple graph datasets. This model is capable of optimizing graph structures and GNN classifiers concurrently without the need for retraining on unseen graphs, leveraging transferrable, common knowledge.",
+        "research purpose": "Investigate a model that generalizes across datasets, breaking the closed-world assumption.",
+        "research challenge": "Handling inefficiencies and overfitting in structure learning models when training data is limited.",
+        "method summary": "Strives to learn a generalized structure learner through multi-head weighted similarity for adaptive message-passing topology.",
+        "conclusion": "The proposed approach demonstrates superior performance and time efficiency compared to standard methods, highlighting its potential for open-world graph structure learning scenarios."
+    },
+    "Method": {
+        "description": "The method aims at learning a generalized graph structure model adaptable to various graph datasets without retraining.",
+        "problem formultaion": "Formulated as a bi-level optimization targeting joint learning for dataset-shared structure learner and specific GNNs.",
+        "feature processing": "Node features and structures are encoded using multi-head weighted similarity functions to ensure comprehensive capture of information.",
+        "model": "The model employs bi-level optimization to concurrently optimize structure learners and GNN classifiers across datasets.",
+        "tasks": [
+            "Adaptation and inference on unseen graphs without resizing",
+            "Graph structure optimization"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Method complexity is reduced using a pivot strategy, transforming structures into bipartite graphs for efficient computation.",
+        "algorithm step": "Our method involves sampling latent edges, message propagation, and leveraging probabilistic variational inference."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "CiteSeer",
+            "PubMed",
+            "Facebook-100"
+        ],
+        "baselines": [
+            "GraphSAGE",
+            "GAT",
+            "APPNP"
+        ],
+        "evaluation metric": "Test accuracy and training time efficiency.",
+        "setup": "Experiments designed to test in-domain and cross-domain generalization.",
+        "hyperparameters": null,
+        "results": "\\mymodel outperforms baseline models by substantial margins in accuracy and requires significantly less training time.",
+        "performance": "Demonstrates efficiency and adaptability to varying graph properties and distribution shifts.",
+        "analysis": "The model adapts well to unseen data, providing nearly similar performance as training-intensive methods.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The paper introduces \\mymodel for open-world graph structure learning, outperforming baseline methods.",
+        "future work": "Explore alternate flexible models that offer competitive results under similar open-world assumptions."
+    }
+}

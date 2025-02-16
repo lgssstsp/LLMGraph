@@ -1,0 +1,48 @@
+{
+  "Task Description": "Link Prediction with OGBL-COLLAB dataset. Link prediction task aimed at predicting future collaboration relationships between scientists. This dataset challenges GNN models to predict whether two scientists will collaborate based on their past collaboration history and other features.",
+  "Dataset Description": "OGBL-COLLAB is a dataset representing a collaboration network among approximately 235K scientists, indexed by Microsoft Academic Graph. Each node represents a scientist, and edges represent collaborations between them. Node features are generated from 128-dimensional vectors obtained by averaging word embeddings from scientists' publications.",
+  "Performance Summary": {
+    "General": "This dataset tests GNNs' ability to utilize temporal and multi-relational data effectively. The dynamic nature of the graph (multi-year collaborations) presents a unique challenge for link prediction.",
+    "Detailed Performance": {
+      "vanilla GCN": {
+        "Test Hits@50": "50.422±1.131",
+        "Train Hits@50": "92.112±0.991",
+        "Epochs": "122.50"
+      },
+      "GraphSage": {
+        "Test Hits@50": "51.618±0.690",
+        "Train Hits@50": "99.949±0.052",
+        "Epochs": "152.75"
+      },
+      "GAT": {
+        "Test Hits@50": "51.501±0.962",
+        "Train Hits@50": "97.851±1.114",
+        "Epochs": "157.00"
+      },
+      "GatedGCN": {
+        "Test Hits@50": "52.635±1.168",
+        "Train Hits@50": "96.103±1.876",
+        "Epochs": "95.00"
+      },
+      "GatedGCN-E-PE": {
+        "Test Hits@50": "52.849±1.345",
+        "Train Hits@50": "96.165±0.453",
+        "Epochs": "94.75"
+      },
+      "GIN": {
+        "Test Hits@50": "41.730±2.284",
+        "Train Hits@50": "70.555±4.444",
+        "Epochs": "140.25"
+      },
+      "Matrix Factorization": {
+        "Test Hits@50": "44.206±0.452",
+        "Train Hits@50": "100.000±0.000",
+        "Epochs": "254.33"
+      }
+    },
+    "Analysis": "The GatedGCN-E-PE model shows the best performance in terms of predicting future collaborations, likely due to its enhanced capability to process edge features and positional encodings. This dataset illustrates the importance of temporal and feature-rich edge data in improving the accuracy of link prediction models."
+  }
+}
+
+
+

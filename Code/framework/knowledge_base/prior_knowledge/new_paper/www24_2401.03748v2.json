@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Communicating Efficiently with Correlated Low-Rank Updates in Federated Recommendations",
+        "authors": [
+            "First Author",
+            "Second Author",
+            "Third Author"
+        ],
+        "affiliations": [
+            "Institution 1",
+            "Institution 2",
+            "Institution 3"
+        ],
+        "abstract": "In a federated recommendation system, preserving user privacy while maintaining communication efficiency poses significant challenges. We introduce a novel framework, \\arcronym, to enhance communication efficiency by implementing low-rank updates in federated learning. The key component, \\fullname, reduces both uplink and downlink communication costs while allowing compatibility with secure aggregation protocols. Extensive experiments demonstrate \\arcronym's ability to achieve competitive performance with significant reductions in communication cost compared to existing methods.",
+        "keywords": [
+            "Federated Learning",
+            "Recommendation Systems",
+            "Communication Efficiency",
+            "Privacy Preservation",
+            "Low-Rank Updates"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "10.1145/1234567890",
+        "method name": "\\arcronym"
+    },
+    "relate work": {
+        "related work category": [
+            "Federated Recommendation Systems",
+            "Communication Efficiency",
+            "Low-Rank Updates",
+            "Secure FedRec"
+        ],
+        "related papers": "[1] Ammad-ud-din, M., Ivannikova, E., Khan, Sh., et al. (2019). Federated Collaborative Filtering and Privacy-Preserving Techniques. In: ICML 2020. [2] Chai, L., Ye, Z., & Weng, G. (2020). Secure Federated Matrix Factorization for User Privacy. In: ICLR 2020. [3] Wu, R., & Zhang, D. (2022). FedPerGNN: Personalized GNN for Federated Recommendation. In: NeurIPS 2022.",
+        "comparisons with related methods": "\\arcronym offers improvements in reducing both communication costs and compatibility with secure aggregation protocols not extensively covered in prior techniques, particularly in addressing communication constraints and user privacy."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces \\arcronym, a methodology designed to improve communication efficiency in federated recommendation systems by utilizing low-rank updates. The technique prioritizes reducing communications overhead while attending to privacy concerns via compatibility with secure aggregation protocols, performing well against existing models.",
+        "research purpose": "Enhance communication efficiency and privacy in federated recommendations by employing low-rank updates and a novel \\arcronym approach.",
+        "research challenge": "Address the communication bottleneck constraints and privacy concerns in federated learning environments.",
+        "method summary": "\\arcronym reduces communication costs by adjusting lightweight trainable parameters while retaining compatibility with aggregation methods and safeguarding user privacy using secure protocols.",
+        "conclusion": "The proposed method achieves remarkable communication reduction efficiencies, compatibility with secure aggregation, and maintains robust recommendation performance."
+    },
+    "Method": {
+        "description": "\\arcronym proposes a lightweight, low-rank structured update for federated recommendation systems, enabling reductions in both uplink and downlink communication costs.",
+        "problem formultaion": "To address high communication burdens and privacy risks in federated recommendation settings.",
+        "feature processing": null,
+        "model": "A federated matrix factorization model where communication of updates is optimized using low-rank techniques.",
+        "tasks": [
+            "User preference prediction",
+            "Item recommendation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Initialize global and local parameters. 2. Transfer low-rank updates for optimization. 3. Aggregate and apply updates while preserving client data privacy."
+    },
+    "Experiments": {
+        "datasets": [
+            "MovieLens-1M",
+            "Pinterest"
+        ],
+        "baselines": [
+            "Matrix Factorization with FedAvg",
+            "SVD-based Communication Reduction",
+            "Top-K Compression Method"
+        ],
+        "evaluation metric": "Hit Ratio (HR) and Normalized Discounted Cumulative Gain (NDCG)",
+        "setup": "FedAvg with Matrix Factorization, analyzed across varying communication budgets and dataset heterogeneities.",
+        "hyperparameters": "Batch size [32, 64, 128, 256], learning rate [0.5, 0.1, 0.05, 0.01], weight decay [5e-4, 1e-4]",
+        "results": "\\arcronym achieves 81.03% HR and 48.5% NDCG in compressed communication scenarios, showcasing similar performance metric scores at significantly reduced byte transfers.",
+        "performance": "\\arcronym demonstrates robust performance, comparable with baselines under conventional communication costs.",
+        "analysis": "Highlighting the advantages of low-rank updates in federated frameworks, with communication costs substantially decreased and maintained recommendation efficacy.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The proposed scheme, \\arcronym, offers a strategy for communication-efficient federated learning with resilient performance, aligning well with secure aggregation frameworks.",
+        "future work": null
+    }
+}

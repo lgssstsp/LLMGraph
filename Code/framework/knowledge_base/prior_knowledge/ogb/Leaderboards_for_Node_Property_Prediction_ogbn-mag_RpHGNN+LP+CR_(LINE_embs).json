@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 2,
+    "Method": "RpHGNN+LP+CR (LINE embs)",
+    "External Data": "No",
+    "Test Accuracy": "0.5773 ± 0.0012",
+    "Validation Accuracy": "0.5973 ± 0.0008",
+    "Contact": "mailto:hujunxianligong@gmail.com",
+    "Paper Link": "https://arxiv.org/abs/2310.14481",
+    "Code Link": "https://github.com/CrawlScript/RpHGNN",
+    "Parameters": "7,720,368",
+    "Hardware": "GeForce GTX 1080 Ti (11GB GPU)",
+    "Date": "Oct 24, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/RpHGNN+LP+CR_(LINE_embs).pdf",
+    "Paper Summary": "The paper introduces a novel hybrid model called the **Random Projection Heterogeneous Graph Neural Network (RpHGNN)**, which combines the advantages of two pre-computation-based approaches for heterogeneous graphs: relation-wise and representation-wise styles. \n\n### Model Design Aspects:\n\n1. **Main Framework**:\n   - **Propagate-Then-Update Iterations**: RpHGNN employs a sequence of operations where neighboring information is collected first and then used to update the vertex representations. This contrasts with traditional methods that repetitively pass messages through the entire graph during training.\n   \n2. **Random Projection Squashing**:\n   - To maintain efficiency, a **Random Projection Squashing** mechanism is implemented. This step utilizes random projections to ensure the dimensionality of updated vertex representations remains constant across iterations, preventing excessive growth and enabling linear complexity increases.\n\n3. **Relation-Wise Neighbor Collection**:\n   - The **Relation-wise Neighbor Collection** component collects neighbor information based on varying relations. It incorporates an **Even-Odd Propagation Scheme** to gather information in a finer-grained manner, allowing the model to depend on fewer iterations compared to the standard approach, thereby reducing potential information loss.\n\n4. **Hybrid Approach**:\n   - By melding the representation-wise style's efficiency with the relation-wise style's low information loss, RpHGNN is designed to capture rich semantic information effectively. This hybrid methodology aims to retain the benefits of both approaches while alleviating their drawbacks.\n\n5. **Iteration Mechanics**:\n   - Each iteration performs a collection of neighboring information from local (1-hop) neighbors based on different relations, which are combined into a single representation. The incorporated even-odd scheme ensures that both local and specific relations are used effectively without triggering excessive untrainable updates.\n\n6. **Learnable Encoder**:\n   - After collecting the varying types of neighbor information, a **learnable encoder** processes these data inputs to learn the vertex representations of target vertices. This encoder consists of Conv1D layers and fully-connected layers, enabling efficient integration of the collected information.\n\nThrough these design aspects, RpHGNN seeks to provide a scalable and efficient solution for learning on heterogeneous graphs while minimizing information loss typical in large datasets."
+}

@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Temporal Prototype-Aware Learning for Time-Adaptive Active Voltage Control in Power Distribution Networks",
+        "authors": [
+            "Canyi Luo",
+            "Zhiqiang He",
+            "Yang Liu",
+            "Xingcheng Fu",
+            "Xiaodong Luo"
+        ],
+        "affiliations": [
+            "Research Center for MCC, Software Engineering Institute, Peking University, Beijing, China",
+            "MIT-IBM Watson AI Lab, Cambridge, MA, USA"
+        ],
+        "abstract": "The integration of rooftop solar photovoltaics (PVs) into Power Distribution Networks (PDNs) has prompted significant interest in developing solutions for Active Voltage Control (AVC) to maintain voltage stability amid fluctuating generation conditions. Recent trends focus on methods involving deep Multi-Agent Reinforcement Learning (MARL) to address the real-time voltage regulation challenge in large-scale networks. However, these approaches often focus on short-term tactics, neglecting various temporal distribution shifts that occur over longer durations. This paper introduces the Temporal Prototype-Aware Learning (TPA) method that tackles these challenges, allowing agents to adapt to multi-scale temporal variations in PDNs by leveraging temporal prototypes as representative temporal patterns for enhancing decision-making in Active Voltage Control. Extensive experiments demonstrate our method's ability to outperform existing state-of-the-art MARL-based solutions, especially in long-term continuous operation cycles, making it a promising candidate for time-adaptive AVC strategy development.",
+        "keywords": [
+            "Active Voltage Control",
+            "Power Distribution Networks",
+            "Reinforcement Learning",
+            "Temporal Adaptability",
+            "Prototype Learning"
+        ],
+        "year": "2023",
+        "venue": "arXiv preprint arXiv:2407.11111",
+        "doi link": "https://doi.org/10.48550/arXiv.2407.11111",
+        "method name": "Temporal Prototype-Aware (TPA) Learning"
+    },
+    "relate work": {
+        "related work category": [
+            "AVC Methods on PDNs",
+            "Prototype Learning"
+        ],
+        "related papers": "Numerous research works have highlighted the impacts of integrating renewable energy sources, such as solar PVs, on the dynamics of power distribution networks while introducing methodologies for real-time AVC to manage voltage profiles effectively.",
+        "comparisons with related methods": "While many contemporary AVC methodologies leverage MARL techniques for operational efficiency, most approaches primarily cater to short-term strategies, failing to recognize the varying demands across multi-scale temporal shifts inherent in real-world PDNs. The biometric-inspired prototype learning paradigm, as employed by TPA, contrasts significantly by engaging seasonal pattern recognition for decision guidance, setting it apart within reinforcement learning applications for network control."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This study proposes the Temporal Prototype-Aware Learning (TPA) methodology to advance active voltage control strategies in PDNs leveraging seasonal temporal patterns to enhance stability.",
+        "research purpose": "To develop a time-adaptive AVC strategy capable of dynamically adjusting and ensuring voltage stability in PDNs over varied temporal scales using Multi-Agent Reinforcement Learning approaches.",
+        "research challenge": "Existing MARL approaches often fail to incorporate and leverage long-term temporal shifts, focusing solely on short-term active voltage control strategies within limited scope.",
+        "method summary": "The TPA framework introduces multi-scale dynamic encoders and temporal prototype-aware policies as outlined, adding a temporal dimension to decision-making within MARL, emphasized by the integration with transformer architectures.",
+        "conclusion": "TPA offers superior performance in AVC tasks across both short-term and extended temporal scales within power distribution networks, outperforming existing state-of-the-art methods considerably."
+    },
+    "Method": {
+        "description": "Temporal Prototype-Aware (TPA) learning leverages the multi-scale dynamic encoder and temporal prototype-aware policy to enhance AVC efficiency in PDNs.",
+        "problem formultaion": "The AVC tasks in PDNs are approached with a decentralized partially observable Markov decision process to reflect the multi-region management of voltage levels by reinforcements.",
+        "feature processing": "Agent observations within the PDN are enriched with time-adaptive features including dynamic memory trends and seasonal task guidance to optimize voltage management strategies.",
+        "model": "The TPA framework employs a two-pronged approach: first, using the dynamic encoder to appraise real-time features, and second, influencing the AVC policy via temporal prototypes reflecting intrinsic seasonal patterns.",
+        "tasks": [
+            "Short-term voltage control to maintain network stability.",
+            "Long-term voltage management and adaptation."
+        ],
+        "theoretical analysis": "The method theoretically enhances adaptability, reducing suboptimal actions by actively encoding and integrating temporal knowledge into the decision-making process across the PDN.",
+        "complexity": "Owing to the integration of transformer-based encodings within MARL, this yields a substantial yet manageable computational demand eminently within the scope of effective validations and deployment.",
+        "algorithm step": "1. Encode real-time observations with short-term dynamic and seasonal temporal features. 2. Establish temporal patterns as prototypes for strategic guidance. 3. Apply temporal-aware prototype adjustments during policy learning, ensuring adaptability to multi-scale temporal conditions across PDNs."
+    },
+    "Experiments": {
+        "datasets": [
+            "Bus-141",
+            "Bus-322"
+        ],
+        "baselines": [
+            "MAPPO",
+            "COMA",
+            "MADDPG",
+            "MATD3"
+        ],
+        "evaluation metric": "We utilize the Controllable Rate (CR) and Q Loss (QL) for qualitative assessment, balancing power waste and stability outcomes.",
+        "setup": "During training, experiments are conducted on various bus networks from the MAPDN benchmark to evaluate short-term cycle effectiveness, later extending to prolonged operational periods, showcasing adaptability across larger time frames.",
+        "hyperparameters": null,
+        "results": "The TPA framework consistently demonstrated improved voltage control across various scenarios, achieving robust control metrics (CR, QL) and limiting power waste over several timescales compared to traditional MARL approaches.",
+        "performance": "TPA outperformed conventional MARL methods in maintaining controllability rates above 90%, even under long-term cyclic evaluations, thereby marking substantial progress within low-voltage network control applications.",
+        "analysis": "TPA's multi-scale adaptability notably enhances the reinforcement learning strategy’s effectiveness in time-variant network contexts, showcasing superior performance irrespective of network changes.",
+        "ablation study": "Studies highlighted the pivotal role of short-term memory features and seasonal labels, with temporal prototypes significantly impacting decision adjustability and learning stability."
+    },
+    "conclusion": {
+        "summary": "The Temporal Prototype-Aware learning method achieved superior AVC outcomes by addressing long-term dynamic policy learning under short-term training constraints through innovative temporal encoding strategies.",
+        "future work": "Future explorations aim to enhance the interpretability of temporal models, facilitating greater reliability in practical AVC application deployments."
+    }
+}

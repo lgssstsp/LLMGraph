@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Causality-Aware Adversarial Bidding Optimization for Improved Online Advertising",
+        "authors": [
+            "Jasper Haozhe Xing",
+            "Ruize Xu",
+            "Yitong Dai",
+            "Rui Dai",
+            "Xiao Zhang"
+        ],
+        "affiliations": [
+            "Artificial Intelligence Research Center, Alibaba Group"
+        ],
+        "abstract": "Online advertising relies heavily on real-time bidding (RTB), which optimizes advertisers' bidding strategies to fulfill diverse constraints. However, most approaches assume i.i.d. bidding environments, which seldom occur in adversarial real-world scenarios where sellers and competitors aim to maximize conflicting objectives. This paper explores adversarial constrained bidding by proposing a Minimax Regret Optimization (MiRO) framework, enabling robust strategies even when dynamics deviate from ideal conditions. By leveraging a causality-aware approach, we align policies with expert behaviors to prevent bias stemming from unobserved confounders. Extensive experiments demonstrate the efficacy of MiROCL, outperforming baseline methods on both industrial and synthetic datasets.",
+        "keywords": [
+            "Adversarial Bidding",
+            "Online Advertising",
+            "Reinforcement Learning",
+            "Minimax Optimization",
+            "Causality-aware Learning"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Data Mining and Machine Learning",
+        "doi link": null,
+        "method name": "Minimax Regret Optimization (MiRO) Framework"
+    },
+    "relate work": {
+        "related work category": [
+            "Constrained Bidding",
+            "Adversarial Learning in Auctions",
+            "Minimax Game Formulation"
+        ],
+        "related papers": "- \"A Comprehensive Survey of Online Auctions\" by K. Xiao et al. (2020)\n- \"PID Control for Ad Auction Bidding\" by M. Liu et al. (2018)\n- \"Dynamic Pricing in Online Advertising with Outdated Views\" by F. Zhang et al. (2017)",
+        "comparisons with related methods": "The MiRO framework extends the concept of adversarial learning into the realm of constrained bidding, which traditionally focuses on i.i.d. settings. Previous works like USCB and CBRL leverage reinforcement learning under comfortable assumptions of independent environments, but MiRO enhances generalization by preparing for worst-case scenarios. It combines robustness from offline learning and the Minimax principle from game theory, unlike earlier methods that don't integrate adversarial resistance."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a comprehensive approach to address constrained bidding in adversarial online advertising environments. It proposes the Minimax Regret Optimization (MiRO) framework optimizing for contingencies deviating from usual conditions, while causality-aware alignment tunes the agent's learning process with expert data to avoid biases.",
+        "research purpose": "To develop robust bid optimization frameworks that withstand and adapt to adversarial elements in online auction environments.",
+        "research challenge": "The common i.i.d. assumption doesn't hold in adversarial atmospheres due to dynamically shifting bidding landscapes. The challenge is to anticipate these changes and cleverly align bidding strategies in light of worst-case scenarios.",
+        "method summary": "The Minimax Regret Optimization (MiRO) framework employs a dual-level game approach, training by aligning potential test environments with the likely most challenging distributions and leveraging causality-aware learning for further optimization.",
+        "conclusion": "Empirical results demonstrate that MiROCL significantly improves upon existing methodologies in both synthetic and real-world bidding scenarios by addressing adversarial factors and integrating expert knowledge."
+    },
+    "Method": {
+        "description": "MiRO is designed to align training with possible adversarial test conditions, offering a framework for optimal bidding strategies despite adverse fluctuations.",
+        "problem formultaion": "Formulated as constrained bidding in black-box adversarial conditions where traditional incentive-compatible strategies fall short due to complex competitive behaviors.",
+        "feature processing": "Latent representations of adversarial elements are learned using variational models to inform decision-making.",
+        "model": "MiRO model combines minimax principles with causality-aware reinforcement learning to mitigate biases and align strategy with best practices.",
+        "tasks": [
+            "Adapting bidding strategy to dynamic market conditions.",
+            "Aligning policy with causal structure to eliminate biases.",
+            "Creating a robust optimization framework for adversarial conditions.",
+            "Integrating expert demonstrations to improve policy learning."
+        ],
+        "theoretical analysis": "Analysis shows that matching training conditions with adversarial setups enhances policy resilience, and a causality-grounded method can circumvent confounding issues impacting generalization.",
+        "complexity": "The framework handles the complex bi-level optimization via convertibility into a differentiable game system.",
+        "algorithm step": "Iterative training revolves around dual-ascent procedures out of variational information bottlenecks extracting adversarial representations."
+    },
+    "Experiments": {
+        "datasets": [
+            "Industrial dataset from Alibaba's online advertising platform, comprising 80 days of bidding logs averaging 2 million daily requests.",
+            "Synthetic dataset replicating dynamic mixed auction environments with fluctuating market dynamics."
+        ],
+        "baselines": [
+            "PID Control Method",
+            "Cross-Entropy Method (CEM)",
+            "USCB Reinforcement Learning Method",
+            "CBRL Method"
+        ],
+        "evaluation metric": "Competitive Ratio (CR) and Tolerance-Aware Comparative Ratio (TACR) metrics gauged policy performance versus expert benchmarks, accounting for constraint violations.",
+        "setup": "Experiments validate MiROCL's robustness across both synthesized and real-world test conditions, with results favoring adaptability in adversarial environments.",
+        "hyperparameters": "Optimal settings reflect competitive ratios given varied market pricing and auction formats, tweaking reinforce learning convergence rates, and offsetting fluctuations using dynamic thresholds.",
+        "results": "MiROCL exceeded benchmark methods in both IID and OOD settings, validating improved adaptability to real-world adversarial challenges.",
+        "performance": "Enhanced generalization with 21% increase in OOD mTACR over non-causality-aware MiRO versions.",
+        "analysis": "Findings highlight significant gains from bridging train and test distributions, augmented by knowledge from expert alignments.",
+        "ablation study": "Demonstrates superiority of MiROCL over baseline MiRO versions and other models, underscoring the value of causality-aware structures."
+    },
+    "conclusion": {
+        "summary": "Our proposed Minimax Regret Optimization with Causality-aware Learning (MiROCL) effectively navigates adversarial bidding environments by aligning training strategies with worst-case conditions and informed by expert knowledge.",
+        "future work": "Future exploration will investigate how MiROCL's frameworks can be expanded toward other market domains, like financial trading or supply-chain auctions, capitalizing on its adversity-resilient mechanisms."
+    }
+}

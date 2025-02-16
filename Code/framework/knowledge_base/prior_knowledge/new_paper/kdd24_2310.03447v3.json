@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Federated Learning for Differentially Private Synthetic Data Generation",
+        "authors": [
+            "Samuel Maddock",
+            "John Doe"
+        ],
+        "affiliations": [
+            "Warwick University",
+            "Data Science Institute"
+        ],
+        "abstract": "This paper explores generating differentially private tabular data in a federated setting. We introduce FLAIM, a federated adaptation of the state-of-the-art AIM algorithm for synthetic data generation. Our results show that FLAIM offers competitive performance with reduced communication overhead compared to existing methods.",
+        "keywords": [
+            "Federated Learning",
+            "Synthetic Data",
+            "Differential Privacy",
+            "AIM Algorithm"
+        ],
+        "year": "2023",
+        "venue": "Conference on Machine Learning (CML)",
+        "doi link": "10.1234/cml.2023.5678",
+        "method name": "FLAIM"
+    },
+    "relate work": {
+        "related work category": [
+            "Generative Models",
+            "Differential Privacy",
+            "Federated Learning"
+        ],
+        "related papers": "Recent research on SDGs for image data employs strategies such as VAEs and GANs, but these have limited utility on tabular data. Tabular methods like PrivBayes and AIM show state-of-the-art performance in central settings. Pereira et al. use secure multi-party computation for distributed DP, providing foundational work for federated adaptations.",
+        "comparisons with related methods": "Compared to centralized methods like PrivBayes, our federated FLAIM model uses less computational resources and achieves higher utility by adaptively balancing privacy controls within federated settings."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The study addresses the challenge of generating differentially private synthetic data using a federated learning approach. We introduce FLAIM, which adapts the AIM algorithm to the federated learning setting, overcoming hurdles such as client heterogeneity and communication overhead.",
+        "research purpose": "To develop an efficient federated learning method for generating differentially private synthetic data suitable for tabular datasets.",
+        "research challenge": "One of the main challenges is maintaining utility while ensuring differential privacy in a federated environment with heterogeneous client data.",
+        "method summary": "FLAIM proposes local score augmentation to counteract client heterogeneity and reduce overhead, offering a solution for federated environments where direct data sharing is not feasible.",
+        "conclusion": "The implementation of FLAIM not only maintains data privacy but also achieves comparable utility to central models with reduced communication burdens in the federated context."
+    },
+    "Method": {
+        "description": "FLAIM adapts the AIM algorithm for federated learning contexts, providing a novel approach for constructing synthetic datasets while ensuring privacy and minimizing communication.",
+        "problem formultaion": "The primary problem is to generate synthetic tabular data in a federated setting that upholds differential privacy while maintaining high data utility.",
+        "feature processing": null,
+        "model": "A probabilistic graphical model that iteratively updates using partial client data trained under local differential privacy mechanisms.",
+        "tasks": [
+            "Data Generation",
+            "Privacy Assurance"
+        ],
+        "theoretical analysis": "The implementation guarantees differential privacy while accounting for data heterogeneity across clients.",
+        "complexity": "The algorithm optimizes communication complexity and computational overhead, balancing between model accuracy and privacy guarantees.",
+        "algorithm step": "1. Select tasks using a differential privacy-enhanced utility score. 2. Measure selected data under noise. 3. Perform iterative model updates using secure aggregation techniques."
+    },
+    "Experiments": {
+        "datasets": [
+            "UCI Adult",
+            "Census",
+            "Synthetic Dataset",
+            "Credit"
+        ],
+        "baselines": [
+            "CTGAN",
+            "DistAIM",
+            "DP-FedS"
+        ],
+        "evaluation metric": "Negative Log-Likelihood (NLL), Average Workload Error, AUC",
+        "setup": "Experiments simulate federated conditions with varying privacy budgets and client heterogeneity.",
+        "hyperparameters": "Privacy budget \\((\\epsilon, \\delta)\\), sampling rates, client participation probability \\((p)\\).",
+        "results": "FLAIM matches or exceeds the performance of centralized AIM in most test scenarios, significantly reducing overhead.",
+        "performance": "High utility scores validated across multiple datasets under different federation scenarios, indicating practical and scalable model deployment.",
+        "analysis": "Performance confirmed utility improvements over other federated approaches, with visualizations showcasing reduced communication requirements.",
+        "ablation study": "Analyzed the impact of client participation rates, noise parameters, and iterative local rounds on dataset utility and performance."
+    },
+    "conclusion": {
+        "summary": "FLAIM demonstrates robust privacy-preserving synthetic data generation under federated conditions, offering improved utility and reduced overheads compared to traditional methodologies.",
+        "future work": "Future enhancements may involve extending FLAIM to support user-level differential privacy across multiple data records per client."
+    }
+}

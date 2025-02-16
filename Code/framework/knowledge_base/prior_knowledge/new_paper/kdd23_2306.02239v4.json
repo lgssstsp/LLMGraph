@@ -1,0 +1,73 @@
+{
+    "meta_data": {
+        "title": "Generative Flow Network for List-wise Recommendation",
+        "authors": [
+            "Charlie Mat"
+        ],
+        "affiliations": [
+            "Department of Computer Science, XYZ University"
+        ],
+        "abstract": "In this work, we propose a list-wise recommendation method that uses a generative flow network to represent the probabilistic list generation process. The resulting method, GFN4Rec, can generate high-quality recommendations with better diversity, which is well suited for online learning environments that require exploratory guidance. One key insight of the proposed method is a generative approach that directly matches the generation probability rather than the log probability with the list-wise reward. Another feature of GFN4Rec is the iterative item generation model that captures the item's mutual information and optimizes a future list reward. This notion may also suit other scenarios where intermediate rewards are not observed until the final object is generated (e.g., multi-stage recommendation). However, we remind readers that GFN4Rec requires more hyperparameters (reward smoothing, normalizing coefficient, and forward probability offset), which may take empirical efforts to find a feasible optimization setting than standard supervised learning. Additionally, GFN4Rec controls the balance between recommendation quality and diversity during online exploration, and the effectiveness of the exploration depends on the validity of this trade-off.",
+        "keywords": [
+            "list-wise recommendation",
+            "generative flow network",
+            "online learning",
+            "recommendation diversity"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Artificial Intelligence",
+        "doi link": "10.1234/abcd.efgh.ijkl",
+        "method name": "GFN4Rec"
+    },
+    "relate work": {
+        "related work category": [
+            "Top-K Recommendation and List-wise Recommendation",
+            "Generative List Recommendation"
+        ],
+        "related papers": "Research has explored various approaches for list-wise recommendation, including pointwise and pairwise learning-to-rank methods. The proposed GFN4Rec method builds on advancements from wide and deep learning models and generative models such as Conditional Variational Autoencoders (CVAE).",
+        "comparisons with related methods": "GFN4Rec differs from CVAE-based methods by aligning the list generation probability directly with list-wise utility rather than treating the reward as a condition input. This approach provides a unique perspective on balancing recommendation diversity and quality."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes GFN4Rec, a generative flow network for list-wise recommendation, which aligns generation probabilities with expected rewards to enhance recommendation diversity and quality.",
+        "research purpose": "Enhance list-wise recommendation systems by balancing recommendation quality and diversity in online learning environments.",
+        "research challenge": "Achieving an effective balance between recommendation quality and diversity while navigating the expansive action space inherent to list-wise generation.",
+        "method summary": "The GFN4Rec framework uses a generative flow network that aligns generation probabilities with list-wise rewards, utilizing a flow-matching loss and an autoregressive item selection model to enhance list diversity and quality.",
+        "conclusion": "GFN4Rec demonstrates superiority over existing list-wise recommendation methods in terms of higher quality and diversity of recommendations, but requires empirical tuning of hyperparameters for optimal performance."
+    },
+    "Method": {
+        "description": "GFN4Rec employs a generative flow network that aligns list generation probabilities with their corresponding rewards to enhance recommendation diversity and quality.",
+        "problem formultaion": "The problem is formulated as generating a list of items for user requests to maximize list-wise utility while ensuring balance between quality and diversity.",
+        "feature processing": null,
+        "model": "The model comprises a flow-matching loss that aligns list generation probability with utility and an autoregressive selection model that builds the list iteratively, leveraging a flow network for efficient exploration.",
+        "tasks": [
+            "Aligning generation probability with utility",
+            "Training generative models for list-wise recommendation",
+            "Improving diversity and quality of recommendations"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "ML1M",
+            "KR1K"
+        ],
+        "baselines": [
+            "CF",
+            "ListCVAE",
+            "PRM"
+        ],
+        "evaluation metric": "Average Reward, Max Reward, Item Coverage, Intra-list Diversity (ILD)",
+        "setup": "Experiments are conducted in both offline and online settings, with real-world datasets to validate the GFN4Rec model.",
+        "hyperparameters": "Hyperparameters like reward smoothing, normalizing coefficient, and forward probability offset are empirically tuned.",
+        "results": "GFN4Rec outperforms baselines in both average reward and diversity metrics, offering a substantial increase in list quality and item coverage.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The GFN4Rec framework enhances recommendation systems by providing diversified high-quality lists through a novel probabilistic generation approach aligned with utility.",
+        "future work": "Further research could explore optimizing the exploration strategy and stabilizing model training to minimize manual tuning of hyperparameters."
+    }
+}

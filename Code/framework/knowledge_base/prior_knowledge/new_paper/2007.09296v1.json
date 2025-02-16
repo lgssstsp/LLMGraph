@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Deep Adaptive Graph Neural Network for Large and Adaptive Receptive Fields",
+        "authors": [
+            "Author 1",
+            "Author 2"
+        ],
+        "affiliations": [
+            "University A",
+            "Institution B"
+        ],
+        "abstract": "This paper presents the Deep Adaptive Graph Neural Network (DAGNN) that addresses the performance degradation problem in stacking layers in Graph Neural Networks (GNNs). By decoupling the transformation and propagation processes and employing an adaptive adjustment mechanism, DAGNN can leverage larger and more adaptive receptive fields, significantly enhancing the discriminative power of the node representations.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Deep Learning",
+            "Receptive Fields",
+            "Node Representation Learning"
+        ],
+        "year": "2023",
+        "venue": "Machine Learning Conference 2023",
+        "doi link": null,
+        "method name": "Deep Adaptive Graph Neural Network (DAGNN)"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Convolutional Networks",
+            "Propagation Mechanisms",
+            "Adaptive Receptive Fields"
+        ],
+        "related papers": "From literature review, studies examining over-smoothing and graph model architectures such as GCN, GAT, and GraphSAGE form part of the related works.",
+        "comparisons with related methods": "DAGNN seeks to mitigate performance issues seen in deep-layered Graph Convolutional Networks and improve over others like GCN, GAT, and GraphSAGE by proposing adaptive neighbourhoods for node representation."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research addresses the limitations of deep graph neural networks, particularly the over-smoothing problem. It introduces a novel design that separates the node representation transformation from propagation and adapts the information acquisition process to suit different nodes dynamically.",
+        "research purpose": "To investigate and resolve performance deterioration in deep GNNs and propose an approach that allows for the effective incorporation of extensive graph information without degradation.",
+        "research challenge": "The main challenge tackled involves balancing the need for capturing broader receptive fields while maintaining distinct node representations possible through conventional layered GNNs.",
+        "method summary": "DAGNN utilizes a multilayer perception for node feature transformation, an adaptive propagation mechanism for information adjustment, and decouples these for better performance in node classification tasks.",
+        "conclusion": "Findings highlight the effectiveness of DAGNN in practice, showing superior performance across multiple datasets against established baseline models."
+    },
+    "Method": {
+        "description": "DAGNN introduces a model that separates the transformation and propagation stages, employs an MLP for feature transformations and uses adaptive propagation for node representation in large neighbourhoods.",
+        "problem formultaion": null,
+        "feature processing": "Feature transformations rely on initial node feature matrices, processed through non-linear MLP models before propagation.",
+        "model": "The proposed model uses symmetric normalization and employs an activation mechanism as nodes aggregate information from extended neighbourhoods.",
+        "tasks": [
+            "Node Classification",
+            "Graph Learning"
+        ],
+        "theoretical analysis": "Theoretical convergence proofs for DAGNN's propagation imply that the model can support deeper structure while preventing over-smoothing.",
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "CiteSeer",
+            "PubMed",
+            "Coauthor CS",
+            "Coauthor Physics",
+            "Amazon Computers",
+            "Amazon Photo"
+        ],
+        "baselines": [
+            "Graph Convolutional Networks (GCNs)",
+            "Graph Attention Networks (GATs)",
+            "SGC",
+            "GraphSAGE"
+        ],
+        "evaluation metric": "Classification accuracy across several datasets.",
+        "setup": "Experiments were set up to test deep learning architectures like GCN, GAT with consistent training, validation, and test split configurations.",
+        "hyperparameters": "Receptive field depths, dropout rates, and weight decays were fine-tuned for optimal performance in DAGNN against baseline counterparts.",
+        "results": "DAGNN markedly outperformed existing models by large margins, supporting the adaptive mechanism's efficacy.",
+        "performance": null,
+        "analysis": "The analysis showcased DAGNN's ability to maintain stable performance deepening the graph with adaptive field gains through the proposed mechanisms.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "We proposed DAGNN, a novel GNN model that decouples feature transformation from propagation, adapting outbound node information for efficient model depth.",
+        "future work": "Future work may include exploring broader applications of DAGNN in other domains or incorporating additional adaptive mechanisms for node-specific propagation."
+    }
+}

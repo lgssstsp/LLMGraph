@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Path-Specific Fair Recommender Systems (PSF-RS)",
+        "authors": [
+            "Authors to be added here"
+        ],
+        "affiliations": [
+            "Affiliations to be added here"
+        ],
+        "abstract": "This paper introduces the notion of path-specific fairness in the context of recommender systems (RSs), where a novel PSF-RS model is proposed. It leverages path-specific counterfactual analysis on causal graphs to differentiate between fair and unfair causal influence of sensitive features. By utilizing this analysis, PSF-RS is designed to eliminate the unwarranted bias in recommendations without sacrificing the personalized diversity users require. It integrates a weakly-supervised variational inference mechanism, making it robust even with scarce unfair item feedback.",
+        "keywords": [
+            "Path-Specific Fairness",
+            "Recommender Systems",
+            "Causal Inference",
+            "Weakly-Supervised Learning",
+            "Variational Inference"
+        ],
+        "year": "To be updated",
+        "venue": "To be updated",
+        "doi link": null,
+        "method name": "PSF-RS"
+    },
+    "relate work": {
+        "related work category": [
+            "Fair Recommender Systems",
+            "Causal Recommender Systems"
+        ],
+        "related papers": "[1] Zhang et al. (2019) on Deep Learning RSs. [2] He et al. (2017) on Neural Collaborative Filtering [3] Ren et al. (2023) on disentangled representations. [4] Mehrabi et al. (2021) on fairness in AI.",
+        "comparisons with related methods": "PSF-RS offers a novel approach to fairness in RSs, specifically focusing on preserving fair influences while eliminating unfair biases, as opposed to methods that indiscriminately block all influences."
+    },
+    "high_level_summary": {
+        "summary of this paper": "We present a novel system to ensure fairness in recommendation processes by targeting specific paths in the causal analysis. PSF-RS avoids the blanket removal of sensitive feature influences, preserving beneficial diversity in recommendations.",
+        "research purpose": "To achieve fair recommendations that consider necessary diversity by using a path-specific analysis.",
+        "research challenge": "Implementing path-specific causal analysis with minimal transformation to achieve fairness in RSs while maintaining diversity.",
+        "method summary": "A path-specific fair RS (PSF-RS) is proposed using variational inference and minimal transformation to ensure fairness without losing cultural diversity.",
+        "conclusion": "PSF-RS successfully identifies and mitigates unwarranted bias in RSs, maintaining diversity in personalized recommendations."
+    },
+    "Method": {
+        "description": "The method leverages path-specific counterfactual inference to isolate unfair paths influenced by sensitive factors and preserve fair cultural diversities.",
+        "problem formultaion": "The unfair influence of sensitive features in the recommendations, balanced against maintaining necessary diversities.",
+        "feature processing": null,
+        "model": "Path-specific Fair Variational Auto-Encoder (PSF-VAE)",
+        "tasks": [
+            "Recommendation Fairness",
+            "Path-specific Bias Elimination",
+            "Diversity Preservation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Semi-simulated datasets based on MovieLens-1M and Amazon Videogames",
+            "Real-world datasets from LinkedIn"
+        ],
+        "baselines": [
+            "Multi-VAE",
+            "CondVAE",
+            "Fair-MMD",
+            "Fair-ADV"
+        ],
+        "evaluation metric": "Recommendation Performance (Rec@N), Fairness (HiR@M)",
+        "setup": "Datasets were split into training, validation, and test sets. Recommendation performance and fairness compared across different models under varying conditions.",
+        "hyperparameters": null,
+        "results": "PSF-RS sustains better recommendation performance and fairness compared to both naive and entirely fair RS models.",
+        "performance": "PSF-RS outperforms baseline models in preserving fair influences while reducing unwanted biases.",
+        "analysis": "Critically assesses the efficacy of PSF-RS vis-a-vis other methods, highlighting scenarios where traditional blanket fairness models fail.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "PSF-RS achieves fairness in recommendations through path-specific counterfactual analysis, preserving beneficial diversity while mitigating biases.",
+        "future work": "Further research into enhancing the robustness of weak supervision and expanding fairness definitions in RSs."
+    }
+}

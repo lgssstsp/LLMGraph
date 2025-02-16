@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Task Affinity Computation for Scalable Multitask Learning",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "N/A"
+        ],
+        "abstract": "This paper presents an efficient algorithm for computing task affinity scores in multitask learning. The algorithm pre-trains a meta-initialization on all tasks, estimates fine-tuned model parameters using logistic regression on gradients, and applies random projection for dimension reduction. A clustering algorithm is then applied to yield effective multitask learning. The approach scales to large graphs with up to 500 tasks while accurately estimating task affinity scores. Our method offers an optimal tradeoff between computational cost and performance, surpassing existing methods.",
+        "keywords": [
+            "multitask learning",
+            "task affinity",
+            "clustering",
+            "dimension reduction"
+        ],
+        "year": "2023",
+        "venue": "N/A",
+        "doi link": null,
+        "method name": "\\acronym"
+    },
+    "relate work": {
+        "related work category": [
+            "Task Similarity Measures",
+            "Transferability Estimation",
+            "Multitask Learning Optimization Algorithms",
+            "Influence Functions",
+            "Clustering Algorithms"
+        ],
+        "related papers": "Multitask learning has applications in federated learning, road safety modeling, and language model fine-tuning. It has been explored within data mining contexts and involves complex modeling as the number of tasks increases, influenced by data distribution shifts. Recent work has sought efficient computation methods for task affinity, essential for effective multitask learning.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces an efficient algorithm for estimating task affinity scores, crucial for multitask learning. By employing a gradient-based approach within neural networks, the paper achieves notable computational savings and performance accuracy relative to existing methods. The process effectively scales to large datasets while maintaining a low error.",
+        "research purpose": "To improve the efficiency and performance of multitask learning through an optimized task affinity calculation method.",
+        "research challenge": "Reliable and computationally efficient task affinity computations are challenging as the number of tasks grows exponentially.",
+        "method summary": "The method involves pre-training a model initialization using all tasks, then estimating fine-tuned model parameters through logistic regression on reduced-dimension gradients. Task groups are formed using robust clustering to improve the efficiency of multitask learning.",
+        "conclusion": "The approach significantly reduces the computational burden while delivering competitive performance compared to full model training."
+    },
+    "Method": {
+        "description": "The proposed method optimizes the calculation of task affinity scores used in multitask learning by leveraging a gradient-based computation approach.",
+        "problem formultaion": "Computing task affinity scores for multitask learning efficiently as the number of tasks increases.",
+        "feature processing": "Using gradients based on pre-trained neural networks for feature processing.",
+        "model": "Neural networks with pre-trained meta-initialization.",
+        "tasks": [
+            "Task affinity computation",
+            "Task grouping"
+        ],
+        "theoretical analysis": "Theoretical analysis shows the method's efficiency gains over traditional full-task training models.",
+        "complexity": "Task affinity computation complexity is reduced from quadratic scaling to nearly constant with respect to the number of tasks using gradient-based estimations.",
+        "algorithm step": "The algorithm steps include: pre-train the network, compute task gradients, apply dimension reduction, use logistic regression on reduced-dimensional gradients, and perform clustering to group tasks."
+    },
+    "Experiments": {
+        "datasets": [
+            "YouTube graph",
+            "SuperGLUE",
+            "Orkut",
+            "Amazon",
+            "DBLP",
+            "LiveJournal"
+        ],
+        "baselines": [
+            "Single-task learning",
+            "Multi-Gate Mixture of Experts",
+            "Auto-lambda",
+            "Task Affinity Grouping",
+            "Higher-Order Approximation",
+            "BoostMTL"
+        ],
+        "evaluation metric": "Macro F1-score for multi-label classification, accuracy for text classification.",
+        "setup": "Evaluate method on social network datasets and text classification from SuperGLUE, comparing computation time and accuracy against baselines.",
+        "hyperparameters": "“M” represents the number of meta-initializations used, and “d” represents the dimensions after reduction.",
+        "results": "The algorithm achieves notable efficiency gains, reducing the computational cost by factors such as 48.2$\\times$ while maintaining within 5% relative error to fully trained models.",
+        "performance": "The approach outperforms or matches existing baselines while using significantly fewer resources.",
+        "analysis": "The results demonstrate the approach's scalability and efficiency, capable of handling tasks at reduced computation costs without significant loss in accuracy.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "This paper designs an efficient algorithm for estimating task affinity scores in multitask learning.",
+        "future work": "Future work could explore novel dimension reduction and clustering algorithms within the presented framework, exploring applications in other multitask architectures."
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "meta_data": {
+        "title": "Frequency Adaptation Graph Convolutional Networks for Heterophilic Node Representation Learning",
+        "authors": [
+            "Hao Zhang",
+            "Jonas Mueller",
+            "Matthew Olfat"
+        ],
+        "affiliations": [
+            "Department of Information Science, Tsinghua University, Beijing, China",
+            "AI Lab, ByteDance Inc., Beijing, China",
+            "School of Software, Central South University, Changsha, China"
+        ],
+        "abstract": "In this paper, we propose a novel graph convolutional network, FAGCN, to address the problem of learning node representations in graphs with both homophilic and heterophilic structures. Existing graph neural networks are limited in their ability to capture both high-frequency (heterophilic) and low-frequency (homophilic) signals. FAGCN introduces a self-gating mechanism, allowing it to adaptively determine the importance of low- and high-frequency signals for each node. The method leverages theoretical insights from graph signal processing to effectively balance the use of information across different types of networks. Our experiments demonstrate that FAGCN significantly improves performance on a variety of real-world graphs compared to existing GNN methods.",
+        "keywords": [
+            "Graph Neural Networks (GNNs)",
+            "Frequency Adaptation",
+            "Heterophily",
+            "Node Representation",
+            "Graph Convolution"
+        ],
+        "year": "2024",
+        "venue": "IEEE Transactions on Knowledge and Data Engineering",
+        "doi link": "https://doi.org/10.1109/TKDE.2024.3031927",
+        "method name": "FAGCN"
+    },
+    "relate work": {
+        "related work category": [
+            "Spectral Graph Neural Networks",
+            "Spatial Graph Neural Networks"
+        ],
+        "related papers": "Spectral Graph Neural Networks include Spectral CNN [SpectralCNN], ChebNet [ChebNet], GraphHeat [GraphHeat]. Spatial Graph Neural Networks involve models like GAT [GAT], MoNet [MoNet], and Geom-GCN [GeomGCN].",
+        "comparisons with related methods": "FAGCN generalizes existing methods by adaptively integrating low-frequency and high-frequency signals, unlike GCNs which primarily focus on low-pass filters and may struggle in heterophilic settings."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces FAGCN, a novel method for leveraging both low-frequency and high-frequency signals in graph convolutional networks to enhance node representation across varying network structures.",
+        "research purpose": "To develop an adaptable graph neural network method that effectively handles both assortative and disassortative network structures by integrating signals of different frequencies.",
+        "research challenge": "Existing GNNs struggle to balance low-pass filtering with the potential benefits of incorporating high-frequency signals, crucial for heterophilic network settings.",
+        "method summary": "FAGCN uses a self-gating mechanism to adaptively weigh low-frequency and high-frequency signals based on graph structure, integrating signal processing principles to enhance node representation.",
+        "conclusion": "FAGCN shows superiority in diverse graph types, demonstrating enhanced node classification abilities and tackling the over-smoothing problem seen in traditional GCNs."
+    },
+    "Method": {
+        "description": "FAGCN is designed to separate low-frequency and high-frequency signals in node features and selectively aggregate them based on network needs.",
+        "problem formultaion": "Traditional GCNs do not efficiently process high-frequency information needed for heterophilic connections, leading to underperformance in certain data structures.",
+        "feature processing": "Through the implementation of frequency-based signal separation and adaptive aggregation, FAGCN enhances feature processing ability and accuracy.",
+        "model": "The model incorporates an adaptive frequency gate that selectively integrates node and neighbor features derived from distinct frequency signals, underlying its innovative architecture.",
+        "tasks": [
+            "Node classification",
+            "Link prediction",
+            "Graph clustering"
+        ],
+        "theoretical analysis": "FAGCN's expressive power is analyzed against traditional filters, showcasing its robustness in preserving differentiability between node representations across differing frequencies.",
+        "complexity": "FAGCN's complexity is kept approximately linear with the number of edges and nodes through efficient matrix operations.",
+        "algorithm step": "1. Feature Separation: Distinct low-pass and high-pass filters are applied to node features. 2. Adaptive Aggregation: Self-gated measurements control signal integration based on frequency contributions. 3. Node Embedding: Processed features form node representations for task-specific applications."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora (assortative)",
+            "Citeseer (assortative)",
+            "Pubmed (assortative)",
+            "Chameleon (disassortative)",
+            "Squirrel (disassortative)",
+            "Actor (disassortative)"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "SGC",
+            "Geom-GCN",
+            "ChebNet",
+            "GraphSAGE",
+            "APPNP"
+        ],
+        "evaluation metric": "Classification accuracy (%)",
+        "setup": "Experiments were performed using Pytorch with Adam optimizer. Model configurations were adapted to network types with specific learning rates and dropout rates depending on dataset assortativity.",
+        "hyperparameters": "Learning rates involved were 0.01 and dropout values from 0.4 to 0.6, each dataset having task-specific parameter settings.",
+        "results": "FAGCN showed superior performance across majority of datasets, exceeding benchmarks by leveraging both frequency signals adaptively.",
+        "performance": "The model outperformed baselines, especially in disassortative networks, demonstrating the comprehensive ability of using dual-frequency signals.",
+        "analysis": "Low-pass and high-pass signals help address network tasks more accurately by aligning FAGCN's adaptive model design with network type.",
+        "ablation study": "The ablation study confirmed the necessity of both signal types for optimizing performance, illustrating the limits of models without such separation."
+    },
+    "conclusion": {
+        "summary": "This study underscores the importance of utilizing both low-frequency and high-frequency signals in GNNs. FAGCN demonstrates an effective architecture for different types of networks, offering superior adaptability and performance over existing graph convolutional models.",
+        "future work": "Investigations into the use of a broader range of frequency signals and extensions for large-scale graphs are promising future directions."
+    }
+}

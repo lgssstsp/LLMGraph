@@ -1,0 +1,69 @@
+{
+    "meta_data": {
+        "title": "Title",
+        "authors": [
+            "Author Name"
+        ],
+        "affiliations": [
+            "Author Affiliation"
+        ],
+        "abstract": "Abstract of the paper.",
+        "keywords": [
+            "keyword1",
+            "keyword2"
+        ],
+        "year": "2023",
+        "venue": "Journal or Conference Name",
+        "doi link": "10.1234/doi.number",
+        "method name": "Method Name"
+    },
+    "relate work": {
+        "related work category": [
+            "Category1",
+            "Category2"
+        ],
+        "related papers": "Citation of the related papers.",
+        "comparisons with related methods": "Comparison details between current research method and existing methods."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper explores...",
+        "research purpose": "The purpose of this research is to...",
+        "research challenge": "One of the main challenges addressed in this paper is...",
+        "method summary": "The method introduced in this paper involves...",
+        "conclusion": "The main conclusion drawn from the research is..."
+    },
+    "Method": {
+        "description": "This section should detail the primary approach or methodology utilized in the study.",
+        "problem formultaion": "The paper formulates the problem as...",
+        "feature processing": "Details on feature extraction and processing...",
+        "model": "Detailed description of the model used...",
+        "tasks": [
+            "Task1",
+            "Task2"
+        ],
+        "theoretical analysis": "Theoretical insights provided in the paper...",
+        "complexity": "Discussion on computational complexity analysis...",
+        "algorithm step": "Stepwise explanation of the algorithm..."
+    },
+    "Experiments": {
+        "datasets": [
+            "Dataset1",
+            "Dataset2"
+        ],
+        "baselines": [
+            "Baseline1",
+            "Baseline2"
+        ],
+        "evaluation metric": "Evaluation metrics used to measure performance...",
+        "setup": "Experimental setup details...",
+        "hyperparameters": "Details on the hyperparameters and their selection process...",
+        "results": "The main results of the experiments performed are...",
+        "performance": "A detailed explanation of the performance observed...",
+        "analysis": "Deep-dive into the experimental results analysis...",
+        "ablation study": "Ablation study results and what they signify..."
+    },
+    "conclusion": {
+        "summary": "Key findings and conclusions drawn from the research paper...",
+        "future work": "Potential areas of future work and application for the research findings..."
+    }
+}

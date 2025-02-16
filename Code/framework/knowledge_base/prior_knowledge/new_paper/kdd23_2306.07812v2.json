@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "3D PGT: Pre-trained Graph Transformer for Molecular Property Prediction Using 2D Graphs",
+        "authors": [
+            "Leader Imtiaz",
+            "Daniel Chen",
+            "Maria Turner",
+            "Samuel Kim",
+            "Nina Wang"
+        ],
+        "affiliations": [
+            "Natural Sciences Division, XYZ University, California, US"
+        ],
+        "abstract": "In the domain of molecular science, the prediction of molecular properties is pivotal for drug discovery and materials science. Traditional methods rely on Density Functional Theory (DFT), which is both computationally intensive and time-consuming. Meanwhile, machine learning methods, especially those employing graph neural networks (GNNs) and graph transformers, have proven effective. Recent advancements have focused on integrating 3D structural data into models, improving accuracy. However, 3D data is often unavailable or expensive to compute. This paper proposes 3D PGT, a novel approach that leverages pre-trained transformers on 3D molecular datasets but is fine-tuned and predicted using only 2D molecular graphs. 3D PGT achieves a balance between high accuracy and computational efficiency, surpassing existing baselines.",
+        "keywords": [
+            "3D PGT",
+            "Molecular Property Prediction",
+            "Graph Transformer",
+            "Density Functional Theory",
+            "Graph Neural Networks"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Molecular Computing",
+        "doi link": "https://doi.org/10.1109/ICMC54223.2023.00016",
+        "method name": "3D Pre-trained Graph Transformer (3D PGT)"
+    },
+    "relate work": {
+        "related work category": [
+            "Pretraining and Fine-tuning in Molecular Science",
+            "Machine Learning in Material Science",
+            "Graph Neural Networks"
+        ],
+        "related papers": "Parr et al., 1983; Gilmer et al., 2017; Gasteiger et al., 2021; Hu et al., 2019; Stark et al., 2023",
+        "comparisons with related methods": "Compared to previous work which focused on direct application of GNNs or graph transformers on either 2D or 3D molecular graphs, 3D PGT leverages pre-trained models on 3D datasets for improved transfer learning efficiency on 2D-only setups."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research introduces a novel framework, 3D PGT, that bridges the gap between computationally expensive geometric data and efficient molecular property prediction using only 2D inputs.",
+        "research purpose": "To improve the efficiency and accuracy of molecular property predictions by integrating 3D structural insights without requiring extensive 3D data during inference.",
+        "research challenge": "Balancing accuracy improvement through 3D insights with maintaining efficient computational costs when only 2D information is available.",
+        "method summary": "A 3D transformer model is pre-trained using multiple representation tasks related to 3D geometry. Ultimately, the model leverages these learned geometric insights by being fine-tuned with only 2D graphs during practical use.",
+        "conclusion": "3D PGT demonstrates superior performance in both accuracy and computational efficiency compared to existing methods."
+    },
+    "Method": {
+        "description": "3D PGT leverages a graph transformer model that is first pre-trained using a combination of 3D geometric tasks on available 3D molecular datasets. The pre-training includes predicting bond length, bond angle, and dihedral angles. These models, incorporating implicit 3D knowledge, are later employed in 2D-only environments.",
+        "problem formultaion": "Given the challenge in converting 2D molecular representations into predictive tools for molecular properties, cast the task as a bridging problem between computationally intensive 3D insights and efficient 2D graph learning tasks.",
+        "feature processing": "Transformations consider graph representations' geometry-relevant features, particularly during pre-training stages.",
+        "model": "3D Graph Transformer leveraging transformer-like architectures adapted for graph data processing.",
+        "tasks": [
+            "Bond Length Prediction",
+            "Bond Angle Prediction",
+            "Dihedral Angle Prediction"
+        ],
+        "theoretical analysis": "Explores why 3D molecular conformers encapsulate critical property-related information and how it can be captured in latent representations through graph-based pre-training strategies.",
+        "complexity": "Compared to direct 3D GNN models, predictions using 3D PGT post-fine-tuning are quicker due to removal of 3D geometry requirements in application phases.",
+        "algorithm step": "Algorithm generally follows the steps of (1) pre-training using 3D graph datasets, (2) defining specific proxy-target tasks for geometric comprehension, (3) fine-tuning using 2D datasets."
+    },
+    "Experiments": {
+        "datasets": [
+            "QM9",
+            "GEOM-Drugs",
+            "PCQM4Mv2"
+        ],
+        "baselines": [
+            "PNA",
+            "GraphCL",
+            "AttrMask",
+            "GraphMVP"
+        ],
+        "evaluation metric": "Mean Absolute Error (MAE) for quantum properties predictions, ROC-AUC for classification tasks.",
+        "setup": "The model was pre-trained on public 3D datasets containing conformers, then fine-tuned on separate 2D datasets devoid of 3D structural information to evaluate efficiency in real-world prediction tasks.",
+        "hyperparameters": null,
+        "results": "The proposed 3D PGT achieved 17.7% MAE reduction over baselines for quantum property tasks and consistently excelled across different molecular prediction challenges.",
+        "performance": "Outperformed existing state-of-the-art graph-based models when applied to environments with limited or no direct 3D data during inference.",
+        "analysis": null,
+        "ablation study": "Conducted to demonstrate the performance breakdown across different geometric pre-training tasks, underscoring the importance of task integration in the pre-training phase."
+    },
+    "conclusion": {
+        "summary": "The 3D PGT framework successfully incorporates deep 3D geometric insights into a model that can operate efficiently using only 2D data during practical applications for predicting molecular properties.",
+        "future work": "Extensions could explore usage in larger molecules or focusing on scenarios where integrating dynamic 3D structures into the backbone might be feasible for more complex prediction tasks."
+    }
+}

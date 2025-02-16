@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Pathfinder Discovery Networks (PDNs): A framework for learning message passing graphs",
+        "authors": [
+            "Benedek Rozemberczki",
+            "Unnamed Collaborators"
+        ],
+        "affiliations": [
+            "Unspecified Institution"
+        ],
+        "abstract": "We introduce Pathfinder Discovery Networks (PDNs), a novel neural network framework for graph-based learning tasks. PDNs construct optimized message-passing graphs from multiple proximity inputs and learn these graphs in parallel with graph neural networks (GNNs) to enhance performance on node classification tasks. Our pathfinder layer combines varied proximity data within a neural network architecture, offering significant advantages over conventional methods such as Graph Attention Networks (GATs). We empirically validate our approach, demonstrating improvements in predictive accuracy and interpretability on synthetic and real-world datasets.",
+        "keywords": [
+            "PDNs",
+            "Graph Neural Networks",
+            "Pathfinder Discovery",
+            "Multiplex Graph",
+            "Node Classification"
+        ],
+        "year": "2023",
+        "venue": "Unspecified Venue",
+        "doi link": null,
+        "method name": "Pathfinder Discovery Networks (PDNs)"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Message Passing Networks",
+            "Graph Construction Methods"
+        ],
+        "related papers": "1. Kipf, T.N., & Welling, M. (2017). Semi-supervised classification with graph convolutional networks. \n2. Velickovic, P., et al. (2018). Graph attention networks.\n3. Zhang, H., et al. (2018). Heterogeneous graph neural network.\n",
+        "comparisons with related methods": "PDNs outperform conventional graph neural network approaches, such as GAT, in terms of flexibility and ability to manage multiple proximity inputs. Unlike GAT models which aggregate from single proximity features, PDNs can combine diverse similarity measures, making them more expressive and resilient."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes PDNs, an innovative framework for learning and optimizing message-passing graphs within GNNs. PDNs address challenges in existing approaches by learning graphs concurrently with task-specific objectives, showing robust performance in synthetic and real-world scenarios.",
+        "research purpose": "To design a flexible method for constructing dynamic graphs optimized for learning tasks.",
+        "research challenge": "Existing methods often assume static graph structures, limiting adaptiveness and performance in graph learning applications.",
+        "method summary": "PDNs introduce a pathfinder layer that learns to weigh edges based on multiple proximity measures, thereby crafting a single optimized graph for downstream learning tasks.",
+        "conclusion": "PDNs represent a substantial leap in expressivity and flexibility over existing graph learning frameworks, offering promising avenues for further research and applications."
+    },
+    "Method": {
+        "description": "Pathfinder Discovery Networks (PDNs) consist of a pathfinder layer within a GNN framework that iterates over multiple proximity inputs to construct a dynamic message-passing graph optimized for specific learning tasks.",
+        "problem formultaion": "How to learn an optimal graph structure for solving specific learning problems effectively.",
+        "feature processing": null,
+        "model": "PDNs synthesize input graphs using a weighted adjacency matrix informed by proximity relations. The model incorporates dynamic edge reweighting for optimal graph construction in node classification.",
+        "tasks": [
+            "Graph Construction",
+            "Node Classification",
+            "Feature Importance Assessment"
+        ],
+        "theoretical analysis": "PDNs offer a novel interpretability dimension through learned attention on input graphs, addressing common challenges in graph construction.",
+        "complexity": "The approach scales linearly with input size and number of proximity measures compared to traditional GCN and GAT models.",
+        "algorithm step": "1. Input multiple proximity graphs\n2. Implement pathfinder layer for edge weighing\n3. Optimize graph structure through continuous learning\n4. Deploy optimized graph for GNN tasks"
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Graph Datasets",
+            "PubMed",
+            "Cora",
+            "Social Network Datasets"
+        ],
+        "baselines": [
+            "GAT",
+            "Graph Convolutional Networks (GCN)",
+            "ClusterGCN",
+            "AAPNP"
+        ],
+        "evaluation metric": "Accuracy",
+        "setup": "Compare PDN variants with traditional GNN baselines on node classification tasks using real-world and synthetic data.",
+        "hyperparameters": "PDN uses a single hidden layer, ReLU activation, softmax output, integrated with a 2-hop spectral GCN, with step-wise learning rate adjustments.",
+        "results": "PDNs consistently outperform state-of-the-art models across datasets, achieving increased predictive accuracy and resilience against skewed degree distributions.",
+        "performance": "PDNs increase task-specific accuracy by 0.8-3.5% over competitive baselines, offering stable performance in various node classifications.",
+        "analysis": "PDNs show improved scalability and interpretability versus traditional node embedding models and GNNs, demonstrating superior performance in both synthetic and real datasets.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Pathfinder Discovery Networks (PDNs) provide advancements over traditional GNN methods by dynamically learning from multiplex graphs, optimizing them for node classification tasks. PDNs showcase improved accuracy and resilience.",
+        "future work": "Future work includes applying PDNs to a broader range of graph learning tasks, exploring transferability of learned graphs, and investigating combinations with existing GNN models for deeper insights and applications."
+    }
+}

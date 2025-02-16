@@ -1,0 +1,89 @@
+{
+    "meta_data": {
+        "title": "Unified Framework for Anomaly and Precursor-of-Anomaly Detection in Multivariate Time Series Using Neural Controlled Differential Equations",
+        "authors": [
+            "Anonymous Author"
+        ],
+        "affiliations": [
+            "Anonymous Institution"
+        ],
+        "abstract": "Anomaly detection is pivotal across numerous applications, notably in finance, cyber security, and medical care. With the criticality of time series data in these domains, this paper introduces a novel framework, termed PAD (Precursor of Anomaly Detection), utilizing neural controlled differential equations (NCDEs). Our approach tackles multivariate and irregular time series and is pioneering in detecting precursors of anomalies over generalized domains. By harnessing a multi-task learning strategy combined with knowledge distillation, PAD offers unparalleled accuracy in both current anomaly and precursor-of-anomaly detection tasks. Experimental validation on benchmark datasets demonstrates superior performance over 17 baseline models, underscoring PAD's potential as an innovative solution.",
+        "keywords": [
+            "Anomaly Detection",
+            "Precursor-of-Anomaly",
+            "Neural Controlled Differential Equations",
+            "Multivariate Time Series",
+            "Multi-task Learning"
+        ],
+        "year": "2023",
+        "venue": "Conference on Machine Learning",
+        "doi link": "https://doi.org/10.1011/example.doi",
+        "method name": "PAD (Precursor of Anomaly Detection)"
+    },
+    "relate work": {
+        "related work category": [
+            "Anomaly Detection in Time Series",
+            "Neural Controlled Differential Equations",
+            "Knowledge Distillation",
+            "Multi-task Learning"
+        ],
+        "related papers": "1. Eskin et al. (2002), Zhang et al. (2013), Ten et al. (2011), Goldstein et al. (2016), Wu et al. (2019), Liu et al. (2020), Chandola et al. (2010) 2. Hinton et al. (2015), Xu et al. (2022) 3. Zhang et al. (2021), Ruder et al. (2017)",
+        "comparisons with related methods": "Our method PAD bridges a gap left by existing anomaly detection frameworks by integrating novel NCDE approaches with a unique precursor-of-anomaly task. Unlike clustering-based or density-estimation approaches, our framework excels in adaptable anomaly prediction across various domains. Comparisons reveal that PAD outperforms classical, clustering-based, density-estimation, and reconstruction-based methods particularly in irregular time series contexts."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes PAD, a comprehensive framework for detecting both current anomalies and precursors of anomalies in multivariate time series. By applying neural controlled differential equations, it confirms its effectiveness through rigorous experimentation and baseline comparisons.",
+        "research purpose": "The main aim is to develop a robust anomaly detection system capable of predicting potential anomalies using precursor indicators in time series data across several real-world domains.",
+        "research challenge": "The challenge lies in accurately identifying and predicting anomalies in irregular and multivariate time series situations while maintaining performance across diverse applications.",
+        "method summary": "PAD employs NCDEs in a multitask learning setting, with knowledge distillation to improve performance. It operates efficiently with irregular time series data to predict both anomalies and their precursors.",
+        "conclusion": "PAD framework demonstrates superior accuracy and expands the capabilities of traditional anomaly detection systems by addressing and delivering predictive insights with precursor-of-anomaly detection."
+    },
+    "Method": {
+        "description": "This paper proposes PAD, a framework grounded in neural controlled differential equations (NCDEs) for comprehensive anomaly detection in multivariate time series data.",
+        "problem formultaion": "The system is designed to tackle both anomaly detection and precursor-of-anomaly detection, focusing on predicting future anomalies given a time series input. The challenge includes handling irregular time series characterized by uneven sampling intervals.",
+        "feature processing": "Utilizes data augmentation and knowledge distillation to enhance feature robustness and prediction accuracy with self-supervised learning.",
+        "model": "PAD's architecture integrates dual co-evolving NCDEs: one tasked with anomaly detection and the other with precursor predictions, sharing parameters to facilitate knowledge transfer.",
+        "tasks": [
+            "Anomaly Detection",
+            "Precursor-of-Anomaly Detection"
+        ],
+        "theoretical analysis": "Articulates the interplay between NCDEs and task-specific parameter sharing in multitask settings, highlighting the method's theoretical underpinnings and performance in irregular time series.",
+        "complexity": "Manageable computational complexity achieved through parameter sharing and efficient ODE solvers, which allow handling of large datasets.",
+        "algorithm step": "1. Data augmentation for enhanced training samples. 2. Dual NCDE structure for shared learning and task-specific outputs. 3. Employing cross-entropy losses for distillation and prediction accuracy."
+    },
+    "Experiments": {
+        "datasets": [
+            "Mars Science Laboratory (MSL)",
+            "Secure Water Treatment (SWaT)",
+            "Water Distribution (WADI)"
+        ],
+        "baselines": [
+            "OCSVM",
+            "Isolation Forest",
+            "Deep-SVDD",
+            "ITAD",
+            "THOC",
+            "LOF",
+            "DAGMM",
+            "MMPCACD",
+            "VAR",
+            "LSTM",
+            "LSTM-VAE",
+            "BeatGAN",
+            "OmniAnomaly",
+            "USAD",
+            "InterFusion",
+            "Anomaly Transformer"
+        ],
+        "evaluation metric": "Precision, Recall, F1-score",
+        "setup": "Experiments were conducted on Ubuntu 18.04 LTS with NVIDIA RTX 3090, employing PyTorch v1.7.0 for model development.",
+        "hyperparameters": "Learning rates, weight decay, and hidden layer dimensions were adjusted per dataset; for example, MSL required a learning rate of 0.01 with 300 epochs.",
+        "results": "PAD consistently surpasses baseline models in both the anomaly and precursor detection tasks, showcasing top precision and F1-scores across all provided datasets, under diverse settings.",
+        "performance": "Remarkably robust in irregular time series, retaining high accuracy despite data sparsity or increased observation drop rates.",
+        "analysis": "Ablation confirmed the advantages of multi-task learning, task parameter sharing, and NCDE's effectiveness in time series modeling.",
+        "ablation study": "Undertaken to reveal PAD's dependency on multi-task settings and NCDE configurations, proving its advanced performance over single-task alternatives."
+    },
+    "conclusion": {
+        "summary": "A state-of-the-art framework, PAD effectively identifies and predicts anomalies and their precursors in multivariate time series, addressing a critical gap in proactive data analysis.",
+        "future work": "Future research may explore unsupervised PoA detection enhancements, as well as augmenting datasets without extensive label reliance."
+    }
+}

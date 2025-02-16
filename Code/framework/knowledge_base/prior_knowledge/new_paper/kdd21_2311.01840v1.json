@@ -1,0 +1,83 @@
+{
+    "meta_data": {
+        "title": "SpectralMix: An Embedding Approach for Clustering Attributed Multi-Relational Graphs",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous"
+        ],
+        "abstract": "Complex data in fields like biology, neuroscience, and social networks can be modeled as attributed multi-relational graphs. This paper introduces SpectralMix, a novel algorithm for joint dimensionality reduction and spectral clustering focusing on attributed multi-relational graphs with categorical node attributes. SpectralMix maps nodes to a low-dimensional space, reducing noise and highlighting data patterns, which facilitates tasks such as clustering, outlier detection, and visualization. Our evaluation shows SpectralMix's superiority over existing methods on several real-world datasets.",
+        "keywords": [
+            "Spectral Clustering",
+            "Dimensionality Reduction",
+            "Multi-Relational Graphs",
+            "Attributed Graphs",
+            "Clustering"
+        ],
+        "year": "2023",
+        "venue": "TBD",
+        "doi link": null,
+        "method name": "SpectralMix"
+    },
+    "relate work": {
+        "related work category": [
+            "Attributed Graph Clustering",
+            "Graph Embedding",
+            "Multi-relational Graph Clustering"
+        ],
+        "related papers": "GBAGC, SSCG, BAGC, Inc_Cluster, SA_Cluster, PICS, HASCOP, UNCut, NNM, FocusCO, Steinhaeuser98, DMGC, CrossMNA, ANRL, DGI, HAN, MARINE, DMGI.",
+        "comparisons with related methods": "Many existing methods either ignore multiple edge types or handle only one attribute type. SpectralMix surpasses these limitations by effectively clustering attributed multi-relational graphs and integrating both structural and attribute similarities without information loss. It generates embeddings for multi-relational graphs with/without attributes, outperforming conventional methods like ANRL, DGI, DMGI, CrossMNA."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents SpectralMix, an innovative algorithm designed for embedding and clustering attributed multi-relational graphs. By addressing the challenges of dimensionality reduction and spectral clustering jointly, SpectralMix creates low-dimensional representations of graphs, improving the clustering accuracy and data visualization.",
+        "research purpose": "The study aims to improve clustering quality by developing a new technique, SpectralMix, that captures both structural and attribute similarities in attributed multi-relational graphs.",
+        "research challenge": "Existing clustering methods are insufficient for attributed multi-relational graphs due to limitations in handling multiple edge types and node attributes.",
+        "method summary": "SpectralMix employs joint dimensionality reduction and spectral clustering for attributed multi-relational graphs, using a mapping strategy to minimize distances between similarly attributed nodes. It reduces the impact of noise and prevails over traditional methods with its comprehensive approach.",
+        "conclusion": "The results demonstrate SpectralMix's effectiveness in achieving superior clustering quality across diverse datasets, showcasing the benefits of integrating both graph structure and node attributes."
+    },
+    "Method": {
+        "description": "SpectralMix modifies spectral embedding techniques and homogeneity analysis to provide a unified framework for attributed multi-relational graphs. By enhancing the clustering process, SpectralMix aids in generating robust and meaningful representations of complex data structures.",
+        "problem formultaion": "To map a multi-relational attributed graph into a low-dimensional space while minimizing the distance between nodes with similar attributes.",
+        "feature processing": "Categorical node attributes are incorporated into the embedding, contributing to a joint low-dimensional vector space representation.",
+        "model": "SpectralMix integrates spectral methods to project nodes into a low-dimensional space, refining the clustering process.",
+        "tasks": [
+            "Node Clustering",
+            "Dimensionality Reduction",
+            "Data Visualization"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The total time complexity of SpectralMix is influenced by the multi-relational graph's size and number of attributes. Efficient convergence is achieved within minimal iterations using weighting mechanisms.",
+        "algorithm step": "The algorithm initializes node and category coordinates, updates them through iterative optimization, and then applies orthonormalization to ensure convergence."
+    },
+    "Experiments": {
+        "datasets": [
+            "ACM",
+            "IMDB",
+            "DBLP",
+            "Flickr",
+            "Brain Networks TD",
+            "Brain Networks ASD"
+        ],
+        "baselines": [
+            "ANRL",
+            "DGI",
+            "DMGC",
+            "CrossMNA",
+            "HAN",
+            "MARINE",
+            "DMGI"
+        ],
+        "evaluation metric": "Normalized Mutual Information (NMI) and Adjusted Rand Index (ARI) are the primary metrics.",
+        "setup": "SpectralMix evaluates clustering performance against several baselines using real-world multi-relational graph datasets, focusing on attributed and non-attributed networks.",
+        "hyperparameters": "The model's dimensionality parameter ('d') is the primary tunable hyperparameter.",
+        "results": "SpectralMix consistently outperformed baselines across datasets, with significant improvements in NMI and ARI scores, especially on larger and more attribute-rich datasets.",
+        "performance": "The method excelled in clustering tasks, surpassing conventional methods by effectively handling different graph types, both with and without node attributes.",
+        "analysis": "Synthetic data and real-world evaluations confirm SpectralMix's adaptability and superior clustering capability, demonstrating robustness against outliers.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "SpectralMix provides an efficient solution for embedding and clustering attributed multi-relational graphs. It effectively integrates both graph structural properties and node attributes, resulting in more accurate and cohesive clusters.",
+        "future work": "Investigating opportunities for interpreting algorithmic outputs, handling other data mining tasks like link predictions or node classification, and applying SpectralMix to sparsely labeled datasets for semi-supervised learning."
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "Task Description": {
+    "PATTERN": "Node-level task aiming to find a fixed graph pattern embedded within larger graphs generated using the Stochastic Block Model (SBM). The challenge lies in recognizing these patterns amidst variable graph sizes and community structures.",
+    "CLUSTER": "Semi-supervised graph clustering task where each node's class is to be determined based on its features and the graph's structure, again utilizing SBM for graph generation. The task tests the ability of GNNs to identify community-based structures within the graph."
+  },
+  "Dataset Description": {
+    "General": "Both datasets generate graphs using SBM, a popular method to model community structures in social networks by controlling the connection probabilities within and between communities.",
+    "PATTERN": "Graphs have 5 communities with sizes between 5 and 35 nodes, node features based on a vocabulary of size 3, and patterns consist of 20 nodes with a specific connectivity probability.",
+    "CLUSTER": "Graphs consist of 6 clusters with sizes between 40 and 190 nodes, and node features are integers representing potential class labels or are set to zero, indicating unlabeled nodes."
+  },
+  "Performance Summary": {
+    "PATTERN": {
+      "Best Model": "GatedGCN-PE",
+      "Test Accuracy": "86.508±0.085",
+      "Training Dynamics": "Trained over 65 epochs, highlighting the model's efficiency in pattern recognition within complex graph structures."
+    },
+    "CLUSTER": {
+      "Best Model": "GatedGCN-PE",
+      "Test Accuracy": "76.082±0.196",
+      "Training Dynamics": "Trained over 57.75 epochs, demonstrating its capability in clustering and community detection tasks."
+    },
+    "Insights": "The introduction of positional encodings in the GatedGCN-PE model significantly enhances performance, suggesting that precise spatial information within graphs plays a crucial role in both pattern recognition and clustering tasks."
+  }
+}
+

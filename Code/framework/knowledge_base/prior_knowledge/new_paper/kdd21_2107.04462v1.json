@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Redescription Model Mining: Combining Information Across Datasets via Exceptional Models",
+        "authors": [
+            "Max Mustermann",
+            "John Doe"
+        ],
+        "affiliations": [
+            "Institute of Data Science",
+            "University of XYZ"
+        ],
+        "abstract": "In many domains, extensive related datasets exist that do not share instances but reveal shared phenomenon via indirect relations of model characteristics. We introduce a new framework, Redescription Model Mining, hypothesizing that indirectly shared attributes can unveil previously undetectable phenomena. Unlike previous approaches such as Exceptional Model Mining or Redescription Mining which seek standalone correlations, our approach leverages multidimensional patterns across datasets to uncover hidden associations. It's applicable for real-world data such as socio-economic or cross-disciplinary studies where non-overlapping datasets are abundant.",
+        "keywords": [
+            "Redescription Model Mining",
+            "Pattern Mining",
+            "Exceptional Model Mining",
+            "Multi-dataset Analysis"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Data Mining",
+        "doi link": null,
+        "method name": "Redescription Model Mining"
+    },
+    "relate work": {
+        "related work category": [
+            "Pattern Mining",
+            "Multimodal Data Integration",
+            "Exceptional Model Mining"
+        ],
+        "related papers": "Leman, Dennis, et al. 'Exceptional Model Mining'. Journal of Data Mining. Galbrun, Etienne, 'Redescription Mining'. Pattern Recognition Journal.",
+        "comparisons with related methods": "While traditional methods like Redescription Mining focus on finding simultaneous relations in datasets with shared instances, Redescription Model Mining extends the pattern identification across datasets with no shared instances but shared attributes."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces Redescription Model Mining, a novel approach to model mining across datasets that share attributes but not instances. It combines Exceptional Model Mining and Redescription Mining under a single framework to reveal hidden associations, contributing new insights into dataset patterns and correlations.",
+        "research purpose": "The main purpose is to discover underlying phenomena shared across different datasets not through shared instances but via shared exceptional model parameters.",
+        "research challenge": "Traditional mining techniques can't efficiently uncover patterns when datasets don't share any instances.",
+        "method summary": "Redescription Model Mining identifies pairs of exceptional models across distinct datasets, uncovering hidden correlations by looking beyond shared instances to shared attributes.",
+        "conclusion": "Redescription Model Mining effectively unveils connections between attributes in different datasets, maximizing insight from incomplete information through shared characteristics."
+    },
+    "Method": {
+        "description": "Redescription Model Mining facilitates the discovery of underlying phenomena across datasets by finding pairs of describable subsets that induce similar exceptional models, even when datasets do not share instances.",
+        "problem formultaion": "Given two datasets with some shared model attributes, find corresponding descriptions that induce exceptional models across those datasets.",
+        "feature processing": "Utilizes descriptive and model attributes to define exceptions in datasets models.",
+        "model": "Integrates ideas from Exceptional Model Mining and Redescription Mining to mine patterns across datasets without shared instances.",
+        "tasks": [
+            "Identify similar exceptional model patterns",
+            "Uncover hidden dataset correlations.",
+            "Leverage shared attributes to enhance insight"
+        ],
+        "theoretical analysis": "Formulation of exceptionality measures and computational methods to detect pattern relationships without shared instances.",
+        "complexity": "Complexity is influenced by the number of possible descriptions and the computational cost of model comparisons.",
+        "algorithm step": "Mine exceptional model descriptions in each dataset, pair descriptions across datasets, evaluate model similarity and exceptionality, and use interestingness to rank pairs."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic datasets with known patterns",
+            "Real-world datasets from housing markets and social surveys"
+        ],
+        "baselines": [
+            "Traditional Redescription Mining",
+            "Exceptional Model Mining"
+        ],
+        "evaluation metric": "Recall@10 to measure correct detection of known patterns, interestingness scores to evaluate pattern alignment across datasets.",
+        "setup": "Mine exceptional models from individual datasets, pair descriptions, and evaluate pair modeling using various exceptionality and similarity measures.",
+        "hyperparameters": null,
+        "results": "The mine-and-pair approach showed improved recall performance over exhaustive methods, proving robust in identifying shared exceptions.",
+        "performance": "Achieved higher matching rates for real-world correspondences than competing methods, especially in settings with misaligned interest measures.",
+        "analysis": "Real-world experiments confirmed the theoretical capability of the method to identify phenomena not observable through individual dataset analysis.",
+        "ablation study": "Tested importance of exceptionality and size parameters for improved pattern recall, showing that exceptionality is crucial to correct model alignment."
+    },
+    "conclusion": {
+        "summary": "Redescription Model Mining successfully bridges the gap between datasets with shared attributes but no shared instances by aligning model-based patterns across domains.",
+        "future work": "Investigating more efficient algorithms, reducing redundancy in result sets, exploring real-world applicability through case studies, and refining interestingness measures based on domain expertise analysis."
+    }
+}

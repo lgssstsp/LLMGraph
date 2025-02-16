@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-code2",
+    "Dataset Link": "../graphprop/#ogbg-code2",
+    "Rank": 4,
+    "Method": "GraphTrans (GCN-Virtual)",
+    "External Data": "No",
+    "Test Accuracy": "0.1830 ± 0.0024",
+    "Validation Accuracy": "0.1661 ± 0.0012",
+    "Contact": "mailto:zhwu@berkeley.edu",
+    "Paper Link": "https://openreview.net/pdf?id=nYz2_BbZnYk",
+    "Code Link": "https://github.com/ucbrise/graphtrans",
+    "Parameters": "9,053,246",
+    "Hardware": "Tesla V100 (32GB GPU)",
+    "Date": "Jan 15, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-code2/GraphTrans_(GCN-Virtual).pdf",
+    "Paper Summary": "The paper presents a novel architecture for graph neural networks (GNNs) called GraphTrans, which incorporates a Transformer-based self-attention mechanism to capture long-range dependencies in graph data. The design focuses on enhancing the traditional GNN structure with an additional Transformer module to improve the model's capability in representing global relationships among nodes.\n\n### Key Design Aspects:\n\n1. **GNN Module**: \n   - The architecture starts with a standard GNN layer stack responsible for aggregating local node features. The GNN takes each node’s initial feature vector and computes node embeddings through a series of neighborhood aggregations over multiple layers.\n   - Each node's embedding after L GNN layers is denoted as \\( h^L_{v} \\) for node \\( v \\).\n\n2. **Transformer Module**: \n   - Following the GNN module, a Transformer subnetwork is applied. This module processes the per-node embeddings produced by the GNN. \n   - Instead of using positional encodings (which are common in Transformers for sequential data), GraphTrans leverages the GNN, which already encapsulates structural information, to ensure permutation-invariance while learning global relationships. \n   - The Transformer layer computes interactions among all node embeddings in a position-agnostic manner, allowing it to model long-range dependencies effectively.\n\n3. **Readout Mechanism**:\n   - A special token, referred to as `<CLS>`, is appended to the input of the Transformer module. This token aggregates information from all pairwise interactions and is trained to represent the entire graph encapsulated into a single output vector.\n   - The output embedding corresponding to `<CLS>` is used for subsequent predictions, replacing conventional methods like mean or max pooling that collapse node embeddings into a single graph-level embedding.\n\n4. **Attention Mechanism**:\n   - The attention mechanism in the Transformer analyzes relationships between all nodes, allowing the model to focus on important long-distance connections without requiring explicit spatial priors.\n   - By employing this self-attention mechanism, GraphTrans effectively learns the most relevant interactions among nodes across the entire graph, providing richer embeddings than methods solely reliant on local aggregation.\n\n### Summary:\nOverall, the architecture integrates local representation learning from GNNs with global reasoning capabilities of Transformers, positioned to effectively manage long-range dependencies in graph data. The combination of GNN and Transformer serves to enhance the model’s flexibility and performance in graph classification tasks without the complexities of traditional hierarchical pooling or extensive structural encodings."
+}

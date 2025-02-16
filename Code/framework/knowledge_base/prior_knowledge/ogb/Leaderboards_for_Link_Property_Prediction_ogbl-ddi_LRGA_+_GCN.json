@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ddi",
+    "Dataset Link": "../linkprop/#ogbl-ddi",
+    "Rank": 18,
+    "Method": "LRGA + GCN",
+    "External Data": "No",
+    "Test Accuracy": "0.6230 ± 0.0912",
+    "Validation Accuracy": "0.6675 ± 0.0058",
+    "Contact": "mailto:omri.puny@weizmann.ac.il",
+    "Paper Link": "https://arxiv.org/abs/2006.07846",
+    "Code Link": "https://github.com/omri1348/LRGA/tree/master/ogb/examples/linkproppred",
+    "Parameters": "1,576,081",
+    "Hardware": "Tesla P100 (16GB GPU)",
+    "Date": "Aug 5, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ddi/LRGA_+_GCN.pdf",
+    "Paper Summary": "The paper introduces a novel module called Low-Rank Global Attention (LRGA) to enhance Graph Neural Networks (GNNs) by improving their generalization capabilities. Here are the key model design aspects:\n\n1. **LRGA Module Overview**:\n   - LRGA is a computation and memory-efficient variant of the traditional dot-product attention mechanism. It is designed to incorporate global attention into GNNs without suffering from the high computational costs typically associated with attention mechanisms.\n   - The LRGA uses a κ-rank attention matrix, which reduces memory requirements to O(nκ) and computational complexity to O(nκ²), where κ represents the rank of the attention matrix.\n\n2. **Integration with GNN Architecture**:\n   - The LRGA module can be seamlessly integrated into any GNN layer. The output of such layers can be formulated as:\n     \\[\n     X^{l+1} \\leftarrow [X^l, \\text{LRGA}(X^l), \\text{GNN}(X^l)]\n     \\]\n   - The integration of LRGA allows for the aggregation of information across all nodes in the graph, facilitating a richer representation of complex relationships.\n\n3. **Theoretical Background**:\n   - The paper emphasizes algorithmic alignment by demonstrating that RGNNs augmented with LRGA align with the powerful 2-Folklore Weisfeiler-Lehman (2-FWL) algorithm, a strict improvement over traditional vertex-coloring techniques. This alignment provides theoretical justification for improved generalization properties.\n   - Proposition 1 indicates that RGNNs, when enhanced with LRGA, maintain universal approximation capabilities—meaning they can approximate any continuous graph function with high probability.\n\n4. **Feature Encoding**:\n   - The LRGA operates by applying several Multi-Layer Perceptions (MLPs) that transform input feature matrices to develop a κ-rank attention mechanism. The design of LRGA leverages polynomial kernels in its computations to ensure that relevant information is encoded in a way amenable to efficient learning.\n\n5. **Permutation Equivariance**:\n   - The LRGA maintains permutation equivariance, which is essential in GNNs as it respects the graph’s structural properties. This ensures that the output remains unchanged under permutations of node order.\n\nOverall, the model design emphasizes efficient computation, enhanced expressiveness, and alignment with strong graph theoretical algorithms, thereby enhancing GNNs' performance and generalization abilities."
+}

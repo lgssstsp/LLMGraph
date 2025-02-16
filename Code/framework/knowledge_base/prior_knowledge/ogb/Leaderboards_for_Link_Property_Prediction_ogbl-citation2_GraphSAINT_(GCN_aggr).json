@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 19,
+    "Method": "GraphSAINT (GCN aggr)",
+    "External Data": "No",
+    "Test Accuracy": "0.7985 ± 0.0040",
+    "Validation Accuracy": "0.7975 ± 0.0039",
+    "Contact": "mailto:matthias.fey@tu-dortmund.de",
+    "Paper Link": "https://arxiv.org/abs/1907.04931",
+    "Code Link": "https://github.com/snap-stanford/ogb/tree/master/examples/linkproppred/citation2",
+    "Parameters": "296,449",
+    "Hardware": "GeForce RTX 2080 (11GB GPU)",
+    "Date": "Jan 4, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/GraphSAINT_(GCN_aggr).pdf",
+    "Paper Summary": "The paper introduces **GraphSAINT**, an inductive learning method for graph representation, focusing on the construction of minibatches through graph sampling rather than traditional node or edge sampling across layers in Graph Convolutional Networks (GCNs). The key design aspects of the model include:\n\n1. **Graph Sampling Methodology**: Instead of sampling nodes or edges from the previously constructed GCNs, GraphSAINT first constructs complete GCNs on carefully sampled subgraphs of the training graph. This subgraph maintains a fixed and well-connected number of nodes across all layers, effectively addressing the \"neighbor explosion\" problem encountered in deeper layers of GCNs.\n\n2. **Minibatch Construction**: The minibatches are formed by independently sampling subgraphs from the entire graph structure. In each iteration of training, a new subgraph is sampled, upon which a full GCN is built to generate embeddings for all nodes in the subgraph.\n\n3. **Normalization Techniques**: Since the sampling procedure introduces variability in node sampling probabilities, GraphSAINT incorporates normalization techniques to mitigate bias in the representation learning. These normalization techniques ensure that the node features do not disproportionately favor nodes that are more frequently sampled.\n\n4. **Variance Reduction**: The methodology includes variance reduction strategies, allowing the model to maintain stability and learn effectively despite the induced randomization in the sampling phase. Specific algorithms are designed to quantify the \"influence\" of neighboring nodes, which guides the sampling process.\n\n5. **Decoupling of Sampling and Propagation**: The sampling process is decoupled from the forward and backward propagation of the neural network. This design allows for the integration of sampling algorithms with various GCN architectures, enabling the application of GraphSAINT across different forms of GCNs like jumping knowledge networks and graph attention networks.\n\n6. **Architecture Flexibility**: GraphSAINT can extend to multiple GCN architecture variants, permitting dynamic adjustments to the model structure while maintaining efficiency and accuracy. It provides an adaptable framework that can incorporate various enhancements such as attention mechanisms or residual connections.\n\nThese design features collectively enhance the scalability of the model to large graphs, significantly improving training efficiency while ensuring accurate representation learning."
+}

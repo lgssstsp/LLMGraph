@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Intelligent Model Update Strategy for Sequential Recommendation",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous Organization"
+        ],
+        "abstract": "In this paper, we propose IntellectReq, an innovative model that improves the efficiency and effectiveness of the EC-CDR framework for recommendation systems by reducing unnecessary parameter requests through edge-cloud communication. We introduce a Mis-Recommendation Detector (MRD) and a Distribution Mapper (DM) to quantify the data distribution shifts and improve the adaptability of edge models to real-time user behavior. IntellectReq achieves optimized communication through efficient resource utilization while maintaining high recommendation performance, enabling dynamic personalized updates without the need for re-training.",
+        "keywords": [
+            "Edge-Cloud Collaboration",
+            "Recommendation System",
+            "Efficient Communication",
+            "Adaptive Parameter Generation",
+            "Mis-Recommendation Detection"
+        ],
+        "year": "2023",
+        "venue": "ACM Conference on Recommendation Systems",
+        "doi link": null,
+        "method name": "IntellectReq"
+    },
+    "relate work": {
+        "related work category": [
+            "Edge-cloud Collaboration",
+            "Sequential Recommendation"
+        ],
+        "related papers": "- Edge-Cloud Collaboration: [ref:edge_cloud_survey, zhangsyDBLP:conf/kdd/QianXLZJLZC022] explores the essentials and advances in edge-cloud integrated systems.\n- Sequential Recommendation: Leading deep learning models such as GRU4Rec [ref:gru4rec], DIN [ref:din], SASRec [ref:sasrec] demonstrate influential methods for user behavior modeling and prediction.",
+        "comparisons with related methods": "The proposed IntellectReq improves communication efficiency compared to existing edge-cloud collaboration methods like DUET and APG by selectively requesting updates based on real-time data shifts and uncertainty measures."
+    },
+    "high_level_summary": {
+        "summary of this paper": "We present IntellectReq, a framework designed to enhance edge-cloud recommendation systems by smartly managing communication overhead and maintaining high performance through adaptive parameter generation.",
+        "research purpose": "The purpose is to address the inefficiencies in the EC-CDR framework arising from high communication requests and low updates, thereby enhancing real-time on-edge model adaptability.",
+        "research challenge": "Managing high-frequency communication between edge and cloud without degrading recommendation accuracy, and optimizing resource utilization during model updates.",
+        "method summary": "IntellectReq employs a Mis-Recommendation Detector (MRD) and a Distribution Mapper (DM) to adaptively gauge the necessity of model parameter updates based on the current data distribution, reducing unnecessary resource consumption.",
+        "conclusion": "The research concludes that IntellectReq significantly improves the performance of recommendation systems by efficiently utilizing communication budgets for model updates based on real-time data constraints."
+    },
+    "Method": {
+        "description": "IntellectReq is an intelligent adaptation method for edge-cloud collaborative dynamic recommendation systems, addressing communication inefficiencies by determining the need for model updates based on real-time data distribution analysis.",
+        "problem formultaion": "The challenge is to optimize the parameter update mechanism in EC-CDR systems by leveraging edge and cloud resources appropriately without unnecessary communication overhead.",
+        "feature processing": null,
+        "model": "IntellectReq comprises two main components: the Mis-Recommendation Detector (MRD) and the Distribution Mapper (DM). These components evaluate and update edge model parameters by analyzing user behavior patterns and data distribution changes.",
+        "tasks": [
+            "Minimize unnecessary communication overhead.",
+            "Achieve real-time user behavior model adaptation.",
+            "Maintain high recommendation accuracy."
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Amazon CDs",
+            "Amazon Electronics",
+            "Douban Books"
+        ],
+        "baselines": [
+            "DUET",
+            "APG",
+            "GRU4Rec",
+            "DIN",
+            "SASRec",
+            "LOF",
+            "OC-SVM"
+        ],
+        "evaluation metric": "AUC, UAUC, HitRate, NDCG",
+        "setup": "Compare proposed method IntellectReq with baseline models on recommendation datasets using AUC, HitRate, and NDCG metrics.",
+        "hyperparameters": "Hyperparameters and training schedules are specific to datasets, primarily involve sequence length, batch size, and learning rates.",
+        "results": "IntellectReq demonstrates high communication efficiency and competitive performance under varying communication budgets compared to other EC-CDR frameworks.",
+        "performance": "IntellectReq outperforms DUET and APG by efficiently managing requests and maintaining performance under different communication budgets.",
+        "analysis": "IntellectReq's ability to reduce unnecessary updates while maintaining high retrieval scores confirms its effectiveness.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "IntellectReq enhances real-world recommendation systems by reducing edge-cloud communication overhead and improving model adaptability through efficient real-time data utilization, confirmed by experiments across multiple benchmarks.",
+        "future work": null
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-vessel",
+    "Dataset Link": "../linkprop/#ogbl-vessel",
+    "Rank": 13,
+    "Method": "SAGE+JKNet",
+    "External Data": "No",
+    "Test Accuracy": "0.5001 ± 0.0007",
+    "Validation Accuracy": "0.5014 ± 0.0004",
+    "Contact": "mailto:chihuixuan99@gmail.com",
+    "Paper Link": "http://proceedings.mlr.press/v80/xu18c/xu18c.pdf",
+    "Code Link": "https://github.com/ytchx1999/ogbl-vessel",
+    "Parameters": "273",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Aug 22, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-vessel/SAGE+JKNet.pdf",
+    "Paper Summary": "### Summary of Methods in \"Representation Learning on Graphs with Jumping Knowledge Networks\"\n\n**Introduction to JK-Nets**:\nThe paper introduces Jumping Knowledge Networks (JK-Nets), an architecture designed to enhance representation learning on graphs by flexibly aggregating information from nodes at varying localities. This approach addresses the limitations of traditional neighborhood aggregation schemes, which often struggle with the diverse structures of real-world graphs.\n\n**Key Concepts**:\n\n1. **Influence Distribution**:\n   - The research emphasizes the idea of “influence distribution”, capturing the effective range of nodes that could contribute to a node’s representation. This is analogous to random walk processes, where the spread of influence is highly dependent on graph structure.\n\n2. **Adaptive Neighborhood Size**:\n   - Rather than applying a fixed aggregation radius, JK-Nets allow for adaptive neighborhood sizes, meaning the model learns to determine which and how many neighbors are most influential for each node’s representation.\n\n**Model Design Elements**:\n\n1. **Layer-wise Aggregation**:\n   - The architecture utilizes a multi-layer approach where each layer aggregates information from the previous layer’s representations. The last layer is designed to selectively combine these intermediate representations, enabling adaptability.\n\n2. **Aggregation Mechanisms**:\n   - **Concatenation**: Combines features from all layers but lacks node-specific adaptivity.\n   - **Max-Pooling**: Selects the most informative features from each layer, allowing for adaptive behavior.\n   - **LSTM-Attention**: Utilizes attention scores to weigh the importance of features learned at different layers, thus providing a more nuanced representation dependent on the graph structure.\n\n3. **Jump Connections**:\n   - The key innovation in JK-Nets is the mechanism of \"jumping\" connections where nodes can draw from features learned across multiple layers. This ensures that the final representation is informed by a wider array of neighborhood influences rather than being limited to immediate neighbors.\n\n**Influence of Graph Structure**:\n- The paper discusses how the designs exploit the inherent subgraph structures present in complex graphs. JK-Nets learn to focus influence from hubs or key nodes differently depending on the local structure, thus making representations more effective for varied subgraph topologies.\n\n### Conclusion\nThe JK-Nets framework’s adaptability in selecting how much and from where to gather information across graph layers represents a significant step forward in graph representation learning, allowing for improved performance on graphs with diverse structural properties."
+}

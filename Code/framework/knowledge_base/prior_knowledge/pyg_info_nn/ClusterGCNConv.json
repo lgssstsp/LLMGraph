@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Cluster-GCN: An Efficient Algorithm for Training Deep and Large Graph Convolutional Networks",
+        "authors": [
+            "Wei-Lin Chiang",
+            "Xuanqing Liu",
+            "Si Si",
+            "Yiming Yang",
+            "Tiancheng Lou",
+            "Cho-Jui Hsieh"
+        ],
+        "affiliations": [
+            "University of California, Los Angeles",
+            "Google Research"
+        ],
+        "abstract": "Graph convolutional networks (GCNs) demonstrate great power in various graph-based tasks, while training GCNs on large-scale graphs can be challenging due to memory overheads and data dependency issues. Existing algorithms proposed to alleviate these issues suffer from either simplicity of implementation or efficiency at scale. We present Cluster-GCN, a novel GCN training algorithm utilizing graph clustering for better memory efficiency and scalability while retaining competitive performance.",
+        "keywords": [
+            "Graph Convolutional Network",
+            "Scalability",
+            "Memory Efficiency",
+            "Large-Scale Graphs",
+            "Graph Clustering"
+        ],
+        "year": "2020",
+        "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+        "doi link": "10.18653/v1/2020.emnlp-main.464",
+        "method name": "Cluster-GCN"
+    },
+    "relate work": {
+        "related work category": [
+            "GCN Optimization",
+            "Graph Clustering",
+            "Scalable Learning Algorithms"
+        ],
+        "related papers": "[1] Kipf, T. N., & Welling, M. (2017). Semi-Supervised Classification with Graph Convolutional Networks. In Proceedings of ICLR. [2] Hamilton, W., Ying, Z., & Leskovec, J. (2017). Inductive Representation Learning on Large Graphs. In Advances in NIPS.",
+        "comparisons with related methods": "Cluster-GCN is shown to outperform full-batch gradient descent as proposed by Kipf, T.N., and Welling, M., in terms of scalability by limiting memory requirements through graph clustering. It is also competitive with methods like GraphSAGE and VR-GCN that sample neighbors or keep historical embeddings."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces Cluster-GCN, an algorithm designed to efficiently train GCNs on large-scale graphs. It leverages graph clustering to reduce memory usage and improve computational efficiency, maintaining an impressive balance between speed, memory, and model accuracy.",
+        "research purpose": "To address the scalability and memory constraints of training GCNs on large-scale graphs without substantial loss in model performance.",
+        "research challenge": "Traditional GCNs require large memory footprints and face slow convergence rates when dealing with extensive graphs. Existing scalable methods often compromise on usage simplicity or efficiency. ",
+        "method summary": "The proposed Cluster-GCN algorithm partitions the graph using clustering techniques like METIS, creating subgraphs to form mini-batches. At each training iteration, it updates GCN parameters iteratively using only a batch (subgraph), streamlining resource usage and processing load.",
+        "conclusion": "Cluster-GCN efficiently overcomes the barriers of memory demand and slow training of GCNs on large datasets, proving viable for deep GCNs with high performance."
+    },
+    "Method": {
+        "description": "Cluster-GCN uses graph clustering to partition the graph into meaningful substructures that act as mini-batches for SGD updates, improving memory efficiency.",
+        "problem formultaion": "The massive size of graphs in real-world applications causes GCNs to have heavy memory demand and slow training when using full-batch training algorithms.",
+        "feature processing": "Graph clustering allows the model to focus computations strictly within subgraph nodes optimizing data dependencies.",
+        "model": "The model is a graph convolutional network that processes data iteratively based on neighborhood information supported by clustered batches, conducting standard layers of GCN operations on smaller subgraphs.",
+        "tasks": [
+            "Node Classification",
+            "Link Prediction",
+            "Recommender Systems"
+        ],
+        "theoretical analysis": "The proposed method shows that model convergence benefits from embedding utilization efficiency, which is not adequately achieved in baseline approaches.",
+        "complexity": "Reduced computational complexity of one epoch as O(|A|F + NF^2), leveraging the smaller batch sizes allowed by clustering.",
+        "algorithm step": "Graph is partitioned via clustering; training utilizes iterating over clustered subgraphs, employing mini-batch SGD for parameter updates."
+    },
+    "Experiments": {
+        "datasets": [
+            "PPI",
+            "Reddit",
+            "Amazon2M"
+        ],
+        "baselines": [
+            "VR-GCN",
+            "GraphSAGE"
+        ],
+        "evaluation metric": "Testing accuracy (F1 score) and training time and memory for different network configurations.",
+        "setup": "Experiments conducted on multiple public datasets using Cluster-GCN against various memory-efficient GCN architectures, details of node and partition configurations were standardized for comparability.",
+        "hyperparameters": "Batch sizes and cluster counts align with dataset size considerations, balancing computational efficiency.",
+        "results": "Cluster-GCN consistently showed superior memory efficiency with competitive accuracy, measured by F1 Score, across the experiments.",
+        "performance": "On datasets like Amazon2M, Cluster-GCN demonstrated a 5-fold memory reduction over VR-GCN while marginally exceeding accuracy benchmarks in deeper configurations.",
+        "analysis": "Experiment results reinforce that memory and computational demands decreased significantly in deep and large graphs, leveraging cluster-focused processing.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Cluster-GCN establishes a scalable, memory-efficient framework for training GCNs on extensive graph datasets without sacrificing accuracy, thus advancing deep model capabilities.",
+        "future work": "Potential extensions include exploring dynamic partitioning strategies and broader applicability across diverse graph architectures for knowledge transfer applications in hybrid GNN frameworks."
+    }
+}

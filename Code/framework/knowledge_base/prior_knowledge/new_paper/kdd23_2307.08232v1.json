@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Learning Counterfactually Fair Predictors with Unknown Causal Models",
+        "authors": [
+            "Jing Ma",
+            "Aidong Zhang",
+            "Jundong Li"
+        ],
+        "affiliations": [
+            "University of Virginia"
+        ],
+        "abstract": "This paper addresses the challenge of learning counterfactually fair predictors from observational data in scenarios where causal models are unknown. Existing methods often require predefined causal models to ensure fairness, which is impractical in real-world settings where such models are hard to obtain. We introduce a novel framework that learns counterfactually fair representations without relying on explicit causal models. To achieve this, we combine counterfactual data augmentation with fair representation learning under non-discriminatory constraints, overcoming the limitations of traditional fairness through unawareness methods. Extensive experiments demonstrate the efficacy of our approach, achieving superior fairness and prediction performance compared to state-of-the-art methods.",
+        "keywords": [
+            "Counterfactual fairness",
+            "Causal models",
+            "Fairness in AI",
+            "Representation learning",
+            "Machine learning"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the International Conference on Fairness, Accountability, and Transparency (FAccT)",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Counterfactual Fairness",
+            "Invariant Risk Minimization"
+        ],
+        "related papers": "Recent advancements in counterfactual fairness have extended beyond statistical notions to include causal modeling scenarios such as counterfactual inference and causal effect estimation \\cite{kusner2017counterfactual,arjovsky2019invariant}. Methods leveraging invariant risk minimization concepts for domain generalization \\cite{guo2021out,ahuja2020invariant,krueger2020out} have informed our approach in learning representations with causal consistency across diverse sensitive subgroups.",
+        "comparisons with related methods": "While most counterfactual fairness interventions rely heavily on prior causal knowledge, our method uniquely circumvents these dependencies, using counterfactual generation and invariant learning to address biases even in the absence of precise causal models."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This work proposes a scalable framework designed to ensure counterfactual fairness in machine learning predictors when the true causal model is unknown or incomplete, leveraging innovative representation learning strategies under uncertain causal dependencies.",
+        "research purpose": "To establish a method for enforcing counterfactual fairness in machine learning models without explicit reliance on known causal structures.",
+        "research challenge": "The primary challenge lies in achieving fairness in predictions when the data lacks a clear causal model, which is critical for ensuring non-discriminatory decision-making processes.",
+        "method summary": "The framework integrates counterfactual inference methods by generating alternative data using auto-encoding techniques and applies invariant risk minimization to formulate unbiased predictive representations.",
+        "conclusion": "This method represents a significant advancement in fairness research, especially pertinent for applications in high-impact areas lacking comprehensive causal models for data interpretation."
+    },
+    "Method": {
+        "description": "The proposed framework, \\mymodel, leverages counterfactual data augmentation and invariant risk minimization to develop predictive models resilient to unfair biases, even without precise causal models.",
+        "problem formultaion": "How can machine learning models ensure fair predictions when the underlying causal relationships in data are not explicitly known or are incorrect?",
+        "feature processing": "Counterfactual data is generated to enhance the dataset with inferred alternative scenarios, aiming to decouple feature impacts from sensitive attributes without explicit causal mappings.",
+        "model": "The model consists of two components: an encoder-decoder structure for data augmentation and a feed-forward neural network for learning fair documented representations without sensitive biases.",
+        "tasks": [
+            "Generate counterfactual instances that simulate varied unaffected scenarios",
+            "Learn invariant representations through shared distribution characteristics",
+            "Predict targeted outcomes with minimized systemic bias"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The method maintains computational feasibility by balancing the fairness constraints with standard data training cycles, thus not significantly burdening the model complexity beyond traditional models.",
+        "algorithm step": "1. Encode observational data into latent representations. 2. Use a decoder to reconstruct plausible data instances minus biased attributes. 3. Implement invariant loss regularization ensuring robust generalization of fair predictions."
+    },
+    "Experiments": {
+        "datasets": [
+            "Law School dataset",
+            "UCI Adult dataset",
+            "Synthetic data generated under controlled causal assumptions"
+        ],
+        "baselines": [
+            "Constant Predictor",
+            "Full Predictor",
+            "Unaware Predictor",
+            "Counterfactual Fairness Predictor (\\cfpa and \\cfpb)"
+        ],
+        "evaluation metric": "Wasserstein-1 distance and Maximum Mean Discrepancy (MMD) for measuring fairness; RMSE and accuracy for performance evaluation",
+        "setup": "Experiments on real-world and synthetic datasets, evaluated under different scenarios of known and unknown causal models.",
+        "hyperparameters": "Various trade-off parameters including $\\alpha$, $\\beta$, and $\\lambda$ were tuned to optimize fairness and prediction accuracy.",
+        "results": "The framework significantly outperformed baseline methods in fairness metrics on real-world datasets, achieving lower MMD and Wasserstein distances.",
+        "performance": "The results demonstrate that \\mymodel performs robustly in both constructing fair representations and maintaining high prediction accuracy.",
+        "analysis": "Results show the potential of \\mymodel to alleviate issues associated with reliance on predefined causal models by generating valid representations across sensitive attributes.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\mymodel successfully integrates counterfactual data generation with invariant learning to advance fairness in predictive models independently of rigid causal assumptions.",
+        "future work": "Exploring applications in domains with missing or imperfect data and broadening implementation across varied sensitive subgroup distributions."
+    }
+}

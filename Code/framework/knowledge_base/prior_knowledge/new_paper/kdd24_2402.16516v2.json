@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Generative Pretrained Hierarchical Transformer for Time Series Forecasting",
+        "authors": [
+            "Anonymous Authors"
+        ],
+        "affiliations": [
+            "Affiliation1",
+            "Affiliation2"
+        ],
+        "abstract": "In this work, we propose GPHT, a generative pretrained hierarchical transformer model for time series forecasting, capable of generalizing across diverse data scenarios. By constructing a mixed dataset using channel-independent assumptions and leveraging auto-regressive optimization, GPHT demonstrates superiority in capturing temporal dependencies, evidenced by extensive experiments on benchmark datasets, surpassing state-of-the-art models.",
+        "keywords": [
+            "Time Series Forecasting",
+            "Generative Pretraining",
+            "Hierarchical Transformer",
+            "Temporal Dependencies"
+        ],
+        "year": "2023",
+        "venue": "",
+        "doi link": null,
+        "method name": "GPHT"
+    },
+    "relate work": {
+        "related work category": [
+            "Time Series Forecasting",
+            "Self-supervised Pretraining in Time Series Modeling"
+        ],
+        "related papers": "[64] Box GEP., Jenkins GM. Some observations on a paper by Chatfield. J R Stat Soc Ser C Appl Stat 17: 349–365.\n[65] Zhang GP. Time series forecasting using a hybrid ARIMA and neural network model. Neurocomputing 50: 159–175.",
+        "comparisons with related methods": "Through the use of hierarchical transformers and an iterative residual learning strategy, GPHT addresses the limitations of existing generative models, which often struggle with generalizability across datasets due to limited training data and architecture constraints, surpassing both discriminative and generative pretraining methods."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces GPHT, a generative pretrained hierarchical transformer model designed to enhance time series forecasting. Employing a mixed dataset and auto-regressive technique, GPHT showcases superior adaptation to various scenarios, achieving promising results against leading models.",
+        "research purpose": "Enhance time series forecasting by generalizing a unified model across multiple datasets and scenarios using novel transformer architectures.",
+        "research challenge": "Addressing dataset scale limitations and temporal dependency modeling limitations common in existing forecasting methodologies.",
+        "method summary": "The GPHT employs a novel hierarchical transformer backbone with token-level representations and auto-regressive pretraining on a mixed dataset, allowing improved forecasting accuracy and generalization across data scenarios.",
+        "conclusion": "GPHT significantly improves forecasting accuracy and adaptability, showing superior performance in both zero-shot and fine-tuned evaluations, successfully capturing shared temporal patterns across diverse datasets."
+    },
+    "Method": {
+        "description": "GPHT utilizes a generative pretrained model founded on a novel hierarchical transformer structure applied to time series forecasting, enhancing temporal dependency recognition and dataset generalization.",
+        "problem formultaion": "Given a multivariate time series input, forecast future values using an enhanced model design and pretraining strategies.",
+        "feature processing": "Time series data are tokenized for efficient model training, recovering intrinsic temporal patterns and reducing noise influences.",
+        "model": "The backbone model uses multi-stage hierarchical transformers, with pooled max sampling learning factors across different temporal scales.",
+        "tasks": [
+            "Time Series Forecasting"
+        ],
+        "theoretical analysis": null,
+        "complexity": "GPHT maintains a medium-size computational footprint while offering performance rivaling larger models, with efficient training cycles due to straightforward optimization objectives.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "ETT",
+            "Electricity",
+            "Exchange",
+            "Traffic",
+            "Weather"
+        ],
+        "baselines": [
+            "PatchTST",
+            "FPT",
+            "SimMTM",
+            "TimeMAE",
+            "iTransformer",
+            "TimesNet",
+            "DLinear"
+        ],
+        "evaluation metric": "Mean Squared Error (MSE)",
+        "setup": "Implemented using the ADAM optimizer and evaluated based on MSE/MAE metrics. GPHT models were fine-tuned on GPUs with adequate resources for comprehensive result collection.",
+        "hyperparameters": "Token length of 48, four-stage transformers, lookback window length supports of 336, and a max input length of 7.",
+        "results": "GPHT achieved significant MSE reductions, around 9.2% on Exchange and 3% on ETTh1 datasets, outperforming leading baselines, demonstrating adaptability and accuracy in forecasting tasks.",
+        "performance": "The model effectively managed diverse predictive tasks, leading to pronounced improvements in short-term forecasting horizons, although accuracy decreased for significantly extended forecast spans.",
+        "analysis": "Experiments consistently show GPHT outperforming other models, benefiting from its architecture and pretraining strategies, effectively addressing variations across temporal scales and datasets.",
+        "ablation study": "Examinations validate the hierarchical design's utility across temporal scales, with noted improvements upon incorporation of pretraining. Evidential progress in adaptability to mixed data scenarios was observed."
+    },
+    "conclusion": {
+        "summary": "GPHT is evidenced to leverage generative pretraining with hierarchical transformers effectively in forecasting, outperforming state-of-the-art models.",
+        "future work": "Further exploration of dataset heterogeneities for optimized pretraining and potential domain-specific adaptations of GPHT."
+    }
+}

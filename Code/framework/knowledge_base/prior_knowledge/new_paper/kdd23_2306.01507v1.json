@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "DynEformer: Robust and Accurate Workload Prediction in Dynamic Multi-Tenant Edge-Cloud Platforms",
+        "authors": [
+            "H. Sun",
+            "Y. Zhao",
+            "Z. Chen"
+        ],
+        "affiliations": [
+            "Shanghai Jiao Tong University",
+            "Paiou Cloud Computing"
+        ],
+        "abstract": "This paper introduces DynEformer, a novel workload prediction model tailored for dynamic multi-tenant edge cloud platforms (MT-ECP). Leveraging the capabilities of a transformer, DynEformer incorporates global pooling and static context awareness to accommodate the unpredictable nature of MT-ECP workloads.",
+        "keywords": [
+            "Workload Prediction",
+            "Edge Cloud",
+            "Transformer",
+            "Global Pooling",
+            "Static Context Awareness"
+        ],
+        "year": "2023",
+        "venue": "KDD",
+        "doi link": "https://doi.org/10.1145/3545171.3546476",
+        "method name": "DynEformer"
+    },
+    "relate work": {
+        "related work category": [
+            "Workload Analysis",
+            "Encoder-Decoder Predictors"
+        ],
+        "related papers": "[1] Gao et al., 2020, [2] Yu et al., 2019, [3] Jayakumar et al., 2020",
+        "comparisons with related methods": "DynEformer outperforms both traditional clustering and RNN-based models by employing a novel global pooling technique that improves prediction robustness and accuracy."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes DynEformer, a model designed to handle the unpredictability of workloads in multi-tenant edge cloud platforms by employing novel techniques like global pooling.",
+        "research purpose": "To improve workload prediction accuracy and robustness in dynamic MT-ECP environments, accommodating scenarios like application switching and new entity introduction.",
+        "research challenge": "Handling concept drift and cold start in dynamic multi-tenant environments with evolving workload patterns.",
+        "method summary": "DynEformer leverages a transformer-based architecture enhanced with a global pooling layer and static context awareness for improved workload prediction.",
+        "conclusion": "The framework substantially enhances prediction accuracy and adaptability in dynamic edge cloud environments, exceeding existing models in performance across various datasets."
+    },
+    "Method": {
+        "description": "DynEformer is a transformer-based workload prediction model that integrates global pooling and static context awareness.",
+        "problem formultaion": "Predicting workload fluctuations in dynamic MT-ECP environments with considerations for changing deployments and infrastructure heterogeneities.",
+        "feature processing": "Incorporates time-series decomposition and VaDE clustering for global pooling, and exploits static infrastructure attributes for enhanced context awareness.",
+        "model": "Transformer-based encoder-decoder model with global pooling and static-context-aware layers.",
+        "tasks": [
+            "Workload prediction in MT-ECP",
+            "Application switching handling",
+            "New entity integration"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The model effectively balances the computational overhead with improved prediction accuracy through tailored pooling and attention mechanisms.",
+        "algorithm step": "1. Decompose workloads using STL. 2. Extract seasonal components for global pooling. 3. Implement VaDE for clustering. 4. Construct DynEformer with encoder-decoder incorporating GP and SA layers."
+    },
+    "Experiments": {
+        "datasets": [
+            "ECW",
+            "Azure"
+        ],
+        "baselines": [
+            "Autoformer",
+            "Informer",
+            "Deep Transformer",
+            "MQRNN",
+            "DeepAR",
+            "VaRDE-LSTM"
+        ],
+        "evaluation metric": "MSE, MAE",
+        "setup": "Datasets were split chronologically; model evaluated under scenarios with application switching and new entities.",
+        "hyperparameters": "Learning rate: 10^-4, Batch size: 256, Token length: 12, GP blocks: 2, Decoder layers: 1.",
+        "results": "DynEformer consistently outperformed baselines with significant MSE and MAE reductions across datasets, particularly in dynamic scenarios like app switching.",
+        "performance": "Achieved 42% improvement over baselines in workload prediction accuracy.",
+        "analysis": "Global pooling effectively captured workload patterns, reducing the impact of concept drift and cold start.",
+        "ablation study": "Revealed the critical role of GP and SA layers, contributing markedly to improving model performance under various conditions."
+    },
+    "conclusion": {
+        "summary": "DynEformer integrates innovative methods like global pooling to address dynamic workload challenges prevalent in MT-ECP, achieving significant performance improvements.",
+        "future work": "Explore auto-update mechanisms for dynamic global pooling to sustain long-term prediction capabilities."
+    }
+}

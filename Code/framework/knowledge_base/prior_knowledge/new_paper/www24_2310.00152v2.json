@@ -1,0 +1,72 @@
+{
+    "meta_data": {
+        "title": "Optimizing Input-Dependent Components of Prompts for Personalized Text Generation",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Institution of Artificial Intelligence"
+        ],
+        "abstract": "We propose a framework to optimize input-dependent components of prompts for personalized text generation, targeting practical scenarios where access to large language model (LLM) parameters is restricted. By learning to rewrite prompts based on user's context, we achieve enhanced generation performance on diverse datasets, leveraging supervised learning and reinforcement learning (RL) techniques.",
+        "keywords": [
+            "Personalized Text Generation",
+            "Reinforcement Learning",
+            "Prompt Engineering",
+            "Large Language Models",
+            "Natural Language Processing"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the Conference on Natural Language Processing Advances",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Personalized Text Generation",
+            "Prompt Learning"
+        ],
+        "related papers": "Li and Tuzhilin use self-attentive recursive autoencoders for review generation. LaMP provides benchmarks for personalized language models. Zhou et al. generate prompt instructions using a prompting LLM.",
+        "comparisons with related methods": "Unlike prior works that optimize the input-independent instruction component of prompts, our approach directly focuses on input-dependent components, chronicling a distinctly larger search space."
+    },
+    "high_level_summary": {
+        "summary of this paper": "We present a method to personalize text generation by optimizing input-dependent components of prompts tailored for frozen large language models.",
+        "research purpose": "To enhance text generation performance by optimizing prompts when model parameters cannot be accessed.",
+        "research challenge": "Input-dependent components of prompts involve a larger search space, requiring innovative techniques to optimize.",
+        "method summary": "We utilize supervised and reinforcement learning to rewrite prompting components specific to user inputs, holistically enhancing text generation performance.",
+        "conclusion": "The proposed SL-RL paradigm for rewriting prompts shows notable improvements over existing methods in generating personalized text."
+    },
+    "Method": {
+        "description": "Our methodology focuses on rewriting prompt components based on the user's immediate and personal contexts.",
+        "problem formultaion": "We aim to generate personalized documents using frozen LLMs by only modulating the prompting mechanism.",
+        "feature processing": null,
+        "model": "The model employed is a supervised sequence-to-sequence framework followed by reinforcement learning optimization.",
+        "tasks": [
+            "Personalized Document Generation",
+            "Prompt Optimization"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The RL paradigm increases complexity due to the expanded action space from sequencing tokens.",
+        "algorithm step": "1. Generate random prompt variants.\n2. Use best-performing variants as labels for supervised learning.\n3. Apply RL to refine prompt rewriting."
+    },
+    "Experiments": {
+        "datasets": [
+            "Avocado Email Data",
+            "Amazon Review Data",
+            "Reddit Comments"
+        ],
+        "baselines": [
+            "Original Prompt Configuration"
+        ],
+        "evaluation metric": "BLEU, ROUGE-1, ROUGE-2, ROUGE-L",
+        "setup": "Annotate past user data to formulate initial prompts. Proceed with SL using generated labels, followed by RL fine-tuning on held-out user data.",
+        "hyperparameters": "Optimizer: Adafactor; Learning Rate: 0.001; RL Algorithm: PPO; SL-Algorithm: T5-11B",
+        "results": "The SL-RL prompted versions outperform the original and independently rewrited prompts across all performance metrics.",
+        "performance": "Significant improvements in BLEU and ROUGE scores, indicating better alignment with ground-truth documents.",
+        "analysis": "RL-learned prompts introduce new tokens and reorder existing ones for better relevance.",
+        "ablation study": "Removing less relevant components shows a decrease in performance, underscoring their necessity."
+    },
+    "conclusion": {
+        "summary": "Our SL-RL approach to input-dependent prompt rewriting for large language models significantly boosts personalized text generation.",
+        "future work": "Explore direct learning of other prompt components like instructions and ranked entries."
+    }
+}

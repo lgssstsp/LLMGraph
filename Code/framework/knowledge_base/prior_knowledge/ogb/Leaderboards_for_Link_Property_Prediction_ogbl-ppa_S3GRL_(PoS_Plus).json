@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ppa",
+    "Dataset Link": "../linkprop/#ogbl-ppa",
+    "Rank": 11,
+    "Method": "S3GRL (PoS Plus)",
+    "External Data": "No",
+    "Test Accuracy": "0.4242 ± 0.0180",
+    "Validation Accuracy": "0.6512 ± 0.0109",
+    "Contact": "mailto:paul.louis@ontariotechu.net",
+    "Paper Link": "https://arxiv.org/pdf/2301.12562.pdf",
+    "Code Link": "https://github.com/venomouscyanide/S3GRL_OGB",
+    "Parameters": "32,270,001",
+    "Hardware": "GeForce GTX 1080 Ti (11 GB)",
+    "Date": "May 2, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ppa/S3GRL_(PoS_Plus).pdf",
+    "Paper Summary": "The paper presents a novel framework called **Scalable Simplified Subgraph Representation Learning (S3GRL)**, designed to improve the efficiency of link prediction by addressing the high computational demands of traditional Subgraph Representation Learning approaches (SGRLs).\n\n### Key Components and Model Design Aspects of S3GRL:\n\n1. **Subgraph Sampling Strategy**:\n   - S3GRL employs a subgraph sampling strategy, denoted as **Ψ(G, T)**, which takes the graph \\( G \\) and a target pair \\( T = \\{u, v\\} \\) to extract the adjacency matrix \\( A_{uv} \\) of the enclosing subgraphs. \n   - The framework can handle various types of subgraphs, including \\( h \\)-hop closing subgraphs and random-walk sampled subgraphs.\n\n2. **Diffusion Operator**:\n   - The second component, **Φ(A_{uv})**, takes the subgraph's adjacency matrix and computes its diffusion matrix \\( M_{uv} \\). \n   - The diffusion operators can be of different classes, such as adjacency/Laplacian operators or triangle/motif-based operators, allowing for capturing diverse structural features of the graph.\n\n3. **Node Representation Calculation**:\n   - Upon obtaining the sample adjacency matrix and diffusion matrix, S3GRL computes the node representation for the subgraph using the equation:\n     \\[\n     Z_u^{(i v)} = M_{u}^{(i v)} X_{u}^{(i v)}\n     \\]\n     This captures the representation of the target nodes by leveraging the computed matrices.\n\n4. **Joint Representation Formation**:\n   - The framework concatenates representations from different sampling-operator pairs:\n     \\[\n     Z_{uv} = Z_u^{(i v)}\n     \\]\n   - This joint representation incorporates information from various diffusion steps and node features, providing a comprehensive view around the target pairs.\n\n5. **Graph Pooling Function**:\n   - S3GRL defines pooling functions to aggregate the pooled nodes’ representations, specifically using:\n     \\[\n     q_{uv} = \\text{pool}(\\sigma(Z_{uv} W))\n     \\]\n     Here, \\( \\sigma \\) is a non-linearity function applied to the joint matrix followed by a transformation through a learnable weight matrix \\( W \\), yielding a compact representation of the link.\n\n6. **Link Probability Computation**:\n   - The computed representation \\( q_{uv} \\) is then transformed into a link probability using a learnable non-linear function:\n     \\[\n     P_{uv} = Ω(q_{uv})\n     \\]\n     This step finalizes the link prediction task.\n\n### Summary:\nS3GRL effectively combines a flexible sampling strategy and diffusion operator to create node representations that maintain the complexity of traditional SGRLs while significantly simplifying the operational overhead. This architecture enables rapid inference and training, sustaining high performance in link prediction tasks."
+}

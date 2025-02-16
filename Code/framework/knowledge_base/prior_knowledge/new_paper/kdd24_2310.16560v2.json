@@ -1,0 +1,91 @@
+{
+    "meta_data": {
+        "title": "Graph Label Noise: Mitigating Impact of Graph Heterophily with Propagation and Reconstruction",
+        "authors": [
+            "Authors:",
+            "A1",
+            "A2"
+        ],
+        "affiliations": [
+            "Affiliation 1",
+            "Affiliation 2"
+        ],
+        "abstract": "This research investigates mitigating the detrimental impacts of graph label noise in heterophilous data using graph reconstruction and label propagation approaches. We enhance the homophily in graphs to handle noise more efficiently, then train a graph neural network for accurate classification.",
+        "keywords": [
+            "graph label noise",
+            "heterophily",
+            "graph reconstruction",
+            "label propagation"
+        ],
+        "year": "2023",
+        "venue": "Venue Name for Publication",
+        "doi link": "https://doi.org/10.XXXX/XXXX",
+        "method name": "\\ours"
+    },
+    "relate work": {
+        "related work category": [
+            "Deep Learning with Noisy Labels",
+            "Learning GNNs with Noisy Labels"
+        ],
+        "related papers": "[1] Leskovec J, Huttenlocher D, Kleinberg J. \"Graphs in the real world,\" 2010. [2] Zitnik M, Feng X, Leskovec J. \"Biomolecular structures,\" 2017. [3] Hogan A, et al. \"Knowledge graphs,\" 2021.",
+        "comparisons with related methods": "The paper presents significant comparisons between existing methods for graph label noise handling, such as LPM, NRGNN, and their dependencies on homophily assumptions that limit applicability in heterophilous graphs."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces a novel method to mitigate the impact of graph label noise using a combination of homophily-driven graph reconstruction and label propagation. It leverages existing noisy data to create a robust learning model aimed at improving classification tasks performed over heterophilous graphs.",
+        "research purpose": "To explore and address the persistence of graph label noise in heterophilous environments by utilizing graph homophily and label propagation efficiently.",
+        "research challenge": "Existing methods rely heavily on the homophily assumption, which can reduce effectiveness in environments with high heterophily.",
+        "method summary": "The paper proposes \\ours, an iterative method using graph reconstruction and label propagation to refine graph labels, rectify noise, and enhance classification accuracy.",
+        "conclusion": "\\ours method yields significant improvements in performance against label noise compared to existing models, demonstrating the effectiveness of combining graph reconstruction and label propagation."
+    },
+    "Method": {
+        "description": "\\ours incorporates restructuring heterophilous graphs into more homophilous ones through effective graph reconstructions and introduces a refined label propagation technique to rectify noisy labels iteratively throughout the training cycles.",
+        "problem formultaion": "Handling graph label noise in an environment with arbitrary heterophily.",
+        "feature processing": "No specialized feature processing was indicated, emphasizing the preservation and restructuring of graph topology instead.",
+        "model": "A graph neural network incorporating refined graph reconstruction and label propagation strategy.",
+        "tasks": [
+            "Graph Reconstruction",
+            "Label Propagation",
+            "Node Classification"
+        ],
+        "theoretical analysis": "Theoretical backing for the denoising effect via propagation and an analysis of the generalization error for label noise predictions in heterophilous graphs.",
+        "complexity": "The algorithm reduces complexity to linear time using efficient computations of graph propagation and reconstruction modules.",
+        "algorithm step": "1. Input graph and labels; 2. Conduct graph reconstruction to enhance homophily; 3. Apply label propagation to rectify noisy labels; 4. Iterate reconstruction and propagation steps for sample refinement purposes."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "Chameleon",
+            "Cornell",
+            "Wisconsin",
+            "Texas",
+            "Actor",
+            "Penn94",
+            "arXiv-year",
+            "snap-patent"
+        ],
+        "baselines": [
+            "GCN",
+            "GloGNN",
+            "H2GCN",
+            "NRGNN",
+            "LPM",
+            "RTGNN",
+            "Co-teaching+",
+            "Backward",
+            "ERASE",
+            "CGNN"
+        ],
+        "evaluation metric": "Accuracy on graph node classification task.",
+        "setup": "Performance comparison with related works on clean and noisy graph datasets. Varied noise ratios and types (uniform, flip) assessed.",
+        "hyperparameters": "Study included optimizing weight decay, learning rate, dropout, among other training-specific parameters.",
+        "results": "\\ours achieved superior performance and better robustness against noise when compared to a variety of baselines across a range of datasets.",
+        "performance": "Significant improvement shown in label noise environments across heterogeneous datasets.",
+        "analysis": "\\ours demonstrated consistent performance improvements in both clean and noisy environments with substantial label noise.",
+        "ablation study": "Evaluated the impact of the core modules of \\ours, confirming performance contributions from each, especially of label propagation and graph reconstruction."
+    },
+    "conclusion": {
+        "summary": "In this paper, we introduce \\ours, which effectively employs graph reconstruction and label propagation to ameliorate graph label noise effects. Our experiments demonstrate its robustness and impressive performance against existing methods across varied datasets with significant label noise.",
+        "future work": "Further exploring unsupervised scenarios where no clean labels are initially available, and extending methods to address noisy graph features or topology."
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "meta_data": {
+        "title": "Consistency and Discrepancy-based Contrastive Learning for Tripartite Graph-based Recommendation",
+        "authors": [
+            "Bai, Jiachen",
+            "Zhang, Zepu",
+            "Cao, Dian",
+            "Zhu, Yaochen",
+            "Chen, Chen",
+            "Sun, Chenguang"
+        ],
+        "affiliations": [
+            "College of Computer Science and Technology, Nanjing University of Aeronautics and Astronautics, Nanjing, 211106, China.",
+            "College of Computer Information and Networks, Jiangnan University, Wuxi, 214122, China.",
+            "College of Computer Information and Networks, Jiangnan University, Wuxi, 214122, China.",
+            "College of Computer Science and Technology, Nanjing University of Aeronautics and Astronautics, Nanjing, 211106, China.",
+            "College of Computer Information and Networks, Jiangnan University, Wuxi, 214122, China.",
+            "College of Computer Information and Networks, Jiangnan University, Wuxi, 214122, China."
+        ],
+        "abstract": "We introduce CDR, a novel tripartite graph-based recommendation method enhancing cold-start situations in recommendation systems.",
+        "keywords": [
+            "Tripartite Graph-based Recommendation",
+            "Contrastive Learning",
+            "Consistency Metric",
+            "Discrepancy Metric"
+        ],
+        "year": "2023",
+        "venue": "Neural Information Processing Systems (NeurIPS)",
+        "doi link": null,
+        "method name": "CDR"
+    },
+    "relate work": {
+        "related work category": [
+            "Tripartite Graph-Based Recommendation",
+            "Pre-Training and Fine-Tuning in Recommendation"
+        ],
+        "related papers": "Guo et al. \\cite{guo2020group} proposed a model using a self-attention mechanism for group recommendations. Cao et al. \\cite{cao2018attentive} introduced AGREE, merging attention mechanisms with neural collaborative filtering.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper proposes a novel tripartite graph-based recommendation method named CDR, which utilizes consistency and discrepancy metrics to improve cold-start recommendation capabilities.",
+        "research purpose": "To mitigate data sparsity and cold-start challenges in tripartite graph-based recommendations through novel approach.",
+        "research challenge": null,
+        "method summary": "CDR employs contrastive learning principles to integrate consistency and discrepancy metrics, refining node representations.",
+        "conclusion": "CDR effectively addresses cold-start scenarios enhancing performance alongside standard recommendation tasks."
+    },
+    "Method": {
+        "description": "CDR leverages both pre-training and fine-tuning steps using metrics deriving from member interactions and tuple-member affiliations.",
+        "problem formultaion": "To generate a top-K list of recommendations using pre-training on member interactions followed by fine-tuning on tuple interactions.",
+        "feature processing": "n/a",
+        "model": "CDR effectively models tripartite interactions by refining node representation learning through contrastive learning using consistency and discrepancy metrics.",
+        "tasks": [
+            "Tripartite graph-based recommendation",
+            "Cold-start problem mitigation"
+        ],
+        "theoretical analysis": null,
+        "complexity": "n/a",
+        "algorithm step": "CDR employs consistency and discrepancy metrics pre-calculated with graph convolutional networks."
+    },
+    "Experiments": {
+        "datasets": [
+            "Mafengwo",
+            "Youshu",
+            "Last-FM"
+        ],
+        "baselines": [
+            "BPR",
+            "LINE",
+            "NGCF",
+            "SimGCL",
+            "XSimGCL",
+            "ALDI",
+            "BUIR",
+            "DAM",
+            "BGCN",
+            "AGFN",
+            "AGREE",
+            "HCR",
+            "GroupIM",
+            "CrossCBR",
+            "ConsRec",
+            "SBPR",
+            "DiffNet",
+            "SocialLGN"
+        ],
+        "evaluation metric": "F1-Score@$K$, Precision@$K$, Recall@$K$, and NDCG@$K$",
+        "setup": "Experiments focus on datasets with sparse or nonexistent tuple interactions to validate the effectiveness of CDR.",
+        "hyperparameters": "Temperature hyperparameters used were varied for tasks based on dataset conditions to improve model robustness against noise.",
+        "results": "CDR showed significant performance improvements over baseline models, especially in sparse tuple interaction scenarios.",
+        "performance": "CDR's preeminence arises from the utility of consistency and discrepancy metrics refining node relationship learning.",
+        "analysis": "Ablation studies demonstrate the significance of each model component, evidencing CDR's unique advantages.",
+        "ablation study": "Various components and metric effects validated, highlighting necessity of integrated approaches for optimal performance."
+    },
+    "conclusion": {
+        "summary": "The proposed CDR model demonstrates robustness and enhanced performance in cold-start scenarios within tripartite graph-based recommendation systems by utilizing consistency and discrepancy metrics.",
+        "future work": null
+    }
+}

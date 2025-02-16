@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-biokg",
+    "Dataset Link": "../linkprop/#ogbl-biokg",
+    "Rank": 2,
+    "Method": "ComplEx^2",
+    "External Data": "No",
+    "Test Accuracy": "0.8583 ± 0.0005",
+    "Validation Accuracy": "0.8592 ± 0.0004",
+    "Contact": "mailto:l.loconte@sms.ed.ac.uk",
+    "Paper Link": "https://arxiv.org/abs/2305.15944",
+    "Code Link": "https://github.com/april-tools/gekcs",
+    "Parameters": "187,648,000",
+    "Hardware": "NVIDIA RTX A6000 (48GB)",
+    "Date": "Oct 28, 2023",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-biokg/ComplEx^2.pdf",
+    "Paper Summary": "The paper \"How to Turn Your Knowledge Graph Embeddings into Generative Models\" introduces a novel approach for transforming state-of-the-art knowledge graph embedding (KGE) models, like CP, RESCAL, TUCKER, and COMPLEX, into generative models known as Generative KGE Circuits (GeKCs).\n\n### Model Design Aspects:\n\n1. **Interpretation of KGE Models**:\n   - The existing KGE models are reinterpreted as structured computational graphs termed *circuits*. This allows for efficient marginalization over possible triples, transforming each KGE's score function into this new framework.\n   \n2. **Generative KGE Circuits (GeKCs)**:\n   - GeKCs are designed to model probability distributions over triples rather than just scoring them. They utilize smooth and decomposable circuits to encode these distributions effectively, permitting exact maximum-likelihood estimation (MLE) while enabling efficient sampling of new triples.\n\n3. **Activation Restrictions**:\n   - Two primary methods to obtain GeKCs from traditional KGE models are discussed:\n     - **Non-negative Restriction**: This involves constraining the values of the activations within the circuit to be non-negative. This approach transforms the KGE score functions into probability distributions over triples.\n     - **Squaring**: This method involves squaring the score functions of the existing KGE models, ensuring that the outputs remain non-negative and further facilitating the generative modeling aspect of GeKCs.\n\n4. **Integration of Logical Constraints**:\n   - The paper emphasizes the ability of GeKCs to inherently satisfy logical constraints governing the triples. The circuits can be designed such that the predicted triples adhere to specified constraints, crucial for applications in domains like biomedical knowledge graphs.\n\n5. **Efficient Marginalization**:\n   - The smooth and decomposable properties of the circuits allow for efficient computation of marginal probabilities and the partition function (Z), which is essential for normalization in the context of probability distributions.\n\n6. **Parameter Initialization and Training Efficiency**:\n   - GeKCs offer a simpler and computationally efficient approach to train on large knowledge graphs by reducing the complexity associated with traditional KGE models. The design allows for parameter initialization based on previously learned KGE models, further improving training speed and efficiency.\n\nBy reinterpreting KGE score functions as generative circuits and implementing structured methodologies for ensuring logical adherence and computational tractability, the proposed models present a novel pathway to enhance the capabilities of knowledge graph models in reasoning and link prediction tasks."
+}

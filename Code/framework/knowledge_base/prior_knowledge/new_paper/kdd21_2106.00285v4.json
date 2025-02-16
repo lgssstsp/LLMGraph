@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Shapley Counterfactual Credits for Multi-Agent Reinforcement Learning",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous affiliation"
+        ],
+        "abstract": "This paper addresses the problem of credit assignment in Multi-Agent Reinforcement Learning (MARL) by proposing a novel framework called Shapley Counterfactual Credits. By utilizing Shapley Value from cooperative game theory, this method offers a fair distribution of credits to participating agents. To reduce computational complexity, Monte Carlo sampling is applied for approximating Shapley Value, achieving polynomial growth. Extensive experiments validate the efficacy of this approach in challenging StarCraft II benchmark scenarios.",
+        "keywords": [
+            "Multi-Agent Reinforcement Learning",
+            "Shapley Value",
+            "Counterfactual Credit Assignment",
+            "StarCraft II"
+        ],
+        "year": "2023",
+        "venue": "Anonymous Conference",
+        "doi link": null,
+        "method name": "Shapley Counterfactual Credits"
+    },
+    "relate work": {
+        "related work category": [
+            "Implicit Credit Assignment",
+            "Explicit Credit Assignment",
+            "Shapley Value and Approximate SV"
+        ],
+        "related papers": "VDN~\\cite{sunehag2018value}, QMIX~\\cite{rashid2018qmix}, COMA~\\cite{foerster2018counterfactual}, SQDDPG~\\cite{wang2020shapleyq}, QPD~\\cite{yang2020q}",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces an innovative solution for the credit assignment problem in Multi-Agent Reinforcement Learning (MARL) by utilizing the Shapley Value from cooperative game theory. By coupling this with a counterfactual method, the proposed approach effectively assigns credit to each agent corresponding to their contribution in a cooperative environment. Monte Carlo sampling is employed to approximate the Shapley Value more efficiently, making it feasible to use in large-scale environments. Extensive experiments were conducted on StarCraft II benchmarks, demonstrating that this novel method outperforms state-of-the-art MARL algorithms in various complex scenarios.",
+        "research purpose": "To resolve the credit assignment problem in collaborative MARL environments by employing Shapley Value as a fair credit distribution mechanism.",
+        "research challenge": "The computational complexity of Shapley Value as it grows factorially and the design of efficient approximation techniques.",
+        "method summary": "The method employs a counterfactual method with Shapley Value to fairly and accurately assign credits in MARL systems. It extends existing explicit credit assignment methods by applying a Monte Carlo sampling approach for efficient Shapley Value approximation, reducing computational complexity.",
+        "conclusion": null
+    },
+    "Method": {
+        "description": "Shapley Counterfactual Credits leverages Shapley Value to assess and allocate fair credits to agents based on their contributions in MARL tasks. The algorithm employs a counterfactual methodology to evaluate an agent's action impact and adjusts its assessment through Shapley Value computations, approximated via Monte Carlo sampling.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The model comprises a central critic and local agents aiming to optimize cooperation through the Shapley-based credit algorithm.",
+        "tasks": [
+            "Credit assignment in MARL",
+            "Curtailing computational intensity of Shapley Value computations"
+        ],
+        "theoretical analysis": null,
+        "complexity": "The method reduces the computational complexity of calculating Shapley Values from factorial to polynomial magnitude using Monte Carlo simulations.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "StarCraft II micromanagement challenge"
+        ],
+        "baselines": [
+            "VDN",
+            "QMIX",
+            "COMA",
+            "QTRAN",
+            "QPD",
+            "SQDDPG"
+        ],
+        "evaluation metric": "Win rates in various StarCraft II scenarios",
+        "setup": null,
+        "hyperparameters": "Batch size: 32, Replay buffer size: 1000, TD-loss discount: 0.99, Exploration episodes: 1000",
+        "results": "The method achieves superior performance on challenging StarCraft II maps, demonstrating higher win rates than existing baselines.",
+        "performance": "High performance in complex scenarios, achieving state-of-the-art win rates on maps like \\emph{3s5z} and \\emph{3s5z\\_vs\\_3s6z}.",
+        "analysis": "Shapley Counterfactual Credits effectively improves cooperative behaviors in MARL by precisely evaluating interactions among agents.",
+        "ablation study": "Ablation studies indicate that utilizing Shapley Value enhances stability and performance over simple counterfactual methods without it."
+    },
+    "conclusion": {
+        "summary": "The paper presents Shapley Counterfactual Credits, showing significant improvements in credit assignment for MARL tasks. It outperforms recent methods on benchmarks.",
+        "future work": "Exploring causal knowledge among agents to refine Shapley Value approximations and extending the method to competitive MARL environments."
+    }
+}

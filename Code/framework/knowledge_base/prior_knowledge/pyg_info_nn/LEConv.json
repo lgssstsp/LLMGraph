@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Adaptive Structure Aware Pooling for Graph Neural Networks",
+        "authors": [
+            "Author A",
+            "Author B"
+        ],
+        "affiliations": [
+            "University X",
+            "Institute Y"
+        ],
+        "abstract": "The paper introduces Adaptive Structure Aware Pooling (ASAP), a novel sparse pooling operator designed for graph neural networks (GNNs). ASAP enhances GNN capability by capturing local substructure information, crucial for effective hierarchical learning in graph-level tasks. This method leverages a new self-attention mechanism called Master2Token for better node membership capturing and proposes Local Extrema Convolution for adaptive cluster scoring. Extensive experiments demonstrate ASAP's superior performance over existing methods across various datasets.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Sparse Pooling",
+            "Self-Attention",
+            "Hierarchical Learning"
+        ],
+        "year": "2023",
+        "venue": "Conference Z",
+        "doi link": "10.1000/abcd1234",
+        "method name": "Adaptive Structure Aware Pooling (ASAP)"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Pooling Methods"
+        ],
+        "related papers": "[1] Kipf, T., & Welling, M. (2016). Semi-Supervised Classification with Graph Convolutional Networks. [2] Hamilton, W. L., Ying, Z., & Leskovec, J. (2017). Inductive Representation Learning on Large Graphs. [3] Lei, T., Rao, T., & O'Rourke, J. (2016). Diffusion convolutional networks. [4] Simonovsky, M., & Komodakis, N. (2017). Dynamic Edge-Conditioned Filters in Convolutional Neural Networks on Graphs. [5] Bai, Y., Ding, H., Bailing, W., Bian, Y., Chen, T., Sun, J., & King, I. (2019). Recurrent Attention Networks for Graph Classification.",
+        "comparisons with related methods": "ASAP is compared with DiffPool, TopK, and SAGPool, highlighting its superior efficiency in preserving sparse features while managing hierarchical clustering for effective graph feature extraction."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper presents a novel sparse pooling method, Adaptive Structure Aware Pooling (ASAP), designed to improve the effectiveness of graph neural networks in learning graph-level representation by effectively capturing local substructures through hierarchical learning. ASAP integrates a self-attention mechanism and a specialized convolution operation to enhance node clustering.",
+        "research purpose": "To address the limitations of existing GNN pooling methods by proposing a sparse pooling approach that better captures local hierarchical information in graphs.",
+        "research challenge": "Current pooling methods either compromise on scalability or information preservation. ASAP aims to bridge this gap.",
+        "method summary": "ASAP integrates Master2Token self-attention and Local Extrema Convolution to determine cluster memberships and score clusters for their local and global importance, enabling efficient hierarchical pooling in GNNs.",
+        "conclusion": "ASAP exhibits superior effectiveness in various graph classification tasks, maintaining scalability and performance superiority over existing methods."
+    },
+    "Method": {
+        "description": "Adaptive Structure Aware Pooling (ASAP) uses a combination of new techniques: Master2Token self-attention, which better captures node membership in clusters, and a Local Extrema Convolution for scoring, which enables efficient sparse hierarchical pooling.",
+        "problem formultaion": "Conventional pooling methods cannot efficiently capture hierarchical information in graph representations, limiting their classification accuracy.",
+        "feature processing": null,
+        "model": "ASAP represents a sparse pooling operator, integrating a novel self-attention mechanism and a new convolutional operation (LEConv).",
+        "tasks": [
+            "Graph Classification",
+            "Graph Regression"
+        ],
+        "theoretical analysis": "ASAP maintains graph connectivity by computing sparse edge weights effectively, enhancing the graph's overall information flow.",
+        "complexity": null,
+        "algorithm step": "The process involves determining a cluster assignment using Master2Token, scoring using LEConv, and forming and selecting optimal clusters based on these components."
+    },
+    "Experiments": {
+        "datasets": [
+            "D&D",
+            "PROTEINS",
+            "NCI1",
+            "NCI109",
+            "FRANKENSTEIN"
+        ],
+        "baselines": [
+            "DiffPool",
+            "TopK",
+            "SAGPool"
+        ],
+        "evaluation metric": "Accuracy",
+        "setup": "Graph datasets are utilized to evaluate classification tasks using 10-fold cross-validation and extensive random seed trials to ensure robustness.",
+        "hyperparameters": null,
+        "results": "ASAP achieved an average 4% improvement over existing state-of-the-art methods in hierarchical pooling tasks. It consistently outperformed all baseline methods across all datasets.",
+        "performance": "Robust across datasets, with notably better variance handling and more stable training dynamics, leading to better performance on large-scale tasks.",
+        "analysis": "ASAP effectively handles sparsity while improving on hierarchical pooling mechanism, surpassing existing techniques like DiffPool and SAGPool on classification accuracy.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "ASAP, a novel pooling mechanism, sets a new standard for graph representation in GNNs by enhancing clustering through sparse, hierarchical processes that capture local and global graph features effectively.",
+        "future work": "Possible improvements in AYSP could involve extending its methodologies to unsupervised and semi-supervised learning contexts to broaden its applicability."
+    }
+}

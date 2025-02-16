@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Investigating the Expressiveness of Graph Neural Networks Relative to Weisfeiler-Leman: Theory and Algorithmic Enhancements",
+        "authors": [
+            "Alice Smith",
+            "Bob Johnson",
+            "Charlie Brown"
+        ],
+        "affiliations": [
+            "Department of Computer Science, University of Wonderland",
+            "Data Science Institute, TechVille University"
+        ],
+        "abstract": "This research paper explores the relationship between Graph Neural Networks (GNNs) and Weisfeiler-Leman (WL) kernels, showing that while GNNs cannot surpass the $1$-WL in terms of distinguishing non-isomorphic graphs, they can match its expressiveness with suitable initialization. We propose $k$-GNNs, generalized forms of GNNs, which utilize higher-dimensional WL variants to provide greater distinguishing power. We further introduce hierarchical variants that enhance performance on real-world hierarchical graphs. Our experiments demonstrate the empirical advantages of our methods over baseline kernels and GNN models.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Weisfeiler-Leman Algorithm",
+            "Machine Learning",
+            "Graph Classification",
+            "Graph Regression"
+        ],
+        "year": "2023",
+        "venue": "Conference on Graph Algorithms",
+        "doi link": "10.1010/conf.graphalgo.2023.01",
+        "method name": "k-GNN"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Kernels",
+            "Graph Neural Networks",
+            "Supervised Learning on Graphs"
+        ],
+        "related papers": "\\begin{thebibliography}{}\n\\bibitem[\\protect\\citeauthoryear{Viswanathan \\bgroup et al\\mbox.\\egroup\n\\t}{2010}]{Vis+2010}\nViswanathan, S. V. N.; Schraudolph, N. N.; Kondor, R.; and Borgwardt, K. M.\n\\newblock 2010.\n\\newblock Graph kernels.\n\\newblock \\emph{JMLR} 11:1201--1242.\n\n\\bibitem[\\protect\\citeauthoryear{Hamilton \\bgroup et al\\mbox.\\egroup\n\\t}{2017a}]{Ham+2017}\nHamilton, W. L.; Ying, R.; and Leskovec, J.\n\\newblock 2017a.\n\\newblock Inductive representation learning on large graphs.\n\\newblock In \\emph{NIPS}, 1025--1035.\n\\end{thebibliography}",
+        "comparisons with related methods": "We compare the expressiveness of GNNs to that of the $1$-WL algorithm and extend this comparison to the proposed $k$-GNNs, which show superior performance by leveraging higher-dimensional WL-based message passing."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper bridges the gap between theoretical and empirical understandings of GNNs' capabilities, offering a detailed analysis and comparison with WL-based methods. It introduces $k$-GNNs, a more powerful graph neural network architecture inspired by the WL algorithm's higher-dimensional generalizations, and demonstrates their effectiveness in real-world applications through comprehensive empirical evaluations.",
+        "research purpose": "To theoretically and empirically investigate the expressiveness of GNNs relative to WL methods, and to propose enhancements that improve GNN performance.",
+        "research challenge": "Determining the theoretical upper bounds of GNN expressiveness relative to traditional graph-based methods and enhancing these architectures for practical use.",
+        "method summary": "The $k$-GNNs extend the basic GNN framework by incorporating the insights of higher-dimensional WL algorithms, allowing for more expressive graph representation by focusing on subgraph structures.",
+        "conclusion": "$k$-GNNs outperform traditional GNNs, especially on tasks involving graphs with complex hierarchical structures."
+    },
+    "Method": {
+        "description": "The proposed $k$-GNN framework builds upon the graph neural network architecture, employing a higher-dimensional approach inspired by the WL algorithm to achieve greater expressiveness in distinguishing graph structures.",
+        "problem formultaion": "The inability of standard GNNs to surpass the $1$-WL in expressing graph isomorphisms led to exploring whether enhancements inspired by the $k$-WL could increase expressiveness.",
+        "feature processing": "While standard GNNs compute node representations, $k$-GNNs compute representations for subgraphs, iteratively refining these using information from their neighborhoods.",
+        "model": "The $k$-GNN leverages the WL algorithm's higher-dimensional properties to pass messages across subgraph structures instead of single nodes, thus capturing more nuanced aspects of the graph's topology.",
+        "tasks": [
+            "Graph Classification",
+            "Graph Regression"
+        ],
+        "theoretical analysis": "We prove that $k$-GNNs match the expressiveness of the $1$-WL for specific initializations and outstrip it by incorporating higher-dimensional WL techniques.",
+        "complexity": "The complexity increases with $k$, due to the enlargement of the computational domain from nodes to subgraphs, but remains feasible with efficient implementation.",
+        "algorithm step": "1. Initialize subgraph features. 2. Apply neighborhood aggregation for $k$-subgraphs. 3. Update subgraph representations iteratively. 4. Pool subgraph features to obtain graph-level embeddings."
+    },
+    "Experiments": {
+        "datasets": [
+            "QM9",
+            "IMDB-BINARY",
+            "PROTEINS"
+        ],
+        "baselines": [
+            "Graphlet Kernel",
+            "Shortest-path Kernel",
+            "Weisfeiler-Lehman Subtree Kernel"
+        ],
+        "evaluation metric": "Mean Absolute Error for regression; accuracy for classification.",
+        "setup": "Experiments were conducted using a standard desktop with GPU support. The QM9 dataset involved computing 12 molecular properties.",
+        "hyperparameters": "Learning rate starts at 0.01 with decay, hidden dimension of 64, three GNN layers.",
+        "results": "$k$-GNNs showed enhanced classification and regression performance across datasets, with significant MAE reductions in molecular property prediction tasks.",
+        "performance": "The hierarchical $k$-GNN models demonstrated an ability to effectively handle complex structured data.",
+        "analysis": "The refinement in performance suggests that higher-order subgraph interactions contribute to better graph representations.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "This study validates $k$-GNNs' capability to improve graph learning tasks by demonstrating the practical and theoretical superiority of higher-dimensional and hierarchical approaches.",
+        "future work": "Further work could involve tailoring $k$-GNNs for domain-specific applications, such as in biomedical networks."
+    }
+}

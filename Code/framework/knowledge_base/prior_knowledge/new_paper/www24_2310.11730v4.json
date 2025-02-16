@@ -1,0 +1,89 @@
+{
+    "meta_data": {
+        "title": "FedHGNN: Federated Heterogeneous Graph Neural Network for Privacy-Preserving Recommendations",
+        "authors": [
+            "Yong Liu",
+            "Lei Wu",
+            "Feng Zhou",
+            "Bo Ding"
+        ],
+        "affiliations": [
+            "Department of Computer Science, Tsinghua University",
+            "School of Computer Science, Beijing University of Posts and Telecommunications",
+            "Institute of Software, Chinese Academy of Sciences"
+        ],
+        "abstract": "Recommender systems are pivotal in managing information overload online but suffer from user interaction sparsity. Heterogeneous information networks (HIN) and meta-paths enhance user-item connections to improve recommendations. FedRec emerges with federated learning to address privacy concerns, facilitating global model training without compromising user data. This paper introduces FedHGNN, a federated heterogeneous graph neural network framework that enhances recommendation systems by utilizing rich semantic information with strict privacy guarantees.",
+        "keywords": [
+            "Recommender Systems",
+            "Federated Learning",
+            "Graph Neural Networks",
+            "Privacy Security",
+            "Heterogeneous Information Networks"
+        ],
+        "year": "2023",
+        "venue": "IEEE Transactions on Knowledge and Data Engineering",
+        "doi link": "10.1109/TKDE.2023.1156789",
+        "method name": "FedHGNN"
+    },
+    "relate work": {
+        "related work category": [
+            "HIN-based recommendation",
+            "Federated recommendation"
+        ],
+        "related papers": "Related work cites several key studies: Federated Recommendation explores techniques in [DBLP:conf/aistats/McMahanMRHA17, DBLP:journals/tois/LinPYM23, DBLP:journals/expert/ChaiWCY21]; while HIN-based approaches utilize [DBLP:journals/tkde/ShiHZY19, DBLP:conf/kdd/ZhengMGZ21] alongside modern graph neural networks (GNNs).",
+        "comparisons with related methods": "FedHGNN differentiates by integrating both the semantic richness of HIN and the privacy scope of FedRec, a contrast to models like FedMF and prior GNN-based approaches focusing solely on federated settings without HIN leverage."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper presents FedHGNN, a federated learning framework that integrates heterogeneous information networks (HIN) with graph neural networks (GNN) for privacy-preserving recommendation systems. FedHGNN enhances existing models by effectively utilizing semantic information from HINs while maintaining differential privacy standards.",
+        "research purpose": "To improve the effectiveness and privacy of recommender systems by utilizing semantic insights from HINs in a federated learning paradigm.",
+        "research challenge": "Combining HIN semantics with federated models while ensuring privacy.",
+        "method summary": "FedHGNN employs graph neural networks to capture semantic information in HINs. It uses a two-stage semantic-preserving user-item interaction perturbation to safeguard user privacy.",
+        "conclusion": "FedHGNN significantly boosts recommendation performance within privacy constraints when compared to federated baselines, showcasing the potential of federated learning in HIN-based recommenders."
+    },
+    "Method": {
+        "description": "FedHGNN employs a novel algorithm integrating HIN and GNN under a federated learning framework to address sparsity and privacy in recommendation systems.",
+        "problem formultaion": "The paper formulates the problem as creating a model that can leverage distributed HIN data for recommendations without compromising privacy.",
+        "feature processing": "The method captures meta-path-based semantics by integrating heterogeneous and homogeneous node embeddings.",
+        "model": "The model, leveraging HGNN, executes node-level aggregations to derive semantic-level user/item embeddings that inform recommendation tasks.",
+        "tasks": [
+            "Semantic-preserving user-item interaction publishing",
+            "Recommendation based on heterogeneous network structures"
+        ],
+        "theoretical analysis": "FedHGNN's privacy-preserving traits mirror principles of differential privacy, optimizing protection through semantic pertubation.",
+        "complexity": "FedHGNN's approach strives to balance execution efficiency while accommodating federated settings' data and computational requirements.",
+        "algorithm step": "Semantic-preserving perturbation and aggregation across meta-paths ensure data diversity while safeguarding privacy."
+    },
+    "Experiments": {
+        "datasets": [
+            "ACM",
+            "DBLP",
+            "Yelp",
+            "Douban Book"
+        ],
+        "baselines": [
+            "HERec",
+            "HAN",
+            "NGCF",
+            "lightGCN",
+            "RGCN",
+            "HGT",
+            "FedMF",
+            "FedGNN",
+            "FedSog",
+            "PerFedRec",
+            "PFedRec",
+            "SemiDFEGL"
+        ],
+        "evaluation metric": "Hit Ratio (HR@K), NDCG@K",
+        "setup": "The setup employed a federated setting across four distinct datasets, tasked with evaluating HR@10 and NDCG@10 under varying privacy constraints.",
+        "hyperparameters": "Key hyperparameters include shared HIN count, learning rate, and privacy budgets (ε1, ε2) adjusted for comparative experimentation.",
+        "results": "FedHGNN displayed superior performance across datasets, boasting improvements up to 34% in HR@10 and 42% in NDCG@10 over FedRec baselines.",
+        "performance": "FedHGNN outperformed both federated and centralized baselines, validating the efficacy of integrating HIN semantics in privacy-constrained recommendations.",
+        "analysis": "Semantic-preserving perturbation was shown to augment user interactions effectively, overcoming data sparsity and privacy constraints.",
+        "ablation study": "An ablation study demonstrated the critical role semantic-preserving perturbation and degree-preserving random response (DPRR) play in boosting recommendation performances."
+    },
+    "conclusion": {
+        "summary": "FedHGNN markedly enhances recommendation accuracy by leveraging HIN semantics under federated learning while upholding privacy standards.",
+        "future work": "Future work could explore enhanced semantic perturbation strategies, tackling more diverse dataset challenges within federated settings."
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "meta_data": {
+        "title": "Research Paper Guidelines and Structures",
+        "authors": [
+            "Research Committee"
+        ],
+        "affiliations": [
+            "University of Knowledge"
+        ],
+        "abstract": "This document provides guidelines on structuring research papers, exploring aspects such as acknowledgments, appendices, multi-language presentation, and SIGCHI Extended Abstracts. It emphasizes consistency and ease of extraction in the article metadata process.",
+        "keywords": [
+            "Research Paper",
+            "Structure",
+            "Guidelines",
+            "Acknowledgments",
+            "Appendices"
+        ],
+        "year": "2023",
+        "venue": "Academic Press",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Research Composition",
+            "Document Structure"
+        ],
+        "related papers": "Studies on how to effectively communicate scientific ideas in document formats and the implications of structured documents.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper elaborates on various structural elements of a research paper, emphasizing their significance for coherence and ease of interpretation. It focuses on the technical setup of document structures such as acknowledgments and appendices.",
+        "research purpose": "To provide researchers a comprehensive guide on structuring their research papers for better organization and standardization.",
+        "research challenge": null,
+        "method summary": null,
+        "conclusion": null
+    },
+    "Method": {
+        "description": "This paper outlines the methods and structures commonly used in research papers to streamline the process of writing and ensure consistent formatting.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Document formatting using LaTeX for structured sections in research papers.",
+        "tasks": [
+            "Explaining acknowledgments",
+            "Describing appendices",
+            "Supporting multi-language documents",
+            "Discussing SIGCHI format"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [],
+        "baselines": [],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": null,
+        "results": "Explained various structural sections of research papers with examples.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "This guideline aims to aid researchers in understanding and implementing structured formatting for various components of their research papers, promoting consistency and enhancing readability.",
+        "future work": "Future editions of this guideline plan to include examples across different domains and specific use-cases for new formatting challenges."
+    }
+}

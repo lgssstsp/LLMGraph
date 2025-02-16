@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Condensing Graph Data via One-Step Gradient Matching",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Department of Computational Intelligence, University of Advanced Studies"
+        ],
+        "abstract": "Graph-structured data is central to numerous real-world applications. While graph neural networks (GNNs) can harness such structures to solve complex tasks, the computational demand is prohibitive. This paper introduces a robust method for 'Condensing Graph Data via One-Step Gradient Matching'. By synthesizing discrete graph structures through a probabilistic model and employing a one-step gradient matching strategy, our approach offers significant computational efficiency and effective performance comparable to training on larger datasets.",
+        "keywords": [
+            "Graph Condensation",
+            "Graph Neural Networks",
+            "Neural Architecture Search",
+            "Computational Efficiency"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Computational Graph Processing",
+        "doi link": null,
+        "method name": "One-Step Gradient Matching"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Dataset Distillation & Condensation"
+        ],
+        "related papers": "Recent years have witnessed advancements in GNNs via methods like attention mechanisms (e.g., GAT). Dataset distillation attempts to accelerate training with smaller datasets but lacks discrete graph handling.",
+        "comparisons with related methods": "Our method enhances computational efficiency compared to recent dataset condensation approaches, especially the bi-level optimization in DCG methods."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel approach for synthesizing condensed graph data, ensuring computational efficiency and optimal performance using a one-step gradient matching technique for training graph neural networks.",
+        "research purpose": "To develop an efficient strategy for reducing large graph datasets without significant accuracy loss, using graph neural networks.",
+        "research challenge": "Existing techniques fail in efficiently handling discrete graph structures or are computationally intensive.",
+        "method summary": "The proposed technique employs a probabilistic model to handle discrete structures and a one-step gradient matching to optimize the condensation process.",
+        "conclusion": "This work innovates in condensing graph datasets, offering significant effort savings while preserving data integrity, making it suitable for large-scale applications in real-world scenarios."
+    },
+    "Method": {
+        "description": "The novel method introduces a one-step gradient matching approach optimized for creating condensed graph datasets. Unlike traditional methods, it combines a probabilistic approach for discrete graph modeling with efficient gradient matching.",
+        "problem formultaion": "Given a large set of graphs, the task is to generate a smaller, informative set whose training performance is comparable to using the larger dataset.",
+        "feature processing": "Node features are aligned with synthetic graph generation to maintain informative representation.",
+        "model": "A graph probabilistic model with Bernoulli-based discrete optimization is employed.",
+        "tasks": [
+            "Graph Classification",
+            "Graph Condensation",
+            "Node Representation"
+        ],
+        "theoretical analysis": "The method's validity is backed by a theorem showing the gradient difference decreasing with one-step matching, resulting in quality graph synthesis.",
+        "complexity": "The one-step gradient matching significantly reduces the multi-tier optimization complexity common in dataset condensation models.",
+        "algorithm step": "1. Initialize graph parameters and node features. 2. Match gradients using probabilistic structured optimization. 3. Perform one-step gradient descent for graph synthesis."
+    },
+    "Experiments": {
+        "datasets": [
+            "OGB Molecular Datasets",
+            "TU Datasets",
+            "CIFAR10 Superpixel Dataset",
+            "E-commerce Transaction Dataset"
+        ],
+        "baselines": [
+            "Random Sampling",
+            "Herding",
+            "K-Center",
+            "DCG"
+        ],
+        "evaluation metric": "ROC-AUC for molecular datasets, Accuracy for others",
+        "setup": "Real-world and synthetic graph datasets with varying node and edge properties evaluated via GNN performance.",
+        "hyperparameters": "Learning rates, layer depths, regularization coefficients.",
+        "results": "The method achieves up to 98% accuracy of the full dataset performance using only 10% of the data, significantly outperforming baselines.",
+        "performance": "Graph condensation speed is increased by 15x compared to existing methods.",
+        "analysis": "The one-step gradient matching offers similar or superior results with greatly reduced computational overhead.",
+        "ablation study": "Impact of regularization and condensation size on performance evaluated."
+    },
+    "conclusion": {
+        "summary": "The proposed method fills a crucial gap in efficient graph data condensation, showing that single-step gradient matching can yield comparable results to complex, slower methods.",
+        "future work": "Exploring further applications in continual learning and enhancing synthetic graph quality."
+    }
+}

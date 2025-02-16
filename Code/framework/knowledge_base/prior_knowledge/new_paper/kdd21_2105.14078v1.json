@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "UCPhrase: Unsupervised Context-Aware Quality Phrase Tagging",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [],
+        "abstract": "This paper introduces UCPhrase, a novel unsupervised context-aware quality phrase tagger using high-quality silver labels induced directly from the corpus. It trains a tailored Transformer-based neural model capable of recognizing quality phrases in new sentences, emphasizing emerging phrases essential in specific domains. Our method uses attention distributions for feature extraction, avoiding the risk of overfitting. Extensive experiments on corpus-level phrase ranking, document-level keyphrase extraction, and sentence-level phrase tagging demonstrate the superiority of our approach over state-of-the-art unsupervised and distantly supervised methods.",
+        "keywords": [
+            "unsupervised learning",
+            "phrase tagging",
+            "context-aware",
+            "neural language models",
+            "quality phrases"
+        ],
+        "year": "2023",
+        "venue": "ArXiv",
+        "doi link": null,
+        "method name": "UCPhrase"
+    },
+    "relate work": {
+        "related work category": [
+            "Unsupervised Approaches",
+            "Distant Supervision Signals",
+            "Attention Maps"
+        ],
+        "related papers": "Frantzi et al. 2000, Deane 2005, Shang et al. 2018",
+        "comparisons with related methods": "Unlike traditional frequency-based or linguistic rule-based methods, UCPhrase leverages attention maps, capturing the inter-relation of tokens which traditional methods may miss."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper presents UCPhrase, an unsupervised methodology to tag quality phrases in text, leveraging context-aware attention maps instead of traditional frequency thresholds. Two key components are: (i) core phrase mining within the domain context to generate silver labels, and (ii) feature extraction from attention maps of pre-trained transformer models.",
+        "research purpose": "To develop an unsupervised method to recognize emerging and domain-specific phrases without reliance on manual annotation or frequency-based signals.",
+        "research challenge": "Recognizing uncommon, emerging phrases in specific domains that lack corpus frequency.",
+        "method summary": "UCPhrase identifies 'core phrases' within documents as silver labels and uses attention maps from Transformer models as features to train a phrase tagger.",
+        "conclusion": "UCPhrase demonstrates superior performance in phrase tagging without requiring human annotations, surpassing state-of-the-art methods using innovative silver label generation and attention features."
+    },
+    "Method": {
+        "description": "UCPhrase is a novel approach for unsupervised context-aware quality phrase tagging, using core phrases and attention features.",
+        "problem formultaion": null,
+        "feature processing": "Uses attention maps of Transformer language models rather than traditional frequency or word-embeddings.",
+        "model": "Transformer-based neural model with a CNN-based lightweight classifier.",
+        "tasks": [
+            "Phrase Tagging",
+            "Keyphrase Extraction",
+            "Phrase Ranking"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "\n1. Core Phrases Mining: Identifying frequently used sequences in documents as silver labels.\n2. Feature Extraction: Obtaining attention-based features from a Transformer model.\n3. Training: Using CNN classifier on attention maps to distinguish quality phrases."
+    },
+    "Experiments": {
+        "datasets": [
+            "KP20k",
+            "KPTimes"
+        ],
+        "baselines": [
+            "ToPMine",
+            "AutoPhrase",
+            "Wiki+RoBERTa",
+            "PKE",
+            "Spacy"
+        ],
+        "evaluation metric": "Precision, Recall, F1 Score",
+        "setup": "KP20k and KPTimes datasets, using pre-trained and domain-specific RoBERTa models.",
+        "hyperparameters": null,
+        "results": "UCPhrase showed superior performance across tasks, especially in phrase tagging with over 73% F1 score.",
+        "performance": "Consistently outperformed both unsupervised and distantly supervised methods in keyphrase extraction and tagging tasks.",
+        "analysis": "Attention maps provide robust feature representation, and core phrases deliver better supervision without overfitting issues.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "UCPhrase demonstrates effective unsupervised quality phrase tagging with core phrase mining and attention map features, outperforming state-of-the-art methods.",
+        "future work": "Exploring other tasks such as coreference resolution and dependency parsing using similar unsupervised methods."
+    }
+}

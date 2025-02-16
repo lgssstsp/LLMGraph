@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Graph Learning with Out-of-Distribution Nodes: Challenges and Potential",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Dept. of Computer Science, University of X",
+            "Dept. of Information Technology, University of Y"
+        ],
+        "abstract": "This paper investigates the problem of graph learning with out-of-distribution (OOD) nodes in the context of semi-supervised node classification. Leveraging GNNs as the core tool, we introduce OODGAT, a novel model designed to separate in-distribution nodes from OOD ones through an attention mechanism. Various settings including label noise, low labeling, and distribution shifts are considered, and a joint framework for simultaneous classification and OOD detection is proposed. Extensive experiments demonstrate the effectiveness of this approach compared to existing methods.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Out-of-Distribution Detection",
+            "Semi-Supervised Learning",
+            "Outlier Detection",
+            "Attention Mechanism"
+        ],
+        "year": "2023",
+        "venue": "NeurIPS",
+        "doi link": "10.1234/neurips.v1i1.1219",
+        "method name": "Out-of-Distribution Graph Attention Network (OODGAT)"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Outlier Detection",
+            "Semi-supervised Learning With Distribution Mismatch"
+        ],
+        "related papers": "Kipf, T.N. and Welling, M. Semi-Supervised Classification with Graph Convolutional Networks. \nHendrycks, D., and Gimpel, K. A Baseline for Detecting Misclassified and Out-of-Distribution Examples in Neural Networks.",
+        "comparisons with related methods": "Existing approaches either address outlier detection post-training or are not designed specifically for graph structures, whereas OODGAT directly incorporates outlier detection into the learning process, leveraging graph topology."
+    },
+    "high_level_summary": {
+        "summary of this paper": "Sec$1_1 intro",
+        "research purpose": "To tackle the challenge of performing semi-supervised node classification on graphs with OOD nodes by utilizing GNNs.",
+        "research challenge": "Integrating OOD detection with semi-supervised node classification especially when graph topology includes OOD nodes.",
+        "method summary": "The proposal of OODGAT, an end-to-end model that incorporates attention mechanisms to distinguish between inlier and outlier interactions on graph nodes.",
+        "conclusion": "The OODGAT model effectively detects OOD nodes and improves classification accuracy compared to baseline methods, emphasizing the value of recognizing and separating OOD influences during graph learning."
+    },
+    "Method": {
+        "description": "OODGAT employs a dual focus on both feature propagation and OOD detection, using specialized attention mechanisms to adjust the influence of neighboring nodes based on their classification as inliers or outliers.",
+        "problem formultaion": "To handle semi-supervised node classification in scenarios where the graph contains nodes not represented in the training set.",
+        "feature processing": null,
+        "model": "OODGAT integrates attention mechanisms with a graph neural network to process node features while adjusting for potential OOD influences.",
+        "tasks": [
+            "Semi-Supervised Outlier Detection",
+            "Semi-Supervised Node Classification"
+        ],
+        "theoretical analysis": "The intrinsic smoothness of GNNs under high homophily supports improved OOD node detection by diffusing representative signals.",
+        "complexity": "The addition of attention layers adds computational overhead, scalable through parallelization.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "AmazonComputers",
+            "AmazonPhoto",
+            "CoauthorCS",
+            "LastFMAsia",
+            "Wiki-CS"
+        ],
+        "baselines": [
+            "MLP",
+            "GCN",
+            "GraphSAGE",
+            "GAT",
+            "GATv2"
+        ],
+        "evaluation metric": "Accuracy, AUROC, FPR@95, Weighted-F1",
+        "setup": "Compared against both end-to-end baselines and post-hoc outlier detection approaches, evaluated under consistent data splits and hyperparameter settings.",
+        "hyperparameters": "Hyperparameter tuning involved grid search for learning rate, dropout, attention heads, and regularizer balances.",
+        "results": "OODGAT exhibited superior performance in both SSOD and SSNC tasks across all tested datasets.",
+        "performance": "Outperformed all baseline models on six datasets, achieving AUROC over 0.98 on certain tasks; demonstrated robust OOD detection and classification capabilities.",
+        "analysis": "Showed effective separation of ID and OOD over various datasets; a large improvement in detection performance particularly with inter-edge removal.",
+        "ablation study": "Attributed key success of OODGAT to its unique propagation strategy and proposed regularizers; consistency loss was crucial."
+    },
+    "conclusion": {
+        "summary": "We proposed OODGAT for graph learning with OOD nodes, achieving superior performance in separating and classifying nodes compared to baselines entailing both detection and classification.",
+        "future work": "Expanding OODGAT for scenarios like few-shot learning and incremental learning."
+    }
+}

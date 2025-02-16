@@ -1,0 +1,86 @@
+{
+    "meta_data": {
+        "title": "JERS: A Unified Framework for Joint Brain Extraction, Registration, and Segmentation",
+        "authors": [
+            "Author1",
+            "Author2",
+            "Author3"
+        ],
+        "affiliations": [
+            "Affiliation1",
+            "Affiliation2",
+            "Affiliation3"
+        ],
+        "abstract": "This paper introduces JERS, an end-to-end framework for joint brain extraction, registration, and segmentation. It addresses challenges in performing these tasks without individual task labels by using a single labeled template. JERS integrates modules for each task, enabling joint learning and optimization. Extensive experiments on public brain MRI datasets demonstrate its superior performance compared to state-of-the-art techniques.",
+        "keywords": [
+            "brain extraction",
+            "registration",
+            "segmentation",
+            "neuroimaging"
+        ],
+        "year": "2023",
+        "venue": "Conference Name",
+        "doi link": null,
+        "method name": "JERS"
+    },
+    "relate work": {
+        "related work category": [
+            "Neuroimage Extraction",
+            "Neuroimage Registration",
+            "Neuroimage Segmentation",
+            "Joint Neuroimage Registration and Segmentation"
+        ],
+        "related papers": "Smith et al. introduced a deformable model for brain extraction. Other techniques utilize edge detection and filtering. The registration domain has seen both conventional techniques and deep learning methods like RegNet. In segmentation, CNN-based approaches dominate, although they often require a large dataset. Joint registration and segmentation efforts have shown promising improvements.",
+        "comparisons with related methods": "Compared to traditional methods, JERS offers an integrated approach that concurrently handles extraction, registration, and segmentation, yielding better performance metrics and facilitating joint optimization."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces JERS, a framework that jointly learns and optimizes brain extraction, registration, and segmentation tasks using a single labeled template. It eliminates the need for individual task annotations, streamlining neuroimaging processes.",
+        "research purpose": "To develop an efficient, integrated approach for brain extraction, registration, and segmentation using a unified framework.",
+        "research challenge": "Traditional methods require laborious annotations and often treat tasks separately, missing the inter-task dependencies that could enhance performance.",
+        "method summary": "JERS employs a deep neural network architecture with extraction, registration, and segmentation modules, trained jointly to improve overall task performance.",
+        "conclusion": "JERS successfully streamlines multiple neuroimaging processes into a single framework, achieving superior accuracy and efficiency compared to existing methods."
+    },
+    "Method": {
+        "description": "The JERS framework integrates extraction, registration, and segmentation into an end-to-end neural network structure. Each task is represented by a module that interacts with others for enhanced learning.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "A unified neural network architecture that incorporates task-specific modules for extraction, registration, and segmentation.",
+        "tasks": [
+            "Brain Extraction",
+            "Image Registration",
+            "Image Segmentation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "LPBA40",
+            "CC359",
+            "IBSR"
+        ],
+        "baselines": [
+            "BET",
+            "3dSS",
+            "BSE",
+            "FLIRT",
+            "ANTs",
+            "VoxelMorph",
+            "CRN",
+            "DeepAtlas",
+            "ERNet"
+        ],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": "Extraction and registration stages are set to 5. The segmentation loss parameter is 0.1 and extraction mask smooth parameter is 1.",
+        "results": "JERS outperforms baseline methods in extraction, registration, and segmentation tasks across all tested datasets.",
+        "performance": "Demonstrates superior accuracy, robustness, and efficiency compared to state-of-the-art methods.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "JERS integrates extraction, registration, and segmentation into a single framework for neuroimaging, enhancing task performance and efficiency without the need for extensive individual task annotations.",
+        "future work": null
+    }
+}

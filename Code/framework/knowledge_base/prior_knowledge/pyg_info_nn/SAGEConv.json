@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Inductive Representation Learning on Large Graphs",
+        "authors": [
+            "Hamilton, William L.",
+            "Ying, Rex",
+            "Leskovec, Jure"
+        ],
+        "affiliations": [
+            "Department of Computer Science, Stanford University, USA"
+        ],
+        "abstract": "This paper proposes \\name\\ (\\textsc{sa}mple and aggre\\textsc{g}at\\textsc{e}), a general framework for inductive node embedding. Unlike traditional matrix factorization-based approaches that are limited to transductive settings, \\name\\ leverages node features to learn an embedding function that effectively generalizes to unseen nodes. We focus on applying our framework to feature-rich graphs such as citation and protein-protein interaction graphs.\n",
+        "keywords": [
+            "inductive node embedding",
+            "representation learning",
+            "graph neural networks",
+            "deep learning"
+        ],
+        "year": "2017",
+        "venue": "Proceedings of Neural Information Processing Systems (NIPS)",
+        "doi link": "https://doi.org/10.48550/arXiv.1706.02216",
+        "method name": "Sample and Aggregate (SAGE)"
+    },
+    "relate work": {
+        "related work category": [
+            "Factorization-based embedding approaches",
+            "Supervised learning over graphs",
+            "Graph convolutional networks"
+        ],
+        "related papers": "\\cite{cao2015grarep,grover2016node2vec,kipf2016semi,perozzi2014deepwalk,tang2015line,wang2016structural}",
+        "comparisons with related methods": "Compared to traditional approaches, our work advances the field by proposing a scalable inductive framework capable of generalizing across unseen nodes and graphs. Unlike factorization methods that do not naturally extend to unseen data, our method efficiently leverages node feature information through neural architectures."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces 'Sample and Aggregate' (\\name\\) that allows representation learning at the node level in graphs while being capable of generalizing to unseen parts of the graph, solving the inductive learning problem poring complex real-world dynamic datasets.",
+        "research purpose": "Develop a framework for effective inductive node embeddings in large, evolving graphs, enabling embedding generation for previously unseen components.",
+        "research challenge": "The main challenge is to enable the generation of embeddings for previously unseen nodes or entirely new subgraphs with limited computational overhead.",
+        "method summary": "\\name\\ utilizes trainable aggregator functions to learn features from a node's neighborhood. It employs unsupervised training utilizing graph-based loss functions and extends graph convolutional networks to new inductive settings.",
+        "conclusion": "The proposed framework provides a scalable solution to node embedding tasks by effectively generating embeddings for unseen nodes, achieving superior performance over relevant baselines across various settings."
+    },
+    "Method": {
+        "description": "\\name\\ employs an inductive learning approach to generate node embeddings by aggregating feature information from local neighborhoods. This is achieved using trainable aggregation functions and a recursive neighborhood sampling methodology, allowing real-time processing of evolving graphs.",
+        "problem formultaion": "Node embedding generation for unseen nodes in evolving real-world graphs.",
+        "feature processing": "Uses node features such as text attributes or node degree in aggregation functions.",
+        "model": "\\name\\ aggregates information from a node's local neighborhood through a series of trainable aggregator functions, allowing for multiple-hop neighborhood information synthesis.",
+        "tasks": [
+            "Node Classification",
+            "Clustering"
+        ],
+        "theoretical analysis": "The framework builds on graph convolutional networks (GCNs) but extends their ability to generalize to unseen data.",
+        "complexity": "Empirical evidence suggests strong performance at a reasonable computational footprint, optimizing time and space complexity by leveraging neighborhood sampling.",
+        "algorithm step": "Recursive neighborhood aggregation and learning through SGD using unsupervised graph-based loss functions, where specific training details employ the sigmoid activation function using random walks for node pairs in embeddings."
+    },
+    "Experiments": {
+        "datasets": [
+            "Web of Science Citation Dataset",
+            "Reddit Discussion Forum Dataset",
+            "Protein-Protein Interactions (PPI) Dataset"
+        ],
+        "baselines": [
+            "Random Classifier",
+            "DeepWalk",
+            "Logistic Regression (Ignoring Graph)"
+        ],
+        "evaluation metric": "F1 Score on Classification Tasks",
+        "setup": "Experiments were conducted on evolving graphs focusing on predictions on unseen nodes in a test set following training on earlier datasets.",
+        "hyperparameters": "Multiple hyperparameter runs were made focusing on learning rates and model dimensions to ensure optimal performance.",
+        "results": "\\name\\ outperforms all baselines by significant margins across various benchmarks, with observable gains in fully supervised settings.",
+        "performance": "Graphs deeply illustrate that \\name\\ maintains accuracy without task-specific supervision, exceeding DeepWalk considerably in efficiency and accuracy.",
+        "analysis": "The adaptation of aggregation functions offers performance edge over GCNs, and the pooling aggregator notably offers commendable expressive capability across all sections.",
+        "ablation study": "Tests comparing variants of \\name\\ aggregators demonstrated performance superiority in supervised and unsupervised settings, with the LSTM and pooling variants showing prominence."
+    },
+    "conclusion": {
+        "summary": "\\name\\ facilitates efficient generation of embeddings for unseen nodes, showing superior performance and runtime optimization against state-of-the-art baselines. The approach also generalizes across varying graph types by leveraging learned aggregation functions.",
+        "future work": "Possible improvements may include exploration of directed and multi-modal graphs, as well as adaptive neighborhood sampling methods."
+    }
+}

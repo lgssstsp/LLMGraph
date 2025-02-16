@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Axiomatic Fairness in Ranking for Balance in Two-Sided Markets",
+        "authors": [
+            "First Author",
+            "Second Author"
+        ],
+        "affiliations": [
+            "University of X",
+            "University of Y"
+        ],
+        "abstract": "With the considerable use of ranking interfaces in digital marketplaces, fairness in ranking mechanisms has become a critical concern, especially in two-sided markets. This paper introduces a novel approach to fairness in ranking, involving an axiomatic framework inspired by fair division principles. By adopting \\",
+        "keywords": [
+            "fair ranking",
+            "axiomatic fairness",
+            "two-sided markets",
+            "nash social welfare"
+        ],
+        "year": "2022",
+        "venue": "International Conference on Fairness, Accountability, and Transparency (FAT)",
+        "doi link": "10.1145/3456789.3456799",
+        "method name": "NSW-based Ranking"
+    },
+    "relate work": {
+        "related work category": [
+            "Fair Ranking in Two-Sided Markets",
+            "Fair Division"
+        ],
+        "related papers": "Several papers have explored various fairness in ranking methodologies, including exposure-based fairness and dynamic ranking algorithms. Notable works in fair division principles parallel decision-making in fair ranking research.",
+        "comparisons with related methods": "The proposed axiomatic framework circumvents the limitations of exposure-based fairness mechanisms by directly targeting the impact on items rather than allocating exposure based on merit functions."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents an axiomatic perspective to fairness in ranking, employing principles of envy-freeness and dominance over uniform ranking to ensure fairness for items in two-sided markets. The study elaborates on an effective algorithm inspired by Nash Social Welfare to optimize ranking arrangements.",
+        "research purpose": "To propose an axiomatic framework for fairness in ranking within two-sided market platforms.",
+        "research challenge": "Existing fairness methods often inadequately link merit to exposure, rendering them limited in capturing true impact on items.",
+        "method summary": "An algorithm based on Nash Social Welfare optimization is presented, providing near envy-free and proportionally fair results for ranked items.",
+        "conclusion": "Novel axiomatic principles in ranking yield equitable impact distributions, outperforming traditional exposure-based techniques in fairness metrics."
+    },
+    "Method": {
+        "description": "The proposed ranking framework utilizes an axiomatic approach, involving well-defined fairness axioms rooted in the fair division.",
+        "problem formultaion": "The problem is formulated as balancing utility between two market sides while ensuring fairness through impact-based criteria.",
+        "feature processing": "N/A",
+        "model": "Ranking allocation is modeled using Nash Social Welfare maximizing algorithms.",
+        "tasks": [
+            "Maintain fairness in twin-sided market platforms",
+            "Optimize ranking positions equitably"
+        ],
+        "theoretical analysis": "The axiomatic framework ensures that impact distribution satisfies fairness axioms far better than conventional methods.",
+        "complexity": "The optimization is performed efficiently through convex programming.",
+        "algorithm step": "Rank items by maximizing the product of item impacts subject to stochastic matrix constraints."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic data",
+            "Delicious dataset",
+            "Wiki10-31k"
+        ],
+        "baselines": [
+            "Exposure-based fair ranking",
+            "Utility-maximizing ranking",
+            "Uniform ranking policy"
+        ],
+        "evaluation metric": "Proportion of items with positive/negative impact change relative to uniform ranking.",
+        "setup": "Simulations with variability in ranking lengths and market sizes, alongside real-world datasets, provide assessment.",
+        "hyperparameters": "In NSW-based rankings, a diverging parameter $\\alpha$ tunes the trade-off between user utility and item fairness.",
+        "results": "The method consistently achieved envy-free or near-envy-free allocations, evident in experimental situations with various popularity biases.",
+        "performance": "Rankings optimized with the NSW approach led to heightened fairness without significant utility sacrifice in practical applications.",
+        "analysis": "The experiments reveal that axiomatic approaches avoid the disparities usually inherent in exposure-based ranking frameworks.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The novel formulation using axiomatic impact fairness reflects relevant fairness practices from economics, circumventing the need for arbitrary merit-function linkage.",
+        "future work": "Potential research includes developing policy learning methods for implementing impact-based fairness efficiently in real-world systems."
+    }
+}

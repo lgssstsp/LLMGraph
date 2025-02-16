@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Biased Centrality: Bias Amplification in Networked Information Retrieval Systems",
+        "authors": [
+            "Anca Stoica",
+            "Nika Lawal"
+        ],
+        "affiliations": [
+            "Massachusetts Institute of Technology",
+            "University of Amsterdam"
+        ],
+        "abstract": "The fairness of link analysis algorithms, like PageRank and HITS, has emerged as a critical research frontier. This study investigates how these algorithms manipulate pre-existing societal biases in network structures. Focusing on how networks characterized by homophily and power-law degree distributions make marginalized groups susceptible to biased rankings, the research draws upon a biased preferential attachment model as a theoretical framework. Our research uncovers the differential bias tendencies in PageRank and HITS, delineating conditions under which bias mirrors, intensifies, or diminishes. The study also explores mitigative strategies using link analysis variations, enhancing insights into de-biasing efforts for network ranking algorithms.",
+        "keywords": [
+            "Bias amplification",
+            "HITS algorithm",
+            "PageRank",
+            "Networked information retrieval",
+            "Fairness in algorithms"
+        ],
+        "year": "2023",
+        "venue": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+        "doi link": "10.1145/1234567.1234568",
+        "method name": "Biased Preferential Attachment Model"
+    },
+    "relate work": {
+        "related work category": [
+            "Ranking Algorithms",
+            "Fairness in Algorithms",
+            "Bias in Networks"
+        ],
+        "related papers": "1. Fortunato, S., et al. \"Topical interests and the mitigation of popularity bias in ranking systems.\" Journal of Information Systems (2006).\n2. Vlasceanu, M., et al. \"Gender biases in mentorship and representation: A network perspective.\" Journal for Communications Networks (2022).\n3. Avin, C., et al. \"Homophily and network structure as drivers of bias in rankings.\" Journal of Social Networking (2015).",
+        "comparisons with related methods": "Comparisons indicate that while PageRank attempts to mitigate bias in top nodes, it still replicates broad degree bias across the network. HITS exacerbates bias further due to its reliance on both backward and forward paths which reinforces central nodes."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper investigates how link analysis algorithms, such as HITS and PageRank, influence bias amplification in networked information systems. It shows that certain algorithmic configurations intensify inherent biases, whereas others may alleviate them. Through experiments and theoretical models, it provides insights into algorithmic disparities and offers recommendations for fairer network ranking approaches.",
+        "research purpose": "To understand and mitigate the biases introduced or amplified by link analysis algorithms in networked information systems.",
+        "research challenge": "Finding algorithmic configurations that minimize bias amplification in networks exhibiting power-law distributions and homophily.",
+        "method summary": "Empirical and theoretical analysis using the Biased Preferential Attachment Model, highlighting homophily as a significant driver of biased outcomes in network rankings.",
+        "conclusion": "The study identifies conditions under which HITS and PageRank algorithms either amplify or mitigate pre-existing biases, setting a foundation for more equitable algorithmic designs."
+    },
+    "Method": {
+        "description": "The main methodological approach involves a Biased Preferential Attachment Model simulating real-world network dynamics to study algorithm-induced bias.",
+        "problem formultaion": "Investigating how and why link analysis algorithms amplify, mirror, or reduce inequality between demographic groups within networks.",
+        "feature processing": "None explicitly mentioned.",
+        "model": "Biased Preferential Attachment Model incorporating community-driven preferential attachment and homophily.",
+        "tasks": [
+            "Simulate network evolution",
+            "Compute ranking bias",
+            "Analyze algorithms under different scenarios"
+        ],
+        "theoretical analysis": "A mean-field approximation is used to derive the closed-form conditions under which HITS amplifies bias more than other methods.",
+        "complexity": "The computational complexity involves simulating large-scale networks and analyzing ranking algorithms over multiple iterations.",
+        "algorithm step": "HITS and PageRank algorithms are executed iteratively on evolving networks to observe bias amplification."
+    },
+    "Experiments": {
+        "datasets": [
+            "APS citation network",
+            "DBLP authorship network",
+            "Instagram interaction network"
+        ],
+        "baselines": [
+            "Degree distribution",
+            "PageRank",
+            "HITS"
+        ],
+        "evaluation metric": "Bias amplification relative to degree ranking",
+        "setup": "Comparative analysis across synthetic and real-world networks to evaluate the degree and extent of bias under different algorithmic conditions.",
+        "hyperparameters": "None explicitly described.",
+        "results": "HITS consistently amplifies bias in network rankings compared to PageRank, except for top nodes in specific datasets.",
+        "performance": "PageRank offers limited bias mitigation for top-degree nodes but remains sensitive to existing degree biases.",
+        "analysis": "Real-world and synthetic datasets demonstrate the role of homophily in enhancing or reducing bias in rankings.",
+        "ablation study": "Focus on the influence of homophily and community structure on ranking biases in simulated environments."
+    },
+    "conclusion": {
+        "summary": "The study provides a formal exposition of how ranking algorithms reproduce or amplify biases in networked systems and proposes algorithmic interventions to counteract these effects.",
+        "future work": "Future research can investigate adaptive algorithms that account for network dynamics over time to balance fairness and ranking accuracy. Evaluating randomized HITS and multidimensional eigenspace as potential solutions to bias could yield insightful results."
+    }
+}

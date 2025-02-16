@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Point Process Flows for Activity Sequences (OurM)",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Dept. of Computer Science, University A",
+            "Dept. of AI, Institute B"
+        ],
+        "abstract": "This paper presents OurM, a normalizing flow-based neural marked temporal point process framework specifically designed to model continuous-time action sequences (CTAS) with applications in human activity modeling. OurM addresses key challenges such as action prediction, goal detection, and sequence generation and outperforms existing state-of-the-art methods across multiple datasets.",
+        "keywords": [
+            "Temporal Point Processes",
+            "Action Sequences",
+            "Normalizing Flows",
+            "Human Activity Modeling"
+        ],
+        "year": "2023",
+        "venue": "ICML",
+        "doi link": null,
+        "method name": "OurM"
+    },
+    "relate work": {
+        "related work category": [
+            "Activity Prediction",
+            "Temporal Point Processes"
+        ],
+        "related papers": "Mehrasa et al. (2017); Rizoiu et al. (2017); Hawkes (1971); NHP (2017); SAHP (2018); THP (2019)",
+        "comparisons with related methods": "OurM is compared against existing methods such as RMTPP, NHP, AVAE, SAHP, and THP, and demonstrates superior performance particularly in the tasks related to modeling human actions over time."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces OurM, a temporal flow-based framework designed to efficiently model and predict sequences of human actions in continuous time.",
+        "research purpose": "To develop a framework capable of modeling continuous-time action sequences with a focus on improving prediction accuracy and the ability to generate sequences from predicted goals.",
+        "research challenge": "Existing point process models struggle to capture the nuances of human-generated continuous-time sequences with varying durations and asynchronous action occurrences.",
+        "method summary": "OurM uses normalizing flows to model temporal point processes, enhancing their capability to predict and generate action sequences directly from their dynamics and associated features.",
+        "conclusion": "OurM outperforms current baselines in action prediction accuracy, goal detection, and sequence generation, offering new capabilities for temporal models to handle complex human activity data."
+    },
+    "Method": {
+        "description": "OurM utilizes a normalizing flow-based temporal point process to model sequences of human actions by predicting their occurrence time and type. It features a neural architecture that embeds these actions into a representation space, followed by sequence generation conditioned on detected goals.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "A neural MTPP framework incorporating self-attention for modeling action sequences.",
+        "tasks": [
+            "Action Prediction",
+            "Goal Detection",
+            "Sequence Generation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Embed sequence actions to vectors\n2. Perform self-attention to capture inter-action dynamics\n3. Implement normalizing flows for predicting next action time and type\n4. Optimize through margin losses for early goal detection"
+    },
+    "Experiments": {
+        "datasets": [
+            "Breakfast (1712 videos of breakfast preparation)",
+            "Mult (400 sports activity videos)",
+            "ActivityNet (591 YouTube videos)"
+        ],
+        "baselines": [
+            "RMTPP",
+            "NHP",
+            "AVAE",
+            "SAHP",
+            "THP"
+        ],
+        "evaluation metric": null,
+        "setup": "Training and testing were performed using a split of 80% and 20% respectively based on sequence goals, across configurations utilizing diverse datasets representing varied origins and sequence characteristics.",
+        "hyperparameters": null,
+        "results": "OurM demonstrated superior APA and lower MAE across datasets, particularly excelling in APA of 0.583 for \\bfast and MAE of 0.364.",
+        "performance": "OurM consistently outperformed baselines in terms of prediction accuracy and error rates, functioning well across datasets of varying complexity.",
+        "analysis": "Significant performance differences highlighted the enhanced modeling capabilities of OurM, emphasizing the need for its approach in human activity modeling.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "OurM introduces a novel approach to continuous-time action sequences by utilizing normalizing flows within temporal point processes. This framework enhances both prediction and generation tasks, substantially outperforming existing models.",
+        "future work": "The integration of generative adversarial networks with OurM for real-time action sampling and broadening its applicability in complex real-world settings."
+    }
+}

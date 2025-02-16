@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "Modeling Top-k Partial Orders with Composite and Augmented Ranking Models: An Experimental Exploration",
+        "authors": [
+            "Researcher A",
+            "Researcher B",
+            "Researcher C"
+        ],
+        "affiliations": [
+            "University of ABC, Department of Computer Science"
+        ],
+        "abstract": "This paper investigates the statistical modeling of top-k partial orders without treating them as mere marginal events in the space of total orders. Two innovative modeling approaches, composite models and augmented ranking models, are proposed and evaluated. These methods offer a direct probability distribution over the space of partial orders, allowing researchers to create meaningful synthetic datasets for supporting simulations and demand forecasting.",
+        "keywords": [
+            "Top-k rankings",
+            "statistical modeling",
+            "partial orders",
+            "synthetic datasets"
+        ],
+        "year": "2023",
+        "venue": "Journal of Statistical Modeling and Applications",
+        "doi link": "https://doi.org/10.xxxx/abcd-vwxyz",
+        "method name": "Composite and Augmented Ranking Models"
+    },
+    "relate work": {
+        "related work category": [
+            "Statistical Models for Rankings",
+            "Plackett--Luce Models",
+            "Choice Behavior Simulation"
+        ],
+        "related papers": "Zhao, Y., Xia, L. [2019] \"Bayesian Learning from Partial Order Data,\" Journal of Choice Modeling. Li, X., et al. [2022] \"Learning Rank Aggregation Models with Ranker Preferences,\" Proceedings of Machine Learning Research.",
+        "comparisons with related methods": "The newly proposed methods focus on directly modeling partial orders rather than using extensions of existing total order models like Plackett--Luce, which primarily focus on sequential choices."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper explores new statistical models designed for the representation and analysis of top-k partial orders in various settings like school choice and election contexts. It introduces composite and augmented ranking models as innovative frameworks capable of producing more realistic simulations and sampling models for partial orders. Through comprehensive experimentation across multiple datasets, the efficacy and flexibility of these approaches are well-demonstrated.",
+        "research purpose": "Develop methods that better account for partial orders, particularly focusing on top-k lists, to provide more realistic simulations and demand models.",
+        "research challenge": null,
+        "method summary": "The work presents two distinct modeling methodologies: Composite models that independently or dependently treat list lengths and preferences, and Augmented models that incorporate termination decisions as part of the preference structure.",
+        "conclusion": null
+    },
+    "Method": {
+        "description": "The composite and augmented ranking models formulate a structured approach for modeling top-k partial orders. Composite models integrate separate models for both list length and the ordering of preferences. The augmented model introduces termination options (such as an \"END\" choice) into the decision space, providing a method to simulate the truncation behavior often observed in real-world datasets.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Composite models and Augmented ranking models, with variations in dependence (e.g., length-independent, conditionally-independent, length-dependent, and position-dependent augmentations).",
+        "tasks": [
+            "Modeling top-k partial orders",
+            "Simulating partial order data",
+            "Demand forecasting for partial orders"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "San Francisco ranked-choice voting datasets (2018-2019)",
+            "School choice datasets from SFUSD (San Francisco Unified School District)"
+        ],
+        "baselines": [
+            "Naive Augmented Model",
+            "Independent Composite Model"
+        ],
+        "evaluation metric": null,
+        "setup": "Comprehensive testing using multiple datasets. Regularization techniques and stratifications are applied to improve model performance. Grid search methods are used for tuning hyperparameters.",
+        "hyperparameters": "Regularization strength lambda, number of stratification buckets K, learning rate, batch size, maximum epochs.",
+        "results": "The stratified augmented model generally achieved the best performance, especially in fitting observed list lengths and generating synthetic datasets that accurately reflect demand distributions across categories.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Composite and augmented ranking models offer promising solutions for detailed modeling of top-k partial orders. These methods allow for better simulation of data by incorporating more realistic assumptions about list lengths and preferences.",
+        "future work": "Further exploration is suggested in relaxing assumptions regarding fixed choice sets, improving identifiability conditions, and extending analysis to capture alternative covariate shifts."
+    }
+}

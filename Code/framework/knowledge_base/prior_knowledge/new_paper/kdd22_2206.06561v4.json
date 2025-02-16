@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Free-direction Knowledge Distillation Based on Reinforcement Learning for GNNs",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous"
+        ],
+        "abstract": "Graph data is increasingly prevalent with the rapid development of the Internet, such as social networks and citation networks. Graph neural networks (GNNs) effectively model these structures, enabling various applications, from recommendation systems to molecular predictions. However, challenges persist, prompting a new knowledge distillation framework that avoids relying on deeper teacher models. This paper proposes FreeKD, a reinforcement learning-based hierarchical approach, enabling mutual knowledge distillation between shallower GNNs.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Knowledge Distillation",
+            "Reinforcement Learning",
+            "Mutual Learning"
+        ],
+        "year": "2023",
+        "venue": "AAAI Conference on Artificial Intelligence",
+        "doi link": "10.1007/s11036-023-02088-4",
+        "method name": "FreeKD"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Knowledge Distillation for GNNs",
+            "Reinforcement Learning"
+        ],
+        "related papers": "References include: [sen2008collective] Sen P., et al. Collective classification in network data. [zhang2020reliable] Zhang M., et al. Reliable learning by semantically decomposed knowledge representation. [chen2020self] Chen J., et al. Self-distillation for GNNs.",
+        "comparisons with related methods": "FreeKD differs from traditional methods by enabling bi-directional, mutual knowledge sharing rather than one-directional distillation from a deeper teacher model, offering efficiency and adaptability to various GNN architectures."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research introduces FreeKD, a novel knowledge distillation framework that leverages reinforcement learning to enable mutual knowledge transfer between shallower GNNs, eliminating the need for a deep, well-optimized teacher model.",
+        "research purpose": "To enhance the performance of GNNs by developing a more efficient and flexible knowledge distillation framework that mitigates the limitations of relying on deep teacher models.",
+        "research challenge": "Existing methods require deep and often complex teacher models that are computationally intensive and risky due to overfitting and over-smoothing.",
+        "method summary": "FreeKD employs a reinforcement learning-based framework where two GNN models dynamically exchange knowledge through a hierarchical decision-making process to optimize learning at both node and structural levels.",
+        "conclusion": "The framework effectively boosts the performance of GNNs, showing that flexible, mutual knowledge transfer can match or surpass traditional distillation methods that rely on deeper models."
+    },
+    "Method": {
+        "description": "The FreeKD method introduces a bi-directional knowledge distillation framework that leverages reinforcement learning to enable flexible, hierarchical knowledge exchange between two shallow GNN models.",
+        "problem formultaion": "The main challenge is to develop a knowledge transfer mechanism that avoids the need for computationally intensive deep teacher models, optimizing learning efficiency and effectiveness.",
+        "feature processing": "N/A",
+        "model": "Two shallower GNNs learning collaboratively, leveraging reinforcement learning to guide node-level and structure-level knowledge exchange.",
+        "tasks": [
+            "Node-level Knowledge Distillation",
+            "Structure-level Knowledge Distillation",
+            "Reinforcement Learning-based Decision Making"
+        ],
+        "theoretical analysis": "N/A",
+        "complexity": "Designed to reduce complexity associated with deep model optimization, leveraging shallow models collaboratively.",
+        "algorithm step": "Main steps involve node-level and structure-level decision making via a reinforcement learning agent, ultimately facilitating dynamic, mutual knowledge exchange."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "Chameleon",
+            "Texas",
+            "PPI"
+        ],
+        "baselines": [
+            "GCN",
+            "GraphSAGE",
+            "GAT"
+        ],
+        "evaluation metric": "Micro-F1 score",
+        "setup": "Experiments conducted on a range of GNN architectures and datasets, with two networks from GCN, GraphSAGE, and GAT selected as basic models.",
+        "hyperparameters": "N/A",
+        "results": "FreeKD consistently improves GNN performance across benchmark datasets, showing more than a 4.5% improvement in some settings.",
+        "performance": "Achieves comparable or superior performance to traditional methods distilling knowledge from deeper models.",
+        "analysis": "Experiments demonstrate FreeKD's effectiveness in promoting GNN performance through mutual learning.",
+        "ablation study": "Highlights the importance of key components in the framework, confirming the value of both node-level and structure-level knowledge distillation."
+    },
+    "conclusion": {
+        "summary": "FreeKD, leveraging reinforcement learning, enables effective mutual knowledge distillation between shallower GNNs, obviating the need for deep teacher models and achieving significant performance gains.",
+        "future work": "Future exploration might include adapting FreeKD to other domains or extending reinforcement learning strategies for greater adaptability and efficiency in GNN applications."
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Temporal Graph Signal Decomposition",
+        "authors": [
+            "Author One",
+            "Author Two"
+        ],
+        "affiliations": [
+            "Affiliation One",
+            "Affiliation Two"
+        ],
+        "abstract": "Multivariate time series often feature temporal and spatial structure inherent to the domain in which they are collected. Incorporating this structure when mining such data is essential to obtaining parsimonious, robust, and interpretable models. In this paper we focus specifically on temporal data associated with the nodes of a fixed graph and refer to such data as temporal graph signals (TGS). Our goal in this work is to obtain a low-dimensional embedding of a TGS which jointly exploits such graph and temporal properties and propose a general framework for temporal graph signal decomposition (TGSD) based on joint dictionary encoding in the graph and time domain.",
+        "keywords": [
+            "Temporal Graph Signals",
+            "Dictionary Encoding",
+            "Graph Signal Processing"
+        ],
+        "year": "2023",
+        "venue": "Journal of Advanced Signal Processing",
+        "doi link": "http://example.com/doi/xyz12345",
+        "method name": "Temporal Graph Signal Decomposition (TGSD)"
+    },
+    "relate work": {
+        "related work category": [
+            "Sparse Dictionary Coding",
+            "Graph Signal Processing",
+            "Matrix Completion"
+        ],
+        "related papers": "Sparse dictionary coding has been widely used in signal processing and learned from data. Graph signal processing specifically models signals over graphs using graph Laplacian as a basis. Matrix completion techniques are employed to estimate missing values in matrices using low-rank assumptions.",
+        "comparisons with related methods": "Our approach extends previous work by incorporating both graph and temporal structure in a unified framework, offering improvements over traditional methods that treat these structures separately."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces Temporal Graph Signal Decomposition, a novel methodology for encoding temporal graph signals by jointly exploiting graph and temporal structures. TGSD uses dictionary-based decompositions to create low-dimensional embeddings of complex temporal data.",
+        "research purpose": "The purpose of the research is to develop a model that efficiently transforms temporal graph signals into a succinct, interpretable form that handles missing data robustly.",
+        "research challenge": "Integrating temporal and graph structural properties in a single framework while ensuring scalability and interpretability.",
+        "method summary": "TGSD decomposes graph signals using a joint dictionary approach, applying existing and novel temporal and graph dictionaries to derive sparse encodings.",
+        "conclusion": "TGSD demonstrates significant advantages in capturing both graph and temporal structures, outperforming existing methods in reconstruction accuracy and scalability."
+    },
+    "Method": {
+        "description": "The TGSD method encodes temporal graph signals using dictionary-based transformations to leverage both the graph and temporal properties. This framework employs two fixed dictionaries along with sparse coefficients to represent temporal and graph structures efficiently.",
+        "problem formultaion": "The core problem is to model co-evolving temporal signals on graph nodes, treating them as temporal graph signals subject to both temporal and spatial dependencies.",
+        "feature processing": null,
+        "model": "TGSD uses two fixed dictionaries (graph, temporal) and two variable sparse encoding matrices to transform and reconstruct temporal graph signals.",
+        "tasks": [
+            "Temporal Graph Signal Encoding",
+            "Missing Value Imputation",
+            "Clustering"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "The process involves initializing dictionaries, iterating through updates for encoding matrices, and reconstructing graph signals by capturing both spatial and temporal correlations."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Data",
+            "Bike Dataset",
+            "Traffic Dataset",
+            "Reality Mining Dataset",
+            "Reddit Dataset"
+        ],
+        "baselines": [
+            "Matrix Completion (MCG)",
+            "Graph Signal Processing (GSP)",
+            "BRITS",
+            "CCTN",
+            "Principal Component Analysis (PCA)"
+        ],
+        "evaluation metric": "Root Mean Square Error (RMSE), Clustering Accuracy",
+        "setup": "The experiments involve comparisons across synthetic and real-world datasets, utilizing tasks such as reconstruction, imputation, and clustering to benchmark TGSD's performance against existing methods.",
+        "hyperparameters": "Lambda values for sparsity and scaling parameters set through cross-validation on training datasets.",
+        "results": "TGSD outperforms baselines in RMSE across all datasets and tasks evaluated, demonstrating robust handling of missing data and improved accuracy in decomposing temporal graph signals.",
+        "performance": "TGSD achieves high accuracy on imputation and clustering tasks with reduced model complexity, outperforming other baselines.",
+        "analysis": "Comparison of dictionary configurations reveals insights into the effectiveness of graph and temporal dictionaries in capturing structural information.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "TGSD has proven effective in providing succinct representations of temporal graph signals by integrating complex temporal and graph structures in a single decomposition framework.",
+        "future work": "Exploring adaptive dictionary selection and broader applications in scalable and dynamic graph signal processing."
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Motif Transition Model for Temporal Network Generation",
+        "authors": [
+            "Author A",
+            "Author B"
+        ],
+        "affiliations": [
+            "Department of Computer Science, University A"
+        ],
+        "abstract": "In this paper, we propose the Motif Transition Model (MTM) to generate synthetic temporal networks that preserve the global and local features of input networks. MTM models the evolution of temporal motifs as a stochastic process, simulating these transitions to generate synthetic temporal networks. We evaluate MTM's performance on various datasets, demonstrating its superior ability to preserve both structural and temporal characteristics of the input networks while being significantly more efficient than existing methods.",
+        "keywords": [
+            "Temporal Network",
+            "Synthetic Network Generation",
+            "Motif Transition",
+            "Temporal Motifs"
+        ],
+        "year": "2023",
+        "venue": "Journal of Artificial Intelligence Research",
+        "doi link": null,
+        "method name": "Motif Transition Model (MTM)"
+    },
+    "relate work": {
+        "related work category": [
+            "Temporal Network Generation",
+            "Temporal Motifs"
+        ],
+        "related papers": "1. Gauvin et al. (2018) - Survey on random reference models for temporal networks. 2. Purohit et al. - Structural Temporal Modeling (STM) process. 3. Zeno et al. - DYMOND model for dynamic networks. 4. Zhou et al. - TagGen model for temporal graphs. 5. Porter et al. - Temporal activity state block model (TASBM).",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces the Motif Transition Model (MTM) for temporal network generation. MTM uses motif transitions as a stochastic process to generate networks that preserve the global and local traits of input networks.",
+        "research purpose": "To develop a model that generates realistic temporal networks preserving both global and local characteristics.",
+        "research challenge": "Temporal graph generation is notably challenging compared to static graph generation due to the diverse and extensive nature of real-world temporal networks.",
+        "method summary": "MTM models temporal motifs' evolution as a stochastic process to generate temporal networks by simulating motif transitions. The model computes transition properties from input graphs to simulate stochastic transitions.",
+        "conclusion": "MTM outperforms baseline models in preserving structural and temporal characteristics while providing remarkable efficiency."
+    },
+    "Method": {
+        "description": "MTM generates synthetic temporal networks by simulating the transition of temporal motifs as a stochastic process. The model first computes motif transition properties from the input network and then generates a new network based on these transitions.",
+        "problem formultaion": "To generate temporal networks that preserve both structural and temporal properties found in real-world networks.",
+        "feature processing": "The temporal motifs in the input network are analyzed to extract transitions and their probabilities.",
+        "model": "The Motif Transition Model (MTM) models the stochastic processes of motif transitions in temporal networks.",
+        "tasks": [
+            "Synthetic Network Generation",
+            "Evaluation against Baselines"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "1. Identify motif transition properties in the input network. 2. Simulate motif transitions to generate a synthetic network."
+    },
+    "Experiments": {
+        "datasets": [
+            "CollegeMsg",
+            "Email-EU",
+            "Email-EU*",
+            "FBWall",
+            "SuperUser",
+            "StackOverflow"
+        ],
+        "baselines": [
+            "TASBM",
+            "STM",
+            "TagGen"
+        ],
+        "evaluation metric": null,
+        "setup": "Experiments were conducted on a Linux system with Intel Xeon CPU and NVIDIA GPU, using C++ implementation.",
+        "hyperparameters": "Transition size limit (l_max) = 4, Transition time limit (delta) = 1 hour",
+        "results": "MTM consistently outperformed baselines in preserving global and local graph statistics, with differences below 5% for most metrics.",
+        "performance": "MTM is highly efficient, being significantly faster than baseline models and up to 231 times faster than motif counting.",
+        "analysis": "MTM effectively captures both global and local graphical properties of temporal networks.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "MTM offers an innovative method for temporal network generation, effectively capturing graph statistics and outperforming competitors in both accuracy and efficiency.",
+        "future work": "Future developments include applications in anomaly detection and exploring alternative distributions for modeling motif transitions."
+    }
+}

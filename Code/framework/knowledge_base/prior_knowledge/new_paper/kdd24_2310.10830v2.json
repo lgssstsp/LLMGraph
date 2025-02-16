@@ -1,0 +1,86 @@
+{
+    "meta_data": {
+        "title": "SheepDog: Enhancing Fake News Detection with Style-Agnostic Training and Content-Focused Veracity Attributions",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Department of Computer Science, National University of Singapore",
+            "NCS Pte. Ltd."
+        ],
+        "abstract": "Recent advances in automated fake news detection heavily rely on text-based analysis such as sentiment and stylistic features. This paper introduces SheepDog, a style-agnostic fake news detector that emphasizes content veracity over stylistic variations. SheepDog leverages the power of Large Language Models (LLMs) for news reframing and veracity attribution while incorporating style-agnostic training techniques to build resilience against adversarial attacks that leverage LLMs to alter news styles. Extensive experiments demonstrate SheepDog's robustness and adaptability across diverse backbone and challenge settings, significantly improving over state-of-the-art methods.",
+        "keywords": [
+            "fake news detection",
+            "large language models",
+            "robustness",
+            "stylistic attack",
+            "machine learning"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the 22nd ACM International Conference on Web Search and Data Mining (WSDM '23)",
+        "doi link": "https://doi.org/10.1145/xyz12345",
+        "method name": "SheepDog"
+    },
+    "relate work": {
+        "related work category": [
+            "Fake News Detection",
+            "Adversarial Attack on Fake News Detectors",
+            "LLM Capabilities and Misinformation"
+        ],
+        "related papers": "[1] Amado, Bruno G., et al. \"The undeutsch hypothesis and its effect on detecting deception.\"\n[2] Shu, Kai, et al. \"Diverse evidence-based fake news detection prototype: DECEPT\".\n[3] Brown, Tom B., et al. \"Language models are few-shot learners.\"",
+        "comparisons with related methods": "The proposed SheepDog outperforms existing state-of-the-art fake news detectors by focusing on content rather than stylistic cues, utilizing style-agnostic training, and incorporating content-focused veracity attributions, which is not commonly achieved by previous models."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This study introduces SheepDog, a robust fake news detection framework that prioritizes content integrity over stylistic variations in news articles. The framework integrates a style-agnostic training module with content-focused veracity attributions derived from large language models (LLMs) to improve detection accuracy and robustness.",
+        "research purpose": "To mitigate the adverse effect of stylistic manipulations on the detection accuracy of contemporary fake news detectors.",
+        "research challenge": "Many existing fake news detectors are vulnerable to style-based attacks, especially those leveraging LLM capabilities to simulate genuine news styles.",
+        "method summary": "SheepDog employs a dual-stage approach integrating LM-based style agnostic training and LLM-enhanced content-focused veracity attributions to adaptively detect fake news articles, regardless of stylistic presentation.",
+        "conclusion": "SheepDog presents a significant advancement in fake news detection, effectively balancing robustness against stylistic attacks with a deeper content understanding."
+    },
+    "Method": {
+        "description": "SheepDog utilizes a dual-path learning framework that combines the benefits of fine-tuned language models with the comprehensive understanding capabilities of large language models to address the susceptibility of fake news detectors to stylistic alterations.",
+        "problem formultaion": "The primary challenge is to accurately determine the veracity of news content that may have been deliberately styled to appear trustworthy using powerful language models.",
+        "feature processing": "Employs dual-style reframings of news articles using LLMs, generating diverse style contexts while maintaining content integrity through controlled iterations.",
+        "model": "SheepDog combines a pre-trained LM (like RoBERTa) for initial content processing and integrates LLM-derived veracity attributions for stylistic agnostic predictions.",
+        "tasks": [
+            "1. Style-Agnostic Training",
+            "2. Content-Focused Veracity Attribution",
+            "3. Robust Adversarial Testing"
+        ],
+        "theoretical analysis": "The method builds on the observation that current detectors rely heavily on stylistic cues, and thus integrates mechanisms to discount such features, focusing solely on content verification.",
+        "complexity": "The inclusion of LLMs for stylistic variation and content derivation increases computational requirements but is mitigated by a modular design that leverages task-optimized backbones.",
+        "algorithm step": "1. Input news article and generate dual style reframings. 2. Predict veracity via LM-based detection and LLM-based attribution. 3. Align predictions across reframings using style-agnostic training. 4. Output veracity and rationale."
+    },
+    "Experiments": {
+        "datasets": [
+            "PolitiFact",
+            "GossipCop",
+            "LUN (Labeled Unreliable News)"
+        ],
+        "baselines": [
+            "dEFEND",
+            "SAFE",
+            "SentGCN",
+            "BERT",
+            "RoBERTa",
+            "DeBERTa",
+            "UDA",
+            "PET",
+            "KPT",
+            "GPT-3.5",
+            "InstructGPT",
+            "LLaMA2-13B"
+        ],
+        "evaluation metric": "Accuracy and Macro F1 Score",
+        "setup": "Style-based adversarial testing across multiple LLM-powered framework setups.",
+        "hyperparameters": "Learning rate of $2\\times10^{-5}$, batch size of 4, using a RoBERTa backbone fine-tuned over 5 epochs.",
+        "results": "SheepDog consistently demonstrates improved robustness in face of adversarial style-based attacks, reporting significant gains in F1 scores across all tested datasets.",
+        "performance": "Outperforms state-of-the-art detectors by leveraging style-invariant training, demonstrating marked robustness across diverse style manipulations in news content.",
+        "analysis": "Existing systems fail in adaptability when faced with LLM-driven stylistic shifts, which SheepDog counters with dual-path style-focused configurations.",
+        "ablation study": "Confirms the significant impact of LLM-empowered news reframings and content-focused veracity attributions, driving the robustness gains against stylistic perturbations."
+    },
+    "conclusion": {
+        "summary": "SheepDog achieves a breakthrough in style-agnostic fake news detection by harmonizing task-specific LM backbones with versatile LLM capabilities.",
+        "future work": "The potential extension to multi-modal scenarios and broader LLM utilization for enhanced detection across varying media content types."
+    }
+}

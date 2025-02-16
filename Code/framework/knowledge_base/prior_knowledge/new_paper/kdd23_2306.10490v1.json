@@ -1,0 +1,50 @@
+{
+    "meta_data": {
+        "title": "Acknowledgements",
+        "authors": [],
+        "affiliations": [],
+        "abstract": "Acknowledgement section from the research paper recognizing contributions and support for the work.",
+        "keywords": [],
+        "year": "",
+        "venue": "",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [],
+        "related papers": "",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This section acknowledges the contributions of reviewers and the support from Amazon Research.",
+        "research purpose": "To express gratitude and recognize contributions to the research.",
+        "research challenge": null,
+        "method summary": null,
+        "conclusion": null
+    },
+    "Method": {
+        "description": "",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "",
+        "tasks": [],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [],
+        "baselines": [],
+        "evaluation metric": null,
+        "setup": null,
+        "hyperparameters": null,
+        "results": "",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Acknowledgements note the importance of feedback and support in research.",
+        "future work": null
+    }
+}

@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Graph Convolutional Networks via Initial Residual and Identity Mapping (GCNII)",
+        "authors": [
+            "Anonymous Authors"
+        ],
+        "affiliations": [],
+        "abstract": "Graph convolutional networks (GCNs) have shown promise in learning from graph-structured data. However, most GCNs are shallow, achieving optimal performance with 2-layer architectures, limiting their capacity to capture information from high-order neighbors. Stacking more layers typically leads to over-smoothing, wherein node representations become indistinguishable. This paper presents GCNII, a deep GCN model that resolves over-smoothing through initial residual connections and identity mappings. Experimental results confirm that GCNII improves performance consistently as network depth increases, achieving state-of-the-art results in both semi-supervised and full-supervised tasks.",
+        "keywords": [
+            "Graph Convolutional Networks",
+            "Deep Learning",
+            "Residual Connections",
+            "Identity Mapping",
+            "Over-smoothing"
+        ],
+        "year": "2023",
+        "venue": "arXiv",
+        "doi link": null,
+        "method name": "GCNII"
+    },
+    "relate work": {
+        "related work category": [
+            "Spectral-based GCN",
+            "Attention-based GCN",
+            "Unsupervised GCN",
+            "Sampling-based methods in GCN"
+        ],
+        "related papers": "Spectral-based GCN has been extensively studied, including methods that adapt graphs during training and leverage graph wavelet basis. Attention-based models such as GAT learn edge weights dynamically. Various techniques focus on improving scalability and classification performance in GCNs.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes GCNII, a novel deep graph convolutional network that addresses the over-smoothing problem persistent in existing GCNs by introducing initial residual connections and identity mapping. GCNII consistently improves performance with increased depth, achieving new benchmarks in various graph learning tasks.",
+        "research purpose": "To improve the performance of deep graph convolutional networks by overcoming limitations of shallowness and over-smoothing.",
+        "research challenge": "Existing GCN models suffer from over-smoothing when more layers are added, which leads to indistinguishable node representations.",
+        "method summary": "The proposed method uses initial residual connections with identity mapping to effectively deepen GCNs while preventing over-smoothing.",
+        "conclusion": "GCNII achieves state-of-the-art results in both semi-supervised and fully supervised tasks across a variety of datasets."
+    },
+    "Method": {
+        "description": "GCNII enriches deep graph learning models by incorporating initial residual connections and identity mapping at each layer, overcoming the arching limitation of shallow GCN architectures and the over-smoothing effect of deep GCNs.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "GCNII incorporates initial residual connections and identity mapping to preserve feature information and structural integrity across deep layers.",
+        "tasks": [
+            "Node classification",
+            "Graph classification"
+        ],
+        "theoretical analysis": "GCNII is proven to express polynomial spectral filters with arbitrary coefficients, essential for combating gradient vanishing and preserving input feature richness.",
+        "complexity": null,
+        "algorithm step": "GCNII constructs skip connections from input layers (initial residual), appends identity matrices to weight matrices (identity mapping), thereby maintaining representation fidelity through deep layers."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "Citeseer",
+            "Pubmed",
+            "Chameleon",
+            "PPI"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "JKNet",
+            "DropEdge",
+            "APPNP"
+        ],
+        "evaluation metric": "Mean classification accuracy and F1 score",
+        "setup": "Various graph datasets are used with fixed train/validation/test splits, employing Adam SGD for optimizer tuning, with experiments conducted over multiple runs to ensure result stability.",
+        "hyperparameters": "Learning rate of 0.01, varying dropout rates, configurable dense and convolution layer regularizations.",
+        "results": "GCNII achieves new state-of-the-art accuracy metrics across multiple datasets, outperforming existing shallow and deep GCN methods.",
+        "performance": "GCNII demonstrates robust performance across 64-layer architectures, surpassing existing models without the traditional limitations imposed by depth-induced over-smoothing.",
+        "analysis": null,
+        "ablation study": "Conducted to evaluate contributions of initial residual connections and identity mapping, showing both are crucial for resolving over-smoothing."
+    },
+    "conclusion": {
+        "summary": "The paper presents GCNII, a deep network that effectively counters the over-smoothing problem in traditional GCNs using initial residual connection and identity mapping. GCNII achieves leading-edge results in various supervised and semi-supervised tasks, demonstrating potential for further research in combining GCNII with attention mechanisms.",
+        "future work": "Investigate the integration of attention mechanisms with GCNII and explore the ReLU operation in the GCNII structure for further performance enhancement."
+    }
+}

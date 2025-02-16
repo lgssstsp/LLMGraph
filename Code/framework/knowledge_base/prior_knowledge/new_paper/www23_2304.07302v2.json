@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "HGWaveNet: A Novel Hyperbolic Graph Neural Network for Temporal Link Prediction",
+        "authors": [
+            "Tai Lv",
+            "Yuan Liang"
+        ],
+        "affiliations": [
+            "School of Computer Science, University of Science and Technology"
+        ],
+        "abstract": "Dynamic graphs have gathered attention due to their ability to model temporal interactions, such as social networks and traffic systems. Existing methods often rely on Euclidean spaces, which do not fit the hierarchical nature observed in real-world data. This paper presents HGWaveNet, a hyperbolic graph neural network designed for temporal link prediction on dynamic graphs. We design novel modules, hyperbolic diffusion graph convolution (HDGC) and hyperbolic dilated causal convolution (HDCC), to learn hierarchical and temporal features efficiently.",
+        "keywords": [
+            "Hyperbolic Geometry",
+            "Dynamic Graphs",
+            "Temporal Link Prediction",
+            "Graph Neural Networks"
+        ],
+        "year": "2023",
+        "venue": "Conference on Machine Learning and Data Mining",
+        "doi link": null,
+        "method name": "HGWaveNet"
+    },
+    "relate work": {
+        "related work category": [
+            "Temporal Link Prediction",
+            "Hyperbolic Graph Representation Learning"
+        ],
+        "related papers": "\\cite{nguyenContinuousTimeDynamicNetwork2018, mahdaviDynnode2vecScalableDynamic2018, zhouDynamicNetworkEmbedding}\\cite{nickelPoincareEmbeddingsLearning, liuHyperbolicGraphNeural, chamiHyperbolicGraphConvolutional}",
+        "comparisons with related methods": "HGWaveNet outperforms existing Euclidean-based and hyperbolic models by learning representations that align with power-law distributions and hierarchical structures."
+    },
+    "high_level_summary": {
+        "summary of this paper": "HGWaveNet introduces a hyperbolic graph neural network for dynamic graphs, improving prediction accuracy by leveraging the geometry of hyperbolic space to capture hierarchical and temporal relationships.",
+        "research purpose": "The primary aim is to develop an efficient method for temporal link prediction in dynamic graphs using hyperbolic space to better model the inherent hierarchical structures and dynamics in such data.",
+        "research challenge": "How to adapt graph neural networks to better fit and capture the hierarchical and complex temporal dynamics inherent in real-world graph data.",
+        "method summary": "HGWaveNet leverages hyperbolic geometry, designing HDGC and HDCC modules to efficiently process spatial and temporal features in dynamic graphs.",
+        "conclusion": "Through extensive experiments, HGWaveNet consistently outperforms existing methods, demonstrating the efficacy of hyperbolic modeling for dynamic graph tasks."
+    },
+    "Method": {
+        "description": "HGWaveNet revolves around hyperbolic spaces, utilizing HDGC for spatial features and HDCC for temporal features in dynamic graphs.",
+        "problem formultaion": "Temporal link prediction in discrete dynamic graphs.",
+        "feature processing": "Projection of nodes into hyperbolic spaces.",
+        "model": "HGWaveNet includes hyperbolic graph neural networks with HDGC and HDCC modules.",
+        "tasks": [
+            "Temporal Link Prediction",
+            "Temporal New Link Prediction"
+        ],
+        "theoretical analysis": "Explores hyperbolic geometry's properties for preserving hierarchical data structures and power-law distributions.",
+        "complexity": "Time complexity of each module analyzed; HGWaveNet optimizes computational efficiency through HDGC diffusion processes.",
+        "algorithm step": "Steps involve projecting node features, processing spatial and temporal data via HDGC and HDCC, and integrating outputs through HGRU for final link prediction."
+    },
+    "Experiments": {
+        "datasets": [
+            "Enron (email communication networks)",
+            "DBLP (academic co-author networks)",
+            "HepPh (academic co-author networks)",
+            "AS733 (Internet router networks)",
+            "FB (social networks)",
+            "MovieLens (movie networks)"
+        ],
+        "baselines": [
+            "HTGN",
+            "HGCN",
+            "HAT",
+            "GRUGCN",
+            "GCNRNN"
+        ],
+        "evaluation metric": "Average Precision (AP), Area Under ROC Curve (AUC)",
+        "setup": "Comparison with Euclidean and other hyperbolic models; ablation studies conducted to corroborate model components.",
+        "hyperparameters": "Dimensions, diffusion steps, and dilation depths varied to assess performance impacts.",
+        "results": "HGWaveNet showed a relative improvement by up to 6.67% in AUC over state-of-the-art methods.",
+        "performance": "Consistently improved prediction accuracy on large-scale graphs, maintaining representation stability with scale.",
+        "analysis": "Performance analysis showed substantial benefits for graph scales and demonstrated superiority over Euclidean methods, particularly on large datasets.",
+        "ablation study": "Confirmed the contributions of HDGC, HDCC, and the use of hyperbolic geometry."
+    },
+    "conclusion": {
+        "summary": "HGWaveNet offers a promising advancement in temporal link prediction through novel hyperbolic modules, leveraging hierarchical data structures.",
+        "future work": "Future research will explore generalizing HGWaveNet to additional tasks beyond link prediction and integrating hyperbolic GNNs into heterogeneous graph analysis."
+    }
+}

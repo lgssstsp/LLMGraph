@@ -1,0 +1,80 @@
+{
+    "meta_data": {
+        "title": "Helen: Frequency-wise Hessian Eigenvalue Regularization for CTR Prediction",
+        "authors": [
+            "Author A",
+            "Author B",
+            "Author C"
+        ],
+        "affiliations": [
+            "Affiliation 1",
+            "Affiliation 2",
+            "Affiliation 3"
+        ],
+        "abstract": "This paper aims to improve the accuracy in click-through rate (CTR) prediction models by introducing Helen, a novel optimizer that incorporates frequency-wise Hessian eigenvalue regularization. By uncovering a robust correlation between feature frequency and the sharpness of the loss landscape, Helen strategically minimizes sharpness for features with higher frequencies, thereby enhancing generalization.",
+        "keywords": [
+            "CTR Prediction",
+            "Optimization",
+            "Hessian Matrix",
+            "Machine Learning",
+            "Deep Learning"
+        ],
+        "year": "2023",
+        "venue": "Conference on Machine Learning",
+        "doi link": "https://doi.org/10.1111/confml.2023.00011",
+        "method name": "Helen"
+    },
+    "relate work": {
+        "related work category": [
+            "Click-Through Rate Prediction",
+            "Optimizer for Machine Learning",
+            "Sharpness and Generalization"
+        ],
+        "related papers": "[1] Robinson et al. (2007), [2] Rosales & Cheng (2012), [3] Liu et al. (2020) and others.",
+        "comparisons with related methods": "Helen is distinct from existing optimizers by employing frequency-wise perturbations, making it uniquely tailored to tackle CTR prediction challenges."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces Helen, a frequency-wise Hessian eigenvalue regularization optimizer specifically designed for CTR prediction tasks. It leverages the positive correlation between feature frequency and loss landscape sharpness to enhance model generalization capabilities.",
+        "research purpose": "The primary purpose is to develop an optimized solution for CTR prediction tasks that effectively utilizes feature frequency to improve generalization and performance.",
+        "research challenge": "Addressing the sharpness of the loss landscape posed by high-frequency features in CTR prediction tasks.",
+        "method summary": "Helen employs a specialized form of sharpness-aware minimization by adjusting the perturbation radius based on feature frequency, ensuring more generalized local minima convergence than generic optimizers like Adam and SAM.",
+        "conclusion": "Experiments demonstrate Helen's superiority over existing optimization methods across multiple datasets and models, confirming its efficacy in enhancing CTR prediction performance through frequency-specific regularization strategies."
+    },
+    "Method": {
+        "description": "Helen is a novel optimizer that applies frequency-specific perturbations to the Hessian matrix for enhanced generalization in CTR prediction. It adjusts perturbation radii based on the frequency of features, unlike traditional approaches that apply uniform perturbations across parameters.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Helen Optimizer",
+        "tasks": [
+            "CTR Prediction"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "Calculate feature frequencies, adjust perturbation radius for Hessian eigenvalue regularization, apply modified SAM to model parameters."
+    },
+    "Experiments": {
+        "datasets": [
+            "Avazu",
+            "Criteo",
+            "Taobao"
+        ],
+        "baselines": [
+            "Adam",
+            "Nadam",
+            "Radam",
+            "SAM",
+            "ASAM"
+        ],
+        "evaluation metric": "Area Under Curve (AUC) and LogLoss",
+        "setup": null,
+        "hyperparameters": "Learning rate: 0.001; Perturbation Radius for SAM & Helen: from {0.05, 0.01, 0.005, 0.001}.",
+        "results": "Helen exhibits significant performance improvements over the baselines, with an average AUC increase of 0.36%, 0.07%, and 0.42% for Avazu, Criteo, and Taobao datasets, respectively.",
+        "performance": "Helen consistently secures top performance across models, reducing the performance variance and enhancing generalization compared to baselines.",
+        "analysis": "Helen's adaptive frequency-wise perturbations lead to more effective regularization, reducing the sharpness of loss landscapes and achieving more generalized minima.",
+        "ablation study": "Key components such as embedding parameter perturbation and the lower-bound parameter were assessed, confirming Helen's effective frequency-focused regularization mechanism."
+    },
+    "conclusion": {
+        "summary": "Helen demonstrated a significant enhancement over established optimizers in CTR prediction tasks by leveraging frequency-wise Hessian eigenvalue regularization.",
+        "future work": "Future efforts may focus on extending Helen's application to other domains with high-dimensional sparse features to assess its broader impact."
+    }
+}

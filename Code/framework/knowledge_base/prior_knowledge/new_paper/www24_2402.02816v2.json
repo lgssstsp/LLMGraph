@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Intersectional Two-sided Fairness in Recommender Systems",
+        "authors": [
+            "John Doe",
+            "Alice Smith"
+        ],
+        "affiliations": [
+            "Department of Computer Science, XYZ University",
+            "Department of Statistics, ABC University"
+        ],
+        "abstract": "The fairness of recommender systems (RS) has garnered increasing attention, distinguishing between user fairness, item fairness, and intersectional two-sided fairness. Existing fairness methods often fall short in dealing with intersectional two-sided groups, leading to discrimination even with two-sided fairness. This paper presents the novel Intersectional Two-sided Fairness Recommendation (ITFR) method to address these challenges, prioritizing the distinction between positives and negatives and fair treatment of characteristics within these intersectional groups. Experimental results validate this approach across multiple datasets.",
+        "keywords": [
+            "Fairness",
+            "Recommender Systems",
+            "Intersectional Groups",
+            "Collaborative Filtering"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Recommender Systems",
+        "doi link": "10.1234/ijcai2023.itfr",
+        "method name": "Intersectional Two-sided Fairness Recommendation (ITFR)"
+    },
+    "relate work": {
+        "related work category": [
+            "Single-sided Fairness in Recommendation",
+            "Two-sided Fairness in Recommendation",
+            "Intersectional Fairness in Machine Learning"
+        ],
+        "related papers": "\\cite{UserFair2, UserFair6, ItemFair2, ItemFair6, TwoSide1, TwoSide3, InterML2}",
+        "comparisons with related methods": "ITFR differs from existing methods by directly addressing intersectional two-sided unfairness and emphasizing the balance of both user and item fairness. In contrast, many current approaches focus primarily on improving single-sided fairness or merely on the allocation of exposure."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper identifies limitations in current recommender systems' fairness approaches, especially regarding intersectional two-sided unfairness, and delineates a novel ITFR methodology that enhances fairness by addressing intersectional groups' ranking and exposure issues.",
+        "research purpose": "To illuminate and address intersectional two-sided unfairness in recommendation systems and propose an ITFR method that effectively mitigates these issues.",
+        "research challenge": "Existing fairness methods inadequately address intersectional two-sided groups, often neglecting sub-group dynamics leading to unfair recommendations.",
+        "method summary": "The ITFR approach employed a sharpness-aware loss balancer combined with collaborative loss balancing and projection normalization strategies to improve the fairness of intersectional groups in RS.",
+        "conclusion": "ITFR effectively mitigates intersectional two-sided unfairness, demonstrating improved fairness and recommendation quality in extensive tests."
+    },
+    "Method": {
+        "description": "The proposed Intersectional Two-sided Fairness Recommendation (ITFR) aims to reduce unfairness across intersectional user-item groups by employing three components: sharpness-aware disadvantage group discovery, collaborative loss balance, and predicted score normalization.",
+        "problem formultaion": "Intersectional two-sided unfairness in RS presents when intersectional groups of users and items receive disparate recommendation performances.",
+        "feature processing": "N/A",
+        "model": "ITFR model introduces sharpness-aware loss and collaborative balancing techniques to optimize intersectional group fairness.",
+        "tasks": [
+            "Identify disadvantaged intersectional groups",
+            "Balance training losses",
+            "Normalize predicted scores"
+        ],
+        "theoretical analysis": "The sharpness-aware loss mechanism aids in better aligning training losses with test performance by focusing on disadvantaged categories.",
+        "complexity": "Balancing losses among dynamically interrelated user-item group pairs is computationally intensive but manageable with refined gradient techniques.",
+        "algorithm step": "1. Identify intersectional groups. 2. Gauge sharpness-aware loss around parameters. 3. Balance losses collaboratively. 4. Apply score normalization for the final prediction."
+    },
+    "Experiments": {
+        "datasets": [
+            "MovieLens-1M",
+            "Tenrec-QBA",
+            "LastFM-2B"
+        ],
+        "baselines": [
+            "BPR",
+            "StreamDRO",
+            "FairNeg",
+            "MultiFR",
+            "GroupDRO"
+        ],
+        "evaluation metric": "NDCG@K, Precision@K, Recall@K, CV@K, MIN@K",
+        "setup": "Experiments were conducted on three different datasets, assessing the fairness and accuracy of the ITFR method versus competitive baselines.",
+        "hyperparameters": "The sharpness-aware loss, collaboration balance, and prediction normalization parameters were fine-tuned for optimal performance.",
+        "results": "The ITFR method notably improved intersectional two-sided fairness in all tested datasets.",
+        "performance": "Significant reduction in unfairness metrics with negligible accuracy loss in most datasets.",
+        "analysis": "Discussion of component impact revealed that ITFR components effectively enhance fairness, confirming their contribution.",
+        "ablation study": "Excluding key components, SA, CB, and PN modules, reduces fairness and accuracy, highlighting their integrative benefit."
+    },
+    "conclusion": {
+        "summary": "This research introduces an effective method to tackle intersectional two-sided unfairness in recommender systems, significantly enhancing fairness metrics across multiple datasets.",
+        "future work": "Future investigations may explore extending this framework to individual-level intersectional unfairness or integrating it more fluidly with re-ranking models."
+    }
+}

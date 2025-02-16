@@ -1,0 +1,81 @@
+{
+    "meta_data": {
+        "title": "Partial Label Learning Through Adversarial Complementary Learning",
+        "authors": [
+            "Author One",
+            "Author Two"
+        ],
+        "affiliations": [
+            "School of Computer Science, University A"
+        ],
+        "abstract": "Partial label learning (PLL) is proposed to address the challenge of expensive and time-consuming acquisition of highly accurate labels in multi-class learning. In PLL, an instance is associated with a set of candidate labels instead of one exact label. This paper introduces a novel PLL method, PL-CL, which leverages complementary learning to enhance label disambiguation. By utilizing both candidate and non-candidate labels, along with an adaptive local graph, PL-CL enhances classification accuracy by facilitating a dual-classification framework. Extensive experiments demonstrate its effectiveness over state-of-the-art PLL methods.",
+        "keywords": [
+            "Partial Label Learning",
+            "Machine Learning",
+            "Classification",
+            "Complementary Classifier",
+            "Graph Learning"
+        ],
+        "year": "2023",
+        "venue": "Conference on Machine Learning",
+        "doi link": null,
+        "method name": "PL-CL"
+    },
+    "relate work": {
+        "related work category": [
+            "Partial Label Learning",
+            "Complementary Label Learning"
+        ],
+        "related papers": "- Hullermeier, E., & Beringer, J. (2006). Learning from ambiguous data: Towards learning with partial labels. - Zhang, M. L., & Yu, F. X. (2015). Solving the labeling ambiguity problem: Clustering-based partial label learning. - Feng, L., & An, B. (2020). Complementary-label learning against label noise. In KDD (pp. 1385-1395).",
+        "comparisons with related methods": "Compared to traditional PLL strategies that focus on candidate label disambiguation, PL-CL uniquely incorporates non-candidate labels as explicit guidance, enhancing its robustness against false positives and further reducing ambiguity."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper proposes an innovative method combining complementary labels and graph-based regularization to address partial label learning tasks more effectively.",
+        "research purpose": "The purpose is to improve partial label learning by leveraging the disambiguation power of complementary labels and integrating adaptive local graph structures.",
+        "research challenge": "Adopting an effective disambiguation strategy in partial label settings where the ground-truth is hidden among ambiguous candidate labels.",
+        "method summary": "This research introduces PL-CL, a method that simultaneously operates two classifiers: Ordinary and Complementary, within an adversarial learning framework, enhancing example disambiguation through graph-based regularization.",
+        "conclusion": "PL-CL shows improvement over existing PLL solutions by capitalizing on non-candidate label accuracy and leveraging manifold consistency."
+    },
+    "Method": {
+        "description": "PL-CL employs dual classifiers to enhance partial label learning: an Ordinary Classifier, which links instances to candidate labels, and a Complementary Classifier, rejecting false candidates. Regularized by a graph-based structure capturing instance similarities, PL-CL achieves superior label disambiguation.",
+        "problem formultaion": "Minimize a composite loss function combining classifier misclassification penalties with graph-induced label manifold consistency that includes adversarial interactions between dual classifiers.",
+        "feature processing": "Instances are matrix-interpreted with features processed through induced graphs capturing manifold consistency across labels.",
+        "model": "The model consists of an Ordinary and a Complementary Classifier operating in tandem.",
+        "tasks": [
+            "Label Disambiguation",
+            "Classification"
+        ],
+        "theoretical analysis": "Analyzed the model complexity in terms of its constituent classifiers' adversarial dynamics and graph regularization.",
+        "complexity": "The method achieves computational efficiency by solving regularized least squares regression optimally using closed-form solutions.",
+        "algorithm step": "1. Initialize graph and label matrices. 2. Iteratively update classifier weights. 3. Adjust adjacency and confidence matrices until convergence."
+    },
+    "Experiments": {
+        "datasets": [
+            "FG-NET",
+            "Lost",
+            "MSRCv2",
+            "Mirflickr",
+            "Soccer Player",
+            "Yahoo!News"
+        ],
+        "baselines": [
+            "PL-AGGD",
+            "SURE",
+            "LALO",
+            "IPAL",
+            "PLDA",
+            "PL-KNN"
+        ],
+        "evaluation metric": "Classification accuracy; Mean Absolute Error for FG-NET variants.",
+        "setup": "10 runs of 50%/50% random train/test splits were used across datasets, averaged over performance metrics.",
+        "hyperparameters": "Selected parameters through cross-validation included k (Nearest Neighbors), lambda, alpha, gamma, beta, and mu.",
+        "results": "PL-CL outperformed baseline methods in 95.8% of cases, demonstrating robust performance across diverse datasets.",
+        "performance": "Notably effective in controlled UCI and real-world datasets, particularly where ambiguity from false candidates persisted.",
+        "analysis": "Exhibited strong disambiguation capability leveraging non-candidate labels, validated by paired t-tests across experimental conditions.",
+        "ablation study": "Showed both Complementary Classifier and Graph Structure significantly contributed to performance through comparative experiments."
+    },
+    "conclusion": {
+        "summary": "PL-CL achieves enhanced disambiguation in PLL by leveraging the complementary nature of non-candidate labels and graph-induced manifold consistency.",
+        "future work": "Future research will investigate deep-learning frameworks for partial label learning that extend the complementary classification paradigm."
+    }
+}

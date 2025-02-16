@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-collab",
+    "Dataset Link": "../linkprop/#ogbl-collab",
+    "Rank": 15,
+    "Method": "Common Neighbor",
+    "External Data": "No",
+    "Test Accuracy": "0.6137 ± 0.0000",
+    "Validation Accuracy": "0.6036 ± 0.0000",
+    "Contact": "mailto:muhan.zhang@hotmail.com",
+    "Paper Link": "http://www.eecs.harvard.edu/~michaelm/CS222/linkpred.pdf",
+    "Code Link": "https://github.com/facebookresearch/SEAL_OGB",
+    "Parameters": "0",
+    "Hardware": "GeForce RTX 2080S (8GB GPU)",
+    "Date": "Feb 12, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-collab/Common_Neighbor.pdf",
+    "Paper Summary": "The paper presents several methods for link prediction in social networks, focusing on the concept of \"proximity\" among nodes. Here’s a summary of the key methods discussed:\n\n### 1. **Basic Measures**\n- **Shortest Path Distance**: The simplest approach ranks node pairs based on the shortest path length, asserting that nodes closer in the network are more likely to collaborate.\n\n### 2. **Neighborhood-Based Methods**\n- **Common Neighbors**: This method counts the number of neighbors shared by two nodes; more common neighbors suggest a higher likelihood of collaboration.\n- **Jaccard Coefficient**: This metric measures the intersection over the union of neighbors, providing a normalized similarity score.\n- **Adamic/Adar Index**: It emphasizes rare neighbors by weighting shared neighbors based on their frequency, favoring connections that are less common among the population.\n\n### 3. **Path-Based Measures**\n- **Preferential Attachment**: Based on the principle that nodes with many connections are more likely to gain new links, this measure uses the product of the degrees of two nodes.\n- **Katz Measure**: It accounts for all paths connecting two nodes, applying exponential decay based on path length to give more weight to shorter paths.\n\n### 4. **Random Walk-Based Measures**\n- **Hitting Time**: This measure estimates the expected time for a random walk starting at one node to reach another, helping assess connectivity.\n- **Commute Time**: Similar to hitting time but considers the round trip, providing a symmetry aspect in measuring node proximity.\n- **Rooted PageRank**: A variation of PageRank that incorporates a return probability to the starting node, giving more emphasis to paths that involve returning.\n\n### 5. **Higher-level Approaches**\n- **SimRank**: Based on the idea that two nodes are similar to the extent that they are connected to similar neighbors, it employs a recursive definition for computing similarity scores.\n- **Low-Rank Approximation**: This technique approximates the adjacency matrix to reduce noise and exploit underlying structures more effectively. Various adaptations of existing measures, like Katz and common neighbors, are calculated using this reduced representation.\n\n### 6. **Enhanced Scoring with Meta-Approaches**\n- **Unseen Bigrams Concept**: Inspired by language modeling, this approach augments predictions based on related nodes, adjusting scores based on similarities between node pairs.\n- **Clustering**: By removing weaker links (edges) through a preprocessing step based on clustering, only reliable edges are included in the subsequent analysis, enhancing the signal-to-noise ratio for any predictions made.\n\nThese methods collectively build a framework for link prediction, leveraging a variety of topological features and characteristics inherent in the network structure to infer potential future collaborations among its nodes."
+}

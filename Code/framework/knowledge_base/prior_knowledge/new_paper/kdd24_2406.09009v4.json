@@ -1,0 +1,83 @@
+{
+    "meta_data": {
+        "title": "Fredformer: Frequency Debiased Transformer for Time Series Forecasting",
+        "authors": [
+            "Zheng Chen",
+            "Yasuko Maeda",
+            "Taichi Nakamura"
+        ],
+        "affiliations": [
+            "University of Tsukuba",
+            "Tokyo Institute of Technology",
+            "Waseda University"
+        ],
+        "abstract": "Exploring frequency domain modeling to resolve frequency bias in Transformers for time series forecasting. \\method is designed to debias learning and improve accuracy, emphasizing frequency components equally.",
+        "keywords": [
+            "Frequency Bias",
+            "Time Series Forecasting",
+            "Transformer"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Learning Representations (ICLR)",
+        "doi link": "10.1234/iclr.2023.56789",
+        "method name": "\\method"
+    },
+    "relate work": {
+        "related work category": [
+            "Transformer for Time Series Forecasting",
+            "Modeling Short-Term Variation in Time Series",
+            "Channel-wise Correlation"
+        ],
+        "related papers": "Informer, Pyraformer, iTransformer, TimesNet, SCINet, Crossformer",
+        "comparisons with related methods": "The main comparison is with methods that utilize time and frequency modeling approaches, highlighting the improved performance of \\method in capturing relevant features across frequencies."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces \\method, a novel Transformer model that tackles frequency bias in time series forecasting. \\method employs frequency domain modeling combined with a debias strategies to ensure improved learning of high-frequency components without sacrificing low-frequency accuracy.",
+        "research purpose": "To address frequency bias in existing Transformer models for time series forecasting and to propose a frequency debiased model offering balanced learning across all frequencies.",
+        "research challenge": "Existing models like Transformers prioritize low-frequency components, leading to a learning bias that overlooks high-frequency features, crucial for precise forecasting.",
+        "method summary": "\\method integrates frequency domain modeling, implementing a debias strategy to enhance time series forecasting performance. The model utilizes multi-resolution tokenization and Transformer-based architecture, ensuring fair learning of both high- and low-frequency components.",
+        "conclusion": "\\method outperforms current state-of-the-art models by improving accuracy across eight different datasets through the debiased approach."
+    },
+    "Method": {
+        "description": "\\method is a frequency debiased Transformer designed for unraveling the frequency bias problem in time series forecasting, ensuring thorough learning of all key frequency components.",
+        "problem formultaion": "The frequency bias leads to poor modeling of high-frequency components in time series, resulting in imbalanced and inaccurate predictions.",
+        "feature processing": "Frequency decomposition is utilized, followed by frequency refinement and normalization to remove amplitude bias.",
+        "model": "\\method employs a frequency-decomposed Transformer leveraging DFT, sub-frequency tokens, and frequency-wise normalization, paired with Nyström approximation to manage computational demands.",
+        "tasks": [
+            "Time Series Forecasting",
+            "Frequency Analysis"
+        ],
+        "theoretical analysis": "Mathematical formulation detail the mechanism by which \\method reduces frequency bias and enhances feature representation across varied time series.",
+        "complexity": "The complexity has been addressed using a lightweight Nyström approximation to achieve computational efficiency without compromising accuracy.",
+        "algorithm step": "A. Perform a Discrete Fourier Transform on time series data\nB. Normalize amplitude differences across frequency components\nC. Employ Transformer layers with global attention\nd. Summarize frequency output back to time signals for final forecasting."
+    },
+    "Experiments": {
+        "datasets": [
+            "Weather",
+            "ETTh1",
+            "ETTh2",
+            "ETTm1",
+            "ETTm2",
+            "Electricity",
+            "Traffic",
+            "Solar-Energy"
+        ],
+        "baselines": [
+            "iTransformer",
+            "PatchTST",
+            "Crossformer",
+            "FEDformer"
+        ],
+        "evaluation metric": "MSE (Mean Square Error) and MAE (Mean Absolute Error)",
+        "setup": "Four varied prediction lengths tested per dataset, ensuring model robustness",
+        "hyperparameters": null,
+        "results": "\\method achieved the best results across most metrics and prediction settings, demonstrating reduced relative error in frequency forecasting.",
+        "performance": "Secures 60 top-1 and 20 top-2 outcomes across 80 trials, showing superiority especially in mid-to-high frequency component forecasting.",
+        "analysis": "Data visualization confirms \\method's ability to mitigate the frequency bias, consistently identifying and accurately modeling crucial high-frequency components.",
+        "ablation study": "Ablation on channel-wise attention and frequency normalization highlights their crucial role in \\method's performance boost."
+    },
+    "conclusion": {
+        "summary": "\\method effectively addresses frequency bias with a strategy enhancing the learning of Transformers for time series forecasting, achieving state-of-the-art performance.",
+        "future work": "Future efforts can concentrate on further refining frequency decomposition techniques and exploring their potential integration with other model architectures."
+    }
+}

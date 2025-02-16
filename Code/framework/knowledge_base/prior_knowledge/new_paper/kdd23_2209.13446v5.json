@@ -1,0 +1,70 @@
+{
+    "meta_data": {
+        "title": "Multi-language Papers and SIGCHI Extended Abstracts: Guidelines for Authoring",
+        "authors": [
+            "Jane Doe",
+            "John Smith"
+        ],
+        "affiliations": [
+            "University A",
+            "Research Lab B"
+        ],
+        "abstract": "This document provides comprehensive guidelines for preparing multi-language papers and crafting SIGCHI extended abstracts using the acmart class in LaTeX. It offers syntax and style recommendations to ensure authors can seamlessly incorporate multi-language elements and make use of the options available for extended abstracts.",
+        "keywords": [
+            "multi-language",
+            "SIGCHI",
+            "LaTeX",
+            "template",
+            "acmart"
+        ],
+        "year": "2023",
+        "venue": "ACM Conference",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "Template Creation",
+            "Multi-language Tools",
+            "Document Formatting"
+        ],
+        "related papers": "Current templates do not fully support multi-language functionalities; this paper extends functionalities as demonstrated in the sample-sigconf-i13n.tex.",
+        "comparisons with related methods": "Unlike previous versions of the acmart class, our approach allows for dynamic language swapping in abstracts, titles, and keywords, improving readability and accessibility across languages."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper outlines new methods for authoring research documents that include multiple languages, utilizing LaTeX's acmart class. It also focuses on the SIGCHI extended abstract format, providing templates for effective margin usage and multi-language integration.",
+        "research purpose": "To enhance the acmart class's support for multi-language documents and SIGCHI extended abstracts.",
+        "research challenge": "Adapting LaTeX templates to natively support multiple languages while maintaining consistency and ease of use.",
+        "method summary": "Implementation of new LaTeX environment commands that manage multi-language content and specialized layout tools for SIGCHI extended abstracts.",
+        "conclusion": "The guidelines proposed in this paper enable authors to effortlessly create professional and language-inclusive academic documents."
+    },
+    "Method": {
+        "description": "A robust LaTeX template enhanced for multi-language support and optimal SIGCHI extended abstract formatting.",
+        "problem formultaion": "Adapting a singular document class to elegantly support multi-language authoring.",
+        "feature processing": null,
+        "model": "Custom LaTeX template with extended environment commands.",
+        "tasks": [
+            "Multi-language document preparation",
+            "Extended abstract formatting",
+            "Template customization"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Moderate; requires basic understanding of LaTeX commands and environments.",
+        "algorithm step": "1. Use `language=` option to designate document languages. \n2. Employ `\\translated` commands for multi-language titles and keywords. \n3. Deploy `\\sidebar`, `\\marginfigure`, and `\\margintable` for layout customization in SIGCHI extended abstracts."
+    },
+    "Experiments": {
+        "datasets": [],
+        "baselines": [],
+        "evaluation metric": null,
+        "setup": "To fully utilize multi-language features, employ `language=` commands in your document class declaration. SIGCHI formatting is initiated with the `sigchi-a` template style.",
+        "hyperparameters": null,
+        "results": "Successful integration of French, German, and English elements into a single LaTeX document demonstrated by `sample-sigconf-i13n.tex`.",
+        "performance": null,
+        "analysis": "Language-specific commands effectively differentiated sections of multilingual papers, retained formatting integrity across transitions.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The multi-language and SIGCHI extended abstract templates showcased provide authors with powerful tools to meet varied international conference requirements while maintaining high publication standards.",
+        "future work": "Future developments should focus on embedding these environments into other popular LaTeX document classes and enhancing compatibility with different operating systems."
+    }
+}

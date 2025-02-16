@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "ITPNet: Instantaneous Trajectory Prediction Network for Autonomous Driving",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "University of Autonomy",
+            "Institute for AI"
+        ],
+        "abstract": "This paper presents a novel approach, ITPNet,for instantaneous trajectory prediction with very limited observed locations. ITPNet predicts the latent feature representations of unobserved locations backwardly to mitigate information lack issues. The proposed Noise Redundancy Reduction Former (NRRFormer) filters noise and redundancy in feature representations, effectively integrating them with observed features for future trajectory prediction. Extensive experiments demonstrate the compatibility and effectiveness of ITPNet across trajectory prediction models.",
+        "keywords": [
+            "Instantaneous Trajectory Prediction",
+            "Autonomous Driving",
+            "Noise Redundancy Reduction",
+            "ITPNet",
+            "Self-supervised Learning"
+        ],
+        "year": "2023",
+        "venue": "Proceedings of the 40th International Conference on Machine Learning (ICML)",
+        "doi link": "https://doi.org/10.1016/j.jml.2023.09301",
+        "method name": "ITPNet"
+    },
+    "relate work": {
+        "related work category": [
+            "Sufficient Observations",
+            "Instantaneous Observations"
+        ],
+        "related papers": "\\cite{girgis2021latent,gilles2022thomas,makansi2021you,bae2024singulartrajectory,gupta2018social,lee2022muse}",
+        "comparisons with related methods": "Traditional trajectory prediction models fail when observed locations are insufficient, unlike ITPNet which specifically addresses these limitations."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper addresses the challenge of predicting future trajectories of dynamic traffic agents with very limited observed locations, a critical task in autonomous driving. It proposes ITPNet, a method for instantaneous trajectory prediction requiring only two observed trajectory locations.",
+        "research purpose": "To develop a method capable of accurately predicting the future trajectories of dynamic agents with only two observed points, enhancing autonomous vehicles' responsiveness to real-time scenarios.",
+        "research challenge": "Devising a framework that effectively predicts with limited observation while addressing issues like noise and redundancy in data.",
+        "method summary": "ITPNet predicts unobserved historical trajectory features backwardly using just two observations, and employs a Noise Redundancy Reduction Former (NRRFormer) to integrate necessary information for trajectory prediction.",
+        "conclusion": "The developed ITPNet outperforms existing models in instantaneous trajectory prediction and is adaptable, proving effective across various backbone methods."
+    },
+    "Method": {
+        "description": "ITPNet targets instantaneous trajectory prediction by predicting latent features representing unobserved historical trajectory points and utilizing these features along with the few available observations to anticipate future trajectories.",
+        "problem formultaion": "Predicting K plausible trajectories using only two observed trajectory locations in an autonomous driving setting with real-time constraints.",
+        "feature processing": "Utilizes self-supervised tasks to enhance predictive capability of latent unobserved feature representations.",
+        "model": "The model combines recurrent neural networks and attention mechanisms within the Noise Redundancy Reduction Former module to compactly represent trajectories.",
+        "tasks": [
+            "Instantaneous Trajectory Prediction",
+            "Self-Supervised Feature Reconstruction"
+        ],
+        "theoretical analysis": "The inclusion of backward prediction with feature filtering augments the richness of input trajectories, promoting prediction accuracy.",
+        "complexity": "The model maintains moderate complexity avoiding excessive computational overhead.",
+        "algorithm step": "1. Extract observed location features. 2. Predict unobserved historical features backwardly. 3. Filter through NRRFormer and integrate. 4. Use for trajectory prediction."
+    },
+    "Experiments": {
+        "datasets": [
+            "Argoverse",
+            "NuScene"
+        ],
+        "baselines": [
+            "HiVT",
+            "MOE",
+            "Distill",
+            "LaneGCN"
+        ],
+        "evaluation metric": "minADE@K, minFDE@K, minMR@K",
+        "setup": "Experiments conducted using HiVT and LaneGCN backbones, evaluating ITPNet+HiVT and ITPNet+LaneGCN against baselines on two datasets.",
+        "hyperparameters": "Feature dimensions set to 64 or 128 depending on backbone; Trade-off hyperparameters for losses set to 0.1.",
+        "results": "ITPNet demonstrated superior trajectory prediction accuracy and adaptability than baseline models on both Argoverse and NuScene datasets.",
+        "performance": "Significant performance improvements observed with ITPNet paired with different trajectory prediction backbones.",
+        "analysis": "Ablation studies confirmed the importance of backward prediction and noise/redundancy filtering; variant test lengths reinforced adaptability of ITPNet.",
+        "ablation study": "Analyzed effects of varying predicted unobserved trajectory lengths and validated effectiveness of NRRFormer with experimental setup."
+    },
+    "conclusion": {
+        "summary": "The study presents ITPNet, elaborating its utility in instantaneous trajectory prediction with limited observed data points.",
+        "future work": "Future work could explore real-time deployment scenarios and further integration with sensor data to enhance prediction reliability under diverse conditions."
+    }
+}

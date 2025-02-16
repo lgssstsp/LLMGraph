@@ -1,0 +1,89 @@
+{
+    "meta_data": {
+        "title": "Global Interactive Pattern Learning: A Framework for Interpretable Graph Classification",
+        "authors": [
+            "Yuwen Wang",
+            "Hao Li",
+            "Tian Qi Chen",
+            "Bin Dai"
+        ],
+        "affiliations": [
+            "University of Data Science",
+            "Graph Research Lab"
+        ],
+        "abstract": "In this paper, we propose Global Interactive Pattern (GIP) Learning, a novel interpretable graph classification task that advances from local subgraph explanation to identifying global interactive patterns. This new paradigm addresses challenges in computational complexity and diverse global structures essential to graph-level tasks by developing a framework that consolidates clustering and pattern-matching modules. The proposed framework not only achieves high prediction accuracy but also reliably uncovers global interaction patterns, enhancing the depth of attribution analysis across multiple datasets.",
+        "keywords": [
+            "Graph Neural Networks (GNNs)",
+            "Explainable AI",
+            "Pattern Learning",
+            "Graph Classification",
+            "Global Patterns"
+        ],
+        "year": "2023",
+        "venue": "Conference on Graph Neural Networks and Application",
+        "doi link": null,
+        "method name": "Global Interactive Pattern Learning"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Explainability in GNNs"
+        ],
+        "related papers": "1. Hamilton, W. L., et al., \"Inductive representation learning on large graphs.\" NeurIPS, 2017. 2. Ying, R., et al., \"Hierarchical graph representation learning with differentiable pooling.\" NeurIPS, 2018. 3. Ying, Z., et.al., \"GNNExplainer: Generating explanations for graph neural networks.\" NeurIPS, 2019. 4. Dai, H., et al., \"PGM-Explainer: Explanations for probabilistic graphical models.\" AAAI, 2020.",
+        "comparisons with related methods": "Compared to traditional methods focusing on post-hoc explanations or local explorations for GNNs, GIP Learning shifts to uncovering global interactive patterns during training, enhancing the model's predictability and explainability by leveraging graph-level context."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research introduces Global Interactive Pattern Learning, a novel approach in interpretable graph classification that focuses on identifying global interaction patterns rather than local substructures.",
+        "research purpose": "To enhance the explainability and prediction accuracy of GNNs by focusing on global interactive patterns within graphs.",
+        "research challenge": "Conventional graph models struggle with computational complexity while addressing global structures and diverse interaction patterns.",
+        "method summary": "The proposed method employs a multi-stage framework involving clustering of graph nodes into clusters and matching these with predefined interactive patterns. This integration facilitates a comprehensive analysis of graph-level interactions and characteristics.",
+        "conclusion": "Through extensive experiments, the presented framework efficiently discovers reliable global interaction patterns, achieving superior prediction and explanation performance, thus setting a new direction for interpretable graph learning."
+    },
+    "Method": {
+        "description": "The framework for Global Interactive Pattern Learning involves compressing global graph structures into cluster-level representations and matching against learnable pattern presets to capture interaction patterns for classification.",
+        "problem formultaion": "The focus is on improving graph classification tasks by extracting cluster-level interaction patterns that contribute to the intrinsic explanation of predictions.",
+        "feature processing": "Features are extracted and aggregated at the cluster level through representation learning, greatly reducing the computational cost associated with node-level analysis.",
+        "model": "A two-stage model consisting of a node clustering assignment module followed by an interactive pattern matching module.",
+        "tasks": [
+            "Graph Classification",
+            "Graph Representation Learning"
+        ],
+        "theoretical analysis": "Theoretical underpinnings include the normalized cut for effective clustering and graph kernel functions for pattern matching.",
+        "complexity": "The method addresses computational efficiency through modular pattern matching, balancing granularity and pattern diversity.",
+        "algorithm step": "1. Perform iterative clustering to coarsen input graph.\n2. Match coarsened graph against interactive patterns using graph kernels.\n3. Compute the class prediction by integrating pattern similarities."
+    },
+    "Experiments": {
+        "datasets": [
+            "ENZYMES",
+            "PROTEINS",
+            "D&D",
+            "MUTAG",
+            "COLLAB",
+            "GraphCycle (synthetic)",
+            "GraphFive (synthetic)"
+        ],
+        "baselines": [
+            "GCN",
+            "DGCNN",
+            "Diffpool",
+            "RWNN",
+            "GraphSAGE",
+            "ProtGNN",
+            "KerGNN",
+            "GIB",
+            "GSAT",
+            "CAL"
+        ],
+        "evaluation metric": "Classification accuracy, F1 score, Explanation accuracy, Consistency, Silhouette score",
+        "setup": "Experiments are conducted on both real-world and synthetic datasets, comparing against multiple baselines for classification and explanation performance.",
+        "hyperparameters": "Batch size, learning rate, epoch count were optimized for each experiment; specific details are listed in appendices.",
+        "results": "The proposed framework consistently outperformed most baselines in prediction accuracy and explanation metrics across multiple datasets.",
+        "performance": "Achieves superior classification accuracy, enhanced model interpretability by extracting interactive patterns, and demonstrates explainability across graph classes.",
+        "analysis": "The results validate the significance and necessity of integrating global pattern learning for graph classification tasks, providing deeper insights into graph structures.",
+        "ablation study": "Examined impacts of varying cluster numbers, pattern count, and module inclusion, affirming that the integration of both clustering and pattern matching yields optimal results."
+    },
+    "conclusion": {
+        "summary": "This article presents Global Interactive Pattern Learning, an advanced graph classification methodology harnessing global substructure interactions to enhance explainability.",
+        "future work": "Plans include scaling the framework to larger graph scenarios and extending to real-world applications involving complex interaction networks."
+    }
+}

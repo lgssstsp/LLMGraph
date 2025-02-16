@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Personalized Propagation of Neural Predictions",
+        "authors": [
+            "Anonymous"
+        ],
+        "affiliations": [
+            "Anonymous Institution"
+        ],
+        "abstract": "In this paper, we introduce personalized propagation of neural predictions (PPNP) and its fast approximation, APPNP, derived by extending the relationship between GCN and PageRank to personalized PageRank. This simple model decouples prediction and propagation, solves the limited range problem in many message-passing models, and applies information from a sizeable adjustable neighborhood for classifying each node. The model is computationally efficient, outperforming several state-of-the-art methods for semi-supervised classification on multiple graphs in a thorough study for GCN-like models.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Graph Convolutional Networks",
+            "PageRank",
+            "Semi-supervised Learning",
+            "Deep Learning"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Learning Representations (ICLR)",
+        "doi link": null,
+        "method name": "PPNP, APPNP"
+    },
+    "relate work": {
+        "related work category": [
+            "Range Extension",
+            "Training Improvement",
+            "Algorithm Comparisons"
+        ],
+        "related papers": "\\citep{li_gated_2016,pham_column_2017,hamilton_inductive_2017,li_deeper_2018,xu_representation_2018,buchnik_bootstrapped_2018}",
+        "comparisons with related methods": "Different from approaches using skip connections and batch normalization, our model simplifies the architecture by decoupling prediction and propagation, thereby solving the limited range problem without extra parameters."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel approach to extending the scope of graph neural network models through personalized propagation algorithms, it separates propagation from prediction, leveraging a personalised PageRank scheme for more efficient and effective node classification.",
+        "research purpose": "To develop an efficient method for semi-supervised node classification on graph datasets through personalized propagation techniques.",
+        "research challenge": "To overcome oversmoothing and limited range issues found in traditional message passing models.",
+        "method summary": "The paper introduces PPNP and APPNP, both of which rely on a personalized PageRank scheme; PPNP uses it directly, while APPNP approximates it using power iterations.",
+        "conclusion": "The proposed models outperform state-of-the-art graph neural network models by providing higher accuracy with fewer parameters and training time, enabling the consideration of larger node neighborhoods during classification."
+    },
+    "Method": {
+        "description": "The PPNP and APPNP methods apply a personalized PageRank scheme for propagation, allowing accurate and scalable predictions despite a decoupled propagation and prediction process.",
+        "problem formultaion": "Address the limited information range and oversmoothing in message passing that occur in deeper GCN models.",
+        "feature processing": null,
+        "model": "Both PPNP and APPNP employ a propagation matrix based on personalized PageRank that influences node classification while allowing separation of the propagation mechanism from the neural network predictions.",
+        "tasks": [
+            "Node Classification",
+            "Graph Analysis"
+        ],
+        "theoretical analysis": "The propagation matrix derived from personalized PageRank ensures that the generated predictions do not oversmooth, maintaining accurate representations for node classification.",
+        "complexity": "The algorithms require fewer parameters and offer linear computational complexity with respect to the number of nodes.",
+        "algorithm step": "For APPNP, the propagation is performed using power iterations, where the number of steps can be adjusted according to the teleport probability alpha, allowing for extensive range without introducing oversmoothing issues."
+    },
+    "Experiments": {
+        "datasets": [
+            "Citeseer",
+            "Cora-ML",
+            "PubMed",
+            "Microsoft Academic"
+        ],
+        "baselines": [
+            "GCN",
+            "N-GCN",
+            "GAT",
+            "Bootstrapped Feature Propagation",
+            "Jumping Knowledge Networks"
+        ],
+        "evaluation metric": "Accuracy (micro and macro F1-score)",
+        "setup": "Evaluations were performed on four text classification datasets, with various data splits and random initializations considered over 100 experimental runs to ensure robust and unbiased results.",
+        "hyperparameters": "Same number of layers and hidden units used across datasets, with learning parameters tailored to achieve consistent results.",
+        "results": "PPNP and APPNP consistently outperformed the baseline models on all datasets, improving accuracy by leveraging larger neighborhood information without oversmoothing.",
+        "performance": "PPNP required fewer parameters and training time compared to similar state-of-the-art models, achieving a linear scaling in terms of graph size.",
+        "analysis": "The algorithm's ability to adjust its range of influence provided superior performance, especially on sparsely labeled datasets.",
+        "ablation study": "Done to show the model outperforms even when only inference is affected by propagation, highlighting the decoupled method's efficiency."
+    },
+    "conclusion": {
+        "summary": "This study presents a personalized propagation model that effectively solves range limitations of traditional message-passing frameworks, providing an efficient node classification process with adaptable range parameters.",
+        "future work": "Exploration into combining PPNP with other neural network architectures, like computer vision or NLP models, and researching faster incremental methods for personalized PageRank computation."
+    }
+}

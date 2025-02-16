@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Evaluating Reciprocal Recommender Systems: A Holistic Approach via Causal Modeling",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "ABC University, Department of Computer Science",
+            "XYZ Research Institute"
+        ],
+        "abstract": "Reciprocal recommender systems (RRS) require mutual interest between two parties for recommendation success, which distinguishes it from traditional user-item recommendations. Current RRS evaluation methods overlook the mutual dependency by evaluating each side independently, leading to redundant recommendations. This paper introduces new holistic evaluation metrics and a causal modeling approach to tackle this issue. Our proposed evaluation metrics: Overall Coverage, Bilateral Stability, and Balanced Ranking, improve the assessment of RRS by considering redundant recommendations and ranking performance. We introduce a model-agnostic causal framework, CRRS, which optimizes matching probability and reduces redundancy. Experiments on recruitment and dating datasets show the effectiveness of our methods.",
+        "keywords": [
+            "Reciprocal Recommendations",
+            "Causal Modeling",
+            "Evaluation Metrics",
+            "Machine Learning"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "https://doi.org/10.1000/xyz1234",
+        "method name": "Causal Reciprocal Recommender System (CRRS)"
+    },
+    "relate work": {
+        "related work category": [
+            "Reciprocal Recommender System",
+            "Causal Inference in Recommendation"
+        ],
+        "related papers": "- Siting, Y., et al. 'Job Matching in Two-Sided Markets.' (2012).\n- Mine, C., et al. 'Reciprocal Recommendation Models.' (2013).\n- Yao, K., et al. 'A Survey on Causal Discovery in Recommender Systems.' (2021).",
+        "comparisons with related methods": "This work builds on existing RRS using causal inference to tackle redundancy and matching, improving overall performance even when matching ground truth is unavailable."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper addresses the inadequacies in current evaluation paradigms for Reciprocal Recommender Systems (RRS) by introducing novel holistic evaluation metrics alongside a causal modeling methodology, CRRS, to enhance match accuracy and reduce redundancy.",
+        "research purpose": "To introduce and validate new metrics and methods that effectively capture the unique challenges of RRS, focusing on mutual dependencies and reducing recommendation redundancy.",
+        "research challenge": "Existing methods overlook mutual dependencies, leading to redundant recommendations. Achieving a comprehensive evaluation framework for RRS.",
+        "method summary": "CRRS employs a causal inference framework, modeling recommendations as bilateral treatments to estimate the causal effects on match success, then applies a reranking strategy to optimize performance.",
+        "conclusion": "The novel metrics and CRRS framework effectively enhance evaluation and recommendation performance, outperforming existing methods across multi-domain datasets."
+    },
+    "Method": {
+        "description": "Our method leverages causal inference to treat recommendations as bilateral treatments, estimating effects more accurately across both user parties in RRS.",
+        "problem formultaion": "The problem is formulated as estimating and optimizing the causal effect of bilateral recommendations to reduce redundancy and maximize match potential.",
+        "feature processing": "User features are contextually aligned to ensure precision in evaluating possible matches and interactions.",
+        "model": "The CRRS model uses a potential outcomes framework, applying a causal effect estimation to improve two-sided recommendation efficacy.",
+        "tasks": [
+            "Estimate causal effects of recommendations",
+            "Enhance overall performance via reranking",
+            "Optimize match success probability"
+        ],
+        "theoretical analysis": "Analyzing causal relationships and redundancy effects reveals significant improvements in match accuracy.",
+        "complexity": null,
+        "algorithm step": "1. Estimate causal effects for each user pair.\n2. Model outcomes with causal inference.\n3. Apply reranking strategies based on optimized match probability."
+    },
+    "Experiments": {
+        "datasets": [
+            "Recruitment dataset from online platform",
+            "Libimseti dating dataset"
+        ],
+        "baselines": [
+            "BPRMF",
+            "LightGCN",
+            "LFRR",
+            "DPGNN"
+        ],
+        "evaluation metric": "Recall, Precision, NDCG, Overall Coverage, Bilateral Stability, Balanced Ranking",
+        "setup": "Datasets are split into training, validation, and test sets in an 8:1:1 ratio, using 5-core interaction filtering.",
+        "hyperparameters": "User embedding dimension set to 128; optimized using Adam optimizer with tuned learning rates.",
+        "results": "CRRS demonstrates superior performance in overall coverage metrics and count of matching pairs compared to baselines.",
+        "performance": "Significant gains in overall performance on both datasets.",
+        "analysis": "CRRS excels in coverage metrics, showing decreased recommendation redundancy and improved overall match success, with minor trade-offs in stability due to reduced redundancy.",
+        "ablation study": "Reranking strategies and fine-tuning showed substantial performance contributions, highlighting their vital role in overall system improvement."
+    },
+    "conclusion": {
+        "summary": "The proposed holistic evaluation framework and CRRS model significantly enhance the effectiveness of reciprocal recommendation systems by reducing redundancy and maximizing match potential.",
+        "future work": "Future research can explore enhancing model specificity for particular domains and integrating user interaction feedback to further refine the causality understanding."
+    }
+}

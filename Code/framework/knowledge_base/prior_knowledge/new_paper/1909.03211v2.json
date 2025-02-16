@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "A Systematic and Quantitative Study of Over-smoothing in Graph Neural Networks",
+        "authors": [
+            "Xu Sun"
+        ],
+        "affiliations": [
+            "Peking University"
+        ],
+        "abstract": "This study systematically examines the over-smoothing issue in Graph Neural Networks (GNNs) across seven datasets and ten models. Our findings introduce two metrics: Mean Average Distance (MAD) for quantifying smoothness, and MADGap for over-smoothness, with high correlation to model performance. Our analysis suggests that over-smoothing results from an imbalance in the information-to-noise ratio, emphasizing the role of graph topology. Two methods, MADReg and AdaEdge, are proposed to significantly address over-smoothing and improve GNN performance.",
+        "keywords": [
+            "Graph Neural Networks",
+            "Over-smoothing",
+            "Mean Average Distance",
+            "MADGap",
+            "Graph Representation"
+        ],
+        "year": "2020",
+        "venue": "AAAI Conference on Artificial Intelligence",
+        "doi link": null,
+        "method name": "MADReg, AdaEdge"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Over-smoothing"
+        ],
+        "related papers": "Recent advancements in GNN architectures have focused on information propagation and aggregation. However, works like [model_gat, model_sage] highlight the underexplored area of graph topology optimization relative to the task objective.",
+        "comparisons with related methods": "Unlike previous works focusing on novel architectures, our approach optimizes graph topology to balance information and noise, thereby reducing over-smoothing."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This research provides a systematic analysis of the over-smoothing problem in GNNs, introducing quantitative metrics for smoothness and methods to improve performance via topological optimization.",
+        "research purpose": "To understand and alleviate the over-smoothing problem in Graph Neural Networks.",
+        "research challenge": "The primary challenge is identifying and mitigating the factors causing over-smoothing in GNNs, which degrade model performance.",
+        "method summary": "We introduce Mean Average Distance (MAD) and MADGap metrics to quantify smoothness and over-smoothness respectively. Our solutions, MADReg and AdaEdge, adjust graph topology to alleviate over-smoothing.",
+        "conclusion": "Optimizing graph topology can significantly reduce over-smoothing, improving model performance."
+    },
+    "Method": {
+        "description": "The proposed methods involve optimizing graph topology to increase the information-to-noise ratio.",
+        "problem formultaion": "The study seeks to address the issue of over-smoothing in GNNs, where node representations become indistinguishable when stacking layers.",
+        "feature processing": "Feature processing is critical as it impacts the similarity among nodes' representations, assessed using MAD metrics.",
+        "model": "We utilize various GNN models to explore over-smoothing phenomena.",
+        "tasks": [
+            "Node Classification"
+        ],
+        "theoretical analysis": "This study posits that the essential nature of GNNs is smoothing, while over-smoothing is framed as a detrimental feature leading to performance decline.",
+        "complexity": "The complexity involves calculating similarity metrics and adjusting graph topology iteratively.",
+        "algorithm step": "Our methods involve iterative training adjustments using MADReg and AdaEdge to optimize graph topology."
+    },
+    "Experiments": {
+        "datasets": [
+            "CORA",
+            "CiteSeer",
+            "PubMed",
+            "CS",
+            "Physics",
+            "Computers",
+            "Photo"
+        ],
+        "baselines": [
+            "GCN",
+            "GAT",
+            "GraphSAGE",
+            "ARMA",
+            "GGNN"
+        ],
+        "evaluation metric": "Prediction accuracy, MAD values",
+        "setup": "Node classification experiments on seven datasets using ten GNN models to validate methods.",
+        "hyperparameters": null,
+        "results": "The proposed MADGap and AdaEdge methods effectively reduce over-smoothness, shown by improved node classification accuracy across datasets and models.",
+        "performance": null,
+        "analysis": "Calculated MADGap values show a significantly high correlation with model performance, particularly the negative impact of over-smoothing on accuracy.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Graph topology is a key factor in GNNs' over-smoothing problem. By optimizing it, we can significantly enhance model performance.",
+        "future work": "Reducing erroneous graph adjustment operations in the AdaEdge method is identified as a promising area for further research."
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "Task Description": "Edge Classification/Link Prediction with TSP dataset. Edge classification and link prediction within the context of the Travelling Salesman Problem (TSP). This dataset leverages GNNs to predict whether edges (connections between cities) are part of the optimal tour that minimizes the total travel distance.",
+  "Dataset Description": "Graphs are generated from the TSP instances where cities are nodes and edges represent possible routes between them. Each graph varies in size from 50 to 500 nodes, uniformly sampled within a unit square, and uses sparse k-nearest neighbor (k=25) graphs to model potential connections.",
+  "Performance Summary": {
+    "General": "This dataset challenges GNNs to identify edges that contribute to the minimum spanning tour, a critical ability for solving NP-hard combinatorial optimization problems like the TSP.",
+    "Detailed Performance": {
+      "Best Model": "GatedGCN-E with 16 layers",
+      "Test F1 Score": "0.838±0.002",
+      "Training Dynamics": "Trained over 53 epochs, achieving a balance between computational efficiency and high predictive accuracy.",
+      "Model Comparisons": {
+        "GAT": {
+          "Test F1": "0.671±0.002",
+          "Epochs": "328.25"
+        },
+        "GraphSage": {
+          "Test F1": "0.665±0.003",
+          "Epochs": "266.00"
+        },
+        "vanilla GCN": {
+          "Test F1": "0.630±0.001",
+          "Epochs": "261.00"
+        },
+        "GIN": {
+          "Test F1": "0.656±0.003",
+          "Epochs": "273.50"
+        },
+        "k-NN Heuristic": {
+          "Test F1": "0.693",
+          "Comparative Analysis": "Serves as a simple heuristic baseline, outperformed by advanced GNN architectures."
+        }
+      }
+    },
+    "Analysis": "The introduction of advanced features such as edge attributes and layer enhancements significantly improves performance, particularly in GatedGCN-E, indicating its effectiveness in capturing the complex relationships necessary for predicting elements of the optimal TSP tour."
+  }
+}
+
+

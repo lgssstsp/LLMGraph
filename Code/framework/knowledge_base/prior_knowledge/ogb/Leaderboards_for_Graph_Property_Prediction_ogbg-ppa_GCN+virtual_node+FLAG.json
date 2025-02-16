@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-ppa",
+    "Dataset Link": "../graphprop/#ogbg-ppa",
+    "Rank": 10,
+    "Method": "GCN+virtual node+FLAG",
+    "External Data": "No",
+    "Test Accuracy": "0.6944 ± 0.0052",
+    "Validation Accuracy": "0.6638 ± 0.0055",
+    "Contact": "mailto:kong@cs.umd.edu",
+    "Paper Link": "https://arxiv.org/abs/2010.09891",
+    "Code Link": "https://github.com/devnkong/FLAG",
+    "Parameters": "1,930,537",
+    "Hardware": "GeForce RTX 2080 Ti (11GB GPU)",
+    "Date": "Oct 21, 2020",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-ppa/GCN+virtual_node+FLAG.pdf",
+    "Paper Summary": "The paper introduces FLAG (Free Large-scale Adversarial Augmentation on Graphs) as a novel method to improve the generalization of Graph Neural Networks (GNNs) through feature-based data augmentation. Below are key components focused on model design discussed in the article:\n\n### 1. **Methodology Overview**\n   - **Adversarial Perturbations**: FLAG generates gradient-based adversarial perturbations to augment node features without altering graph structures. This approach improves robustness by making the model invariant to small fluctuations in input data.\n\n### 2. **Min-Max Optimization Framework**\n   - FLAG employs a min-max optimization strategy where a loss function is minimized while maximizing the perturbation effect on the input features:\n     \\[\n     \\text{min } E[\\max L(f(x + \\delta), y)]\n     \\]\n   - Here, \\(L\\) is the loss function, \\(f\\) is the model, \\(x\\) the input data, and \\(\\delta\\) the adversarial perturbation constrained by a budget.\n\n### 3. **Adversarial Training Techniques**\n   - **Projected Gradient Descent (PGD)**: The authors implement a variant where the perturbation is iteratively updated to find the worst-case noise that enhances the adversarial training, with the idea of utilizing fewer forward/backward passes than traditional methods.\n\n### 4. **Multi-Scale Augmentation**\n   - FLAG utilizes a \"free\" adversarial training approach wherein multiple perturbations are crafted with varying scales and magnitudes, ensuring diversity in augmentations while maintaining computational efficiency.\n\n### 5. **Weighted Perturbation Strategy**\n   - Different perturbation magnitudes are applied to labeled and unlabeled nodes during training. This facilitates higher perturbations for unlabeled nodes, leveraging the hierarchical structure of GNNs where node decisions rely on the aggregated information of neighbors.\n\n### 6. **Implementation Ease**\n   - The FLAG method is designed to be simple and efficient, requiring minimal changes to existing GNN training pipelines. It can be implemented with just a few lines of code in frameworks like PyTorch, which makes it highly accessible for practical applications.\n\n### 7. **Algorithm Summary**\n   - The algorithm emphasizes initializing perturbations, updating them through adversarial training loops, and applying the calculated perturbations to input features. A consistent approach is taken to manage the gradients from both the model parameters and the perturbations smoothly.\n\n### 8. **Compatibility and Scalability**\n   - FLAG is designed to complement other regularization strategies (like dropout) and is scalable to large datasets, making it versatile across different GNN architectures and tasks.\n\nIn summary, FLAG presents a systematic method to augment node features through adversarial perturbations, focusing on maximizing generalization in GNNs while being adaptable and user-friendly for various applications."
+}

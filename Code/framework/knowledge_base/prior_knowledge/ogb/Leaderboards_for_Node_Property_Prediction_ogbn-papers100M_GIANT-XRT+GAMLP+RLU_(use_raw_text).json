@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-papers100M",
+    "Dataset Link": "../nodeprop/#ogbn-papers100M",
+    "Rank": 2,
+    "Method": "GIANT-XRT+GAMLP+RLU (use raw text)",
+    "External Data": "Yes",
+    "Test Accuracy": "0.6967 ± 0.0005",
+    "Validation Accuracy": "0.7305 ± 0.0004",
+    "Contact": "mailto:chanweic@amazon.com",
+    "Paper Link": "https://arxiv.org/pdf/2111.00064.pdf",
+    "Code Link": "https://github.com/OctoberChang/GAMLP?fbclid=IwAR03ugAd7H0U_kQrkihBDMJ-Bxy3siwKVbnBTNkz_IVp5J25L0DFlTK0yfc",
+    "Parameters": "21,551,631",
+    "Hardware": "Tesla V100 (32GB GPU)",
+    "Date": "Nov 11, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-papers100M/GIANT-XRT+GAMLP+RLU_(use_raw_text).pdf",
+    "Paper Summary": "The paper introduces a self-supervised learning framework called Graph Information Aided Node feature Extraction (GIANT), designed to improve the extraction of numerical node features from raw data, such as text, images, and audio, specifically in graph neural network (GNN) pipelines. \n\n### Key Components of GIANT:\n\n1. **Neighborhood Prediction Task**:\n   - This novel task involves predicting the neighborhood of each node in the graph, encoding this neighborhood as binary multi-labels. This is crucial for integrating graph topology into the feature extraction process.\n   - The neighborhood prediction is related to the eXtreme Multi-label Classification (XMC) problem, which allows leveraging advanced solutions for handling large-scale multi-label classification tasks.\n\n2. **Integration of XR-Transformers**:\n   - XR-Transformers are employed to solve the neighborhood prediction problem efficiently, particularly in the context of fine-tuning language models like BERT. The hierarchical clustering of labels is conducted using the XR-Transformer, which scales well and handles a high output space effectively.\n   - The model utilizes Positive Instance Feature Aggregation (PIFA) to create embeddings that reflect the graph structure, enhancing the feature extraction process.\n\n3. **Self-Supervised Learning**:\n   - GIANT is built on self-supervised learning concepts, allowing it to learn useful node representations without needing label supervision. The framework capitalizes on the correlation between raw data (e.g., text) and graph structure to create informative numerical node features.\n\n4. **Multi-Resolution Learning**:\n   - The framework incorporates multi-resolution learning, generating a hierarchy of coarser to finer views of the neighborhood predictions, which aids in making the prediction tasks more manageable and efficient.\n\n5. **Fine-Tuning Process**:\n   - In GIANT, a pre-trained encoder maps raw text to numerical node features, which are then fine-tuned through the neighborhood prediction task. The use of clustering and the hierarchical label tree structure improves the efficiency of the learning process.\n\nThrough these design aspects, GIANT addresses the issues of graph-agnostic feature extraction typically found in standard GNN pipelines, thus optimizing the overall model performance while leveraging both graph structure and raw data."
+}

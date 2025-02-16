@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Hypothesis Testing Framework for Stabilized Model Explanations",
+        "authors": [
+            "John Doe",
+            "Jane Smith",
+            "Albert Einstein"
+        ],
+        "affiliations": [
+            "Department of Computer Science, University of Wonderland",
+            "Department of Statistics, Wonderland Institute of Technology"
+        ],
+        "abstract": "This paper addresses the instability issues found in post hoc explanation models like LIME (Local Interpretable Model-agnostic Explanations). Despite their popularity, these models often yield inconsistent results due to the randomness in perturbation sampling. Our primary contribution is the development of S-LIME, a variant that employs a hypothesis testing approach to derive a stable number of perturbations necessary for consistent explanations. Our findings highlight the necessity of stability in enhancing user trust, understanding complex models, and preventing potential misuse in critical applications such as healthcare and criminal justice.",
+        "keywords": [
+            "post hoc explanations",
+            "model stability",
+            "hypothesis testing",
+            "LIME",
+            "stabilized explanations"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning Interpretability and Applications",
+        "doi link": null,
+        "method name": "S-LIME"
+    },
+    "relate work": {
+        "related work category": [
+            "Model Explainability Methods",
+            "Stability in Model Explanations"
+        ],
+        "related papers": "du2019techniques, wang2020should, zeng2015interpretable, rajkomar2018scalable, lundberg2017unified, koh2017understanding, rudin2019stop",
+        "comparisons with related methods": "Our methodology contrasts with existing work by implementing a hypothesis testing process to assess stability and determine optimal perturbation sample size compared to simple parameter tuning or fixed-size sampling in other models."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The study proposes a hypothesis testing framework to enhance the stability of post hoc model explanations by regulating the number of perturbation samples. The paper strengthens the consistency of model explanations and offers significant improvements over existing methods like LIME.",
+        "research purpose": "To tackle the instability issue of post hoc explanation methods and propose a new algorithm ensuring consistent model explanations across various conditions.",
+        "research challenge": "Convincing the research community of the need for stability over existing versatile methods such as LIME.",
+        "method summary": "A hypothesis testing framework utilizes statistical properties obtained from multiple iterations of perturbation sampling to automatically adjust the number of perturbations to a stable amount.",
+        "conclusion": "The proposed S-LIME model addresses the identified stability issues, providing a reliable and consistent explanation method for complex models."
+    },
+    "Method": {
+        "description": "S-LIME (Stabilized LIME) builds on the LIME framework by adding a statistical approach to determine the necessary perturbations, ensuring consistent explanatory behavior across runs.",
+        "problem formultaion": "The goal is to maintain robust stability of model explanations through rigorous statistical sampling practices while employing perturbation-based post hoc explanations.",
+        "feature processing": null,
+        "model": "S-LIME builds upon the LIME framework by incorporating hypothesis testing to decide the number of perturbations needed.",
+        "tasks": [
+            "Feature importance determination",
+            "Local model explainability",
+            "Enhancement of model transparency"
+        ],
+        "theoretical analysis": "Statistical guarantees derived from the Central Limit Theorem are employed to determine sample sizes ensuring stable feature selection.",
+        "complexity": "The computational complexity is comparable to traditional LIME, with additional steps for statistical tests incrementally affecting computational cost.",
+        "algorithm step": "S-LIME iteratively measures explanation stability, using hypothesis tests to decide if more perturbations are needed to maintain result consistency."
+    },
+    "Experiments": {
+        "datasets": [
+            "Breast Cancer Wisconsin (Diagnostic) Dataset",
+            "MARS Test Function Data",
+            "MIMIC-III Electronic Health Records"
+        ],
+        "baselines": [
+            "LIME",
+            "SHAP",
+            "Standard LASSO",
+            "Random Forest Classifier"
+        ],
+        "evaluation metric": "Stability enhancement measured by Jaccard stability index compared to other methods.",
+        "setup": "Models were built using sklearn and experiments rerun under identical factors to ensure that variance is attributed to model modification.",
+        "hyperparameters": null,
+        "results": "S-LIME demonstrated increased stability and reliability across datasets as evidenced by higher Jaccard indices compared to baseline methodologies.",
+        "performance": "S-LIME consistently performed better in terms of reproducibility of selected features across multiple runs.",
+        "analysis": "Observed improvements in stability illustrate the potential reduction of noise and increased trust in machine learning models under our method.",
+        "ablation study": "Analyzed the effect of different amounts of perturbation and statistical threshold parameters on stability outcomes."
+    },
+    "conclusion": {
+        "summary": "S-LIME provides actionable enhancements through statistical procedures that ensure consistent model explanations, fostering trust in AI systems.",
+        "future work": "Further exploration in automating hyperparameter selection and adapting the approach for temporal and streaming data."
+    }
+}

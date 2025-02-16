@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-proteins",
+    "Dataset Link": "../nodeprop/#ogbn-proteins",
+    "Rank": 8,
+    "Method": "GAT + labels + node2vec",
+    "External Data": "No",
+    "Test Accuracy": "0.8711 ± 0.0007",
+    "Validation Accuracy": "0.9217 ± 0.0011",
+    "Contact": "mailto:1520655940@qq.com",
+    "Paper Link": "https://arxiv.org/abs/1710.10903",
+    "Code Link": "https://github.com/ytchx1999/PyG-OGB-Tricks/tree/main/DGL-ogbn-proteins",
+    "Parameters": "6,360,470",
+    "Hardware": "Tesla V100 (32GB)",
+    "Date": "Jun 7, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-proteins/GAT_+_labels_+_node2vec.pdf",
+    "Paper Summary": "The paper presents Graph Attention Networks (GATs), which incorporate masked self-attention mechanisms designed for graph-structured data. Key aspects of the model design include:\n\n### GAT Architecture\n- **Graph Attention Layer**: The building block of GATs, it processes a set of node features using a self-attention mechanism to produce new node features. \n  - **Input Features**: Each node has its features represented as \\( h = \\{ \\mathbf{h}_1, \\mathbf{h}_2, \\ldots, \\mathbf{h}_N \\} \\) where \\( N \\) is the number of nodes and \\( F \\) is the feature dimension for each node.\n  - **Linear Transformation**: Each node’s features are transformed using a shared linear transformation represented by a weight matrix \\( W \\) to obtain \\( W\\mathbf{h} \\).\n  - **Attention Coefficients**: A shared attention mechanism computes coefficients \\( e_{ij} \\) representing the importance of node \\( j \\)'s features for node \\( i \\). The attention scores are normalized using the softmax function, allowing for the assignment of arbitrary importance to the neighboring nodes.\n  - **Masked Attention**: The attention mechanism is masked to restrict computation to first-order neighbors, integrating the graph structure without requiring global access to the entire graph.\n\n### Multi-Head Attention\n- **Defining Complexity and Diversity**: The model extends attention capability by employing multiple attention heads that compute independent representations. The outputs of these heads are either concatenated or averaged based on the layer's position—concatenated in the feature transformation layers and averaged in the final prediction layer.\n\n### Advantages\n- **Efficiency**: The attention mechanism is computationally efficient; it can be parallelized across all nodes and edges, avoiding expensive matrix operations like eigendecomposition.\n- **Dynamic Weighting**: By utilizing self-attention, GATs can inherently assign different weights to nodes in the same neighborhood, enhancing the model's capacity to discern varied importance among nodes.\n- **Inductive Learning Capability**: The design allows the model to operate on completely unseen graphs during testing while being flexible to variations in graph structure, making it suitable for various graph-based tasks.\n\n### Additional Design Considerations\n- **Non-dependency on Prior Structure**: GATs do not require upfront knowledge of graph structure and can adapt to directed graphs by not calculating attention scores where edges are absent.\n- **Feature Dimensionality**: The architecture uses an arbitrary number of features in hidden layers and allows for dynamic updates, capturing richer representations.\n\nIn summary, the GAT model integrates self-attention within its layers to effectively represent relationships in graph data while providing computational efficiency, dynamic neighborhood weighting, and flexibility for inductive learning applications."
+}

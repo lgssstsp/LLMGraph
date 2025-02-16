@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "FlexCare: A Unified Model for Flexible Multimodal Multitask Healthcare Prediction",
+        "authors": [
+            "Author A",
+            "Author B",
+            "Author C"
+        ],
+        "affiliations": [
+            "University X",
+            "Institute Y"
+        ],
+        "abstract": "This paper introduces FlexCare, a model adept at integrating incomplete multimodal electric health record (EHR) inputs for multiple predictive clinical tasks. FlexCare, unlike traditional models requiring full labels across tasks, employs asynchronous predictions across tasks, accommodating both input and label variability. Key contributions include the development of a task-agnostic multimodal extraction module and a task-guided fusion module ensuring comprehensive representation learning. Extensive experiments on MIMIC-IV datasets demonstrate FlexCare’s superior performance, highlighting the utility of inter-task synergy.",
+        "keywords": [
+            "Healthcare prediction",
+            "multimodal learning",
+            "multitask learning",
+            "EHR integration"
+        ],
+        "year": "2023",
+        "venue": "Journal of Biomedical Informatics",
+        "doi link": "https://doi.org/10.1016/flexcare2023",
+        "method name": "FlexCare"
+    },
+    "relate work": {
+        "related work category": [
+            "Multimodal Learning for Healthcare",
+            "Multitask Learning for Healthcare"
+        ],
+        "related papers": "Zhang et al. (2021), Golovanevsky et al. (2022), Zheng et al. (2022) among others have explored multimodal learning using healthcare data. In multitask learning, foundational studies by Suresh et al. (2018), Liu et al. (2020) contribute significantly to the field.",
+        "comparisons with related methods": "FlexCare distinguishes itself by accommodating missing modalities and labels, leveraging a more flexible approach compared to traditional methods like UniMed and HAIM which require complete datasets."
+    },
+    "high_level_summary": {
+        "summary of this paper": "FlexCare is a novel healthcare model that supports incomplete and diverse modalities across multiple predictive tasks in EHR data. It employs asynchronous single-task predictions, allowing flexible integration and comprehensive representation learning.",
+        "research purpose": "The research aims to develop a unified model that flexibly accommodates multimodal inputs for multiple clinical prediction tasks without the requirement for full task labeling.",
+        "research challenge": "Current models necessitate complete labels across tasks, a demand stringent within the medical realm characterized by scarce EHR data.",
+        "method summary": "FlexCare integrates a task-agnostic multimodal information extraction module and a task-guided fusion mechanism. It predicts asynchronously across tasks, utilizing a combination of unimodal encoders and expert networks for refined representation.",
+        "conclusion": "FlexCare shows competitive performance across various metrics and tasks, exploiting inter-task synergy to enhance predictive power."
+    },
+    "Method": {
+        "description": "FlexCare leverages cross-task synergy through a task-agnostic extraction module and task-guided fusion to adaptively process diverse multimodal inputs for various tasks in healthcare prediction.",
+        "problem formultaion": "The model's objective is to predict clinical outcomes based on asynchronous multiple single-task learning from incomplete multimodal EHR data.",
+        "feature processing": "The model uses unimodal feature extractors to derive heterogeneous modality data into latent representations, enhanced by task-specific learning through task tokens.",
+        "model": "FlexCare adapts to incomplete data inputs using a hierarchical fusion structure and task-specific prediction heads, allowing flexibility in dealing with diverse tasks and modalities.",
+        "tasks": [
+            "In-hospital mortality prediction",
+            "Length-of-stay prediction",
+            "Decompensation prediction",
+            "Phenotyping",
+            "30-day Readmission prediction",
+            "Diagnosis based on imaging"
+        ],
+        "theoretical analysis": null,
+        "complexity": "FlexCare's complexity lies in its capability to perform asynchronous single-task predictions and cross-task synergy within multimodal EHR datasets.",
+        "algorithm step": "1. Extract unimodal features; 2. Construct a multimodal sequence with task/modality tokens; 3. Encode using M-MHSA; 4. Apply hierarchical fusion to get patient-level representation; 5. Use task-specific heads for prediction."
+    },
+    "Experiments": {
+        "datasets": [
+            "MIMIC-IV",
+            "MIMIC-CXR JPG",
+            "MIMIC-NOTE"
+        ],
+        "baselines": [
+            "MedFuse",
+            "MT",
+            "M3Care",
+            "MMF",
+            "MultiModN"
+        ],
+        "evaluation metric": null,
+        "setup": "Experiments are designed to evaluate FlexCare’s efficacy across multiple real-world tasks by training on MIMIC datasets, incorporating task-specific evaluation metrics.",
+        "hyperparameters": "The model uses a hidden layer of 128 dimensions, with transformer layers set to 4 and attention heads at 2, optimized by the Adam algorithm.",
+        "results": "FlexCare shows competitive performance and excels in tasks such as in-hospital mortality and decompensation prediction due to effective cross-task synergy.",
+        "performance": "Performance is measured through metrics like AUROC and AUPRC for binary tasks and AUROCs for multi-class/multi-label tasks, illustrating significant improvement over baselines.",
+        "analysis": "An ablation study demonstrated the benefit of each component, and visualized task-token effects validated FlexCare's capacity to distinguish task-specific representations.",
+        "ablation study": "Performed to ascertain the influence of components like modality combination tokens and task/modality-aware MoE on the predictive performance."
+    },
+    "conclusion": {
+        "summary": "FlexCare demonstrates potent capacity in predicting clinical outcomes by integrating incomplete EHR inputs across tasks. It adapts flexibly to data variability, showing competitive outcomes through effective cross-task synergy.",
+        "future work": "Future efforts will address challenges like gradient conflicts during training, aiming for the enhancement of a generalized model within the healthcare prediction landscape."
+    }
+}

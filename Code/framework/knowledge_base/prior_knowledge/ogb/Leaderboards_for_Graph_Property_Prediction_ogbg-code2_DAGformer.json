@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Graph Property Prediction",
+    "Dataset Name": "ogbg-code2",
+    "Dataset Link": "../graphprop/#ogbg-code2",
+    "Rank": 2,
+    "Method": "DAGformer",
+    "External Data": "No",
+    "Test Accuracy": "0.2018 ± 0.0021",
+    "Validation Accuracy": "0.1846 ± 0.0010",
+    "Contact": "mailto:luoyk@buaa.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2210.13148",
+    "Code Link": "https://github.com/LUOyk1999/DAGformer",
+    "Parameters": "14,952,882",
+    "Hardware": "GeForce RTX 3090",
+    "Date": "Oct 25, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Graph_Property_Prediction/ogbg-code2/DAGformer.pdf",
+    "Paper Summary": "The paper \"Transformers over Directed Acyclic Graphs\" presents a framework tailored for using transformers with Directed Acyclic Graphs (DAGs). Key methods and design aspects include:\n\n### 1. **DAG Attention Mechanism**\n- **Restricted Attention**: The model adapts the regular transformer self-attention mechanism to operate on DAG structures by limiting the receptive field of each node to its predecessors and successors. This allows for significant reductions in computational complexity compared to traditional transformer architectures, which have quadratic complexity.\n  \n- **DAG Reachability Attention (DAGRA)**: The attention calculation incorporates a bounded reachability relation defined for each node using a parameter \\( k \\) to control the depth of attention. The number of reachable nodes contributes to the computation, optimizing the extraction of relevant context while maintaining efficiency.\n\n### 2. **Positional Encoding**\n- **Depth-based Positional Encoding**: The framework includes a DAG Positional Encoding (DAGPE) that captures the depth of a node within the DAG. This encoding complements the attention mechanism, providing additional information about the structural position of nodes in the graph.\n\n### 3. **Model Implementation**\n- **Two Implementation Methods**:\n  - **Masking in Transformers**: One straightforward approach uses a masking technique that restricts attention based on the DAG reachability relation. However, this method is less efficient due to the overhead of matrix operations.\n  - **Message-Passing Scheme**: The model can also be implemented using a message-passing scheme, aggregating messages exclusively from reachable nodes, leading to better performance in terms of both speed and resource utilization.\n\n### 4. **Computational Complexity**\n- The complexity analysis indicates that the proposed model reduces computation time significantly when processing large DAGs compared to standard transformer architectures. The attention mechanism operates in linear time relative to the size of the graph and the average degree of nodes, particularly when considering special cases like directed rooted trees.\n\n### 5. **Expressive Power**\n- The authors assert that while the attention is restricted to a subset of nodes, the model still retains expressive power comparable to regular transformers. This is important as it enables effective communication across the entire DAG, especially when handling deep networks.\n\n### Conclusion\nThe design incorporates graph-specific biases, allowing transformers to work more effectively with DAGs by addressing both attention mechanisms and positional encodings tailored to the unique characteristics of DAG structures. The simplicity and efficiency of the proposed methods exemplify a significant step towards enhancing transformer architectures for graph representation learning."
+}

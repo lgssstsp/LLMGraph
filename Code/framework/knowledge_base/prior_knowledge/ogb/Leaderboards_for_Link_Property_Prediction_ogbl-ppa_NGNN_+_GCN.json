@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-ppa",
+    "Dataset Link": "../linkprop/#ogbl-ppa",
+    "Rank": 14,
+    "Method": "NGNN + GCN",
+    "External Data": "No",
+    "Test Accuracy": "0.3683 ± 0.0099",
+    "Validation Accuracy": "0.3834 ± 0.0082",
+    "Contact": "mailto:ereboas@sjtu.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2111.11638",
+    "Code Link": "https://github.com/dmlc/dgl/tree/master/examples/pytorch/ogb/ngnn",
+    "Parameters": "410,113",
+    "Hardware": "Tesla-V100(16GB GPU)",
+    "Date": "Aug 16, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-ppa/NGNN_+_GCN.pdf",
+    "Paper Summary": "The article introduces a novel methodology termed Network-in-Graph Neural Network (NGNN), which enhances the capacity of Graph Neural Networks (GNNs) without the need for increasing the number of GNN layers or hidden dimensions. Instead, NGNN deepens the model by integrating non-linear feedforward neural network layers within each GNN layer.\n\n### Key Design Aspects of NGNN:\n\n1. **Architecture**:\n   - **Insertion of Non-linear Layers**: NGNN adds one or more non-linear feedforward layers between the standard GNN layers, allowing the model to capture more complex patterns in the data. This is inspired by the Network-in-Network architecture which emphasizes depth in neural networks.\n   - **Layer Composition**: The (l + 1)-th layer in NGNN is calculated as:\n     \\[\n     \\mathbf{h}^{(l+1)} = \\sigma(g_{ngnn}(f_w(G, \\mathbf{h}^{(l)})))\n     \\]\n     where \\( f_w \\) is a function determined by learnable parameters, and \\( g_{ngnn} \\) represents the non-linear transformation applied within the GNN layer.\n\n2. **Stability Against Perturbations**:\n   -  NGNN is designed to remain robust when subject to noisy inputs, whether these are node features or graph structures. By leveraging additional non-linear layers, NGNN can help reduce the risk of noise negatively impacting model performance, a problem that standard GNNs face.\n\n3. **Model Capacity**:\n   - NGNN allows for an increase in model complexity without the common pitfalls associated with expanding hidden layers or GNN depth, such as overfitting or oversmoothing. The addition of non-linear layers enables deeper representations with a lower increase in computational overhead compared to simply stacking more GNN layers.\n\n4. **Model Variability**:\n   - The methodology is model-agnostic, applicable to any GNN architecture, including popular models like GraphSage, GAT, and GCN. This generalizability ensures that NGNN can be integrated into a wide range of tasks within the graph-based learning domain.\n\n5. **Efficiency**:\n   - The approach minimizes the increase in parameters relative to performance gains achieved through traditional means of deepening GNNs by adding extra layers or increasing the hidden size. \n\nIn summary, NGNN's design revolves around the strategic integration of non-linear layers into existing GNN structures, promoting increased model depth and complexity without incurring the high costs typically associated with naive parameter expansion. This allows GNNs to effectively handle various challenges in graph representation learning, such as noise management and the preservation of significant features."
+}

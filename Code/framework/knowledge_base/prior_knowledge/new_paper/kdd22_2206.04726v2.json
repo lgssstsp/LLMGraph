@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Feature Augmentation in Graph Contrastive Learning",
+        "authors": [
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Department of Computer Science, University A",
+            "Department of Artificial Intelligence, University B"
+        ],
+        "abstract": "This paper explores the challenges of using topology-based graph augmentation in Graph Contrastive Learning (GCL). We propose a novel Covariance-preserving Feature Augmentation (COSTA) framework designed to address these issues. Our approach achieves superior performance across several benchmark datasets, notably reducing computation and memory overhead in single-view settings.",
+        "keywords": [
+            "Graph Contrastive Learning",
+            "Feature Augmentation",
+            "Covariance-preserving",
+            "Graph Neural Networks",
+            "Self-Supervised Learning"
+        ],
+        "year": "2023",
+        "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
+        "doi link": "10.1145/1234567.8901234",
+        "method name": "COSTA"
+    },
+    "relate work": {
+        "related work category": [
+            "Data Augmentation",
+            "Graph Contrastive Learning"
+        ],
+        "related papers": "Kipf et al. (2016), you et al. (2020), Zhu et al. (2021)",
+        "comparisons with related methods": "Our approach significantly reduces bias compared to traditional graph augmentation techniques and achieves comparable or superior performance to other works such as GCA and GRACE."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents COSTA, a novel feature space augmentation framework for Graph Contrastive Learning. It overcomes the bias and computational challenges of topology-based augmentations by maintaining second-order feature statistics.",
+        "research purpose": "To address the limitations of existing graph augmentation methods in GCL and propose a more effective feature-based strategy.",
+        "research challenge": "The bias introduced by topology-based graph augmentations and their computational inefficiency.",
+        "method summary": "COSTA leverages covariance-preserving feature augmentations, reducing bias while maintaining computational efficiency.",
+        "conclusion": "COSTA exhibits strong performance with less computational overhead, making it a valuable alternative to traditional strategies."
+    },
+    "Method": {
+        "description": "COSTA uses covariance-preserving transformations on feature vectors rather than altering graph topology. It maintains the statistical properties of feature maps, leading to unbiased and computationally efficient augmentations.",
+        "problem formultaion": "Topological augmentations introduce bias, affecting feature representation quality.",
+        "feature processing": "Augments by injecting noise into feature vectors while preserving covariance.",
+        "model": "COSTA, a feature augmentation framework using matrix sketching for covariance preservation.",
+        "tasks": [
+            "Node Classification",
+            "Graph Representation Learning"
+        ],
+        "theoretical analysis": "Theoretical guarantees for preserving covariance and reducing bias in feature spaces.",
+        "complexity": "O(MD + ND) for feature augmentation, compared to O(N^2) for multi-view GCL.",
+        "algorithm step": "Matrix sketching to create feature augmentations maintaining statistical structures."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "CiteSeer",
+            "WikiCS",
+            "DBLP",
+            "Amazon-Computers"
+        ],
+        "baselines": [
+            "COSTA",
+            "GRACE",
+            "GCA"
+        ],
+        "evaluation metric": "Classification Accuracy",
+        "setup": "Benchmark datasets split into train/test/validation with COSTA applied to feature space.",
+        "hyperparameters": "Feature augmentation rate, number of augmented samples.",
+        "results": "COSTA achieves better performance than traditional augmentation methods with reduced computational load.",
+        "performance": "Excels in single-view settings with less memory usage compared to multi-view.",
+        "analysis": "Significant reduction in runtime and bias with feature augmentation.",
+        "ablation study": "Tested random projection, SVD, and random selection to determine best augmentation approach."
+    },
+    "conclusion": {
+        "summary": "COSTA addresses bias and inefficiency in GCL, achieving superior results with less computational demand.",
+        "future work": "Investigating broader applicability across diverse graph types and potential real-time implementation."
+    }
+}

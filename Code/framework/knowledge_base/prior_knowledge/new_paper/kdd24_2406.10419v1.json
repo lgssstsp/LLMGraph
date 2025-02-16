@@ -1,0 +1,82 @@
+{
+    "meta_data": {
+        "title": "Interventional Granger Causal Structure Learning with Unknown Targets from Heterogeneous Time Series Data",
+        "authors": [
+            "Zhang Ni",
+            "Lingling Yao",
+            "Michael T. Bremer"
+        ],
+        "affiliations": [
+            "Department of Computer Science, XYZ University",
+            "Department of Statistical Science, ABC University",
+            "Department of Information Systems, PQR Institute"
+        ],
+        "abstract": "This paper proposes a novel Interventional Granger Causal structure learning (IGC) method designed to address the identifiability challenges of Granger causality in heterogeneous interventional time series data with unknown targets. IGC simultaneously infers Granger causal structure, distinguishes between intervened and non-intervened domains, and identifies exact interventional targets at the edge level. Extensive evaluations, employing both synthetic and real-world time series datasets, demonstrate its superior performance over state-of-the-art baselines.",
+        "keywords": [
+            "Interventional data",
+            "Granger causality",
+            "Time series",
+            "Causal structure learning",
+            "Identifiability"
+        ],
+        "year": "2023",
+        "venue": "SIGKDD",
+        "doi link": "10.1016/j.sigkdd.2023.1023",
+        "method name": "Interventional Granger Causal Structure Learning (IGC)"
+    },
+    "relate work": {
+        "related work category": [
+            "Granger Causal Structure Learning",
+            "Causal Structure Learning from Interventional Data"
+        ],
+        "related papers": "Numerous methods for learning causal structures include the Lasso Granger method, Economy Statistical Recurrent Units, generalized vector autoregression, differentiable causal learning, latent intervened non-stationary learning, etc. Significant methods for causal structure from interventional data include differentiable causal learning with continuous optimization frameworks.",
+        "comparisons with related methods": "While powerful, existing methods are limited by their inability to fully exploit interventional data or resolve identifiability issues in Granger causality with unknown targets."
+    },
+    "high_level_summary": {
+        "summary of this paper": "Addresses the challenge of learning Granger causal structure in heterogeneous interventional time series data with unknown interventional targets.",
+        "research purpose": "To enhance the ability to infer causal structures in time series by leveraging heterogeneous interventional data, especially in challenging circumstances where intervention targets are unknown.",
+        "research challenge": "Identifiability challenges imposed by unknown targets and non-linear dynamic systems.",
+        "method summary": "Proposes IGC: a theoretically-guaranteed method capable of handling heterogeneity and inferring both Granger causal structures and interventional targets across multiple environments.",
+        "conclusion": "The proposed method, IGC, achieves superior performance compared to other methods in both synthetic and real-world datasets."
+    },
+    "Method": {
+        "description": "Our proposed IGC method is designed to tackle the interventional Granger causal structure learning problem in multivariate time series, extending causal inference in complex, non-linear, and heterogeneous datasets.",
+        "problem formultaion": "The task involves determining the Granger causal structure and identifying unknown targets with minimal assumptions about the assessment environment and unspecified intervened states.",
+        "feature processing": "We use both observational and interventional datasets from varying environments, leveraging distinct modeling strategies, such as linear and non-linear autoregressive structures, to interpret causal relationships.",
+        "model": "A neural-based framework incorporating both the intervention network for each environment and a collective Granger causal network for shared structures.",
+        "tasks": [
+            "Inference of Granger causal structure in time series",
+            "Identifying interventional targets within heterogeneous datasets"
+        ],
+        "theoretical analysis": "We define and derive sufficient conditions for identifiability and characterize convergence behavior for our method, particularly in non-linear settings with unknown targets.",
+        "complexity": "The model involves optimizing a penalized object function across multiple environments simultaneously, requiring computation exponentially related to the number of interventions and target distributions.",
+        "algorithm step": "1) Construct directed acyclic graphs for observational data, 2) integrate interventional networks reflecting causal disruptions, 3) Minimize penalized loss function for shared Granger causal network across environments."
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic Interventional Data",
+            "Lorenz-96 Model",
+            "Tennessee Eastman Process (TEP)"
+        ],
+        "baselines": [
+            "VAR",
+            "PCMCI",
+            "NGC",
+            "eSRU",
+            "DyNoTears",
+            "GVAR",
+            "CUTS"
+        ],
+        "evaluation metric": "Accuracy, AUROC, AUPRC, F1 Score, and SHD",
+        "setup": "The model was applied to both linear and non-linear synthetic time series datasets as well as benchmark datasets like Lorenz-96 and TEP, comparing performance across identical evaluation metrics.",
+        "hyperparameters": "Lambda regularization terms were tuned across separate evaluations for optimizing learning, including proximal gradient descent for penalized objectives.",
+        "results": "The IGC method showed enhanced capability in deciphering Granger causal structures during interventions, outperforming several SOTA methods.",
+        "performance": "IGC achieved near-perfect accuracy and recall across larger datasets and maintained superior AUROC and AUPRC scores in smaller datasets compared to baseline models.",
+        "analysis": "Interventional data introduction challenges stationary assumptions of traditional methods, while IGC efficiently tackles these disruptions in time series dynamics.",
+        "ablation study": "Explored impacts of known vs. unknown interventional targets on model output sensitivity and causal accuracy, demonstrating robust target recovery capabilities."
+    },
+    "conclusion": {
+        "summary": "We presented a novel method, IGC, to improve the learning of Granger causal structures in complex time series data, with promising improvements over current methods observed in both benchmarks and synthetic datasets.",
+        "future work": "Proposed extensions to various applications beyond causal inference, focusing on anomaly detection and root cause diagnostics in time series."
+    }
+}

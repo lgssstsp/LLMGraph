@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-mag",
+    "Dataset Link": "../nodeprop/#ogbn-mag",
+    "Rank": 14,
+    "Method": "NARS",
+    "External Data": "No",
+    "Test Accuracy": "0.5240 ± 0.0016",
+    "Validation Accuracy": "0.5372 ± 0.0009",
+    "Contact": "mailto:ly979@nyu.edu",
+    "Paper Link": "https://arxiv.org/pdf/2011.09679.pdf",
+    "Code Link": "https://github.com/facebookresearch/NARS",
+    "Parameters": "4,130,149",
+    "Hardware": "Tesla T4 (15GB)",
+    "Date": "Feb 18, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-mag/NARS.pdf",
+    "Paper Summary": "The paper introduces a novel approach called Neighbor Averaging over Relation Subgraphs (NARS) designed to enhance the applicability of scalable graph neural networks (GNNs) for heterogeneous graphs. Below is a summary of the key design aspects of the model:\n\n### Model Design Aspects\n\n1. **Concept of Neighbor Averaging**:\n   NARS deviates from traditional GNN architectures by emphasizing neighbor feature smoothing rather than intricate, end-to-end learned feature hierarchies. The model takes inspiration from the notion that GNNs primarily smooth node features over neighborhoods. \n\n2. **Sampling of Relation Types**:\n   The core idea behind NARS is to sample subsets of relation types from a heterogeneous graph to construct relation subgraphs. These subgraphs contain edges that correspond only to the sampled relation types. By using this method, the model can adapt to the various types of relationships present in heterogeneous graphs.\n\n3. **Aggregation Procedure**:\n   For every sampled relation subgraph, NARS computes neighbor-averaged features through repeated aggregation across specified hops (L-hop neighbor aggregation). The aggregated features are then combined across multiple subgraphs in an adaptive manner, which allows the model to effectively represent the diverse relationships within the graph.\n\n4. **1D Convolution Layer**:\n   After neighbor aggregation, a learnable 1D convolution is applied to reduce the dimensionality of features before they are input to a classifier. This design choice minimizes the number of parameters and computational complexity while preserving the model's ability to capture relevant feature interactions.\n\n5. **Memory Optimization**:\n   To tackle memory issues that could arise from storing aggregated features for numerous subgraphs, NARS introduces a multi-stage training approach. During training, subsets of the sampled relation subgraphs are utilized, conservatively managing memory usage while still producing competitive results.\n\n6. **Handling Featureless Node Types**:\n   NARS accommodates nodes without intrinsic features by utilizing relational graph embeddings as pre-processed features. This approach allows the model to leverage graph structural information to assign meaningful representations to nodes lacking independent features.\n\n7. **Temperature-based Training**:\n   The model's training procedure consists of iteratively refining the aggregated neighbor features while employing a mechanism to control how past aggregated features influence current updates, effectively balancing memory usage and computational efficiency as training progresses.\n\nBy combining these strategies, NARS not only enhances scalability but also ensures robust performance on heterogeneous graph data, making it a significant advancement in the field of graph learning."
+}

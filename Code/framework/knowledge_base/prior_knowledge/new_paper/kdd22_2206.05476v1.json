@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Sampling-based Approaches for Efficient Estimation of Number of Distinct Values in Large Datasets",
+        "authors": [
+            "Jiajun Li",
+            "other authors if applicable"
+        ],
+        "affiliations": [
+            "Renmin University of China",
+            "additional affiliations if applicable"
+        ],
+        "abstract": "This paper addresses the challenge of estimating the number of distinct values (NDV) in large datasets, particularly in distributed environments. The task is crucial for optimizing database tasks and has applications in network security, data compression, and ecological studies. We propose a novel approach that adapts classical sampling-based methods for distributed settings, allowing the estimation with sub-linear communication costs. The approach utilizes sketch-based algorithms to minimize data transfer without sacrificing accuracy, providing theoretical and experimental analyses to validate its efficacy.",
+        "keywords": [
+            "NDV estimation",
+            "distributed computing",
+            "sampling-based methods",
+            "data mining",
+            "sketch algorithms"
+        ],
+        "year": "2023",
+        "venue": "(add the publication venue)",
+        "doi link": null,
+        "method name": null
+    },
+    "relate work": {
+        "related work category": [
+            "NDV estimation",
+            "sketch algorithms",
+            "sampling methods"
+        ],
+        "related papers": "This work extends upon methods outlined in studies such as those by Charikar et al. (2000) and Haas et al. (1998), as well as others in the field exploring the integration of sketch algorithms into NDV tasks.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This study addresses the problem of estimating the number of distinct values (NDV) in distributed data environments by introducing a sampling-based estimation approach that efficiently reduces communication and computational costs without high loss in accuracy.",
+        "research purpose": "To extend sampling-based NDV estimation algorithms to distributed computing contexts with minimized communication costs.",
+        "research challenge": "The traditional NDV estimation methods incur high I/O and communication costs, particularly when adapting them to distributed systems where data is partitioned across multiple machines, making efficient computations challenging.",
+        "method summary": "The paper proposes a distributed model utilizing sketch-based algorithms, which allow high-precision estimations with a single data scan, significantly reducing communication requirements across machines in the network.",
+        "conclusion": "The proposed approach effectively balances the trade-offs between accuracy and communication overhead, making it suitable for large-scale distributed systems."
+    },
+    "Method": {
+        "description": "The methods proposed involve utilizing sketch algorithms to estimate distinct values in distributed data settings, where direct calculations become infeasible due to high data volume and infrastructure costs.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "The model incorporates distributed sketch algorithms allowing efficient NDV estimations that avoid full dataset scans, reducing resource strain in distributed systems.",
+        "tasks": [
+            "Sampling data partitions",
+            "Applying sketch-based algorithms",
+            "Merging sketch results for NDV estimation"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Synthetic datasets with Poisson and Zipfian distributions",
+            "Star Schema Benchmark dataset"
+        ],
+        "baselines": [
+            "Exact frequency dictionary merging",
+            "Existing NDV estimators"
+        ],
+        "evaluation metric": "Relative error and communication cost comparisons",
+        "setup": null,
+        "hyperparameters": "Sample rate set to 0.01, HyperLogLog parameter b varies between 10-18",
+        "results": "Simulation results demonstrate reduced communication costs without significant loss in estimation accuracy compared to traditional methods.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The method provides an efficient way to manage NDV estimation in large datasets distributed across many systems, reducing communication overhead while maintaining accuracy.",
+        "future work": "Future explorations could include applying the approach to different data structures or areas such as entropy estimation."
+    }
+}

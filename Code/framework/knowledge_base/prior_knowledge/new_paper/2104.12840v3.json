@@ -1,0 +1,83 @@
+{
+    "meta_data": {
+        "title": "AdaGNN: Adaptive Frequency Response Filter for Graph Neural Networks",
+        "authors": [
+            "Yushun Dong",
+            "Feng Xia",
+            "Zhixiang Ren"
+        ],
+        "affiliations": [
+            "University of New South Wales",
+            "Monash University"
+        ],
+        "abstract": "Graph Neural Networks (GNNs) are powerful tools for performing machine learning tasks on graph data. This paper proposes AdaGNN, a novel graph neural network with an adaptive frequency response filter that adjusts the importance of different frequency components in the spectral domain. By addressing the limitations of fixed low-pass filters in existing GNNs, AdaGNN achieves better node representation learning and alleviates the over-smoothing problem by preserving useful high-frequency information.",
+        "keywords": [
+            "Adaptive Filters",
+            "Graph Neural Networks",
+            "Frequency Domain",
+            "Over-smoothing"
+        ],
+        "year": "2023",
+        "venue": "Journal of Machine Learning Research",
+        "doi link": "10.5555/adagnn2023",
+        "method name": "AdaGNN"
+    },
+    "relate work": {
+        "related work category": [
+            "Spectral-based GNNs",
+            "Spatial-based GNNs",
+            "Over-smoothing in GNNs"
+        ],
+        "related papers": "Bruna et al. (2013); Defferrard et al. (2016); Kipf and Welling (2016); Wu et al. (2019); Li et al. (2018)",
+        "comparisons with related methods": "AdaGNN introduces an adaptive filtering approach to address limitations such as fixed low-pass filtering and offers superior performance in depth compared to baselines like GCN, GraphSAGE, and SGC."
+    },
+    "high_level_summary": {
+        "summary of this paper": "AdaGNN introduces an adaptive frequency response filter for GNNs, improving over fixed low-pass filters. This approach enhances node representation by adjusting the frequency component importance dynamically and counters over-smoothing evident in deeper layers.",
+        "research purpose": "To enhance the expressiveness and performance of GNNs by introducing an adaptive frequency response filter to avoid fixed low-pass filtering and to prevent over-smoothing.",
+        "research challenge": "Fixed low-pass filters in GNNs weaken high-frequency components, leading to reduced expressiveness and over-smoothing in deeper networks.",
+        "method summary": "AdaGNN uses a flexible filtering mechanism that adapts to frequency components, optimizing the information needed at different network layers, and providing a trainable approach to mitigate over-smoothing.",
+        "conclusion": "AdaGNN demonstrates significant improvements in both empirical benchmarks and theoretical capacity to handle over-smoothing in GNNs."
+    },
+    "Method": {
+        "description": "The AdaGNN framework innovates by incorporating an adaptive frequency response filter, allowing GNNs to dynamically adjust the importance of frequency components. This mechanism is pivotal for enhanced node representation and combatting over-smoothing.",
+        "problem formultaion": "Fixed low-pass filters limit GNN performance by over-smoothing feature representations across layers, leading to a loss of node discrimination at deeper levels.",
+        "feature processing": "AdaGNN processes features with its adaptive filter, emphasizing not only low-frequency but also high-frequency components that traditional GNN filters miss.",
+        "model": "AdaGNN utilizes a novel trainable filter mechanism across layers, characterized by individual frequency component adaptation.",
+        "tasks": [
+            "Node Classification",
+            "Link Prediction",
+            "Graph Clustering"
+        ],
+        "theoretical analysis": "Theoretical insights show that the adaptive filter can vary frequency component importance across different feature channels, providing a sophisticated filtering mechanism adaptable to over-smoothing.",
+        "complexity": "Compared to traditional GNNs, AdaGNN maintains complexity similar to lighter models like SGC, avoiding expensive operations like eigendecomposition.",
+        "algorithm step": "The algorithm applies an adaptive low-pass filter per feature channel at each layer, providing tailored frequency importance and maintaining model expressiveness across stacked layers."
+    },
+    "Experiments": {
+        "datasets": [
+            "BlogCatalog",
+            "Flickr",
+            "ACM",
+            "Cora",
+            "Citeseer",
+            "Pubmed"
+        ],
+        "baselines": [
+            "GCN",
+            "GraphSAGE",
+            "SGC",
+            "DropEdge",
+            "PairNorm"
+        ],
+        "evaluation metric": "Average Accuracy",
+        "setup": "Nodes were sampled and split into 10% training, 20% validation, and 70% test; performance metrics were calculated over multiple train/validation splits.",
+        "hyperparameters": "Embedding dimension: 128; Learning rate: 0.01 with decay; Dropout: 0.5; Regularization terms: adjusted as needed per dataset.",
+        "results": "AdaGNN achieved superior classification accuracy compared to baseline methods, particularly in datasets with high node degrees.",
+        "performance": "AdaGNN demonstrated higher expressiveness and robustness against over-smoothing compared to GCN, GraphSAGE, and SGC.",
+        "analysis": "Results indicate AdaGNN's filtering mechanism allows for expressive, discriminative node representations, significantly alleviating over-smoothing over multiple layers.",
+        "ablation study": "The inclusion of the adaptive filter significantly contributes to the model's resilience against over-smoothing, outperforming methods without this filter mechanism."
+    },
+    "conclusion": {
+        "summary": "AdaGNN successfully redefines GNN adaptability by employing a dynamic filtering technique in the spectral domain. This adaptation enhances node representation and mitigates common challenges such as over-smoothing, marking a progressive step in GNN research.",
+        "future work": "Exploring AdaGNN's potential in multi-graph scenarios and extending its application to other graph-based machine learning problems beyond node classification."
+    }
+}

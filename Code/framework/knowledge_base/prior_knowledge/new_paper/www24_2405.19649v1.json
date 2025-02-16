@@ -1,0 +1,75 @@
+{
+    "meta_data": {
+        "title": "PPREI: PPR-Based Embedding Inversion for Graph Recovery",
+        "authors": [
+            "Yukino Asuna"
+        ],
+        "affiliations": [
+            "Hong Kong RGC GRF"
+        ],
+        "abstract": "This paper presents PPREI, a framework designed for reconstructing the original graph structure from PPR-based embedding matrices. By addressing the embedding inversion and graph recovery problems, it showcases the advantages of PPR-based methods over random-walk alternatives in retaining essential topological information.",
+        "keywords": [
+            "Graph Mining",
+            "Personalized PageRank",
+            "Matrix Factorization",
+            "Node Embedding",
+            "Graph Recovery"
+        ],
+        "year": "2023",
+        "venue": "To be published",
+        "doi link": "null",
+        "method name": "PPREI"
+    },
+    "relate work": {
+        "related work category": [
+            "PPR-Based Embedding Approaches",
+            "Graph Reconstruction Techniques"
+        ],
+        "related papers": "The paper references matrix factorization methods and graph reconstruction studies, highlighting works like \"Deepwalking Backwards\", \"STRAP\", \"NRP\", \"Lemane\", and \"SENSEI\".",
+        "comparisons with related methods": "The discussion highlights how PPR-based embedding methods surpass random-walk-based ones by preserving more accurate graph topology, both in theoretical perspectives and empirical experiments."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces PPREI, focusing on the concept of graph recovery through PPR-based matrix factorization. It proposes methods to invert node embeddings back to their original graph form, presenting empirical evidence showing superior performance compared to random-walk-based methods.",
+        "research purpose": "To investigate how PPR-based embedding approaches outperform random-walk-based ones, especially in preserving graph topology.",
+        "research challenge": "Designing a method to accurately recover the original graph from reduced PPR-based embeddings, and analyzing the inherent topology preserved in these embeddings.",
+        "method summary": "PPREI focuses on inverting node embeddings by addressing embedding inversion and graph recovery. Two methods, analytical and optimization, are presented within a unified framework.",
+        "conclusion": "The work concludes that PPR-based embeddings provide notable advantages in preserving topological information, advancing the understanding of node embedding techniques from a spectral perspective."
+    },
+    "Method": {
+        "description": "PPREI offers a framework to transform PPR-based node embeddings back to approximate original graphs, leveraging insights from full-rank approximation and graph topology.",
+        "problem formultaion": "The task includes embedding inversion and graph recovery, where embeddings from a graph are used to recover a graph with minimal topological discrepancy.",
+        "feature processing": "Unifies several PPR strategies derived using matrix factorization to capture vital graph features.",
+        "model": "The framework models embeddings based on PPR, computing proximity matrices through Singular Value Decomposition (SVD), and devising methods to reverse-engineer adjacency matrices.",
+        "tasks": [
+            "Embedding Inversion",
+            "Graph Recovery"
+        ],
+        "theoretical analysis": "Establish connections between adjacency and proximity matrices using derivate-based systems.",
+        "complexity": "Explores trade-offs in accuracy and computation, highlighting strengths in managing dense large graphs.",
+        "algorithm step": "Formulates proximity matrices via PPR, applies full-rank approximation, and reconstructs adjacency matrices through deterministic and probabilistic methods."
+    },
+    "Experiments": {
+        "datasets": [
+            "PPI",
+            "BlogCatalog",
+            "Flickr",
+            "Euro",
+            "Brazil",
+            "Wiki"
+        ],
+        "baselines": [
+            "DeepWalking Backwards"
+        ],
+        "evaluation metric": "Relative Frobenius norm error, average path length error, and average conductance error.",
+        "setup": "Tested prediction accuracy on 6 diverse datasets capturing social, biological, and network domains.",
+        "hyperparameters": "Sets alpha and epsilon values for PPR, and a fixed number of iterations for proximity matrix computation.",
+        "results": "PPREI consistently outperforms baselines, demonstrating lower error margins across all datasets.",
+        "performance": "Shows superiority over random-walk-based algorithms in reconstructing graph structures accurately.",
+        "analysis": "Highlights the benefits of PPR in retaining structural fidelity and community information even at reduced dimensions.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The research demonstrates that PPR-based embeddings offer a more maintainable and comprehensive approach to graph representation, particularly in the task of graph recovery.",
+        "future work": "Possible exploration involves expanding PPREI to dynamic graphs and enhancing computational efficiency for larger datasets."
+    }
+}

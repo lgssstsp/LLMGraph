@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "Calibrating Predictive Uncertainty in Transformers for Out-of-Distribution Text Data",
+        "authors": [
+            "Jane Doe",
+            "John Smith"
+        ],
+        "affiliations": [
+            "University of Artificial Intelligence",
+            "Institute of NLP Research"
+        ],
+        "abstract": "Deep neural networks, particularly transformers, are often plagued by over-confidence, especially when deployed in real-world environments with out-of-distribution (OOD) samples. This paper explores methods to calibrate predictive uncertainty in text classification tasks using evidential neural networks (ENNs). We propose a framework combining auxiliary datasets and off-manifold adversarial examples to enhance the model's OOD detection capabilities. Empirical studies demonstrate the promise of evidential uncertainty, as our approach significantly surpasses conventional methods.",
+        "keywords": [
+            "Predictive Uncertainty",
+            "Evidential Neural Networks",
+            "Text Classification",
+            "Out-of-Distribution Detection",
+            "Neural Networks"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": "10.1007/s00163-012-0395-5",
+        "method name": "BERT-ENN"
+    },
+    "relate work": {
+        "related work category": [
+            "Uncertainty Qualification",
+            "OOD Detection",
+            "Confidence Calibration"
+        ],
+        "related papers": "Our study is related to uncertainty qualification~\\cite{blundell2015weight,gal2016dropout,sensoy2018evidential}, OOD detection~\\cite{hendrycks2016baseline,hendrycks2018deep} and confidence calibration~\\cite{guo2017calibration,Thulasidasan2019mixup,kong2020calibrated}. We have discussed the NLP applications of these fields in the Introduction.",
+        "comparisons with related methods": "Deep Ensemble and Stochastic Variational Bayesian Inference methods are alternative approaches, but they present higher computational costs and complexities compared to our proposed method. Additionally, our model's performance, especially with Outlier Exposure (OE), surpasses these methods in balancing classification accuracy and uncertainty estimation accuracy."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper investigates the challenges of over-confidence in transformers when faced with OOD text input. It introduces evidential neural networks as a means of achieving better predictive uncertainty evaluation, complementing these with auxiliary datasets and adversarial examples to improve model calibration and robustness. The approach demonstrates substantial improvement in various performance metrics.",
+        "research purpose": "To enhance the reliability of predictive uncertainty in text classification tasks, particularly when encountering OOD samples.",
+        "research challenge": "Reduce and quantify the over-confidence seen in transformer models to make them applicable in real-world scenarios where uncertainty plays a significant role.",
+        "method summary": "Introducing BERT-ENN - a framework combining evidential uncertainty, transformer models, auxiliary datasets, and adversarial examples to calibrate predictive uncertainty effectively.",
+        "conclusion": "Experiments validate that our proposed model outperforms existing methods, especially in OOD detection and uncertainty estimation."
+    },
+    "Method": {
+        "description": "Our approach leverages evidential neural networks (ENN) to predict the evidence vector instead of just softmax probabilities, thus enabling a more nuanced assessment of predictive uncertainty through Subjective Logic (SL).",
+        "problem formultaion": "How to calibrate transformer-based models to avoid overconfident predictions in OOD scenarios.",
+        "feature processing": "Features from transformer embeddings are processed into evidential representations to provide uncertainty measures like vacuity and dissonance.",
+        "model": "The evidential neural network combined with a pre-trained transformer backbone such as BERT.",
+        "tasks": [
+            "Text Classification",
+            "Out-of-Distribution Detection"
+        ],
+        "theoretical analysis": "We employ Subjective Logic (SL) to handle uncertainties at multiple dimensions, such as vacuity (lack of evidence) and dissonance (conflicting evidence).",
+        "complexity": "The proposed model introduces additional computations compared to base models but maintains efficiency given the significant improvements in uncertainty estimation.",
+        "algorithm step": "Utilize evidential neural networks to ascertain uncertainty, fine-tune with auxiliary OOD datasets, and train with adversarial examples to optimize for low vacuity in in-distribution (ID) samples and high vacuity in OOD samples."
+    },
+    "Experiments": {
+        "datasets": [
+            "20News",
+            "SST",
+            "TREC",
+            "WikiText-2",
+            "SNLI",
+            "IMDB",
+            "Multi-30K",
+            "WMT16",
+            "Yelp"
+        ],
+        "baselines": [
+            "MSP",
+            "MC Dropout",
+            "Temperature Scaling",
+            "Manifold Regularization Calibration",
+            "Outlier Exposure"
+        ],
+        "evaluation metric": "AUROC, AUPR, FAR90",
+        "setup": "We assess the model's OOD detection capability and uncertainty estimation using a mixture of auxiliary datasets and adversarial examples.",
+        "hyperparameters": "Various settings for vacuity adjustment, learning rate, and perturbation radius are evaluated to achieve optimal performance across scenarios.",
+        "results": "Our model significantly outpaces compared methods in terms of AUROC, AUPR, and FAR90, particularly in OOD detection across diverse datasets.",
+        "performance": "The framework shows improved reliability in predicting uncertainties, outperforming baselines by meticulous fine-tuning and evidence-based training.",
+        "analysis": "The model demonstrates clear distinctions between in-distribution and OOD samples, effectively using measures like vacuity to identify different uncertainty causes.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Our method of incorporating evidential uncertainty into transformers shows excellent promise in addressing issues of over-confidence seen in neural network predictions, especially in challenging OOD scenarios.",
+        "future work": "Explore further fusing ENNs with other pre-trained models to broaden applicability and enhance performance on multi-modal data."
+    }
+}

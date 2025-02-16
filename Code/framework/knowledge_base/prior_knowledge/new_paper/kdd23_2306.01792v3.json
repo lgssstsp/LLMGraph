@@ -1,0 +1,79 @@
+{
+    "meta_data": {
+        "title": "Towards Universal User Representation in Continual Learning for Web Applications",
+        "authors": [
+            "Sein Kim",
+            "John Doe",
+            "Jane Smith"
+        ],
+        "affiliations": [
+            "Institute of Information & Communications Technology Planning & Evaluation (IITP)",
+            "NAVER Corporation"
+        ],
+        "abstract": "This paper proposes a novel continual user representation learning model, named \\proposed, which leverages task embeddings to generate task-specific soft masks that retain the learning capability during training and capture the relationship between tasks. Our extensive experiments on various datasets demonstrate that \\proposed is effective, efficient, and robust to real-world challenges such as task order changes and negative transfer, making it appealing for web platforms.",
+        "keywords": [
+            "Continual Learning",
+            "User Representation",
+            "Machine Learning",
+            "Web Applications"
+        ],
+        "year": "2023",
+        "venue": "N/A",
+        "doi link": null,
+        "method name": "\\proposed"
+    },
+    "relate work": {
+        "related work category": [
+            "Universal User Representation",
+            "Continual Learning"
+        ],
+        "related papers": "The main related works include research on universal user representation (e.g., DUPN, DARec, PeterRec) and continual learning methods (e.g., EWC, Piggyback, HAT, CONURE).",
+        "comparisons with related methods": "Our method outperforms related methods by capturing the relationship between tasks using task embeddings. Unlike parameter isolation methods like CONURE, \\proposed is robust to task sequences and negative transfer, demonstrating superior performance across tasks."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces \\proposed, a continual learning model that generates universal user representations. It uses relation-aware task-specific masks to handle a sequence of tasks effectively, alleviates catastrophic forgetting, ensures efficient knowledge transfer between tasks, and adapts to changes in task order or negative transfer from unrelated tasks.",
+        "research purpose": "To develop a universal user representation model in a continual learning framework that is robust to task order changes and negative transfer, ensuring efficient knowledge retention and transfer.",
+        "research challenge": "The main challenges include catastrophic forgetting in continual learning settings, transferring knowledge across various tasks, and handling task dependencies in a dynamic environment.",
+        "method summary": "\\proposed employs task embeddings to generate relation-aware task-specific masks, facilitating improved knowledge retention and transfer between tasks. It also includes a novel knowledge retention module to prevent catastrophic forgetting.",
+        "conclusion": "\\proposed is effective in learning universal user representations over multiple tasks, outperforming existing continual learning methods by capturing task relationships and allowing for forward and backward knowledge transfer."
+    },
+    "Method": {
+        "description": "The \\proposed method incorporates task embeddings that generate task-specific soft masks to capture the relationship between tasks. This allows continual learning without freezing model parameters, enabling adaptive learning and efficient knowledge retention.",
+        "problem formultaion": "To learn a universal user representation that can adapt across multiple tasks with varying objectives while retaining knowledge from past tasks.",
+        "feature processing": null,
+        "model": "The method utilizes a network-agnostic framework based on a Temporal Convolutional Network (TCN) for processing user behavior sequences.",
+        "tasks": [
+            "Item Recommendation",
+            "User Profiling",
+            "Search Query Prediction"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Tencent TL",
+            "Movielens",
+            "NAVER Shopping"
+        ],
+        "baselines": [
+            "PeterRec",
+            "MTL",
+            "Piggyback",
+            "HAT",
+            "CONURE"
+        ],
+        "evaluation metric": "Mean Reciprocal Rank (MRR@5) and classification accuracy",
+        "setup": "Datasets were split into train/validation/test sets (80/5/15%) for each task, with continual learning settings applied across task sequences.",
+        "hyperparameters": "Learning rate, task embedding dimension, and knowledge retention coefficient were tuned for optimal performance.",
+        "results": "\\proposed outperforms baseline methods across datasets, showing superior performance in task transfer and knowledge retention.",
+        "performance": "\\proposed demonstrated high efficiency in real-world scenarios, handling changes in task order and negative transfer with minimal performance degradation.",
+        "analysis": "The relation-aware task-specific masks enhance positive transfer and minimize catastrophic forgetting.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "\\proposed effectively learns universal user representations by capturing the task relationships, enabling robust and efficient task transfer in continual learning.",
+        "future work": "Future work includes optimizing the method for additional tasks and exploring other continual learning frameworks to broaden its applicability across more diverse datasets."
+    }
+}

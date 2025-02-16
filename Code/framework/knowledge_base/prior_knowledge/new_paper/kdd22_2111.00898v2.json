@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "A Study on Availability Attacks Using Linearly-Separable Perturbations",
+        "authors": [
+            "Author A",
+            "Author B"
+        ],
+        "affiliations": [
+            "University of XYZ"
+        ],
+        "abstract": "This paper explores the underlying principle of availability attacks against deep neural networks. We demonstrate that the perturbations of several existing attacks are linearly separable and propose a method to generate synthetic perturbations, proving that linearly-separable perturbations are a sufficient condition for such attacks. Our method is computationally efficient and reveals the vulnerability of deep networks to spurious features.",
+        "keywords": [
+            "Availability attacks",
+            "Linearly-separable perturbations",
+            "Synthetic data",
+            "Deep learning vulnerability"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning",
+        "doi link": null,
+        "method name": "Synthetic Perturbation Generation"
+    },
+    "relate work": {
+        "related work category": [
+            "Adversarial examples",
+            "Data poisoning",
+            "Shortcut learning"
+        ],
+        "related papers": "[1] Feng et al., DeepConfuse: Generating Perturbations for Availability Attacks. [2] Huang et al., Error-Minimizing Noise for Unlearnable Examples.",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper investigates the common mechanism behind availability attacks on deep neural models by examining their perturbations' linear separability and proposing a synthetic method to generate effective, computationally cheap perturbations.",
+        "research purpose": "To uncover the underlying mechanism of availability attacks and demonstrate linearly-separable perturbations' effectiveness.",
+        "research challenge": "Understanding how perturbations act as 'shortcuts' to confuse deep models.",
+        "method summary": "Employ a synthetic data generation approach to create linearly-separable perturbations that serve as effective availability attacks.",
+        "conclusion": "Synthetic perturbations are effective and computationally inexpensive, revealing a deeper vulnerability of neural models to simple, linear features."
+    },
+    "Method": {
+        "description": "We generate synthetic perturbations that are linearly-separable, demonstrating these as effective means for availability attacks.",
+        "problem formultaion": null,
+        "feature processing": null,
+        "model": "Simple models such as linear classifiers and two-layer neural networks are used to demonstrate the linear separability of perturbations.",
+        "tasks": [
+            "Evaluate the linear separability of attack perturbations",
+            "Generate synthetic perturbations",
+            "Test on image classification datasets"
+        ],
+        "theoretical analysis": null,
+        "complexity": null,
+        "algorithm step": "Generate linearly-separable synthetic data, normalize, introduce local correlation, and apply as perturbations to training data."
+    },
+    "Experiments": {
+        "datasets": [
+            "CIFAR-10",
+            "CIFAR-100",
+            "ImageNet"
+        ],
+        "baselines": [
+            "Error-Minimizing Noise",
+            "Adversarial Examples",
+            "DeepConfuse"
+        ],
+        "evaluation metric": null,
+        "setup": "Standard deep learning training settings on image datasets with and without perturbations.",
+        "hyperparameters": null,
+        "results": "Linearly-separable synthetic perturbations significantly drop models' test accuracy, indicating successful attacks.",
+        "performance": "Synthetic perturbations achieved attack performance comparable to or better than existing methods.",
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "Synthetic perturbations efficiently replicate the attack effectiveness of complex methods, showcasing the ease with which deep learning models can be misled by simpler linear features.",
+        "future work": null
+    }
+}

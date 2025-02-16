@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Link Property Prediction",
+    "Dataset Name": "ogbl-citation2",
+    "Dataset Link": "../linkprop/#ogbl-citation2",
+    "Rank": 11,
+    "Method": "SEAL",
+    "External Data": "No",
+    "Test Accuracy": "0.8767 ± 0.0032",
+    "Validation Accuracy": "0.8757 ± 0.0031",
+    "Contact": "mailto:muhan.zhang@hotmail.com",
+    "Paper Link": "https://arxiv.org/pdf/2010.16103.pdf",
+    "Code Link": "https://github.com/facebookresearch/SEAL_OGB",
+    "Parameters": "260,802",
+    "Hardware": "Tesla V100 (32GB GPU)",
+    "Date": "Feb 12, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Link_Property_Prediction/ogbl-citation2/SEAL.pdf",
+    "Paper Summary": "The paper proposes a theoretical framework for utilizing Graph Neural Networks (GNNs) in multi-node representation learning, particularly through a method termed the \"labeling trick.\" This method addresses the fundamental limitation of existing GNN approaches that simply aggregate individual node representations for tasks involving sets of nodes, as they fail to capture dependencies between nodes within the set.\n\n### Key Method Design Aspects:\n\n1. **Labeling Trick**: The core innovation is the concept of \"labeling\" nodes in a graph based on their relationships with a target set before applying a GNN. The paper introduces a generalized form of labeling called the \"labeling trick,\" which satisfies two essential properties:\n   - **Target-Nodes-Distinguishing**: Labels are assigned such that they help in distinguishing target nodes from others in the graph.\n   - **Permutation Equivariance**: The labeling function adjusts consistently when nodes are permuted, preserving the relational structure.\n\n2. **Zero-One Labeling**: A specific implementation of the labeling trick is the \"zero-one labeling trick.\" It assigns a diagonal labeling matrix to nodes in the target set (labeling them with 1) and assigns 0 to all other nodes. This enables the GNN to be aware of the target nodes during the representation learning process. \n\n3. **Aggregation Function**: The authors propose using injective set aggregation functions (denoted as AGG) that can combine node representations into a structural representation for the node sets. This ensures that the representations remain sensitive to the graph structure.\n\n4. **Most-Expressive GNNs**: The method leverages \"node-most-expressive\" GNNs, which are designed to generate different representations for structurally different nodes while ensuring isomorphic nodes receive the same representation.\n\n5. **Separation of Context**: The labeling trick separates the context of a node based on its role in relation to the target nodes. For example, when predicting a link between two nodes, the GNN computes their representations conditioned on each other with the labeling guiding this process.\n\n6. **Local Isomorphism**: The paper extends its definitions to accommodate local isomorphism, where the representations learned are not strictly based on global graph isomorphism but on local subgraph structures, thus allowing more flexible and meaningful representations in practical applications.\n\nThrough these design aspects, the paper posits that GNNs, when supplemented with the labeling trick, can effectively learn the most expressive structural representations of node sets necessary for multi-node prediction tasks."
+}

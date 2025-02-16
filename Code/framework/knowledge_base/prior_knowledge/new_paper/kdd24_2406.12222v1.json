@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "BadSampler: A Clean-Label Data Poisoning Attack Against Byzantine-Robust Federated Learning",
+        "authors": [
+            "Author1",
+            "Author2",
+            "Author3"
+        ],
+        "affiliations": [
+            "Institution1",
+            "Institution2"
+        ],
+        "abstract": "Federated Learning (FL), as an emerging distributed machine learning framework, offers privacy-friendly promising applications but faces vulnerability to poisoning attacks. In this work, we introduce \\emph{BadSampler}, a clean-label data poisoning attack designed to maximize generalization error in Byzantine-robust FL systems by leveraging adaptive adversarial sampling techniques. Our investigations demonstrate the challenge and effectiveness of \\emph{BadSampler} in overcoming advanced defenses without resorting to unrealistic assumptions. Extensive evaluations reveal significant losses in model accuracy and highlight its threat to practical FL deployments.",
+        "keywords": [
+            "Federated Learning",
+            "Data Poisoning",
+            "Byzantine-robust"
+        ],
+        "year": "2023",
+        "venue": "Conference on Machine Learning",
+        "doi link": null,
+        "method name": "BadSampler"
+    },
+    "relate work": {
+        "related work category": [
+            "Data Poisoning Attacks",
+            "Byzantine-Robust FL Defenses"
+        ],
+        "related papers": "\\cite{tolpegin2020data,jagielski2018manipulating,jere2020taxonomy,shejwalkar2021manipulating,ref-13,ref-15}",
+        "comparisons with related methods": "Existing Data Poisoning Attacks typically rely on modifying local data or crafting gradients, but \\emph{BadSampler} leverages clean-label data to maximize generalization error, effectively bypassing state-of-the-art defenses like Byzantine-robust aggregation rules."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces \\emph{BadSampler}, a clean-label data poisoning attack targeted at Byzantine-robust FL systems. The attack maximizes the generalization error of models by employing adaptive adversarial clean-label sampling strategies.",
+        "research purpose": "To introduce and evaluate a novel clean-label data poisoning attack, \\emph{BadSampler}, against Byzantine-robust FL systems for an effective maximization of model generalization error.",
+        "research challenge": "Deploying impactful poisoning attacks against Byzantine-robust FL without relying on unrealistic attack assumptions or aggressive manipulation of model parameters.",
+        "method summary": "\\emph{BadSampler} employs an adaptive adversarial sampling strategy using clean-label data, exploiting the stochastic gradient descent's sampling process to maximize generalization error through adversarial sampling that induces catastrophic forgetting.",
+        "conclusion": "The study highlights the efficacy of \\emph{BadSampler}, showcasing its ability to significantly degrade model performance even under stringent defense mechanisms in real FL scenarios."
+    },
+    "Method": {
+        "description": "The \\emph{BadSampler} method leverages clean-label data to execute a data poisoning attack, targeting the adaptive sampling strategy during the FL training phase to maximize generalization error.",
+        "problem formultaion": "Addressing the model generalization error maximization problem through adversarial sampling in FL environments with Byzantine-robust aggregation safeguards.",
+        "feature processing": null,
+        "model": "Adaptive adversarial sampler within a federated learning context.",
+        "tasks": [
+            "Adversarial Sampling Strategy",
+            "Maximizing Generalization Error"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Low computational complexity with efficient adversarial sampling strategies using Top-$\\kappa$ and meta-sampling.",
+        "algorithm step": "1. Sample clean-label data. 2. Perform adversarial sampling using adaptive strategies. 3. Iteratively update adversarial decisions."
+    },
+    "Experiments": {
+        "datasets": [
+            "Fashion-MNIST",
+            "CIFAR-10"
+        ],
+        "baselines": [
+            "Label Flipping Attack",
+            "Adversarial Attack",
+            "Gaussian Attack",
+            "Zero-update Attack",
+            "Local Model Poisoning Attack",
+            "OBLIVION",
+            "Data Ordering Attack"
+        ],
+        "evaluation metric": "Attack impact $\\Delta$: reduction in global model accuracy.",
+        "setup": null,
+        "hyperparameters": "Client number $K=100$, Participation ratio $q=10\\%$, Learning rate $\\eta=0.001$, Meta-state size $b=5$, Compromised client proportion $M=\\{5\\%,10\\%\\}$.",
+        "results": "\\emph{BadSampler} can lead to significant accuracy drops, e.g. $8.98\\%$ under strong defenses like \\textsf{FLTrust}.",
+        "performance": null,
+        "analysis": "Results show \\emph{BadSampler} effectively degrades model generalization and accuracy across different models and defenses.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The study introduces \\emph{BadSampler}, which highlights significant challenges in defending against clean-label data poisoning attacks in robust federated learning frameworks, underscoring their considerable effectiveness and threat to real-world deployments.",
+        "future work": "Expanding the scope of adversarial strategies in dynamic FL environments, evaluating defenses under lower communication thresholds, and exploring the application of \\emph{BadSampler} to diverse architectures and real-world datasets."
+    }
+}

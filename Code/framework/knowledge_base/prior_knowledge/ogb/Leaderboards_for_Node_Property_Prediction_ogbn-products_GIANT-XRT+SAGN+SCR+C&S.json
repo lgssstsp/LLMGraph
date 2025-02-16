@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-products",
+    "Dataset Link": "../nodeprop/#ogbn-products",
+    "Rank": 5,
+    "Method": "GIANT-XRT+SAGN+SCR+C&S",
+    "External Data": "Yes",
+    "Test Accuracy": "0.8680 ± 0.0007",
+    "Validation Accuracy": "0.9357 ± 0.0004",
+    "Contact": "mailto:yufei.he@bit.edu.cn",
+    "Paper Link": "https://arxiv.org/abs/2112.04319",
+    "Code Link": "https://github.com/THUDM/SCR",
+    "Parameters": "1,154,654",
+    "Hardware": "GeForce RTX 3090 24GB (GPU)",
+    "Date": "Jun 13, 2022",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-products/GIANT-XRT+SAGN+SCR+C&S.pdf",
+    "Paper Summary": "The paper presents the SCR (Consistency Regularization) framework designed to enhance the training of Graph Neural Networks (GNNs) in semi-supervised settings. The key contributions focus on innovative strategies for consistency regularization that aim to balance errors from labeled and unlabeled data while effectively utilizing the latter.\n\n### SCR Framework:\n\n1. **Noisy Prediction Generation**:\n   - SCR introduces a method to create noisy predictions by utilizing dropout during model evaluation. The model generates multiple predictions by applying dropout to the same input, thereby simulating different scenarios and creating slightly varied outputs.\n   - This approach aims to minimize inconsistencies in predictions under the assumption that small perturbations should not significantly affect the outcome, aligned with the low-density separation assumption in semi-supervised learning.\n\n2. **Pseudo Labeling**:\n   - Two strategies for generating pseudo labels are presented:\n     - **SCR**: In this strategy, the pseudo label for an unlabeled node is computed as the average of multiple noisy predictions obtained during the model runs.\n     - **SCR-m**: This variant employs a Mean Teacher paradigm where pseudo labels are derived from a teacher model, which is an Exponential Moving Average (EMA) of the student model parameters. This allows for the generation of more stable and potentially less noisy predictions.\n\n3. **Confidence-Based Masking**:\n   - A confidence-based approach is implemented to filter out predictions labeled with low confidence. This aims to ensure that only high-confidence pseudo labels are used as training targets, thus enhancing the reliability of the consistency loss component.\n\n### Loss Function:\nThe total loss function in the SCR framework consists of two main components:\n- **Supervised Loss**: A standard cross-entropy loss computed between ground-truth labels and predictions from the labeled dataset.\n- **Unsupervised Consistency Loss**: This part of the loss penalizes the distance between the predictions for confident unlabeled nodes and their corresponding pseudo labels, promoting consistency among multiple noisy predictions.\n\n### Training Procedure:\n- The SCR framework's training process involves sampling labeled and unlabeled nodes in each iteration, applying dropout to generate multiple predictions, computing the pseudo labels, and then updating the model parameters by minimizing the combined supervised and unsupervised loss components.\n\nOverall, the SCR framework integrates these methodologies into a cohesive design aimed at improving the training capabilities and generalization performance of GNNs leveraging both labeled and unlabeled data effectively. The architecture is flexible, allowing it to be applied to various GNN models while enhancing their performance in semi-supervised learning tasks."
+}

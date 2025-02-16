@@ -1,0 +1,86 @@
+{
+    "meta_data": {
+        "title": "Predicting the Silent Majority on Graphs: A Knowledge Transferable Graph Neural Network Model for VS-Graphs",
+        "authors": [
+            "Wendong Bi",
+            "Yunfei Du",
+            "Zhan Gao"
+        ],
+        "affiliations": [
+            "School of Artificial Intelligence, Beijing University of Posts and Telecommunications",
+            "School of Robotics, Beijing Institute of Technology"
+        ],
+        "abstract": "The prevalence of graph-structured data in the real world, such as social networks, financial networks, and citation networks, poses challenges due to incomplete node features and unavailable labels. These challenges create what is known as the 'data-hungry problem' for graphs, particularly for 'silent nodes.' The paper introduces Knowledge Transferable Graph Neural Network (KTGNN), which aims to predict the silent majority by transferring knowledge from vocal nodes on a VS-Graph. By employing a Domain-Adapted Feature Complementor (DAFC), Domain-Adapted Message Passing (DAMP), and Domain Transferable Classifier (DTC), KTGNN models and preserves distribution shifts to improve prediction accuracy over state-of-the-art networks.",
+        "keywords": [
+            "Graph Neural Networks",
+            "VS-Graph",
+            "Silent Node Classification",
+            "Knowledge Transfer",
+            "Distribution Shift"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Advanced Learning Technologies",
+        "doi link": "10.1145/0000001.0000001",
+        "method name": "Knowledge Transferable Graph Neural Network (KTGNN)"
+    },
+    "relate work": {
+        "related work category": [
+            "Graph Neural Networks",
+            "Out-of-Distribution Detection",
+            "Node Classification",
+            "Domain Adaptation"
+        ],
+        "related papers": "(1) Kipf, T.N. & Welling, M. Semi-Supervised Classification with Graph Convolutional Networks. (2) Velickovic, P. et al. Graph Attention Networks. (3) Xu, K. et al. How Powerful are Graph Neural Networks? (4) Lee, K. et al. A Simple Unified Framework for Detecting Out-of-Distribution Data, (5) Li, X. et al. A New Benchmark and Analysis on the Out-of-Distribution Generalization Challenge.",
+        "comparisons with related methods": "The KTGNN method distinguishes itself from existing GNNs that address out-of-distribution (OOD) challenges by transferring knowledge from the vocal domain to the silent domain while considering domain differences rather than normalizing feature distributions to a common one. This approach effectively blends the benefits of domain adaptation and feature completion strategies."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents the Knowledge Transferable Graph Neural Network (KTGNN), a novel model addressing the challenge of predicting the silent node majority on VS-Graphs. KTGNN adapts the knowledge transferred from vocal nodes to silent nodes, effectively handling distribution shifts and data scarcity.",
+        "research purpose": "To propose a novel GNN model that predicts the silent majority of node classes by transferring knowledge from a minority of labeled nodes on graphs with vocal and silent nodes.",
+        "research challenge": "Addressing data-hungry problems for graphs with missing node features and labels due to distribution shifts, hindering the efficacy of conventional GNNs.",
+        "method summary": "KTGNN employs domain-adapted feature completion and message passing while maintaining domain differences. Its architecture includes DAFC for feature completion, DAMP for domain-aware message passing, and DTC for classification using cross-domain knowledge.",
+        "conclusion": "KTGNN significantly improves silent node prediction performance in various real-world scenarios through intricate domain adaptation strategies."
+    },
+    "Method": {
+        "description": "The Knowledge Transferable Graph Neural Network (KTGNN) is designed to predict the silent majority on VS-Graphs by transferring knowledge from fully-observable vocal nodes. It comprises DAFC for feature completion, DAMP for message passing, and DTC for classification.",
+        "problem formultaion": "Silent Node Classification on VS-Graphs, defined as predicting labels of silent nodes using out-of-distribution knowledge from vocal nodes.",
+        "feature processing": "Implements domain-adapted feature completion using cross-domain knowledge, modeled in the DAFC module.",
+        "model": "KTGNN - integrates DAFC, DAMP, and DTC for domain-adapted transfer learning.",
+        "tasks": [
+            "Silent Node Classification",
+            "Feature Completion",
+            "Domain Adaptation"
+        ],
+        "theoretical analysis": "Empirical analysis demonstrates that KTGNN efficiently handles distribution shifts, enhancing predictive accuracy over existing GNN models.",
+        "complexity": "The computational complexity is on par with leading GNN frameworks, while optimizing knowledge transfer efficiency.",
+        "algorithm step": "1. Completeness of features for silent nodes using DAFC. 2. Domain-consistent message propagation via DAMP. 3. Cross-domain classification achieved by DTC."
+    },
+    "Experiments": {
+        "datasets": [
+            "Company Dataset",
+            "Twitter Dataset"
+        ],
+        "baselines": [
+            "MLP",
+            "GCN",
+            "GAT",
+            "GraphSAGE",
+            "JKNet",
+            "APPNP",
+            "GATv2",
+            "DAGNN",
+            "GCNII",
+            "OODGAT"
+        ],
+        "evaluation metric": "F1-Score and AUC",
+        "setup": "In-depth comparison of KTGNN against competing methods using data splits designed to reflect variance in feature availability and distribution shift.",
+        "hyperparameters": null,
+        "results": "KTGNN outperforms baselines significantly, demonstrating a nearly 6% AUC score improvement over previous state-of-the-art methods on company financial risk assessment.",
+        "performance": "KTGNN shows enhanced prediction accuracy and consistency across datasets, validating its robustness and adaptability.",
+        "analysis": "Ablation studies reveal each component's contribution, with DAFC, DAMP, and DTC collectively improving prediction efficacy.",
+        "ablation study": "Variants of the proposed models are assessed by methodically removing DAFC, DAMP, DTC components, showcasing individual impact."
+    },
+    "conclusion": {
+        "summary": "KTGNN effectively overcomes distribution shifts and data scarcity on VS-Graphs by efficiently transferring domain-specific knowledge between nodes, achieving superior node classification performance.",
+        "future work": "Explore applications across more varied datasets and integrate advanced domain-adaptive learning algorithms. May also explore cross-modal applications beyond graph structures."
+    }
+}

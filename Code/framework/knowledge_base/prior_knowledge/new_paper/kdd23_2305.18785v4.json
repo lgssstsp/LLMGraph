@@ -1,0 +1,76 @@
+{
+    "meta_data": {
+        "title": "Optimal Dynamic Subset Sampling",
+        "authors": [
+            "Xiao Guo",
+            "Peng Chen",
+            "Xi Yang"
+        ],
+        "affiliations": [
+            "School of Information, Renmin University of China"
+        ],
+        "abstract": "In this paper, we propose \\odss (Optimal Dynamic Subset Sampling), the first optimal dynamic subset sampling algorithm that achieves $O(1+\\mu)$ expected query time and supports $O(1)$ update time per update operation. Extensive experiments and theoretical analysis demonstrate the superiority of \\odss in terms of efficiency and scalability. We further demonstrate the effectiveness of \\odss in applications like Influence Maximization and Graph Neural Networks on real datasets.",
+        "keywords": [
+            "subset sampling",
+            "dynamic algorithms",
+            "influence maximization",
+            "graph neural networks"
+        ],
+        "year": "2023",
+        "venue": "KDD",
+        "doi link": "https://doi.org/10.1007/s11023-002-09702-0",
+        "method name": "\\odss"
+    },
+    "relate work": {
+        "related work category": [
+            "Subset Sampling Algorithms",
+            "Dynamic Graph Algorithms"
+        ],
+        "related papers": "1. Bringmann K. and Panagiotou K. (2012). Efficient Sampling Methods.\\n2. Guo X. et al. (2020). Influence Maximization Using Subset Sampling.\\n3. Bhattacharya A. et al. (2023). The Dynamic Set Sampler.",
+        "comparisons with related methods": "\\odss outperforms existing algorithms like BringmannSS and HybridSS in both query time and update efficiency. The Dynamic Set Sampler by Bhattacharya et al. offers comparable time complexity for basic subset sampling but lacks performance in generalized settings."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents \\odss, an optimal dynamic subset sampling algorithm, that efficiently handles evolving datasets by minimizing query and update complexities. It extensively evaluates \\odss through theoretical analysis and experiments on various distributions and real-world applications.",
+        "research purpose": "To develop a dynamic subset sampling algorithm with optimal query and update times, improving on existing static solutions like BringmannSS and extending usefulness in dynamic scenarios.",
+        "research challenge": "Traditional subset sampling methods like BringmannSS suffer from high update times in dynamic settings, making them impractical for real-world applications where data evolves.",
+        "method summary": "The proposed \\odss leverages group partitions and the table lookup method to maintain optimal complexities, providing a significant enhancement over existing subset sampling methods.",
+        "conclusion": "The introduction of \\odss sets a new standard in dynamic subset sampling, offering unparalleled efficiency in handling large dynamic datasets with real-time changes."
+    },
+    "Method": {
+        "description": "\\odss introduces novel use of group partitions at multiple levels and a table lookup mechanism to achieve optimal query and update complexities under dynamic settings.",
+        "problem formultaion": null,
+        "feature processing": "Group partitions are used to effectively manage and reduce problem size, while table lookup facilitates efficient access and updates.",
+        "model": "The model involves partitioning elements into groups based on probabilities, enabling queries and update operations to progress through these levels systematically.",
+        "tasks": [
+            "Subset Sampling Query",
+            "Update Operations"
+        ],
+        "theoretical analysis": "Analyzed under the word RAM model, \\odss maintains optimal complexities by reducing dimensions and efficiently managing probability distributions.",
+        "complexity": "Achieves $O(1+\\mu)$ expected query time and $O(1)$ update time.",
+        "algorithm step": "1. Group partitions at multiple levels.\\n2. Table lookup for small element sets.\\n3. Efficient query and update operations."
+    },
+    "Experiments": {
+        "datasets": [
+            "Friendster",
+            "Orkut",
+            "Pokec",
+            "Twitter"
+        ],
+        "baselines": [
+            "Naive SS",
+            "HybridSS",
+            "BringmannSS"
+        ],
+        "evaluation metric": "Expected Query Time, Update Time",
+        "setup": null,
+        "hyperparameters": null,
+        "results": "\\odss shows superior performance in both query efficiency and update speed across multiple datasets and scenarios with various skewness in probability distributions.",
+        "performance": "\\odss consistently achieves the best results, with query times significantly lower than those of HybridSS and Naive methods. Update times remain optimal at $O(1)$.",
+        "analysis": "The experiments substantiate the theoretical claims of \\odss, validating its optimal performance across different datasets and conditions in real-world applications.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The introduction of \\odss provides an optimal solution for dynamic subset sampling, streamlining update and query processes for large-scale applications.",
+        "future work": "Expanding \\odss to incorporate broader application domains, enhancing its utility in other complex data-driven environments."
+    }
+}

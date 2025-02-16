@@ -1,0 +1,85 @@
+{
+    "meta_data": {
+        "title": "Spatio-Temporal Graph Neural Processes for Spatio-Temporal Extrapolation",
+        "authors": [
+            "Jiahui Feng",
+            "Weijia Zhang",
+            "Zitao Liu",
+            "Yuanchun Zhou",
+            "Dan Pei"
+        ],
+        "affiliations": [
+            "School of Computer Science and Technology, Beijing Institute of Technology, Beijing, China",
+            "Institute for Artificial Intelligence Education and Research, Guangzhou, China",
+            "School of Data Science, City University of Hong Kong, Kowloon, Hong Kong",
+            "Department of Computing, The Hong Kong Polytechnic University, Hong Kong, China"
+        ],
+        "abstract": "This paper introduces Spatio-Temporal Graph Neural Processes (STGNP) for spatio-temporal extrapolation. STGNP captures uncertainties explicitly and generalizes to different functions robustly, which is a major advantage over traditional Neural Networks (NNs) approaches.",
+        "keywords": [
+            "Spatio-Temporal Graph",
+            "Neural Processes",
+            "Extrapolation",
+            "Graph Neural Networks",
+            "Uncertainty Estimation"
+        ],
+        "year": "2023",
+        "venue": "International Conference on Machine Learning (ICML) 2023",
+        "doi link": "https://doi.org/10.475/123_4567",
+        "method name": "Spatio-Temporal Graph Neural Processes"
+    },
+    "relate work": {
+        "related work category": [
+            "Statistical Machine Learning Methods",
+            "Neural Networks for Extrapolation",
+            "Neural Processes"
+        ],
+        "related papers": "1. Zheng et al. - Air Quality Measurements and Sensing.\n2. Wu et al. - Graph Representations in Neural Networks.\n3. Singh et al. (2019) - Sequential Neural Processes (SNP)",
+        "comparisons with related methods": "STGNP improves upon previous methods by incorporating both temporal dynamics and spatial correlations. Unlike existing Neural Processes, STGNP models spatio-temporal data effectively with causal convolutions, while Graph Bayesian Aggregation (GBA) allows modeling of uncertainty."
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper presents a novel model called Spatio-Temporal Graph Neural Processes (STGNP) for performing spatio-temporal extrapolation. It combines neural networks' modeling capabilities with the ability to manage uncertainties over graph data, significantly improving the model's effectiveness in real-world applications.",
+        "research purpose": "The purpose of this research is to develop a method that can perform efficient and accurate spatio-temporal extrapolations while capturing uncertainties.",
+        "research challenge": "Existing methods either fail to handle uncertainty effectively or struggle with generalizing to new contexts, especially in graph-structured data.",
+        "method summary": "STGNP employs a two-stage approach: learning deterministic spatio-temporal representations using a cross-set graph neural network structure and then employing Graph Bayesian Aggregation for uncertainty modeling and prediction.",
+        "conclusion": "STGNP outperforms traditional methods in terms of accuracy, robustness, and uncertainty estimation, making it highly suitable for spatio-temporal data extrapolation tasks such as air quality monitoring."
+    },
+    "Method": {
+        "description": "STGNP is designed to estimate a function that predicts spatio-temporal data at target locations using the surrounding context nodes and related exogenous covariates, all within a graph structure.",
+        "problem formultaion": "Estimating spatio-temporal dependencies and uncertainties from sparsely represented sensor data in a graph structure.",
+        "feature processing": "Learns node embeddings, considers exogenous covariates, and processes spatial relations using Cross-Set Graph Convolution.",
+        "model": "The model utilizes a combination of Spatio-Temporal Representation Learning and Graph Bayesian Aggregation for predictions.",
+        "tasks": [
+            "Spatio-Temporal Extrapolation",
+            "Uncertainty Modeling",
+            "Graph-based Prediction"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Utilizes efficient graph operation techniques reducing complexity compared to traditional GCNs.",
+        "algorithm step": null
+    },
+    "Experiments": {
+        "datasets": [
+            "Beijing Air Quality",
+            "London Air Quality",
+            "UrbanWater"
+        ],
+        "baselines": [
+            "KNN",
+            "IDW",
+            "ADAIN",
+            "SGANP",
+            "RF"
+        ],
+        "evaluation metric": "MAE, RMSE, MAPE",
+        "setup": "Models were evaluated using various public datasets, with a split between training and testing data to assess extrapolation accuracy.",
+        "hyperparameters": "Fixed across datasets; convolutional layers: 3 with increasing channels, stochastic layers: 3 with increasing latent variables.",
+        "results": "STGNP demonstrated high accuracy and reliable uncertainty estimates, outperforming baseline models across different scenarios.",
+        "performance": null,
+        "analysis": null,
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The introduction of the Spatio-Temporal Graph Neural Processes framework effectively addresses limitations present in current models concerning spatio-temporal extrapolation and uncertainty estimation.",
+        "future work": "Exploration of STGNP for tasks beyond extrapolation, like forecasting, leveraging its robust modeling framework."
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "Task Description": "Leaderboards for Node Property Prediction",
+    "Dataset Name": "ogbn-products",
+    "Dataset Link": "../nodeprop/#ogbn-products",
+    "Rank": 10,
+    "Method": "GIANT-XRT+SAGN+SLE+C&S (use raw text)",
+    "External Data": "Yes",
+    "Test Accuracy": "0.8643 ± 0.0020",
+    "Validation Accuracy": "0.9352 ± 0.0005",
+    "Contact": "mailto:ichien3@illinois.edu",
+    "Paper Link": "https://arxiv.org/pdf/2111.00064.pdf",
+    "Code Link": "https://github.com/elichienxD/SAGN_with_SLE",
+    "Parameters": "1,548,382",
+    "Hardware": "Tesla T4 (16GB GPU)",
+    "Date": "Nov 8, 2021",
+    "Local Paper PDF Path": "knowledge_base/Leaderboards_for_Node_Property_Prediction/ogbn-products/GIANT-XRT+SAGN+SLE+C&S_(use_raw_text).pdf",
+    "Paper Summary": "The paper introduces a self-supervised learning framework called GIANT (Graph Information Aided Node feature exTraction) aimed at improving numerical node features extraction from raw data in graph neural networks (GNNs). The key focus is on addressing the issue of graph-agnostic feature extraction typically used in standard GNN pipelines.\n\n### Model Design Aspects:\n\n1. **Architecture**:\n   - GIANT utilizes the eXtreme Multi-label Classification (XMC) formalism, integrating it into GNNs to enhance feature extraction and scalability.\n   - The framework introduces a novel self-supervised learning task termed \"neighborhood prediction,\" designed to leverage the correlations between graph topology and node attributes.\n\n2. **Neighborhood Prediction**:\n   - This task encodes the neighborhood of each node using binary multi-labels, indicating whether a node is a neighbor or not. \n   - The BERT language model is utilized as an encoder to fine-tune the predictions iteratively, improving the quality of numerical node features generated.\n\n3. **Integration with XR-Transformers**:\n   - GIANT employs XR-Transformers to perform the neighborhood prediction task efficiently. This method is suited for large-scale datasets and uses hierarchical clustering of labels to improve multi-label predictions.\n\n4. **PIFA (Positive Instance Feature Aggregation)**:\n   - PIFA embeddings are created from TF-IDF features aggregated based on neighborhood nodes, which form the basis for the hierarchical label tree used in XR-Transformers. \n   - This hierarchical structure supports multi-resolution learning, allowing the model to perform better on tasks that require understanding the relationships between nodes.\n\n5. **Feature Extraction Process**:\n   - Specifically designed to handle both homophilic and heterophilic graphs, the framework shifts from conventional link prediction methods, enhancing robustness and performance.\n   - The combination of the neighborhood prediction and XR-Transformer allows for the generation of informative numerical node features, which serve as inputs for downstream GNN tasks.\n\n6. **Scalability**:\n   - The model is designed to scale effectively to large datasets, a crucial aspect given the extensive nature of modern graph data.\n\nThe GIANT framework ultimately redefines how numerical node features are extracted, emphasizing the integration of graph information and self-supervised learning to optimize GNN performance."
+}

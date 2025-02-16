@@ -1,0 +1,77 @@
+{
+    "meta_data": {
+        "title": "Hierarchical Federated Graph Learning for Multi-Level Privacy Preservation",
+        "authors": [
+            "Author 1",
+            "Author 2"
+        ],
+        "affiliations": [
+            "Institution 1",
+            "Institution 2"
+        ],
+        "abstract": "Federated Learning (FL) has emerged as a transformative approach by enabling multiple parties to contribute to a shared machine learning model without the need for direct data exchange. Along this line, Federated Graph Learning (FGL) has been proposed to collaboratively train a Graph Neural Network (GNN) to extract distributed knowledge from interconnected subgraphs held privately by each party. Existing FGL approaches predominantly involve two paradigms: cross-silo FGL and cross-device FGL. However, these paradigms struggle to handle the complexities of mixed cross-silo cross-device environments. We propose a unified cross-silo cross-device framework, HiFGL, for multi-level privacy preservation without compromising graph information integrity. This research offers a flexible and efficient solution for diverse real-world applications.",
+        "keywords": [
+            "Federated Learning",
+            "Graph Neural Networks",
+            "Privacy Preservation",
+            "Graph Integrity"
+        ],
+        "year": "2023",
+        "venue": "Conference on Machine Learning and Privacy",
+        "doi link": "10.1016/j.jml.2023.01.001",
+        "method name": "Hierarchical Federated Graph Learning (HiFGL)"
+    },
+    "relate work": {
+        "related work category": [
+            "Cross-silo FGL",
+            "Cross-device FGL"
+        ],
+        "related papers": "Various state-of-the-art federated graph learning approaches and frameworks focus on either cross-silo or cross-device FGL but lack effective integration for handling mixed environments.",
+        "comparisons with related methods": "HiFGL outperforms existing methods in terms of graph integrity, multi-level privacy preservation, and efficiency, as demonstrated in experiments with superior prediction performance and reduced complexity."
+    },
+    "high_level_summary": {
+        "summary of this paper": "The paper introduces a novel hierarchical federated graph learning framework, HiFGL, designed to operate across both cross-silo and cross-device environments. It integrates diverse privacy preservation strategies while maintaining the integrity of graph data.",
+        "research purpose": "To develop a unified framework that addresses the challenges of graph learning in environments with mixed cross-silo and cross-device settings, ensuring privacy without compromising data utility.",
+        "research challenge": "Existing FGL approaches are limited in addressing the complexities of integrated cross-silo and cross-device scenarios due to varying privacy and utility requirements.",
+        "method summary": "HiFGL utilizes a hierarchical architecture composed of device-clients, silo-clients, and a server paired with a Secret Message Passing scheme to maintain privacy and performance.",
+        "conclusion": "HiFGL provides a scalable and privacy-preserving solution adaptable to various real-world applications, ensuring efficient federated graph learning."
+    },
+    "Method": {
+        "description": "Hierarchical Federated Graph Learning (HiFGL) employs a multi-level structure with device-clients, silo-clients, and a server to efficiently distribute and optimize graph learning tasks while preserving data privacy.",
+        "problem formultaion": "To collaboratively train Graph Neural Networks (GNN) across distributed graph data while maintaining privacy constraints.",
+        "feature processing": "The framework supports decentralized device-level storage and communication ensuring domain-specific feature processing.",
+        "model": "The primary model involves a hierarchical setup where different levels of clients (device, silo) interact for feature aggregation and optimization.",
+        "tasks": [
+            "Node Classification",
+            "Graph Embedding"
+        ],
+        "theoretical analysis": "The framework's privacy and complexity levels are theoretically validated, demonstrating zero subgraph-level privacy leakage.",
+        "complexity": "HiFGL exhibits competitive communication, encoding/decoding, and space complexities due to efficient architecture and operations.",
+        "algorithm step": "The framework describes detailed encoding-decoding procedures, leveraging Lagrangian interpolation for secure communication."
+    },
+    "Experiments": {
+        "datasets": [
+            "Cora",
+            "CiteSeer",
+            "PubMed"
+        ],
+        "baselines": [
+            "FedAvg",
+            "FedProx",
+            "FedPer",
+            "FedSage+",
+            "FED-PUB"
+        ],
+        "evaluation metric": "Accuracy and Graph Information Gain",
+        "setup": "Experiments conducted on node classification tasks, leveraging GCN and GraphSage models tested on multiple datasets.",
+        "hyperparameters": null,
+        "results": "The experiments demonstrate HiFGL's superior predictive performance and efficiency over state-of-the-art methods.",
+        "performance": "HiFGL outperforms current approaches with notable improvements in accuracy metrics.",
+        "analysis": "The framework excels in providing integrated privacy preservation while maintaining high graph information fidelity.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The HiFGL framework has been shown to effectively address the needs of environments with both cross-silo and cross-device setups. It achieves high accuracy with zero subgraph-level privacy leakage and supports varying client capabilities.",
+        "future work": null
+    }
+}

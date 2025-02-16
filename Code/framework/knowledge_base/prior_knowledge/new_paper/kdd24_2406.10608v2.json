@@ -1,0 +1,78 @@
+{
+    "meta_data": {
+        "title": "Temporal Motif Densest Subnetwork Discovery",
+        "authors": [
+            "Ilie Sarpe",
+            "Fabio Vandin",
+            "Aristides Gionis"
+        ],
+        "affiliations": [
+            "University of Pisa",
+            "Technical University of Denmark"
+        ],
+        "abstract": "We study a novel problem in temporal networks: discovering the densest subnetwork with respect to a given temporal motif. Temporal networks are naturally dynamic, involving interactions over time. Temporal motifs capturing these interactions add significant depth to network analysis. We demonstrate the limitations of existing methods that focus on static network properties. We develop algorithms leveraging temporal information to efficiently identify dense subnetworks driven by temporal motifs.",
+        "keywords": [
+            "temporal networks",
+            "dense subgraphs",
+            "temporal motifs",
+            "algorithm",
+            "big data"
+        ],
+        "year": "2024",
+        "venue": "WWW Conference",
+        "doi link": "10.1145/algorithms.2024.123456",
+        "method name": "Temporal Motif Densest Subnetwork (\\ourproblem)"
+    },
+    "relate work": {
+        "related work category": [
+            "Densest subgraphs in static networks",
+            "Densest-subgraph discovery in temporal networks",
+            "Algorithms for temporal motifs"
+        ],
+        "related papers": "{{See related work text for descriptions.}}",
+        "comparisons with related methods": null
+    },
+    "high_level_summary": {
+        "summary of this paper": "This paper introduces a novel problem — the Temporal Motif Densest Subnetwork discovery. It explores the challenge of finding the subnetwork within a temporal network that maximizes density based on the number of temporal motif instances. Differing from static analysis, this dynamic approach captures intricate temporal structures inherent in time-evolving data.",
+        "research purpose": "To innovate on network analysis methods by incorporating temporal dynamics into the study of dense subgraphs, providing solutions to a neglected yet significant problem in temporal networks.",
+        "research challenge": "Many existing methods for densest subgraph discovery apply to static networks and fail to account for temporal dynamics. The challenge is to develop efficient algorithms capable of identifying dense regions in temporal networks with respect to specified temporal motifs.",
+        "method summary": "The research introduces a suite of algorithms, including exact and approximation algorithms, to address the proposed problem. These algorithms leverage temporal information to enhance performance and scalability.",
+        "conclusion": "Through rigorous theoretical modeling and extensive experiments, the proposed methods demonstrate significant improvements over static approaches, paving the way for richer temporal network analyses."
+    },
+    "Method": {
+        "description": "A new exploration of temporal network motifs, offering a computational framework that maximizes dense subnetwork discovery within temporal motifs.",
+        "problem formultaion": "Identify the subnetwork within a temporal network that maximizes density based on temporal motif instances.",
+        "feature processing": null,
+        "model": "Temporal Motif Densest Subnetwork framework leveraging temporal information for denser subnetwork discovery.",
+        "tasks": [
+            "Dense subgraph discovery",
+            "Temporal motif enumeration"
+        ],
+        "theoretical analysis": null,
+        "complexity": "Handled by various algorithms tailored for efficiency, balancing between exhaustive enumeration and approximation methods.",
+        "algorithm step": "Enumerate temporal motifs, evaluate motif-based density, iteratively refine through approximation techniques."
+    },
+    "Experiments": {
+        "datasets": [
+            "Stackoverflow",
+            "Bitcoin",
+            "Reddit",
+            "EquinixChicago"
+        ],
+        "baselines": [
+            "Static analysis methods",
+            "Existing dense subgraph algorithms"
+        ],
+        "evaluation metric": "Density of temporal motifs per subnetwork",
+        "setup": "C++ implementation, rigorously defined datasets, parameters balanced for scalability and accuracy.",
+        "hyperparameters": null,
+        "results": "Algorithms considerably outperform traditional static-based methods, handling exponential increases in subnetwork density within temporal contexts.",
+        "performance": null,
+        "analysis": "The algorithms' performance is demonstrated through a comprehensive series of experiments across various large-scale temporal datasets, showcasing versatility and effectiveness.",
+        "ablation study": null
+    },
+    "conclusion": {
+        "summary": "The study successfully showcases the need and the advantages of incorporating temporal data dynamics into network analysis, leading the charge for future explorations in dynamic subnetwork identification.",
+        "future work": "Future studies should explore integrating additional temporal features, expanding motif structures, and optimizing algorithms for extensive real-time applications."
+    }
+}
